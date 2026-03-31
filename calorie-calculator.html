@@ -1,1 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Calorie Calculator – BMR, TDEE, BMI & Macronutrients</title>
+  <meta name="description" content="Professional Calorie Calculator: Calculate BMR, TDEE, BMI, daily calorie needs and macronutrient breakdown for weight loss, maintenance or muscle gain.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e6f7e6 100%);
+      min-height: 100vh;
+      transition: all 0.3s ease;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: all 0.3s;
+    }
+    .glass-card-dark {
+      background: rgba(18, 25, 45, 0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f1f5f9;
+    }
+    .result-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 1.25rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .dark-result {
+      background: rgba(30, 41, 59, 0.9);
+      color: #e2e8f0;
+    }
+    button:active { transform: scale(0.97); }
+    input, select {
+      transition: all 0.2s;
+      background: rgba(255,255,245,0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 0.6rem 1rem;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: #22c55e;
+      ring: 2px solid #22c55e;
+    }
+    .dark-mode input, .dark-mode select {
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: white;
+    }
+    .bmi-scale {
+      background: linear-gradient(to right, #3b82f6, #22c55e, #f59e0b, #ef4444);
+      border-radius: 1rem;
+      height: 8px;
+      position: relative;
+    }
+    .bmi-marker {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border: 2px solid #1e293b;
+      border-radius: 50%;
+      top: -4px;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .macro-card {
+      transition: all 0.2s;
+    }
+    .macro-card:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body id="appBody">
 
+  <div class="max-w-7xl mx-auto px-4 py-6 md:py-10">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="flex flex-wrap justify-between items-center gap-3 mb-3">
+        <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+          <i class="fas fa-fire text-orange-500 mr-2"></i>Calorie Calculator
+        </h1>
+        <div class="flex gap-3">
+          <button id="darkModeToggle" class="glass-card p-3 rounded-full hover:scale-105 transition shadow-sm">
+            <i class="fas fa-moon text-xl"></i>
+          </button>
+          <button id="resetBtn" class="glass-card px-4 py-2 rounded-full font-semibold flex items-center gap-2 hover:bg-green-100 transition shadow-sm">
+            <i class="fas fa-undo-alt"></i> Reset
+          </button>
+        </div>
+      </div>
+      <p class="text-gray-600 max-w-2xl mx-auto">Calculate your BMR, TDEE, BMI, daily calorie needs and macronutrient breakdown</p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <!-- Input Panel -->
+      <div class="glass-card p-6 space-y-4">
+        <h2 class="text-xl font-bold flex items-center gap-2">
+          <i class="fas fa-user text-green-600"></i> Personal Information
+        </h2>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">
+              <i class="fas fa-calendar-alt mr-1"></i> Age (15-100)
+            </label>
+            <input type="number" id="age" value="25" min="15" max="100" class="w-full">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">
+              <i class="fas fa-venus-mars"></i> Gender
+            </label>
+            <select id="gender" class="w-full">
+              <option value="male">Male 👨</option>
+              <option value="female">Female 👩</option>
+            </select>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">
+            <i class="fas fa-weight-scale"></i> Weight (kg)
+          </label>
+          <input type="number" id="weight" value="70" step="0.1" class="w-full">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">
+            <i class="fas fa-ruler"></i> Height (cm)
+          </label>
+          <input type="number" id="height" value="170" step="0.1" class="w-full">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">
+            <i class="fas fa-person-walking-arrow-right"></i> Activity Level
+          </label>
+          <select id="activity" class="w-full">
+            <option value="1.2">🛋️ Sedentary (little or no exercise)</option>
+            <option value="1.375">🚶 Light Activity (1-3 days/week)</option>
+            <option value="1.55" selected>🏃 Moderate Activity (3-5 days/week)</option>
+            <option value="1.725">💪 Very Active (6-7 days/week)</option>
+            <option value="1.9">🏋️ Extra Active (athlete/physical job)</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">
+            <i class="fas fa-bullseye"></i> Goal
+          </label>
+          <select id="goal" class="w-full">
+            <option value="-1000">🔥 Extreme Weight Loss (-1000 kcal/day)</option>
+            <option value="-500">⚖️ Moderate Weight Loss (-500 kcal/day)</option>
+            <option value="0" selected>✅ Maintain Weight</option>
+            <option value="500">💪 Moderate Weight Gain (+500 kcal/day)</option>
+            <option value="1000">🏋️ Extreme Weight Gain (+1000 kcal/day)</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">
+            <i class="fas fa-chart-line"></i> Target Weight (kg) - Optional
+          </label>
+          <input type="number" id="targetWeight" step="0.1" class="w-full" placeholder="e.g., 65">
+          <p id="timeToGoal" class="text-xs text-gray-500 mt-1"></p>
+        </div>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="result-card p-4 text-center">
+            <i class="fas fa-bed text-blue-500 text-2xl"></i>
+            <p class="text-xs text-gray-500 mt-1">BASAL METABOLIC RATE</p>
+            <p id="bmr" class="text-2xl font-bold text-blue-600">—</p>
+            <p class="text-xs text-gray-400">kcal/day at rest</p>
+          </div>
+          <div class="result-card p-4 text-center">
+            <i class="fas fa-person-running text-green-500 text-2xl"></i>
+            <p class="text-xs text-gray-500 mt-1">TOTAL DAILY ENERGY</p>
+            <p id="tdee" class="text-2xl font-bold text-green-600">—</p>
+            <p class="text-xs text-gray-400">kcal/day with activity</p>
+          </div>
+          <div class="result-card p-4 text-center">
+            <i class="fas fa-bullseye text-orange-500 text-2xl"></i>
+            <p class="text-xs text-gray-500 mt-1">RECOMMENDED CALORIES</p>
+            <p id="recommended" class="text-2xl font-bold text-orange-600">—</p>
+            <p class="text-xs text-gray-400">kcal/day for your goal</p>
+          </div>
+          <div class="result-card p-4 text-center">
+            <i class="fas fa-chart-simple text-purple-500 text-2xl"></i>
+            <p class="text-xs text-gray-500 mt-1">BODY MASS INDEX</p>
+            <p id="bmiValue" class="text-2xl font-bold text-purple-600">—</p>
+            <p id="bmiCategory" class="text-xs font-semibold">—</p>
+          </div>
+        </div>
+        
+        <!-- BMI Scale Visual -->
+        <div class="glass-card p-4">
+          <p class="font-semibold text-sm mb-2"><i class="fas fa-weight-scale"></i> BMI Scale</p>
+          <div class="bmi-scale relative">
+            <div id="bmiMarker" class="bmi-marker" style="left: 0%"></div>
+          </div>
+          <div class="flex justify-between text-xs mt-2 text-gray-600">
+            <span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span>
+          </div>
+        </div>
+        
+        <!-- Ideal Weight Range -->
+        <div class="glass-card p-4">
+          <p class="font-semibold text-sm"><i class="fas fa-chart-line"></i> Ideal Weight Range</p>
+          <p id="idealWeight" class="text-lg font-bold text-green-600">—</p>
+          <p class="text-xs text-gray-500">Healthy BMI range: 18.5 - 24.9</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Macronutrient Breakdown + Chart -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-lg mb-4"><i class="fas fa-utensils"></i> Macronutrient Breakdown</h3>
+        <div class="space-y-3">
+          <div class="macro-card flex justify-between items-center p-3 bg-red-50 rounded-xl">
+            <div><i class="fas fa-drumstick-bite text-red-500"></i> <span class="font-semibold">Protein (30%)</span></div>
+            <div><span id="proteinGrams" class="font-bold text-red-600">— g</span> <span class="text-xs text-gray-500">(4 kcal/g)</span></div>
+          </div>
+          <div class="macro-card flex justify-between items-center p-3 bg-orange-50 rounded-xl">
+            <div><i class="fas fa-bread-slice text-orange-500"></i> <span class="font-semibold">Carbohydrates (40%)</span></div>
+            <div><span id="carbsGrams" class="font-bold text-orange-600">— g</span> <span class="text-xs text-gray-500">(4 kcal/g)</span></div>
+          </div>
+          <div class="macro-card flex justify-between items-center p-3 bg-teal-50 rounded-xl">
+            <div><i class="fas fa-cheese text-teal-500"></i> <span class="font-semibold">Fats (30%)</span></div>
+            <div><span id="fatsGrams" class="font-bold text-teal-600">— g</span> <span class="text-xs text-gray-500">(9 kcal/g)</span></div>
+          </div>
+        </div>
+        <div class="mt-4 text-sm text-gray-600 bg-gray-50 p-3 rounded-xl">
+          <i class="fas fa-info-circle"></i> Based on <span id="calorieBase" class="font-bold">—</span> kcal/day
+        </div>
+      </div>
+      
+      <div class="glass-card p-6">
+        <h3 class="font-bold text-lg mb-2"><i class="fas fa-chart-pie"></i> Nutrient Distribution</h3>
+        <canvas id="macroChart" width="300" height="250" class="w-full h-auto"></canvas>
+        <div class="mt-3 text-center text-xs text-gray-500">
+          <span class="inline-block w-3 h-3 bg-red-500 rounded-full"></span> Protein &nbsp;&nbsp;
+          <span class="inline-block w-3 h-3 bg-orange-500 rounded-full"></span> Carbs &nbsp;&nbsp;
+          <span class="inline-block w-3 h-3 bg-teal-500 rounded-full"></span> Fats
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Info -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-card p-5 flex items-center gap-4">
+        <i class="fas fa-tint text-blue-500 text-3xl"></i>
+        <div>
+          <p class="font-semibold">Daily Hydration Need</p>
+          <p id="waterNeeds" class="text-2xl font-bold text-blue-600">—</p>
+          <p class="text-xs text-gray-500">Based on 30ml per kg of body weight</p>
+        </div>
+      </div>
+      <div class="glass-card p-5 flex items-center gap-4">
+        <i class="fas fa-person-walking text-green-500 text-3xl"></i>
+        <div>
+          <p class="font-semibold">Exercise Equivalent</p>
+          <p id="exerciseEq" class="text-sm font-semibold">—</p>
+          <p class="text-xs text-gray-500">To burn 500 calories</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-8 text-xs text-gray-500">
+      <p><i class="fas fa-flask"></i> Mifflin-St Jeor Equation | Based on scientific research</p>
+    </div>
+  </div>
+
+  <script>
+    // DOM Elements
+    const ageInput = document.getElementById('age');
+    const genderSelect = document.getElementById('gender');
+    const weightInput = document.getElementById('weight');
+    const heightInput = document.getElementById('height');
+    const activitySelect = document.getElementById('activity');
+    const goalSelect = document.getElementById('goal');
+    const targetWeightInput = document.getElementById('targetWeight');
+    const resetBtn = document.getElementById('resetBtn');
+    const darkToggle = document.getElementById('darkModeToggle');
+    
+    // Output Elements
+    const bmrSpan = document.getElementById('bmr');
+    const tdeeSpan = document.getElementById('tdee');
+    const recommendedSpan = document.getElementById('recommended');
+    const bmiValueSpan = document.getElementById('bmiValue');
+    const bmiCategorySpan = document.getElementById('bmiCategory');
+    const idealWeightSpan = document.getElementById('idealWeight');
+    const proteinGrams = document.getElementById('proteinGrams');
+    const carbsGrams = document.getElementById('carbsGrams');
+    const fatsGrams = document.getElementById('fatsGrams');
+    const calorieBaseSpan = document.getElementById('calorieBase');
+    const waterNeedsSpan = document.getElementById('waterNeeds');
+    const exerciseEqSpan = document.getElementById('exerciseEq');
+    const timeToGoalSpan = document.getElementById('timeToGoal');
+    const bmiMarker = document.getElementById('bmiMarker');
+    
+    let macroChart = null;
+    let darkMode = false;
+    
+    function getWeightKg() { return parseFloat(weightInput.value) || 70; }
+    function getHeightCm() { return parseFloat(heightInput.value) || 170; }
+    
+    // درست شدہ BMR Calculation (Mifflin-St Jeor)
+    function calculateBMR(weightKg, heightCm, age, gender) {
+      if (gender === 'male') {
+        return (10 * weightKg) + (6.25 * heightCm) - (5 * age) + 5;
+      } else {
+        // Female - درست فارمولا
+        return (10 * weightKg) + (6.25 * heightCm) - (5 * age) - 161;
+      }
+    }
+    
+    function calculateBMI(weightKg, heightCm) {
+      let heightM = heightCm / 100;
+      return weightKg / (heightM * heightM);
+    }
+    
+    function getBMICategory(bmi) {
+      if (bmi < 18.5) return 'Underweight ⚠️';
+      if (bmi < 25) return 'Normal ✅';
+      if (bmi < 30) return 'Overweight ⚠️';
+      return 'Obese ❗';
+    }
+    
+    function getBMIColor(bmi) {
+      if (bmi < 18.5) return '#3b82f6';
+      if (bmi < 25) return '#22c55e';
+      if (bmi < 30) return '#f59e0b';
+      return '#ef4444';
+    }
+    
+    function getIdealWeightRange(heightCm) {
+      let heightM = heightCm / 100;
+      let min = 18.5 * heightM * heightM;
+      let max = 24.9 * heightM * heightM;
+      return { min, max };
+    }
+    
+    function getWaterNeeds(weightKg) {
+      return (weightKg * 0.03).toFixed(1) + ' L';
+    }
+    
+    function getExerciseEquivalent() {
+      let walking = (500 / 300).toFixed(1);
+      let running = (500 / 600).toFixed(1);
+      return `🚶 Walk ${walking} hours or 🏃 Run ${running} hours`;
+    }
+    
+    function getTimeToGoal(weightKg, targetKg, dailyDeficit) {
+      if (!targetKg || isNaN(targetKg)) return '';
+      let kgToLose = Math.abs(weightKg - targetKg);
+      let caloriesToLose = kgToLose * 7700;
+      let days = caloriesToLose / Math.abs(dailyDeficit || 500);
+      if (days <= 0 || !isFinite(days)) return '';
+      let weeks = (days / 7).toFixed(1);
+      return `⏱️ Estimated ${weeks} weeks to reach your target weight`;
+    }
+    
+    function updateAll() {
+      let age = parseInt(ageInput.value);
+      let gender = genderSelect.value;
+      let weightKg = getWeightKg();
+      let heightCm = getHeightCm();
+      let activityMultiplier = parseFloat(activitySelect.value);
+      let goalAdjust = parseFloat(goalSelect.value);
+      
+      if (isNaN(age) || isNaN(weightKg) || isNaN(heightCm) || weightKg <= 0 || heightCm <= 0) return;
+      
+      let bmr = calculateBMR(weightKg, heightCm, age, gender);
+      let tdee = bmr * activityMultiplier;
+      let recommended = tdee + goalAdjust;
+      if (recommended < 500) recommended = 500;
+      let bmi = calculateBMI(weightKg, heightCm);
+      let bmiCat = getBMICategory(bmi);
+      let idealRange = getIdealWeightRange(heightCm);
+      let water = getWaterNeeds(weightKg);
+      let exerciseEq = getExerciseEquivalent();
+      let dailyDeficit = goalAdjust;
+      
+      let targetKg = targetWeightInput.value ? parseFloat(targetWeightInput.value) : null;
+      if (targetKg && !isNaN(targetKg)) {
+        timeToGoalSpan.innerText = getTimeToGoal(weightKg, targetKg, dailyDeficit);
+      } else {
+        timeToGoalSpan.innerText = '';
+      }
+      
+      bmrSpan.innerText = Math.round(bmr).toLocaleString();
+      tdeeSpan.innerText = Math.round(tdee).toLocaleString();
+      recommendedSpan.innerText = Math.round(recommended).toLocaleString();
+      bmiValueSpan.innerText = bmi.toFixed(1);
+      bmiCategorySpan.innerText = bmiCat;
+      bmiCategorySpan.style.color = getBMIColor(bmi);
+      idealWeightSpan.innerHTML = `${idealRange.min.toFixed(1)} - ${idealRange.max.toFixed(1)} kg`;
+      waterNeedsSpan.innerText = water;
+      exerciseEqSpan.innerText = exerciseEq;
+      
+      let protein = (recommended * 0.3) / 4;
+      let carbs = (recommended * 0.4) / 4;
+      let fats = (recommended * 0.3) / 9;
+      proteinGrams.innerText = Math.round(protein) + ' g';
+      carbsGrams.innerText = Math.round(carbs) + ' g';
+      fatsGrams.innerText = Math.round(fats) + ' g';
+      calorieBaseSpan.innerText = Math.round(recommended).toLocaleString();
+      
+      let markerPercent = Math.min(100, Math.max(0, ((bmi - 10) / 30) * 100));
+      bmiMarker.style.left = `${markerPercent}%`;
+      
+      if (macroChart) {
+        macroChart.data.datasets[0].data = [protein * 4, carbs * 4, fats * 9];
+        macroChart.update();
+      }
+    }
+    
+    function resetAll() {
+      ageInput.value = '25';
+      genderSelect.value = 'male';
+      weightInput.value = '70';
+      heightInput.value = '170';
+      activitySelect.value = '1.55';
+      goalSelect.value = '0';
+      targetWeightInput.value = '';
+      updateAll();
+    }
+    
+    function toggleDark() {
+      darkMode = !darkMode;
+      document.body.classList.toggle('dark-mode', darkMode);
+      document.body.style.background = darkMode ? 'linear-gradient(135deg, #0f172a, #1e293b)' : 'linear-gradient(135deg, #f0f9ff 0%, #e6f7e6 100%)';
+      document.querySelectorAll('.glass-card').forEach(el => el.classList.toggle('glass-card-dark', darkMode));
+      document.querySelectorAll('.result-card').forEach(el => el.classList.toggle('dark-result', darkMode));
+    }
+    
+    function initChart() {
+      let ctx = document.getElementById('macroChart').getContext('2d');
+      macroChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Protein', 'Carbohydrates', 'Fats'],
+          datasets: [{
+            data: [600, 800, 600],
+            backgroundColor: ['#ef4444', '#f59e0b', '#10b981'],
+            borderWidth: 0,
+            hoverOffset: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          cutout: '60%',
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => `${ctx.label}: ${ctx.raw} kcal` } } }
+        }
+      });
+    }
+    
+    ageInput.addEventListener('input', updateAll);
+    genderSelect.addEventListener('change', updateAll);
+    weightInput.addEventListener('input', updateAll);
+    heightInput.addEventListener('input', updateAll);
+    activitySelect.addEventListener('change', updateAll);
+    goalSelect.addEventListener('change', updateAll);
+    targetWeightInput.addEventListener('input', updateAll);
+    resetBtn.addEventListener('click', resetAll);
+    darkToggle.addEventListener('click', toggleDark);
+    
+    initChart();
+    updateAll();
+  </script>
+</body>
+</html>
