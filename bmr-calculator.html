@@ -1,1 +1,398 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR Calculator - Basal Metabolic Rate | Free Online Tools</title>
+    <meta name="description" content="Free BMR Calculator. Calculate your Basal Metabolic Rate - daily calories burned at rest. Accurate formula for men and women.">
+    <meta name="keywords" content="BMR calculator, basal metabolic rate, calorie calculator, metabolism calculator, daily calories">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Main Card */
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.2);
+        }
+
+        .tool-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #64748b;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+
+        /* Gender Toggle */
+        .gender-toggle {
+            display: flex;
+            gap: 12px;
+        }
+
+        .gender-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .gender-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .gender-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .gender-option input:checked + .gender-label {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-color: #667eea;
+            color: white;
+        }
+
+        /* Button */
+        .calculate-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(102,126,234,0.4);
+        }
+
+        /* Result */
+        .result {
+            margin-top: 28px;
+            padding: 24px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 24px;
+            text-align: center;
+            display: none;
+        }
+
+        .result-value {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .result-detail {
+            margin-top: 16px;
+            padding: 12px;
+            background: white;
+            border-radius: 16px;
+            font-size: 14px;
+            color: #1e293b;
+        }
+
+        .info-box {
+            margin-top: 20px;
+            padding: 16px;
+            background: #fef9e3;
+            border-radius: 16px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .info-box p {
+            font-size: 13px;
+            color: #92400e;
+            line-height: 1.5;
+        }
+
+        /* Activity Level Select */
+        .activity-select {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .activity-select h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #1e293b;
+        }
+
+        /* Footer */
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px;
+            }
+            .result-value {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">
+            ← Back to All Tools
+        </a>
+
+        <div class="card">
+            <div class="tool-icon">🔥</div>
+            <h1>BMR Calculator</h1>
+            <p class="description">Basal Metabolic Rate - calories your body burns at rest. Use this to plan your daily calorie needs for weight loss, maintenance, or muscle gain.</p>
+
+            <form id="bmrForm">
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="gender-toggle">
+                        <div class="gender-option">
+                            <input type="radio" name="gender" value="male" id="male" checked>
+                            <label for="male" class="gender-label">👨 Male</label>
+                        </div>
+                        <div class="gender-option">
+                            <input type="radio" name="gender" value="female" id="female">
+                            <label for="female" class="gender-label">👩 Female</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Age (years)</label>
+                    <input type="number" id="age" placeholder="e.g., 30" step="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Height (cm)</label>
+                    <input type="number" id="height" placeholder="e.g., 170" step="0.1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" id="weight" placeholder="e.g., 70" step="0.1" required>
+                </div>
+
+                <button type="submit" class="calculate-btn">Calculate BMR</button>
+            </form>
+
+            <div id="result" class="result"></div>
+
+            <div class="info-box">
+                <p>💡 <strong>What is BMR?</strong> BMR is the number of calories your body needs to maintain basic functions like breathing, circulation, and cell production while at rest.</p>
+            </div>
+
+            <div class="activity-select">
+                <h3>📊 Your Daily Calorie Needs (TDEE)</h3>
+                <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Based on your BMR, multiply by activity level:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
+                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Sedentary: ×1.2</div>
+                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Light: ×1.375</div>
+                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Moderate: ×1.55</div>
+                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Heavy: ×1.725</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            💪 Free Online Tools | Accurate BMR Calculation | Mifflin-St Jeor Formula
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('bmrForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get values
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const age = parseFloat(document.getElementById('age').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            
+            // Validation
+            if (!age || !height || !weight) {
+                alert('Please fill all fields');
+                return;
+            }
+            
+            if (age < 15 || age > 100) {
+                alert('Please enter a valid age between 15 and 100');
+                return;
+            }
+            
+            if (height < 100 || height > 250) {
+                alert('Please enter a valid height between 100 and 250 cm');
+                return;
+            }
+            
+            if (weight < 30 || weight > 300) {
+                alert('Please enter a valid weight between 30 and 300 kg');
+                return;
+            }
+            
+            // Mifflin-St Jeor Formula (Most accurate)
+            let bmr;
+            if (gender === 'male') {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            }
+            
+            // Round to nearest integer
+            bmr = Math.round(bmr);
+            
+            // Calculate TDEE ranges
+            const sedentary = Math.round(bmr * 1.2);
+            const light = Math.round(bmr * 1.375);
+            const moderate = Math.round(bmr * 1.55);
+            const heavy = Math.round(bmr * 1.725);
+            const athlete = Math.round(bmr * 1.9);
+            
+            // Display result
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <div class="result-value">${bmr} <span style="font-size: 20px;">kcal/day</span></div>
+                <div class="result-label">Your Basal Metabolic Rate (BMR)</div>
+                <div class="result-detail">
+                    <strong>📊 Your Daily Calorie Needs:</strong><br><br>
+                    🛋️ Sedentary (little/no exercise): <strong>${sedentary}</strong> kcal<br>
+                    🚶 Light exercise (1-3 days): <strong>${light}</strong> kcal<br>
+                    🏃 Moderate exercise (3-5 days): <strong>${moderate}</strong> kcal<br>
+                    💪 Heavy exercise (6-7 days): <strong>${heavy}</strong> kcal<br>
+                    🏆 Athlete (twice daily): <strong>${athlete}</strong> kcal<br><br>
+                    <strong>🎯 Weight Goals:</strong><br>
+                    Lose weight: Eat ${Math.round(bmr - 500)} - ${Math.round(bmr - 300)} kcal/day<br>
+                    Maintain weight: Eat ${bmr} - ${sedentary} kcal/day<br>
+                    Gain muscle: Eat ${moderate} - ${heavy} kcal/day
+                </div>
+            `;
+        });
+        
+        // Auto-focus on first field
+        document.getElementById('age').focus();
+        
+        // Add placeholder examples
+        const inputs = ['age', 'height', 'weight'];
+        const examples = {
+            age: 'e.g., 30',
+            height: 'e.g., 170',
+            weight: 'e.g., 70'
+        };
+        
+        inputs.forEach(id => {
+            const input = document.getElementById(id);
+            input.addEventListener('focus', function() {
+                if (this.value === '') {
+                    this.placeholder = examples[id];
+                }
+            });
+        });
+    </script>
+</body>
+</html>
