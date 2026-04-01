@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Meal Planner – Weekly Meal Planner & Shopping List | Free Online Tools</title>
+<meta name="description" content="Free meal planner to plan your weekly meals, create shopping lists, and track calories. Includes weekly meal planner template, printable meal planner, macro meal planner, and grocery list meal planner.">
+<meta name="keywords" content="meal planner, weekly meal planner, free meal planner template, macro meal planner, free printable meal planner pdf, printable meal planner, weekly meal planner recipes, weekly meal planner printable, grocery list meal planner, monthly meal planner template">
+<link rel="canonical" href="https://freeonlinetools203.github.io/free-online-tools/meal-planner.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo a:hover {
+    color: #f0f0f0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+
+.nav-links li a:hover {
+    color: #f0f0f0;
+    border-bottom: 2px solid white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dropbtn:hover {
+    color: #f0f0f0;
+    border-bottom: 2px solid white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    z-index: 1001;
+    top: 40px;
+    left: 0;
+    padding: 8px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-category {
+    cursor: pointer;
+    padding: 12px 16px;
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-category:hover {
+    background: #f3f4f6;
+}
+
+.dropdown-category .arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.dropdown-category.active .arrow {
+    transform: rotate(90deg);
+}
+
+.category-tools {
+    display: none;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin: 4px 8px 8px 8px;
+    overflow: hidden;
+}
+
+.category-tools.show {
+    display: block;
+}
+
+.category-tools a {
+    color: #1f2937 !important;
+    padding: 10px 20px 10px 32px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.category-tools a:hover {
+    background: #e5e7eb;
+    color: #2563eb !important;
+    transform: translateX(5px);
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.tool-card-large {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.tool-title {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.tool-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    border-radius: 3px;
+}
+
+.header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    background: #f3f4f6;
+    color: #1f2937;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.stats-card {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.goal-input {
+    width: 100px;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.chart-container {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #e5e7eb;
+}
+
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.day-card {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.day-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meal-slot {
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 4px solid #2563eb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.meal-slot:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.meal-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meal-info {
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.meal-calories {
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin-top: 3px;
+}
+
+.meal-empty {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.recipe-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.recipe-item:hover {
+    background: #f9fafb;
+}
+
+.recipe-info {
+    flex: 1;
+}
+
+.recipe-name {
+    font-weight: 600;
+}
+
+.recipe-category {
+    font-size: 0.7rem;
+    color: #6b7280;
+}
+
+.recipe-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 8px;
+    font-size: 1rem;
+}
+
+.shopping-category {
+    margin-bottom: 15px;
+}
+
+.shopping-category h4 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.shopping-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.shopping-item input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.custom-item-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.custom-item-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #10b981;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 40px;
+    z-index: 1100;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Print Styles */
+@media print {
+    .navbar, .action-buttons, .btn, .modal, .ad-container, .other-tools, .footer, .header-actions button, .dark-toggle {
+        display: none !important;
+    }
+    .container { margin: 0; padding: 0; }
+    .tool-card-large { box-shadow: none; padding: 20px; }
+    .week-grid { grid-template-columns: repeat(7, 1fr); gap: 10px; }
+    .day-card { break-inside: avoid; }
+}
+
+/* Other Tools */
+.other-tools {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.other-tools h3 {
+    color: #1e3a8a;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.tool-link {
+    background: #eff6ff;
+    color: #2563eb !important;
+    padding: 12px 15px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #bfdbfe;
+    display: inline-block;
+}
+
+.tool-link:hover {
+    background: #2563eb;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.home-link {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.home-link:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.ad-container {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    margin: 35px 0;
+    border: 1px solid #e5e7eb;
+}
+
+.ad-label {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.ad-placeholder {
+    background: #ffffff;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #6b7280;
+    font-size: 0.85rem;
+    border: 1px dashed #d1d5db;
+}
+
+.article-section {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.article-section h2 {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.article-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    border-radius: 3px;
+}
+
+.article-section h3 {
+    color: #2563eb;
+    font-size: 1.3rem;
+    margin: 20px 0 10px;
+}
+
+.article-section p {
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 15px;
+}
+
+.article-section ul {
+    margin: 15px 0 15px 25px;
+}
+
+.article-section li {
+    margin-bottom: 8px;
+    color: #4b5563;
+}
+
+.faq-section {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.faq-section h2 {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.faq-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    border-radius: 3px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 15px;
+}
+
+.faq-question {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.faq-answer {
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 60px 20px 30px;
+    margin-top: 40px;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h3::after, .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-top: 15px;
+}
+
+.footer-col a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #60a5fa;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 35px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 12px 20px; }
+    .nav-container { flex-direction: column; text-align: center; }
+    .nav-links { justify-content: center; gap: 18px; }
+    .week-grid { grid-template-columns: 1fr; }
+    .stats-card { flex-direction: column; text-align: center; }
+    .tool-card-large { padding: 20px; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; gap: 35px; }
+    .footer-col h3::after, .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+    .footer-col a { display: inline-block; margin: 0 8px; padding: 5px 10px; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .action-buttons { justify-content: center; }
+    .header-actions { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 480px) {
+    .stat-value { font-size: 1.3rem; }
+    .btn { padding: 8px 16px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html">✨ Free Online Tools</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ Tools ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat1">📊 Popular Calculators <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat1Tools">
+                        <a href="age-calculator.html">📅 Age Calculator</a>
+                        <a href="age-difference-calculator.html">📊 Age Difference Calculator</a>
+                        <a href="discount-calculator.html">🏷️ Discount Calculator</a>
+                        <a href="profit-loss-calculator.html">📈 Profit & Loss Calculator</a>
+                        <a href="gpa-calculator.html">🎓 GPA/CGPA Calculator</a>
+                        <a href="gst-calculator.html">💰 GST Calculator</a>
+                        <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+                        <a href="percentage-calculator.html">📈 Percentage Calculator</a>
+                        <a href="qr-code-generator.html">📱 QR Code Generator</a>
+                        <a href="youtube-thumbnail-downloader.html">📸 YouTube Thumbnail Downloader</a>
+                        <a href="emi-calculator.html">🏦 EMI Calculator</a>
+                        <a href="loan-calculator.html">📋 Loan Calculator</a>
+                        <a href="zakat-calculator.html">🕌 Zakat Calculator</a>
+                        <a href="word-counter.html">🔢 Word Counter</a>
+                        <a href="text-case-converter.html">🔤 Text Case Converter</a>
+                        <a href="password-generator.html">🔐 Password Generator</a>
+                        <a href="image-compressor.html">🖼️ Image Compressor</a>
+                        <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+                        <a href="grammar-checker.html">📝 Grammar Checker</a>
+                        <a href="date-calculator.html">📅 Date Calculator</a>
+                        <a href="calorie-calculator.html">🔥 Calorie Calculator</a>
+                        <a href="meal-planner.html">🍽️ Meal Planner</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat2">💰 Financial Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat2Tools">
+                        <a href="emi-calculator.html">🏦 EMI Calculator</a>
+                        <a href="loan-calculator.html">📋 Loan Calculator</a>
+                        <a href="zakat-calculator.html">🕌 Zakat Calculator</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat3">📝 Text & Writing Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat3Tools">
+                        <a href="word-counter.html">🔢 Word Counter</a>
+                        <a href="text-case-converter.html">🔤 Text Case Converter</a>
+                        <a href="password-generator.html">🔐 Password Generator</a>
+                        <a href="grammar-checker.html">📝 Grammar Checker</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat4">🎲 Random & Fun Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat4Tools">
+                        <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat5">🖼️ Image & Media Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat5Tools">
+                        <a href="image-compressor.html">🗜️ Image Compressor</a>
+                        <a href="youtube-thumbnail-downloader.html">📸 YouTube Thumbnail Downloader</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="tool-card-large">
+        <h2 class="tool-title">🍽️ Meal Planner</h2>
+        
+        <div class="header-actions">
+            <div class="action-buttons">
+                <button id="darkToggleBtn" class="btn btn-secondary"><i class="fas fa-moon"></i> Dark Mode</button>
+                <button id="manageRecipesBtn" class="btn btn-secondary"><i class="fas fa-book-open"></i> Manage Recipes</button>
+                <button id="shoppingListBtn" class="btn btn-secondary"><i class="fas fa-shopping-cart"></i> Shopping List</button>
+                <button id="printPlanBtn" class="btn btn-secondary"><i class="fas fa-print"></i> Print Plan</button>
+                <button id="exportDataBtn" class="btn btn-secondary"><i class="fas fa-download"></i> Export</button>
+                <button id="resetAllBtn" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Reset All</button>
+            </div>
+        </div>
+        
+        <div class="stats-card">
+            <div class="stat-item">
+                <div class="stat-value" id="totalCalories">0</div>
+                <div class="stat-label">Weekly Total Calories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="avgDailyCalories">0</div>
+                <div class="stat-label">Avg Daily Calories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Daily Goal</div>
+                <input type="number" id="dailyGoalInput" value="2000" class="goal-input">
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="calorieChart" height="150"></canvas>
+        </div>
+        
+        <div id="weeklyPlanContainer" class="week-grid"></div>
+        
+        <div class="action-buttons" style="justify-content: center; margin-top: 20px;">
+            <button id="addRecipeQuickBtn" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Recipe</button>
+        </div>
+    </div>
+    
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder">📢 Your Ad Here (AdSense/Adsterra) - Position 1</div>
+    </div>
+    
+    <div class="other-tools">
+        <h3>🔗 Other Useful Tools</h3>
+        <div class="tools-grid">
+            <a href="age-calculator.html" class="tool-link">📅 Age Calculator</a>
+            <a href="bmi-calculator.html" class="tool-link">⚖️ BMI Calculator</a>
+            <a href="calorie-calculator.html" class="tool-link">🔥 Calorie Calculator</a>
+            <a href="meal-planner.html" class="tool-link">🍽️ Meal Planner</a>
+            <a href="percentage-calculator.html" class="tool-link">📈 Percentage Calculator</a>
+            <a href="discount-calculator.html" class="tool-link">🏷️ Discount Calculator</a>
+            <a href="emi-calculator.html" class="tool-link">🏦 EMI Calculator</a>
+            <a href="loan-calculator.html" class="tool-link">📋 Loan Calculator</a>
+        </div>
+        <a href="index.html" class="home-link">← Back to Home</a>
+    </div>
+    
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder">📢 Your Ad Here (AdSense/Adsterra) - Position 2</div>
+    </div>
+    
+    <!-- Article Section -->
+    <div class="article-section">
+        <h2>Meal Planner – Complete Guide to Weekly Meal Planning</h2>
+        <p>Welcome to the most comprehensive <strong>meal planner</strong> available online. Whether you're looking for a <strong>weekly meal planner template</strong> to organize your meals, a <strong>free meal planner template</strong> to save time, or a <strong>macro meal planner</strong> to track your nutrition, this tool has everything you need. Our <strong>printable meal planner</strong> feature lets you download and print your weekly plan.</p>
+        
+        <h3>What is a Meal Planner?</h3>
+        <p>A <strong>meal planner</strong> is a tool that helps you organize your weekly meals, track calories, and create shopping lists. It's essential for anyone looking to eat healthier, save time, and reduce food waste.</p>
+        
+        <div style="background: #f3f4f6; padding: 20px; border-radius: 12px; margin: 25px 0; text-align: center;">
+            <p style="font-family: monospace; font-size: 16px; font-weight: bold; color: #1e3a8a;">Plan your week, save time, eat healthier!</p>
+        </div>
+        
+        <h3>Features of Our Free Meal Planner</h3>
+        <ul>
+            <li>✅ <strong>Weekly Meal Planner Template:</strong> Plan all 7 days</li>
+            <li>✅ <strong>Free Printable Meal Planner PDF:</strong> Print your weekly plan</li>
+            <li>✅ <strong>Macro Meal Planner:</strong> Track calories</li>
+            <li>✅ <strong>Grocery List Meal Planner:</strong> Automatic shopping list</li>
+            <li>✅ <strong>Recipe Library:</strong> Store and manage recipes</li>
+        </ul>
+        
+        <div class="ad-container" style="margin: 25px 0;">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-placeholder">📢 Your Ad Here (AdSense/Adsterra) - Position 3</div>
+        </div>
+        
+        <h3>How to Use This Meal Planner</h3>
+        <ol>
+            <li>Browse the recipe library or add your own recipes</li>
+            <li>Click on any meal slot to assign a recipe</li>
+            <li>View your weekly calorie summary and chart</li>
+            <li>Generate a shopping list automatically</li>
+            <li>Print your weekly meal plan</li>
+        </ol>
+        
+        <div class="faq-section">
+            <h2>❓ Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="faq-question">📌 Is this meal planner free?</div><div class="faq-answer">Yes, completely free with unlimited use.</div></div>
+            <div class="faq-item"><div class="faq-question">📌 Can I print my meal plan?</div><div class="faq-answer">Yes, click the "Print Plan" button.</div></div>
+            <div class="faq-item"><div class="faq-question">📌 Does this tool create a shopping list?</div><div class="faq-answer">Yes, automatically generates categorized shopping lists.</div></div>
+            <div class="faq-item"><div class="faq-question">📌 What is a macro meal planner?</div><div class="faq-answer">A tool that helps track macronutrients (protein, carbs, fats).</div></div>
+            <div class="faq-item"><div class="faq-question">📌 Does this work on mobile?</div><div class="faq-answer">Yes, fully responsive on all devices.</div></div>
+        </div>
+        
+        <div class="ad-container" style="margin-top: 25px;">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-placeholder">📢 Your Ad Here (AdSense/Adsterra) - Position 4</div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Meal Planner JavaScript - Fully Working
+document.addEventListener('DOMContentLoaded', function() {
+    // Sample Recipes
+    let recipes = [
+        { id: '1', name: 'Avocado Toast', category: 'Breakfast', ingredients: ['2 slices bread', '1 avocado'], calories: 320 },
+        { id: '2', name: 'Greek Yogurt Bowl', category: 'Breakfast', ingredients: ['1 cup yogurt', 'berries', 'honey'], calories: 280 },
+        { id: '3', name: 'Grilled Chicken Salad', category: 'Lunch', ingredients: ['150g chicken', 'lettuce', 'tomato'], calories: 380 },
+        { id: '4', name: 'Quinoa Bowl', category: 'Lunch', ingredients: ['quinoa', 'beans', 'avocado'], calories: 450 },
+        { id: '5', name: 'Salmon with Veggies', category: 'Dinner', ingredients: ['salmon', 'broccoli', 'sweet potato'], calories: 540 },
+        { id: '6', name: 'Vegan Stir Fry', category: 'Dinner', ingredients: ['tofu', 'bell peppers', 'soy sauce'], calories: 410 },
+        { id: '7', name: 'Protein Smoothie', category: 'Snacks', ingredients: ['banana', 'protein powder', 'almond milk'], calories: 210 },
+        { id: '8', name: 'Hummus & Pita', category: 'Snacks', ingredients: ['hummus', 'pita', 'olives'], calories: 190 },
+        { id: '9', name: 'Oatmeal Delight', category: 'Breakfast', ingredients: ['oats', 'berries', 'nuts'], calories: 300 },
+        { id: '10', name: 'Chicken Wrap', category: 'Lunch', ingredients: ['tortilla', 'chicken', 'lettuce'], calories: 420 }
+    ];
+    
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const mealTypes = ['breakfast', 'lunch', 'dinner', 'snacks'];
+    let mealPlan = {};
+    let shoppingCustom = [];
+    let calorieChart = null;
+    let currentAssignDay = null;
+    let currentAssignMeal = null;
+    let editingRecipeId = null;
+    
+    // Initialize meal plan
+    days.forEach(day => {
+        mealPlan[day] = { breakfast: null, lunch: null, dinner: null, snacks: null };
+    });
+    
+    // Load from localStorage
+    function loadFromStorage() {
+        const saved = localStorage.getItem('meal_planner_data');
+        if (saved) {
+            try {
+                const data = JSON.parse(saved);
+                if (data.recipes) recipes = data.recipes;
+                if (data.mealPlan) mealPlan = data.mealPlan;
+                if (data.shoppingCustom) shoppingCustom = data.shoppingCustom;
+                if (data.dailyGoal) document.getElementById('dailyGoalInput').value = data.dailyGoal;
+            } catch(e) {}
+        }
+    }
+    
+    function saveToStorage() {
+        const data = { recipes, mealPlan, shoppingCustom, dailyGoal: document.getElementById('dailyGoalInput').value };
+        localStorage.setItem('meal_planner_data', JSON.stringify(data));
+    }
+    
+    function genId() { return Date.now() + '-' + Math.random().toString(36); }
+    
+    function computeWeeklyCalories() {
+        let dailyCals = {};
+        days.forEach(d => dailyCals[d] = 0);
+        let totalWeek = 0;
+        for (let day of days) {
+            let dayTotal = 0;
+            for (let meal of mealTypes) {
+                let recipeId = mealPlan[day]?.[meal];
+                if (recipeId) {
+                    let recipe = recipes.find(r => r.id === recipeId);
+                    if (recipe) dayTotal += recipe.calories;
+                }
+            }
+            dailyCals[day] = dayTotal;
+            totalWeek += dayTotal;
+        }
+        return { dailyCals, totalWeek };
+    }
+    
+    function updateUI() {
+        const { dailyCals, totalWeek } = computeWeeklyCalories();
+        document.getElementById('totalCalories').innerText = totalWeek.toLocaleString();
+        const avgDaily = Math.round(totalWeek / 7);
+        document.getElementById('avgDailyCalories').innerText = avgDaily.toLocaleString();
+        
+        if (calorieChart) calorieChart.destroy();
+        const ctx = document.getElementById('calorieChart').getContext('2d');
+        calorieChart = new Chart(ctx, {
+            type: 'bar',
+            data: { labels: days, datasets: [{ label: 'Calories', data: days.map(d => dailyCals[d]), backgroundColor: '#3b82f6', borderRadius: 8 }] },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+        });
+    }
+    
+    function renderWeeklyPlan() {
+        const container = document.getElementById('weeklyPlanContainer');
+        container.innerHTML = '';
+        
+        for (let day of days) {
+            const dayCard = document.createElement('div');
+            dayCard.className = 'day-card';
+            dayCard.innerHTML = `<div class="day-title"><i class="fas fa-calendar-day"></i> ${day}</div>`;
+            
+            for (let meal of mealTypes) {
+                const recipeId = mealPlan[day]?.[meal];
+                const recipe = recipeId ? recipes.find(r => r.id === recipeId) : null;
+                const mealIcon = meal === 'breakfast' ? '☀️' : meal === 'lunch' ? '🍽️' : meal === 'dinner' ? '🌙' : '🍎';
+                const mealName = meal.charAt(0).toUpperCase() + meal.slice(1);
+                
+                const slot = document.createElement('div');
+                slot.className = 'meal-slot';
+                slot.setAttribute('data-day', day);
+                slot.setAttribute('data-meal', meal);
+                
+                if (recipe) {
+                    slot.innerHTML = `
+                        <div class="meal-name"><i class="fas fa-${meal === 'breakfast' ? 'sun' : meal === 'lunch' ? 'carrot' : meal === 'dinner' ? 'moon' : 'apple-alt'}"></i> ${mealName}</div>
+                        <div class="meal-info"><strong>${recipe.name}</strong></div>
+                        <div class="meal-calories">${recipe.calories} kcal</div>
+                    `;
+                } else {
+                    slot.innerHTML = `
+                        <div class="meal-name"><i class="fas fa-${meal === 'breakfast' ? 'sun' : meal === 'lunch' ? 'carrot' : meal === 'dinner' ? 'moon' : 'apple-alt'}"></i> ${mealName}</div>
+                        <div class="meal-info meal-empty">➕ Click to add ${mealName}</div>
+                    `;
+                }
+                
+                slot.addEventListener('click', () => openMealAssign(day, meal));
+                dayCard.appendChild(slot);
+            }
+            container.appendChild(dayCard);
+        }
+        updateUI();
+    }
+    
+    function openMealAssign(day, meal) {
+        currentAssignDay = day;
+        currentAssignMeal = meal;
+        const modal = document.getElementById('mealAssignModal');
+        const select = document.getElementById('recipeSelect');
+        if (!select) return;
+        select.innerHTML = '<option value="">-- Select Recipe --</option>';
+        recipes.forEach(recipe => {
+            const option = document.createElement('option');
+            option.value = recipe.id;
+            option.textContent = `${recipe.name} (${recipe.category}) - ${recipe.calories} kcal`;
+            select.appendChild(option);
+        });
+        document.getElementById('assignModalTitle').innerHTML = `Assign meal for ${day} - ${meal}`;
+        modal.style.display = 'flex';
+    }
+    
+    function generateShoppingList() {
+        let ingredientMap = new Map();
+        for (let day of days) {
+            for (let meal of mealTypes) {
+                const recipeId = mealPlan[day]?.[meal];
+                if (recipeId) {
+                    const recipe = recipes.find(r => r.id === recipeId);
+                    if (recipe && recipe.ingredients) {
+                        recipe.ingredients.forEach(ing => {
+                            let ingKey = ing.trim().toLowerCase();
+                            ingredientMap.set(ingKey, (ingredientMap.get(ingKey) || 0) + 1);
+                        });
+                    }
+                }
+            }
+        }
+        
+        let grouped = { Produce: [], Dairy: [], Meat: [], Grains: [], Other: [] };
+        for (let [item, qty] of ingredientMap.entries()) {
+            let category = 'Other';
+            if (item.includes('avocado') || item.includes('lettuce') || item.includes('tomato') || item.includes('berries') || item.includes('banana')) category = 'Produce';
+            else if (item.includes('milk') || item.includes('yogurt') || item.includes('cheese')) category = 'Dairy';
+            else if (item.includes('chicken') || item.includes('salmon') || item.includes('tofu')) category = 'Meat';
+            else if (item.includes('bread') || item.includes('oats') || item.includes('quinoa') || item.includes('rice')) category = 'Grains';
+            grouped[category].push({ name: item, qty: qty });
+        }
+        
+        shoppingCustom.forEach(cust => {
+            grouped.Other.push({ name: cust, qty: 1 });
+        });
+        
+        return grouped;
+    }
+    
+    function renderShoppingModal() {
+        const grouped = generateShoppingList();
+        const container = document.getElementById('shoppingListGrouped');
+        if (!container) return;
+        container.innerHTML = '';
+        
+        for (let [cat, items] of Object.entries(grouped)) {
+            if (items.length === 0) continue;
+            const catDiv = document.createElement('div');
+            catDiv.className = 'shopping-category';
+            catDiv.innerHTML = `<h4>${cat}</h4>`;
+            items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'shopping-item';
+                itemDiv.innerHTML = `
+                    <input type="checkbox" class="shopping-checkbox">
+                    <span>${item.name} ${item.qty > 1 ? `(x${item.qty})` : ''}</span>
+                `;
+                catDiv.appendChild(itemDiv);
+            });
+            container.appendChild(catDiv);
+        }
+    }
+    
+    function renderRecipeLibrary() {
+        const container = document.getElementById('recipeListContainer');
+        if (!container) return;
+        const searchTerm = document.getElementById('recipeSearch')?.value.toLowerCase() || '';
+        let filtered = recipes.filter(r => r.name.toLowerCase().includes(searchTerm) || r.category.toLowerCase().includes(searchTerm));
+        
+        container.innerHTML = '';
+        filtered.forEach(recipe => {
+            const div = document.createElement('div');
+            div.className = 'recipe-item';
+            div.innerHTML = `
+                <div class="recipe-info">
+                    <div class="recipe-name">${recipe.name}</div>
+                    <div class="recipe-category">${recipe.category} • ${recipe.calories} kcal</div>
+                </div>
+                <div class="recipe-actions">
+                    <button class="edit-recipe" data-id="${recipe.id}"><i class="fas fa-edit"></i></button>
+                    <button class="delete-recipe" data-id="${recipe.id}"><i class="fas fa-trash-alt" style="color: #ef4444;"></i></button>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+        
+        document.querySelectorAll('.edit-recipe').forEach(btn => {
+            btn.addEventListener('click', () => editRecipe(btn.dataset.id));
+        });
+        document.querySelectorAll('.delete-recipe').forEach(btn => {
+            btn.addEventListener('click', () => deleteRecipe(btn.dataset.id));
+        });
+    }
+    
+    function deleteRecipe(id) {
+        if (confirm('Delete this recipe?')) {
+            recipes = recipes.filter(r => r.id !== id);
+            for (let day of days) {
+                for (let meal of mealTypes) {
+                    if (mealPlan[day][meal] === id) mealPlan[day][meal] = null;
+                }
+            }
+            saveToStorage();
+            renderWeeklyPlan();
+            renderRecipeLibrary();
+            showToast('Recipe deleted');
+        }
+    }
+    
+    function editRecipe(id) {
+        const recipe = recipes.find(r => r.id === id);
+        if (recipe) {
+            editingRecipeId = id;
+            document.getElementById('formTitle').innerHTML = 'Edit Recipe';
+            document.getElementById('recipeName').value = recipe.name;
+            document.getElementById('recipeCategory').value = recipe.category;
+            document.getElementById('recipeIngredients').value = recipe.ingredients.join(', ');
+            document.getElementById('recipeCalories').value = recipe.calories;
+            document.getElementById('recipeFormModal').style.display = 'flex';
+        }
+    }
+    
+    function saveRecipe() {
+        const name = document.getElementById('recipeName').value.trim();
+        if (!name) return;
+        
+        const recipe = {
+            id: editingRecipeId || genId(),
+            name: name,
+            category: document.getElementById('recipeCategory').value,
+            ingredients: document.getElementById('recipeIngredients').value.split(',').map(i => i.trim()),
+            calories: parseInt(document.getElementById('recipeCalories').value) || 0
+        };
+        
+        if (editingRecipeId) {
+            const index = recipes.findIndex(r => r.id === editingRecipeId);
+            if (index !== -1) recipes[index] = recipe;
+        } else {
+            recipes.push(recipe);
+        }
+        
+        editingRecipeId = null;
+        saveToStorage();
+        renderWeeklyPlan();
+        renderRecipeLibrary();
+        document.getElementById('recipeFormModal').style.display = 'none';
+        showToast('Recipe saved');
+    }
+    
+    function showToast(msg) {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.textContent = msg;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2000);
+    }
+    
+    function resetAll() {
+        if (confirm('Reset all data?')) {
+            localStorage.removeItem('meal_planner_data');
+            location.reload();
+        }
+    }
+    
+    function exportData() {
+        const data = { recipes, mealPlan, shoppingCustom, dailyGoal: document.getElementById('dailyGoalInput').value };
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'meal_planner_backup.json';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Data exported');
+    }
+    
+    // Event Listeners
+    document.getElementById('darkToggleBtn')?.addEventListener('click', () => document.body.classList.toggle('dark'));
+    document.getElementById('manageRecipesBtn')?.addEventListener('click', () => {
+        renderRecipeLibrary();
+        document.getElementById('recipeModal').style.display = 'flex';
+    });
+    document.getElementById('shoppingListBtn')?.addEventListener('click', () => {
+        renderShoppingModal();
+        document.getElementById('shoppingModal').style.display = 'flex';
+    });
+    document.getElementById('printPlanBtn')?.addEventListener('click', () => window.print());
+    document.getElementById('exportDataBtn')?.addEventListener('click', exportData);
+    document.getElementById('resetAllBtn')?.addEventListener('click', resetAll);
+    document.getElementById('addRecipeQuickBtn')?.addEventListener('click', () => {
+        editingRecipeId = null;
+        document.getElementById('formTitle').innerHTML = 'Add New Recipe';
+        document.getElementById('recipeName').value = '';
+        document.getElementById('recipeCategory').value = 'Breakfast';
+        document.getElementById('recipeIngredients').value = '';
+        document.getElementById('recipeCalories').value = '';
+        document.getElementById('recipeFormModal').style.display = 'flex';
+    });
+    document.getElementById('saveRecipeBtn')?.addEventListener('click', saveRecipe);
+    document.getElementById('addCustomItemBtn')?.addEventListener('click', () => {
+        const val = document.getElementById('customItemInput')?.value.trim();
+        if (val) {
+            shoppingCustom.push(val);
+            saveToStorage();
+            renderShoppingModal();
+            if (document.getElementById('customItemInput')) document.getElementById('customItemInput').value = '';
+            showToast('Item added');
+        }
+    });
+    document.getElementById('exportShoppingBtn')?.addEventListener('click', () => {
+        const grouped = generateShoppingList();
+        let text = 'Shopping List\n';
+        for (let [cat, items] of Object.entries(grouped)) {
+            text += `\n${cat}:\n`;
+            items.forEach(i => text += `- ${i.name}\n`);
+        }
+        navigator.clipboard.writeText(text);
+        showToast('Copied to clipboard');
+    });
+    document.getElementById('assignMealConfirmBtn')?.addEventListener('click', () => {
+        const recipeId = document.getElementById('recipeSelect')?.value;
+        if (recipeId && currentAssignDay && currentAssignMeal) {
+            mealPlan[currentAssignDay][currentAssignMeal] = recipeId;
+            saveToStorage();
+            renderWeeklyPlan();
+            showToast('Meal assigned');
+        }
+        document.getElementById('mealAssignModal').style.display = 'none';
+    });
+    document.getElementById('removeMealBtn')?.addEventListener('click', () => {
+        if (currentAssignDay && currentAssignMeal) {
+            mealPlan[currentAssignDay][currentAssignMeal] = null;
+            saveToStorage();
+            renderWeeklyPlan();
+            showToast('Meal removed');
+        }
+        document.getElementById('mealAssignModal').style.display = 'none';
+    });
+    document.getElementById('dailyGoalInput')?.addEventListener('change', () => {
+        saveToStorage();
+        updateUI();
+    });
+    document.getElementById('importTriggerBtn')?.addEventListener('click', () => document.getElementById('importFileInput')?.click());
+    document.getElementById('importFileInput')?.addEventListener('change', (e) => {
+        if (e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    const data = JSON.parse(ev.target.result);
+                    if (data.recipes) recipes = data.recipes;
+                    if (data.mealPlan) mealPlan = data.mealPlan;
+                    if (data.shoppingCustom) shoppingCustom = data.shoppingCustom;
+                    if (data.dailyGoal) document.getElementById('dailyGoalInput').value = data.dailyGoal;
+                    saveToStorage();
+                    renderWeeklyPlan();
+                    showToast('Data imported');
+                } catch (err) { alert('Invalid file'); }
+            };
+            reader.readAsText(e.target.files[0]);
+        }
+        e.target.value = '';
+    });
+    
+    // Close modals
+    document.querySelectorAll('.closeModalBtn, .closeRecipeFormBtn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+            editingRecipeId = null;
+        });
+    });
+    document.getElementById('recipeSearch')?.addEventListener('input', renderRecipeLibrary);
+    document.getElementById('addRecipeModalBtn')?.addEventListener('click', () => {
+        document.getElementById('recipeModal').style.display = 'none';
+        editingRecipeId = null;
+        document.getElementById('formTitle').innerHTML = 'Add New Recipe';
+        document.getElementById('recipeName').value = '';
+        document.getElementById('recipeCategory').value = 'Breakfast';
+        document.getElementById('recipeIngredients').value = '';
+        document.getElementById('recipeCalories').value = '';
+        document.getElementById('recipeFormModal').style.display = 'flex';
+    });
+    
+    // Load initial data
+    loadFromStorage();
+    renderWeeklyPlan();
+});
+</script>
+
+<!-- Modals -->
+<div id="recipeModal" class="modal">
+    <div class="modal-content">
+        <h3><i class="fas fa-database"></i> Recipe Library</h3>
+        <input type="text" id="recipeSearch" placeholder="Search recipes..." style="width:100%; padding:10px; margin-bottom:15px; border-radius:40px;">
+        <div id="recipeListContainer" style="max-height: 300px; overflow-y: auto;"></div>
+        <button id="addRecipeModalBtn" class="btn btn-primary" style="width:100%; margin-top:15px;"><i class="fas fa-plus"></i> Add New Recipe</button>
+        <button class="btn btn-secondary closeModalBtn" style="width:100%; margin-top:10px;">Close</button>
+    </div>
+</div>
+
+<div id="shoppingModal" class="modal">
+    <div class="modal-content">
+        <h3><i class="fas fa-shopping-cart"></i> Shopping List</h3>
+        <div id="shoppingListGrouped" style="max-height: 400px; overflow-y: auto;"></div>
+        <div class="custom-item-input">
+            <input type="text" id="customItemInput" placeholder="Add custom item...">
+            <button id="addCustomItemBtn" class="btn btn-primary">Add</button>
+        </div>
+        <button id="exportShoppingBtn" class="btn btn-secondary" style="width:100%; margin-top:10px;"><i class="fas fa-file-alt"></i> Copy as Text</button>
+        <button class="btn btn-secondary closeModalBtn" style="width:100%; margin-top:10px;">Close</button>
+    </div>
+</div>
+
+<div id="mealAssignModal" class="modal">
+    <div class="modal-content">
+        <h3 id="assignModalTitle">Assign Meal</h3>
+        <select id="recipeSelect" style="width:100%; padding:12px; margin:15px 0; border-radius:40px;"></select>
+        <button id="assignMealConfirmBtn" class="btn btn-primary" style="width:100%;"><i class="fas fa-check"></i> Assign</button>
+        <button id="removeMealBtn" class="btn btn-danger" style="width:100%; margin-top:10px;"><i class="fas fa-trash-alt"></i> Remove Meal</button>
+        <button class="btn btn-secondary closeModalBtn" style="width:100%; margin-top:10px;">Cancel</button>
+    </div>
+</div>
+
+<div id="recipeFormModal" class="modal">
+    <div class="modal-content">
+        <h3 id="formTitle">Add New Recipe</h3>
+        <input type="text" id="recipeName" placeholder="Recipe Name">
+        <select id="recipeCategory">
+            <option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snacks</option>
+        </select>
+        <input type="text" id="recipeIngredients" placeholder="Ingredients (comma separated)">
+        <input type="number" id="recipeCalories" placeholder="Calories">
+        <button id="saveRecipeBtn" class="btn btn-primary" style="width:100%;"><i class="fas fa-save"></i> Save Recipe</button>
+        <button class="btn btn-secondary closeRecipeFormBtn" style="width:100%; margin-top:10px;">Cancel</button>
+    </div>
+</div>
+
+<div id="importFileInput" type="file" accept=".json" style="display: none;"></div>
+<button id="importTriggerBtn" style="display: none;"></button>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>✨ Free Online Tools</h3>
+            <p>Your one-stop destination for free, fast, and accurate online calculators and utilities.</p>
+        </div>
+        <div class="footer-col">
+            <h4>📄 Quick Links</h4>
+            <a href="index.html">🏠 Home</a>
+            <a href="about.html">ℹ️ About Us</a>
+            <a href="contact.html">📧 Contact Us</a>
+            <a href="privacy-policy.html">🔒 Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>⭐ Popular Tools</h4>
+            <a href="age-calculator.html">📅 Age Calculator</a>
+            <a href="calorie-calculator.html">🔥 Calorie Calculator</a>
+            <a href="meal-planner.html">🍽️ Meal Planner</a>
+            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>🔧 All Tools</h4>
+            <a href="emi-calculator.html">🏦 EMI Calculator</a>
+            <a href="loan-calculator.html">📋 Loan Calculator</a>
+            <a href="word-counter.html">🔢 Word Counter</a>
+            <a href="password-generator.html">🔐 Password Generator</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 <strong>Free Online Tools</strong>. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+.dark {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+.dark .tool-card-large, .dark .other-tools, .dark .article-section, .dark .faq-section, .dark .modal-content {
+    background: #1f2937;
+    color: #e2e8f0;
+}
+.dark .day-card, .dark .stats-card, .dark .chart-container, .dark .meal-slot {
+    background: #2d3748;
+    border-color: #4b5563;
+}
+.dark .btn-secondary {
+    background: #374151;
+    color: #e2e8f0;
+}
+.dark .btn-secondary:hover {
+    background: #4b5563;
+}
+.dark input, .dark select {
+    background: #374151;
+    color: white;
+    border-color: #4b5563;
+}
+</style>
+
+<script>
+// Dropdown JavaScript
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    const dropdownContent = document.getElementById('dropdownContent');
+    if (!dropdown || !dropBtn || !dropdownContent) return;
+    function closeDropdown() { dropdown.classList.remove('open'); document.querySelectorAll('.dropdown-category.active').forEach(cat => { cat.classList.remove('active'); const targetId = cat.getAttribute('data-cat'); if(targetId) { const toolsDiv = document.getElementById(targetId + 'Tools'); if(toolsDiv) toolsDiv.classList.remove('show'); } }); }
+    function openDropdown() { dropdown.classList.add('open'); }
+    function toggleDropdown(e) { e.stopPropagation(); if (dropdown.classList.contains('open')) closeDropdown(); else openDropdown(); }
+    dropBtn.addEventListener('click', toggleDropdown);
+    dropdownContent.addEventListener('click', e => e.stopPropagation());
+    document.addEventListener('click', function(event) { if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) closeDropdown(); });
+    document.querySelectorAll('.dropdown-category').forEach(category => { category.addEventListener('click', function(e) { e.stopPropagation(); const catId = this.getAttribute('data-cat'); if (catId) { const toolsDiv = document.getElementById(catId + 'Tools'); if (toolsDiv) { this.classList.toggle('active'); toolsDiv.classList.toggle('show'); } } }); });
+})();
+
+// Page Transition
+document.addEventListener('DOMContentLoaded', function() {
+    const internalLinks = document.querySelectorAll('.tool-link, .home-link, .footer-col a, .nav-links a, .logo a');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#' || href === 'javascript:void(0)' || href.startsWith('http')) return;
+            e.preventDefault();
+            document.body.classList.add('page-transition');
+            setTimeout(() => { window.location.href = href; }, 250);
+        });
+    });
+});
+</script>
+</body>
+</html>
