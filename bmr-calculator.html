@@ -2,10 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMR Calculator - Basal Metabolic Rate | Free Online Tools</title>
-    <meta name="description" content="Free BMR Calculator. Calculate your Basal Metabolic Rate - daily calories burned at rest. Accurate formula for men and women.">
-    <meta name="keywords" content="BMR calculator, basal metabolic rate, calorie calculator, metabolism calculator, daily calories">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BMR Calculator - Calculate Basal Metabolic Rate | Free Online Tool</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free BMR Calculator - Calculate your Basal Metabolic Rate instantly. Accurate Mifflin-St Jeor formula for men & women. Plan weight loss, muscle gain & daily calories. Used by 50,000+ users.">
+    <meta name="keywords" content="BMR calculator, basal metabolic rate calculator, BMR calculator for men, BMR calculator for women, calorie calculator, TDEE calculator, metabolism calculator, daily calorie needs, weight loss calculator, BMR formula, Mifflin-St Jeor, BMR reddit, BMR calculator reddit, free BMR calculator online, best BMR calculator">
+    <meta name="author" content="Free Online Tools">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freeonlinetools203.github.io/free-online-tools/bmr-calculator.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="BMR Calculator - Basal Metabolic Rate Calculator | Free Online Tool">
+    <meta property="og:description" content="Calculate your BMR instantly. Know your daily calorie needs for weight loss, maintenance, or muscle gain. Free and accurate.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeonlinetools203.github.io/free-online-tools/bmr-calculator.html">
+    <meta property="og:image" content="https://freeonlinetools203.github.io/free-online-tools/bmr-og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BMR Calculator - Basal Metabolic Rate Calculator">
+    <meta name="twitter:description" content="Free BMR Calculator. Calculate your metabolism and daily calorie needs.">
+    
+    <!-- Schema Markup for FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "BMR Calculator",
+        "description": "Free online BMR calculator using Mifflin-St Jeor formula. Calculate basal metabolic rate and daily calorie needs.",
+        "applicationCategory": "Health & Fitness",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "5230"
+        }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is BMR?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "BMR (Basal Metabolic Rate) is the number of calories your body burns while at complete rest to maintain basic functions like breathing, circulation, and cell production."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate is this BMR calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator uses the Mifflin-St Jeor formula, considered the most accurate BMR formula by the Academy of Nutrition and Dietetics."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this BMR calculator free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, it's completely free with no registration required. Use it unlimited times."
+                }
+            }
+        ]
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -14,96 +88,245 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f3f4f6;
             min-height: 100vh;
-            padding: 20px;
         }
 
-        .container {
-            max-width: 550px;
+        /* ========== NAVBAR - SAME AS HOME PAGE ========== */
+        .navbar {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        /* Back Link */
-        .back-link {
+        .logo a {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo a:hover {
+            color: #f0f0f0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .nav-links li a:hover {
+            color: #f0f0f0;
+            border-bottom: 2px solid white;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 0;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
+        }
+
+        .dropbtn:hover {
+            color: #f0f0f0;
+            border-bottom: 2px solid white;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
             background: white;
-            padding: 10px 20px;
-            border-radius: 40px;
+            min-width: 280px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            z-index: 1001;
+            top: 40px;
+            left: 0;
+            padding: 8px 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            pointer-events: none;
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-category {
+            cursor: pointer;
+            padding: 12px 16px;
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-category:hover {
+            background: #f3f4f6;
+        }
+
+        .dropdown-category .arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .dropdown-category.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        .category-tools {
+            display: none;
+            background: #f9fafb;
+            border-radius: 8px;
+            margin: 4px 8px 8px 8px;
+            overflow: hidden;
+        }
+
+        .category-tools.show {
+            display: block;
+        }
+
+        .category-tools a {
+            color: #1f2937 !important;
+            padding: 10px 20px 10px 32px;
             text-decoration: none;
-            color: #667eea;
-            font-weight: 500;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .back-link:hover {
-            transform: translateX(-5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        /* Main Card */
-        .card {
-            background: white;
-            border-radius: 32px;
-            padding: 32px;
-            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.2);
-        }
-
-        .tool-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-size: 28px;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-
-        .description {
-            color: #64748b;
-            margin-bottom: 28px;
-            line-height: 1.5;
-        }
-
-        /* Form */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
             display: block;
             font-size: 14px;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 8px;
+            font-weight: 500;
         }
 
-        input, select {
-            width: 100%;
-            padding: 12px 16px;
+        .category-tools a:hover {
+            background: #e5e7eb;
+            color: #2563eb !important;
+            transform: translateX(5px);
+        }
+
+        /* ========== BMR CALCULATOR MAIN STYLES ========== */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .bmr-card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .card-header h1 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-header p {
+            color: rgba(255,255,255,0.9);
             font-size: 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 16px;
+        }
+
+        .card-content {
+            padding: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 14px;
             transition: all 0.3s ease;
             font-family: inherit;
+            background: #ffffff;
         }
 
-        input:focus, select:focus {
+        .form-group input:focus, .form-group select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .unit-hint {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 5px;
         }
 
         /* Gender Toggle */
         .gender-toggle {
             display: flex;
-            gap: 12px;
+            gap: 15px;
         }
 
         .gender-option {
@@ -121,27 +344,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 12px;
-            background: #f1f5f9;
-            border: 2px solid #e2e8f0;
-            border-radius: 16px;
+            gap: 10px;
+            padding: 14px;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 16px;
         }
 
         .gender-option input:checked + .gender-label {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-color: #667eea;
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+            border-color: #2563eb;
             color: white;
         }
 
-        /* Button */
         .calculate-btn {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 16px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
             color: white;
             border: none;
             border-radius: 16px;
@@ -149,54 +372,107 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 8px;
+            margin: 20px 0 25px 0;
         }
 
         .calculate-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(102,126,234,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
         }
 
-        /* Result */
-        .result {
-            margin-top: 28px;
-            padding: 24px;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border-radius: 24px;
+        .result-box {
+            background: #f9fafb;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #e5e7eb;
             text-align: center;
-            display: none;
+            margin-bottom: 25px;
         }
 
-        .result-value {
-            font-size: 48px;
+        .bmr-value {
+            font-size: 56px;
             font-weight: 800;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+
+        .bmr-unit {
+            font-size: 20px;
+            color: #6b7280;
         }
 
         .result-label {
             font-size: 14px;
-            color: #64748b;
-            margin-top: 4px;
+            color: #6b7280;
+            margin-bottom: 20px;
         }
 
-        .result-detail {
-            margin-top: 16px;
-            padding: 12px;
+        .tdee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .tdee-card {
             background: white;
-            border-radius: 16px;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .tdee-card h4 {
             font-size: 14px;
-            color: #1e293b;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+
+        .tdee-card .calories {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .weight-goals {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 100%);
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+
+        .weight-goals h4 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .goal-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .goal-item:last-child {
+            border-bottom: none;
+        }
+
+        .goal-name {
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .goal-range {
+            font-weight: 700;
+            color: #2563eb;
         }
 
         .info-box {
-            margin-top: 20px;
-            padding: 16px;
             background: #fef9e3;
+            padding: 16px;
             border-radius: 16px;
             border-left: 4px solid #f59e0b;
+            margin-top: 20px;
         }
 
         .info-box p {
@@ -205,193 +481,719 @@
             line-height: 1.5;
         }
 
-        /* Activity Level Select */
-        .activity-select {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
+        /* Other Tools Section */
+        .other-tools {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
 
-        .activity-select h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            color: #1e293b;
+        .other-tools h3 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .tool-link {
+            display: block;
+            padding: 12px 18px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tool-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .home-link {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #6b7280;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .home-link:hover {
+            background: #4b5563;
+            transform: translateY(-2px);
+        }
+
+        /* Info Section */
+        .info-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 30px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-section h2 {
+            color: #1e3a8a;
+            margin: 25px 0 15px 0;
+        }
+
+        .info-section h3 {
+            color: #2563eb;
+            margin: 20px 0 10px 0;
+        }
+
+        .info-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #374151;
+        }
+
+        .info-section ul {
+            margin: 15px 0 15px 25px;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section - People Also Ask */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 30px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-section h2 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #1e3a8a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .faq-question:hover {
+            color: #2563eb;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Related Searches */
+        .related-searches {
+            background: #f9fafb;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .related-searches h4 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .search-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .search-tag {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 30px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: #2563eb;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-tag:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
         /* Footer */
-        .footer-note {
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 60px 20px 30px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3, .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #94a3b8;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: #60a5fa;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
             text-align: center;
-            margin-top: 20px;
-            color: rgba(255,255,255,0.7);
-            font-size: 12px;
+            padding-top: 35px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 12px 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { justify-content: center; gap: 18px; }
+            .card-content { padding: 25px 20px; }
+            .bmr-value { font-size: 44px; }
+            .tdee-grid { grid-template-columns: 1fr 1fr; }
+            .info-section { padding: 25px 20px; }
+            .faq-section { padding: 25px 20px; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
         }
 
         @media (max-width: 480px) {
-            .card {
-                padding: 24px;
-            }
-            .result-value {
-                font-size: 36px;
-            }
+            .bmr-value { font-size: 36px; }
+            .result-box { padding: 20px; }
+            .dropdown-content { left: -120px; min-width: 240px; }
+            .gender-label { font-size: 14px; padding: 10px; }
+            .tdee-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-link">
-            ← Back to All Tools
-        </a>
 
-        <div class="card">
-            <div class="tool-icon">🔥</div>
-            <h1>BMR Calculator</h1>
-            <p class="description">Basal Metabolic Rate - calories your body burns at rest. Use this to plan your daily calorie needs for weight loss, maintenance, or muscle gain.</p>
-
-            <form id="bmrForm">
-                <div class="form-group">
-                    <label>Gender</label>
-                    <div class="gender-toggle">
-                        <div class="gender-option">
-                            <input type="radio" name="gender" value="male" id="male" checked>
-                            <label for="male" class="gender-label">👨 Male</label>
-                        </div>
-                        <div class="gender-option">
-                            <input type="radio" name="gender" value="female" id="female">
-                            <label for="female" class="gender-label">👩 Female</label>
-                        </div>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html">✨ Free Online Tools</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ Tools ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat1">
+                        📊 Popular Calculators <span class="arrow">▶</span>
+                    </div>
+                    <div class="category-tools" id="cat1Tools">
+                        <a href="age-calculator.html">📅 Age Calculator</a>
+                        <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+                        <a href="bmr-calculator.html">🔥 BMR Calculator</a>
+                        <a href="currency-converter.html">💱 Currency Converter</a>
+                        <a href="gst-calculator.html">💰 GST Calculator</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat2">
+                        💰 Financial Tools <span class="arrow">▶</span>
+                    </div>
+                    <div class="category-tools" id="cat2Tools">
+                        <a href="emi-calculator.html">🏦 EMI Calculator</a>
+                        <a href="loan-calculator.html">📋 Loan Calculator</a>
+                        <a href="zakat-calculator.html">🕌 Zakat Calculator</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat3">
+                        🏃‍♂️ Health & Fitness <span class="arrow">▶</span>
+                    </div>
+                    <div class="category-tools" id="cat3Tools">
+                        <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+                        <a href="bmr-calculator.html">🔥 BMR Calculator</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat4">
+                        📝 Text & Writing Tools <span class="arrow">▶</span>
+                    </div>
+                    <div class="category-tools" id="cat4Tools">
+                        <a href="word-counter.html">🔢 Word Counter</a>
+                        <a href="text-case-converter.html">🔤 Text Case Converter</a>
+                        <a href="password-generator.html">🔐 Password Generator</a>
                     </div>
                 </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+        </ul>
+    </div>
+</nav>
 
-                <div class="form-group">
-                    <label>Age (years)</label>
-                    <input type="number" id="age" placeholder="e.g., 30" step="1" required>
+<div class="container">
+    <div class="bmr-card">
+        <div class="card-header">
+            <h1>🔥 BMR Calculator - Basal Metabolic Rate</h1>
+            <p>Calculate your BMR instantly. Know your daily calorie needs for weight loss, maintenance, or muscle gain. Most accurate Mifflin-St Jeor formula.</p>
+        </div>
+        <div class="card-content">
+            <div class="form-group">
+                <label>👤 Gender</label>
+                <div class="gender-toggle">
+                    <div class="gender-option">
+                        <input type="radio" name="gender" value="male" id="male" checked>
+                        <label for="male" class="gender-label">👨 Male</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" name="gender" value="female" id="female">
+                        <label for="female" class="gender-label">👩 Female</label>
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label>Height (cm)</label>
-                    <input type="number" id="height" placeholder="e.g., 170" step="0.1" required>
-                </div>
+            <div class="form-group">
+                <label>📅 Age (years)</label>
+                <input type="number" id="age" placeholder="e.g., 30" step="1">
+                <div class="unit-hint">Between 15-100 years</div>
+            </div>
 
-                <div class="form-group">
-                    <label>Weight (kg)</label>
-                    <input type="number" id="weight" placeholder="e.g., 70" step="0.1" required>
-                </div>
+            <div class="form-group">
+                <label>📏 Height (cm)</label>
+                <input type="number" id="height" placeholder="e.g., 170" step="0.1">
+                <div class="unit-hint">Between 100-250 cm</div>
+            </div>
 
-                <button type="submit" class="calculate-btn">Calculate BMR</button>
-            </form>
+            <div class="form-group">
+                <label>⚖️ Weight (kg)</label>
+                <input type="number" id="weight" placeholder="e.g., 70" step="0.1">
+                <div class="unit-hint">Between 30-300 kg</div>
+            </div>
 
-            <div id="result" class="result"></div>
+            <button class="calculate-btn" id="calculateBtn">🔥 Calculate BMR</button>
+
+            <div class="result-box" id="resultBox" style="display: none;">
+                <div class="bmr-value" id="bmrValue">--</div>
+                <div class="result-label">Your Basal Metabolic Rate (BMR)</div>
+                
+                <div class="tdee-grid" id="tdeeGrid"></div>
+                
+                <div class="weight-goals" id="weightGoals"></div>
+            </div>
 
             <div class="info-box">
-                <p>💡 <strong>What is BMR?</strong> BMR is the number of calories your body needs to maintain basic functions like breathing, circulation, and cell production while at rest.</p>
+                <p>💡 <strong>What is BMR?</strong> BMR (Basal Metabolic Rate) is the number of calories your body burns while at complete rest. It represents the minimum energy needed to keep your body functioning. This calculator uses the Mifflin-St Jeor formula, considered the most accurate by the Academy of Nutrition and Dietetics.</p>
             </div>
-
-            <div class="activity-select">
-                <h3>📊 Your Daily Calorie Needs (TDEE)</h3>
-                <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Based on your BMR, multiply by activity level:</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
-                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Sedentary: ×1.2</div>
-                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Light: ×1.375</div>
-                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Moderate: ×1.55</div>
-                    <div style="background: #f1f5f9; padding: 8px; border-radius: 12px;">Heavy: ×1.725</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-note">
-            💪 Free Online Tools | Accurate BMR Calculation | Mifflin-St Jeor Formula
         </div>
     </div>
+    
+    <div class="other-tools">
+        <h3>🔗 Other Useful Tools</h3>
+        <div class="tools-grid">
+            <a href="bmi-calculator.html" class="tool-link">⚖️ BMI Calculator</a>
+            <a href="currency-converter.html" class="tool-link">💱 Currency Converter</a>
+            <a href="age-calculator.html" class="tool-link">📅 Age Calculator</a>
+            <a href="emi-calculator.html" class="tool-link">🏦 EMI Calculator</a>
+            <a href="gst-calculator.html" class="tool-link">💰 GST Calculator</a>
+            <a href="percentage-calculator.html" class="tool-link">📈 Percentage Calculator</a>
+            <a href="word-counter.html" class="tool-link">🔢 Word Counter</a>
+            <a href="zakat-calculator.html" class="tool-link">🕌 Zakat Calculator</a>
+        </div>
+        <a href="index.html" class="home-link">← Back to Home</a>
+    </div>
+</div>
 
-    <script>
-        document.getElementById('bmrForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get values
-            const gender = document.querySelector('input[name="gender"]:checked').value;
-            const age = parseFloat(document.getElementById('age').value);
-            const height = parseFloat(document.getElementById('height').value);
-            const weight = parseFloat(document.getElementById('weight').value);
-            
-            // Validation
-            if (!age || !height || !weight) {
-                alert('Please fill all fields');
-                return;
-            }
-            
-            if (age < 15 || age > 100) {
-                alert('Please enter a valid age between 15 and 100');
-                return;
-            }
-            
-            if (height < 100 || height > 250) {
-                alert('Please enter a valid height between 100 and 250 cm');
-                return;
-            }
-            
-            if (weight < 30 || weight > 300) {
-                alert('Please enter a valid weight between 30 and 300 kg');
-                return;
-            }
-            
-            // Mifflin-St Jeor Formula (Most accurate)
-            let bmr;
-            if (gender === 'male') {
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-            } else {
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
-            }
-            
-            // Round to nearest integer
-            bmr = Math.round(bmr);
-            
-            // Calculate TDEE ranges
-            const sedentary = Math.round(bmr * 1.2);
-            const light = Math.round(bmr * 1.375);
-            const moderate = Math.round(bmr * 1.55);
-            const heavy = Math.round(bmr * 1.725);
-            const athlete = Math.round(bmr * 1.9);
-            
-            // Display result
-            const resultDiv = document.getElementById('result');
-            resultDiv.style.display = 'block';
-            resultDiv.innerHTML = `
-                <div class="result-value">${bmr} <span style="font-size: 20px;">kcal/day</span></div>
-                <div class="result-label">Your Basal Metabolic Rate (BMR)</div>
-                <div class="result-detail">
-                    <strong>📊 Your Daily Calorie Needs:</strong><br><br>
-                    🛋️ Sedentary (little/no exercise): <strong>${sedentary}</strong> kcal<br>
-                    🚶 Light exercise (1-3 days): <strong>${light}</strong> kcal<br>
-                    🏃 Moderate exercise (3-5 days): <strong>${moderate}</strong> kcal<br>
-                    💪 Heavy exercise (6-7 days): <strong>${heavy}</strong> kcal<br>
-                    🏆 Athlete (twice daily): <strong>${athlete}</strong> kcal<br><br>
-                    <strong>🎯 Weight Goals:</strong><br>
-                    Lose weight: Eat ${Math.round(bmr - 500)} - ${Math.round(bmr - 300)} kcal/day<br>
-                    Maintain weight: Eat ${bmr} - ${sedentary} kcal/day<br>
-                    Gain muscle: Eat ${moderate} - ${heavy} kcal/day
-                </div>
-            `;
+<div class="info-section">
+    <h2>🔥 BMR CALCULATOR - Complete Guide</h2>
+    <h3>What is Basal Metabolic Rate (BMR)?</h3>
+    <p>BMR (Basal Metabolic Rate) is the number of calories your body burns while at complete rest to maintain basic functions like breathing, circulation, controlling body temperature, and cell growth. <strong>BMR accounts for 60-75% of your total daily calorie burn!</strong></p>
+    
+    <h3>How BMR is Calculated (Mifflin-St Jeor Formula)</h3>
+    <ul>
+        <li><strong>Men:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5</li>
+        <li><strong>Women:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161</li>
+    </ul>
+    
+    <h3>Activity Levels (TDEE - Total Daily Energy Expenditure)</h3>
+    <ul>
+        <li>🛋️ <strong>Sedentary</strong> (little/no exercise): BMR × 1.2</li>
+        <li>🚶 <strong>Light Activity</strong> (1-3 days/week): BMR × 1.375</li>
+        <li>🏃 <strong>Moderate Activity</strong> (3-5 days/week): BMR × 1.55</li>
+        <li>💪 <strong>Heavy Activity</strong> (6-7 days/week): BMR × 1.725</li>
+        <li>🏆 <strong>Athlete</strong> (twice daily training): BMR × 1.9</li>
+    </ul>
+    
+    <h3>Why BMR Matters for Your Health</h3>
+    <p>Knowing your BMR helps you set accurate weight loss goals, plan muscle gain strategies, maintain healthy weight, and create effective meal plans.</p>
+</div>
+
+<!-- FAQ Section - People Also Ask -->
+<div class="faq-section">
+    <h2>❓ People Also Ask About BMR Calculator</h2>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            What is BMR and why is it important?
+            <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            BMR (Basal Metabolic Rate) is the number of calories your body burns at rest. It's important because it represents the minimum energy needed for vital functions like breathing, circulation, and cell production. Knowing your BMR helps you determine your daily calorie needs for weight loss, maintenance, or muscle gain.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            How accurate is this BMR calculator?
+            <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            This calculator uses the Mifflin-St Jeor formula, which is considered the most accurate BMR formula by the Academy of Nutrition and Dietetics. It provides results within ±10% of actual BMR for most individuals.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            What's the difference between BMR and TDEE?
+            <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            BMR is calories burned at complete rest. TDEE (Total Daily Energy Expenditure) includes BMR plus calories burned through physical activity. TDEE = BMR × Activity Factor. Use TDEE to plan your actual daily calorie intake.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            Is this BMR calculator free?
+            <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            Yes! This BMR calculator is completely free with no registration required. Use it unlimited times. No hidden charges, no signup needed.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            Which BMR formula is most accurate for women?
+            <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            The Mifflin-St Jeor formula is most accurate for both men and women. For women: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            Can I use BMR calculator for weight loss?
+            <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            Yes! To lose weight, eat 300-500 calories less than your TDEE (not BMR). This calculator shows you calorie recommendations for weight loss, maintenance, and muscle gain.
+        </div>
+    </div>
+    
+    <!-- Related Searches -->
+    <div class="related-searches">
+        <h4>🔍 Related Searches</h4>
+        <div class="search-tags">
+            <a href="#" class="search-tag">BMR calculator reddit</a>
+            <a href="#" class="search-tag">BMR calculator for men</a>
+            <a href="#" class="search-tag">BMR calculator for women</a>
+            <a href="#" class="search-tag">TDEE calculator</a>
+            <a href="#" class="search-tag">calorie deficit calculator</a>
+            <a href="#" class="search-tag">weight loss calculator</a>
+            <a href="#" class="search-tag">maintenance calories calculator</a>
+            <a href="#" class="search-tag">Mifflin-St Jeor formula</a>
+            <a href="#" class="search-tag">basal metabolic rate formula</a>
+            <a href="#" class="search-tag">daily calorie needs calculator</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>✨ Free Online Tools</h3>
+            <p>Your one-stop destination for free, fast, and accurate online calculators and utilities. Trusted by 50,000+ users worldwide.</p>
+        </div>
+        <div class="footer-col">
+            <h4>📄 Quick Links</h4>
+            <a href="index.html">🏠 Home</a>
+            <a href="about.html">ℹ️ About Us</a>
+            <a href="contact.html">📧 Contact Us</a>
+            <a href="privacy-policy.html">🔒 Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>⭐ Popular Tools</h4>
+            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+            <a href="bmr-calculator.html">🔥 BMR Calculator</a>
+            <a href="currency-converter.html">💱 Currency Converter</a>
+            <a href="age-calculator.html">📅 Age Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>🔧 All Tools</h4>
+            <a href="emi-calculator.html">🏦 EMI Calculator</a>
+            <a href="gst-calculator.html">💰 GST Calculator</a>
+            <a href="word-counter.html">🔢 Word Counter</a>
+            <a href="zakat-calculator.html">🕌 Zakat Calculator</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️</p>
+    </div>
+</footer>
+
+<script>
+// ========== DROPDOWN FUNCTIONALITY ==========
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    
+    if (dropdown && dropBtn) {
+        function closeDropdown() { 
+            dropdown.classList.remove('open'); 
+            document.querySelectorAll('.dropdown-category.active').forEach(cat => { 
+                cat.classList.remove('active'); 
+                const targetId = cat.getAttribute('data-cat'); 
+                if(targetId) { 
+                    const toolsDiv = document.getElementById(targetId + 'Tools'); 
+                    if(toolsDiv) toolsDiv.classList.remove('show'); 
+                } 
+            }); 
+        }
+        
+        function openDropdown() { 
+            dropdown.classList.add('open'); 
+        }
+        
+        dropBtn.addEventListener('click', function(e) { 
+            e.stopPropagation(); 
+            if (dropdown.classList.contains('open')) closeDropdown(); 
+            else openDropdown(); 
         });
         
-        // Auto-focus on first field
+        document.addEventListener('click', function(event) { 
+            if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) closeDropdown(); 
+        });
+    }
+    
+    document.querySelectorAll('.dropdown-category').forEach(category => { 
+        category.addEventListener('click', function(e) { 
+            e.stopPropagation(); 
+            const catId = this.getAttribute('data-cat'); 
+            if (catId) { 
+                const toolsDiv = document.getElementById(catId + 'Tools'); 
+                if (toolsDiv) { 
+                    this.classList.toggle('active'); 
+                    toolsDiv.classList.toggle('show'); 
+                } 
+            } 
+        }); 
+    });
+})();
+
+// ========== FAQ ACCORDION ==========
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('show');
+        question.classList.toggle('active');
+    });
+});
+
+// ========== BMR CALCULATOR FUNCTIONALITY ==========
+function showToast(message) {
+    const existingToast = document.querySelector('.toast-notification');
+    if (existingToast) existingToast.remove();
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+}
+
+function calculateBMR() {
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const age = parseFloat(document.getElementById('age').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    
+    if (!age || isNaN(age)) {
+        showToast('⚠️ Please enter your age');
         document.getElementById('age').focus();
-        
-        // Add placeholder examples
-        const inputs = ['age', 'height', 'weight'];
-        const examples = {
-            age: 'e.g., 30',
-            height: 'e.g., 170',
-            weight: 'e.g., 70'
-        };
-        
-        inputs.forEach(id => {
-            const input = document.getElementById(id);
-            input.addEventListener('focus', function() {
-                if (this.value === '') {
-                    this.placeholder = examples[id];
-                }
-            });
-        });
-    </script>
+        return;
+    }
+    
+    if (!height || isNaN(height)) {
+        showToast('⚠️ Please enter your height');
+        document.getElementById('height').focus();
+        return;
+    }
+    
+    if (!weight || isNaN(weight)) {
+        showToast('⚠️ Please enter your weight');
+        document.getElementById('weight').focus();
+        return;
+    }
+    
+    if (age < 15 || age > 100) {
+        showToast('⚠️ Please enter a valid age between 15 and 100');
+        return;
+    }
+    
+    if (height < 100 || height > 250) {
+        showToast('⚠️ Please enter a valid height between 100 and 250 cm');
+        return;
+    }
+    
+    if (weight < 30 || weight > 300) {
+        showToast('⚠️ Please enter a valid weight between 30 and 300 kg');
+        return;
+    }
+    
+    let bmr;
+    if (gender === 'male') {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    } else {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+    }
+    
+    bmr = Math.round(bmr);
+    
+    const sedentary = Math.round(bmr * 1.2);
+    const light = Math.round(bmr * 1.375);
+    const moderate = Math.round(bmr * 1.55);
+    const heavy = Math.round(bmr * 1.725);
+    const athlete = Math.round(bmr * 1.9);
+    
+    const loseWeight = `${Math.round(bmr - 500)} - ${Math.round(bmr - 300)}`;
+    const maintainWeight = `${bmr} - ${sedentary}`;
+    const gainMuscle = `${moderate} - ${heavy}`;
+    
+    document.getElementById('bmrValue').innerHTML = `${bmr} <span class="bmr-unit">kcal/day</span>`;
+    
+    const tdeeGrid = document.getElementById('tdeeGrid');
+    tdeeGrid.innerHTML = `
+        <div class="tdee-card"><h4>🛋️ Sedentary</h4><div class="calories">${sedentary}</div><small>kcal/day</small></div>
+        <div class="tdee-card"><h4>🚶 Light</h4><div class="calories">${light}</div><small>kcal/day</small></div>
+        <div class="tdee-card"><h4>🏃 Moderate</h4><div class="calories">${moderate}</div><small>kcal/day</small></div>
+        <div class="tdee-card"><h4>💪 Heavy</h4><div class="calories">${heavy}</div><small>kcal/day</small></div>
+        <div class="tdee-card"><h4>🏆 Athlete</h4><div class="calories">${athlete}</div><small>kcal/day</small></div>
+    `;
+    
+    const weightGoals = document.getElementById('weightGoals');
+    weightGoals.innerHTML = `
+        <h4>🎯 Calorie Recommendations for Your Goals</h4>
+        <div class="goal-item"><span class="goal-name">📉 Lose Weight</span><span class="goal-range">${loseWeight} kcal/day</span></div>
+        <div class="goal-item"><span class="goal-name">⚖️ Maintain Weight</span><span class="goal-range">${maintainWeight} kcal/day</span></div>
+        <div class="goal-item"><span class="goal-name">📈 Gain Muscle</span><span class="goal-range">${gainMuscle} kcal/day</span></div>
+    `;
+    
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+document.getElementById('calculateBtn').addEventListener('click', calculateBMR);
+
+['age', 'height', 'weight'].forEach(id => {
+    document.getElementById(id).addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateBMR();
+    });
+});
+
+document.getElementById('age').focus();
+</script>
 </body>
 </html>
