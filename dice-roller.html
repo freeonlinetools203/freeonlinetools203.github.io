@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Dice Roller - Professional Dice Rolling Tool | Free Online Tools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1E3A8A 0%, #0D9488 100%);
+            min-height: 100vh;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #0f172a 0%, #0f766e 100%);
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 24px 20px 32px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        body.dark-mode .card {
+            background: #1e293b;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        h1 {
+            color: #1E3A8A;
+            font-size: 24px;
+        }
+
+        body.dark-mode h1 {
+            color: #0D9488;
+        }
+
+        .sub {
+            color: #0D9488;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        body.dark-mode .sub {
+            color: #5eead4;
+        }
+
+        .dark-toggle {
+            background: #f1f5f9;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        body.dark-mode .dark-toggle {
+            background: #334155;
+            color: white;
+        }
+
+        /* Dice Settings */
+        .settings {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        body.dark-mode .settings {
+            background: #334155;
+        }
+
+        .settings-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .setting-box {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .setting-label {
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 8px;
+            font-size: 13px;
+            display: block;
+        }
+
+        body.dark-mode .setting-label {
+            color: #5eead4;
+        }
+
+        .setting-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            padding: 5px 10px;
+        }
+
+        body.dark-mode .setting-control {
+            background: #1e293b;
+            border-color: #0D9488;
+        }
+
+        .setting-control button {
+            background: #0D9488;
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .setting-control button:active {
+            transform: scale(0.95);
+        }
+
+        .setting-control span {
+            font-size: 20px;
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+            color: #1E3A8A;
+        }
+
+        body.dark-mode .setting-control span {
+            color: #5eead4;
+        }
+
+        /* Dice Container */
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            min-height: 150px;
+        }
+
+        .die {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .die.rolling {
+            animation: rollDice 0.3s ease-in-out 4;
+        }
+
+        @keyframes rollDice {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(15deg) scale(1.1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        body.dark-mode .die {
+            background: #1e293b;
+            color: white;
+        }
+
+        /* Total Result */
+        .total-card {
+            background: linear-gradient(135deg, #1E3A8A 0%, #0D9488 100%);
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .total-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 2px;
+        }
+
+        .total-value {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Roll Button */
+        .roll-btn {
+            background: linear-gradient(135deg, #1E3A8A 0%, #0D9488 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .roll-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* History */
+        .history-section {
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .history-title {
+            font-weight: 700;
+            color: #1E3A8A;
+            font-size: 14px;
+        }
+
+        body.dark-mode .history-title {
+            color: #5eead4;
+        }
+
+        .clear-history {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .history-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-height: 120px;
+            overflow-y: auto;
+            padding: 5px;
+        }
+
+        .history-item {
+            background: #f1f5f9;
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        body.dark-mode .history-item {
+            background: #334155;
+            color: white;
+        }
+
+        .history-sum {
+            font-weight: bold;
+            color: #0D9488;
+        }
+
+        /* Quick Presets */
+        .presets {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .preset-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1E3A8A;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        body.dark-mode .preset-btn {
+            background: #334155;
+            color: #5eead4;
+        }
+
+        .preset-btn:active {
+            transform: scale(0.95);
+        }
+
+        .info-text {
+            text-align: center;
+            color: #0D9488;
+            font-size: 12px;
+            background: #f0fdf4;
+            padding: 12px;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+
+        body.dark-mode .info-text {
+            background: #0f766e;
+            color: #ccfbf1;
+        }
+
+        @media (min-width: 600px) {
+            body { padding: 30px; }
+            .container { max-width: 550px; margin: 0 auto; }
+            .die { width: 100px; height: 100px; font-size: 52px; }
+            .total-value { font-size: 56px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div>
+                    <h1>🎲 Dice Roller</h1>
+                    <p class="sub">Professional Dice Rolling Tool</p>
+                </div>
+                <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            </div>
+
+            <!-- Settings -->
+            <div class="settings">
+                <div class="settings-row">
+                    <div class="setting-box">
+                        <label class="setting-label">🎲 Number of Dice</label>
+                        <div class="setting-control">
+                            <button onclick="changeDiceCount(-1)">-</button>
+                            <span id="diceCount">2</span>
+                            <button onclick="changeDiceCount(1)">+</button>
+                        </div>
+                    </div>
+                    <div class="setting-box">
+                        <label class="setting-label">🔢 Sides</label>
+                        <div class="setting-control">
+                            <button onclick="changeSides(-2)">-</button>
+                            <span id="diceSides">6</span>
+                            <button onclick="changeSides(2)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Presets -->
+            <div class="presets">
+                <button class="preset-btn" onclick="setPreset(2,6)">🎲 2d6</button>
+                <button class="preset-btn" onclick="setPreset(1,20)">🎯 1d20</button>
+                <button class="preset-btn" onclick="setPreset(3,6)">🎲 3d6</button>
+                <button class="preset-btn" onclick="setPreset(1,100)">💯 1d100</button>
+                <button class="preset-btn" onclick="setPreset(4,6)">🎲 4d6</button>
+            </div>
+
+            <!-- Dice Container -->
+            <div class="dice-container" id="diceContainer"></div>
+
+            <!-- Total Result -->
+            <div class="total-card">
+                <div class="total-label">TOTAL</div>
+                <div class="total-value" id="totalValue">0</div>
+            </div>
+
+            <!-- Roll Button -->
+            <button class="roll-btn" onclick="rollDice()">🎲 ROLL DICE</button>
+
+            <!-- History -->
+            <div class="history-section">
+                <div class="history-header">
+                    <span class="history-title">📜 Roll History</span>
+                    <button class="clear-history" onclick="clearHistory()">Clear All</button>
+                </div>
+                <div class="history-list" id="historyList"></div>
+            </div>
+
+            <div class="info-text">
+                💡 Click ROLL to roll the dice • Customize dice count and sides • D&D, board games, RPG
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let diceCount = 2;
+        let diceSides = 6;
+        let history = [];
+        let isRolling = false;
+
+        // Dice faces Unicode
+        function getDiceFace(value) {
+            const faces = {
+                1: '⚀', 2: '⚁', 3: '⚂', 4: '⚃', 5: '⚄', 6: '⚅'
+            };
+            if (value <= 6) {
+                return faces[value] || value.toString();
+            }
+            return value.toString();
+        }
+
+        function renderDice(results) {
+            let container = document.getElementById('diceContainer');
+            container.innerHTML = '';
+            results.forEach(value => {
+                let die = document.createElement('div');
+                die.className = 'die';
+                if (diceSides <= 6) {
+                    die.innerHTML = getDiceFace(value);
+                } else {
+                    die.innerHTML = value;
+                    die.style.fontSize = '28px';
+                    die.style.fontWeight = 'bold';
+                }
+                container.appendChild(die);
+            });
+        }
+
+        function animateDice() {
+            let dice = document.querySelectorAll('.die');
+            dice.forEach(die => {
+                die.classList.add('rolling');
+                setTimeout(() => die.classList.remove('rolling'), 400);
+            });
+        }
+
+        function rollDice() {
+            if (isRolling) return;
+            isRolling = true;
+            
+            let results = [];
+            let total = 0;
+            
+            for (let i = 0; i < diceCount; i++) {
+                let roll = Math.floor(Math.random() * diceSides) + 1;
+                results.push(roll);
+                total += roll;
+            }
+            
+            renderDice(results);
+            animateDice();
+            
+            setTimeout(() => {
+                document.getElementById('totalValue').innerHTML = total;
+                addToHistory(results, total);
+                isRolling = false;
+                
+                if (navigator.vibrate) navigator.vibrate(50);
+                showToast(`🎲 Rolled: ${total}`, '#0D9488');
+            }, 400);
+        }
+
+        function addToHistory(results, total) {
+            let now = new Date();
+            let time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            history.unshift({ results: [...results], total: total, time: time });
+            if (history.length > 12) history.pop();
+            renderHistory();
+        }
+
+        function renderHistory() {
+            let container = document.getElementById('historyList');
+            container.innerHTML = '';
+            history.forEach(item => {
+                let div = document.createElement('div');
+                div.className = 'history-item';
+                div.innerHTML = `${item.results.join(' + ')} = <span class="history-sum">${item.total}</span>`;
+                container.appendChild(div);
+            });
+        }
+
+        function clearHistory() {
+            history = [];
+            renderHistory();
+            showToast('History cleared!', '#dc2626');
+        }
+
+        function changeDiceCount(delta) {
+            let newVal = diceCount + delta;
+            if (newVal >= 1 && newVal <= 10) {
+                diceCount = newVal;
+                document.getElementById('diceCount').innerHTML = diceCount;
+                resetDisplay();
+            }
+        }
+
+        function changeSides(delta) {
+            let newVal = diceSides + delta;
+            if (newVal >= 4 && newVal <= 100) {
+                diceSides = newVal;
+                document.getElementById('diceSides').innerHTML = diceSides;
+                resetDisplay();
+            }
+        }
+
+        function setPreset(count, sides) {
+            diceCount = count;
+            diceSides = sides;
+            document.getElementById('diceCount').innerHTML = diceCount;
+            document.getElementById('diceSides').innerHTML = diceSides;
+            resetDisplay();
+            showToast(`🎲 Preset: ${count}d${sides} loaded!`, '#0D9488');
+        }
+
+        function resetDisplay() {
+            let defaultResults = [];
+            for (let i = 0; i < diceCount; i++) {
+                defaultResults.push('?');
+            }
+            let container = document.getElementById('diceContainer');
+            container.innerHTML = '';
+            for (let i = 0; i < diceCount; i++) {
+                let die = document.createElement('div');
+                die.className = 'die';
+                die.innerHTML = '?';
+                if (diceSides > 6) {
+                    die.style.fontSize = '28px';
+                }
+                container.appendChild(die);
+            }
+            document.getElementById('totalValue').innerHTML = '0';
+        }
+
+        function showToast(msg, bgColor) {
+            let toast = document.createElement('div');
+            toast.innerText = msg;
+            toast.style.position = 'fixed';
+            toast.style.bottom = '30px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = bgColor;
+            toast.style.color = 'white';
+            toast.style.padding = '12px 24px';
+            toast.style.borderRadius = '50px';
+            toast.style.fontSize = '14px';
+            toast.style.fontWeight = 'bold';
+            toast.style.zIndex = '1000';
+            toast.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            let btn = document.querySelector('.dark-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                btn.innerHTML = '☀️ Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                btn.innerHTML = '🌙 Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        function loadDarkMode() {
+            let darkMode = localStorage.getItem('darkMode');
+            if (darkMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.dark-toggle').innerHTML = '☀️ Light Mode';
+            }
+        }
+
+        // Initialize
+        window.onload = () => {
+            loadDarkMode();
+            resetDisplay();
+        };
+    </script>
+</body>
+</html>
