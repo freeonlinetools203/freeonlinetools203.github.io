@@ -452,16 +452,22 @@
         let canvas = document.getElementById('taskWheel');
         let ctx = canvas.getContext('2d');
 
+        // ========== UNIQUE COLOR SCHEME FOR TASK SPINNER (Productivity Colors) ==========
         function generateColors(count) {
+            // Productivity color palette: Blues, Teals, Cyans
+            const productivityColors = [
+                '#1E3A8A', // Deep Navy
+                '#0D9488', // Teal
+                '#0284C7', // Light Blue
+                '#0891B2', // Cyan
+                '#0EA5E9', // Sky Blue
+                '#14B8A6', // Teal Green
+                '#2563EB', // Royal Blue
+                '#06B6D4'  // Bright Cyan
+            ];
             let colorList = [];
-            let predefined = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E2'];
             for (let i = 0; i < count; i++) {
-                if (i < predefined.length) {
-                    colorList.push(predefined[i % predefined.length]);
-                } else {
-                    let hue = (i * 360 / count) % 360;
-                    colorList.push(`hsl(${hue}, 65%, 60%)`);
-                }
+                colorList.push(productivityColors[i % productivityColors.length]);
             }
             return colorList;
         }
