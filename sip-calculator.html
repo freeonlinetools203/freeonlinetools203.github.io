@@ -53,7 +53,6 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     text-decoration: none;
-    letter-spacing: -0.5px;
 }
 
 .nav-links {
@@ -68,13 +67,7 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
     padding: 8px 0;
-}
-
-.nav-links li a:hover {
-    color: #f0f0f0;
-    border-bottom: 2px solid white;
 }
 
 /* Dropdown */
@@ -108,17 +101,10 @@ body {
     top: 40px;
     left: 0;
     padding: 8px 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    pointer-events: none;
 }
 
 .dropdown.open .dropdown-content {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
 }
 
 .dropdown-category {
@@ -127,21 +113,10 @@ body {
     font-weight: 700;
     color: #1e3a8a;
     font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     border-bottom: 1px solid #e5e7eb;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.dropdown-category .arrow {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-}
-
-.dropdown-category.active .arrow {
-    transform: rotate(90deg);
 }
 
 .category-tools {
@@ -176,12 +151,10 @@ body {
 .header h1 {
     font-size: clamp(1.6rem, 6vw, 2.5rem);
     margin-bottom: 15px;
-    font-weight: 700;
 }
 
 .header p {
     font-size: clamp(0.9rem, 4vw, 1.2rem);
-    opacity: 0.9;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -222,7 +195,6 @@ body {
     width: 60px;
     height: 3px;
     background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
-    border-radius: 3px;
 }
 
 /* Input Grid */
@@ -247,7 +219,6 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
 }
 
 .input-group {
@@ -287,25 +258,11 @@ body {
     border: 1px solid #e5e7eb;
 }
 
-.result-icon {
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-}
-
-.result-label {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    color: #6b7280;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
 .result-value {
     font-size: 1.2rem;
     font-weight: 800;
     color: #1e3a8a;
     margin-top: 8px;
-    word-break: break-word;
 }
 
 /* Progress Bar */
@@ -323,11 +280,10 @@ body {
 .progress-fill {
     height: 100%;
     border-radius: 30px;
-    transition: width 0.3s ease;
     background: linear-gradient(90deg, #2563eb, #10b981);
 }
 
-/* Summary Section */
+/* Summary */
 .summary-section {
     background: #eff6ff;
     border-radius: 16px;
@@ -343,11 +299,6 @@ body {
     padding: 20px;
     border: 1px solid #e5e7eb;
     margin-top: 20px;
-}
-
-canvas {
-    max-width: 100%;
-    height: auto;
 }
 
 /* Other Tools */
@@ -366,7 +317,7 @@ canvas {
     margin-bottom: 25px;
 }
 
-.tool-link {
+.tool-link, .home-link {
     background: #eff6ff;
     color: #2563eb !important;
     padding: 12px 15px;
@@ -377,28 +328,6 @@ canvas {
     display: inline-block;
     text-align: center;
     cursor: pointer;
-}
-
-.tool-link:hover {
-    background: #2563eb;
-    color: white !important;
-}
-
-.home-link {
-    background: #eff6ff;
-    color: #2563eb;
-    padding: 12px 28px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.home-link:hover {
-    background: #2563eb;
-    color: white;
 }
 
 /* Article & FAQ */
@@ -415,16 +344,6 @@ canvas {
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 10px;
-}
-
-.article-section h2::after, .faq-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(135deg, #2563eb, #1e3a8a);
 }
 
 .faq-item {
@@ -471,7 +390,7 @@ canvas {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* ========== MOBILE FIXES (CRITICAL) ========== */
+/* ========== MOBILE RESPONSIVE FIXES ========== */
 @media (max-width: 768px) {
     .navbar { padding: 12px 20px; }
     .nav-container { flex-direction: column; text-align: center; }
@@ -479,11 +398,9 @@ canvas {
     .input-grid { gap: 20px; }
     .results-grid { gap: 15px; }
     .tool-card-large { padding: 20px; }
-    .footer-container { grid-template-columns: 1fr; text-align: center; gap: 35px; }
 }
 
 @media (max-width: 640px) {
-    /* Country & Language section fix - MOST IMPORTANT */
     .flex.flex-wrap.justify-between {
         flex-direction: column !important;
         align-items: stretch !important;
@@ -493,7 +410,6 @@ canvas {
     .flex.flex-wrap.gap-3 {
         flex-direction: column !important;
         width: 100% !important;
-        gap: 10px !important;
     }
     
     .flex.flex-wrap.gap-3 .input-group {
@@ -505,23 +421,10 @@ canvas {
         justify-content: center !important;
     }
     
-    .button-group button {
-        flex: 1 !important;
-        text-align: center !important;
+    .tools-grid {
+        grid-template-columns: 1fr 1fr !important;
     }
     
-    /* Dropdown fix for mobile */
-    .dropdown-content {
-        position: fixed !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 90% !important;
-        max-width: 320px !important;
-        max-height: 80vh !important;
-        overflow-y: auto !important;
-    }
-    
-    /* Touch targets */
     .tool-link, .home-link, button, .dropbtn {
         min-height: 44px !important;
     }
@@ -529,25 +432,12 @@ canvas {
     input, select, button {
         font-size: 16px !important;
     }
-    
-    /* Tools grid */
-    .tools-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
-    }
-    
-    .tool-link {
-        padding: 10px 8px !important;
-        font-size: 0.8rem !important;
-    }
 }
 
 @media (max-width: 480px) {
     .container { padding: 0 15px; }
     .tool-card-large { padding: 16px; }
     .result-value { font-size: 1rem; }
-    .result-icon { font-size: 1.3rem; }
-    .input-card { padding: 15px; }
     .tools-grid { grid-template-columns: 1fr !important; }
 }
 
