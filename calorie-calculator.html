@@ -1588,7 +1588,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return `⏱️ Estimated ${weeks} weeks to reach your target weight`;
     }
     
-    function updateAll() {
+   function updateAll() {
         let age = parseInt(ageInput.value);
         let gender = genderSelect.value;
         let weightKg = parseFloat(weightInput.value) || 70;
@@ -1601,7 +1601,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let bmr = calculateBMR(weightKg, heightCm, age, gender);
         let tdee = bmr * activityMultiplier;
         let recommended = tdee + goalAdjust;
+        
+        // 🔧 YEH DO LINES ADD KARI HEN (Fix for extreme weight loss)
+        if (recommended < bmr) recommended = bmr;   // Never go below BMR
         if (recommended < 500) recommended = 500;
+        
         let bmi = calculateBMI(weightKg, heightCm);
         let bmiCat = getBMICategory(bmi);
         let idealRange = getIdealWeightRange(heightCm);
@@ -1615,7 +1619,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             timeToGoalSpan.innerText = '';
         }
-        
         bmrSpan.innerText = Math.round(bmr).toLocaleString();
         tdeeSpan.innerText = Math.round(tdee).toLocaleString();
         recommendedSpan.innerText = Math.round(recommended).toLocaleString();
