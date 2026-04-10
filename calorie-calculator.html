@@ -1325,7 +1325,7 @@ body {
       const path = window.location.pathname;
       console.log("Current path:", path);
       if (path.includes('age-calculator') || path.includes('gst') || path.includes('percentage') || path.includes('sip') || path.includes('discount') || path.includes('profit-loss') || path.includes('gpa') || path.includes('date-calculator') || path.includes('qr-code') || path.includes('youtube-thumbnail') || path.includes('currency-converter') || path.includes('age-difference')) return 'popular';
-      if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie') || path.includes('meal-planner')) return 'health';
+      if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie')) return 'health';
       if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) return 'financial';
       if (path.includes('word-counter') || path.includes('line-counter') || path.includes('text-case') || path.includes('password-generator')) return 'text';
       if (path.includes('image-compressor')) return 'media';
@@ -1335,7 +1335,7 @@ body {
 
     const categories = {
       popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "Age Difference", url: "age-difference-calculator.html" }, { name: "Discount Calculator", url: "discount-calculator.html" }, { name: "Profit & Loss", url: "profit-loss-calculator.html" }, { name: "GPA Calculator", url: "gpa-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "SIP Calculator", url: "sip-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Date Calculator", url: "date-calculator.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
-      health: { name: "🏃‍♂️ Health & Fitness", tools: [ { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "BMR Calculator", url: "bmr-calculator.html" }, { name: "Calorie Calculator", url: "calorie-calculator.html" }, { name: "Meal Planner", url: "meal-planner.html" } ] },
+      health: { name: "🏃‍♂️ Health & Fitness", tools: [ { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "BMR Calculator", url: "bmr-calculator.html" }, { name: "Calorie Calculator", url: "calorie-calculator.html" } ] },
       financial: { name: "💰 Financial Tools", tools: [ { name: "EMI Calculator", url: "emi-calculator.html" }, { name: "Loan Calculator", url: "loan-calculator.html" }, { name: "Zakat Calculator", url: "zakat-calculator.html" } ] },
       text: { name: "📝 Text & Writing", tools: [ { name: "Word Counter", url: "word-counter.html" }, { name: "Line Counter", url: "line-counter.html" }, { name: "Text Case Converter", url: "text-case-converter.html" }, { name: "Password Generator", url: "password-generator.html" } ] },
       media: { name: "🖼️ Image & Media", tools: [ { name: "Image Compressor", url: "image-compressor.html" } ] },
@@ -1373,7 +1373,6 @@ body {
     }
   })();
 </script>
-
     <!-- Article Section (2000+ words with keywords) -->
     <div class="article-section">
         <h2>Calorie Calculator – Complete Guide to BMR, TDEE & Macronutrients</h2>
