@@ -4,10 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>About Us – Free Online Tools | Professional Calculators & Utilities</title>
-<meta name="description" content="Learn about Free Online Tools – our mission to provide 100% free, accurate, and easy-to-use online calculators and utilities for everyone.">
-<meta name="keywords" content="about us, free online tools, online calculators, about free tools">
-<link rel="canonical" href="https://freeonlinetools203.github.io/free-online-tools/about.html">
+<meta name="description" content="Learn about Free Online Tools – our mission to provide 100% free, accurate, and easy-to-use online calculators and utilities for everyone. No signup required.">
+<meta name="keywords" content="about us, free online tools, online calculators, about free tools, free utilities, mission vision">
+<meta name="author" content="Free Online Tools">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeonlinetools203.github.io/free-online-tools/about.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="About Us – Free Online Tools">
+<meta property="og:description" content="Learn about our mission to provide 100% free, accurate online calculators and utilities for everyone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.github.io/free-online-tools/about.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us – Free Online Tools">
+<meta name="twitter:description" content="Free, accurate, and easy-to-use online tools for everyone.">
+
 <style>
 * {
     margin: 0;
@@ -21,7 +34,7 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar */
+/* ========== NAVBAR ========== */
 .navbar {
     background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
     padding: 15px 30px;
@@ -60,99 +73,28 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
     padding: 8px 0;
+    transition: all 0.3s ease;
 }
 
-.nav-links li a:hover, .nav-links li a.active {
-    color: #f0f0f0;
+.nav-links li a:hover {
     border-bottom: 2px solid white;
 }
 
 /* Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+.dropdown { position: relative; display: inline-block; }
+.dropbtn { background: none; border: none; color: white; font-weight: 500; cursor: pointer; padding: 8px 0; font-size: 1rem; display: inline-flex; align-items: center; gap: 4px; font-family: inherit; }
+.dropdown-content { display: none; position: absolute; background: white; min-width: 280px; border-radius: 12px; top: 40px; left: 0; padding: 8px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 1001; }
+.dropdown.open .dropdown-content { display: block; }
+.dropdown-category { padding: 12px 16px; font-weight: 700; color: #1e3a8a; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; cursor: pointer; }
+.dropdown-category .arrow { transition: transform 0.2s; }
+.dropdown-category.active .arrow { transform: rotate(90deg); }
+.category-tools { display: none; background: #f9fafb; border-radius: 8px; margin: 4px 8px; overflow: hidden; }
+.category-tools.show { display: block; }
+.category-tools a { color: #1f2937 !important; padding: 10px 20px 10px 32px; text-decoration: none; display: block; font-size: 14px; }
+.category-tools a:hover { background: #e5e7eb; color: #2563eb !important; }
 
-.dropbtn {
-    background: none;
-    border: none;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 8px 0;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    min-width: 280px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    z-index: 100;
-    top: 40px;
-    left: 0;
-    padding: 8px 0;
-}
-
-.dropdown-category {
-    cursor: pointer;
-    padding: 12px 16px;
-    font-weight: 700;
-    color: #1e3a8a;
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dropdown-category:hover {
-    background: #f3f4f6;
-}
-
-.dropdown-category .arrow {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-}
-
-.dropdown-category.active .arrow {
-    transform: rotate(90deg);
-}
-
-.category-tools {
-    display: none;
-    background: #f9fafb;
-    border-radius: 8px;
-    margin: 4px 8px 8px 8px;
-}
-
-.category-tools.show {
-    display: block;
-}
-
-.category-tools a {
-    color: #1f2937 !important;
-    padding: 10px 20px 10px 32px;
-    text-decoration: none;
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.category-tools a:hover {
-    background: #e5e7eb;
-    color: #2563eb !important;
-}
-
-.dropdown.open .dropdown-content {
-    display: block;
-}
-
-/* Header */
+/* ========== PAGE HEADER ========== */
 .page-header {
     background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
     color: white;
@@ -170,7 +112,7 @@ body {
     opacity: 0.9;
 }
 
-/* Content */
+/* ========== MAIN CONTENT ========== */
 .container {
     max-width: 1000px;
     margin: 50px auto;
@@ -179,15 +121,15 @@ body {
 
 .content-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 40px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
 }
 
 .content-card h2 {
     color: #1e3a8a;
     font-size: 1.8rem;
-    margin: 30px 0 15px;
+    margin: 35px 0 15px 0;
     border-left: 4px solid #2563eb;
     padding-left: 15px;
 }
@@ -205,11 +147,11 @@ body {
 .content-card p {
     color: #374151;
     line-height: 1.8;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .content-card ul {
-    margin: 15px 0 15px 25px;
+    margin: 15px 0 20px 25px;
     color: #374151;
     line-height: 1.8;
 }
@@ -218,72 +160,156 @@ body {
     margin: 8px 0;
 }
 
-/* Footer */
+/* Other Tools Section */
+.other-tools {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.other-tools h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.tool-link {
+    display: block;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tool-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.home-link {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #6b7280;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.home-link:hover {
+    background: #4b5563;
+    transform: translateY(-2px);
+}
+
+/* ========== FOOTER ========== */
 .footer {
-    background: #111827;
-    color: #9ca3af;
-    padding: 50px 20px 30px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 60px 20px 30px;
     margin-top: 40px;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
 }
 
 .footer-col h3, .footer-col h4 {
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h3::after, .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-top: 12px;
 }
 
 .footer-col a {
     display: block;
-    color: #9ca3af;
+    color: #94a3b8;
     text-decoration: none;
-    padding: 5px 0;
+    padding: 6px 0;
     font-size: 0.9rem;
     transition: all 0.3s ease;
 }
 
 .footer-col a:hover {
-    color: white;
+    color: #60a5fa;
+    transform: translateX(5px);
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 30px;
-    margin-top: 30px;
-    border-top: 1px solid #374151;
+    padding-top: 35px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.85rem;
+    color: #64748b;
 }
 
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .nav-links {
-        justify-content: center;
-    }
-    .content-card {
-        padding: 25px;
-    }
-    .page-header h1 {
-        font-size: 1.8rem;
-    }
-    .footer-container {
-        text-align: center;
-    }
+    .navbar { padding: 12px 20px; }
+    .nav-container { flex-direction: column; text-align: center; }
+    .nav-links { justify-content: center; }
+    .content-card { padding: 25px; }
+    .page-header h1 { font-size: 1.8rem; }
+    .footer-container { text-align: center; }
+    .footer-col h3::after, .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+    .footer-col a { display: inline-block; margin: 0 8px; padding: 5px 8px; }
 }
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- ========== NAVBAR (SAME STYLE AS OTHER PAGES) ========== -->
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo">
@@ -361,49 +387,48 @@ body {
                         <a href="password-checker.html">🔐 Password Strength Checker</a>
                     </div>
 
-                   
-<!-- 📄 PDF TOOLS -->
-<div class="dropdown-category" data-cat="cat_pdf">
-    📄 PDF Tools <span class="arrow">▶</span>
-</div>
-<div class="category-tools" id="cat_pdfTools">
-    <a href="pdf-merger.html">📄 PDF Merger</a>
-    <a href="pdf-splitter.html">✂️ PDF Splitter</a>
-    <a href="pdf-to-excel.html">📊 PDF to Excel</a>
-    <a href="pdf-to-image.html">📸 PDF to Image</a>
-    <a href="pdf-to-word.html">📄 PDF to Word</a>
-    <a href="pdf-to-text.html">📝 PDF to Text</a>
-    <a href="pdf-rotator.html">🔄 PDF Rotator</a>
-</div>
+                    <!-- 📄 PDF TOOLS -->
+                    <div class="dropdown-category" data-cat="cat_pdf">
+                        📄 PDF Tools <span class="arrow">▶</span>
+                    </div>
+                    <div class="category-tools" id="cat_pdfTools">
+                        <a href="pdf-merger.html">📄 PDF Merger</a>
+                        <a href="pdf-splitter.html">✂️ PDF Splitter</a>
+                        <a href="pdf-to-excel.html">📊 PDF to Excel</a>
+                        <a href="pdf-to-image.html">📸 PDF to Image</a>
+                        <a href="pdf-to-word.html">📄 PDF to Word</a>
+                        <a href="pdf-to-text.html">📝 PDF to Text</a>
+                        <a href="pdf-rotator.html">🔄 PDF Rotator</a>
+                    </div>
 
-<!-- 🖼️ IMAGE TOOLS -->
-<div class="dropdown-category" data-cat="cat_image">
-    🖼️ Image Tools <span class="arrow">▶</span>
-</div>
-<div class="category-tools" id="cat_imageTools">
-    <a href="image-color-extractor.html">🎨 Image Color Extractor</a>
-    <a href="image-converter.html">🖼️ Image Converter</a>
-    <a href="image-cropper.html">✂️ Image Cropper</a>
-    <a href="image-resizer.html">📐 Image Resizer</a>
-    <a href="image-to-pdf.html">📄 Image to PDF</a>
-    <a href="image-upscaler.html">🖼️ Image Upscaler</a>
-    <a href="image-compressor.html">🗜️ Image Compressor</a>
+                    <!-- 🖼️ IMAGE TOOLS -->
+                    <div class="dropdown-category" data-cat="cat_image">
+                        🖼️ Image Tools <span class="arrow">▶</span>
+                    </div>
+                    <div class="category-tools" id="cat_imageTools">
+                        <a href="image-color-extractor.html">🎨 Image Color Extractor</a>
+                        <a href="image-converter.html">🖼️ Image Converter</a>
+                        <a href="image-cropper.html">✂️ Image Cropper</a>
+                        <a href="image-resizer.html">📐 Image Resizer</a>
+                        <a href="image-to-pdf.html">📄 Image to PDF</a>
+                        <a href="image-upscaler.html">🖼️ Image Upscaler</a>
+                        <a href="image-compressor.html">🗜️ Image Compressor</a>
+                    </div>
 
-                   <!-- 🎲 RANDOM & FUN TOOLS -->
-<div class="dropdown-category" data-cat="cat7">
-    🎲 Random & Fun Tools <span class="arrow">▶</span>
-</div>
-<div class="category-tools" id="cat7Tools">
-    <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-    <a href="random-color-picker.html">🎨 Random Color Picker</a>
-    <a href="yes-no-wheel.html">✅ Yes/No Wheel</a>
-    <a href="decision-roulette.html">🎯 Decision Roulette</a>
-    <a href="random-name-picker.html">🏆 Random Name Picker</a>
-    <a href="random-number-generator.html">🔢 Random Number Generator</a>
-    <a href="prize-wheel.html">🏆 Prize Wheel</a>
-    <a href="task-spinner.html">✅ Task Spinner</a>
-</div>
-
+                    <!-- 🎲 RANDOM & FUN TOOLS -->
+                    <div class="dropdown-category" data-cat="cat7">
+                        🎲 Random & Fun Tools <span class="arrow">▶</span>
+                    </div>
+                    <div class="category-tools" id="cat7Tools">
+                        <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+                        <a href="random-color-picker.html">🎨 Random Color Picker</a>
+                        <a href="yes-no-wheel.html">✅ Yes/No Wheel</a>
+                        <a href="decision-roulette.html">🎯 Decision Roulette</a>
+                        <a href="random-name-picker.html">🏆 Random Name Picker</a>
+                        <a href="random-number-generator.html">🔢 Random Number Generator</a>
+                        <a href="prize-wheel.html">🏆 Prize Wheel</a>
+                        <a href="task-spinner.html">✅ Task Spinner</a>
+                    </div>
                 </div>
             </li>
             <li><a href="about.html">ℹ️ About</a></li>
@@ -414,29 +439,42 @@ body {
         </ul>
     </div>
 </nav>
+
+<!-- ========== PAGE HEADER ========== -->
 <header class="page-header">
-    <h1>About Us</h1>
+    <h1>📖 About Us</h1>
     <p>Learn more about Free Online Tools and our mission</p>
 </header>
 
 <div class="container">
     <div class="content-card">
         <h2>✨ Who We Are</h2>
-        <p>Welcome to <strong>Free Online Tools</strong> – your one-stop destination for fast, accurate, and completely free online calculators and utilities. We are a team dedicated to providing high-quality digital tools that make everyday calculations and tasks simple and efficient.</p>
+        <p>Welcome to <strong>Free Online Tools</strong> – your one-stop destination for fast, accurate, and completely free online calculators and utilities. We are a dedicated team passionate about providing high-quality digital tools that make everyday calculations and tasks simple, efficient, and accessible to everyone.</p>
         
         <h2>🎯 Our Mission</h2>
-        <p>Our mission is to offer <strong>100% free, accessible, and reliable online tools</strong> to users around the world. We believe that essential tools like age calculators, BMI calculators, financial calculators, and text utilities should be available to everyone without any cost or registration.</p>
+        <p>Our mission is to offer <strong>100% free, accessible, and reliable online tools</strong> to users around the world. We believe that essential tools like age calculators, BMI calculators, financial calculators, text utilities, and PDF converters should be available to everyone without any cost, registration, or hidden fees. Knowledge and productivity tools are a right, not a privilege.</p>
         
         <h2>🌟 What Makes Us Different</h2>
         <ul>
-            <li><strong>100% Free Forever:</strong> No hidden charges, no premium versions – all tools are completely free to use.</li>
-            <li><strong>No Registration Required:</strong> Use any tool instantly without creating an account or sharing personal information.</li>
-            <li><strong>Mobile Friendly:</strong> All tools are fully responsive and work perfectly on smartphones, tablets, and desktops.</li>
-            <li><strong>Privacy Focused:</strong> Your data never leaves your browser. We don't store or track any information.</li>
-            <li><strong>Accurate Results:</strong> Each tool uses precise formulas and algorithms for reliable calculations.</li>
+            <li><strong>💯 100% Free Forever:</strong> No hidden charges, no premium versions – all tools are completely free to use with no limitations.</li>
+            <li><strong>🚀 No Registration Required:</strong> Use any tool instantly without creating an account or sharing personal information. Privacy first.</li>
+            <li><strong>📱 Mobile Friendly:</strong> All tools are fully responsive and work perfectly on smartphones, tablets, and desktops.</li>
+            <li><strong>🔒 Privacy Focused:</strong> Your data never leaves your browser. We don't store, track, or share any personal information.</li>
+            <li><strong>⚡ Accurate Results:</strong> Each tool uses precise formulas, algorithms, and up-to-date standards for reliable calculations.</li>
+            <li><strong>🌍 Global Access:</strong> Our tools are available worldwide, 24/7, with no downtime or usage limits.</li>
         </ul>
         
-       <div class="other-tools">
+        <h2>🌍 Our Vision</h2>
+        <p>We aim to continuously expand our collection of free online tools to serve a growing global audience. Whether you're a student, professional, business owner, teacher, or just someone looking for quick answers, our tools are designed to save you time and effort. We envision a world where essential digital utilities are free and accessible to all, breaking down barriers to productivity and knowledge.</p>
+        
+        <h2>📞 Get in Touch</h2>
+        <p>Have questions, feedback, or suggestions? We'd love to hear from you! Your input helps us improve and grow. Visit our <a href="contact.html" style="color:#2563eb; font-weight:600;">Contact Page</a> to reach out to us directly via email.</p>
+        
+        <p style="margin-top: 35px; padding-top: 25px; border-top: 2px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 0.95rem;">⭐ Thank you for choosing Free Online Tools. We're honored to be a part of your daily workflow. ⭐</p>
+    </div>
+
+    <!-- ========== USEFUL LINKS SECTION (SAME STYLE AS OTHER PAGES) ========== -->
+    <div class="other-tools">
         <h3>🔗 Useful Links</h3>
         <div class="tools-grid">
             <a href="about.html" class="tool-link">ℹ️ About Us</a>
@@ -445,25 +483,17 @@ body {
             <a href="terms-conditions.html" class="tool-link">📜 Terms & Conditions</a>
             <a href="disclaimer.html" class="tool-link">⚠️ Disclaimer</a>
         </div>
+        <!-- BACK TO HOME BUTTON (SAME STYLE AS DISCLAIMER PAGE) -->
         <a href="index.html" class="home-link">← Back to Home</a>
     </div>
 </div>
-        
-        <h2>🌍 Our Vision</h2>
-        <p>We aim to continuously expand our collection of free online tools to serve a growing global audience. Whether you're a student, professional, business owner, or just someone looking for quick answers, our tools are designed to save you time and effort.</p>
-        
-        <h2>📞 Get in Touch</h2>
-        <p>Have questions, feedback, or suggestions? We'd love to hear from you! Visit our <a href="contact.html" style="color:#2563eb;">Contact Page</a> to reach out to us. Your input helps us improve and grow.</p>
-        
-        <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280;">Thank you for choosing Free Online Tools. We're honored to be a part of your daily workflow.</p>
-    </div>
-</div>
-<!-- ========== FOOTER - PROFESSIONAL GRADIENT ========== -->
+
+<!-- ========== FOOTER (SAME STYLE AS OTHER PAGES) ========== -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
             <h3>✨ Free Online Tools</h3>
-            <p>Your one-stop destination for free, fast, and accurate online calculators and utilities. Trusted by 50,000+ users worldwide. 100% free, no signup required.</p>
+            <p>Your one-stop destination for free, fast, and accurate online calculators and utilities. Trusted by 100,000+ users worldwide. 100% free, no signup required.</p>
         </div>
         <div class="footer-col">
             <h4>📄 Quick Links</h4>
@@ -471,147 +501,62 @@ body {
             <a href="about.html">ℹ️ About Us</a>
             <a href="contact.html">📧 Contact Us</a>
             <a href="privacy-policy.html">🔒 Privacy Policy</a>
+            <a href="terms-conditions.html">📜 Terms & Conditions</a>
+            <a href="disclaimer.html">⚠️ Disclaimer</a>
         </div>
         <div class="footer-col">
             <h4>⭐ Popular Tools</h4>
-            <a href="age-calculator.html">📅 Age Calculator</a>
             <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
-            <a href="percentage-calculator.html">📈 Percentage Calculator</a>
+            <a href="sip-calculator.html">📊 SIP Calculator</a>
+            <a href="currency-converter.html">💱 Currency Converter</a>
+            <a href="age-calculator.html">📅 Age Calculator</a>
             <a href="qr-code-generator.html">📱 QR Code Generator</a>
-            <a href="youtube-thumbnail-downloader.html">📸 YouTube Thumbnail Downloader</a>
             <a href="password-generator.html">🔐 Password Generator</a>
         </div>
         <div class="footer-col">
             <h4>🔧 All Tools</h4>
-            <a href="emi-calculator.html">🏦 EMI Calculator</a>
-            <a href="loan-calculator.html">📋 Loan Calculator</a>
-            <a href="word-counter.html">🔢 Word Counter</a>
-            <a href="text-case-converter.html">🔤 Text Case Converter</a>
             <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-            <a href="zakat-calculator.html">🕌 Zakat Calculator</a>
+            <a href="line-counter.html">📝 Line Counter</a>
+            <a href="text-case-converter.html">🔤 Text Case Converter</a>
+            <a href="image-converter.html">🖼️ Image Converter</a>
+            <a href="pdf-merger.html">📄 PDF Merger</a>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2026 <strong>Free Online Tools</strong>. All rights reserved. | Made with ❤️ for the global community</p>
+        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ for the global community</p>
     </div>
 </footer>
 
-<style>
-/* Professional Gradient Footer */
-.footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #cbd5e1;
-    padding: 50px 20px 25px;
-    margin-top: 40px;
-    position: relative;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 35px;
-    position: relative;
-    z-index: 1;
-}
-
-.footer-col h3, .footer-col h4 {
-    color: white;
-    margin-bottom: 18px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    position: relative;
-    display: inline-block;
-}
-
-.footer-col h3::after, .footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-    border-radius: 2px;
-}
-
-.footer-col p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #94a3b8;
-    margin-top: 12px;
-}
-
-.footer-col a {
-    display: block;
-    color: #94a3b8;
-    text-decoration: none;
-    padding: 6px 0;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.footer-col a:hover {
-    color: #60a5fa;
-    transform: translateX(5px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    margin-top: 35px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    color: #64748b;
-}
-
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-    }
-    
-    .footer-col h3::after, .footer-col h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .footer-col a {
-        display: inline-block;
-        margin: 0 8px;
-        padding: 5px 8px;
-    }
-    
-    .footer-col p {
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        padding: 35px 15px 20px;
-    }
-}
-</style>
 <script>
-const toolsBtn = document.getElementById('toolsBtn');
-const toolsDropdown = document.getElementById('toolsDropdown');
-toolsBtn.addEventListener('click', function(e) { e.stopPropagation(); toolsDropdown.classList.toggle('open'); });
-document.addEventListener('click', function(e) { if (!toolsDropdown.contains(e.target)) toolsDropdown.classList.remove('open'); });
-function toggleCategory(event, element) { event.stopPropagation(); const toolsDiv = element.nextElementSibling; element.classList.toggle('active'); toolsDiv.classList.toggle('show'); }
+// Dropdown functionality (SAME AS DISCLAIMER & CONTACT PAGES)
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if (dropdown && dropBtn) {
+        dropBtn.addEventListener('click', function(e) { 
+            e.stopPropagation(); 
+            dropdown.classList.toggle('open'); 
+        });
+        document.addEventListener('click', function(event) { 
+            if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) 
+                dropdown.classList.remove('open'); 
+        });
+    }
+    
+    document.querySelectorAll('.dropdown-category').forEach(cat => {
+        cat.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const catId = this.getAttribute('data-cat');
+            if (catId) {
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if (toolsDiv) { 
+                    toolsDiv.classList.toggle('show'); 
+                    this.classList.toggle('active');
+                }
+            }
+        });
+    });
+})();
 </script>
 </body>
 </html>
