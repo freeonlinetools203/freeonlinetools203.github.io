@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Cat Pregnancy Calculator – Feline Gestation & Due Date | Free Online Tools</title>
+<meta name="description" content="Free Cat Pregnancy Calculator: Estimate your cat's due date, gestation timeline, and pregnancy stages. Accurate feline pregnancy calculator for breeders and cat owners. Track week by week.">
+<meta name="keywords" content="cat pregnancy calculator, feline pregnancy calculator, cat due date calculator, cat gestation calculator, pregnant cat due date, how long are cats pregnant, cat pregnancy week by week, feline gestation period, cat breeding calculator, queen pregnancy due date">
+<meta name="author" content="Free Online Tools">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeonlinetools203.github.io/free-online-tools/cat-pregnancy-calculator.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Cat Pregnancy Calculator – Feline Gestation & Due Date">
+<meta property="og:description" content="Calculate your cat's due date and track pregnancy stages. Free, accurate feline gestation calculator for breeders and cat owners.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.github.io/free-online-tools/cat-pregnancy-calculator.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cat Pregnancy Calculator – Feline Due Date Tool">
+<meta name="twitter:description" content="Free cat pregnancy calculator. Estimate due date and gestation timeline instantly.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Dropdown */
+.dropdown { position: relative; display: inline-block; }
+.dropbtn { background: none; border: none; color: white; font-weight: 500; cursor: pointer; padding: 8px 0; font-size: 1rem; display: inline-flex; align-items: center; gap: 4px; font-family: inherit; }
+.dropdown-content { display: none; position: absolute; background: white; min-width: 280px; border-radius: 12px; top: 40px; left: 0; padding: 8px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 1001; }
+.dropdown.open .dropdown-content { display: block; }
+.dropdown-category { padding: 12px 16px; font-weight: 700; color: #1e3a8a; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; cursor: pointer; }
+.dropdown-category .arrow { transition: transform 0.2s; }
+.dropdown-category.active .arrow { transform: rotate(90deg); }
+.category-tools { display: none; background: #f9fafb; border-radius: 8px; margin: 4px 8px; overflow: hidden; }
+.category-tools.show { display: block; }
+.category-tools a { color: #1f2937 !important; padding: 10px 20px 10px 32px; text-decoration: none; display: block; font-size: 14px; }
+.category-tools a:hover { background: #e5e7eb; color: #2563eb !important; }
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.calculator-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 30px 25px;
+    text-align: center;
+}
+
+.card-header h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card-header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+
+.card-content {
+    padding: 35px;
+}
+
+/* Calculator Form */
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #1e3a8a;
+    font-size: 16px;
+}
+
+.input-group input, .input-group select {
+    padding: 14px 18px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-calculate {
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Result Box */
+.result-box {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid #fcd34d;
+}
+
+.result-box h3 {
+    color: #92400e;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.due-date {
+    font-size: 32px;
+    font-weight: 700;
+    color: #b45309;
+    margin: 15px 0;
+}
+
+.gestation-info {
+    font-size: 18px;
+    color: #374151;
+    margin-top: 10px;
+}
+
+.week-tracker {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.week-tracker h4 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.week-bars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.week-badge {
+    background: #e5e7eb;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.week-badge.current {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Info Section */
+.info-section {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.info-section h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-left: 4px solid #d97706;
+    padding-left: 15px;
+}
+
+.info-section p {
+    color: #374151;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.info-section ul {
+    margin: 15px 0 15px 25px;
+    color: #374151;
+    line-height: 1.8;
+}
+
+.info-section li {
+    margin: 8px 0;
+}
+
+/* Other Tools Section */
+.other-tools {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.other-tools h3 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.tool-link {
+    display: block;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tool-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.home-link {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #6b7280;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.home-link:hover {
+    background: #4b5563;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 60px 20px 30px;
+    margin-top: 40px;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h3::after, .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-top: 12px;
+}
+
+.footer-col a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #60a5fa;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 35px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 12px 20px; }
+    .nav-container { flex-direction: column; text-align: center; }
+    .nav-links { justify-content: center; }
+    .card-content { padding: 25px 20px; }
+    .due-date { font-size: 24px; }
+    .week-badge { padding: 5px 10px; font-size: 10px; }
+    .footer-container { text-align: center; }
+    .footer-col h3::after, .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html">✨ Free Online Tools</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ Tools ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat1">📊 Animal Pregnancy Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat1Tools">
+                        <a href="dog-pregnancy-calculator.html">🐕 Dog Pregnancy Calculator</a>
+                        <a href="cat-pregnancy-calculator.html">🐱 Cat Pregnancy Calculator</a>
+                        <a href="cow-pregnancy-calculator.html">🐄 Cow Pregnancy Calculator</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat2">🏃‍♂️ Health & Fitness <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat2Tools">
+                        <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+                        <a href="bmr-calculator.html">🔥 BMR Calculator</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat3">💰 Financial Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat3Tools">
+                        <a href="emi-calculator.html">🏦 EMI Calculator</a>
+                        <a href="sip-calculator.html">📊 SIP Calculator</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+            <li><a href="terms-conditions.html">📜 Terms</a></li>
+            <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="calculator-card">
+        <div class="card-header">
+            <h1>🐱 Cat Pregnancy Calculator</h1>
+            <p>Feline Gestation & Due Date Estimator | Track Your Queen's Pregnancy Week by Week</p>
+        </div>
+        <div class="card-content">
+            <div class="calculator-form">
+                <div class="input-group">
+                    <label>📅 Date of Mating / Breeding Date</label>
+                    <input type="date" id="matingDate" value="2026-03-15">
+                </div>
+                <div class="input-group">
+                    <label>🐱 Average Gestation Period (Days)</label>
+                    <select id="gestationDays">
+                        <option value="65">Standard Cat (65 days) - Most Common</option>
+                        <option value="64">Short-haired Breeds (64-66 days)</option>
+                        <option value="66">Long-haired Breeds (66-68 days)</option>
+                        <option value="63">Small Breeds / Early Delivery (63-64 days)</option>
+                        <option value="67">Large Breeds / Late Delivery (67-69 days)</option>
+                    </select>
+                </div>
+                <button class="btn-calculate" id="calculateBtn">🔍 Calculate Due Date</button>
+            </div>
+
+            <div id="resultContainer" style="display: none;">
+                <div class="result-box">
+                    <h3>🐾 Expected Due Date (Queening Date)</h3>
+                    <div class="due-date" id="dueDateDisplay">—</div>
+                    <div class="gestation-info" id="gestationInfo"></div>
+                </div>
+                <div class="week-tracker">
+                    <h4>📆 Pregnancy Timeline Tracker (9-10 Weeks)</h4>
+                    <div id="weekTracker" class="week-bars"></div>
+                    <p style="margin-top: 15px; font-size: 14px; color: #6b7280;" id="currentWeekInfo"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h3>🐱 About Feline Pregnancy Calculator</h3>
+        <p>This <strong>cat pregnancy calculator</strong> helps you estimate your queen's (female cat) due date based on the mating date. The average gestation period for cats is approximately <strong>63-67 days (9-10 weeks)</strong> from the first mating. However, cats can deliver anywhere between 61-70 days depending on breed, litter size, and individual factors.</p>
+        
+        <h3>📊 Cat Pregnancy Stages Week by Week</h3>
+        <ul>
+            <li><strong>Week 1-2 (Days 1-14):</strong> Fertilization occurs. No visible signs. The queen may show decreased appetite.</li>
+            <li><strong>Week 3-4 (Days 15-28):</strong> Nipples become pinker and enlarged ("pinking up"). Morning sickness possible.</li>
+            <li><strong>Week 5-6 (Days 29-42):</strong> Belly begins to enlarge. Vet can palpate fetuses. Appetite increases.</li>
+            <li><strong>Week 7-8 (Days 43-56):</strong> Significant weight gain. Nesting behavior begins. Milk production starts.</li>
+            <li><strong>Week 9-10 (Days 57-70):</strong> Queen becomes restless. Body temperature drops 24-48 hours before labor.</li>
+        </ul>
+        
+        <h3>🏠 Signs Your Cat is About to Give Birth</h3>
+        <ul>
+            <li>✅ Nesting behavior - seeking quiet, warm places</li>
+            <li>✅ Drop in body temperature below 100°F (37.8°C)</li>
+            <li>✅ Loss of appetite 24 hours before labor</li>
+            <li>✅ Restlessness, pacing, excessive grooming</li>
+            <li>✅ Milk production from nipples</li>
+        </ul>
+        
+        <h3>⚠️ Important Notes</h3>
+        <p>This calculator provides an estimated due date. Always consult your veterinarian for proper prenatal care, ultrasound confirmation, and queening assistance. Factors like breed, litter size, and the queen's health can affect the actual delivery date. If pregnancy exceeds 70 days, seek immediate veterinary care.</p>
+        
+        <h3>🔍 Related Keywords</h3>
+        <p>feline pregnancy calculator | cat due date calculator | how long are cats pregnant | cat gestation period | pregnant cat due date calculator | cat pregnancy week by week | queening date calculator | cat breeding calculator | feline gestation timeline</p>
+    </div>
+
+<!-- Category Footer & Back to Home Button -->
+<div class="category-footer" style="max-width: 1200px; margin: 40px auto 20px; padding: 0 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="index.html" class="home-link" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px 28px; border-radius: 40px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">🔘 Back to Home</a>
+  </div>
+  <div id="dynamicCategoryFooter"></div>
+</div>
+
+<script>
+  (function() {
+    // Automatic category detection from filename
+    function getCurrentCategory() {
+      const path = window.location.pathname;
+      console.log("Current path:", path);
+      if (path.includes('age-calculator') || path.includes('gst') || path.includes('percentage') || path.includes('sip') || path.includes('discount') || path.includes('profit-loss') || path.includes('gpa') || path.includes('date-calculator') || path.includes('qr-code') || path.includes('youtube-thumbnail') || path.includes('currency-converter') || path.includes('age-difference')) return 'popular';
+      if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie') || path.includes('meal-planner')) return 'health';
+      if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) return 'financial';
+      if (path.includes('word-counter') || path.includes('line-counter') || path.includes('text-case') || path.includes('password-generator')) return 'text';
+      if (path.includes('image-compressor')) return 'media';
+      if (path.includes('spin') || path.includes('yes-no') || path.includes('decision-roulette') || path.includes('random-number')) return 'fun';
+      return 'popular';
+    }
+
+    const categories = {
+      popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "Age Difference", url: "age-difference-calculator.html" }, { name: "Discount Calculator", url: "discount-calculator.html" }, { name: "Profit & Loss", url: "profit-loss-calculator.html" }, { name: "GPA Calculator", url: "gpa-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "SIP Calculator", url: "sip-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Date Calculator", url: "date-calculator.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
+      health: { name: "🏃‍♂️ Health & Fitness", tools: [ { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "BMR Calculator", url: "bmr-calculator.html" }, { name: "Calorie Calculator", url: "calorie-calculator.html" }, { name: "Meal Planner", url: "meal-planner.html" } ] },
+      financial: { name: "💰 Financial Tools", tools: [ { name: "EMI Calculator", url: "emi-calculator.html" }, { name: "Loan Calculator", url: "loan-calculator.html" }, { name: "Zakat Calculator", url: "zakat-calculator.html" } ] },
+      text: { name: "📝 Text & Writing", tools: [ { name: "Word Counter", url: "word-counter.html" }, { name: "Line Counter", url: "line-counter.html" }, { name: "Text Case Converter", url: "text-case-converter.html" }, { name: "Password Generator", url: "password-generator.html" } ] },
+      media: { name: "🖼️ Image & Media", tools: [ { name: "Image Compressor", url: "image-compressor.html" } ] },
+      fun: { name: "🎲 Random & Fun", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Decision Roulette", url: "decision-roulette.html" }, { name: "Random Number", url: "random-number-generator.html" } ] }
+    };
+
+    function renderFooter() {
+      const footerContainer = document.getElementById('dynamicCategoryFooter');
+      if (!footerContainer) {
+        console.error("Element #dynamicCategoryFooter not found");
+        return;
+      }
+      const currentCategory = getCurrentCategory();
+      console.log("Detected category:", currentCategory);
+      const cat = categories[currentCategory];
+      if (!cat) {
+        footerContainer.innerHTML = '<p style="text-align:center;">Tools loading...</p>';
+        return;
+      }
+      let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
+      cat.tools.forEach(tool => {
+        html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; transition: 0.2s; display: block;">🔘 ${tool.name}</a>`;
+      });
+      html += `</div></div>`;
+      footerContainer.innerHTML = html;
+    }
+
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderFooter);
+    } else {
+      renderFooter();
+    }
+  })();
+</script>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>✨ Free Online Tools</h3>
+            <p>Your one-stop destination for free, fast, and accurate online calculators and utilities. Trusted by 100,000+ users worldwide.</p>
+        </div>
+        <div class="footer-col">
+            <h4>📄 Quick Links</h4>
+            <a href="index.html">🏠 Home</a>
+            <a href="about.html">ℹ️ About Us</a>
+            <a href="contact.html">📧 Contact Us</a>
+            <a href="privacy-policy.html">🔒 Privacy Policy</a>
+            <a href="terms-conditions.html">📜 Terms</a>
+            <a href="disclaimer.html">⚠️ Disclaimer</a>
+        </div>
+        <div class="footer-col">
+            <h4>⭐ Animal Tools</h4>
+            <a href="dog-pregnancy-calculator.html">🐕 Dog Pregnancy</a>
+            <a href="cat-pregnancy-calculator.html">🐱 Cat Pregnancy</a>
+            <a href="cow-pregnancy-calculator.html">🐄 Cow Pregnancy</a>
+        </div>
+        <div class="footer-col">
+            <h4>🔧 All Tools</h4>
+            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+            <a href="age-calculator.html">📅 Age Calculator</a>
+            <a href="password-generator.html">🔐 Password Generator</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ for cat lovers & breeders</p>
+    </div>
+</footer>
+
+<script>
+// Cat Pregnancy Calculator Logic
+function calculateDueDate() {
+    const matingDateInput = document.getElementById('matingDate').value;
+    const gestationDays = parseInt(document.getElementById('gestationDays').value);
+    
+    if (!matingDateInput) {
+        alert('Please select the mating date');
+        return;
+    }
+    
+    const matingDate = new Date(matingDateInput);
+    const dueDate = new Date(matingDate);
+    dueDate.setDate(matingDate.getDate() + gestationDays);
+    
+    // Format dates
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dueDateStr = dueDate.toLocaleDateString('en-US', options);
+    const matingDateStr = matingDate.toLocaleDateString('en-US', options);
+    
+    // Calculate current week of pregnancy
+    const today = new Date();
+    let daysPregnant = Math.floor((today - matingDate) / (1000 * 60 * 60 * 24));
+    let currentWeek = 0;
+    let weekStatus = '';
+    
+    if (daysPregnant < 0) {
+        weekStatus = '⏳ Pregnancy has not started yet. The due date is estimated.';
+        currentWeek = 0;
+    } else if (daysPregnant >= gestationDays) {
+        weekStatus = '🎉 The due date has passed! If kittens haven\'t arrived, please consult your veterinarian immediately.';
+        currentWeek = 10;
+    } else {
+        currentWeek = Math.floor(daysPregnant / 7) + 1;
+        weekStatus = `🐾 Currently in Week ${currentWeek} of pregnancy. ${Math.max(0, gestationDays - daysPregnant)} days remaining until due date.`;
+    }
+    
+    // Display results
+    document.getElementById('dueDateDisplay').innerHTML = `📅 ${dueDateStr}`;
+    document.getElementById('gestationInfo').innerHTML = `Mating date: ${matingDateStr} | Gestation: ${gestationDays} days (approx. ${Math.floor(gestationDays/7)} weeks)`;
+    document.getElementById('currentWeekInfo').innerHTML = weekStatus;
+    
+    // Generate week tracker (9-10 weeks)
+    const totalWeeks = 10;
+    const currentWeekNum = Math.min(totalWeeks, Math.max(1, currentWeek));
+    let weeksHtml = '';
+    
+    const weekLabels = ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10'];
+    
+    for (let i = 1; i <= totalWeeks; i++) {
+        let label = weekLabels[i-1];
+        const isCurrent = (currentWeekNum === i && daysPregnant >= 0 && daysPregnant < gestationDays);
+        weeksHtml += `<span class="week-badge ${isCurrent ? 'current' : ''}">${label}</span>`;
+    }
+    
+    document.getElementById('weekTracker').innerHTML = weeksHtml;
+    document.getElementById('resultContainer').style.display = 'block';
+}
+
+// Event listener
+document.getElementById('calculateBtn').addEventListener('click', calculateDueDate);
+
+// Auto-calculate on page load
+window.addEventListener('load', function() {
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0];
+    document.getElementById('matingDate').value = formattedDate;
+    calculateDueDate();
+});
+
+// Dropdown functionality
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if (dropdown && dropBtn) {
+        dropBtn.addEventListener('click', function(e) { 
+            e.stopPropagation(); 
+            dropdown.classList.toggle('open'); 
+        });
+        document.addEventListener('click', function(event) { 
+            if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) 
+                dropdown.classList.remove('open'); 
+        });
+    }
+    
+    document.querySelectorAll('.dropdown-category').forEach(cat => {
+        cat.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const catId = this.getAttribute('data-cat');
+            if (catId) {
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if (toolsDiv) { 
+                    toolsDiv.classList.toggle('show'); 
+                    this.classList.toggle('active');
+                }
+            }
+        });
+    });
+})();
+</script>
+</body>
+</html>
