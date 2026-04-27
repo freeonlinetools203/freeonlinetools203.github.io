@@ -965,7 +965,7 @@ body {
 </footer>
 
 <script>
-// ========== SEARCH BAR FUNCTIONALITY ==========
+// ========== SEARCH BAR - EXACT MATCHING ==========
 (function() {
     function initSearch() {
         const searchInput = document.getElementById('toolSearch');
@@ -976,7 +976,62 @@ body {
             return;
         }
         
-        // Get all tool cards
+        // Tool mapping: keyword → tool names that should appear
+        const keywordMapping = {
+            'age': ['age calculator', 'age difference'],
+            'bm': ['bmi', 'bmr'],
+            'bmi': ['bmi calculator'],
+            'bmr': ['bmr calculator'],
+            'pdf': ['pdf merger', 'pdf splitter', 'pdf to image', 'pdf to jpg', 'pdf to png', 'pdf to word', 'pdf to excel', 'pdf to text', 'pdf rotator'],
+            'image': ['image color extractor', 'image converter', 'image cropper', 'image resizer', 'image to pdf', 'image upscaler', 'image compressor'],
+            'color': ['color shades', 'color gradient', 'color contrast', 'color name', 'random color'],
+            'wheel': ['spin the wheel', 'yes/no wheel', 'decision roulette', 'prize wheel', 'task spinner'],
+            'password': ['password generator', 'password checker'],
+            'emi': ['emi calculator'],
+            'loan': ['loan calculator'],
+            'zakat': ['zakat calculator'],
+            'gpa': ['gpa calculator'],
+            'gst': ['gst calculator'],
+            'percentage': ['percentage calculator'],
+            'date': ['date calculator'],
+            'qr': ['qr code generator'],
+            'currency': ['currency converter'],
+            'unit': ['unit converter'],
+            'discount': ['discount calculator'],
+            'profit': ['profit & loss'],
+            'word': ['word counter'],
+            'line': ['line counter'],
+            'text case': ['text case converter'],
+            'calorie': ['calorie calculator'],
+            'tdee': ['tdee calculator'],
+            'dog': ['dog pregnancy'],
+            'cat': ['cat pregnancy'],
+            'cow': ['cow pregnancy'],
+            'rabbit': ['rabbit pregnancy'],
+            'goat': ['goat pregnancy'],
+            'horse': ['horse pregnancy'],
+            'sheep': ['sheep pregnancy'],
+            'pig': ['pig pregnancy']
+        };
+        
+        function matchesSearch(toolText, searchTerm) {
+            toolText = toolText.toLowerCase();
+            searchTerm = searchTerm.toLowerCase().trim();
+            
+            // Direct match
+            if (toolText.includes(searchTerm)) return true;
+            
+            // Check keyword mapping
+            for (let [keyword, tools] of Object.entries(keywordMapping)) {
+                if (searchTerm.includes(keyword) || keyword.includes(searchTerm)) {
+                    for (let tool of tools) {
+                        if (toolText.includes(tool)) return true;
+                    }
+                }
+            }
+            return false;
+        }
+        
         function getAllToolCards() {
             let allCards = [];
             document.querySelectorAll('.tool-card').forEach(card => {
@@ -984,7 +1039,8 @@ body {
                 if (link) {
                     allCards.push({
                         element: card,
-                        text: link.innerText.toLowerCase()
+                        text: link.innerText.toLowerCase(),
+                        originalDisplay: card.style.display
                     });
                 }
             });
@@ -997,14 +1053,16 @@ body {
             let visibleCount = 0;
             
             if (searchTerm === '') {
+                // Show everything
                 allCards.forEach(card => { card.element.style.display = ''; });
                 document.querySelectorAll('.section').forEach(section => { section.style.display = ''; });
                 if (searchCount) searchCount.style.display = 'none';
                 return;
             }
             
+            // Filter each tool card
             allCards.forEach(card => {
-                if (card.text.includes(searchTerm)) {
+                if (matchesSearch(card.text, searchTerm)) {
                     card.element.style.display = '';
                     visibleCount++;
                 } else {
@@ -1021,14 +1079,19 @@ body {
                 section.style.display = hasVisible ? '' : 'none';
             });
             
+            // Show result count
             if (searchCount) {
+                if (visibleCount === 0) {
+                    searchCount.innerHTML = `❌ No tools found for "${searchTerm}"`;
+                } else {
+                    searchCount.innerHTML = `✅ ${visibleCount} tool${visibleCount !== 1 ? 's' : ''} found for "${searchTerm}"`;
+                }
                 searchCount.style.display = 'block';
-                searchCount.innerHTML = `🔍 ${visibleCount} tool${visibleCount !== 1 ? 's' : ''} found for "${searchTerm}"`;
             }
         }
         
         searchInput.addEventListener('input', filterTools);
-        console.log('✅ Search working!');
+        console.log('✅ Search ready! Try: age, bm, pdf, wheel');
     }
     
     if (document.readyState === 'loading') {
@@ -1038,7 +1101,7 @@ body {
     }
 })();
 
-// ========== DROPDOWN MENU (SINGLE VERSION) ==========
+// ========== DROPDOWN MENU ==========
 (function() {
     const dropdown = document.getElementById('toolsDropdown');
     const dropBtn = document.getElementById('toolsBtn');
