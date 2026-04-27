@@ -965,7 +965,7 @@ body {
 </footer>
 
 <script>
-// ========== SEARCH BAR - EXACT MATCHING ==========
+// ========== SEARCH BAR - SMART EXACT MATCHING ==========
 (function() {
     function initSearch() {
         const searchInput = document.getElementById('toolSearch');
@@ -979,12 +979,13 @@ body {
         // Tool mapping: keyword → tool names that should appear
         const keywordMapping = {
             'age': ['age calculator', 'age difference'],
-            'bm': ['bmi', 'bmr'],
             'bmi': ['bmi calculator'],
             'bmr': ['bmr calculator'],
-            'pdf': ['pdf merger', 'pdf splitter', 'pdf to image', 'pdf to jpg', 'pdf to png', 'pdf to word', 'pdf to excel', 'pdf to text', 'pdf rotator'],
-            'image': ['image color extractor', 'image converter', 'image cropper', 'image resizer', 'image to pdf', 'image upscaler', 'image compressor'],
-            'color': ['color shades', 'color gradient', 'color contrast', 'color name', 'random color'],
+            'bmi bmr': ['bmi calculator', 'bmr calculator'],
+            'pdf': ['pdf'],
+            'image': ['image'],
+            'img': ['image'],
+            'color': ['color'],
             'wheel': ['spin the wheel', 'yes/no wheel', 'decision roulette', 'prize wheel', 'task spinner'],
             'password': ['password generator', 'password checker'],
             'emi': ['emi calculator'],
@@ -1014,14 +1015,28 @@ body {
             'pig': ['pig pregnancy']
         };
         
+        // Words that should NOT match partially
+        const exactMatchOnly = ['age', 'bmi', 'bmr', 'pdf', 'emi', 'gpa', 'gst', 'qr', 'url', 'txt'];
+        
         function matchesSearch(toolText, searchTerm) {
             toolText = toolText.toLowerCase();
             searchTerm = searchTerm.toLowerCase().trim();
             
-            // Direct match
-            if (toolText.includes(searchTerm)) return true;
+            // If search term is very short (2-3 chars), do exact word boundary matching
+            if (searchTerm.length <= 3) {
+                // Check if tool text starts with the search term OR has it as a whole word
+                const words = toolText.split(' ');
+                for (let word of words) {
+                    if (word === searchTerm) return true;
+                    if (word.startsWith(searchTerm) && searchTerm.length >= 3) return true;
+                }
+                // Also check if tool name exactly contains the term as a substring but not partial
+                if (toolText.includes(' ' + searchTerm + ' ')) return true;
+                if (toolText.startsWith(searchTerm + ' ')) return true;
+                return false;
+            }
             
-            // Check keyword mapping
+            // For longer terms, check keyword mapping first
             for (let [keyword, tools] of Object.entries(keywordMapping)) {
                 if (searchTerm.includes(keyword) || keyword.includes(searchTerm)) {
                     for (let tool of tools) {
@@ -1029,6 +1044,10 @@ body {
                     }
                 }
             }
+            
+            // Direct match
+            if (toolText.includes(searchTerm)) return true;
+            
             return false;
         }
         
@@ -1053,14 +1072,12 @@ body {
             let visibleCount = 0;
             
             if (searchTerm === '') {
-                // Show everything
                 allCards.forEach(card => { card.element.style.display = ''; });
                 document.querySelectorAll('.section').forEach(section => { section.style.display = ''; });
                 if (searchCount) searchCount.style.display = 'none';
                 return;
             }
             
-            // Filter each tool card
             allCards.forEach(card => {
                 if (matchesSearch(card.text, searchTerm)) {
                     card.element.style.display = '';
@@ -1070,7 +1087,6 @@ body {
                 }
             });
             
-            // Hide empty sections
             document.querySelectorAll('.section').forEach(section => {
                 let hasVisible = false;
                 section.querySelectorAll('.tool-card').forEach(card => {
@@ -1079,7 +1095,6 @@ body {
                 section.style.display = hasVisible ? '' : 'none';
             });
             
-            // Show result count
             if (searchCount) {
                 if (visibleCount === 0) {
                     searchCount.innerHTML = `❌ No tools found for "${searchTerm}"`;
@@ -1091,7 +1106,7 @@ body {
         }
         
         searchInput.addEventListener('input', filterTools);
-        console.log('✅ Search ready! Try: age, bm, pdf, wheel');
+        console.log('✅ Search ready! Try: age, bmi, image');
     }
     
     if (document.readyState === 'loading') {
@@ -1164,5 +1179,7 @@ setTimeout(() => {
     document.body.style.opacity = '1';
 }, 50);
 </script>
+</body>
+</html>
 </body>
 </html>
