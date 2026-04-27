@@ -965,7 +965,7 @@ body {
 </footer>
 
 <script>
-// ========== SEARCH BAR - SMART EXACT MATCHING ==========
+// ========== SEARCH BAR - ALL WORDS WORK ==========
 (function() {
     function initSearch() {
         const searchInput = document.getElementById('toolSearch');
@@ -976,16 +976,16 @@ body {
             return;
         }
         
-        // Tool mapping: keyword → tool names that should appear
+        // Exact keyword to tools mapping
         const keywordMapping = {
             'age': ['age calculator', 'age difference'],
+            'bm': ['bmi calculator', 'bmr calculator'],
             'bmi': ['bmi calculator'],
             'bmr': ['bmr calculator'],
-            'bmi bmr': ['bmi calculator', 'bmr calculator'],
-            'pdf': ['pdf'],
-            'image': ['image'],
-            'img': ['image'],
-            'color': ['color'],
+            'pdf': ['pdf merger', 'pdf splitter', 'pdf to image', 'pdf to jpg', 'pdf to png', 'pdf to word', 'pdf to excel', 'pdf to text', 'pdf rotator'],
+            'image': ['image color extractor', 'image converter', 'image cropper', 'image resizer', 'image to pdf', 'image upscaler', 'image compressor'],
+            'img': ['image color extractor', 'image converter', 'image cropper', 'image resizer', 'image to pdf', 'image upscaler', 'image compressor'],
+            'color': ['color shades', 'color gradient', 'color contrast', 'color name', 'random color'],
             'wheel': ['spin the wheel', 'yes/no wheel', 'decision roulette', 'prize wheel', 'task spinner'],
             'password': ['password generator', 'password checker'],
             'emi': ['emi calculator'],
@@ -1002,7 +1002,7 @@ body {
             'profit': ['profit & loss'],
             'word': ['word counter'],
             'line': ['line counter'],
-            'text case': ['text case converter'],
+            'text': ['text case converter'],
             'calorie': ['calorie calculator'],
             'tdee': ['tdee calculator'],
             'dog': ['dog pregnancy'],
@@ -1015,38 +1015,30 @@ body {
             'pig': ['pig pregnancy']
         };
         
-        // Words that should NOT match partially
-        const exactMatchOnly = ['age', 'bmi', 'bmr', 'pdf', 'emi', 'gpa', 'gst', 'qr', 'url', 'txt'];
-        
         function matchesSearch(toolText, searchTerm) {
             toolText = toolText.toLowerCase();
             searchTerm = searchTerm.toLowerCase().trim();
             
-            // If search term is very short (2-3 chars), do exact word boundary matching
-            if (searchTerm.length <= 3) {
-                // Check if tool text starts with the search term OR has it as a whole word
-                const words = toolText.split(' ');
-                for (let word of words) {
-                    if (word === searchTerm) return true;
-                    if (word.startsWith(searchTerm) && searchTerm.length >= 3) return true;
-                }
-                // Also check if tool name exactly contains the term as a substring but not partial
-                if (toolText.includes(' ' + searchTerm + ' ')) return true;
-                if (toolText.startsWith(searchTerm + ' ')) return true;
-                return false;
-            }
+            if (searchTerm === '') return false;
             
-            // For longer terms, check keyword mapping first
+            // Check keyword mapping first
             for (let [keyword, tools] of Object.entries(keywordMapping)) {
-                if (searchTerm.includes(keyword) || keyword.includes(searchTerm)) {
+                if (searchTerm === keyword || searchTerm.includes(keyword) || keyword.includes(searchTerm)) {
                     for (let tool of tools) {
                         if (toolText.includes(tool)) return true;
                     }
                 }
             }
             
-            // Direct match
+            // Direct match in tool text
             if (toolText.includes(searchTerm)) return true;
+            
+            // Check if search term matches start of tool name
+            const words = toolText.split(' ');
+            for (let word of words) {
+                if (word.startsWith(searchTerm) && searchTerm.length >= 2) return true;
+                if (word === searchTerm) return true;
+            }
             
             return false;
         }
@@ -1058,8 +1050,7 @@ body {
                 if (link) {
                     allCards.push({
                         element: card,
-                        text: link.innerText.toLowerCase(),
-                        originalDisplay: card.style.display
+                        text: link.innerText.toLowerCase()
                     });
                 }
             });
@@ -1106,7 +1097,7 @@ body {
         }
         
         searchInput.addEventListener('input', filterTools);
-        console.log('✅ Search ready! Try: age, bmi, image');
+        console.log('✅ Search ready! Try: bm, age, pdf');
     }
     
     if (document.readyState === 'loading') {
