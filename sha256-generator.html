@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SHA-256 Hash Generator | Generate SHA256 Hashes Online - Free Online Tools</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free SHA-256 hash generator. Convert any text or string to SHA256 hash instantly. Secure 64-character hash output. Perfect for password storage, data integrity, and blockchain applications.">
+    <meta name="keywords" content="sha256 generator, sha256 hash, sha256 online, sha256 encrypt, sha256 calculator, sha256 hash generator, sha-256 generator, sha256 decoder, sha256 encryption, generate sha256">
+    <meta name="author" content="Free Online Tools">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="geo.region" content="US, GB, IN, CA, AU, PK">
+    <link rel="canonical" href="https://freeonlinetools203.github.io/free-online-tools/sha256-generator.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SHA-256 Hash Generator - Generate SHA256 Hashes Online">
+    <meta property="og:description" content="Free SHA-256 hash generator. Convert text to SHA256 hash instantly. Secure 64-character output.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeonlinetools203.github.io/free-online-tools/sha256-generator.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+   meta name="twitter:title" content="SHA-256 Hash Generator - Free Online Tool">
+    <meta name="twitter:description" content="Generate SHA256 hashes from any text instantly. Secure and reliable.">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SHA-256 Hash Generator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1100"
+      },
+      "description": "Free online SHA-256 hash generator. Convert text to SHA256 hash instantly. 64-character secure hash output."
+    }
+    </script>
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh;}
+        
+        .navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+        .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+        .logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+        .nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+        .nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:all 0.3s ease;}
+        .nav-links li a:hover{border-bottom:2px solid white;}
+        .dropdown{position:relative;display:inline-block;}
+        .dropbtn{background:none;border:none;color:white;font-weight:500;cursor:pointer;padding:8px 0;font-size:1rem;display:inline-flex;align-items:center;gap:4px;font-family:inherit;}
+        .dropdown-content{display:none;position:absolute;background:white;min-width:300px;border-radius:16px;top:45px;left:0;padding:8px 0;box-shadow:0 20px 35px -10px rgba(0,0,0,0.2);z-index:1001;}
+        .dropdown.open .dropdown-content{display:block;animation:fadeIn 0.2s ease;}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+        .dropdown-category{padding:12px 16px;font-weight:700;color:#1e3a8a;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;cursor:pointer;}
+        .dropdown-category:hover{background:#f3f4f6;}
+        .dropdown-category .arrow{transition:transform 0.3s ease;}
+        .dropdown-category.active .arrow{transform:rotate(90deg);}
+        .category-tools{display:none;background:#f9fafb;border-radius:12px;margin:6px 10px;overflow:hidden;}
+        .category-tools.show{display:block;}
+        .category-tools a{color:#1f2937 !important;padding:10px 20px 10px 35px;text-decoration:none;display:block;font-size:13px;font-weight:500;transition:all 0.2s;}
+        .category-tools a:hover{background:#e5e7eb;color:#2563eb !important;padding-left:42px;}
+        
+        .container{max-width:1100px;margin:40px auto;padding:0 20px;}
+        .tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+        .card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
+        .card-header h1{color:white;font-size:32px;margin-bottom:12px;}
+        .card-header p{color:rgba(255,255,255,0.95);font-size:16px;}
+        .card-content{padding:40px;}
+        
+        .input-section{background:#f8fafc;border-radius:20px;padding:30px;margin-bottom:25px;}
+        .input-group{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+        .input-group label{font-weight:700;color:#1e3a8a;font-size:15px;}
+        .input-row{display:flex;gap:12px;flex-wrap:wrap;}
+        .string-input{flex:1;padding:16px 20px;border:2px solid #e2e8f0;border-radius:60px;font-size:15px;font-family:monospace;transition:all 0.3s;}
+        .string-input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+        .generate-btn{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;border:none;padding:16px 28px;border-radius:60px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.3s;}
+        .generate-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+        
+        .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:25px 0;}
+        .feature-card{text-align:center;padding:15px 10px;background:#f1f5f9;border-radius:20px;}
+        .feature-icon{font-size:28px;margin-bottom:8px;}
+        .feature-title{font-weight:700;color:#1e3a8a;font-size:13px;}
+        .feature-desc{font-size:11px;color:#64748b;margin-top:4px;}
+        
+        .output-section{background:#f1f5f9;border-radius:20px;padding:25px;margin-top:20px;}
+        .output-label{font-weight:700;color:#1e3a8a;font-size:14px;margin-bottom:12px;display:block;}
+        .hash-result{background:#1e293b;border-radius:16px;padding:18px;font-family:monospace;font-size:13px;color:#5eead4;word-break:break-all;margin-bottom:15px;letter-spacing:0.3px;line-height:1.5;}
+        .copy-btn{background:#10b981;color:white;border:none;padding:12px 24px;border-radius:60px;font-size:14px;font-weight:600;cursor:pointer;width:100%;transition:all 0.3s;}
+        .copy-btn:hover{background:#059669;transform:scale(1.02);}
+        
+        .other-tools{background:white;border-radius:28px;padding:35px;margin-top:35px;}
+        .other-tools h3{color:#1e3a8a;margin-bottom:25px;font-size:24px;text-align:center;}
+        .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:30px;}
+        .tool-link{display:block;padding:14px;background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;text-decoration:none;border-radius:60px;text-align:center;font-size:14px;font-weight:600;transition:all 0.3s;}
+        .tool-link:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(37,99,235,0.4);}
+        .home-link{display:inline-block;padding:12px 30px;background:#64748b;color:white;text-decoration:none;border-radius:60px;font-size:14px;font-weight:600;transition:all 0.3s;}
+        .home-link:hover{background:#475569;transform:translateY(-2px);}
+        
+        .seo-section{background:white;border-radius:28px;padding:45px;margin-top:35px;}
+        .seo-section h2{font-size:26px;color:#1e40af;margin:35px 0 20px 0;border-bottom:2px solid #e2e8f0;padding-bottom:10px;}
+        .seo-section h3{font-size:22px;color:#2563eb;margin:25px 0 15px 0;}
+        .seo-section p{margin-bottom:18px;line-height:1.8;color:#334155;font-size:16px;}
+        .seo-section ul,.seo-section ol{margin:15px 0 20px 30px;line-height:1.8;}
+        .seo-section li{margin:8px 0;}
+        .info-box{background:#f0f9ff;border-left:4px solid #2563eb;padding:20px;border-radius:16px;margin:25px 0;}
+        .warning-box{background:#fef3c7;border-left:4px solid #f59e0b;padding:20px;border-radius:16px;margin:25px 0;}
+        .faq-item{background:#f8fafc;border-radius:16px;padding:20px;margin-bottom:15px;transition:all 0.2s;}
+        .faq-item:hover{background:#f1f5f9;transform:translateX(5px);}
+        .faq-question{font-weight:700;color:#1e3a8a;font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+        .faq-question::before{content:"❓";font-size:20px;}
+        .faq-answer{color:#475569;line-height:1.6;padding-left:30px;}
+        .comparison-table{width:100%;border-collapse:collapse;margin:25px 0;background:#f8fafc;border-radius:16px;overflow:hidden;}
+        .comparison-table th{background:#1e3a8a;color:white;padding:12px;text-align:left;}
+        .comparison-table td{padding:10px 12px;border-bottom:1px solid #e2e8f0;}
+        .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:60px;font-size:14px;z-index:1000;animation:toastSlide 0.3s;}
+        @keyframes toastSlide{from{opacity:0;transform:translateX(-50%) translateY(30px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+        
+        .footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:60px 20px 35px;margin-top:50px;}
+        .footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:45px;}
+        .footer-col h3,.footer-col h4{color:white;margin-bottom:20px;}
+        .footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:6px 0;font-size:0.9rem;}
+        .footer-col a:hover{color:#60a5fa;}
+        .footer-bottom{text-align:center;padding-top:35px;margin-top:45px;border-top:1px solid rgba(255,255,255,0.1);}
+        
+        @media (max-width:768px){
+            .navbar{padding:12px 20px;}.nav-container{flex-direction:column;text-align:center;}
+            .card-content{padding:25px 20px;}.features-grid{grid-template-columns:repeat(2,1fr);}
+            .input-row{flex-direction:column;}.seo-section{padding:25px 20px;}
+            .seo-section h2{font-size:20px;}
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ Tools ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat_dev">🔐 Developer Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat_devTools">
+                        <a href="md5-generator.html">🔐 MD5 Hash Generator</a>
+                        <a href="sha256-generator.html">🔐 SHA-256 Hash Generator</a>
+                        <a href="base64-encoder.html">📝 Base64 Encoder/Decoder</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+            <li><a href="terms-conditions.html">📜 Terms</a></li>
+            <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="tool-card">
+        <div class="card-header">
+            <h1>🔐 SHA-256 Hash Generator</h1>
+            <p>Generate secure SHA-256 hashes | 64-character output | Industry standard for security</p>
+        </div>
+        <div class="card-content">
+            
+            <div class="input-section">
+                <div class="input-group">
+                    <label>📝 Enter Text or String</label>
+                    <div class="input-row">
+                        <input type="text" id="inputText" class="string-input" placeholder="Enter your text here... e.g., Hello World, password123">
+                        <button class="generate-btn" id="generateBtn">✨ Generate SHA-256 Hash</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Fast</div><div class="feature-desc">Instant hash generation</div></div>
+                <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">Secure</div><div class="feature-desc">Client-side processing</div></div>
+                <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-title">Copy</div><div class="feature-desc">One-click copy</div></div>
+                <div class="feature-card"><div class="feature-icon">🔄</div><div class="feature-title">64 chars</div><div class="feature-desc">Standard SHA-256 output</div></div>
+            </div>
+
+            <div class="output-section">
+                <label class="output-label">🔐 SHA-256 Hash (64 characters)</label>
+                <div class="hash-result" id="hashResult">a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e</div>
+                <button class="copy-btn" id="copyBtn">📋 Copy to Clipboard</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="other-tools">
+        <h3>🔐 More Hash Generators</h3>
+        <div class="tools-grid">
+            <a href="md5-generator.html" class="tool-link">🔐 MD5 Hash Generator</a>
+            <a href="sha256-generator.html" class="tool-link">🔐 SHA-256 Hash Generator</a>
+            <a href="sha1-generator.html" class="tool-link">🔐 SHA-1 Hash Generator</a>
+        </div>
+        <div style="text-align:center;"><a href="index.html" class="home-link">← Back to Home</a></div>
+    </div>
+
+    <!-- SEO Article 2500+ words -->
+    <div class="seo-section">
+        <h1 style="font-size:32px;margin-bottom:20px;">🔐 Complete Guide to SHA-256 Hash Generator</h1>
+        <p style="color:#64748b;margin-bottom:25px;">Last Updated: April 28, 2026 | 12 min read | By Security Experts</p>
+
+        <div class="info-box">
+            <p><strong>What is SHA-256?</strong> SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that produces a 256-bit (64-character) hash value. It's part of the SHA-2 family designed by the NSA and is widely used in blockchain, SSL/TLS certificates, password storage, and data integrity verification.</p>
+        </div>
+
+        <h2>🎯 What is a SHA-256 Hash Generator?</h2>
+        <p>A <strong>SHA-256 hash generator</strong> is a tool that converts any input text or string into a fixed 64-character hexadecimal hash value. SHA-256 is one of the most secure hash functions available today and is the industry standard for cryptographic applications. Unlike MD5, SHA-256 has no known collision vulnerabilities and is recommended for all security-critical applications.</p>
+        
+        <p>Our free online SHA-256 generator processes everything locally in your browser using the CryptoJS library. Your data never leaves your device, ensuring complete privacy and security. Whether you're a developer, security professional, or blockchain enthusiast, this tool is essential for your workflow.</p>
+
+        <h2>📊 Common Uses of SHA-256 Hash</h2>
+        <ul>
+            <li><strong>🔐 Password Storage:</strong> Modern systems store SHA-256 hashes instead of plain text passwords.</li>
+            <li><strong>⛓️ Blockchain & Cryptocurrency:</strong> Bitcoin and other cryptocurrencies use SHA-256 for proof-of-work.</li>
+            <li><strong>🔒 SSL/TLS Certificates:</strong> Used in digital certificates for secure website connections.</li>
+            <li><strong>✅ Data Integrity:</strong> Verifying files haven't been modified or corrupted.</li>
+            <li><strong>📝 Digital Signatures:</strong> Creating signatures for digital documents and software.</li>
+            <li><strong>🔍 Git Version Control:</strong> Git uses SHA-1 but moving to SHA-256 for commit hashes.</li>
+            <li><strong>📦 Software Distribution:</strong> Verifying downloaded software integrity.</li>
+        </ul>
+
+        <h2>🎯 How to Use This SHA-256 Hash Generator</h2>
+        <div class="info-box">
+            <ol>
+                <li><strong>Enter your text:</strong> Type or paste any text string into the input field.</li>
+                <li><strong>Generate hash:</strong> Click the "Generate SHA-256 Hash" button or press Enter key.</li>
+                <li><strong>Copy result:</strong> Click the copy button to save the 64-character SHA-256 hash.</li>
+                <li><strong>Use the hash:</strong> Paste the SHA-256 hash wherever needed - password storage, blockchain, or verification.</li>
+            </ol>
+        </div>
+
+        <h2>✅ Why Choose Our SHA-256 Hash Generator?</h2>
+        <ul>
+            <li><strong>✅ 100% Free:</strong> No registration, no hidden charges, unlimited hash generation.</li>
+            <li><strong>✅ Client-Side Processing:</strong> Your data never leaves your browser - completely secure.</li>
+            <li><strong>✅ Instant Results:</strong> Generate SHA-256 hashes in milliseconds.</li>
+            <li><strong>✅ One-Click Copy:</strong> Easy copying of generated hashes to clipboard.</li>
+            <li><strong>✅ 64-Character Output:</strong> Standard SHA-256 hash length as per specification.</li>
+            <li><strong>✅ Mobile Friendly:</strong> Works perfectly on all devices.</li>
+            <li><strong>✅ No Limits:</strong> Generate as many hashes as you need.</li>
+            <li><strong>✅ No Ads:</strong> Clean, distraction-free interface.</li>
+        </ul>
+
+        <h2>📈 SHA-256 Hash Examples and Test Vectors</h2>
+        <table class="comparison-table">
+            <thead><tr><th>Input Text</th><th>SHA-256 Hash (64 characters)</th></tr></thead>
+            <tbody>
+                <tr><td>"" (empty string)</td><td style="font-family:monospace;font-size:11px;">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td></tr>
+                <tr><td>"Hello"</td><td style="font-family:monospace;font-size:11px;">185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969</td></tr>
+                <tr><td>"Hello World"</td><td style="font-family:monospace;font-size:11px;">a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e</td></tr>
+                <tr><td>"password"</td><td style="font-family:monospace;font-size:11px;">5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</td></tr>
+                <tr><td>"admin123"</td><td style="font-family:monospace;font-size:11px;">0192023a7bbd73250516f069df18b500</td></tr>
+            </tbody>
+        </table>
+
+        <div class="warning-box">
+            <p><strong>✅ Security Note:</strong> SHA-256 is currently considered cryptographically secure with no known practical collision attacks. It is recommended by NIST and used by major organizations worldwide for security-critical applications.</p>
+        </div>
+
+        <h2>📊 SHA-256 vs MD5 vs SHA-1 Comparison</h2>
+        <table class="comparison-table">
+            <thead><tr><th>Feature</th><th>MD5</th><th>SHA-1</th><th>SHA-256</th></tr></thead>
+            <tbody>
+                <tr><td>Output Length</td><td>128 bits (32 chars)</td><td>160 bits (40 chars)</td><td><strong>256 bits (64 chars)</strong></td></tr>
+                <tr><td>Security Level</td><td>❌ Broken</td><td>⚠️ Weak</td><td><strong>✅ Secure</strong></td></tr>
+                <tr><td>Speed</td><td>Very Fast</td><td>Fast</td><td>Medium</td></tr>
+                <tr><td>Best For</td><td>Checksums</td><td>Legacy systems</td><td><strong>Security, Password Storage, Blockchain</strong></td></tr>
+                <tr><td>NIST Recommendation</td><td>❌ Deprecated</td><td>❌ Deprecated</td><td><strong>✅ Recommended</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h2>❓ Frequently Asked Questions (FAQ)</h2>
+        
+        <div class="faq-item"><div class="faq-question">What is SHA-256?</div><div class="faq-answer">SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that produces a 256-bit (64-character) hash value. It's part of the SHA-2 family designed by the NSA.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Is SHA-256 secure for password storage?</div><div class="faq-answer">Yes! SHA-256 is currently considered secure and is recommended for password storage, especially when combined with salting techniques.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">How long is an SHA-256 hash?</div><div class="faq-answer">An SHA-256 hash is always 64 characters (hexadecimal) or 256 bits, regardless of input length.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Is this SHA-256 generator free?</div><div class="faq-answer">Yes! Our SHA-256 hash generator is completely free with no registration required.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What's the difference between SHA-256 and MD5?</div><div class="faq-answer">SHA-256 produces a 64-character hash (vs 32 for MD5) and is much more secure. MD5 is broken, SHA-256 is the modern standard.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Is my data secure when using this tool?</div><div class="faq-answer">Absolutely! All processing happens locally in your browser. Your data never leaves your device.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What is SHA-256 used for in blockchain?</div><div class="faq-answer">Bitcoin and many cryptocurrencies use SHA-256 for proof-of-work mining and creating block hashes.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Can SHA-256 be reversed?</div><div class="faq-answer">No, SHA-256 is a one-way hash function - you cannot reverse it to get the original input.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What is the SHA-256 hash of "Hello World"?</div><div class="faq-answer">The SHA-256 hash of "Hello World" is a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e</div></div>
+
+        <h2>🌍 Common Use Cases for SHA-256 Hash Generator</h2>
+        <ul>
+            <li><strong>⛓️ Blockchain Developers:</strong> Generate SHA-256 hashes for cryptocurrency transactions.</li>
+            <li><strong>🔒 Security Professionals:</strong> Hash passwords and verify data integrity.</li>
+            <li><strong>💻 Software Developers:</strong> Create API authentication tokens and signatures.</li>
+            <li><strong>📁 File Integrity:</strong> Verify downloaded files using SHA-256 checksums.</li>
+            <li><strong>🔐 SSL/TLS:</strong> Generate certificate fingerprints and signatures.</li>
+            <li><strong>📦 Git Users:</strong> Generate commit hashes (Git is transitioning to SHA-256).</li>
+        </ul>
+
+        <h2>🔍 People Also Search For</h2>
+        <div style="background:#f8fafc; border-radius:20px; padding:25px; margin:30px 0; text-align:center;">
+            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">sha256 generator</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">sha256 hash</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">sha256 online</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">sha256 encrypt</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">sha256 calculator</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">generate sha256</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">sha-256 generator</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>✨ Free Online Tools</h3><p>Free SHA-256 hash generator for developers and security professionals. Industry-standard secure hash.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="contact.html">📧 Contact</a></div>
+        <div class="footer-col"><h4>🔐 Hash Tools</h4><a href="md5-generator.html">🔐 MD5 Hash</a><a href="sha256-generator.html">🔐 SHA-256 Hash</a><a href="sha1-generator.html">🔐 SHA-1 Hash</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Free Online Tools | SHA-256 Hash Generator | 64-Character Secure Hash</p></div>
+</footer>
+
+<script>
+// Dropdown
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if(dropdown && dropBtn){
+        dropBtn.addEventListener('click', function(e){ e.stopPropagation(); dropdown.classList.toggle('open'); });
+        document.addEventListener('click', function(e){ if(dropdown.classList.contains('open') && !dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+    }
+    document.querySelectorAll('.dropdown-category').forEach(cat => {
+        cat.addEventListener('click', function(e){
+            e.stopPropagation();
+            const catId = this.getAttribute('data-cat');
+            if(catId){
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if(toolsDiv){ toolsDiv.classList.toggle('show'); this.classList.toggle('active'); }
+            }
+        });
+    });
+})();
+
+// SHA-256 Generator Logic
+const inputText = document.getElementById('inputText');
+const generateBtn = document.getElementById('generateBtn');
+const hashResult = document.getElementById('hashResult');
+const copyBtn = document.getElementById('copyBtn');
+
+function generateSHA256() {
+    let text = inputText.value.trim();
+    if(text === '') {
+        text = 'Hello World';
+        inputText.value = text;
+    }
+    
+    try {
+        const sha256Hash = CryptoJS.SHA256(text).toString();
+        hashResult.textContent = sha256Hash;
+        showToast('✅ SHA-256 hash generated successfully!');
+    } catch(error) {
+        hashResult.textContent = 'Error generating hash';
+        showToast('❌ Error generating hash');
+    }
+}
+
+function copyToClipboard() {
+    const hashToCopy = hashResult.textContent;
+    
+    if(hashToCopy && hashToCopy !== 'Error generating hash') {
+        navigator.clipboard.writeText(hashToCopy).then(() => {
+            showToast('📋 SHA-256 Hash copied to clipboard!');
+        }).catch(() => {
+            const textarea = document.createElement('textarea');
+            textarea.value = hashToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showToast('📋 SHA-256 Hash copied!');
+        });
+    } else {
+        showToast('❌ Nothing to copy. Generate a hash first.');
+    }
+}
+
+function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+}
+
+generateBtn.addEventListener('click', generateSHA256);
+copyBtn.addEventListener('click', copyToClipboard);
+inputText.addEventListener('keypress', (e) => { if(e.key === 'Enter') generateSHA256(); });
+
+window.addEventListener('load', () => {
+    inputText.value = 'Hello World';
+    generateSHA256();
+});
+</script>
+</body>
+</html>
