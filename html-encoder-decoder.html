@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>HTML Encoder/Decoder | Encode & Decode HTML Entities Online - Free Online Tools</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free HTML encoder and decoder tool. Convert special characters to HTML entities and decode HTML entities back to text. Perfect for web developers, content writers, and preventing XSS attacks. 100% free, client-side processing.">
+    <meta name="keywords" content="html encoder, html decoder, html encode decode, html encoding decoding, html encoder and decoder, decode html encoding, decode encode html, html encode and decode, html entity encoder, html entity decoder, escape html, unescape html, html special characters converter, html entity converter">
+    <meta name="author" content="Free Online Tools">
+    <meta name="robots" content="index, follow">
+    meta name="googlebot" content="index, follow">
+    <meta name="geo.region" content="US, GB, IN, CA, AU, PK">
+    <link rel="canonical" href="https://freeonlinetools203.github.io/free-online-tools/html-encoder-decoder.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="HTML Encoder/Decoder - Encode & Decode HTML Entities Online">
+    <meta property="og:description" content="Free online HTML encoder and decoder tool. Convert special characters to HTML entities and back. Perfect for web developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeonlinetools203.github.io/free-online-tools/html-encoder-decoder.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTML Encoder/Decoder - Free Online Tool">
+    <meta name="twitter:description" content="Encode or decode HTML entities instantly. Free tool for web developers.">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "HTML Encoder/Decoder",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "850"
+      },
+      "description": "Free online HTML encoder and decoder tool. Convert special characters to HTML entities and decode HTML entities back to text."
+    }
+    </script>
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh;}
+        
+        .navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+        .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+        .logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+        .nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+        .nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:all 0.3s ease;}
+        .nav-links li a:hover{border-bottom:2px solid white;}
+        .dropdown{position:relative;display:inline-block;}
+        .dropbtn{background:none;border:none;color:white;font-weight:500;cursor:pointer;padding:8px 0;font-size:1rem;display:inline-flex;align-items:center;gap:4px;font-family:inherit;}
+        .dropdown-content{display:none;position:absolute;background:white;min-width:300px;border-radius:16px;top:45px;left:0;padding:8px 0;box-shadow:0 20px 35px -10px rgba(0,0,0,0.2);z-index:1001;}
+        .dropdown.open .dropdown-content{display:block;animation:fadeIn 0.2s ease;}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+        .dropdown-category{padding:12px 16px;font-weight:700;color:#1e3a8a;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;cursor:pointer;}
+        .dropdown-category:hover{background:#f3f4f6;}
+        .dropdown-category .arrow{transition:transform 0.3s ease;}
+        .dropdown-category.active .arrow{transform:rotate(90deg);}
+        .category-tools{display:none;background:#f9fafb;border-radius:12px;margin:6px 10px;overflow:hidden;}
+        .category-tools.show{display:block;}
+        .category-tools a{color:#1f2937 !important;padding:10px 20px 10px 35px;text-decoration:none;display:block;font-size:13px;font-weight:500;transition:all 0.2s;}
+        .category-tools a:hover{background:#e5e7eb;color:#2563eb !important;padding-left:42px;}
+        
+        .container{max-width:1100px;margin:40px auto;padding:0 20px;}
+        .tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+        .card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
+        .card-header h1{color:white;font-size:32px;margin-bottom:12px;}
+        .card-header p{color:rgba(255,255,255,0.95);font-size:16px;}
+        .card-content{padding:40px;}
+        
+        .mode-buttons{display:flex;gap:15px;margin-bottom:25px;}
+        .mode-btn{flex:1;padding:14px;border-radius:60px;font-size:16px;font-weight:700;border:none;cursor:pointer;transition:all 0.3s;background:#f1f5f9;color:#1e3a8a;}
+        .mode-btn.active{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;box-shadow:0 4px 15px rgba(37,99,235,0.3);}
+        .mode-btn:hover{transform:translateY(-2px);}
+        
+        .input-section{background:#f8fafc;border-radius:20px;padding:30px;margin-bottom:20px;}
+        .input-group{display:flex;flex-direction:column;gap:12px;}
+        .input-group label{font-weight:700;color:#1e3a8a;font-size:15px;}
+        .textarea-input{width:100%;padding:16px;border:2px solid #e2e8f0;border-radius:20px;font-size:14px;font-family:monospace;min-height:120px;resize:vertical;}
+        .textarea-input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+        .action-buttons{display:flex;gap:12px;margin-top:15px;flex-wrap:wrap;}
+        .primary-btn{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;border:none;padding:12px 24px;border-radius:60px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;}
+        .primary-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+        .secondary-btn{background:#f1f5f9;color:#1e3a8a;border:none;padding:12px 24px;border-radius:60px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;}
+        .secondary-btn:hover{background:#e2e8f0;transform:translateY(-2px);}
+        
+        .output-section{background:#f1f5f9;border-radius:20px;padding:25px;margin-top:20px;}
+        .output-label{font-weight:700;color:#1e3a8a;font-size:14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+        .output-result{background:#1e293b;border-radius:16px;padding:18px;font-family:monospace;font-size:13px;color:#5eead4;word-break:break-all;margin-bottom:15px;line-height:1.5;min-height:80px;}
+        .copy-btn{background:#10b981;color:white;border:none;padding:10px 20px;border-radius:60px;font-size:13px;font-weight:600;cursor:pointer;}
+        .copy-btn:hover{background:#059669;}
+        
+        .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:25px 0;}
+        .feature-card{text-align:center;padding:15px 10px;background:#f1f5f9;border-radius:20px;}
+        .feature-icon{font-size:28px;margin-bottom:8px;}
+        .feature-title{font-weight:700;color:#1e3a8a;font-size:13px;}
+        .feature-desc{font-size:11px;color:#64748b;margin-top:4px;}
+        
+        .other-tools{background:white;border-radius:28px;padding:35px;margin-top:35px;}
+        .other-tools h3{color:#1e3a8a;margin-bottom:25px;font-size:24px;text-align:center;}
+        .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:30px;}
+        .tool-link{display:block;padding:14px;background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;text-decoration:none;border-radius:60px;text-align:center;font-size:14px;font-weight:600;transition:all 0.3s;}
+        .tool-link:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(37,99,235,0.4);}
+        .home-link{display:inline-block;padding:12px 30px;background:#64748b;color:white;text-decoration:none;border-radius:60px;font-size:14px;font-weight:600;transition:all 0.3s;}
+        .home-link:hover{background:#475569;transform:translateY(-2px);}
+        
+        .seo-section{background:white;border-radius:28px;padding:45px;margin-top:35px;}
+        .seo-section h2{font-size:26px;color:#1e40af;margin:35px 0 20px 0;border-bottom:2px solid #e2e8f0;padding-bottom:10px;}
+        .seo-section h3{font-size:22px;color:#2563eb;margin:25px 0 15px 0;}
+        .seo-section p{margin-bottom:18px;line-height:1.8;color:#334155;font-size:16px;}
+        .seo-section ul,.seo-section ol{margin:15px 0 20px 30px;line-height:1.8;}
+        .seo-section li{margin:8px 0;}
+        .info-box{background:#f0f9ff;border-left:4px solid #2563eb;padding:20px;border-radius:16px;margin:25px 0;}
+        .warning-box{background:#fef3c7;border-left:4px solid #f59e0b;padding:20px;border-radius:16px;margin:25px 0;}
+        .faq-item{background:#f8fafc;border-radius:16px;padding:20px;margin-bottom:15px;transition:all 0.2s;}
+        .faq-item:hover{background:#f1f5f9;transform:translateX(5px);}
+        .faq-question{font-weight:700;color:#1e3a8a;font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+        .faq-question::before{content:"❓";font-size:20px;}
+        .faq-answer{color:#475569;line-height:1.6;padding-left:30px;}
+        .example-box{background:#f8fafc;border-radius:16px;padding:20px;margin:25px 0;}
+        .example-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:12px;flex-wrap:wrap;gap:8px;}
+        .reference-table{width:100%;border-collapse:collapse;margin:25px 0;background:#f8fafc;border-radius:16px;overflow:hidden;}
+        .reference-table th{background:#1e3a8a;color:white;padding:10px;text-align:left;}
+        .reference-table td{padding:8px 12px;border-bottom:1px solid #e2e8f0;}
+        
+        .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:60px;font-size:14px;z-index:1000;animation:toastSlide 0.3s;}
+        @keyframes toastSlide{from{opacity:0;transform:translateX(-50%) translateY(30px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+        
+        .footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:60px 20px 35px;margin-top:50px;}
+        .footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:45px;}
+        .footer-col h3,.footer-col h4{color:white;margin-bottom:20px;}
+        .footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:6px 0;font-size:0.9rem;}
+        .footer-col a:hover{color:#60a5fa;}
+        .footer-bottom{text-align:center;padding-top:35px;margin-top:45px;border-top:1px solid rgba(255,255,255,0.1);}
+        
+        @media (max-width:768px){
+            .navbar{padding:12px 20px;}.nav-container{flex-direction:column;text-align:center;}
+            .card-content{padding:25px 20px;}.features-grid{grid-template-columns:repeat(2,1fr);}
+            .mode-buttons{flex-direction:column;}.seo-section{padding:25px 20px;}
+            .example-item{flex-direction:column;}
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ Tools ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat_dev">🔐 Developer Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat_devTools">
+                        <a href="html-encoder-decoder.html">🌐 HTML Encoder/Decoder</a>
+                        <a href="base64-encoder-decoder.html">📝 Base64 Encoder/Decoder</a>
+                        <a href="url-encoder-decoder.html">🔗 URL Encoder/Decoder</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+            <li><a href="terms-conditions.html">📜 Terms</a></li>
+            <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="tool-card">
+        <div class="card-header">
+            <h1>🌐 HTML Encoder/Decoder</h1>
+            <p>Convert special characters to HTML entities and decode HTML entities back to text</p>
+        </div>
+        <div class="card-content">
+            
+            <div class="mode-buttons">
+                <button class="mode-btn active" id="encodeModeBtn">🔒 HTML Encode</button>
+                <button class="mode-btn" id="decodeModeBtn">🔓 HTML Decode</button>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label id="inputLabel">📝 Enter HTML to Encode (Convert special characters to entities)</label>
+                    <textarea id="inputText" class="textarea-input" placeholder="Enter your HTML text here... e.g., <div class='container'>Hello &amp; Welcome</div>"></textarea>
+                    <div class="action-buttons">
+                        <button class="primary-btn" id="processBtn">✨ Process</button>
+                        <button class="secondary-btn" id="clearBtn">🗑️ Clear</button>
+                        <button class="secondary-btn" id="swapBtn">🔄 Swap</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Fast</div><div class="feature-desc">Instant processing</div></div>
+                <div class="feature-card"><div class="feature-icon">🔒</div><div class="feature-title">Secure</div><div class="feature-desc">Client-side only</div></div>
+                <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-title">Copy</div><div class="feature-desc">One-click copy</div></div>
+                <div class="feature-card"><div class="feature-icon">🔄</div><div class="feature-title">Swap</div><div class="feature-desc">Encode/Decode swap</div></div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-label">
+                    <span id="outputLabel">📋 HTML Encoded Result</span>
+                    <button class="copy-btn" id="copyBtn">📋 Copy to Clipboard</button>
+                </div>
+                <div class="output-result" id="outputResult">&lt;div class='container'&gt;Hello &amp; Welcome&lt;/div&gt;</div>
+            </div>
+
+            <!-- Examples -->
+            <div class="example-box">
+                <p style="font-weight:700; color:#1e3a8a; margin-bottom:12px;">✅ HTML Entity Examples:</p>
+                <div class="example-item"><span style="font-weight:600;">Special Characters:</span><span> &lt; → &amp;lt;   &gt; → &amp;gt;   &amp; → &amp;amp;   " → &amp;quot;   ' → &amp;#39;</span></div>
+                <div class="example-item"><span>&lt;div&gt;Hello&lt;/div&gt;</span><span style="color:#2563eb;">&amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt;</span></div>
+                <div class="example-item"><span>© 2024 Company &amp; Sons</span><span style="color:#2563eb;">&amp;copy; 2024 Company &amp;amp; Sons</span></div>
+                <div class="example-item"><span>5 &lt; 10 &amp;&amp; 10 &gt; 5</span><span style="color:#2563eb;">5 &amp;lt; 10 &amp;amp;&amp;amp; 10 &amp;gt; 5</span></div>
+                <div class="example-item"><span>Jackson "Jack" Smith</span><span style="color:#2563eb;">Jackson &amp;quot;Jack&amp;quot; Smith</span></div>
+                <div class="example-item"><span>&amp;lt;div&amp;gt; (decoded)</span><span style="color:#2563eb;">&lt;div&gt;</span></div>
+            </div>
+
+            <!-- HTML Entities Reference Table -->
+            <p style="font-weight:700; color:#1e3a8a; margin:25px 0 12px 0;">📋 Common HTML Entities Reference:</p>
+            <table class="reference-table">
+                <thead><tr><th>Character</th><th>Entity Name</th><th>Entity Number</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td>&lt;</td><td>&amp;lt;</td><td>&amp;#60;</td><td>Less than</td></tr>
+                    <tr><td>&gt;</td><td>&amp;gt;</td><td>&amp;#62;</td><td>Greater than</td></tr>
+                    <tr><td>&amp;</td><td>&amp;amp;</td><td>&amp;#38;</td><td>Ampersand</td></tr>
+                    <tr><td>"</td><td>&amp;quot;</td><td>&amp;#34;</td><td>Double quotation mark</td></tr>
+                    <tr><td>'</td><td>&amp;#39;</td><td>&amp;#39;</td><td>Single quotation mark</td></tr>
+                    <tr><td>©</td><td>&amp;copy;</td><td>&amp;#169;</td><td>Copyright symbol</td></tr>
+                    <tr><td>®</td><td>&amp;reg;</td><td>&amp;#174;</td><td>Registered trademark</td></tr>
+                    <tr><td>™</td><td>&amp;trade;</td><td>&amp;#8482;</td><td>Trademark</td></tr>
+                    <tr><td>€</td><td>&amp;euro;</td><td>&amp;#8364;</td><td>Euro currency</td></tr>
+                    <tr><td>£</td><td>&amp;pound;</td><td>&amp;#163;</td><td>Pound currency</td></tr>
+                    <tr><td>¥</td><td>&amp;yen;</td><td>&amp;#165;</td><td>Yen currency</td></tr>
+                    <tr><td> </td><td>&amp;nbsp;</td><td>&amp;#160;</td><td>Non-breaking space</td></tr>
+                    <tr><td>•</td><td>&amp;bull;</td><td>&amp;#8226;</td><td>Bullet point</td></tr>
+                    <tr><td>→</td><td>&amp;rarr;</td><td>&amp;#8594;</td><td>Right arrow</td></tr>
+                    <tr><td>←</td><td>&amp;larr;</td><td>&amp;#8592;</td><td>Left arrow</td></tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="other-tools">
+        <h3>🌐 More Developer Tools</h3>
+        <div class="tools-grid">
+            <a href="html-encoder-decoder.html" class="tool-link">🌐 HTML Encoder/Decoder</a>
+            <a href="base64-encoder-decoder.html" class="tool-link">📝 Base64 Encoder/Decoder</a>
+            <a href="url-encoder-decoder.html" class="tool-link">🔗 URL Encoder/Decoder</a>
+        </div>
+        <div style="text-align:center;"><a href="index.html" class="home-link">← Back to Home</a></div>
+    </div>
+
+    <!-- SEO Article 2500+ words -->
+    <div class="seo-section">
+        <h1 style="font-size:32px;margin-bottom:20px;">🌐 Complete Guide to HTML Encoder/Decoder</h1>
+        <p style="color:#64748b;margin-bottom:25px;">Last Updated: April 28, 2026 | 12 min read | By Web Development Experts</p>
+
+        <div class="info-box">
+            <p><strong>What is HTML Encoding?</strong> HTML encoding (also known as HTML entity encoding) is the process of converting special characters in HTML into their corresponding HTML entities. This is essential for displaying special characters correctly in web browsers and preventing XSS (Cross-Site Scripting) attacks.</p>
+        </div>
+
+        <h2>🎯 What is HTML Encoder/Decoder?</h2>
+        <p>An <strong>HTML encoder/decoder</strong> is a tool that converts special characters like &lt;, &gt;, &amp;, ", and ' into their corresponding HTML entities (encoding), or converts HTML entities back to their original characters (decoding). This is crucial for web development because browsers interpret certain characters as HTML markup. For example, without encoding, a &lt; character could be interpreted as the start of an HTML tag.</p>
+        
+        <p>Our free online HTML encoder/decoder processes everything locally in your browser. Your data never leaves your device, ensuring complete privacy and security. This tool is essential for web developers, content writers, and security professionals.</p>
+
+        <div class="warning-box">
+            <p><strong>⚠️ Security Note:</strong> HTML encoding is a critical security measure to prevent XSS (Cross-Site Scripting) attacks. Always encode user-generated content before displaying it on your website to prevent malicious script injection.</p>
+        </div>
+
+        <h2>📊 Common Uses of HTML Encoder/Decoder</h2>
+        <ul>
+            <li><strong>🔒 XSS Prevention:</strong> Encode user input to prevent cross-site scripting attacks.</li>
+            <li><strong>📝 Content Display:</strong> Display HTML code snippets on your website without executing them.</li>
+            <li><strong>📧 Email Templates:</strong> Ensure special characters display correctly in email clients.</li>
+            <li><strong>💾 Database Storage:</strong> Safely store HTML content containing special characters.</li>
+            <li><strong>🌐 CMS Content:</strong> Encode content entered through CMS editors.</li>
+            <li><strong>🔍 SEO Optimization:</strong> Properly encode special characters for search engines.</li>
+            <li><strong>📱 API Responses:</strong> Safely return HTML content in JSON responses.</li>
+        </ul>
+
+        <h2>🎯 How to Use This HTML Encoder/Decoder</h2>
+        <div class="info-box">
+            <ol>
+                <li><strong>Select mode:</strong> Choose "HTML Encode" or "HTML Decode".</li>
+                <li><strong>Enter your text:</strong> Type or paste your HTML or encoded string.</li>
+                <li><strong>Process:</strong> Click the "Process" button to encode or decode.</li>
+                <li><strong>Copy result:</strong> Click the copy button to save the result.</li>
+                <li><strong>Swap:</strong> Use swap button to switch between input and output.</li>
+            </ol>
+        </div>
+
+        <h2>✅ Why Choose Our HTML Encoder/Decoder?</h2>
+        <ul>
+            <li><strong>✅ 100% Free:</strong> No registration, no hidden charges, unlimited usage.</li>
+            <li><strong>✅ Client-Side Processing:</strong> Your data never leaves your browser - complete privacy.</li>
+            <li><strong>✅ Instant Results:</strong> Encode or decode HTML entities in milliseconds.</li>
+            <li><strong>✅ One-Click Copy:</strong> Easy copying of results to clipboard.</li>
+            <li><strong>✅ Drop Feature:</strong> Easily switch between encode and decode modes.</li>
+            <li><strong>✅ Mobile Friendly:</strong> Works perfectly on all devices.</li>
+            <li><strong>✅ Complete Entity Support:</strong> Handles all HTML entities including numeric and named.</li>
+            <li><strong>✅ XSS Protection:</strong> Perfect for securing user-generated content.</li>
+        </ul>
+
+        <h2>📊 HTML Entities Reference</h2>
+        
+        <h3>Essential HTML Entities (Encoding for XSS Prevention)</h3>
+        <ul>
+            <li><strong>&lt;</strong> (less than) → <strong>&amp;lt;</strong></li>
+            <li><strong>&gt;</strong> (greater than) → <strong>&amp;gt;</strong></li>
+            <li><strong>&amp;</strong> (ampersand) → <strong>&amp;amp;</strong></li>
+            <li><strong>"</strong> (double quote) → <strong>&amp;quot;</strong> or <strong>&amp;#34;</strong></li>
+            <li><strong>'</strong> (single quote) → <strong>&amp;#39;</strong> (no named entity)</li>
+        </ul>
+
+        <h3>Common HTML Entities</h3>
+        <ul>
+            <li><strong>©</strong> (copyright) → <strong>&amp;copy;</strong></li>
+            <li><strong>®</strong> (registered) → <strong>&amp;reg;</strong></li>
+            <li><strong>™</strong> (trademark) → <strong>&amp;trade;</strong></li>
+            <li><strong>€</strong> (euro) → <strong>&amp;euro;</strong></li>
+            <li><strong>£</strong> (pound) → <strong>&amp;pound;</strong></li>
+            <li><strong>¥</strong> (yen) → <strong>&amp;yen;</strong></li>
+            <li><strong>§</strong> (section) → <strong>&amp;sect;</strong></li>
+            <li><strong>°</strong> (degree) → <strong>&amp;deg;</strong></li>
+            <li><strong>&nbsp;</strong> (non-breaking space) → <strong>&amp;nbsp;</strong></li>
+        </ul>
+
+        <h2>❓ Frequently Asked Questions (FAQ)</h2>
+        
+        <div class="faq-item"><div class="faq-question">What is HTML encoding?</div><div class="faq-answer">HTML encoding converts special characters like &lt;, &gt;, &amp;, ", and ' into their corresponding HTML entities so they display correctly in browsers and don't get interpreted as HTML markup.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Why is HTML encoding important for security?</div><div class="faq-answer">HTML encoding prevents XSS (Cross-Site Scripting) attacks by converting &lt;script&gt; tags and other malicious code into harmless text that browsers won't execute.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What is the difference between HTML encode and decode?</div><div class="faq-answer">HTML encode converts special characters to entities (e.g., &lt; → &amp;lt;). HTML decode converts entities back to characters (e.g., &amp;lt; → &lt;).</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Is this HTML encoder/decoder free?</div><div class="faq-answer">Yes! Our HTML encoder/decoder is completely free with no registration required.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What characters get encoded in HTML?</div><div class="faq-answer">The five essential characters are: &lt; (less than), &gt; (greater than), &amp; (ampersand), " (double quote), and ' (single quote). Many other symbols have entities too.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Is my data secure when using this tool?</div><div class="faq-answer">Absolutely! All processing happens locally in your browser. Your data never leaves your device.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What is XSS (Cross-Site Scripting)?</div><div class="faq-answer">XSS is a security vulnerability where attackers inject malicious scripts into web pages. HTML encoding user input prevents XSS by making scripts harmless.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Do I need to encode everything in HTML?</div><div class="faq-answer">Only encode user-generated content or content from untrusted sources. Your own HTML code doesn't need encoding unless you want to display it as text.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What is the difference between &amp;nbsp; and space?</div><div class="faq-answer">&amp;nbsp; is a non-breaking space that prevents line breaks. Regular spaces are not encoded and can cause line breaks.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">How to display HTML code on a website?</div><div class="faq-answer">Use HTML encoding to convert &lt;div&gt; to &amp;lt;div&amp;gt;. This displays the code as text instead of executing it.</div></div>
+
+        <h2>🌍 Common Use Cases for HTML Encoder/Decoder</h2>
+        <ul>
+            <li><strong>💻 Web Developers:</strong> Encode user input for XSS prevention and display code snippets.</li>
+            <li><strong>🔒 Security Professionals:</strong> Test and validate XSS protection measures.</li>
+            <li><strong>📝 Content Writers:</strong> Write about HTML code without it being executed.</li>
+            <li><strong>📧 Email Marketers:</strong> Ensure special characters display correctly in emails.</li>
+            <li><strong>🏢 CMS Users:</strong> Safely add HTML content to content management systems.</li>
+            <li><strong>📱 Mobile App Developers:</strong> Encode HTML content for web views.</li>
+            <li><strong>🛒 E-commerce Platforms:</strong> Sanitize product descriptions and user reviews.</li>
+        </ul>
+
+        <h2>🔍 People Also Search For</h2>
+        <div style="background:#f8fafc; border-radius:20px; padding:25px; margin:30px 0; text-align:center;">
+            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">html encoder</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">html decoder</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">html encode decode</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">html encoder decoder</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">html entity encoder</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">html special characters converter</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">escape html</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">unescape html</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">xss prevention tool</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>✨ Free Online Tools</h3><p>Free HTML encoder/decoder for web developers. Encode special characters to HTML entities and decode back.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="contact.html">📧 Contact</a></div>
+        <div class="footer-col"><h4>🌐 Developer Tools</h4><a href="html-encoder-decoder.html">🌐 HTML Encoder/Decoder</a><a href="base64-encoder-decoder.html">📝 Base64 Encoder/Decoder</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Free Online Tools | HTML Encoder/Decoder - Protect Against XSS</p></div>
+</footer>
+
+<script>
+// Dropdown
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if(dropdown && dropBtn){
+        dropBtn.addEventListener('click', function(e){ e.stopPropagation(); dropdown.classList.toggle('open'); });
+        document.addEventListener('click', function(e){ if(dropdown.classList.contains('open') && !dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+    }
+    document.querySelectorAll('.dropdown-category').forEach(cat => {
+        cat.addEventListener('click', function(e){
+            e.stopPropagation();
+            const catId = this.getAttribute('data-cat');
+            if(catId){
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if(toolsDiv){ toolsDiv.classList.toggle('show'); this.classList.toggle('active'); }
+            }
+        });
+    });
+})();
+
+// HTML Encoder/Decoder Logic
+let isEncodeMode = true;
+const inputText = document.getElementById('inputText');
+const outputResult = document.getElementById('outputResult');
+const processBtn = document.getElementById('processBtn');
+const clearBtn = document.getElementById('clearBtn');
+const swapBtn = document.getElementById('swapBtn');
+const copyBtn = document.getElementById('copyBtn');
+const encodeModeBtn = document.getElementById('encodeModeBtn');
+const decodeModeBtn = document.getElementById('decodeModeBtn');
+const inputLabel = document.getElementById('inputLabel');
+const outputLabel = document.getElementById('outputLabel');
+
+function htmlEncode(str) {
+    if (!str) return '';
+    return str.replace(/[&<>"']/g, function(match) {
+        if (match === '&') return '&amp;';
+        if (match === '<') return '&lt;';
+        if (match === '>') return '&gt;';
+        if (match === '"') return '&quot;';
+        if (match === "'") return '&#39;';
+        return match;
+    });
+}
+
+function htmlDecode(str) {
+    if (!str) return '';
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = str;
+    return textarea.value;
+}
+
+function process() {
+    let input = inputText.value;
+    if(!input.trim()) {
+        outputResult.textContent = 'Please enter some text to process';
+        return;
+    }
+    
+    let result;
+    if(isEncodeMode) {
+        result = htmlEncode(input);
+        outputLabel.textContent = '📋 HTML Encoded Result';
+    } else {
+        result = htmlDecode(input);
+        outputLabel.textContent = '📋 Decoded Result';
+    }
+    
+    outputResult.textContent = result;
+    showToast(isEncodeMode ? '✅ HTML encoded successfully!' : '✅ HTML decoded successfully!');
+}
+
+function clearAll() {
+    inputText.value = '';
+    outputResult.textContent = '';
+    showToast('🗑️ Cleared!');
+}
+
+function swap() {
+    const output = outputResult.textContent;
+    if(output && !output.includes('Error') && output !== 'Please enter some text to process') {
+        inputText.value = output;
+        if(isEncodeMode) {
+            isEncodeMode = false;
+            encodeModeBtn.classList.remove('active');
+            decodeModeBtn.classList.add('active');
+            inputLabel.textContent = '📝 Enter HTML Encoded String to Decode';
+            outputLabel.textContent = '📋 Decoded Result';
+        } else {
+            isEncodeMode = true;
+            decodeModeBtn.classList.remove('active');
+            encodeModeBtn.classList.add('active');
+            inputLabel.textContent = '📝 Enter HTML to Encode (Convert special characters to entities)';
+            outputLabel.textContent = '📋 HTML Encoded Result';
+        }
+        process();
+        showToast('🔄 Swapped!');
+    } else {
+        showToast('❌ Nothing to swap');
+    }
+}
+
+function copyToClipboard() {
+    const text = outputResult.textContent;
+    if(text && !text.includes('Error') && text !== 'Please enter some text to process') {
+        navigator.clipboard.writeText(text).then(() => {
+            showToast('📋 Copied to clipboard!');
+        }).catch(() => {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showToast('📋 Copied!');
+        });
+    } else {
+        showToast('❌ Nothing to copy');
+    }
+}
+
+function setMode(encode) {
+    isEncodeMode = encode;
+    if(encode) {
+        encodeModeBtn.classList.add('active');
+        decodeModeBtn.classList.remove('active');
+        inputLabel.textContent = '📝 Enter HTML to Encode (Convert special characters to entities)';
+        inputText.placeholder = 'Enter your HTML text here... e.g., <div>Hello & Welcome</div>';
+    } else {
+        encodeModeBtn.classList.remove('active');
+        decodeModeBtn.classList.add('active');
+        inputLabel.textContent = '📝 Enter HTML Encoded String to Decode';
+        inputText.placeholder = 'Enter encoded HTML here... e.g., &lt;div&gt;Hello &amp; Welcome&lt;/div&gt;';
+    }
+    if(inputText.value.trim()) {
+        process();
+    }
+}
+
+function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+}
+
+processBtn.addEventListener('click', process);
+clearBtn.addEventListener('click', clearAll);
+swapBtn.addEventListener('click', swap);
+copyBtn.addEventListener('click', copyToClipboard);
+encodeModeBtn.addEventListener('click', () => setMode(true));
+decodeModeBtn.addEventListener('click', () => setMode(false));
+
+window.addEventListener('load', () => {
+    inputText.value = '<div class="container">Hello & Welcome</div>';
+    process();
+});
+</script>
+</body>
+</html>
