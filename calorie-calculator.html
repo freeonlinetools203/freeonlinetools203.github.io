@@ -25,6 +25,8 @@ body {
     min-height: 100vh;
     opacity: 1;
     transition: opacity 0.2s ease;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* ========== NAVBAR ========== */
@@ -35,6 +37,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .nav-container {
@@ -209,6 +212,7 @@ body {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* ========== TOOL CARD ========== */
@@ -218,6 +222,7 @@ body {
     padding: 35px;
     margin-bottom: 35px;
     box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .tool-title {
@@ -469,6 +474,8 @@ body {
     justify-content: space-between;
     font-size: 0.7rem;
     color: #6b7280;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 /* Macro Section - FIXED */
@@ -561,6 +568,7 @@ body {
     padding: 20px;
     margin-bottom: 35px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
 }
 
 .history-header {
@@ -569,6 +577,7 @@ body {
     align-items: center;
     margin-bottom: 15px;
     flex-wrap: wrap;
+    gap: 12px;
 }
 
 .history-header h3 {
@@ -617,6 +626,7 @@ body {
     text-align: center;
     margin: 35px 0;
     border: 1px solid #e5e7eb;
+    width: 100%;
 }
 
 .ad-label {
@@ -647,6 +657,7 @@ body {
     margin-bottom: 35px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     text-align: center;
+    width: 100%;
 }
 
 .other-tools h3 {
@@ -736,6 +747,8 @@ body {
     padding: 40px;
     margin-bottom: 35px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    overflow-x: auto;
 }
 
 .article-section h2 {
@@ -786,6 +799,8 @@ body {
     padding: 40px;
     margin-bottom: 35px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    overflow-x: auto;
 }
 
 .faq-section h2 {
@@ -833,6 +848,7 @@ body {
     margin-top: 40px;
     position: relative;
     border-top: 1px solid rgba(255,255,255,0.1);
+    width: 100%;
 }
 
 .footer::before {
@@ -905,7 +921,7 @@ body {
     color: #64748b;
 }
 
-/* ========== COMPLETE RESPONSIVE BREAKPOINTS ========== */
+/* ========== COMPLETE RESPONSIVE BREAKPOINTS - PERFECT FOR ALL DEVICES ========== */
 
 /* Large Desktop (1200px and above) */
 @media (min-width: 1200px) {
@@ -1033,10 +1049,19 @@ body {
     .tools-grid {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
+    
+    .bmi-labels {
+        font-size: 0.6rem;
+    }
 }
 
 /* Mobile Small (480px and below) */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+    
     .results-grid {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1082,6 +1107,7 @@ body {
     
     .input-group input, .input-group select {
         padding: 12px 14px;
+        font-size: 14px;
     }
     
     .mode-tab {
@@ -1095,6 +1121,60 @@ body {
     
     .article-section h2, .faq-section h2 {
         font-size: 1.3rem;
+    }
+    
+    .article-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+    }
+    
+    .macro-value {
+        font-size: 1.2rem;
+    }
+    
+    .history-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Extra Small (360px and below) */
+@media (max-width: 360px) {
+    .card-header h1, .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tool-title {
+        font-size: 1.3rem;
+    }
+    
+    .mode-tab {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .result-value {
+        font-size: 1rem;
+    }
+    
+    .result-icon {
+        font-size: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 0.9rem;
+    }
+    
+    .calc-btn, .calculate-btn, .btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .bmi-labels {
+        font-size: 0.5rem;
     }
 }
 </style>
