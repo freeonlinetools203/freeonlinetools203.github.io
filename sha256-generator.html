@@ -351,7 +351,13 @@
     <!-- SEO Article 2500+ words -->
     <div class="seo-section">
         <h1 style="font-size:32px;margin-bottom:20px;">🔐 Complete Guide to SHA-256 Hash Generator</h1>
-        <p style="color:#64748b;margin-bottom:25px;">Last Updated: April 28, 2026 | 12 min read | By Security Experts</p>
+       <p style="color:#64748b;margin-bottom:25px;" id="last-updated"></p>
+
+<script>
+const date = new Date();
+const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+document.getElementById('last-updated').innerHTML = `📅 Updated: ${formattedDate} | 👁️ 12 min read | 👤 Security Experts`;
+</script>
 
         <div class="info-box">
             <p><strong>What is SHA-256?</strong> SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that produces a 256-bit (64-character) hash value. It's part of the SHA-2 family designed by the NSA and is widely used in blockchain, SSL/TLS certificates, password storage, and data integrity verification.</p>
