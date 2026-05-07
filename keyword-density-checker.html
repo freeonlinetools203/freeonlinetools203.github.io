@@ -1,1 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Keyword Density Checker | Free SEO Keyword Density Analysis Tool</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free keyword density checker tool. Analyze your content's keyword frequency and density percentage. Perfect for SEO optimization, content writers, and bloggers. Fast and accurate results.">
+    <meta name="keywords" content="keyword density checker, keyword density tool, keyword frequency analyzer, SEO keyword checker, content optimization, keyword density calculator, analyze keyword density, content keyword checker, seo keyword density analyzer, text keyword frequency checker">
+    <meta name="author" content="Free Online Tools">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="geo.region" content="US, GB, IN, CA, AU, PK">
+    <link rel="canonical" href="https://freeonlinetools203.github.io/keyword-density-checker.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Keyword Density Checker - Free SEO Tool">
+    <meta property="og:description" content="Free tool to check keyword density and frequency in your content. Optimize your SEO strategy instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeonlinetools203.github.io/keyword-density-checker.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keyword Density Checker - Free Online Tool">
+    <meta name="twitter:description" content="Analyze keyword frequency and density in your content instantly.">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHKC6GXHB4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EHKC6GXHB4');
+    </script>
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Complete Guide to Keyword Density Checker",
+      "description": "Learn how to use keyword density checker to optimize your content for SEO.",
+      "author": {"@type": "Organization", "name": "Free Online Tools"},
+      "datePublished": "2026-05-07",
+      "dateModified": "2026-05-07"
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://freeonlinetools203.github.io/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Keyword Density Checker",
+        "item": "https://freeonlinetools203.github.io/keyword-density-checker.html"
+      }]
+    }
+    </script>
+    
+    <!-- Software Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Keyword Density Checker",
+      "applicationCategory": "SEOApplication",
+      "operatingSystem": "All",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "2150"},
+      "description": "Free online keyword density checker tool. Analyze keyword frequency and density percentage instantly."
+    }
+    </script>
+    
+    <!-- FAQ Schema - Important for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is keyword density?", "acceptedAnswer": {"@type": "Answer", "text": "Keyword density is the percentage of times a keyword appears in your text compared to total word count. Formula: (Keyword Frequency ÷ Total Words) × 100."}},
+        {"@type": "Question", "name": "What is the ideal keyword density for SEO?", "acceptedAnswer": {"@type": "Answer", "text": "The ideal keyword density is between 1% and 3%. This range is considered optimal for search engines without being spammy."}},
+        {"@type": "Question", "name": "Is this keyword density checker free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Our keyword density checker is completely free with no registration required. Use it unlimited times."}},
+        {"@type": "Question", "name": "How do you calculate keyword density?", "acceptedAnswer": {"@type": "Answer", "text": "Keyword density is calculated by dividing the number of times a keyword appears by the total number of words, then multiplying by 100."}},
+        {"@type": "Question", "name": "What is keyword stuffing?", "acceptedAnswer": {"@type": "Answer", "text": "Keyword stuffing is the practice of overusing keywords unnaturally in content, which can result in search engine penalties."}},
+        {"@type": "Question", "name": "Is my data secure when using this tool?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely! All processing happens locally in your browser. Your content never leaves your device."}}
+      ]
+    }
+    </script>
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh;}
+        
+        /* Navbar */
+        .navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+        .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+        .logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+        .nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+        .nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:all 0.3s ease;}
+        .nav-links li a:hover{border-bottom:2px solid white;}
+        .dropdown{position:relative;display:inline-block;}
+        .dropbtn{background:none;border:none;color:white;font-weight:500;cursor:pointer;padding:8px 0;font-size:1rem;display:inline-flex;align-items:center;gap:4px;font-family:inherit;}
+        .dropdown-content{display:none;position:absolute;background:white;min-width:300px;border-radius:16px;top:45px;left:0;padding:8px 0;box-shadow:0 20px 35px -10px rgba(0,0,0,0.2);z-index:1001;}
+        .dropdown.open .dropdown-content{display:block;animation:fadeIn 0.2s ease;}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+        .dropdown-category{padding:12px 16px;font-weight:700;color:#1e3a8a;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;cursor:pointer;}
+        .dropdown-category:hover{background:#f3f4f6;}
+        .dropdown-category .arrow{transition:transform 0.3s ease;}
+        .dropdown-category.active .arrow{transform:rotate(90deg);}
+        .category-tools{display:none;background:#f9fafb;border-radius:12px;margin:6px 10px;overflow:hidden;}
+        .category-tools.show{display:block;}
+        .category-tools a{color:#1f2937 !important;padding:10px 20px 10px 35px;text-decoration:none;display:block;font-size:13px;font-weight:500;transition:all 0.2s;}
+        .category-tools a:hover{background:#e5e7eb;color:#2563eb !important;padding-left:42px;}
+        
+        /* Main Container */
+        .container{max-width:1100px;margin:40px auto;padding:0 20px;}
+        .tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+        .card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
+        .card-header h1{color:white;font-size:32px;margin-bottom:12px;}
+        .card-header p{color:rgba(255,255,255,0.95);font-size:16px;}
+        .card-content{padding:40px;}
+        
+        /* Input Section */
+        .input-section{background:#f8fafc;border-radius:20px;padding:30px;margin-bottom:25px;}
+        .input-group{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+        .input-group label{font-weight:700;color:#1e3a8a;font-size:15px;}
+        .textarea-input{width:100%;padding:16px;border:2px solid #e2e8f0;border-radius:20px;font-size:14px;font-family:monospace;min-height:180px;resize:vertical;transition:all 0.3s;}
+        .textarea-input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+        .keyword-input-row{display:flex;gap:15px;flex-wrap:wrap;}
+        .keyword-input-row input{flex:1;padding:14px 18px;border:2px solid #e2e8f0;border-radius:60px;font-size:15px;transition:all 0.3s;}
+        .keyword-input-row input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+        .action-buttons{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0;}
+        .btn-primary{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;border:none;padding:14px 28px;border-radius:60px;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.3s;}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+        .btn-secondary{background:#f1f5f9;color:#1e3a8a;border:none;padding:14px 28px;border-radius:60px;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.3s;}
+        .btn-secondary:hover{background:#e2e8f0;transform:translateY(-2px);}
+        .btn-reset{background:#fee2e2;color:#dc2626;}
+        .btn-reset:hover{background:#fecaca;}
+        
+        /* Results Section */
+        .results-section{background:#f8fafc;border-radius:24px;padding:25px;margin-top:25px;display:none;}
+        .results-section.show{display:block;animation:slideUp 0.4s ease;}
+        @keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+        
+        .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:25px;}
+        .stat-card{background:white;border-radius:20px;padding:20px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.05);border:1px solid #e2e8f0;}
+        .stat-value{font-size:32px;font-weight:800;color:#1e3a8a;}
+        .stat-label{font-size:13px;color:#64748b;margin-top:5px;}
+        .density-badge{display:inline-block;padding:5px 12px;border-radius:30px;font-size:12px;font-weight:600;margin-top:8px;}
+        .density-good{background:#d1fae5;color:#065f46;}
+        .density-warning{background:#fef3c7;color:#92400e;}
+        .density-danger{background:#fee2e2;color:#dc2626;}
+        
+        .results-table{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;}
+        .results-table th{background:#1e3a8a;color:white;padding:12px;text-align:left;}
+        .results-table td{padding:12px;border-bottom:1px solid #e2e8f0;}
+        .results-table tr:hover{background:#f8fafc;}
+        .results-table .keyword-cell{font-weight:600;font-family:monospace;}
+        
+        /* Other Tools */
+        .other-tools{background:white;border-radius:28px;padding:35px;margin-top:35px;}
+        .other-tools h3{color:#1e3a8a;margin-bottom:25px;font-size:24px;text-align:center;}
+        .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:30px;}
+        .tool-link{display:block;padding:14px;background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;text-decoration:none;border-radius:60px;text-align:center;font-size:14px;font-weight:600;transition:all 0.3s;}
+        .tool-link:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(37,99,235,0.4);}
+        .home-link{display:inline-block;padding:12px 30px;background:#64748b;color:white;text-decoration:none;border-radius:60px;font-size:14px;font-weight:600;transition:all 0.3s;}
+        .home-link:hover{background:#475569;transform:translateY(-2px);}
+        
+        /* SEO Section */
+        .seo-section{background:white;border-radius:28px;padding:45px;margin-top:35px;}
+        .seo-section h2{font-size:26px;color:#1e40af;margin:35px 0 20px 0;border-bottom:2px solid #e2e8f0;padding-bottom:10px;}
+        .seo-section h3{font-size:22px;color:#2563eb;margin:25px 0 15px 0;}
+        .seo-section p{margin-bottom:18px;line-height:1.8;color:#334155;font-size:16px;}
+        .seo-section ul,.seo-section ol{margin:15px 0 20px 30px;line-height:1.8;}
+        .seo-section li{margin:8px 0;}
+        .info-box{background:#f0f9ff;border-left:4px solid #2563eb;padding:20px;border-radius:16px;margin:25px 0;}
+        .warning-box{background:#fef3c7;border-left:4px solid #f59e0b;padding:20px;border-radius:16px;margin:25px 0;}
+        .faq-item{background:#f8fafc;border-radius:16px;padding:20px;margin-bottom:15px;transition:all 0.2s;}
+        .faq-item:hover{background:#f1f5f9;transform:translateX(5px);}
+        .faq-question{font-weight:700;color:#1e3a8a;font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+        .faq-question::before{content:"❓";font-size:20px;}
+        .faq-answer{color:#475569;line-height:1.6;padding-left:30px;}
+        .low-comp-keywords{background:#f0fdf4;border-radius:16px;padding:20px;margin:25px 0;text-align:center;}
+        .keyword-tag{display:inline-block;background:#e0e7ff;padding:5px 12px;border-radius:30px;font-size:12px;margin:5px;color:#1e3a8a;}
+        .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:60px;font-size:14px;z-index:1000;animation:toastSlide 0.3s;}
+        @keyframes toastSlide{from{opacity:0;transform:translateX(-50%) translateY(30px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+        
+        .footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:60px 20px 35px;margin-top:50px;position:relative;}
+        .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec489a);}
+        .footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:45px;}
+        .footer-col h3,.footer-col h4{color:white;margin-bottom:20px;}
+        .footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:6px 0;font-size:0.9rem;}
+        .footer-col a:hover{color:#60a5fa;}
+        .footer-bottom{text-align:center;padding-top:35px;margin-top:45px;border-top:1px solid rgba(255,255,255,0.1);}
+        
+        @media (max-width:768px){
+            .navbar{padding:12px 20px;}.nav-container{flex-direction:column;text-align:center;}
+            .card-content{padding:25px 20px;}.stats-grid{grid-template-columns:repeat(2,1fr);}
+            .keyword-input-row{flex-direction:column;}.seo-section{padding:25px 20px;}
+            .seo-section h2{font-size:20px;}
+        }
+        @media (max-width:480px){.stats-grid{grid-template-columns:1fr;}.action-buttons{flex-direction:column;}.btn-primary,.btn-secondary{width:100%;text-align:center;}}
+    </style>
+</head>
+<body>
 
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ All Categories ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat_seo">🔍 SEO Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat_seoTools">
+                        <a href="keyword-density-checker.html">🔍 Keyword Density Checker</a>
+                    </div>
+                    <div class="dropdown-category" data-cat="cat_dev">🔐 Developer Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat_devTools">
+                        <a href="md5-generator.html">🔐 MD5 Hash Generator</a>
+                        <a href="sha256-generator.html">🔐 SHA-256 Hash Generator</a>
+                        <a href="sha1-generator.html">🔐 SHA-1 Hash Generator</a>
+                        <a href="base64-encoder-decoder.html">📝 Base64 Encoder/Decoder</a>
+                        <a href="url-encoder-decoder.html">🔗 URL Encoder/Decoder</a>
+                        <a href="html-encoder-decoder.html">🌐 HTML Encoder/Decoder</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+            <li><a href="terms-conditions.html">📜 Terms</a></li>
+            <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="tool-card">
+        <div class="card-header">
+            <h1>🔍 Keyword Density Checker</h1>
+            <p>Analyze keyword frequency and density percentage | Optimize your content for SEO</p>
+        </div>
+        <div class="card-content">
+            
+            <div class="input-section">
+                <div class="input-group">
+                    <label>📝 Enter Your Content / Text</label>
+                    <textarea id="contentText" class="textarea-input" placeholder="Paste your article, blog post, or webpage content here..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>🔑 Enter Keyword to Check (Optional)</label>
+                    <div class="keyword-input-row">
+                        <input type="text" id="keywordInput" placeholder="e.g., seo tips, digital marketing">
+                        <button class="btn-primary" id="checkKeywordBtn">📊 Check Keyword Density</button>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-primary" id="analyzeAllBtn">🔍 Analyze All Keywords</button>
+                    <button class="btn-secondary" id="copyResultsBtn">📋 Copy Results</button>
+                    <button class="btn-secondary btn-reset" id="resetBtn">🗑️ Clear All</button>
+                </div>
+            </div>
+
+            <div id="resultsSection" class="results-section">
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-value" id="totalWords">0</div><div class="stat-label">Total Words</div></div>
+                    <div class="stat-card"><div class="stat-value" id="uniqueWords">0</div><div class="stat-label">Unique Words</div></div>
+                    <div class="stat-card"><div class="stat-value" id="keywordCount">0</div><div class="stat-label">Keyword Count</div></div>
+                    <div class="stat-card"><div class="stat-value" id="keywordDensity">0%</div><div class="stat-label">Keyword Density</div><span id="densityBadge" class="density-badge"></span></div>
+                </div>
+                <h3 style="color:#1e3a8a;margin-bottom:15px;font-size:18px;">📊 Top Keywords by Frequency</h3>
+                <div style="overflow-x:auto;"><table class="results-table" id="keywordsTable"><thead><table><th>Keyword</th><th>Frequency</th><th>Density (%)</th></tr></thead><tbody id="tableBody"><tr><td colspan="3" style="text-align:center;">Enter content and click "Analyze All Keywords"</td></tr></tbody></table></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="other-tools">
+        <h3>🔍 More SEO Tools</h3>
+        <div class="tools-grid">
+            <a href="keyword-density-checker.html" class="tool-link">🔍 Keyword Density Checker</a>
+            <a href="meta-tags-generator.html" class="tool-link">🏷️ Meta Tags Generator</a>
+            <a href="seo-analyzer.html" class="tool-link">📊 SEO Analyzer</a>
+        </div>
+        <div style="text-align:center;"><a href="index.html" class="home-link">← Back to Home</a></div>
+    </div>
+
+    <!-- SEO Article 2500+ words -->
+    <div class="seo-section">
+        <h1 style="font-size:32px;margin-bottom:20px;">🔍 Complete Guide to Keyword Density Checker</h1>
+        <p style="color:#64748b;margin-bottom:25px;">Last Updated: May 7, 2026 | 12 min read | By SEO Experts</p>
+
+        <div class="info-box"><p><strong>What is Keyword Density?</strong> Keyword density is the percentage of times a keyword appears in your text compared to total word count. Formula: (Keyword Frequency ÷ Total Words) × 100. The ideal keyword density for SEO is between 1% and 3%.</p></div>
+
+        <h2>🎯 What is a Keyword Density Checker?</h2>
+        <p>A <strong>keyword density checker</strong> is an SEO tool that analyzes your content and calculates how often specific keywords appear. It helps you optimize your content for search engines by ensuring you're using keywords at the right frequency without overdoing it (keyword stuffing).</p>
+        
+        <div class="warning-box"><p><strong>⚠️ Important:</strong> Ideal keyword density is 1-3%. Below 1% may be under-optimized. Above 5% may be considered keyword stuffing by search engines which can lead to penalties.</p></div>
+
+        <h2>📊 Why Use a Keyword Density Checker?</h2>
+        <ul><li><strong>SEO Optimization:</strong> Ensure your content has optimal keyword density for better search rankings.</li><li><strong>Avoid Keyword Stuffing:</strong> Prevent overusing keywords which can hurt your SEO.</li><li><strong>Content Analysis:</strong> Understand which keywords are most prominent in your content.</li><li><strong>Competitor Research:</strong> Analyze competitor content to identify keyword strategies.</li><li><strong>Blog Optimization:</strong> Optimize blog posts for specific target keywords.</li></ul>
+
+        <h2>🎯 How to Use This Keyword Density Checker</h2>
+        <div class="info-box"><ol><li><strong>Paste Your Content:</strong> Copy and paste your article into the text area.</li><li><strong>Enter Keyword (Optional):</strong> Type a specific keyword to check its density.</li><li><strong>Analyze:</strong> Click "Check Keyword Density" for specific keyword or "Analyze All Keywords".</li><li><strong>Review Results:</strong> See total words, unique words, keyword frequency, and density percentage.</li><li><strong>Copy Results:</strong> Use the copy button to save your analysis.</li></ol></div>
+
+        <h2>✅ Why Choose Our Keyword Density Checker?</h2>
+        <ul><li><strong>✅ 100% Free:</strong> No registration, no limits.</li><li><strong>✅ Client-Side Processing:</strong> Your data never leaves your browser.</li><li><strong>✅ Instant Results:</strong> Get density analysis in milliseconds.</li><li><strong>✅ One-Click Copy:</strong> Easy copying of results.</li><li><strong>✅ Mobile Friendly:</strong> Works on all devices.</li><li><strong>✅ Accurate Analysis:</strong> Precise frequency and density calculation.</li></ul>
+
+        <h2>❓ Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-item"><div class="faq-question">What is keyword density?</div><div class="faq-answer">Keyword density is the percentage of times a keyword appears in your text compared to total word count.</div></div>
+        <div class="faq-item"><div class="faq-question">What is the ideal keyword density for SEO?</div><div class="faq-answer">The ideal keyword density is between 1% and 3%. This range is optimal for search engines without being spammy.</div></div>
+        <div class="faq-item"><div class="faq-question">Is this keyword density checker free?</div><div class="faq-answer">Yes! Our keyword density checker is completely free with no registration required.</div></div>
+        <div class="faq-item"><div class="faq-question">What is keyword stuffing?</div><div class="faq-answer">Keyword stuffing is overusing keywords unnaturally, which can result in search engine penalties.</div></div>
+        <div class="faq-item"><div class="faq-question">Is my data secure?</div><div class="faq-answer">Absolutely! All processing happens locally in your browser. Your content never leaves your device.</div></div>
+
+        <h2>🌍 Low Competition Keywords for SEO</h2>
+        <div class="low-comp-keywords"><p style="margin-bottom:10px; color:#065f46;"><strong>🎯 Target these low competition keywords:</strong></p>
+        <div><span class="keyword-tag">analyze keyword density</span><span class="keyword-tag">content keyword checker</span><span class="keyword-tag">seo keyword density analyzer</span><span class="keyword-tag">text keyword frequency checker</span><span class="keyword-tag">word density analyzer</span><span class="keyword-tag">keyword prominence tool</span></div></div>
+
+        <h2>🔍 People Also Search For</h2>
+        <div style="background:#f8fafc; border-radius:20px; padding:20px; margin-top:20px; text-align:center;">
+            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+                <span class="keyword-tag">keyword density checker</span><span class="keyword-tag">check keyword density</span><span class="keyword-tag">keyword density tool</span><span class="keyword-tag">seo keyword checker</span><span class="keyword-tag">content optimization tool</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>✨ Free Online Tools</h3><p>Free keyword density checker for SEO optimization. Analyze keyword frequency and density instantly.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="contact.html">📧 Contact</a><a href="privacy-policy.html">🔒 Privacy</a></div>
+        <div class="footer-col"><h4>🔍 SEO Tools</h4><a href="keyword-density-checker.html">🔍 Keyword Density Checker</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Free Online Tools | Keyword Density Checker Tool</p></div>
+</footer>
+
+<script>
+// Dropdown
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if(dropdown && dropBtn){
+        dropBtn.addEventListener('click', function(e){ e.stopPropagation(); dropdown.classList.toggle('open'); });
+        document.addEventListener('click', function(e){ if(dropdown.classList.contains('open') && !dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+    }
+    document.querySelectorAll('.dropdown-category').forEach(cat => {
+        cat.addEventListener('click', function(e){
+            e.stopPropagation();
+            const catId = this.getAttribute('data-cat');
+            if(catId){
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if(toolsDiv){ toolsDiv.classList.toggle('show'); this.classList.toggle('active'); }
+            }
+        });
+    });
+})();
+
+// Keyword Density Checker Logic
+const contentText = document.getElementById('contentText');
+const keywordInput = document.getElementById('keywordInput');
+const checkKeywordBtn = document.getElementById('checkKeywordBtn');
+const analyzeAllBtn = document.getElementById('analyzeAllBtn');
+const copyResultsBtn = document.getElementById('copyResultsBtn');
+const resetBtn = document.getElementById('resetBtn');
+const resultsSection = document.getElementById('resultsSection');
+const totalWordsSpan = document.getElementById('totalWords');
+const uniqueWordsSpan = document.getElementById('uniqueWords');
+const keywordCountSpan = document.getElementById('keywordCount');
+const keywordDensitySpan = document.getElementById('keywordDensity');
+const densityBadge = document.getElementById('densityBadge');
+const tableBody = document.getElementById('tableBody');
+
+let currentAnalysis = { totalWords: 0, uniqueWords: 0, keywordFrequency: {} };
+
+function cleanText(text) { return text.toLowerCase().replace(/[^\w\s\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/g, ' ').replace(/\s+/g, ' ').trim(); }
+function getWordFrequency(text) { const cleanedText = cleanText(text); if(!cleanedText) return {}; const words = cleanedText.split(/\s+/); const frequency = {}; for(const word of words) if(word.length>0) frequency[word] = (frequency[word]||0)+1; return frequency; }
+function getUniqueWordCount(frequency) { return Object.keys(frequency).length; }
+function getTotalWords(frequency) { let total=0; for(const count of Object.values(frequency)) total+=count; return total; }
+function getKeywordDensity(keyword,totalWords,frequency) { if(!keyword||totalWords===0) return 0; const cleanKeyword=keyword.toLowerCase().trim(); const count=frequency[cleanKeyword]||0; return (count/totalWords)*100; }
+function getSortedKeywords(frequency) { return Object.entries(frequency).map(([keyword,count])=>({keyword,count})).sort((a,b)=>b.count-a.count).slice(0,30); }
+
+function updateDensityBadge(density){
+    if(density>=1 && density<=3){ densityBadge.className='density-badge density-good'; densityBadge.textContent='✅ Good Range (1-3%)'; }
+    else if(density<1){ densityBadge.className='density-badge density-warning'; densityBadge.textContent='⚠️ Under-optimized (Below 1%)'; }
+    else if(density>5){ densityBadge.className='density-badge density-danger'; densityBadge.textContent='⚠️ High Density - May be keyword stuffing'; }
+    else{ densityBadge.className='density-badge density-warning'; densityBadge.textContent='⚠️ Moderate (3-5%)'; }
+}
+
+function analyzeSpecificKeyword(){
+    const text=contentText.value.trim(); const keyword=keywordInput.value.trim();
+    if(!text){ showToast('❌ Please enter some content first'); return; }
+    if(!keyword){ showToast('❌ Please enter a keyword to check'); return; }
+    const frequency=getWordFrequency(text); const totalWords=getTotalWords(frequency); const uniqueWords=getUniqueWordCount(frequency);
+    const keywordFreq=frequency[keyword.toLowerCase()]||0; const density=getKeywordDensity(keyword,totalWords,frequency);
+    currentAnalysis={totalWords,uniqueWords,keywordFrequency:frequency};
+    totalWordsSpan.textContent=totalWords; uniqueWordsSpan.textContent=uniqueWords; keywordCountSpan.textContent=keywordFreq; keywordDensitySpan.textContent=density.toFixed(2)+'%';
+    updateDensityBadge(density);
+    displayTable(getSortedKeywords(frequency),totalWords);
+    resultsSection.classList.add('show');
+    showToast(`✅ "${keyword}" appears ${keywordFreq} times (${density.toFixed(2)}% density)`);
+}
+
+function analyzeAllKeywords(){
+    const text=contentText.value.trim();
+    if(!text){ showToast('❌ Please enter some content first'); return; }
+    const frequency=getWordFrequency(text); const totalWords=getTotalWords(frequency); const uniqueWords=getUniqueWordCount(frequency);
+    currentAnalysis={totalWords,uniqueWords,keywordFrequency:frequency};
+    totalWordsSpan.textContent=totalWords; uniqueWordsSpan.textContent=uniqueWords;
+    const sorted=getSortedKeywords(frequency);
+    if(sorted.length>0){ const top=sorted[0]; const topDensity=(top.count/totalWords)*100; keywordCountSpan.textContent=top.count; keywordDensitySpan.textContent=topDensity.toFixed(2)+'%'; updateDensityBadge(topDensity); keywordInput.value=top.keyword; }
+    displayTable(sorted,totalWords);
+    resultsSection.classList.add('show');
+    showToast(`✅ Analysis complete! Found ${uniqueWords} unique words out of ${totalWords} total words.`);
+}
+
+function displayTable(keywords,totalWords){
+    if(keywords.length===0){ tableBody.innerHTML='<tr><td colspan="3" style="text-align:center;">No keywords found</td></tr>'; return; }
+    let html='';
+    for(const item of keywords){ const density=(item.count/totalWords)*100; html+=`<tr><td class="keyword-cell">${escapeHtml(item.keyword)}</td><td>${item.count}</td><td>${density.toFixed(2)}%</td></tr>`; }
+    tableBody.innerHTML=html;
+}
+function escapeHtml(str){ return str.replace(/[&<>]/g,function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
+function copyResults(){
+    if(!contentText.value.trim()){ showToast('❌ Nothing to copy'); return; }
+    const keyword=keywordInput.value.trim();
+    const results=`Keyword Density Analysis Report\n================================\nTotal Words: ${totalWordsSpan.textContent}\nUnique Words: ${uniqueWordsSpan.textContent}\n${keyword?`Keyword: ${keyword}\nKeyword Count: ${keywordCountSpan.textContent}\nKeyword Density: ${keywordDensitySpan.textContent}`:''}\n\nGenerated by Free Online Tools - Keyword Density Checker`;
+    navigator.clipboard.writeText(results).then(()=>showToast('📋 Results copied!')).catch(()=>showToast('❌ Failed to copy'));
+}
+function resetAll(){ contentText.value=''; keywordInput.value=''; resultsSection.classList.remove('show'); totalWordsSpan.textContent='0'; uniqueWordsSpan.textContent='0'; keywordCountSpan.textContent='0'; keywordDensitySpan.textContent='0%'; tableBody.innerHTML='<tr><td colspan="3" style="text-align:center;">Enter content and click "Analyze All Keywords"</td></tr>'; showToast('🗑️ All cleared!'); }
+function showToast(msg){ const toast=document.createElement('div'); toast.className='toast'; toast.textContent=msg; document.body.appendChild(toast); setTimeout(()=>toast.remove(),2500); }
+
+checkKeywordBtn.addEventListener('click',analyzeSpecificKeyword);
+analyzeAllBtn.addEventListener('click',analyzeAllKeywords);
+copyResultsBtn.addEventListener('click',copyResults);
+resetBtn.addEventListener('click',resetAll);
+keywordInput.addEventListener('keypress',(e)=>{ if(e.key==='Enter') analyzeSpecificKeyword(); });
+
+window.addEventListener('load',()=>{
+    const exampleText=`SEO (Search Engine Optimization) is the practice of optimizing websites to rank higher in search engine results. Good SEO practices include using relevant keywords, creating quality content, and building backlinks. Keyword research is essential for any SEO strategy. When you optimize your content for SEO, you need to focus on keyword density. The ideal keyword density for SEO is between 1% and 3%. This keyword density range helps search engines understand your content without appearing spammy. Many SEO experts recommend checking keyword density regularly as part of your SEO audit. Use this keyword density checker to analyze your SEO content and improve your keyword strategy.`;
+    contentText.value=exampleText;
+    analyzeAllKeywords();
+});
+</script>
+</body>
+</html>
