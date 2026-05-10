@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Free Instagram Hashtag Generator | AI Tool for Reels & Growth</title>
+  <meta name="description" content="Generate trending, viral and SEO-friendly Instagram hashtags instantly for posts, reels and social media growth using our free Instagram Hashtag Generator Tool.">
+  <meta name="keywords" content="Instagram hashtag generator, AI hashtags, trending tags, reels hashtags, viral Instagram tags, SEO hashtags">
+  <meta name="author" content="Instagram Hashtag Tool">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.yourdomain.com/instagram-hashtag-generator">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Instagram Hashtag Generator Tool Online">
+  <meta property="og:description" content="Generate trending, viral and SEO-friendly Instagram hashtags for posts, reels and social media growth.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Instagram+Hashtag+Generator">
+  <meta property="og:url" content="https://www.yourdomain.com/instagram-hashtag-generator">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Instagram Hashtag Generator - Free AI Tool">
+  <meta name="twitter:description" content="Boost your Instagram growth with smart hashtags for reels, posts, and explore page.">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x600?text=IG+Hashtag+Tool">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s ease, color 0.2s, border 0.2s;
+    }
+
+    :root {
+      --bg-start: #fdfbfb;
+      --bg-end: #ebedee;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(0, 0, 0, 0.08);
+      --text-primary: #1e1e2f;
+      --text-secondary: #4a4a6a;
+      --accent: #d62976;
+      --accent-grad: linear-gradient(135deg, #f77737, #d62976);
+      --accent-hover: #c1175c;
+      --chip-bg: #f0f0f5;
+      --chip-hover: #ffe2ef;
+      --shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      --ad-bg: #eef2f5;
+    }
+
+    body.dark {
+      --bg-start: #121212;
+      --bg-end: #1e1e2a;
+      --card-bg: rgba(30, 30, 42, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --text-primary: #f0f0f0;
+      --text-secondary: #b0b0c0;
+      --chip-bg: #2a2a35;
+      --chip-hover: #3a2a3a;
+      --ad-bg: #252530;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    /* floating particles */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .glass-card {
+      backdrop-filter: blur(12px);
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .input-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.8rem 0 1.2rem;
+    }
+    .keyword-input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border-radius: 60px;
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      font-size: 1rem;
+      outline: none;
+    }
+    .keyword-input:focus {
+      border-color: #d62976;
+      box-shadow: 0 0 0 3px rgba(214, 41, 118, 0.2);
+    }
+    .action-btn {
+      background: var(--accent-grad);
+      border: none;
+      padding: 0 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+    }
+    .action-btn.outline {
+      background: transparent;
+      border: 1px solid #d62976;
+      color: #d62976;
+      background: var(--card-bg);
+    }
+    .action-btn.outline:hover {
+      background: #d62976;
+      color: white;
+    }
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--chip-bg);
+      border-radius: 60px;
+      padding: 0.8rem 1.5rem;
+      margin: 1.2rem 0;
+    }
+    .trending-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1rem 0;
+    }
+    .trending-topic {
+      background: var(--chip-bg);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .category-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(4px);
+      border-radius: 1.5rem;
+      padding: 1.2rem;
+      border: 1px solid var(--glass-border);
+    }
+    .category-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hashtag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .hashtag-chip {
+      background: var(--chip-bg);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.1s;
+    }
+    .hashtag-chip:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .star-icon {
+      font-size: 0.8rem;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+    .star-icon.active {
+      color: gold;
+      opacity: 1;
+    }
+    .favorites-section {
+      background: var(--card-bg);
+      border-radius: 1.5rem;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .caption-preview {
+      background: var(--chip-bg);
+      border-radius: 1rem;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .ad-placeholder {
+      background: var(--ad-bg);
+      border-radius: 1.2rem;
+      text-align: center;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px dashed var(--glass-border);
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--accent);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 99;
+    }
+    .scroll-top.show { opacity: 1; }
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e1e2f;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      z-index: 1000;
+      font-weight: 500;
+      pointer-events: none;
+    }
+    button:disabled { opacity: 0.6; cursor: wait; }
+    @media (max-width: 760px) {
+      .container { padding: 0; }
+      .glass-card { padding: 1.2rem; }
+    }
+    .faq-item { margin: 1rem 0; }
+    .faq-question { font-weight: 700; cursor: pointer; }
+    .footer { text-align: center; margin-top: 2rem; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+<div class="container">
+  <div class="glass-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <h1>📸 Instagram Hashtag Generator</h1>
+      <button id="themeToggle" class="action-btn outline">🌓 Dark/Light</button>
+    </div>
+    <p style="margin-top: 0.5rem;">AI-powered smart hashtags for reels, explore & growth 🚀</p>
+
+    <!-- Keyword input + generate -->
+    <div class="input-group">
+      <input type="text" id="keywordInput" class="keyword-input" placeholder="e.g., travel, fitness, gaming, islamic quotes, fashion" value="fitness">
+      <button id="generateBtn" class="action-btn">✨ Generate Tags</button>
+    </div>
+
+    <div class="button-group" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <button id="copyAllBtn" class="action-btn outline">📋 Copy All Hashtags</button>
+      <button id="downloadBtn" class="action-btn outline">💾 Download TXT</button>
+      <button id="clearBtn" class="action-btn outline">🗑️ Clear All</button>
+    </div>
+
+    <div class="stats-row">
+      <span>🏷️ Hashtags: <strong id="totalCount">0</strong> (recommended 20-30)</span>
+      <span>🔡 Characters: <strong id="charCount">0</strong></span>
+    </div>
+
+    <!-- Trending topics clickable -->
+    <div><strong>🔥 Trending topics (click to explore)</strong></div>
+    <div id="trendingTopicsContainer" class="trending-chips"></div>
+
+    <!-- Ad top -->
+    <div class="ad-placeholder"><!-- AdSense Ad Placeholder --> 📢 Ad Space - Top Banner</div>
+
+    <!-- 6 Categories -->
+    <div class="category-grid" id="hashtagsGrid">
+      <div class="category-card"><div class="category-title">📈 Trending</div><div id="trendingList" class="hashtag-list"></div></div>
+      <div class="category-card"><div class="category-title">⚡ Viral</div><div id="viralList" class="hashtag-list"></div></div>
+      <div class="category-card"><div class="category-title">🎬 Reels</div><div id="reelsList" class="hashtag-list"></div></div>
+      <div class="category-card"><div class="category-title">🔍 SEO</div><div id="seoList" class="hashtag-list"></div></div>
+      <div class="category-card"><div class="category-title">🎯 Niche</div><div id="nicheList" class="hashtag-list"></div></div>
+      <div class="category-card"><div class="category-title">⭐ Recommended</div><div id="recommendedList" class="hashtag-list"></div></div>
+    </div>
+
+    <!-- Favorites system -->
+    <div class="favorites-section">
+      <div style="display: flex; justify-content: space-between;"><strong>⭐ My Favorite Hashtags</strong> <span id="clearFavBtn" style="cursor:pointer; font-size:0.8rem;">🗑️ clear all</span></div>
+      <div id="favoritesContainer" class="hashtag-list" style="margin-top: 12px;"></div>
+    </div>
+
+    <!-- Live caption preview -->
+    <div class="caption-preview">
+      <label><strong>✏️ Caption preview with hashtags</strong></label>
+      <textarea id="captionInput" rows="2" class="keyword-input" style="width:100%; margin-top:6px;" placeholder="Write your caption... e.g., Loving this vibe! 🔥"></textarea>
+      <div id="livePreview" style="margin-top: 12px; background: var(--chip-bg); padding: 10px; border-radius: 20px;"></div>
+      <small>Hashtags will be appended automatically</small>
+    </div>
+
+    <!-- Instagram Tips & FAQ -->
+    <div style="margin: 2rem 0;">
+      <h3>📌 Instagram Growth Tips</h3>
+      <ul style="padding-left: 1.5rem;">
+        <li>✨ Use 20-30 hashtags mix of small & large niches</li>
+        <li>🎥 Reels needs 3-5 trending + niche hashtags</li>
+        <li>🔥 Place hashtags in first comment or caption end</li>
+        <li>🚀 Avoid banned hashtags, rotate tags weekly</li>
+      </ul>
+    </div>
+    <div>
+      <h3>❓ Frequently Asked Questions</h3>
+      <div class="faq-item"><div class="faq-question">👉 What is an Instagram hashtag generator?</div><div>It creates relevant hashtags based on your keyword to boost reach.</div></div>
+      <div class="faq-item"><div class="faq-question">👉 How many hashtags should I use?</div><div>Instagram recommends 3-5 but up to 30 works well for reach.</div></div>
+      <div class="faq-item"><div class="faq-question">👉 Do hashtags help Instagram growth 2026?</div><div>Yes! Proper hashtags still crucial for discovery.</div></div>
+    </div>
+
+    <!-- Bottom Ad -->
+    <div class="ad-placeholder"><!-- AdSense Ad Placeholder --> 📢 Ad Space - Bottom Banner</div>
+    <div class="footer">© 2026 Instagram Hashtag Generator — Grow smarter</div>
+  </div>
+</div>
+<div id="scrollTopBtn" class="scroll-top">↑</div>
+<div id="toastMessage" class="toast-msg" style="display: none;"></div>
+
+<script>
+  // ----- DOM Elements -----
+  const keywordInput = document.getElementById('keywordInput');
+  const generateBtn = document.getElementById('generateBtn');
+  const copyAllBtn = document.getElementById('copyAllBtn');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const clearBtn = document.getElementById('clearBtn');
+  const themeToggle = document.getElementById('themeToggle');
+  const totalCountSpan = document.getElementById('totalCount');
+  const charCountSpan = document.getElementById('charCount');
+  const trendingContainer = document.getElementById('trendingList');
+  const viralContainer = document.getElementById('viralList');
+  const reelsContainer = document.getElementById('reelsList');
+  const seoContainer = document.getElementById('seoList');
+  const nicheContainer = document.getElementById('nicheList');
+  const recommendedContainer = document.getElementById('recommendedList');
+  const favoritesContainer = document.getElementById('favoritesContainer');
+  const trendingTopicsDiv = document.getElementById('trendingTopicsContainer');
+  const captionInput = document.getElementById('captionInput');
+  const livePreviewSpan = document.getElementById('livePreview');
+  const clearFavBtn = document.getElementById('clearFavBtn');
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  let currentAllHashtags = [];     // array of all hashtag strings
+  let currentCategories = { trending:[], viral:[], reels:[], seo:[], niche:[], recommended:[] };
+  let favorites = JSON.parse(localStorage.getItem('ig_favorites') || '[]');
+  let recentSearches = JSON.parse(localStorage.getItem('ig_recent') || '[]');
+
+  // Helper: show toast
+  function showToast(msg, isErr = false) {
+    const toast = document.getElementById('toastMessage');
+    toast.textContent = msg;
+    toast.style.display = 'block';
+    toast.style.background = isErr ? '#dc2626' : '#1e1e2f';
+    setTimeout(() => toast.style.display = 'none', 2000);
+  }
+
+  // save favorites
+  function saveFavorites() {
+    localStorage.setItem('ig_favorites', JSON.stringify(favorites));
+    renderFavorites();
+  }
+
+  // toggle favorite hashtag
+  function toggleFavorite(hashtag) {
+    if (favorites.includes(hashtag)) {
+      favorites = favorites.filter(f => f !== hashtag);
+      showToast(`Removed ${hashtag} from favorites`);
+    } else {
+      favorites.push(hashtag);
+      showToast(`❤️ Saved ${hashtag} to favorites`);
+    }
+    saveFavorites();
+    // re-render all chips to reflect star active state
+    renderAllCategories(currentCategories);
+  }
+
+  // Check if hashtag in favs
+  function isFavorite(hashtag) { return favorites.includes(hashtag); }
+
+  // generate AI-style Instagram hashtags based on keyword
+  function generateInstagramHashtags(keyword) {
+    const kw = keyword.trim().toLowerCase().replace(/\s+/g, '');
+    const titleCase = kw.charAt(0).toUpperCase() + kw.slice(1);
+    const spaced = keyword.trim();
+    const words = spaced.split(/\s+/);
+    const joinWord = words.join('');
+    
+    // popular Instagram base tags
+    const popular = ['#explorepage', '#instagood', '#instagram', '#viral', '#trending', '#reelsinstagram'];
+    const trending = [`#${kw}`, `#${kw}trends`, `#trending${titleCase}`, `#${kw}vibes`, `#${kw}community`, `#explore${titleCase}`, `#${kw}now`];
+    const viral = [`#viral${titleCase}`, `#${kw}mania`, `#fyp${kw}`, `#${kw}explosion`, '#viralreels', '#trendingaudio', `#${kw}shorts`];
+    const reels = [`#${kw}reels`, '#reelsinstagram', '#instagramreels', '#reelkarofeelkar', `#${kw}video`, '#reelitfeelit', `#${kw}content`];
+    const seo = [`#best${titleCase}`, `#${kw}${new Date().getFullYear()}`, `#howto${kw}`, `#${kw}strategy`, `#${kw}tips`, `#learn${kw}`, `#${kw}guide`];
+    const niche = [`#${kw}life`, `#${kw}addict`, `#${kw}daily`, `#${kw}love`, `#${kw}world`, `#${kw}style`, `#${kw}inspo`];
+    let recommended = [`#${kw}official`, `#${kw}goals`, `#${kw}mastery`, `#${kw}hub`, ...popular.slice(0,3)];
+    
+    if (words.length > 1) {
+      trending.push(`#${joinWord}`, `#${joinWord}central`);
+      viral.push(`#${joinWord}wave`);
+      seo.push(`#top${joinWord}`);
+      niche.push(`#${joinWord}community`);
+      reels.push(`#${joinWord}reel`);
+    }
+    const uniq = (arr) => [...new Map(arr.map(v => [v.toLowerCase(), v])).values()].slice(0, 10);
+    return { trending: uniq(trending), viral: uniq(viral), reels: uniq(reels), seo: uniq(seo), niche: uniq(niche), recommended: uniq(recommended) };
+  }
+
+  // render chips inside any container with star + copy
+  function renderChips(container, tagsArray, categoryKey) {
+    container.innerHTML = '';
+    tagsArray.forEach(tag => {
+      const chip = document.createElement('div');
+      chip.className = 'hashtag-chip';
+      const starSpan = document.createElement('span');
+      starSpan.className = `star-icon ${isFavorite(tag) ? 'active' : ''}`;
+      starSpan.innerHTML = isFavorite(tag) ? '★' : '☆';
+      starSpan.style.fontSize = '0.9rem';
+      starSpan.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleFavorite(tag);
+        renderAllCategories(currentCategories);  // refresh UI
+      });
+      const textSpan = document.createElement('span');
+      textSpan.innerText = tag;
+      textSpan.style.cursor = 'pointer';
+      textSpan.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(tag);
+        showToast(`📋 Copied: ${tag}`);
+      });
+      chip.appendChild(starSpan);
+      chip.appendChild(textSpan);
+      container.appendChild(chip);
+    });
+    if(!tagsArray.length) container.innerHTML = '<span style="opacity:0.6;">✨ generate tags</span>';
+  }
+
+  function renderAllCategories(categories) {
+    renderChips(trendingContainer, categories.trending, 'trending');
+    renderChips(viralContainer, categories.viral, 'viral');
+    renderChips(reelsContainer, categories.reels, 'reels');
+    renderChips(seoContainer, categories.seo, 'seo');
+    renderChips(nicheContainer, categories.niche, 'niche');
+    renderChips(recommendedContainer, categories.recommended, 'recommended');
+    
+    // collect all unique hashtags
+    const all = [...categories.trending, ...categories.viral, ...categories.reels, ...categories.seo, ...categories.niche, ...categories.recommended];
+    currentAllHashtags = [...new Map(all.map(t => [t.toLowerCase(), t])).values()];
+    totalCountSpan.innerText = currentAllHashtags.length;
+    const fullStr = currentAllHashtags.join(' ');
+    charCountSpan.innerText = fullStr.length;
+    updateLivePreview();
+  }
+
+  function updateLivePreview() {
+    const caption = captionInput.value.trim();
+    const hashtagsString = currentAllHashtags.join(' ');
+    const preview = caption ? `${caption} ${hashtagsString}` : hashtagsString;
+    livePreviewSpan.innerText = preview || '✨ Hashtags will appear here';
+  }
+
+  // generate and store categories
+  async function generateHashtagsAsync() {
+    const keyword = keywordInput.value.trim();
+    if (!keyword) { showToast('Enter a keyword first!', true); return; }
+    generateBtn.disabled = true; generateBtn.innerHTML = '⏳ Generating ...';
+    await new Promise(r => setTimeout(r, 450));
+    const categories = generateInstagramHashtags(keyword);
+    currentCategories = categories;
+    renderAllCategories(categories);
+    // save recent search
+    if(keyword && !recentSearches.includes(keyword)) {
+      recentSearches.unshift(keyword);
+      if(recentSearches.length > 5) recentSearches.pop();
+      localStorage.setItem('ig_recent', JSON.stringify(recentSearches));
+      renderTrendingTopics();
+    }
+    generateBtn.disabled = false; generateBtn.innerHTML = '✨ Generate Tags';
+    showToast(`✅ Generated ${currentAllHashtags.length} hashtags for "${keyword}"`);
+  }
+
+  function renderFavorites() {
+    favoritesContainer.innerHTML = '';
+    favorites.forEach(tag => {
+      const chip = document.createElement('div');
+      chip.className = 'hashtag-chip';
+      chip.innerHTML = `<span>${tag}</span> <span style="margin-left:6px; font-size:0.7rem;">🗑️</span>`;
+      chip.addEventListener('click', (e) => {
+        if(e.target.innerText === '🗑️') {
+          e.stopPropagation();
+          favorites = favorites.filter(f => f !== tag);
+          saveFavorites();
+          renderAllCategories(currentCategories);
+        } else {
+          navigator.clipboard.writeText(tag);
+          showToast(`Copied ${tag}`);
+        }
+      });
+      favoritesContainer.appendChild(chip);
+    });
+    if(favorites.length === 0) favoritesContainer.innerHTML = '<span>★ Click star on any hashtag to save here</span>';
+  }
+
+  function copyAll() {
+    if(!currentAllHashtags.length) { showToast('No hashtags to copy', true); return; }
+    navigator.clipboard.writeText(currentAllHashtags.join(' '));
+    showToast(`📋 Copied ${currentAllHashtags.length} hashtags`);
+  }
+
+  function downloadTXT() {
+    if(!currentAllHashtags.length) { showToast('Generate hashtags first', true); return; }
+    let content = `INSTAGRAM HASHTAGS — ${keywordInput.value.trim()}\nGenerated: ${new Date().toLocaleString()}\n\n`;
+    content += `TRENDING: ${currentCategories.trending.join(' ')}\n\nVIRAL: ${currentCategories.viral.join(' ')}\n\nREELS: ${currentCategories.reels.join(' ')}\n\nSEO: ${currentCategories.seo.join(' ')}\n\nNICHE: ${currentCategories.niche.join(' ')}\n\nRECOMMENDED: ${currentCategories.recommended.join(' ')}\n\nAll tags: ${currentAllHashtags.join(' ')}`;
+    const blob = new Blob([content], {type: 'text/plain'});
+    const a = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    a.href = url;
+    a.download = `ig_hashtags_${keywordInput.value.trim().replace(/\s/g,'_')}.txt`;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('📁 Downloaded as .txt');
+  }
+
+  function clearAll() {
+    keywordInput.value = '';
+    currentCategories = { trending:[], viral:[], reels:[], seo:[], niche:[], recommended:[] };
+    renderAllCategories(currentCategories);
+    showToast('Cleared');
+  }
+
+  function renderTrendingTopics() {
+    const topics = ['travel', 'fitness', 'gaming', 'photography', 'food', 'motivation', 'fashion', 'islamic quotes', 'business'];
+    trendingTopicsDiv.innerHTML = '';
+    topics.forEach(topic => {
+      const chip = document.createElement('div');
+      chip.className = 'trending-topic';
+      chip.innerText = topic;
+      chip.addEventListener('click', () => {
+        keywordInput.value = topic;
+        generateHashtagsAsync();
+      });
+      trendingTopicsDiv.appendChild(chip);
+    });
+    // also show recent searches
+    const recentsDiv = document.createElement('div');
+    recentsDiv.style.marginTop = '0.5rem';
+    recentsDiv.innerHTML = '<small>🕒 Recent: </small>';
+    recentSearches.forEach(r => {
+      const span = document.createElement('span');
+      span.style.background = 'var(--chip-bg)'; span.style.borderRadius='30px'; span.style.padding='2px 10px'; span.style.margin='0 5px'; span.style.cursor='pointer';
+      span.innerText = r;
+      span.addEventListener('click', () => { keywordInput.value = r; generateHashtagsAsync(); });
+      recentsDiv.appendChild(span);
+    });
+    trendingTopicsDiv.appendChild(recentsDiv);
+  }
+
+  // dark/light
+  function initTheme() {
+    const saved = localStorage.getItem('igTheme');
+    if(saved === 'dark') document.body.classList.add('dark');
+    else if(saved === 'light') document.body.classList.remove('dark');
+    else if(window.matchMedia('(prefers-color-scheme: dark)').matches) document.body.classList.add('dark');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('igTheme', isDark ? 'dark' : 'light');
+    });
+  }
+  
+  // particles
+  function initParticles() {
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, particles = [];
+    function resize() { width = window.innerWidth; height = window.innerHeight; canvas.width=width; canvas.height=height; }
+    function createParticles() { particles = []; let num = Math.min(60, Math.floor(width*height/15000)); for(let i=0;i<num;i++) particles.push({x:Math.random()*width, y:Math.random()*height, r:Math.random()*2+1, alpha:Math.random()*0.4, vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.2}); }
+    function draw() { if(!ctx) return; ctx.clearRect(0,0,width,height); particles.forEach(p=>{ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(214,41,118,${p.alpha*0.4})`; ctx.fill(); p.x+=p.vx; p.y+=p.vy; if(p.x<0) p.x=width; if(p.x>width) p.x=0; if(p.y<0) p.y=height; if(p.y>height) p.y=0; }); requestAnimationFrame(draw); }
+    window.addEventListener('resize', ()=>{ resize(); createParticles(); });
+    resize(); createParticles(); draw();
+  }
+
+  function initScroll() {
+    window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('show', window.scrollY>400));
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+  }
+  
+  captionInput.addEventListener('input', updateLivePreview);
+  generateBtn.addEventListener('click', generateHashtagsAsync);
+  copyAllBtn.addEventListener('click', copyAll);
+  downloadBtn.addEventListener('click', downloadTXT);
+  clearBtn.addEventListener('click', clearAll);
+  clearFavBtn.addEventListener('click', () => { favorites = []; saveFavorites(); renderAllCategories(currentCategories); showToast('Favorites cleared'); });
+  keywordInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') generateHashtagsAsync(); });
+
+  initTheme();
+  renderTrendingTopics();
+  renderFavorites();
+  initParticles();
+  initScroll();
+  // initial generate
+  generateHashtagsAsync();
+</script>
+</body>
+</html>
