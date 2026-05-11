@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Free YouTube Title Generator | Viral & SEO Titles for Higher CTR 2026</title>
+    <meta name="description" content="Generate viral, clickbait and SEO-friendly YouTube video titles instantly using our free YouTube Title Generator Tool for higher CTR and views.">
+    <meta name="keywords" content="YouTube title generator, viral titles, SEO titles, clickbait titles, YouTube growth, high CTR titles">
+    <meta name="author" content="YouTube Title Tool">
+    <link rel="canonical" href="https://www.yoursite.com/youtube-title-generator">
+    <meta property="og:title" content="Free YouTube Title Generator | Viral & SEO Titles">
+    <meta property="og:description" content="Generate viral, clickbait and SEO-friendly YouTube video titles instantly for higher CTR and views.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.yoursite.com/yt-title-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free YouTube Title Generator Tool">
+    <meta name="twitter:description" content="Generate viral YouTube titles instantly. Free tool for creators.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "YouTube Title Generator Tool",
+      "description": "Generate viral, clickbait and SEO-friendly YouTube video titles instantly",
+      "applicationCategory": "Content Tool",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(20, 20, 30, 0.95);
+            --yt-red: #ff0000;
+            --yt-dark-red: #cc0000;
+            --yt-light-red: #ff4444;
+            --neon-pink: #ff6b6b;
+            --neon-purple: #8b5cf6;
+            --text-light: #ffffff;
+            --text-gray: #b0b0b0;
+            --gradient-1: linear-gradient(135deg, #ff0000, #8b5cf6);
+            --gradient-2: linear-gradient(135deg, #ff4444, #ff0000);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255, 0, 0, 0.1), transparent 60%),
+                        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08), transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px;
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            background: rgba(30, 30, 40, 0.95);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            border-radius: 60px;
+            color: var(--text-light);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus {
+            border-color: var(--yt-red);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .style-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .style-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .style-btn.active {
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            border-color: transparent;
+            color: white;
+        }
+
+        .style-btn:hover {
+            background: rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .titles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .title-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 20px;
+            border-left: 4px solid #ff0000;
+            transition: all 0.3s;
+        }
+
+        .title-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .title-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            word-break: break-word;
+            font-weight: 500;
+        }
+
+        .title-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .char-count {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        .copy-title {
+            background: rgba(255, 0, 0, 0.2);
+            border: none;
+            padding: 6px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            transition: all 0.2s;
+        }
+
+        .copy-title:hover {
+            background: #ff0000;
+            transform: scale(1.05);
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            padding: 12px 24px;
+            border-radius: 60px;
+            color: white;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #ff0000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+        }
+
+        .trending-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .trending-topic {
+            background: rgba(255, 0, 0, 0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .trending-topic:hover {
+            background: #ff0000;
+            transform: translateY(-2px);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .titles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        body.light-mode {
+            --bg-dark: #f5f5f5;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --text-light: #1a1a1a;
+            --text-gray: #666;
+        }
+
+        .ad-placeholder {
+            background: rgba(255, 0, 0, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed rgba(255, 0, 0, 0.3);
+        }
+
+        .favorite-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 8px;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="theme-toggle" id="themeToggle">🌙 Dark</div>
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <div class="container">
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Top Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <div class="glass-card" style="text-align: center; margin-bottom: 30px;">
+            <h1>🎬 YouTube Title Generator</h1>
+            <p style="color: var(--text-gray);">Generate viral, clickbait & SEO-optimized YouTube titles for higher CTR and more views</p>
+        </div>
+
+        <div class="glass-card">
+            <input type="text" id="keywordInput" class="search-box" placeholder="Enter your video topic... e.g., gaming, tech reviews, motivation, AI tools, cooking" autocomplete="off">
+            
+            <div style="margin: 20px 0 10px 0;"><strong>🎯 Title Style:</strong></div>
+            <div class="style-buttons" id="styleButtons">
+                <div class="style-btn" data-style="viral">🔥 Viral</div>
+                <div class="style-btn" data-style="clickbait">💥 Clickbait</div>
+                <div class="style-btn" data-style="professional">💼 Professional</div>
+                <div class="style-btn" data-style="educational">📚 Educational</div>
+                <div class="style-btn" data-style="shorts">📱 Shorts Style</div>
+                <div class="style-btn" data-style="gaming">🎮 Gaming</div>
+                <div class="style-btn" data-style="emotional">❤️ Emotional</div>
+                <div class="style-btn" data-style="trending">📈 Trending</div>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+                <button class="btn-primary" id="generateBtn">✨ Generate Titles</button>
+                <button class="btn-secondary" id="copyAllBtn">📋 Copy All</button>
+                <button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">📊 Total Titles: <span id="totalCount">0</span></div>
+                <div class="stat-card">📝 Avg Length: <span id="avgLength">0</span> chars</div>
+                <div class="stat-card">✅ YouTube Best: 60-70 chars</div>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Rectangle -->
+            <span>📢 Advertisement - 300x250 Rectangle</span>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>🎬 YouTube Search Preview</h3>
+            <div id="livePreview" style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 20px; margin-top: 10px; font-family: monospace; word-break: break-all; font-size: 1.1rem; font-weight: bold; color: #ff0000;">
+                Your title preview will appear here...
+            </div>
+        </div>
+
+        <div id="resultsSection">
+            <h2>🔥 Generated YouTube Titles</h2>
+            <div class="titles-grid" id="titlesGrid"></div>
+        </div>
+
+        <div class="glass-card" style="margin: 30px 0;">
+            <h3>⚡ Trending Video Topics</h3>
+            <div class="trending-topics" id="trendingTopics">
+                <div class="trending-topic">gaming</div>
+                <div class="trending-topic">free fire</div>
+                <div class="trending-topic">minecraft</div>
+                <div class="trending-topic">tech reviews</div>
+                <div class="trending-topic">motivation</div>
+                <div class="trending-topic">AI tools</div>
+                <div class="trending-topic">online earning</div>
+                <div class="trending-topic">cooking recipes</div>
+            </div>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>🕒 Recent Searches</h3>
+            <div id="recentSearches" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+            <h3 style="margin-top: 20px;">⭐ Favorite Titles</h3>
+            <div id="favoritesList" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>📈 YouTube SEO Tips</h3>
+            <ul style="margin-top: 15px; list-style: none;">
+                <li>✅ Keep titles between 60-70 characters for full display on search results</li>
+                <li>✅ Place important keywords at the beginning of your title</li>
+                <li>✅ Use power words like "Amazing", "Ultimate", "Secret", "Finally"</li>
+                <li>✅ Add numbers and brackets e.g., [2026], (Tutorial) for higher CTR</li>
+                <li>✅ Create curiosity gaps without being misleading</li>
+            </ul>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>❓ Frequently Asked Questions</h3>
+            <div style="margin-top: 20px;">
+                <div style="margin-bottom: 20px;">
+                    <strong>What is a YouTube title generator?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">An AI-powered tool that creates optimized, click-worthy video titles based on your topic and preferred style.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong>How do titles affect CTR?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">Titles are the first thing viewers see - a compelling title can increase Click-Through Rate by 50% or more.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong>Best title length for YouTube?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">60-70 characters ensures full display on desktop and mobile search results.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong>What makes a title go viral?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">Emotion, curiosity, relevance, timing, and using proven viral patterns.</p>
+                </div>
+                <div>
+                    <strong>Are SEO titles important for YouTube?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">Absolutely! YouTube's algorithm relies heavily on titles for ranking and suggesting videos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Bottom Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray);">
+            <p>© 2026 YouTube Title Generator | Boost Your YouTube Views & CTR</p>
+        </footer>
+    </div>
+
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for(let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 10 + 5 + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        let currentStyle = 'viral';
+        let currentTitles = [];
+        let favorites = JSON.parse(localStorage.getItem('ytFavorites') || '[]');
+
+        document.querySelectorAll('.style-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentStyle = btn.dataset.style;
+            });
+        });
+        document.querySelector('.style-btn').classList.add('active');
+
+        function generateTitles(keyword, style) {
+            const lowerKeyword = keyword.toLowerCase().trim();
+            if(!lowerKeyword) return [];
+            
+            const titlesDB = {
+                viral: [
+                    `${lowerKeyword} TRENDS That Will BLOW Your Mind! 🔥`,
+                    `I Tried ${lowerKeyword} for 30 Days - SHOCKING Results!`,
+                    `The SECRET to Mastering ${lowerKeyword} in 2026`,
+                    `STOP Doing ${lowerKeyword} Wrong! Do THIS Instead`,
+                    `This ${lowerKeyword} Video Will CHANGE Your Life`,
+                    `Why ${lowerKeyword} Is Taking Over the Internet`,
+                    `TOP 10 ${lowerKeyword} Hacks You NEED to Know`
+                ],
+                clickbait: [
+                    `You Won't Believe This ${lowerKeyword} Hack! 😱`,
+                    `99% of People FAIL at ${lowerKeyword} - Watch This`,
+                    `The ${lowerKeyword} Trick That Will Save You HOURS!`,
+                    `THIS is Why Your ${lowerKeyword} Strategy FAILS`,
+                    `Don't Watch This ${lowerKeyword} Video Unless You Want SUCCESS`,
+                    `The ${lowerKeyword} SECRET They Don't Want You to Know`,
+                    `I Discovered the ULTIMATE ${lowerKeyword} Method`
+                ],
+                professional: [
+                    `The Complete Guide to ${lowerKeyword} in 2026`,
+                    `Mastering ${lowerKeyword}: A Step-by-Step Tutorial`,
+                    `${lowerKeyword} Best Practices for Maximum Results`,
+                    `Advanced ${lowerKeyword} Strategies for Professionals`,
+                    `How to Optimize Your ${lowerKeyword} Workflow`,
+                    `${lowerKeyword} Masterclass: From Beginner to Expert`,
+                    `Essential ${lowerKeyword} Skills You Must Learn`
+                ],
+                educational: [
+                    `Understanding ${lowerKeyword}: The Ultimate Tutorial`,
+                    `${lowerKeyword} Explained in 10 Minutes (Beginners Guide)`,
+                    `Learn ${lowerKeyword} Fast: Tips & Tricks`,
+                    `The Science Behind ${lowerKeyword} You Never Knew`,
+                    `${lowerKeyword} 101: Everything You Need to Know`,
+                    `How ${lowerKeyword} Actually Works (Simple Explanation)`,
+                    `5 Lessons I Learned From ${lowerKeyword}`
+                ],
+                shorts: [
+                    `${lowerKeyword} in 60 Seconds 🔥 #shorts`,
+                    `The ${lowerKeyword} Challenge ⚡ #shorts`,
+                    `Fastest ${lowerKeyword} Hack 😱 #shorts`,
+                    `3 ${lowerKeyword} Tips Under 60s 📱 #shorts`,
+                    `${lowerKeyword} Made Simple 🎯 #shorts`,
+                    `Quick ${lowerKeyword} Tutorial 💫 #shorts`,
+                    `${lowerKeyword} FAIL 🤣 #shorts`
+                ],
+                gaming: [
+                    `EPIC ${lowerKeyword} Moments You HAVE to See! 🎮`,
+                    `I Became a PRO at ${lowerKeyword} in 24 Hours`,
+                    `${lowerKeyword} but Every Time I Die, I [CHALLENGE] 🔥`,
+                    `The ULTIMATE ${lowerKeyword} Guide for Beginners`,
+                    `This ${lowerKeyword} Strategy is BROKEN OP 💀`,
+                    `My ${lowerKeyword} Journey from NOOB to PRO`,
+                    `BEATING ${lowerKeyword} with ONLY [INSANE RESTRICTION]`
+                ],
+                emotional: [
+                    `How ${lowerKeyword} Changed My Life Forever ❤️`,
+                    `The Emotional Story Behind My ${lowerKeyword} Journey`,
+                    `Why ${lowerKeyword} Means So Much to Me 💫`,
+                    `Overcoming Obstacles with ${lowerKeyword} (My Story)`,
+                    `${lowerKeyword} Taught Me This Important Lesson`,
+                    `A Heartfelt Message About ${lowerKeyword}`,
+                    `Finding Hope Through ${lowerKeyword} 🌟`
+                ],
+                trending: [
+                    `${lowerKeyword} is BREAKING the Internet Right Now!`,
+                    `The ${lowerKeyword} Trend Taking Over YouTube`,
+                    `Why Everyone is Talking About ${lowerKeyword}`,
+                    `${lowerKeyword} Goes VIRAL - Here's Why`,
+                    `The Future of ${lowerKeyword} is AMAZING`,
+                    `${lowerKeyword} Predictions That Will Come True`,
+                    `This ${lowerKeyword} Trend is UNSTOPPABLE`
+                ]
+            };
+            
+            let styleTitles = titlesDB[style] || titlesDB.viral;
+            let year = new Date().getFullYear();
+            let titles = styleTitles.map(title => title.replace(/\$\{lowerKeyword\}/g, lowerKeyword).replace('2026', year));
+            
+            let extra = [];
+            for(let i = 0; i < 10; i++) {
+                extra.push(`${lowerKeyword.toUpperCase()} 🔥 (Must Watch)`);
+                extra.push(`The TRUTH About ${lowerKeyword} Nobody Tells You`);
+                extra.push(`How to ${lowerKeyword} Like a PRO in ${year}`);
+            }
+            titles = [...titles, ...extra];
+            titles = titles.slice(0, 20);
+            return titles;
+        }
+
+        function renderTitles(titles) {
+            let html = '';
+            titles.forEach((title, idx) => {
+                html += `
+                    <div class="title-card" data-title="${escapeHtml(title)}">
+                        <div class="title-text">${idx+1}. ${escapeHtml(title)}</div>
+                        <div class="title-meta">
+                            <span class="char-count">📏 ${title.length} characters</span>
+                            <button class="copy-title">📋 Copy Title</button>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('titlesGrid').innerHTML = html;
+            document.getElementById('totalCount').innerText = titles.length;
+            let avgLen = Math.round(titles.reduce((a,b) => a + b.length, 0) / titles.length);
+            document.getElementById('avgLength').innerText = avgLen;
+            document.getElementById('livePreview').innerHTML = titles[0] || 'No titles generated';
+            
+            document.querySelectorAll('.copy-title').forEach((btn, idx) => {
+                btn.addEventListener('click', () => {
+                    copyToClipboard(titles[idx]);
+                    showToast(`✅ Copied: ${titles[idx].substring(0, 50)}...`);
+                });
+            });
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/[&<>]/g, function(m) {
+                if(m === '&') return '&amp;';
+                if(m === '<') return '&lt;';
+                if(m === '>') return '&gt;';
+                return m;
+            });
+        }
+
+        function copyToClipboard(text) { navigator.clipboard.writeText(text); }
+        
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        async function generateWithAnimation() {
+            const keyword = document.getElementById('keywordInput').value.trim();
+            if(!keyword) { showToast('❌ Please enter a video topic!'); return; }
+            const btn = document.getElementById('generateBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="spinner"></span> Generating...';
+            btn.disabled = true;
+            setTimeout(() => {
+                const titles = generateTitles(keyword, currentStyle);
+                currentTitles = titles;
+                renderTitles(titles);
+                saveRecentSearch(keyword);
+                showToast('✨ YouTube titles generated successfully!');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 500);
+        }
+
+        function saveRecentSearch(keyword) {
+            let searches = JSON.parse(localStorage.getItem('ytRecentSearches') || '[]');
+            searches = [keyword, ...searches.filter(s => s !== keyword)];
+            searches = searches.slice(0, 5);
+            localStorage.setItem('ytRecentSearches', JSON.stringify(searches));
+            displayRecentSearches();
+        }
+
+        function displayRecentSearches() {
+            const searches = JSON.parse(localStorage.getItem('ytRecentSearches') || '[]');
+            const container = document.getElementById('recentSearches');
+            if(searches.length === 0) { container.innerHTML = '<p style="color: gray;">No recent searches</p>'; return; }
+            container.innerHTML = searches.map(s => `<div class="trending-topic" onclick="document.getElementById('keywordInput').value='${s}'; generateWithAnimation();">${s}</div>`).join('');
+        }
+
+        let isDark = true;
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            isDark = !isDark;
+            if(isDark) {
+                document.body.classList.remove('light-mode');
+                document.getElementById('themeToggle').innerHTML = '🌙 Dark';
+            } else {
+                document.body.classList.add('light-mode');
+                document.getElementById('themeToggle').innerHTML = '☀️ Light';
+            }
+            localStorage.setItem('ytTheme', isDark ? 'dark' : 'light');
+        });
+        if(localStorage.getItem('ytTheme') === 'light') {
+            document.body.classList.add('light-mode');
+            document.getElementById('themeToggle').innerHTML = '☀️ Light';
+        }
+
+        document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('generateBtn').addEventListener('click', generateWithAnimation);
+        document.getElementById('copyAllBtn').addEventListener('click', () => {
+            if(!currentTitles.length) { showToast('⚠️ Generate titles first!'); return; }
+            copyToClipboard(currentTitles.join('\n\n'));
+            showToast('📋 All titles copied!');
+        });
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if(!currentTitles.length) { showToast('⚠️ Generate titles first!'); return; }
+            const blob = new Blob([currentTitles.join('\n\n')], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `youtube_titles_${Date.now()}.txt`;
+            link.click();
+            showToast('💾 Downloaded successfully!');
+        });
+        document.getElementById('keywordInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') generateWithAnimation(); });
+        document.querySelectorAll('.trending-topic').forEach(topic => {
+            topic.addEventListener('click', () => {
+                document.getElementById('keywordInput').value = topic.innerText;
+                generateWithAnimation();
+            });
+        });
+        displayRecentSearches();
+        setTimeout(() => {
+            document.getElementById('keywordInput').value = 'YouTube growth';
+            generateWithAnimation();
+        }, 100);
+    </script>
+</body>
+</html>
