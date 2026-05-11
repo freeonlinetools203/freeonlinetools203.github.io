@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Free Pinterest Hashtag Generator Tool | Trending & Viral Hashtags 2026</title>
+    <meta name="description" content="Generate trending, viral and SEO-friendly Pinterest hashtags instantly using our free Pinterest Hashtag Generator Tool for better reach and engagement.">
+    <meta name="keywords" content="Pinterest hashtag generator, viral hashtags, trending hashtags, Pinterest SEO, pin engagement, fashion hashtags, DIY hashtags">
+    <meta name="author" content="Pinterest Hashtag Tool">
+    <link rel="canonical" href="https://www.yoursite.com/pinterest-hashtag-generator">
+    <meta property="og:title" content="Free Pinterest Hashtag Generator Tool | Boost Your Pins">
+    <meta property="og:description" content="Generate trending, viral and SEO-friendly Pinterest hashtags instantly. Free tool for better engagement.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.yoursite.com/pinterest-hashtag-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Pinterest Hashtag Generator Tool">
+    <meta name="twitter:description" content="Generate viral Pinterest hashtags instantly. Free tool for creators and businesses.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Pinterest Hashtag Generator Tool",
+      "description": "Generate trending, viral and SEO-friendly Pinterest hashtags instantly",
+      "applicationCategory": "Social Media Tool",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(25, 20, 30, 0.95);
+            --pin-red: #e60023;
+            --pin-dark-red: #b0001a;
+            --pin-light-red: #ff4d6d;
+            --neon-pink: #ff4d6d;
+            --neon-purple: #8b5cf6;
+            --text-light: #ffffff;
+            --text-gray: #c0c0c0;
+            --gradient-1: linear-gradient(135deg, #e60023, #8b5cf6);
+            --gradient-2: linear-gradient(135deg, #ff4d6d, #e60023);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(230, 0, 35, 0.12), transparent 60%),
+                        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.08), transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, #e60023, #8b5cf6);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px;
+            border: 1px solid rgba(230, 0, 35, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(230, 0, 35, 0.2);
+        }
+
+        /* Header */
+        h1 {
+            font-size: 2.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        /* Search Box */
+        .search-box {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            background: rgba(35, 30, 40, 0.95);
+            border: 2px solid rgba(230, 0, 35, 0.3);
+            border-radius: 60px;
+            color: var(--text-light);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus {
+            border-color: var(--pin-red);
+            box-shadow: 0 0 20px rgba(230, 0, 35, 0.3);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--gradient-1);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(230, 0, 35, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(230, 0, 35, 0.1);
+            border: 1px solid rgba(230, 0, 35, 0.5);
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(230, 0, 35, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hashtag Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .category-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 20px;
+            border-left: 4px solid var(--pin-red);
+        }
+
+        .hashtag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .hashtag-item {
+            background: linear-gradient(135deg, rgba(230, 0, 35, 0.2), rgba(139, 92, 246, 0.2));
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid rgba(230, 0, 35, 0.3);
+        }
+
+        .hashtag-item:hover {
+            background: var(--pin-red);
+            transform: scale(1.05);
+        }
+
+        /* Stats */
+        .stats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-1);
+            padding: 12px 24px;
+            border-radius: 60px;
+            color: white;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--pin-red);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+        }
+
+        /* Trending Topics */
+        .trending-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .trending-topic {
+            background: rgba(230, 0, 35, 0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .trending-topic:hover {
+            background: var(--pin-red);
+            transform: translateY(-2px);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            --bg-dark: #fff0f0;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --text-light: #1a1a1a;
+            --text-gray: #666;
+        }
+
+        .ad-placeholder {
+            background: rgba(230, 0, 35, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed rgba(230, 0, 35, 0.3);
+        }
+
+        .favorite-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 8px;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="theme-toggle" id="themeToggle">🌙 Dark</div>
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <div class="container">
+        <!-- Top Ad -->
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Top Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="glass-card" style="text-align: center; margin-bottom: 30px;">
+            <h1>📌 Pinterest Hashtag Generator Tool</h1>
+            <p style="color: var(--text-gray); margin-top: 10px;">Generate trending, viral & SEO-friendly hashtags instantly for better Pinterest reach</p>
+        </div>
+
+        <!-- Tool Section -->
+        <div class="glass-card">
+            <input type="text" id="keywordInput" class="search-box" placeholder="Enter your topic... e.g., home decor, DIY crafts, recipes, fashion, beauty tips, travel" autocomplete="off">
+            <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                <button class="btn-primary" id="generateBtn">✨ Generate Hashtags</button>
+                <button class="btn-secondary" id="copyAllBtn">📋 Copy All</button>
+                <button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">📊 Total Hashtags: <span id="totalCount">0</span></div>
+                <div class="stat-card">📝 Total Characters: <span id="totalChars">0</span></div>
+                <div class="stat-card">✅ Pinterest Limit: 5-10 hashtags recommended</div>
+            </div>
+        </div>
+
+        <!-- Middle Ad -->
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Rectangle -->
+            <span>📢 Advertisement - 300x250 Rectangle</span>
+        </div>
+
+        <!-- Live Preview -->
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>📌 Live Pinterest Pin Description Preview</h3>
+            <div id="livePreview" style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 20px; margin-top: 10px; font-family: monospace; word-break: break-all;">
+                Your hashtags will appear here...
+            </div>
+        </div>
+
+        <!-- Generated Hashtags Section -->
+        <div id="resultsSection">
+            <h2>🔥 Generated Hashtags</h2>
+            <div class="categories-grid" id="categoriesGrid"></div>
+        </div>
+
+        <!-- Trending Topics -->
+        <div class="glass-card" style="margin: 30px 0;">
+            <h3>⚡ Trending Pinterest Topics</h3>
+            <div class="trending-topics" id="trendingTopics">
+                <div class="trending-topic">home decor</div>
+                <div class="trending-topic">DIY crafts</div>
+                <div class="trending-topic">recipes</div>
+                <div class="trending-topic">fashion ideas</div>
+                <div class="trending-topic">beauty tips</div>
+                <div class="trending-topic">wedding ideas</div>
+                <div class="trending-topic">travel inspiration</div>
+                <div class="trending-topic">fitness</div>
+            </div>
+        </div>
+
+        <!-- Recent Searches & Favorites -->
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>🕒 Recent Searches</h3>
+            <div id="recentSearches" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+            <h3 style="margin-top: 20px;">⭐ Favorite Hashtags</h3>
+            <div id="favoritesList" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+        </div>
+
+        <!-- Pinterest Growth Tips -->
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>📈 Pinterest Growth Tips</h3>
+            <ul style="margin-top: 15px; list-style: none;">
+                <li>✅ Use 5-10 relevant hashtags per pin for maximum discovery</li>
+                <li>✅ Combine trending + niche + long-tail hashtags</li>
+                <li>✅ Post consistently between 8-11 PM EST for peak engagement</li>
+                <li>✅ Create high-quality vertical images (2:3 aspect ratio)</li>
+                <li>✅ Update old pins with fresh hashtags for renewed reach</li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>❓ Frequently Asked Questions</h3>
+            <div style="margin-top: 20px;">
+                <div style="margin-bottom: 20px;">
+                    <strong>What is a Pinterest hashtag generator?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">A tool that creates relevant, trending hashtags based on your topic to increase visibility and engagement on Pinterest.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong>Do hashtags help Pinterest pins?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">Yes! Hashtags make your pins discoverable in Pinterest searches and can significantly increase organic reach.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong>Best hashtags for Pinterest engagement?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">Mix broad hashtags (#Pinterest, #DIY) with niche-specific tags and trending topics for best results.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong>How many hashtags should I use?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">Pinterest recommends 5-10 hashtags per pin for optimal performance without looking spammy.</p>
+                </div>
+                <div>
+                    <strong>Are hashtags important on Pinterest?</strong>
+                    <p style="color: var(--text-gray); margin-top: 5px;">Absolutely! Hashtags are crucial for discoverability, especially in Pinterest's search-driven platform.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Ad -->
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Bottom Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray);">
+            <p>© 2026 Pinterest Hashtag Generator Tool | Boost Your Pinterest Growth</p>
+        </footer>
+    </div>
+
+    <script>
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for(let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 10 + 5 + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Hashtag Database Generator
+        function generateHashtags(keyword) {
+            const lowerKeyword = keyword.toLowerCase().trim();
+            if(!lowerKeyword) return null;
+
+            const trending = [`#${lowerKeyword.replace(/ /g, '')}`, `#Trending`, `#${lowerKeyword.split(' ')[0]}Ideas`, `#Popular${lowerKeyword.split(' ')[0]}`, `#ViralPins`];
+            const viral = [`#${lowerKeyword.split(' ')[0]}Viral`, `#GoViral`, `#${lowerKeyword.split(' ')[0]}Mania`, `#ViralPin`, `#MustPin`];
+            const seo = [`#${lowerKeyword.replace(/ /g, '')}2026`, `#Best${lowerKeyword.split(' ')[0]}`, `#${lowerKeyword.split(' ')[0]}Tips`, `#${lowerKeyword.split(' ')[0]}Guide`, `#Learn${lowerKeyword.split(' ')[0]}`];
+            const diy = [`#DIY${lowerKeyword.split(' ')[0]}`, `#Handmade`, `#CraftIdeas`, `#CreativeProjects`, `#Homemade`];
+            const lifestyle = [`#${lowerKeyword.split(' ')[0]}Life`, `#${lowerKeyword.split(' ')[0]}Inspo`, `#Daily${lowerKeyword.split(' ')[0]}`, `#${lowerKeyword.split(' ')[0]}Vibes`, `#${lowerKeyword.split(' ')[0]}Goals`];
+            const recommended = [`#PinterestInspo`, `#SaveForLater`, `#PinThis`, `#CreativeIdeas`, `#ExplorePins`];
+
+            // Dynamic additions based on keyword
+            if(lowerKeyword.includes('home') || lowerKeyword.includes('decor')) {
+                trending.push('#HomeStyling', '#InteriorDesign', '#HomeInspo');
+                diy.push('#DIYHomeDecor', '#RoomMakeover');
+            }
+            if(lowerKeyword.includes('craft') || lowerKeyword.includes('diy')) {
+                diy.push('#Crafting', '#HandmadeGifts', '#CreativeCrafts');
+                viral.push('#CraftAddict', '#DIYCrafts');
+            }
+            if(lowerKeyword.includes('recipe') || lowerKeyword.includes('food')) {
+                trending.push('#Foodie', '#Delicious', '#CookingAtHome');
+                lifestyle.push('#RecipeOfTheDay', '#HomeCooking');
+            }
+            if(lowerKeyword.includes('fashion')) {
+                trending.push('#OOTD', '#StyleInspo', '#FashionTrends');
+                lifestyle.push('#ClothingHaul', '#WardrobeGoals');
+            }
+            if(lowerKeyword.includes('beauty') || lowerKeyword.includes('makeup')) {
+                trending.push('#MakeupTutorial', '#SkincareRoutine', '#BeautyHacks');
+                viral.push('#GlowUp', '#BeautyTips');
+            }
+            if(lowerKeyword.includes('travel')) {
+                trending.push('#Wanderlust', '#TravelGram', '#AdventureTime');
+                lifestyle.push('#TravelDiaries', '#ExploreMore');
+            }
+            if(lowerKeyword.includes('wedding')) {
+                trending.push('#WeddingInspo', '#BridalStyle', '#WeddingDecor');
+                recommended.push('#PerfectWedding', '#WeddingPlanner');
+            }
+            if(lowerKeyword.includes('fitness') || lowerKeyword.includes('workout')) {
+                trending.push('#FitnessMotivation', '#WorkoutRoutine', '#HealthyLifestyle');
+                lifestyle.push('#GymLife', '#FitnessJourney');
+            }
+
+            return { trending, viral, seo, diy, lifestyle, recommended };
+        }
+
+        let currentHashtags = null;
+        let currentKeyword = '';
+        let favorites = JSON.parse(localStorage.getItem('pinFavorites') || '[]');
+
+        function renderHashtags(hashtagData) {
+            if(!hashtagData) return;
+            
+            const categories = [
+                { title: "🔥 Trending Hashtags", data: hashtagData.trending },
+                { title: "⚡ Viral Hashtags", data: hashtagData.viral },
+                { title: "🔍 SEO Hashtags", data: hashtagData.seo },
+                { title: "🎨 DIY Hashtags", data: hashtagData.diy },
+                { title: "💫 Lifestyle Hashtags", data: hashtagData.lifestyle },
+                { title: "💡 Recommended Hashtags", data: hashtagData.recommended }
+            ];
+
+            let html = '';
+            categories.forEach(cat => {
+                html += `
+                    <div class="category-card">
+                        <h3>${cat.title}</h3>
+                        <div class="hashtag-list" data-category="${cat.title}">
+                            ${cat.data.map(tag => `
+                                <div class="hashtag-item" data-hashtag="${tag}">
+                                    ${tag}
+                                    <button class="favorite-btn" data-tag="${tag}">⭐</button>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('categoriesGrid').innerHTML = html;
+
+            // Add click listeners
+            document.querySelectorAll('.hashtag-item').forEach(item => {
+                const hashtagDiv = item;
+                const hashtag = hashtagDiv.getAttribute('data-hashtag');
+                hashtagDiv.addEventListener('click', (e) => {
+                    if(e.target.classList.contains('favorite-btn')) {
+                        e.stopPropagation();
+                        toggleFavorite(hashtag);
+                    } else {
+                        copyToClipboard(hashtag);
+                        showToast(`✅ Copied: ${hashtag}`);
+                    }
+                });
+            });
+
+            updateStatsAndPreview(hashtagData);
+        }
+
+        function toggleFavorite(tag) {
+            if(favorites.includes(tag)) {
+                favorites = favorites.filter(t => t !== tag);
+                showToast(`❌ Removed: ${tag}`);
+            } else {
+                favorites.push(tag);
+                showToast(`⭐ Added to favorites: ${tag}`);
+            }
+            localStorage.setItem('pinFavorites', JSON.stringify(favorites));
+            displayFavorites();
+        }
+
+        function displayFavorites() {
+            const container = document.getElementById('favoritesList');
+            if(favorites.length === 0) {
+                container.innerHTML = '<p style="color: gray;">No favorite hashtags yet</p>';
+                return;
+            }
+            container.innerHTML = favorites.map(tag => 
+                `<div class="trending-topic" style="background: var(--pin-red); cursor: pointer;" onclick="copyToClipboard('${tag}'); showToast('✅ Copied: ${tag}');">${tag} ❌</div>`
+            ).join('');
+        }
+
+        function updateStatsAndPreview(hashtagData) {
+            const allTags = [...hashtagData.trending, ...hashtagData.viral, ...hashtagData.seo, ...hashtagData.diy, ...hashtagData.lifestyle, ...hashtagData.recommended];
+            const totalCount = allTags.length;
+            const totalChars = allTags.join(' ').length;
+            document.getElementById('totalCount').innerText = totalCount;
+            document.getElementById('totalChars').innerText = totalChars;
+            
+            const preview = allTags.join(' ');
+            document.getElementById('livePreview').innerHTML = preview;
+        }
+
+        function getAllHashtagsText() {
+            if(!currentHashtags) return '';
+            const all = [...currentHashtags.trending, ...currentHashtags.viral, ...currentHashtags.seo, ...currentHashtags.diy, ...currentHashtags.lifestyle, ...currentHashtags.recommended];
+            return all.join(' ');
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        async function generateWithAnimation() {
+            const keyword = document.getElementById('keywordInput').value.trim();
+            if(!keyword) {
+                showToast('❌ Please enter a keyword!');
+                return;
+            }
+
+            const btn = document.getElementById('generateBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="spinner"></span> Generating...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const hashtags = generateHashtags(keyword);
+                if(hashtags) {
+                    currentHashtags = hashtags;
+                    currentKeyword = keyword;
+                    renderHashtags(hashtags);
+                    saveRecentSearch(keyword);
+                    showToast('✨ Hashtags generated successfully!');
+                } else {
+                    showToast('⚠️ Please enter a valid keyword');
+                }
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 500);
+        }
+
+        // Recent Searches
+        function saveRecentSearch(keyword) {
+            let searches = JSON.parse(localStorage.getItem('pinRecentSearches') || '[]');
+            searches = [keyword, ...searches.filter(s => s !== keyword)];
+            searches = searches.slice(0, 5);
+            localStorage.setItem('pinRecentSearches', JSON.stringify(searches));
+            displayRecentSearches();
+        }
+
+        function displayRecentSearches() {
+            const searches = JSON.parse(localStorage.getItem('pinRecentSearches') || '[]');
+            const container = document.getElementById('recentSearches');
+            if(searches.length === 0) {
+                container.innerHTML = '<p style="color: gray;">No recent searches</p>';
+                return;
+            }
+            container.innerHTML = searches.map(s => 
+                `<div class="trending-topic" style="background: var(--pin-red);" onclick="document.getElementById('keywordInput').value='${s}'; generateWithAnimation();">${s}</div>`
+            ).join('');
+        }
+
+        // Theme Toggle
+        let isDark = true;
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            isDark = !isDark;
+            if(isDark) {
+                document.body.classList.remove('light-mode');
+                document.getElementById('themeToggle').innerHTML = '🌙 Dark';
+            } else {
+                document.body.classList.add('light-mode');
+                document.getElementById('themeToggle').innerHTML = '☀️ Light';
+            }
+            localStorage.setItem('pinTheme', isDark ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('pinTheme');
+        if(savedTheme === 'light') {
+            isDark = false;
+            document.body.classList.add('light-mode');
+            document.getElementById('themeToggle').innerHTML = '☀️ Light';
+        }
+
+        // Scroll to top
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Copy All
+        document.getElementById('copyAllBtn').addEventListener('click', () => {
+            if(!currentHashtags) {
+                showToast('⚠️ Generate hashtags first!');
+                return;
+            }
+            const allText = getAllHashtagsText();
+            copyToClipboard(allText);
+            showToast('📋 All hashtags copied!');
+        });
+
+        // Download
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if(!currentHashtags) {
+                showToast('⚠️ Generate hashtags first!');
+                return;
+            }
+            const allText = getAllHashtagsText();
+            const blob = new Blob([allText], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `pinterest_hashtags_${currentKeyword}.txt`;
+            link.click();
+            showToast('💾 Downloaded successfully!');
+        });
+
+        // Generate button
+        document.getElementById('generateBtn').addEventListener('click', generateWithAnimation);
+        
+        // Enter key support
+        document.getElementById('keywordInput').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') generateWithAnimation();
+        });
+
+        // Trending topics
+        document.querySelectorAll('.trending-topic').forEach(topic => {
+            topic.addEventListener('click', () => {
+                document.getElementById('keywordInput').value = topic.innerText;
+                generateWithAnimation();
+            });
+        });
+
+        // Load data
+        displayRecentSearches();
+        displayFavorites();
+
+        // Initial demo hashtags
+        setTimeout(() => {
+            document.getElementById('keywordInput').value = 'creative inspiration';
+            generateWithAnimation();
+        }, 100);
+    </script>
+</body>
+</html>
