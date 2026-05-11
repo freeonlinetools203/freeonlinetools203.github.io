@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Free YouTube Community Post Generator | Viral & Engaging Posts 2026</title>
+    <meta name="description" content="Generate viral, engaging and professional YouTube community posts instantly using our free YouTube Community Post Generator Tool. Connect with your audience!">
+    <meta name="keywords" content="YouTube community post generator, viral posts, engagement posts, poll generator, YouTube growth, community tab posts">
+    <meta name="author" content="YouTube Community Tool">
+    <link rel="canonical" href="https://www.yoursite.com/youtube-community-post-generator">
+    <meta property="og:title" content="Free YouTube Community Post Generator | Viral & Engaging">
+    <meta property="og:description" content="Generate viral, engaging and professional YouTube community posts instantly. Free tool for creators!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.yoursite.com/yt-community-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free YouTube Community Post Generator Tool">
+    <meta name="twitter:description" content="Generate viral YouTube community posts instantly. Free tool for creators.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "YouTube Community Post Generator Tool",
+      "description": "Generate viral, engaging and professional YouTube community posts instantly",
+      "applicationCategory": "Social Media Tool",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(20, 20, 30, 0.95);
+            --yt-red: #ff0000;
+            --yt-dark-red: #cc0000;
+            --neon-pink: #ff6b6b;
+            --neon-purple: #8b5cf6;
+            --text-light: #ffffff;
+            --text-gray: #b0b0b0;
+            --gradient-1: linear-gradient(135deg, #ff0000, #8b5cf6);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,0,0,0.1), transparent 60%),
+                        radial-gradient(circle at 80% 70%, rgba(139,92,246,0.08), transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.2; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px;
+            border: 1px solid rgba(255,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .glass-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+        h1 {
+            font-size: 2.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            background: rgba(30,30,40,0.95);
+            border: 2px solid rgba(255,0,0,0.3);
+            border-radius: 60px;
+            color: var(--text-light);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus { border-color: var(--yt-red); box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+
+        .style-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .style-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .style-btn.active {
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            border-color: transparent;
+            color: white;
+        }
+
+        .style-btn:hover { background: rgba(255,0,0,0.3); transform: translateY(-2px); }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255,0,0,0.4); }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover { background: rgba(255,0,0,0.2); transform: translateY(-2px); }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .post-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 20px;
+            padding: 20px;
+            border-left: 4px solid #ff0000;
+            transition: all 0.3s;
+        }
+
+        .post-card:hover { transform: translateY(-5px); }
+
+        .post-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .post-item {
+            background: linear-gradient(135deg, rgba(255,0,0,0.1), rgba(139,92,246,0.1));
+            padding: 16px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid rgba(255,0,0,0.3);
+        }
+
+        .post-item:hover { background: rgba(255,0,0,0.25); transform: scale(1.01); }
+
+        .post-content {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            white-space: pre-wrap;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .char-count {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+
+        .copy-post {
+            background: rgba(255,0,0,0.2);
+            border: none;
+            padding: 5px 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            font-size: 0.7rem;
+            transition: all 0.2s;
+        }
+
+        .copy-post:hover { background: #ff0000; }
+
+        .stats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: rgba(0,0,0,0.5);
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            padding: 12px 24px;
+            border-radius: 60px;
+            color: white;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #ff0000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .scroll-top:hover { transform: scale(1.1); }
+
+        .trending-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .trending-topic {
+            background: rgba(255,0,0,0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .trending-topic:hover { background: #ff0000; transform: translateY(-2px); }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.8rem; }
+            .posts-grid { grid-template-columns: 1fr; }
+        }
+
+        body.light-mode {
+            --bg-dark: #f5f5f5;
+            --bg-card: rgba(255,255,255,0.95);
+            --text-light: #1a1a1a;
+            --text-gray: #666;
+        }
+
+        .ad-placeholder {
+            background: rgba(255,0,0,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed rgba(255,0,0,0.3);
+        }
+
+        .favorite-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 6px;
+            color: gold;
+        }
+
+        .live-preview {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,0,0,0.3);
+        }
+
+        .poll-option {
+            background: rgba(255,255,255,0.05);
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="theme-toggle" id="themeToggle">🌙 Dark</div>
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <div class="container">
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Top Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <div class="glass-card" style="text-align: center; margin-bottom: 30px;">
+            <h1>💬 YouTube Community Post Generator</h1>
+            <p style="color: var(--text-gray);">Generate viral, engaging posts and polls to connect with your subscribers</p>
+        </div>
+
+        <div class="glass-card">
+            <input type="text" id="keywordInput" class="search-box" placeholder="Enter topic... e.g., gaming, motivation, AI tools, tech, cooking" autocomplete="off">
+            
+            <div style="margin: 20px 0 10px 0;"><strong>📝 Post Style:</strong></div>
+            <div class="style-buttons" id="styleButtons">
+                <div class="style-btn" data-style="viral">🔥 Viral</div>
+                <div class="style-btn" data-style="poll">📊 Poll</div>
+                <div class="style-btn" data-style="engagement">💬 Engagement</div>
+                <div class="style-btn" data-style="gaming">🎮 Gaming</div>
+                <div class="style-btn" data-style="motivational">💪 Motivational</div>
+                <div class="style-btn" data-style="professional">💼 Professional</div>
+                <div class="style-btn" data-style="promotional">📢 Promotional</div>
+                <div class="style-btn" data-style="funny">😂 Funny</div>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+                <button class="btn-primary" id="generateBtn">✨ Generate Posts</button>
+                <button class="btn-secondary" id="copyAllBtn">📋 Copy All</button>
+                <button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">📊 Total Posts: <span id="totalCount">0</span></div>
+                <div class="stat-card">📝 Avg Length: <span id="avgLength">0</span> chars</div>
+                <div class="stat-card">✅ Best: 200-500 chars</div>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Rectangle -->
+            <span>📢 Advertisement - 300x250 Rectangle</span>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>📱 Community Tab Preview</h3>
+            <div id="livePreview" class="live-preview">
+                Your post preview will appear here...
+            </div>
+        </div>
+
+        <div id="resultsSection">
+            <h2>✨ Generated Community Posts</h2>
+            <div class="posts-grid" id="postsGrid"></div>
+        </div>
+
+        <div class="glass-card" style="margin: 30px 0;">
+            <h3>⚡ Trending Community Topics</h3>
+            <div class="trending-topics" id="trendingTopics">
+                <div class="trending-topic">gaming</div>
+                <div class="trending-topic">free fire</div>
+                <div class="trending-topic">minecraft</div>
+                <div class="trending-topic">motivation</div>
+                <div class="trending-topic">AI tools</div>
+                <div class="trending-topic">tech reviews</div>
+                <div class="trending-topic">cooking</div>
+                <div class="trending-topic">online earning</div>
+            </div>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>🕒 Recent Searches</h3>
+            <div id="recentSearches" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+            <h3 style="margin-top: 20px;">⭐ Favorite Posts</h3>
+            <div id="favoritesList" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>📈 YouTube Engagement Tips</h3>
+            <ul style="margin-top: 15px; list-style: none;">
+                <li>✅ Post 2-3 times per week in the Community tab to stay connected</li>
+                <li>✅ Use polls to get quick feedback - they drive high engagement</li>
+                <li>✅ Ask open-ended questions to encourage comments</li>
+                <li>✅ Share behind-the-scenes content to build authenticity</li>
+                <li>✅ Reply to comments to boost algorithm visibility</li>
+            </ul>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>❓ Frequently Asked Questions</h3>
+            <div style="margin-top: 20px;">
+                <div><strong>What is a YouTube community post generator?</strong><p style="color: var(--text-gray);">AI tool that creates engaging posts, polls, and announcements for your YouTube Community tab.</p></div>
+                <div style="margin-top: 15px;"><strong>How often should I post in the community tab?</strong><p style="color: var(--text-gray);">2-4 times per week is optimal to stay connected without overwhelming subscribers.</p></div>
+                <div style="margin-top: 15px;"><strong>Do community posts increase engagement?</strong><p style="color: var(--text-gray);">Yes! Active community posters see 30-50% higher subscriber engagement and loyalty.</p></div>
+                <div style="margin-top: 15px;"><strong>Best types of community posts?</strong><p style="color: var(--text-gray);">Polls, behind-the-scenes, announcements, Q&As, and subscriber appreciation posts.</p></div>
+                <div style="margin-top: 15px;"><strong>How to grow subscribers using community posts?</strong><p style="color: var(--text-gray);">Tease upcoming videos, ask for topic suggestions, and create a sense of community belonging.</p></div>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Bottom Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray);">
+            <p>© 2026 YouTube Community Post Generator | Engage Your Audience Daily</p>
+        </footer>
+    </div>
+
+    <script>
+        createParticles();
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for(let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 10 + 5 + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        let currentStyle = 'viral';
+        let currentPosts = [];
+        let favorites = JSON.parse(localStorage.getItem('communityPostFavorites') || '[]');
+
+        document.querySelectorAll('.style-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentStyle = btn.dataset.style;
+            });
+        });
+        document.querySelector('.style-btn').classList.add('active');
+
+        function generatePosts(keyword, style) {
+            const lowerKeyword = keyword.toLowerCase().trim();
+            if(!lowerKeyword) return [];
+            
+            const postsDB = {
+                viral: [
+                    `🔥 This ${lowerKeyword} trend is EXPLODING right now! What do you think about it? 👇`,
+                    `WAIT FOR THE END 😱 ${lowerKeyword} just changed EVERYTHING. Your thoughts?`,
+                    `99% of people get this ${lowerKeyword} fact WRONG. Do you know the truth?`,
+                    `I can't believe this ${lowerKeyword} video hit 1M views in 24 hours! 🙌`,
+                    `The internet is OBSESSED with ${lowerKeyword} right now. Are you? 🔥`
+                ],
+                poll: [
+                    `📊 COMMUNITY POLL: What's your favorite ${lowerKeyword} content?\n\nA) Tutorials\nB) Tips & Tricks\nC) Entertainment\nD) Reviews\n\nVote below! 👇`,
+                    `📊 QUICK POLL: How often do you engage with ${lowerKeyword} content?\n\nA) Daily\nB) Weekly\nC) Occasionally\nD) New here`,
+                    `📊 Who else loves ${lowerKeyword}? Drop a 🔥 if you're a fan!`,
+                    `📊 Which ${lowerKeyword} topic should I cover next?\n\nA) Beginner Guide\nB) Advanced Tips\nC) Case Study\nD) Behind the Scenes`
+                ],
+                engagement: [
+                    `💬 Let's talk about ${lowerKeyword}! What's your biggest challenge right now? Drop it in the comments 👇`,
+                    `🙌 Shoutout to everyone grinding with ${lowerKeyword} today! What's one win you had this week?`,
+                    `🤔 Random question: If you could master ${lowerKeyword} instantly, what would you create first?`,
+                    `🎯 What's your #1 goal with ${lowerKeyword} this month? Let me know in the comments!`,
+                    `💭 Be honest: What's holding you back from achieving your ${lowerKeyword} goals?`
+                ],
+                gaming: [
+                    `🎮 Who's playing ${lowerKeyword} right now? Drop your gamer tag below! Let's squad up! 🔥`,
+                    `🐐 Who's the GOAT of ${lowerKeyword}? Vote in the comments!`,
+                    `🏆 What's your HIGHEST score in ${lowerKeyword}? Brag in the comments! 💪`,
+                    `🎯 New ${lowerKeyword} update just dropped! What's your first impression?`,
+                    `💀 The most UNDERRATED ${lowerKeyword} strategy that nobody talks about... agree?`
+                ],
+                motivational: [
+                    `💪 Remember: every ${lowerKeyword} expert was once a beginner. Keep going! 🔥`,
+                    `✨ Your ${lowerKeyword} journey starts TODAY. What's one small step you'll take?`,
+                    `🏆 Success with ${lowerKeyword} isn't luck - it's consistency. Who's staying consistent?`,
+                    `🌟 The only way to fail at ${lowerKeyword} is to quit. Don't stop now!`,
+                    `💯 Your future self will thank you for starting ${lowerKeyword} today. Let's go!`
+                ],
+                professional: [
+                    `💼 Professional insight: The ${lowerKeyword} industry is projected to grow 40% this year. Are you ready?`,
+                    `📈 Key strategies for ${lowerKeyword} success in 2026: consistency, value, and engagement. What would you add?`,
+                    `🎯 Goal setting for ${lowerKeyword}: Start with small wins. What's your Q2 target?`,
+                    `📊 Analytics don't lie. ${lowerKeyword} content with these 3 elements performs 3x better. Insights below 👇`,
+                    `💡 Pro tip: The best ${lowerKeyword} creators focus on value over views. Agree or disagree?`
+                ],
+                promotional: [
+                    `📢 NEW VIDEO! I just dropped an in-depth ${lowerKeyword} tutorial. Link in comments! 👇`,
+                    `🚨 Don't miss out! My latest ${lowerKeyword} breakdown is LIVE. Watch now before it trends! 🔥`,
+                    `🎬 YouTube just recommended this ${lowerKeyword} video to millions. Did you see it yet?`,
+                    `💎 Exclusive ${lowerKeyword} content coming tomorrow! Turn on notifications so you don't miss it 🔔`,
+                    `📌 PIN THIS: The ultimate ${lowerKeyword} resource is now available. Check the community tab for the link!`
+                ],
+                funny: [
+                    `😂 Me trying to explain ${lowerKeyword} to my family: *insert confused Pikachu face*`,
+                    `🤣 POV: You said you'd learn ${lowerKeyword} "tomorrow" for the 100th time. Relatable?`,
+                    `💀 The struggle of ${lowerKeyword} is REAL. Who else feels personally attacked? 🙋`,
+                    `😅 My brain when someone asks a ${lowerKeyword} question: *error 404*`,
+                    `🎭 The 5 stages of ${lowerKeyword}: denial, anger, bargaining, depression, and finally... 1% progress. Help 😂`
+                ]
+            };
+            
+            let posts = postsDB[style] || postsDB.viral;
+            posts = [...new Set(posts)];
+            while(posts.length < 12) posts.push(...posts);
+            return posts.slice(0, 12);
+        }
+
+        function renderPosts(posts) {
+            const categories = [
+                { title: "🔥 Viral Posts", data: posts.slice(0, 4) },
+                { title: "⭐ High Engagement Posts", data: posts.slice(4, 8) },
+                { title: "💡 Recommended Posts", data: posts.slice(8, 12) }
+            ];
+            
+            let allPosts = [];
+            let html = '';
+            categories.forEach(cat => {
+                if(cat.data.length > 0) {
+                    html += `
+                        <div class="post-card">
+                            <h3>${cat.title}</h3>
+                            <div class="post-list">
+                                ${cat.data.map((post, idx) => `
+                                    <div class="post-item" data-post="${escapeHtml(post)}">
+                                        <div class="post-content">${idx+1}. 📢 ${escapeHtml(post)}</div>
+                                        <div class="post-meta">
+                                            <span class="char-count">📝 ${post.length} chars</span>
+                                            <div>
+                                                <button class="copy-post">📋 Copy</button>
+                                                <button class="favorite-btn" data-post="${escapeHtml(post)}">⭐</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    allPosts = [...allPosts, ...cat.data];
+                }
+            });
+            
+            document.getElementById('postsGrid').innerHTML = html;
+            document.getElementById('totalCount').innerText = allPosts.length;
+            let avgLen = Math.round(allPosts.reduce((a,b) => a + b.length, 0) / allPosts.length);
+            document.getElementById('avgLength').innerText = avgLen;
+            document.getElementById('livePreview').innerHTML = allPosts[0] || 'No posts generated';
+            
+            document.querySelectorAll('.post-item').forEach(item => {
+                const post = item.getAttribute('data-post');
+                const copyBtn = item.querySelector('.copy-post');
+                const favBtn = item.querySelector('.favorite-btn');
+                copyBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    copyToClipboard(post);
+                    showToast(`✅ Copied!`);
+                });
+                favBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleFavorite(post);
+                });
+            });
+            return allPosts;
+        }
+
+        function toggleFavorite(post) {
+            if(favorites.includes(post)) {
+                favorites = favorites.filter(p => p !== post);
+                showToast(`❌ Removed from favorites`);
+            } else {
+                favorites.push(post);
+                showToast(`⭐ Added to favorites`);
+            }
+            localStorage.setItem('communityPostFavorites', JSON.stringify(favorites));
+            displayFavorites();
+        }
+
+        function displayFavorites() {
+            const container = document.getElementById('favoritesList');
+            if(favorites.length === 0) { container.innerHTML = '<p style="color: gray;">No favorite posts yet</p>'; return; }
+            container.innerHTML = favorites.map(post => 
+                `<div class="trending-topic" style="background: #ff0000; cursor: pointer;" onclick="copyToClipboard('${escapeHtml(post)}'); showToast('✅ Copied!');">📢 ${post.substring(0, 40)}... ❌</div>`
+            ).join('');
+        }
+
+        function escapeHtml(str) { return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]); }
+        function copyToClipboard(text) { navigator.clipboard.writeText(text); }
+        
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        async function generateWithAnimation() {
+            const keyword = document.getElementById('keywordInput').value.trim();
+            if(!keyword) { showToast('❌ Please enter a topic!'); return; }
+            const btn = document.getElementById('generateBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="spinner"></span> Generating...';
+            btn.disabled = true;
+            setTimeout(() => {
+                const posts = generatePosts(keyword, currentStyle);
+                currentPosts = posts;
+                renderPosts(posts);
+                saveRecentSearch(keyword);
+                showToast('✨ Community posts generated successfully!');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 500);
+        }
+
+        function saveRecentSearch(keyword) {
+            let searches = JSON.parse(localStorage.getItem('communityRecentSearches') || '[]');
+            searches = [keyword, ...searches.filter(s => s !== keyword)];
+            searches = searches.slice(0, 5);
+            localStorage.setItem('communityRecentSearches', JSON.stringify(searches));
+            displayRecentSearches();
+        }
+
+        function displayRecentSearches() {
+            const searches = JSON.parse(localStorage.getItem('communityRecentSearches') || '[]');
+            const container = document.getElementById('recentSearches');
+            if(searches.length === 0) { container.innerHTML = '<p style="color: gray;">No recent searches</p>'; return; }
+            container.innerHTML = searches.map(s => `<div class="trending-topic" onclick="document.getElementById('keywordInput').value='${s}'; generateWithAnimation();">${s}</div>`).join('');
+        }
+
+        let isDark = true;
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            isDark = !isDark;
+            if(isDark) {
+                document.body.classList.remove('light-mode');
+                document.getElementById('themeToggle').innerHTML = '🌙 Dark';
+            } else {
+                document.body.classList.add('light-mode');
+                document.getElementById('themeToggle').innerHTML = '☀️ Light';
+            }
+            localStorage.setItem('communityTheme', isDark ? 'dark' : 'light');
+        });
+        if(localStorage.getItem('communityTheme') === 'light') {
+            document.body.classList.add('light-mode');
+            document.getElementById('themeToggle').innerHTML = '☀️ Light';
+        }
+
+        document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('generateBtn').addEventListener('click', generateWithAnimation);
+        document.getElementById('copyAllBtn').addEventListener('click', () => {
+            if(!currentPosts.length) { showToast('⚠️ Generate posts first!'); return; }
+            copyToClipboard(currentPosts.join('\n\n---\n\n'));
+            showToast('📋 All posts copied!');
+        });
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if(!currentPosts.length) { showToast('⚠️ Generate posts first!'); return; }
+            const blob = new Blob([currentPosts.join('\n\n---\n\n')], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `community_posts_${Date.now()}.txt`;
+            link.click();
+            showToast('💾 Downloaded successfully!');
+        });
+        document.getElementById('keywordInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') generateWithAnimation(); });
+        document.querySelectorAll('.trending-topic').forEach(topic => {
+            topic.addEventListener('click', () => {
+                document.getElementById('keywordInput').value = topic.innerText;
+                generateWithAnimation();
+            });
+        });
+        displayRecentSearches();
+        displayFavorites();
+        setTimeout(() => {
+            document.getElementById('keywordInput').value = 'YouTube community';
+            generateWithAnimation();
+        }, 100);
+    </script>
+</body>
+</html>
