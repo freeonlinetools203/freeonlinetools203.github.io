@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>YouTube Thumbnail Color Palette Generator | Viral Colors for High CTR 2026</title>
+    <meta name="description" content="Generate viral, high CTR and professional YouTube thumbnail color palettes instantly using our free Thumbnail Color Palette Generator Tool. Boost your click-through rate!">
+    <meta name="keywords" content="thumbnail color palette, YouTube thumbnail colors, color generator, viral colors, high CTR colors, gaming thumbnail colors">
+    <meta name="author" content="Thumbnail Color Tool">
+    <link rel="canonical" href="https://www.yoursite.com/youtube-thumbnail-color-palette-generator">
+    <meta property="og:title" content="YouTube Thumbnail Color Palette Generator | Viral Colors">
+    <meta property="og:description" content="Generate viral, high CTR and professional YouTube thumbnail color palettes instantly. Free tool!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.yoursite.com/thumbnail-color-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Thumbnail Color Palette Generator">
+    <meta name="twitter:description" content="Generate viral thumbnail color palettes instantly. Free tool for creators.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "YouTube Thumbnail Color Palette Generator Tool",
+      "description": "Generate viral, high CTR and professional YouTube thumbnail color palettes instantly",
+      "applicationCategory": "Design Tool",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(20, 20, 30, 0.95);
+            --yt-red: #ff0000;
+            --yt-dark-red: #cc0000;
+            --neon-pink: #ff6b6b;
+            --neon-purple: #8b5cf6;
+            --text-light: #ffffff;
+            --text-gray: #b0b0b0;
+            --gradient-1: linear-gradient(135deg, #ff0000, #8b5cf6);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,0,0,0.1), transparent 60%),
+                        radial-gradient(circle at 80% 70%, rgba(139,92,246,0.08), transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.2; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 30px;
+            border: 1px solid rgba(255,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .glass-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+        h1 {
+            font-size: 2.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            background: rgba(30,30,40,0.95);
+            border: 2px solid rgba(255,0,0,0.3);
+            border-radius: 60px;
+            color: var(--text-light);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus { border-color: var(--yt-red); box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+
+        .style-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .style-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .style-btn.active {
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            border-color: transparent;
+            color: white;
+        }
+
+        .style-btn:hover { background: rgba(255,0,0,0.3); transform: translateY(-2px); }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255,0,0,0.4); }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover { background: rgba(255,0,0,0.2); transform: translateY(-2px); }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .palette-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 20px;
+            padding: 20px;
+            border-left: 4px solid #ff0000;
+        }
+
+        .palette-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .color-box:hover { transform: scale(1.05); }
+
+        .color-info {
+            flex: 1;
+        }
+
+        .color-hex {
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .copy-color-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            padding: 4px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: white;
+            font-size: 0.7rem;
+        }
+
+        .copy-color-btn:hover { background: #ff0000; }
+
+        .thumbnail-mockup {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid rgba(255,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .mockup-label {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-preview {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .preview-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+
+        .preview-cta {
+            background: #ff0000;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: rgba(0,0,0,0.5);
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff0000, #8b5cf6);
+            padding: 12px 24px;
+            border-radius: 60px;
+            color: white;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #ff0000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .scroll-top:hover { transform: scale(1.1); }
+
+        .trending-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .trending-topic {
+            background: rgba(255,0,0,0.15);
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .trending-topic:hover { background: #ff0000; transform: translateY(-2px); }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.8rem; }
+            .palette-grid { grid-template-columns: 1fr; }
+            .preview-text { font-size: 1rem; }
+        }
+
+        body.light-mode {
+            --bg-dark: #f5f5f5;
+            --bg-card: rgba(255,255,255,0.95);
+            --text-light: #1a1a1a;
+            --text-gray: #666;
+        }
+
+        .ad-placeholder {
+            background: rgba(255,0,0,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed rgba(255,0,0,0.3);
+        }
+
+        .favorite-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 8px;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="theme-toggle" id="themeToggle">🌙 Dark</div>
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <div class="container">
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Top Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <div class="glass-card" style="text-align: center; margin-bottom: 30px;">
+            <h1>🎨 Thumbnail Color Palette Generator</h1>
+            <p style="color: var(--text-gray);">Generate viral, high CTR color combinations for YouTube thumbnails</p>
+        </div>
+
+        <div class="glass-card">
+            <input type="text" id="keywordInput" class="search-box" placeholder="Enter your niche... e.g., gaming, tech, motivation, cooking, horror" autocomplete="off">
+            
+            <div style="margin: 20px 0 10px 0;"><strong>🎨 Color Style:</strong></div>
+            <div class="style-buttons" id="styleButtons">
+                <div class="style-btn" data-style="viral">🔥 Viral</div>
+                <div class="style-btn" data-style="gaming">🎮 Gaming</div>
+                <div class="style-btn" data-style="neon">💡 Neon</div>
+                <div class="style-btn" data-style="professional">💼 Professional</div>
+                <div class="style-btn" data-style="dark">🌙 Dark Theme</div>
+                <div class="style-btn" data-style="bright">☀️ Bright Theme</div>
+                <div class="style-btn" data-style="emotional">❤️ Emotional</div>
+                <div class="style-btn" data-style="shorts">📱 Shorts Style</div>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+                <button class="btn-primary" id="generateBtn">✨ Generate Palette</button>
+                <button class="btn-secondary" id="copyAllBtn">📋 Copy All HEX</button>
+                <button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">🎨 Colors: <span id="totalColors">0</span></div>
+                <div class="stat-card">📊 CTR Rank: <span id="ctrRank">High</span></div>
+                <div class="stat-card">✅ Best for <span id="bestFor">Gaming</span></div>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Rectangle -->
+            <span>📢 Advertisement - 300x250 Rectangle</span>
+        </div>
+
+        <!-- Thumbnail Mockup Preview -->
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>🎬 Live Thumbnail Preview</h3>
+            <div class="thumbnail-mockup" id="thumbnailMockup">
+                <div class="mockup-label">📸 YOUTUBE THUMBNAIL PREVIEW</div>
+                <div class="thumbnail-preview" id="thumbnailPreview">
+                    <div class="preview-text" id="previewText">EPIC VIDEO!</div>
+                    <div class="preview-cta" id="previewCta">WATCH NOW 🔥</div>
+                </div>
+                <p style="font-size: 0.7rem; text-align: center; margin-top: 10px;">⬆️ Live preview with your selected colors</p>
+            </div>
+        </div>
+
+        <div id="resultsSection">
+            <h2>✨ Generated Color Palette</h2>
+            <div class="palette-grid" id="paletteGrid"></div>
+        </div>
+
+        <div class="glass-card" style="margin: 30px 0;">
+            <h3>⚡ Trending Thumbnail Styles</h3>
+            <div class="trending-topics" id="trendingTopics">
+                <div class="trending-topic">gaming</div>
+                <div class="trending-topic">tech</div>
+                <div class="trending-topic">motivation</div>
+                <div class="trending-topic">horror</div>
+                <div class="trending-topic">cooking</div>
+                <div class="trending-topic">vlog</div>
+                <div class="trending-topic">education</div>
+                <div class="trending-topic">fitness</div>
+            </div>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>🕒 Recent Searches</h3>
+            <div id="recentSearches" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+            <h3 style="margin-top: 20px;">⭐ Favorite Palettes</h3>
+            <div id="favoritesList" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>📈 Thumbnail Design Tips</h3>
+            <ul style="margin-top: 15px; list-style: none;">
+                <li>✅ Use complementary colors (opposite on color wheel) for maximum contrast</li>
+                <li>✅ Red, yellow, and green increase CTR by 30-50%</li>
+                <li>✅ Dark backgrounds make bright text pop - use #000000 or #1a1a2e</li>
+                <li>✅ Avoid blue text on blue backgrounds - poor visibility on mobile</li>
+                <li>✅ Test 2-3 color variants before publishing your video</li>
+            </ul>
+        </div>
+
+        <div class="glass-card" style="margin: 20px 0;">
+            <h3>❓ Frequently Asked Questions</h3>
+            <div style="margin-top: 20px;">
+                <div><strong>What is a thumbnail color palette generator?</strong><p style="color: var(--text-gray);">AI tool that creates eye-catching color combinations proven to increase click-through rates.</p></div>
+                <div style="margin-top: 15px;"><strong>Which colors increase CTR?</strong><p style="color: var(--text-gray);;">Red (#FF0000), Yellow (#FFD700), Green (#00FF00), and Orange (#FFA500) perform best.</p></div>
+                <div style="margin-top: 15px;"><strong>Best colors for gaming thumbnails?</strong><p style="color: var(--text-gray);;">Neon green, electric blue, bright red, and purple with high contrast.</p></div>
+                <div style="margin-top: 15px;"><strong>How important are thumbnail colors?</strong><p style="color: var(--text-gray);;">Extremely! Colors affect first impressions and can boost CTR by 50%+.</p></div>
+                <div style="margin-top: 15px;"><strong>What makes a thumbnail attractive?</strong><p style="color: var(--text-gray);;">High contrast, bright accents, readable text, and emotional color triggers.</p></div>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- AdSense Ad Placeholder - Bottom Banner -->
+            <span>📢 Advertisement - 728x90 Banner</span>
+        </div>
+
+        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray);">
+            <p>© 2026 YouTube Thumbnail Color Palette Generator | Boost Your CTR Today</p>
+        </footer>
+    </div>
+
+    <script>
+        createParticles();
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for(let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 10 + 5 + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        let currentStyle = 'viral';
+        let currentPalette = null;
+        let favorites = JSON.parse(localStorage.getItem('colorPaletteFavorites') || '[]');
+
+        document.querySelectorAll('.style-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentStyle = btn.dataset.style;
+            });
+        });
+        document.querySelector('.style-btn').classList.add('active');
+
+        function generateColorPalette(keyword, style) {
+            const lowerKeyword = keyword.toLowerCase().trim();
+            if(!lowerKeyword) return null;
+            
+            const palettes = {
+                viral: {
+                    name: "Viral Energy",
+                    colors: ["#FF0000", "#FFD700", "#FFFFFF", "#000000", "#FF4500"],
+                    text: "#FFFFFF",
+                    bg: "#FF0000",
+                    cta: "#FFD700"
+                },
+                gaming: {
+                    name: "Gaming Neon",
+                    colors: ["#00FF00", "#FF00FF", "#00FFFF", "#000000", "#FF0000"],
+                    text: "#00FF00",
+                    bg: "#000000",
+                    cta: "#FF00FF"
+                },
+                neon: {
+                    name: "Neon Glow",
+                    colors: ["#FF00FF", "#00FF00", "#FFFF00", "#000000", "#FF1493"],
+                    text: "#FFFF00",
+                    bg: "#000000",
+                    cta: "#FF00FF"
+                },
+                professional: {
+                    name: "Corporate Clean",
+                    colors: ["#1E3A8A", "#3B82F6", "#FFFFFF", "#0F172A", "#10B981"],
+                    text: "#FFFFFF",
+                    bg: "#1E3A8A",
+                    cta: "#10B981"
+                },
+                dark: {
+                    name: "Dark Theme",
+                    colors: ["#1A1A2E", "#E94560", "#FFFFFF", "#16213E", "#0F3460"],
+                    text: "#FFFFFF",
+                    bg: "#1A1A2E",
+                    cta: "#E94560"
+                },
+                bright: {
+                    name: "Bright Energy",
+                    colors: ["#FF6B6B", "#4ECDC4", "#FFE66D", "#FFFFFF", "#FF9F43"],
+                    text: "#FFFFFF",
+                    bg: "#FF6B6B",
+                    cta: "#FFE66D"
+                },
+                emotional: {
+                    name: "Emotional Impact",
+                    colors: ["#C41E3A", "#2E5A88", "#FFFFFF", "#8B4513", "#FFB347"],
+                    text: "#FFFFFF",
+                    bg: "#C41E3A",
+                    cta: "#FFB347"
+                },
+                shorts: {
+                    name: "Short & Viral",
+                    colors: ["#FF3131", "#00E5FF", "#FFFFFF", "#000000", "#F5F5DC"],
+                    text: "#FFFFFF",
+                    bg: "#FF3131",
+                    cta: "#00E5FF"
+                }
+            };
+            
+            const palette = palettes[style] || palettes.viral;
+            return palette;
+        }
+
+        function renderPalette(palette) {
+            const categories = [
+                { title: "🎨 Main Colors", colors: palette.colors.slice(0, 3) },
+                { title: "⭐ Accent Colors", colors: palette.colors.slice(3, 5) },
+                { title: "🎯 Text & CTA Colors", colors: [palette.text, palette.cta, palette.bg] }
+            ];
+            
+            let html = '';
+            categories.forEach(cat => {
+                html += `
+                    <div class="palette-card">
+                        <div class="palette-title">${cat.title}</div>
+                        ${cat.colors.map(color => `
+                            <div class="color-swatch">
+                                <div class="color-box" style="background: ${color};" data-color="${color}"></div>
+                                <div class="color-info">
+                                    <div class="color-hex">${color}</div>
+                                    <button class="copy-color-btn" data-color="${color}">📋 Copy HEX</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            });
+            
+            document.getElementById('paletteGrid').innerHTML = html;
+            document.getElementById('totalColors').innerText = palette.colors.length;
+            document.getElementById('bestFor').innerText = currentStyle.charAt(0).toUpperCase() + currentStyle.slice(1);
+            
+            // Update thumbnail preview
+            document.getElementById('thumbnailPreview').style.background = palette.bg;
+            document.getElementById('previewText').style.color = palette.text;
+            document.getElementById('previewCta').style.background = palette.cta;
+            document.getElementById('previewCta').style.color = "#FFFFFF";
+            
+            // Add copy listeners
+            document.querySelectorAll('.copy-color-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const color = btn.dataset.color;
+                    copyToClipboard(color);
+                    showToast(`✅ Copied: ${color}`);
+                });
+            });
+            
+            document.querySelectorAll('.color-box').forEach(box => {
+                box.addEventListener('click', () => {
+                    const color = box.dataset.color;
+                    copyToClipboard(color);
+                    showToast(`✅ Copied: ${color}`);
+                });
+            });
+            
+            return palette;
+        }
+
+        function escapeHtml(str) { return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]); }
+        function copyToClipboard(text) { navigator.clipboard.writeText(text); }
+        
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        async function generateWithAnimation() {
+            const keyword = document.getElementById('keywordInput').value.trim();
+            if(!keyword) { showToast('❌ Please enter a niche/topic!'); return; }
+            const btn = document.getElementById('generateBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="spinner"></span> Generating...';
+            btn.disabled = true;
+            setTimeout(() => {
+                const palette = generateColorPalette(keyword, currentStyle);
+                if(palette) {
+                    currentPalette = palette;
+                    renderPalette(palette);
+                    saveRecentSearch(keyword);
+                    showToast('✨ Color palette generated successfully!');
+                } else {
+                    showToast('⚠️ Please enter a valid keyword');
+                }
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 500);
+        }
+
+        function saveRecentSearch(keyword) {
+            let searches = JSON.parse(localStorage.getItem('colorPaletteRecentSearches') || '[]');
+            searches = [keyword, ...searches.filter(s => s !== keyword)];
+            searches = searches.slice(0, 5);
+            localStorage.setItem('colorPaletteRecentSearches', JSON.stringify(searches));
+            displayRecentSearches();
+        }
+
+        function displayRecentSearches() {
+            const searches = JSON.parse(localStorage.getItem('colorPaletteRecentSearches') || '[]');
+            const container = document.getElementById('recentSearches');
+            if(searches.length === 0) { container.innerHTML = '<p style="color: gray;">No recent searches</p>'; return; }
+            container.innerHTML = searches.map(s => `<div class="trending-topic" onclick="document.getElementById('keywordInput').value='${s}'; generateWithAnimation();">${s}</div>`).join('');
+        }
+
+        let isDark = true;
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            isDark = !isDark;
+            if(isDark) {
+                document.body.classList.remove('light-mode');
+                document.getElementById('themeToggle').innerHTML = '🌙 Dark';
+            } else {
+                document.body.classList.add('light-mode');
+                document.getElementById('themeToggle').innerHTML = '☀️ Light';
+            }
+            localStorage.setItem('colorPaletteTheme', isDark ? 'dark' : 'light');
+        });
+        if(localStorage.getItem('colorPaletteTheme') === 'light') {
+            document.body.classList.add('light-mode');
+            document.getElementById('themeToggle').innerHTML = '☀️ Light';
+        }
+
+        document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('generateBtn').addEventListener('click', generateWithAnimation);
+        document.getElementById('copyAllBtn').addEventListener('click', () => {
+            if(!currentPalette) { showToast('⚠️ Generate palette first!'); return; }
+            const allHex = currentPalette.colors.join(', ');
+            copyToClipboard(allHex);
+            showToast('📋 All HEX colors copied!');
+        });
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if(!currentPalette) { showToast('⚠️ Generate palette first!'); return; }
+            const text = `Color Palette: ${currentPalette.name}\nMain Colors: ${currentPalette.colors.join(', ')}\nText Color: ${currentPalette.text}\nBackground: ${currentPalette.bg}\nCTA Color: ${currentPalette.cta}`;
+            const blob = new Blob([text], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `color_palette_${Date.now()}.txt`;
+            link.click();
+            showToast('💾 Downloaded successfully!');
+        });
+        document.getElementById('keywordInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') generateWithAnimation(); });
+        document.querySelectorAll('.trending-topic').forEach(topic => {
+            topic.addEventListener('click', () => {
+                document.getElementById('keywordInput').value = topic.innerText;
+                generateWithAnimation();
+            });
+        });
+        displayRecentSearches();
+        setTimeout(() => {
+            document.getElementById('keywordInput').value = 'gaming';
+            generateWithAnimation();
+        }, 100);
+    </script>
+</body>
+</html>
