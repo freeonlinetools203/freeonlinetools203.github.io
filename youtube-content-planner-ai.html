@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>YouTube Content Planner AI | Free Video Strategy Generator 2026</title>
+    <meta name="description" content="Generate complete YouTube content plans, video ideas and growth strategies instantly using our free YouTube Content Planner AI Tool. Plan your viral journey." />
+    <meta name="keywords" content="YouTube content planner, video strategy, content calendar, AI planner, growth roadmap" />
+    <meta name="author" content="Content Planner AI" />
+    <link rel="canonical" href="https://www.yoursite.com/youtube-content-planner" />
+    <meta property="og:title" content="YouTube Content Planner AI | Free Video Strategy Tool" />
+    <meta property="og:description" content="AI-powered content calendar & growth strategy for YouTube creators." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "YouTube Content Planner AI",
+      "description": "Generate complete content plans, video ideas, and growth strategies",
+      "applicationCategory": "Planning Tool",
+      "operatingSystem": "All"
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: rgba(18, 18, 26, 0.96);
+            --yt-red: #ff0000;
+            --gradient-1: linear-gradient(135deg, #ff0000, #8b5cf6);
+            --text-light: #ffffff;
+            --text-gray: #aaa;
+            --border-glow: rgba(255, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,0,0,0.08), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 28px;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(255,0,0,0.08);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(30,30,40,0.95);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus, select:focus {
+            border-color: #ff0000;
+            box-shadow: 0 0 8px rgba(255,0,0,0.3);
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(255,0,0,0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,0,0,0.4);
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,0,0,0.2);
+        }
+
+        .grid-2, .grid-3 {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+        .calendar-day {
+            background: rgba(0,0,0,0.4);
+            border-radius: 20px;
+            padding: 16px;
+            transition: 0.2s;
+            border-left: 3px solid #ff0000;
+        }
+
+        .progress-bar-wrapper {
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            height: 12px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #ff0000, #8b5cf6);
+            width: 0%;
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-1);
+            padding: 12px 24px;
+            border-radius: 60px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #ff0000;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .ad-placeholder {
+            background: rgba(255,0,0,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px dashed rgba(255,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.8rem; }
+        }
+
+        body.light-mode {
+            --bg-dark: #f5f5f5;
+            --bg-card: rgba(255,255,255,0.95);
+            --text-light: #1a1a1a;
+            --text-gray: #555;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+<div class="animated-bg"></div>
+<div class="theme-toggle" id="themeToggle">🌙 Dark</div>
+<div class="scroll-top" id="scrollTop">↑</div>
+
+<div class="container">
+    <div class="ad-placeholder"><!-- AdSense Top --> 📢 Ad Space - 728x90</div>
+
+    <div class="glass-card" style="text-align: center;">
+        <h1>📅 YouTube Content Planner AI</h1>
+        <p>Generate a complete content strategy with daily plans, video ideas, and growth roadmap</p>
+    </div>
+
+    <div class="glass-card">
+        <div class="grid-2">
+            <div>
+                <div class="input-group">
+                    <label>🎯 Your Niche / Keyword</label>
+                    <input type="text" id="nicheInput" placeholder="e.g., gaming, AI tools, motivation, tech reviews">
+                </div>
+                <div class="input-group">
+                    <label>📆 Plan Type</label>
+                    <select id="planType">
+                        <option value="7">7 Day Plan</option>
+                        <option value="14">14 Day Plan</option>
+                        <option value="30" selected>30 Day Plan</option>
+                        <option value="shorts">Shorts Only Plan</option>
+                        <option value="mixed">Mixed Content Plan</option>
+                        <option value="viral">Viral Growth Plan</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="input-group">
+                    <label>🎯 Content Goal</label>
+                    <select id="goalType">
+                        <option value="subs">Get Subscribers</option>
+                        <option value="views">Increase Views</option>
+                        <option value="viral">Go Viral</option>
+                        <option value="monetize">Monetization Focus</option>
+                        <option value="brand">Brand Building</option>
+                    </select>
+                </div>
+                <div style="margin-top: 28px;">
+                    <button class="btn-primary" id="generatePlanBtn">✨ Generate AI Content Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-placeholder"><!-- AdSense Middle --> 📢 Ad Space - 300x250</div>
+
+    <div id="planResult" style="display: none;">
+        <div class="glass-card">
+            <h2>📋 Your Content Plan</h2>
+            <div class="progress-bar-wrapper"><div class="progress-bar" id="planProgress"></div></div>
+            <div id="dailyPlanContainer" class="grid-3"></div>
+        </div>
+
+        <div class="glass-card">
+            <h2>📊 Weekly Strategy Roadmap</h2>
+            <div id="weeklyStrategy"></div>
+        </div>
+
+        <div class="glass-card">
+            <h2>💡 Video Ideas (Viral + Evergreen)</h2>
+            <ul id="videoIdeasList"></ul>
+        </div>
+
+        <div class="glass-card">
+            <h2>📱 Shorts Strategy</h2>
+            <div id="shortsStrategy"></div>
+        </div>
+
+        <div class="glass-card">
+            <h2>⏰ Recommended Upload Schedule</h2>
+            <div id="uploadSchedule"></div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px;">
+            <button class="btn-secondary" id="copyFullPlanBtn">📋 Copy Full Plan</button>
+            <button class="btn-secondary" id="copyWeeklyBtn">📋 Copy Weekly Strategy</button>
+            <button class="btn-secondary" id="downloadPlanBtn">💾 Download TXT</button>
+        </div>
+    </div>
+
+    <div class="glass-card">
+        <h3>💡 Content Growth Tips</h3>
+        <ul>
+            <li>✅ Post consistently on your best-performing days</li>
+            <li>✅ Repurpose long videos into 3-5 Shorts</li>
+            <li>✅ Engage with comments within the first hour</li>
+            <li>✅ Use end screens to promote related content</li>
+            <li>✅ Analyze your best videos and double down on that format</li>
+        </ul>
+    </div>
+
+    <div class="glass-card">
+        <h3>❓ FAQ</h3>
+        <div><strong>What is a YouTube content planner?</strong><p>AI tool that builds a complete content calendar, video ideas, and growth roadmap based on your niche.</p></div>
+        <div style="margin-top: 12px;"><strong>How to plan YouTube videos effectively?</strong><p>Batch create, stick to a schedule, mix high-effort & low-effort content, and repurpose.</p></div>
+        <div style="margin-top: 12px;"><strong>Best upload schedule for YouTube?</strong><p>2-3 long videos/week + daily Shorts. Post between 6-8 PM for early traction.</p></div>
+    </div>
+
+    <div class="ad-placeholder"><!-- AdSense Bottom --> 📢 Ad Space - 728x90</div>
+    <footer style="text-align: center; padding: 30px 0;">© 2026 YouTube Content Planner AI | Plan. Create. Grow.</footer>
+</div>
+
+<script>
+    let currentPlan = [];
+
+    function generateContentPlan(niche, daysType, goal) {
+        let days = 7;
+        if(daysType === '7') days = 7;
+        else if(daysType === '14') days = 14;
+        else if(daysType === '30') days = 30;
+        else if(daysType === 'shorts') days = 14;
+        else if(daysType === 'mixed') days = 21;
+        else days = 30;
+
+        let plan = [];
+        let titles = [`${niche} Beginner Guide`, `${niche} Pro Tips`, `${niche} Mistakes to Avoid`, `${niche} Hacks That Work`, `${niche} Q&A`, `${niche} Success Story`, `${niche} Tools You Need`];
+        let shortsIdeas = [`${niche} in 60s`, `${niche} Quick Tip`, `${niche} Fail/Win`, `${niche} Secret Revealed`];
+        
+        for(let i=1; i<=days; i++) {
+            let dayType = (daysType === 'shorts') ? 'shorts' : ((i%3===0) ? 'shorts' : 'long');
+            let title = dayType === 'shorts' ? `📱 SHORTS: ${shortsIdeas[i % shortsIdeas.length]}` : `🎬 ${titles[i % titles.length]} - Day ${i}`;
+            let hook = dayType === 'shorts' ? "Hook: First 3 seconds = 'Wait for this...'" : "Hook: Ask a provocative question or share shocking stat";
+            let cta = dayType === 'shorts' ? "CTA: Subscribe for more daily shorts" : "CTA: Like & comment your biggest takeaway";
+            plan.push({ day: i, title, type: dayType, hook, cta });
+        }
+        return plan;
+    }
+
+    function generateWeeklyStrategy(goal) {
+        let weeks = {
+            subs: "Week 1: Hook-driven titles & CTA optimization. Week 2: Collaboration outreach. Week 3: Shorts blitz + playlists. Week 4: Community engagement push.",
+            views: "Week 1: Viral title testing. Week 2: Thumbnail A/B testing. Week 3: Promote on social media. Week 4: Repurpose top video.",
+            viral: "Week 1: Trend jacking + emotional storytelling. Week 2: Use trending audio/effects. Week 3: Challenge or controversy hook. Week 4: Cross-promote with bigger creators.",
+            monetize: "Week 1: Evergreen tutorials. Week 2: Affiliate integration. Week 3: Sponsorship-ready videos. Week 4: Build email list.",
+            brand: "Week 1: Define brand voice. Week 2: Consistent thumbnail style. Week 3: Behind-the-scenes. Week 4: Branded series launch."
+        };
+        return weeks[goal] || weeks.subs;
+    }
+
+    function generateVideoIdeas(niche, goal) {
+        let ideas = [
+            `🔥 VIRAL: Why ${niche} is the FUTURE of [industry]`,
+            `📚 EVERGREEN: Complete ${niche} Tutorial for Beginners`,
+            `⚡ TRENDING: ${niche} Challenge (Can you beat this?)`,
+            `💡 UNIQUE: 5 ${niche} Secrets Nobody Talks About`,
+            `🎯 CASE STUDY: How I Grew Using ${niche} in 30 Days`
+        ];
+        if(goal === 'viral') ideas.unshift(`🚀 INSANE: ${niche} Hack That Got 1M Views`);
+        if(goal === 'monetize') ideas.push(`💰 How to Make Money with ${niche} (Step by Step)`);
+        return ideas;
+    }
+
+    function generateShortsStrategy() {
+        return `📌 Daily Shorts Formula: Hook (3s) + Value (20s) + CTA (5s)\n🔥 Trending Sounds: Use at least 3 viral sounds weekly\n📈 Retention: Add text overlays every 5 seconds`;
+    }
+
+    function generateUploadSchedule() {
+        return `⏰ Best Times: 8 AM, 1 PM, 7 PM (Your Timezone)\n📆 Frequency: 2-3 long videos + 5-7 Shorts per week\n📌 Consistency: Same day/time for long videos builds audience habit`;
+    }
+
+    function renderPlan(plan, niche, goal) {
+        let container = document.getElementById('dailyPlanContainer');
+        let html = '';
+        plan.forEach(day => {
+            html += `
+                <div class="calendar-day">
+                    <strong>Day ${day.day}</strong><br>
+                    <span style="color:#ff5555;">${day.title}</span><br>
+                    <span style="font-size:0.75rem;">${day.hook}</span><br>
+                    <span style="font-size:0.7rem; color:#aaa;">${day.cta}</span>
+                    <div style="margin-top:8px;"><button class="btn-secondary copy-day-btn" data-day="${day.day}">📋 Copy Day</button></div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+        document.getElementById('weeklyStrategy').innerHTML = `<p>${generateWeeklyStrategy(goal)}</p>`;
+        let ideas = generateVideoIdeas(niche, goal);
+        document.getElementById('videoIdeasList').innerHTML = ideas.map(i => `<li>🔥 ${i}</li>`).join('');
+        document.getElementById('shortsStrategy').innerHTML = `<pre style="white-space:pre-wrap;">${generateShortsStrategy()}</pre>`;
+        document.getElementById('uploadSchedule').innerHTML = `<pre style="white-space:pre-wrap;">${generateUploadSchedule()}</pre>`;
+        let progress = (plan.filter((_,idx) => idx < 7).length / plan.length) * 100;
+        document.getElementById('planProgress').style.width = `${Math.min(100, progress)}%`;
+
+        document.querySelectorAll('.copy-day-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                let dayNum = parseInt(btn.dataset.day);
+                let dayPlan = plan.find(d => d.day === dayNum);
+                if(dayPlan) {
+                    let text = `Day ${dayPlan.day}\nTitle: ${dayPlan.title}\nHook: ${dayPlan.hook}\nCTA: ${dayPlan.cta}`;
+                    copyToClipboard(text);
+                    showToast(`📋 Day ${dayNum} plan copied`);
+                }
+            });
+        });
+    }
+
+    function copyFullPlan(plan, niche, goal) {
+        let weekly = generateWeeklyStrategy(goal);
+        let ideas = generateVideoIdeas(niche, goal).join('\n');
+        let shorts = generateShortsStrategy();
+        let schedule = generateUploadSchedule();
+        let daily = plan.map(d => `Day ${d.day}: ${d.title} | Hook: ${d.hook} | CTA: ${d.cta}`).join('\n');
+        let full = `YOUTUBE CONTENT PLAN\nNiche: ${niche}\nGoal: ${goal}\n\nDAILY PLAN:\n${daily}\n\nWEEKLY STRATEGY:\n${weekly}\n\nVIDEO IDEAS:\n${ideas}\n\nSHORTS STRATEGY:\n${shorts}\n\nUPLOAD SCHEDULE:\n${schedule}`;
+        copyToClipboard(full);
+        showToast("📋 Full plan copied");
+    }
+
+    function copyWeeklyOnly(goal) {
+        copyToClipboard(`WEEKLY STRATEGY:\n${generateWeeklyStrategy(goal)}`);
+        showToast("📋 Weekly strategy copied");
+    }
+
+    function downloadPlan(plan, niche, goal) {
+        let weekly = generateWeeklyStrategy(goal);
+        let ideas = generateVideoIdeas(niche, goal).join('\n');
+        let shorts = generateShortsStrategy();
+        let schedule = generateUploadSchedule();
+        let daily = plan.map(d => `Day ${d.day}: ${d.title} | Hook: ${d.hook} | CTA: ${d.cta}`).join('\n');
+        let content = `YouTube Content Plan\nGenerated: ${new Date()}\nNiche: ${niche}\nGoal: ${goal}\n\nDAILY PLAN:\n${daily}\n\nWEEKLY STRATEGY:\n${weekly}\n\nVIDEO IDEAS:\n${ideas}\n\nSHORTS STRATEGY:\n${shorts}\n\nUPLOAD SCHEDULE:\n${schedule}`;
+        let blob = new Blob([content], {type: 'text/plain'});
+        let link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `content_plan_${Date.now()}.txt`;
+        link.click();
+        showToast("💾 Plan downloaded");
+    }
+
+    function copyToClipboard(text) { navigator.clipboard.writeText(text); }
+    function showToast(msg) {
+        let t = document.createElement('div');
+        t.className = 'toast';
+        t.innerText = msg;
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 2000);
+    }
+
+    function generateAndRender() {
+        let niche = document.getElementById('nicheInput').value.trim();
+        if(!niche) { showToast("❌ Please enter a niche"); return; }
+        let planType = document.getElementById('planType').value;
+        let goal = document.getElementById('goalType').value;
+        let btn = document.getElementById('generatePlanBtn');
+        let original = btn.innerHTML;
+        btn.innerHTML = '<span class="loading-spinner"></span> Generating...';
+        btn.disabled = true;
+        setTimeout(() => {
+            let plan = generateContentPlan(niche, planType, goal);
+            currentPlan = plan;
+            document.getElementById('planResult').style.display = 'block';
+            renderPlan(plan, niche, goal);
+            btn.innerHTML = original;
+            btn.disabled = false;
+            window.scrollTo({ top: document.getElementById('planResult').offsetTop - 30, behavior: 'smooth' });
+        }, 800);
+    }
+
+    document.getElementById('generatePlanBtn').addEventListener('click', generateAndRender);
+    document.getElementById('copyFullPlanBtn').addEventListener('click', () => { if(currentPlan.length) copyFullPlan(currentPlan, document.getElementById('nicheInput').value, document.getElementById('goalType').value); else showToast("⚠️ Generate plan first"); });
+    document.getElementById('copyWeeklyBtn').addEventListener('click', () => copyWeeklyOnly(document.getElementById('goalType').value));
+    document.getElementById('downloadPlanBtn').addEventListener('click', () => { if(currentPlan.length) downloadPlan(currentPlan, document.getElementById('nicheInput').value, document.getElementById('goalType').value); else showToast("⚠️ Generate plan first"); });
+    document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+    let isDark = true;
+    document.getElementById('themeToggle').addEventListener('click', () => {
+        isDark = !isDark;
+        if(isDark) { document.body.classList.remove('light-mode'); document.getElementById('themeToggle').innerHTML = '🌙 Dark'; }
+        else { document.body.classList.add('light-mode'); document.getElementById('themeToggle').innerHTML = '☀️ Light'; }
+        localStorage.setItem('plannerTheme', isDark ? 'dark' : 'light');
+    });
+    if(localStorage.getItem('plannerTheme') === 'light') { document.body.classList.add('light-mode'); document.getElementById('themeToggle').innerHTML = '☀️ Light'; }
+</script>
+</body>
+</html>
