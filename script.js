@@ -9,7 +9,7 @@ const toolsDatabase = {
         name: "🔍 SEO Tools",
         tools: [
             "Keyword Density Checker", "Meta Tags Generator", "Meta Tag Analyzer",
-            "SEO Score Checker", "Backlink Checker", "Google Index Checker"
+            
         ]
     },
     pdf: {
