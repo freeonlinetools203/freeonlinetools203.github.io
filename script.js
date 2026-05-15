@@ -54,7 +54,7 @@ const toolsDatabase = {
         name: "🏃‍♂️ Health Tools",
         tools: [
             "BMI Calculator", "BMR Calculator", "Calorie Calculator",
-            "TDEE Calculator", "Water Intake Calculator", "Sleep Calculator"
+            "TDEE Calculator",
         ]
     },
     text: {
