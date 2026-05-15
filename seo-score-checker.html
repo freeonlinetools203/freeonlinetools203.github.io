@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Free SEO Score Checker Tool Online | Instant Website Audit</title>
+  <meta name="description" content="Check your website SEO score instantly and improve rankings using our free professional SEO Score Checker Tool. Get title, meta, keywords & content analysis.">
+  <meta name="keywords" content="SEO score checker, website audit tool, SEO analyzer, meta tags validator, content analysis">
+  <meta name="author" content="SEO Tool">
+  <link rel="canonical" href="https://www.yourdomain.com/seo-score-checker.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free SEO Score Checker Tool Online">
+  <meta property="og:description" content="Check your website SEO score instantly and improve rankings using our free professional SEO Score Checker Tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.yourdomain.com/seo-score-checker.html">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=SEO+Score+Checker">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free SEO Score Checker Tool Online">
+  <meta name="twitter:description" content="Check your website SEO score instantly and improve rankings.">
+  <!-- Schema Markup (WebApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SEO Score Checker Tool",
+    "description": "Analyze website SEO performance, get score 0-100 and actionable suggestions.",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f0f4ff 0%, #e9eefa 100%);
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+
+    /* dark mode */
+    body.dark {
+      background: #0b1120;
+      color: #eef2ff;
+    }
+
+    /* floating particles (simplified) */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      background: rgba(79, 70, 229, 0.15);
+      border-radius: 50%;
+      animation: float 20s infinite linear;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* glassmorphism card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0,0,0,0.05);
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: all 0.2s;
+    }
+    body.dark .glass-card {
+      background: rgba(15, 25, 45, 0.85);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    /* buttons & inputs */
+    input, textarea, select {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    body.dark input, body.dark textarea {
+      background: #1e293b;
+      border-color: #334155;
+      color: #f1f5f9;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139,92,246,0.3);
+    }
+    button {
+      background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(79,70,229,0.3);
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(79,70,229,0.5);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #8b5cf6;
+      color: #4f46e5;
+      box-shadow: none;
+    }
+    body.dark .btn-outline {
+      color: #a78bfa;
+      border-color: #a78bfa;
+    }
+
+    /* score meter circle */
+    .score-ring {
+      width: 180px;
+      height: 180px;
+    }
+    .progress-ring-circle {
+      transition: stroke-dashoffset 0.8s ease-out;
+    }
+
+    /* responsive grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .toast-notify {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #1f2937;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 1rem; }
+      .glass-card { border-radius: 1.5rem; }
+    }
+    footer a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+  </style>
+</head>
+<body>
+<div class="particles" id="particles"></div>
+<div class="container">
+  <!-- Header + Dark Mode -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+    <h1 style="background: linear-gradient(135deg,#4f46e5,#c084fc); -webkit-background-clip: text; background-clip: text; color: transparent;">🔍 SEO Score Checker</h1>
+    <button id="darkModeToggle" class="btn-outline" style="padding:0.5rem 1rem;">🌙 Dark Mode</button>
+  </div>
+
+  <!-- Hero -->
+  <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: center;">
+    <h2>Professional SEO Score Tool</h2>
+    <p style="margin-top: 0.5rem;">Analyze title, meta description, keywords, content & technical health – get instant score 0-100.</p>
+  </div>
+
+  <!-- AdSense Top Placeholder -->
+  <div style="background: #eef2ff40; border-radius: 1rem; text-align: center; padding: 0.8rem; margin-bottom: 2rem;" class="glass-card">
+    <div style="font-size: 0.8rem; opacity: 0.6;">Advertisement</div>
+    <!-- AdSense Ad Placeholder -->
+    <div style="height: 90px; background: rgba(0,0,0,0.05); border-radius: 1rem; display: flex; align-items: center; justify-content: center;">📢 728x90 Ad Placeholder</div>
+  </div>
+
+  <!-- Main Grid: Form + Score -->
+  <div class="grid-2">
+    <!-- Input form -->
+    <div class="glass-card" style="padding: 1.8rem;">
+      <h3>📝 Website Details</h3>
+      <div style="margin: 1rem 0;">
+        <label>Website Title *</label>
+        <input type="text" id="titleInput" placeholder="e.g., Best Coffee Machines 2025" maxlength="70">
+        <span id="titleCharCount" style="font-size:0.75rem;">0/70 chars</span>
+        <div id="titleHint" class="hint-text" style="font-size:0.7rem; color: #4f46e5;"></div>
+      </div>
+      <div style="margin: 1rem 0;">
+        <label>Meta Description *</label>
+        <textarea id="metaDesc" rows="3" maxlength="160" placeholder="Compelling description under 160 characters..."></textarea>
+        <span id="descCharCount">0/160 chars</span>
+      </div>
+      <div style="margin: 1rem 0;">
+        <label>Keywords (comma separated)</label>
+        <input type="text" id="keywords" placeholder="coffee, espresso, brewing guide">
+      </div>
+      <div style="margin: 1rem 0;">
+        <label>Website URL</label>
+        <input type="url" id="websiteUrl" placeholder="https://example.com">
+        <span id="urlValidation"></span>
+      </div>
+      <div style="margin: 1rem 0;">
+        <label>Content Length (words)</label>
+        <input type="number" id="contentWords" placeholder="e.g., 1200" value="800">
+      </div>
+      <button id="analyzeBtn">🚀 Analyze SEO Score</button>
+      <div style="margin-top: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+        <button id="copyReportBtn" class="btn-outline">📋 Copy Report</button>
+        <button id="downloadTxtBtn" class="btn-outline">⬇️ Download TXT</button>
+      </div>
+    </div>
+
+    <!-- Score & Grade -->
+    <div class="glass-card" style="padding: 1.8rem; text-align: center;">
+      <h3>🎯 SEO Score</h3>
+      <div style="position: relative; display: flex; justify-content: center; margin: 1rem 0;">
+        <svg width="180" height="180" viewBox="0 0 180 180" class="score-ring">
+          <circle cx="90" cy="90" r="78" fill="none" stroke="#e2e8f0" stroke-width="12" />
+          <circle id="scoreCircle" cx="90" cy="90" r="78" fill="none" stroke="url(#grad)" stroke-width="12" stroke-linecap="round"
+                  stroke-dasharray="490" stroke-dashoffset="490" transform="rotate(-90 90 90)" />
+          <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs>
+          <text x="90" y="100" text-anchor="middle" font-size="36" font-weight="bold" fill="currentColor" id="scoreText">0</text>
+          <text x="90" y="125" text-anchor="middle" font-size="14" fill="currentColor">/100</text>
+        </svg>
+      </div>
+      <div id="gradeLabel" style="font-size:1.4rem; font-weight: bold;">Poor</div>
+      <div class="progress-bars" style="margin-top:1.5rem; text-align:left;">
+        <div>🏷️ Title: <span id="titleScore">0</span>/20</div><progress id="titleProg" value="0" max="20" style="width:100%;height:8px;border-radius:10px;"></progress>
+        <div>📄 Meta: <span id="metaScore">0</span>/20</div><progress id="metaProg" value="0" max="20"></progress>
+        <div>🔑 Keywords: <span id="kwScore">0</span>/20</div><progress id="kwProg" value="0" max="20"></progress>
+        <div>📝 Content: <span id="contScore">0</span>/20</div><progress id="contProg" value="0" max="20"></progress>
+        <div>⚙️ Technical: <span id="techScore">0</span>/20</div><progress id="techProg" value="0" max="20"></progress>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Preview -->
+  <div class="glass-card" style="margin-top: 2rem; padding: 1.5rem;">
+    <h3>🔍 Google Search Result Preview</h3>
+    <div style="background:#fff; border-radius: 1rem; padding: 1rem; color:#202124;" id="previewBox">
+      <div id="previewTitle" style="font-size:1.2rem; color:#1a0dab;">Your SEO Title</div>
+      <div id="previewUrl" style="font-size:0.8rem; color:#006621;">https://example.com</div>
+      <div id="previewDesc" style="font-size:0.85rem; color:#545454;">Meta description preview here...</div>
+    </div>
+  </div>
+
+  <!-- Analysis & Suggestions Row -->
+  <div class="grid-2" style="margin-top: 2rem;">
+    <div class="glass-card" style="padding:1.5rem;">
+      <h3>📊 SEO Analysis Report</h3>
+      <div id="analysisReport" style="margin-top: 1rem; font-size:0.9rem;"><p>Click analyze to get detailed report.</p></div>
+    </div>
+    <div class="glass-card" style="padding:1.5rem;">
+      <h3>💡 Smart Suggestions</h3>
+      <div id="suggestionsList" style="margin-top: 1rem; list-style-type: none;"><li>✔️ Waiting for analysis...</li></div>
+      <button id="copySuggestBtn" class="btn-outline" style="margin-top:1rem;">📋 Copy Suggestions</button>
+    </div>
+  </div>
+
+  <!-- History Section -->
+  <div class="glass-card" style="margin-top: 2rem; padding:1.5rem;">
+    <h3>🕒 Recent Analysis History (Last 5)</h3>
+    <div id="historyList" style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-top:1rem;"></div>
+    <button id="clearHistoryBtn" class="btn-outline" style="margin-top:0.5rem;">Clear History</button>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="glass-card" style="margin-top: 2rem; padding:1.5rem;">
+    <h3>❓ SEO FAQ</h3>
+    <div style="display:grid; gap:1rem; margin-top:1rem;">
+      <div><strong>What is SEO score?</strong><br>SEO score (0–100) measures how well optimized a page is for search engines.</div>
+      <div><strong>How is SEO score calculated?</strong><br>Based on title, meta description, keywords, content length, technical checks.</div>
+      <div><strong>What is a good SEO score?</strong><br>71+ is excellent, 41-70 average, below 40 needs improvement.</div>
+      <div><strong>How to improve SEO ranking?</strong><br>Optimize titles, meta descriptions, content quality, and ensure mobile-friendly.</div>
+      <div><strong>Why are meta tags important?</strong><br>They help search engines understand your page and improve CTR.</div>
+    </div>
+  </div>
+
+  <!-- Ad Middle and Bottom -->
+  <div style="margin: 1.5rem 0;" class="glass-card">
+    <div style="text-align:center; padding:0.5rem;">— Middle Ad —</div>
+    <!-- AdSense Ad Placeholder -->
+    <div style="height: 100px; background: rgba(0,0,0,0.04); border-radius: 1rem; display:flex; align-items:center; justify-content:center;">📢 Responsive Ad Placeholder</div>
+  </div>
+
+  <footer style="text-align: center; margin-top: 3rem; padding: 1rem; opacity:0.8;">
+    <p>© 2025 SEO Score Checker Tool | Free website audit & optimization insights</p>
+  </footer>
+</div>
+<div id="toastMsg" class="toast-notify">Copied!</div>
+
+<script>
+  // particles background
+  function createParticles() {
+    const container = document.getElementById('particles');
+    for (let i=0;i<45;i++) {
+      const p = document.createElement('div');
+      p.classList.add('particle');
+      const size = Math.random() * 8 + 2;
+      p.style.width = size+'px';
+      p.style.height = size+'px';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = 15 + Math.random() * 20 + 's';
+      p.style.animationDelay = Math.random() * 10 + 's';
+      p.style.opacity = Math.random() * 0.4;
+      container.appendChild(p);
+    }
+  }
+  createParticles();
+
+  // DOM elements
+  const titleInput = document.getElementById('titleInput');
+  const metaDesc = document.getElementById('metaDesc');
+  const keywordsInput = document.getElementById('keywords');
+  const urlInput = document.getElementById('websiteUrl');
+  const contentWords = document.getElementById('contentWords');
+  const analyzeBtn = document.getElementById('analyzeBtn');
+  // score elements
+  const scoreCircle = document.getElementById('scoreCircle');
+  const scoreTextSpan = document.getElementById('scoreText');
+  const gradeLabel = document.getElementById('gradeLabel');
+  function updateCircle(percent) {
+    const circumference = 490;
+    const offset = circumference - (percent / 100) * circumference;
+    scoreCircle.style.strokeDashoffset = offset;
+  }
+  // storage
+  let history = JSON.parse(localStorage.getItem('seoHistory')) || [];
+  let currentScoreObj = null;
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastMsg');
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+  }
+
+  // scoring engine
+  function computeScore(title, meta, keywords, url, wordCount) {
+    let titleScore = 0;
+    let titleLen = title.length;
+    if (titleLen >= 30 && titleLen <= 60) titleScore = 20;
+    else if (titleLen > 10 && titleLen < 30) titleScore = 14;
+    else if (titleLen >= 60 && titleLen <= 70) titleScore = 10;
+    else if (titleLen > 0) titleScore = 6;
+    else titleScore = 0;
+    // Meta description
+    let metaScore = 0;
+    let metaLen = meta.length;
+    if (metaLen >= 120 && metaLen <= 160) metaScore = 20;
+    else if (metaLen >= 70 && metaLen < 120) metaScore = 14;
+    else if (metaLen > 0 && metaLen < 70) metaScore = 8;
+    else if (metaLen === 0) metaScore = 0;
+    else if (metaLen > 160) metaScore = 6;
+    // keyword optimization (simulate density using title + meta)
+    let kwScore = 0;
+    let kwList = keywords.split(',').map(k => k.trim().toLowerCase()).filter(k=>k);
+    let combinedText = (title + ' ' + meta).toLowerCase();
+    let matched = 0;
+    kwList.forEach(kw => { if(kw && combinedText.includes(kw)) matched++; });
+    let ratio = kwList.length ? matched/kwList.length : 0;
+    if(kwList.length===0) kwScore = 5;
+    else if(ratio >= 0.6) kwScore = 20;
+    else if(ratio >= 0.3) kwScore = 14;
+    else kwScore = 6;
+    // content quality
+    let contentScore = 0;
+    let words = wordCount || 0;
+    if(words >= 1000) contentScore = 20;
+    else if(words >= 600) contentScore = 15;
+    else if(words >= 300) contentScore = 10;
+    else if(words > 0) contentScore = 5;
+    else contentScore = 0;
+    // technical checks: https & valid url & title & meta not empty
+    let techScore = 0;
+    let isHttps = url.trim().toLowerCase().startsWith('https://');
+    let urlValid = url.trim().length>0 && (url.includes('.') || url.includes('localhost'));
+    if(titleLen>0 && metaLen>0) techScore+=5;
+    if(isHttps) techScore+=8;
+    if(urlValid) techScore+=4;
+    if(title.includes(' ')) techScore+=3;
+    techScore = Math.min(20, techScore);
+    let total = titleScore + metaScore + kwScore + contentScore + techScore;
+    total = Math.min(100, total);
+    return { total, breakdown: { titleScore, metaScore, kwScore, contentScore, techScore } };
+  }
+
+  function generateReport(title, meta, keywords, url, wordCount, scores) {
+    const total = scores.total;
+    let grade = total <= 40 ? 'Poor' : (total <= 70 ? 'Average' : 'Excellent');
+    let strengths = [], weaknesses = [];
+    if(scores.breakdown.titleScore>=15) strengths.push('✅ Great title length (30-60 chars)');
+    else weaknesses.push('❌ Title length not optimal, aim for 30-60 characters.');
+    if(scores.breakdown.metaScore>=15) strengths.push('✅ Meta description well optimized (120-160 chars)');
+    else weaknesses.push('❌ Meta description length: improve between 120-160 characters.');
+    if(scores.breakdown.kwScore>=14) strengths.push('✅ Keywords found in title/meta');
+    else weaknesses.push('⚠️ Include primary keywords in title and meta description.');
+    if(wordCount>=600) strengths.push('📄 Good content length, helpful for SEO');
+    else weaknesses.push(`📉 Content only ${wordCount} words, aim for 600+ words.`);
+    if(url.includes('https')) strengths.push('🔒 HTTPS secured');
+    else weaknesses.push('🌐 Enable HTTPS for security & SEO boost.');
+    let reportHtml = `<p><strong>SEO Grade:</strong> ${grade} (${total}/100)</p><ul>`;
+    strengths.forEach(s=>reportHtml+=`<li>${s}</li>`);
+    weaknesses.forEach(w=>reportHtml+=`<li>${w}</li>`);
+    reportHtml+=`</ul><p><strong>Technical:</strong> ${scores.breakdown.techScore}/20</p>`;
+    return reportHtml;
+  }
+
+  function generateSuggestions(title, meta, keywords, wordCount, totalScore) {
+    let suggestions = [];
+    if(title.length<30) suggestions.push('📌 Improve title: use 30–60 characters and include focus keyword.');
+    if(title.length>60) suggestions.push('✂️ Shorten title under 60 characters for better display.');
+    if(meta.length<120) suggestions.push('✍️ Expand meta description to 120-160 characters with compelling copy.');
+    if(meta.length>160) suggestions.push('🔪 Trim meta description under 160 characters.');
+    let kwArr = keywords.split(',').map(k=>k.trim()).filter(k=>k);
+    if(kwArr.length===0) suggestions.push('🏷️ Add keywords comma-separated to improve relevance.');
+    if(wordCount<600) suggestions.push('📖 Increase content to at least 600–1000 words for better ranking.');
+    if(totalScore<70) suggestions.push('⚡ Optimize page speed and add internal links.');
+    suggestions.push('📱 Ensure mobile responsiveness & use heading tags (H1-H3).');
+    if(totalScore<50) suggestions.push('🔄 Re-evaluate meta tags, add alt text to images.');
+    return suggestions.map(s=>`• ${s}`).join('<br>');
+  }
+
+  function updatePreview(title, meta, url) {
+    document.getElementById('previewTitle').innerText = title || 'Your SEO optimized Title';
+    let cleanUrl = url.trim() || 'https://yourdomain.com';
+    document.getElementById('previewUrl').innerText = cleanUrl.length>50 ? cleanUrl.substring(0,50)+'...' : cleanUrl;
+    document.getElementById('previewDesc').innerText = meta || 'Write an attractive meta description under 160 characters.';
+  }
+
+  function refreshHistoryUI() {
+    const historyDiv = document.getElementById('historyList');
+    if(history.length===0) { historyDiv.innerHTML = '<em>No history yet. Analyze a website!</em>'; return; }
+    historyDiv.innerHTML = '';
+    history.slice(-5).reverse().forEach((item, idx) => {
+      const chip = document.createElement('button');
+      chip.className = 'btn-outline';
+      chip.style.padding = '0.5rem 1rem';
+      chip.style.fontSize = '0.8rem';
+      chip.innerText = `${item.title.substring(0,25)} (${item.score})`;
+      chip.onclick = ()=>{
+        titleInput.value = item.title;
+        metaDesc.value = item.meta;
+        keywordsInput.value = item.keywords;
+        urlInput.value = item.url;
+        contentWords.value = item.words;
+        performAnalysis(true);
+      };
+      historyDiv.appendChild(chip);
+    });
+  }
+
+  function saveToHistory(title, meta, keywords, url, words, total) {
+    const newEntry = { title, meta, keywords, url, words, score: total, timestamp: Date.now() };
+    history.unshift(newEntry);
+    if(history.length>5) history.pop();
+    localStorage.setItem('seoHistory', JSON.stringify(history));
+    refreshHistoryUI();
+  }
+
+  function performAnalysis(skipSave=false) {
+    const title = titleInput.value.trim();
+    const meta = metaDesc.value.trim();
+    const keywords = keywordsInput.value.trim();
+    const url = urlInput.value.trim();
+    const words = parseInt(contentWords.value) || 0;
+    // validations
+    if(!title) { showToast('❌ Please enter Website Title'); return; }
+    if(!meta) { showToast('❌ Enter Meta Description'); return; }
+    const scores = computeScore(title, meta, keywords, url, words);
+    currentScoreObj = scores;
+    updateCircle(scores.total);
+    scoreTextSpan.innerText = scores.total;
+    let gradeText = scores.total <=40 ? 'Poor' : (scores.total<=70 ? 'Average' : 'Excellent');
+    gradeLabel.innerText = gradeText + ` (${scores.total})`;
+    // update breakdown bars
+    document.getElementById('titleScore').innerText = scores.breakdown.titleScore;
+    document.getElementById('titleProg').value = scores.breakdown.titleScore;
+    document.getElementById('metaScore').innerText = scores.breakdown.metaScore;
+    document.getElementById('metaProg').value = scores.breakdown.metaScore;
+    document.getElementById('kwScore').innerText = scores.breakdown.kwScore;
+    document.getElementById('kwProg').value = scores.breakdown.kwScore;
+    document.getElementById('contScore').innerText = scores.breakdown.contentScore;
+    document.getElementById('contProg').value = scores.breakdown.contentScore;
+    document.getElementById('techScore').innerText = scores.breakdown.techScore;
+    document.getElementById('techProg').value = scores.breakdown.techScore;
+    // report & suggestions
+    const reportHtml = generateReport(title, meta, keywords, url, words, scores);
+    document.getElementById('analysisReport').innerHTML = reportHtml;
+    const suggHtml = generateSuggestions(title, meta, keywords, words, scores.total);
+    document.getElementById('suggestionsList').innerHTML = suggHtml;
+    updatePreview(title, meta, url);
+    if(!skipSave) saveToHistory(title, meta, keywords, url, words, scores.total);
+    // url validation hint
+    let urlValidMsg = '';
+    if(url && !url.startsWith('https://')) urlValidMsg = '⚠️ Consider HTTPS for better security';
+    document.getElementById('urlValidation').innerText = urlValidMsg;
+    // character hints
+    document.getElementById('titleCharCount').innerText = `${title.length}/70 chars`;
+    if(title.length<30) document.getElementById('titleHint').innerHTML = '💡 Ideal length 30-60 characters';
+    else if(title.length<=60) document.getElementById('titleHint').innerHTML = '✅ Great title length!';
+    else document.getElementById('titleHint').innerHTML = '⚠️ Title too long, shorten to 60 chars.';
+    document.getElementById('descCharCount').innerText = `${meta.length}/160 chars`;
+  }
+
+  // copy report
+  function copyFullReport() {
+    if(!currentScoreObj) { showToast('Analyze first'); return; }
+    let reportText = `SEO SCORE REPORT\nScore: ${currentScoreObj.total}/100\nGrade: ${currentScoreObj.total<=40?'Poor':(currentScoreObj.total<=70?'Average':'Excellent')}\nBreakdown:\nTitle:${currentScoreObj.breakdown.titleScore}/20\nMeta:${currentScoreObj.breakdown.metaScore}/20\nKeywords:${currentScoreObj.breakdown.kwScore}/20\nContent:${currentScoreObj.breakdown.contentScore}/20\nTechnical:${currentScoreObj.breakdown.techScore}/20\n`;
+    showToast('Report copied to clipboard');
+    navigator.clipboard.writeText(reportText);
+  }
+  function copySuggestions() {
+    const suggDiv = document.getElementById('suggestionsList').innerText;
+    if(suggDiv.includes('Waiting')) showToast('Analyze first');
+    else { navigator.clipboard.writeText(suggDiv); showToast('Suggestions copied'); }
+  }
+  function downloadTxt() {
+    if(!currentScoreObj) { showToast('No data. Run analysis'); return; }
+    let content = `SEO SCORE CHECKER REPORT\nDate: ${new Date().toLocaleString()}\nScore: ${currentScoreObj.total}/100\n\n--- Full Details ---\nTitle: ${titleInput.value}\nMeta: ${metaDesc.value}\nKeywords: ${keywordsInput.value}\nURL: ${urlInput.value}\nContent words: ${contentWords.value}\nBreakdown: Title ${currentScoreObj.breakdown.titleScore}, Meta ${currentScoreObj.breakdown.metaScore}, Keywords ${currentScoreObj.breakdown.kwScore}, Content ${currentScoreObj.breakdown.contentScore}, Technical ${currentScoreObj.breakdown.techScore}\nSuggestions:\n${document.getElementById('suggestionsList').innerText.replace(/<br>/g,'\n')}`;
+    const blob = new Blob([content], {type: 'text/plain'});
+    const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='seo_report.txt'; a.click(); URL.revokeObjectURL(a.href);
+    showToast('Report downloaded');
+  }
+  function clearHistory() { history = []; localStorage.removeItem('seoHistory'); refreshHistoryUI(); showToast('History cleared'); }
+
+  // char counters
+  titleInput.addEventListener('input', ()=>{
+    document.getElementById('titleCharCount').innerText = `${titleInput.value.length}/70`;
+    if(titleInput.value.length>=30 && titleInput.value.length<=60) document.getElementById('titleHint').innerHTML='✅ Great length!';
+    else if(titleInput.value.length>60) document.getElementById('titleHint').innerHTML='⚠️ Title >60 characters';
+    else document.getElementById('titleHint').innerHTML='💡 Aim 30-60 characters.';
+  });
+  metaDesc.addEventListener('input', ()=>document.getElementById('descCharCount').innerText = `${metaDesc.value.length}/160`);
+  // dark mode
+  const darkToggle = document.getElementById('darkModeToggle');
+  if(localStorage.getItem('darkMode') === 'enabled') document.body.classList.add('dark');
+  darkToggle.onclick = ()=>{
+    document.body.classList.toggle('dark');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark') ? 'enabled' : 'disabled');
+  };
+  analyzeBtn.onclick = () => performAnalysis(false);
+  document.getElementById('copyReportBtn').onclick = copyFullReport;
+  document.getElementById('copySuggestBtn').onclick = copySuggestions;
+  document.getElementById('downloadTxtBtn').onclick = downloadTxt;
+  document.getElementById('clearHistoryBtn').onclick = clearHistory;
+  refreshHistoryUI();
+  // initial defaults preview
+  updatePreview('Enter website title', 'Meta description will appear here', 'https://example.com');
+  // set initial char hints
+  document.getElementById('titleCharCount').innerText='0/70';
+  document.getElementById('descCharCount').innerText='0/160';
+</script>
+</body>
+</html>
