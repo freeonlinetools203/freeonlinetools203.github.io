@@ -38,7 +38,7 @@ const toolsDatabase = {
         name: "🎲 Fun Tools",
         tools: [
             "Spin The Wheel", "Yes/No Wheel", "Random Name Picker",
-            "Random Number Generator", "Prize Wheel", "Task Spinner",
+            "Random Number Generator", "Prize Wheel", 
             "Random Color Picker", "Decision Roulette"
         ]
     },
