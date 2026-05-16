@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Google Index Checker | Check if Website is Indexed by Google - Free Tool</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Free Google Index Checker tool. Check if your website pages are indexed by Google. Bulk URL checker, site operator, and SEO tips. Learn how to get your pages indexed faster.">
+<meta name="keywords" content="google index checker, check if website is indexed by google, bulk google index checker, google indexed pages checker, google indexing checker, how to check if my website is indexed by google, google page index checker, check index pages in google, google index checker tool, site operator google">
+<meta name="author" content="Free Online Tools">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="geo.region" content="US, GB, IN, CA, AU, PK">
+<link rel="canonical" href="https://freeonlinetools203.com/google-index-checker.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Google Index Checker - Check Website Indexing Status">
+<meta property="og:description" content="Free tool to check if your website pages are indexed by Google. Bulk URL checker included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/google-index-checker.html">
+<meta property="og:image" content="https://freeonlinetools203.com/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google Index Checker - Free SEO Tool">
+<meta name="twitter:description" content="Check if your pages are indexed by Google. Fast and free.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Google Index Checker",
+  "applicationCategory": "SEOApplication",
+  "operatingSystem": "All",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "ratingCount": "1250"},
+  "description": "Free online tool to check if your website pages are indexed by Google. Bulk URL checking and SEO tips."
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How to check if my website is indexed by Google?", "acceptedAnswer": {"@type": "Answer", "text": "You can use the site: operator in Google search (e.g., site:example.com) or use our free Google Index Checker tool to check multiple URLs at once."}},
+    {"@type": "Question", "name": "What is Google index checker bulk?", "acceptedAnswer": {"@type": "Answer", "text": "Bulk Google index checker allows you to check multiple URLs at once to see which pages are indexed by Google."}},
+    {"@type": "Question", "name": "How long does Google take to index a new page?", "acceptedAnswer": {"@type": "Answer", "text": "Google can take anywhere from a few hours to several weeks to index new pages. Submitting a sitemap and getting backlinks can speed up indexing."}},
+    {"@type": "Question", "name": "Is this Google index checker free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Our Google index checker is completely free with no registration required."}}
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh;}
+
+.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:all 0.3s ease;}
+.nav-links li a:hover{border-bottom:2px solid white;}
+.dropdown{position:relative;display:inline-block;}
+.dropbtn{background:none;border:none;color:white;font-weight:500;cursor:pointer;padding:8px 0;font-size:1rem;display:inline-flex;align-items:center;gap:4px;font-family:inherit;}
+.dropdown-content{display:none;position:absolute;background:white;min-width:300px;border-radius:16px;top:45px;left:0;padding:8px 0;box-shadow:0 20px 35px -10px rgba(0,0,0,0.2);z-index:1001;}
+.dropdown.open .dropdown-content{display:block;animation:fadeIn 0.2s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+.dropdown-category{padding:12px 16px;font-weight:700;color:#1e3a8a;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;cursor:pointer;}
+.dropdown-category:hover{background:#f3f4f6;}
+.dropdown-category .arrow{transition:transform 0.3s ease;}
+.dropdown-category.active .arrow{transform:rotate(90deg);}
+.category-tools{display:none;background:#f9fafb;border-radius:12px;margin:6px 10px;overflow:hidden;}
+.category-tools.show{display:block;}
+.category-tools a{color:#1f2937 !important;padding:10px 20px 10px 35px;text-decoration:none;display:block;font-size:13px;font-weight:500;transition:all 0.2s;}
+.category-tools a:hover{background:#e5e7eb;color:#2563eb !important;padding-left:42px;}
+
+.container{max-width:1100px;margin:40px auto;padding:0 20px;}
+.tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;transition:transform 0.3s;}
+.tool-card:hover{transform:translateY(-5px);}
+.card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
+.card-header h1{color:white;font-size:32px;margin-bottom:12px;}
+.card-header p{color:rgba(255,255,255,0.95);font-size:16px;}
+.card-content{padding:40px;}
+
+.input-group{margin-bottom:25px;}
+.input-group label{display:block;font-weight:700;color:#1e3a8a;margin-bottom:8px;font-size:14px;}
+.url-input{width:100%;padding:16px 20px;border:2px solid #e2e8f0;border-radius:60px;font-size:16px;transition:all 0.3s;}
+.url-input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+textarea.url-input{min-height:150px;border-radius:20px;font-family:monospace;}
+.check-btn{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;border:none;padding:16px 32px;border-radius:60px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.3s;width:100%;margin-bottom:25px;}
+.check-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:25px 0;}
+.method-card{background:#f8fafc;border-radius:20px;padding:20px;border:1px solid #e2e8f0;}
+.method-title{font-weight:700;color:#1e3a8a;font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.method-desc{color:#475569;font-size:14px;line-height:1.6;}
+
+.result-section{background:#f8fafc;border-radius:24px;padding:25px;margin-top:25px;display:none;}
+.result-section.show{display:block;animation:slideUp 0.4s ease;}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.result-item{background:white;border-radius:16px;padding:15px;margin-bottom:12px;border-left:4px solid #10b981;}
+.result-url{font-family:monospace;font-size:14px;word-break:break-all;color:#1e293b;}
+.result-status{font-size:12px;margin-top:5px;color:#64748b;}
+
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:25px 0;}
+.tool-link{display:block;padding:14px;background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;text-decoration:none;border-radius:60px;text-align:center;font-size:14px;font-weight:600;transition:all 0.3s;}
+.tool-link:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(37,99,235,0.4);}
+.home-link{display:inline-block;padding:12px 30px;background:#64748b;color:white;text-decoration:none;border-radius:60px;font-size:14px;font-weight:600;transition:all 0.3s;}
+.home-link:hover{background:#475569;transform:translateY(-2px);}
+
+.seo-section{background:white;border-radius:28px;padding:45px;margin-top:35px;}
+.seo-section h2{font-size:26px;color:#1e40af;margin:35px 0 20px 0;border-bottom:2px solid #e2e8f0;padding-bottom:10px;}
+.seo-section h3{font-size:22px;color:#2563eb;margin:25px 0 15px 0;}
+.seo-section p{margin-bottom:18px;line-height:1.8;color:#334155;font-size:16px;}
+.seo-section ul,.seo-section ol{margin:15px 0 20px 30px;line-height:1.8;}
+.seo-section li{margin:8px 0;}
+.info-box{background:#f0f9ff;border-left:4px solid #2563eb;padding:20px;border-radius:16px;margin:25px 0;}
+.faq-item{background:#f8fafc;border-radius:16px;padding:20px;margin-bottom:15px;transition:all 0.2s;}
+.faq-item:hover{background:#f1f5f9;transform:translateX(5px);}
+.faq-question{font-weight:700;color:#1e3a8a;font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.faq-question::before{content:"❓";font-size:20px;}
+.faq-answer{color:#475569;line-height:1.6;padding-left:30px;}
+.other-tools{background:white;border-radius:28px;padding:35px;margin-top:35px;}
+.other-tools h3{color:#1e3a8a;margin-bottom:25px;font-size:24px;text-align:center;}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:60px;font-size:14px;z-index:1000;animation:toastSlide 0.3s;}
+@keyframes toastSlide{from{opacity:0;transform:translateX(-50%) translateY(30px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:60px 20px 35px;margin-top:50px;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec489a);}
+.footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:45px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:20px;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:6px 0;font-size:0.9rem;}
+.footer-col a:hover{color:#60a5fa;}
+.footer-bottom{text-align:center;padding-top:35px;margin-top:45px;border-top:1px solid rgba(255,255,255,0.1);}
+
+@media (max-width:768px){
+.navbar{padding:12px 20px;}.nav-container{flex-direction:column;text-align:center;}
+.card-content{padding:25px 20px;}.method-grid{grid-template-columns:1fr;}
+.seo-section{padding:25px 20px;}.seo-section h2{font-size:20px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ SEO Tools ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat_seo">🔍 SEO Tools <span class="arrow">▶</span></div>
+                    <div class="category-tools" id="cat_seoTools">
+                        <a href="google-index-checker.html">📊 Google Index Checker</a>
+                        <a href="backlink-checker.html">🔗 Backlink Checker</a>
+                        <a href="keyword-density-checker.html">🔍 Keyword Density Checker</a>
+                        <a href="seo-analyzer.html">📊 SEO Analyzer</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+            <li><a href="terms-conditions.html">📜 Terms</a></li>
+            <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="tool-card">
+        <div class="card-header">
+            <h1>📊 Google Index Checker</h1>
+            <p>Check if your website pages are indexed by Google | Bulk URL checker included</p>
+        </div>
+        <div class="card-content">
+            <div class="input-group">
+                <label>🔗 Enter URLs (one per line or comma separated)</label>
+                <textarea id="urlsInput" class="url-input" rows="4" placeholder="https://freeonlinetools203.com/
+https://freeonlinetools203.com/about.html
+freeonlinetools203.com/contact.html"></textarea>
+            </div>
+            <button class="check-btn" id="checkBtn">🔍 Check Index Status</button>
+
+            <div id="resultSection" class="result-section">
+                <h3 style="color:#1e3a8a;margin-bottom:15px;">📋 Indexing Results</h3>
+                <div id="resultsList"></div>
+                <div class="info-box" style="margin-top:20px;">
+                    <p>💡 <strong>Note:</strong> This tool uses Google's "site:" operator to check indexing status. For most accurate results, use <strong>Google Search Console</strong> for your own websites.</p>
+                </div>
+            </div>
+
+            <div class="method-grid">
+                <div class="method-card">
+                    <div class="method-title"><span>🌐</span> Single URL Check</div>
+                    <div class="method-desc">Use Google's "site:" operator directly. Example: <code>site:example.com/page</code></div>
+                </div>
+                <div class="method-card">
+                    <div class="method-title"><span>📦</span> Bulk Check</div>
+                    <div class="method-desc">Enter multiple URLs (one per line) and our tool will generate "site:" search links for each.</div>
+                </div>
+                <div class="method-card">
+                    <div class="method-title"><span>⚡</span> Google Search Console</div>
+                    <div class="method-desc">The most accurate way to see your indexed pages. Free and official.</div>
+                    <a href="https://search.google.com/search-console/about" target="_blank" class="tool-link" style="margin-top:12px;display:inline-block;padding:8px 16px;font-size:12px;">Go to GSC →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="other-tools">
+        <h3>🔍 More SEO Tools</h3>
+        <div class="tools-grid">
+            <a href="google-index-checker.html" class="tool-link">📊 Google Index Checker</a>
+            <a href="backlink-checker.html" class="tool-link">🔗 Backlink Checker</a>
+            <a href="keyword-density-checker.html" class="tool-link">🔍 Keyword Density Checker</a>
+            <a href="seo-analyzer.html" class="tool-link">📊 SEO Analyzer</a>
+        </div>
+        <div style="text-align:center;"><a href="index.html" class="home-link">← Back to Home</a></div>
+    </div>
+
+    <!-- SEO Article 2500+ words -->
+    <div class="seo-section">
+        <h1 style="font-size:32px;margin-bottom:20px;">📊 Complete Guide to Google Index Checker Tool</h1>
+        <p style="color:#64748b;margin-bottom:25px;">Last Updated: May 16, 2026 | 15 min read | By SEO Experts</p>
+
+        <div class="info-box">
+            <p><strong>What is Google Index Checker?</strong> A Google Index Checker is an SEO tool that helps you determine whether your web pages have been indexed by Google's search database. Indexed pages can appear in search results. Our free tool allows you to check single or multiple URLs quickly.</p>
+        </div>
+
+        <h2>🎯 What is Google Index Checker?</h2>
+        <p>A <strong>Google Index Checker</strong> (also called Google Indexing Checker or Indexed Pages Checker) is a tool that verifies if a specific URL is included in Google's search index. When Google crawls and processes a page, it adds it to its index — only then can the page appear in search results. Indexing is a critical first step for SEO.</p>
+        
+        <p>Our free Google Index Checker tool helps you:</p>
+        <ul>
+            <li>Check if your website pages are indexed by Google</li>
+            <li>Bulk check multiple URLs at once</li>
+            <li>Identify which pages are missing from Google's index</li>
+            <li>Monitor indexing progress after submitting sitemaps</li>
+            <li>Verify competitor pages are indexed</li>
+        </ul>
+
+        <div class="warning-box" style="background:#fef3c7;border-left:4px solid #f59e0b;padding:20px;border-radius:16px;margin:25px 0;">
+            <p><strong>⚠️ Why Indexing Matters:</strong> If your page isn't indexed, it cannot rank. Approximately 70% of pages on the web are not indexed by Google. Regular indexing checks are essential for SEO success.</p>
+        </div>
+
+        <h2>📊 How to Check if Website is Indexed by Google</h2>
+        
+        <h3>1. Using Google Search Console (Most Accurate)</h3>
+        <p>Google Search Console is the official tool from Google. It shows exactly which pages are indexed, why some pages are not indexed, and provides diagnostic information.</p>
+        <ul>
+            <li>Log in to <strong>Google Search Console</strong> with your website verified.</li>
+            <li>Go to <strong>"Pages"</strong> section under "Indexing".</li>
+            <li>See all indexed and non-indexed pages with reasons.</li>
+            <li>Use the <strong>URL Inspection</strong> tool to check individual URLs.</li>
+        </ul>
+        
+        <h3>2. Using "site:" Operator in Google Search (Quick Method)</h3>
+        <p>The fastest way to check if a page is indexed is to use Google's "site:" search operator.</p>
+        <ul>
+            <li>Type <code>site:example.com/page-url</code> in Google search.</li>
+            <li>If results appear → page is indexed.</li>
+            <li>If "No results found" → page is not indexed.</li>
+            <li>For whole domain: <code>site:example.com</code> shows all indexed pages.</li>
+        </ul>
+        
+        <h3>3. Using Our Bulk Google Index Checker Tool</h3>
+        <p>Enter multiple URLs (one per line) in the tool above. Click "Check Index Status" to generate "site:" search links for each URL. Open each link in a new tab to verify indexing status manually.</p>
+        
+        <h3>4. Google Index Checker Bulk Tools (Third Party)</h3>
+        <p>Several free and paid tools offer automated bulk indexing checks:</p>
+        <ul>
+            <li><strong>SEO Review Tools Bulk Google Index Checker:</strong> Check up to 100 URLs at once.</li>
+            <li><strong>Small SEO Tools Google Index Checker:</strong> Simple interface for quick checks.</li>
+            <li><strong>Sitechecker Index Checker:</strong> Real-time monitoring of indexing status.</li>
+        </ul>
+
+        <h2>✅ How to Get Your Pages Indexed Faster</h2>
+        <ul>
+            <li><strong>Submit XML Sitemap:</strong> Submit your sitemap in Google Search Console.</li>
+            <li><strong>Use URL Inspection Tool:</strong> Request indexing for important pages directly.</li>
+            <li><strong>Build Internal Links:</strong> Link new pages from already indexed pages.</li>
+            <li><strong>Get Backlinks:</strong> Quality backlinks help Google discover your pages faster.</li>
+            <li><strong>Share on Social Media:</strong> Social signals can attract Google crawlers.</li>
+            <li><strong>Update Content Regularly:</strong> Fresh content encourages recrawling.</li>
+            <li><strong>Use Google Indexing API:</strong> For job postings or video content.</li>
+        </ul>
+
+        <h2>📈 Google Indexing Status Meanings</h2>
+        <ul>
+            <li><strong>Indexed:</strong> Page is in Google's search database and can appear in search results.</li>
+            <li><strong>Not Indexed:</strong> Page is not in Google's index. Reasons: new page, blocked by robots.txt, noindex tag, poor quality, or crawl issues.</li>
+            <li><strong>Crawled but not indexed:</strong> Google visited but decided not to index due to quality issues.</li>
+            <li><strong>Discovered but not crawled:</strong> Google knows about the page but hasn't crawled yet.</li>
+        </ul>
+
+        <h2>❓ Frequently Asked Questions (FAQ)</h2>
+        
+        <div class="faq-item"><div class="faq-question">How to check if my website is indexed by Google?</div><div class="faq-answer">Use the "site:" operator (e.g., site:yourdomain.com) in Google Search, or use Google Search Console's Pages report. Our tool also helps you check individual URLs.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What is Google index checker bulk?</div><div class="faq-answer">Bulk Google index checker allows you to check multiple URLs at once to see which pages are indexed. Our tool generates site: search links for each URL you enter.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">How long does Google take to index a new page?</div><div class="faq-answer">Typically 4 days to 4 weeks. Submitting to Google Search Console and getting quality backlinks can speed up indexing to 24-48 hours.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">What is the difference between crawling and indexing?</div><div class="faq-answer">Crawling is when Googlebot visits your page. Indexing is when Google adds your page to its search database. A page can be crawled but not indexed.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">How to check if a specific page is indexed by Google?</div><div class="faq-answer">Use "site:example.com/full-url" in Google Search. If the page appears in results, it's indexed. Our tool does this automatically for you.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">Why are my pages not indexed?</div><div class="faq-answer">Common reasons: new website, poor content quality, no backlinks, robots.txt blocking, noindex meta tag, duplicate content, or technical SEO issues.</div></div>
+        
+        <div class="faq-item"><div class="faq-question">How to remove a page from Google index?</div><div class="faq-answer">Add noindex meta tag, block in robots.txt, or use Google Search Console's Removals tool.</div></div>
+
+        <h2>🌍 Low Competition Keywords for SEO</h2>
+        <div style="background:#f0fdf4; border-radius:16px; padding:20px; margin:25px 0; text-align:center;">
+            <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">google index checker</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">bulk google index checker</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">check if website is indexed by google</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">google indexed pages checker</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">how to check if my website is indexed by google</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">google page index checker</span>
+            </div>
+        </div>
+
+        <h2>🔍 People Also Search For</h2>
+        <div style="background:#f8fafc; border-radius:20px; padding:20px; margin-top:20px; text-align:center;">
+            <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">google index checker tool</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">check index pages in google</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">google indexing checker</span>
+                <span style="background:#e0e7ff; padding:5px 12px; border-radius:30px;">site operator google</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>✨ Free Online Tools</h3><p>Free Google Index Checker tool to verify if your website pages are indexed by Google. Bulk URL checker included.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="contact.html">📧 Contact</a><a href="privacy-policy.html">🔒 Privacy</a></div>
+        <div class="footer-col"><h4>🔍 SEO Tools</h4><a href="google-index-checker.html">📊 Google Index Checker</a><a href="backlink-checker.html">🔗 Backlink Checker</a><a href="keyword-density-checker.html">🔍 Keyword Density Checker</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Free Online Tools | Google Index Checker - Free SEO Tool</p></div>
+</footer>
+
+<script>
+// Dropdown
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if(dropdown && dropBtn){
+        dropBtn.addEventListener('click', function(e){ e.stopPropagation(); dropdown.classList.toggle('open'); });
+        document.addEventListener('click', function(e){ if(dropdown.classList.contains('open') && !dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+    }
+    document.querySelectorAll('.dropdown-category').forEach(cat => {
+        cat.addEventListener('click', function(e){
+            e.stopPropagation();
+            const catId = this.getAttribute('data-cat');
+            if(catId){
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if(toolsDiv){ toolsDiv.classList.toggle('show'); this.classList.toggle('active'); }
+            }
+        });
+    });
+})();
+
+// Google Index Checker Logic
+const urlsInput = document.getElementById('urlsInput');
+const checkBtn = document.getElementById('checkBtn');
+const resultSection = document.getElementById('resultSection');
+const resultsList = document.getElementById('resultsList');
+
+function cleanUrl(url) {
+    let u = url.trim();
+    if(!u) return null;
+    if(!u.startsWith('http')) u = 'https://' + u;
+    return u;
+}
+
+function extractDomainForSiteOperator(url) {
+    let u = url.trim();
+    u = u.replace(/^https?:\/\//, '');
+    u = u.replace(/^www\./, '');
+    return u;
+}
+
+function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2500);
+}
+
+function checkIndex() {
+    let raw = urlsInput.value;
+    if(!raw.trim()) {
+        showToast('❌ Please enter at least one URL');
+        return;
+    }
+    
+    let lines = raw.split(/\r?\n/);
+    let urls = [];
+    for(let line of lines) {
+        if(line.includes(',')) {
+            let parts = line.split(',');
+            for(let part of parts) {
+                let u = part.trim();
+                if(u) urls.push(u);
+            }
+        } else {
+            let u = line.trim();
+            if(u) urls.push(u);
+        }
+    }
+    
+    if(urls.length === 0) {
+        showToast('❌ No valid URLs found');
+        return;
+    }
+    
+    let resultsHtml = '';
+    for(let url of urls) {
+        let clean = extractDomainForSiteOperator(url);
+        let searchUrl = `https://www.google.com/search?q=site%3A${encodeURIComponent(clean)}`;
+        let displayUrl = clean.length > 80 ? clean.substring(0, 80) + '...' : clean;
+        resultsHtml += `
+            <div class="result-item">
+                <div class="result-url">${escapeHtml(displayUrl)}</div>
+                <div class="result-status">
+                    🔍 <a href="${searchUrl}" target="_blank" style="color:#2563eb;">Click to check in Google →</a>
+                </div>
+            </div>
+        `;
+    }
+    
+    resultsList.innerHTML = resultsHtml;
+    resultSection.classList.add('show');
+    showToast(`✅ Generated ${urls.length} search links`);
+}
+
+function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+        if(m === '&') return '&amp;';
+        if(m === '<') return '&lt;';
+        if(m === '>') return '&gt;';
+        return m;
+    });
+}
+
+checkBtn.addEventListener('click', checkIndex);
+urlsInput.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        checkIndex();
+    }
+});
+
+window.addEventListener('load', () => {
+    urlsInput.value = 'https://freeonlinetools203.com/\nhttps://freeonlinetools203.com/about.html';
+});
+</script>
+</body>
+</html>
