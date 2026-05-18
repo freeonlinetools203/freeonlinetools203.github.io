@@ -1,5 +1,5 @@
 // =========================================================================
-// CENTRALIZED TOOLS DATABASE (Saare Missing Tools Full Database Ke Saath Wapas Included!)
+// CENTRALIZED TOOLS DATABASE (Saare Tools Full Database Ke Saath)
 // =========================================================================
 const toolsDatabase = {
     catSeo: { 
@@ -78,155 +78,6 @@ function renderDashboard() {
     container.innerHTML = html;
 }
 
-// 2. CATEGORIES FILTER BAR GENERATION
-function renderCategoriesBar() {
-    const barContainer = document.getElementById('categoriesBarContainer');
-    if (!barContainer) return;
-
-    let html = `<div class="category-wrapper"><button class="cat-btn active" data-category="all">🌐 All Categories</button></div>`;
-    
-    for (const [key, category] of Object.entries(toolsDatabase)) {
-        html += `
-            <div class="category-wrapper">
-                <button class="cat-btn" data-category="${key}">${category.name.split(' ')[1] || category.name}</button>
-                <button class="cat-dropdown-btn" data-category="${key}">▶</button>
-            </div>`;
-    }
-    barContainer.innerHTML = html;
-    setupCategoryButtonsLogic();
-}
-
-// 3. HOME PAGE FILTER ACTION
-function filterDashboard(categoryId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        if (categoryId === 'all') {
-            section.style.display = 'block';
-        } else {
-            section.style.display = section.getAttribute('data-category') === categoryId ? 'block' : 'none';
-        }
-    });
-}
-
-// =========================================================================
-// NAVBAR & MOBILE FILTER WINDOW LOGIC
-// =========================================================================
-function setupNavbarLogic() {
-    const dropdown = document.getElementById('toolsDropdown');
-    const btn = document.getElementById('toolsBtn');
-    
-    if (btn && dropdown) {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdown.classList.toggle('open');
-        });
-    }
-
-    // Dropdown Categories Accordion inside Navbar
-    document.querySelectorAll('.dropdown-category').forEach(cat => {
-        cat.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const catId = this.getAttribute('data-cat');
-            if (catId) {
-                const toolsDiv = document.getElementById(catId + 'Tools');
-                if (toolsDiv) {
-                    const isActive = this.classList.contains('active');
-                    
-                    document.querySelectorAll('.dropdown-category').forEach(c => c.classList.remove('active'));
-                    document.querySelectorAll('.category-tools').forEach(t => t.classList.remove('show'));
-                    
-                    if (!isActive) {
-                        this.classList.add('active');
-                        toolsDiv.classList.add('show');
-                    }
-                }
-            }
-        });
-    });
-
-    // Global Click to Close Navbar Dropdown
-    document.addEventListener('click', (e) => {
-        if (dropdown && !dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-            document.querySelectorAll('.dropdown-category').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.category-tools').forEach(t => t.classList.remove('show'));
-        }
-    });
-}
-
-// Category Buttons Logic 
-function setupCategoryButtonsLogic() {
-    document.querySelectorAll('.cat-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const category = this.getAttribute('data-category');
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            filterDashboard(category);
-            closeFloatingDropdown(); 
-        });
-    });
-    
-    document.querySelectorAll('.cat-dropdown-btn').forEach(icon => {
-        icon.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const categoryId = this.getAttribute('data-category');
-            const categoryData = toolsDatabase[categoryId];
-            if (categoryData) {
-                openFloatingDropdown(categoryData);
-            }
-        });
-    });
-
-    handleFloatingDropdownActions();
-}
-
-// Open the floating mobile filter window
-function openFloatingDropdown(categoryData) {
-    const dropdown = document.getElementById('floatingDropdown');
-    const overlay = document.getElementById('dropdownOverlay') || createOverlay();
-    const titleSpan = document.getElementById('dropdownTitle');
-    const contentDiv = document.getElementById('floatingDropdownContent');
-    
-    if (dropdown && overlay && titleSpan && contentDiv) {
-        titleSpan.textContent = categoryData.name;
-        contentDiv.innerHTML = categoryData.tools.map(tool => `<a href="${getUrl(tool)}" class="floating-tool-item">🔧 ${tool}</a>`).join('');
-        
-        dropdown.classList.add('show');
-        overlay.classList.add('show');
-    }
-}
-
-function handleFloatingDropdownActions() {
-    const closeBtn = document.querySelector('.close-dropdown');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeFloatingDropdown);
-    }
-
-    const overlay = document.getElementById('dropdownOverlay');
-    if (overlay) {
-        overlay.addEventListener('click', closeFloatingDropdown);
-    }
-}
-
-function closeFloatingDropdown() {
-    const dropdown = document.getElementById('floatingDropdown');
-    const overlay = document.getElementById('dropdownOverlay');
-    if (dropdown) dropdown.classList.remove('show');
-    if (overlay) overlay.classList.remove('show');
-}
-
-function createOverlay() {
-    let overlay = document.getElementById('dropdownOverlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.id = 'dropdownOverlay';
-        overlay.className = 'dropdown-overlay';
-        document.body.appendChild(overlay);
-        overlay.addEventListener('click', closeFloatingDropdown);
-    }
-    return overlay;
-}
-
 // Footer links population
 function populateFooter() {
     const footerCol = document.getElementById('footerPopularTools');
@@ -245,9 +96,7 @@ function populateFooter() {
 // =========================================================================
 document.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
-    renderCategoriesBar();
     populateFooter();
-    createOverlay(); 
 
     // FETCH AND LOAD NAVBAR.HTML
     fetch("navbar.html")
@@ -259,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const placeholder = document.getElementById("navbar-placeholder");
             if (placeholder) {
                 placeholder.innerHTML = htmlContent;
-                setupNavbarLogic(); 
             }
         })
         .catch(err => console.error("Error loading navbar:", err));
