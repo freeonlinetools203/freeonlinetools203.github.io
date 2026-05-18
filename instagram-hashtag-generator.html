@@ -155,7 +155,14 @@
     </style>
 </head>
 <body>
- <?php include 'header-megamenu.php'; ?>
+<div id="megamenu-placeholder"></div>
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('megamenu-placeholder').innerHTML = data;
+        });
+</script>
 
 <div class="container">
     <div class="tool-card">
