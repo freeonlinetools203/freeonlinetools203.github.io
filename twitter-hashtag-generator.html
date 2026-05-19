@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Free X (Twitter) Hashtag Generator | Viral & Trending Hashtags 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Free X (Twitter) Hashtag Generator | Viral & Trending Hashtags</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Generate trending, viral, and SEO-friendly X (Twitter) hashtags instantly. Free tool for better reach, engagement, and growth on X/Twitter.">
-    <meta name="keywords" content="X hashtag generator, Twitter hashtag tool, trending hashtags, viral hashtags, SEO hashtags, X growth, Twitter growth">
+    <meta name="description" content="Free X (Twitter) hashtag generator – create trending, viral and SEO-friendly hashtags instantly. Boost your reach and engagement. 100% free, no signup required.">
+    <meta name="keywords" content="X hashtag generator, Twitter hashtag tool, trending hashtags, viral hashtags, SEO hashtags, X growth">
     <meta name="author" content="Free Online Tools">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://freeonlinetools203.com/x-twitter-hashtag-generator.html">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Free X (Twitter) Hashtag Generator | Boost Your Reach">
-    <meta property="og:description" content="Generate trending, viral, and SEO-friendly X hashtags instantly. Free tool for better engagement.">
+    <meta property="og:description" content="Generate trending, viral and SEO-friendly X hashtags instantly. Free tool for better engagement.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freeonlinetools203.com/x-twitter-hashtag-generator.html">
     
@@ -27,7 +27,7 @@
       gtag('config', 'G-EQ8DLY7HYN');
     </script>
     
-    <!-- Schema.org -->
+    <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,68 +47,13 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-dark: #000000;
-            --bg-card: rgba(22, 24, 28, 0.95);
-            --x-blue: #1d9bf0;
-            --x-gray: #71767b;
-            --x-dark-gray: #16181c;
-            --text-light: #e7e9ea;
-            --text-gray: #71767b;
-            --gradient-1: linear-gradient(135deg, #1d9bf0, #8b5cf6);
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Twitter', 'Helvetica Neue', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f3f4f6;
+            min-height: 100vh;
         }
 
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 40%, rgba(29, 155, 240, 0.08), transparent 60%),
-                        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.06), transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .floating-particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .particle {
-            position: absolute;
-            background: linear-gradient(135deg, #1d9bf0, #8b5cf6);
-            border-radius: 50%;
-            opacity: 0.2;
-            animation: float linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ========== NAVBAR ========== */
+        /* ========== NAVBAR (identical to Random Number Generator) ========== */
         .navbar {
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             padding: 15px 30px;
@@ -147,647 +92,697 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
+            padding: 8px 0;
             transition: all 0.3s ease;
         }
 
         .nav-links li a:hover {
-            color: #f0f0f0;
             border-bottom: 2px solid white;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        .dropdown { position: relative; display: inline-block; }
+        .dropbtn { background: none; border: none; color: white; font-weight: 500; cursor: pointer; padding: 8px 0; font-size: 1rem; display: inline-flex; align-items: center; gap: 4px; font-family: inherit; }
+        .dropdown-content { display: none; position: absolute; background: white; min-width: 280px; border-radius: 12px; top: 40px; left: 0; padding: 8px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 1001; }
+        .dropdown.open .dropdown-content { display: block; }
+        .dropdown-category { padding: 12px 16px; font-weight: 700; color: #1e3a8a; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; cursor: pointer; }
+        .category-tools { display: none; background: #f9fafb; border-radius: 8px; margin: 4px 8px; overflow: hidden; }
+        .category-tools.show { display: block; }
+        .category-tools a { color: #1f2937 !important; padding: 10px 20px 10px 32px; text-decoration: none; display: block; font-size: 14px; }
+        .category-tools a:hover { background: #e5e7eb; color: #2563eb !important; }
+
+        /* ========== MAIN CONTAINER ========== */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .dropbtn {
-            background: none;
-            border: none;
-            color: white;
-            font-weight: 500;
-            cursor: pointer;
-            padding: 8px 0;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
+        .tool-card {
             background: white;
-            min-width: 280px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            border-radius: 12px;
-            z-index: 1001;
-            top: 40px;
-            left: 0;
-            padding: 8px 0;
-        }
-
-        .dropdown.open .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-category {
-            cursor: pointer;
-            padding: 12px 16px;
-            font-weight: 700;
-            color: #1e3a8a;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .category-tools {
-            display: none;
-            background: #f9fafb;
-            border-radius: 8px;
-            margin: 4px 8px 8px 8px;
-            overflow: hidden;
-        }
-
-        .category-tools.show {
-            display: block;
-        }
-
-        .category-tools a {
-            color: #1f2937 !important;
-            padding: 10px 20px 10px 32px;
-            text-decoration: none;
-            display: block;
-            font-size: 14px;
-        }
-
-        /* Glass card */
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
             border-radius: 24px;
-            padding: 30px;
-            border: 1px solid rgba(29, 155, 240, 0.2);
-            transition: transform 0.3s;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             margin-bottom: 30px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .card-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .card-header h1 {
+            color: white;
+            font-size: 28px;
             margin-bottom: 10px;
         }
 
-        .search-box {
+        .card-header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+        }
+
+        .card-content {
+            padding: 35px;
+        }
+
+        /* Input Section (similar to range-section) */
+        .input-section {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .input-box {
             width: 100%;
-            padding: 18px 24px;
-            font-size: 1.1rem;
-            background: var(--x-dark-gray);
-            border: 2px solid rgba(29, 155, 240, 0.3);
-            border-radius: 60px;
-            color: var(--text-light);
+        }
+
+        .input-label {
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .keyword-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 14px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .keyword-input:focus {
             outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
         }
 
-        .search-box:focus {
-            border-color: var(--x-blue);
-            box-shadow: 0 0 20px rgba(29, 155, 240, 0.3);
-        }
-
-        .btn-primary {
-            background: var(--gradient-1);
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-weight: bold;
-            font-size: 1rem;
+        .generate-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             color: white;
+            border: none;
+            padding: 16px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 60px;
             cursor: pointer;
-            transition: 0.3s;
+            margin: 20px 0;
+            transition: all 0.3s ease;
         }
 
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(29, 155, 240, 0.4);
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
         }
 
-        .btn-secondary {
-            background: rgba(29, 155, 240, 0.1);
-            border: 1px solid rgba(29, 155, 240, 0.5);
-            padding: 10px 20px;
-            border-radius: 40px;
-            color: var(--text-light);
+        .result-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            border-radius: 24px;
+            padding: 25px;
+            text-align: center;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .result-card.animate {
+            animation: pop 0.5s ease-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.9); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .hashtags-display {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            word-break: break-word;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .action-btn {
+            flex: 1;
+            background: #f1f5f9;
+            border: none;
+            padding: 12px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a8a;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
+        .action-btn:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px);
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: #f9fafb;
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-align: center;
+            flex: 1;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Hashtag Categories Grid */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
 
         .category-card {
-            background: rgba(0, 0, 0, 0.6);
+            background: #f9fafb;
             border-radius: 20px;
             padding: 20px;
-            border-left: 4px solid var(--x-blue);
+            border-left: 4px solid #2563eb;
+            transition: transform 0.2s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .category-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 18px;
         }
 
         .hashtag-list {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 15px;
         }
 
         .hashtag-item {
-            background: linear-gradient(135deg, rgba(29, 155, 240, 0.2), rgba(139, 92, 246, 0.2));
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+            color: white;
             padding: 6px 14px;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 13px;
             cursor: pointer;
-            transition: 0.2s;
-            border: 1px solid rgba(29, 155, 240, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            transition: all 0.2s;
+            border: none;
         }
 
         .hashtag-item:hover {
-            background: var(--x-blue);
             transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
         }
 
-        .favorite-star {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .favorite-star:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        .stats-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .stat-card {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 12px 20px;
-            border-radius: 20px;
-            text-align: center;
-            flex: 1;
-        }
-
-        .trending-topics, .recent-list, .favorites-list {
+        .trending-topics, .recent-list {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
             margin-top: 15px;
         }
 
-        .trending-topic, .recent-item, .favorite-item {
-            background: rgba(29, 155, 240, 0.15);
+        .trending-topic, .recent-item {
+            background: #f1f5f9;
             padding: 8px 20px;
             border-radius: 40px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s;
+            color: #1e3a8a;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
         }
 
         .trending-topic:hover, .recent-item:hover {
-            background: var(--x-blue);
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            color: white;
             transform: translateY(-2px);
         }
 
-        .favorite-item {
-            background: var(--x-blue);
+        /* Article and Footer */
+        .article-section {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            margin-top: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            line-height: 1.8;
+            color: #374151;
         }
 
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--gradient-1);
-            padding: 12px 24px;
-            border-radius: 60px;
-            color: white;
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
+        .article-section h2 {
+            color: #1e3a8a;
+            font-size: 26px;
+            margin: 25px 0 15px;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 8px;
         }
 
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        .article-section h3 {
+            color: #2563eb;
+            font-size: 22px;
+            margin: 20px 0 12px;
         }
 
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: var(--x-blue);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
+        .article-section p {
+            margin-bottom: 16px;
         }
 
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 50px;
-            padding: 8px 16px;
-            cursor: pointer;
-            z-index: 1000;
+        .faq-item {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: #475569;
         }
 
         .home-link {
             display: inline-block;
-            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            padding: 12px 28px;
+            background: #6b7280;
             color: white;
             text-decoration: none;
-            padding: 12px 28px;
             border-radius: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .home-link:hover {
+            background: #4b5563;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 50px 20px 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+            margin-top: 25px;
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
         @media (max-width: 768px) {
-            .container { padding: 15px; }
-            h1 { font-size: 1.8rem; }
-        }
-
-        body.light-mode {
-            --bg-dark: #ffffff;
-            --bg-card: rgba(255, 255, 255, 0.95);
-            --x-dark-gray: #f5f5f5;
-            --text-light: #0f1419;
+            .container { padding: 15px; margin-top: 20px; }
+            .card-content { padding: 25px 20px; }
+            .stats-container { flex-direction: column; }
+            .categories-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="animated-bg"></div>
-    <div class="floating-particles" id="particles"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
-            <ul class="nav-links">
-                <li><a href="index.html">🏠 Home</a></li>
-                <li class="dropdown" id="toolsDropdown">
-                    <button class="dropbtn" id="toolsBtn">🛠️ All Categories ▼</button>
-                    <div class="dropdown-content" id="dropdownContent">
-                        <div class="dropdown-category" data-cat="cat1">📊 Popular Tools <span>▶</span></div>
-                        <div class="category-tools" id="cat1Tools">
-                            <a href="age-calculator.html">📅 Age Calculator</a>
-                            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-                        </div>
-                        <div class="dropdown-category" data-cat="cat_social">📱 Social Media <span>▶</span></div>
-                        <div class="category-tools" id="cat_socialTools">
-                            <a href="tiktok-hashtag-generator.html">🎵 TikTok Hashtag Generator</a>
-                            <a href="x-twitter-hashtag-generator.html">🐦 X Hashtag Generator</a>
-                        </div>
+<!-- ========== NAVBAR (EXACT SAME AS RANDOM NUMBER GENERATOR) ========== -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li class="dropdown" id="toolsDropdown">
+                <button class="dropbtn" id="toolsBtn">🛠️ All Categories ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-category" data-cat="cat1">📊 Popular Tools <span>▶</span></div>
+                    <div class="category-tools" id="cat1Tools">
+                        <a href="age-calculator.html">📅 Age Calculator</a>
+                        <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+                        <a href="random-number-generator.html">🔢 Random Number Generator</a>
                     </div>
-                </li>
-                <li><a href="about.html">ℹ️ About</a></li>
-            </ul>
-        </div>
-    </nav>
+                    <div class="dropdown-category" data-cat="cat_social">📱 Social Media <span>▶</span></div>
+                    <div class="category-tools" id="cat_socialTools">
+                        <a href="tiktok-hashtag-generator.html">🎵 TikTok Hashtag Generator</a>
+                        <a href="x-twitter-hashtag-generator.html">🐦 X Hashtag Generator</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="about.html">ℹ️ About</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <div class="container">
-        <div class="theme-toggle" id="themeToggle">🌙 Dark</div>
-        <div class="scroll-top" id="scrollTop">↑</div>
-
-        <!-- Hero -->
-        <div class="glass-card" style="text-align: center;">
+<div class="container">
+    <!-- Main Tool Card -->
+    <div class="tool-card">
+        <div class="card-header">
             <h1>🐦 X (Twitter) Hashtag Generator</h1>
-            <p style="color: var(--text-gray);">Generate trending, viral & SEO-friendly hashtags instantly for better reach</p>
+            <p>Generate trending, viral & SEO-friendly hashtags instantly for better X/Twitter reach</p>
         </div>
-
-        <!-- Tool Card -->
-        <div class="glass-card">
-            <input type="text" id="keywordInput" class="search-box" placeholder="Enter topic... e.g., AI news, crypto, gaming, business, marketing" autocomplete="off">
-            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
-                <button class="btn-primary" id="generateBtn">✨ Generate Hashtags</button>
-                <button class="btn-secondary" id="copyAllBtn">📋 Copy All</button>
-                <button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
+        <div class="card-content">
+            <div class="input-section">
+                <div class="input-box">
+                    <label class="input-label">📝 Enter Your Topic or Keyword</label>
+                    <input type="text" id="keywordInput" class="keyword-input" placeholder="e.g., AI news, crypto, gaming, business, marketing" autocomplete="off">
+                </div>
             </div>
+
+            <div class="result-card" id="resultCard">
+                <div class="hashtags-display" id="livePreview">Your hashtags will appear here...</div>
+            </div>
+
+            <button class="generate-btn" id="generateBtn">✨ Generate Hashtags</button>
+
+            <div class="action-buttons">
+                <button class="action-btn" id="copyAllBtn">📋 Copy All Hashtags</button>
+                <button class="action-btn" id="downloadBtn">💾 Download TXT</button>
+            </div>
+
             <div class="stats-container">
                 <div class="stat-card">📊 Total Hashtags: <span id="totalCount">0</span></div>
                 <div class="stat-card">📝 Total Characters: <span id="totalChars">0</span></div>
                 <div class="stat-card">✅ X Limit: 1-3 hashtags recommended</div>
             </div>
         </div>
-
-        <!-- Live Preview -->
-        <div class="glass-card">
-            <h3>🐦 Live Tweet Preview</h3>
-            <div id="livePreview" style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 20px; margin-top: 10px; word-break: break-all;">
-                Your hashtags will appear here...
-            </div>
-        </div>
-
-        <!-- Generated Results -->
-        <div id="resultsSection">
-            <h2>🔥 Generated Hashtags</h2>
-            <div class="categories-grid" id="categoriesGrid"></div>
-        </div>
-
-        <!-- Trending Topics -->
-        <div class="glass-card">
-            <h3>⚡ Trending X Topics</h3>
-            <div class="trending-topics" id="trendingTopics">
-                <div class="trending-topic">AI news</div>
-                <div class="trending-topic">crypto</div>
-                <div class="trending-topic">gaming</div>
-                <div class="trending-topic">business tips</div>
-                <div class="trending-topic">tech</div>
-                <div class="trending-topic">marketing</div>
-            </div>
-        </div>
-
-        <!-- Recent & Favorites -->
-        <div class="glass-card">
-            <h3>🕒 Recent Searches</h3>
-            <div id="recentSearches" class="recent-list"></div>
-            <h3 style="margin-top: 25px;">⭐ Favorite Hashtags</h3>
-            <div id="favoritesList" class="favorites-list"></div>
-        </div>
-
-        <!-- Back to Home -->
-        <div style="text-align: center; margin: 30px 0;">
-            <a href="index.html" class="home-link">🔘 Back to Home</a>
-        </div>
-
-        <footer style="text-align: center; padding: 30px 0; color: var(--text-gray);">
-            <p>© 2026 X (Twitter) Hashtag Generator | Free Online Tools</p>
-        </footer>
     </div>
 
-    <script>
-        // Particles
-        (function createParticles() {
-            const container = document.getElementById('particles');
-            for(let i = 0; i < 40; i++) {
-                const p = document.createElement('div');
-                p.classList.add('particle');
-                p.style.width = Math.random() * 5 + 2 + 'px';
-                p.style.height = p.style.width;
-                p.style.left = Math.random() * 100 + '%';
-                p.style.animationDuration = Math.random() * 10 + 5 + 's';
-                p.style.animationDelay = Math.random() * 5 + 's';
-                container.appendChild(p);
-            }
-        })();
+    <!-- Generated Hashtags Grid -->
+    <div id="resultsSection">
+        <h2 style="color:#1e3a8a; margin-bottom:15px;">🔥 Generated Hashtags</h2>
+        <div class="categories-grid" id="categoriesGrid"></div>
+    </div>
 
-        // Hashtag generator
-        function generateHashtags(keyword) {
-            const k = keyword.toLowerCase().trim();
-            if(!k) return null;
-            const trending = [`#${k}`, `#Trending${k}`, `#NowTrending`, `#X${k}`, `#${k}Community`];
-            const viral = [`#viral${k}`, `#GoViral${k}`, `#TrendingNow`, `#Worldwide`];
-            const seo = [`#${k}2026`, `#Best${k}`, `#${k}Tips`, `#Learn${k}`, `#${k}Strategy`];
-            const news = [`#BreakingNews`, `#Latest${k}`, `#${k}Update`, `#NewsFlash`];
-            const tech = [`#Tech${k}`, `#${k}Innovation`, `#FutureTech`, `#Digital${k}`];
-            const recommended = [`#Explore`, `#XCommunity`, `#TrendingTopic`, `#MustRead`];
-            
-            if(k.includes('ai')) tech.push('#ArtificialIntelligence', '#MachineLearning');
-            if(k.includes('crypto')) tech.push('#Bitcoin', '#Ethereum', '#Web3');
-            if(k.includes('game')) viral.push('#GamerLife', '#EpicGaming');
-            if(k.includes('business')) seo.push('#Entrepreneur', '#StartupLife');
-            return { trending, viral, seo, news, tech, recommended };
-        }
+    <!-- Trending & Recent -->
+    <div class="tool-card" style="margin-top:30px;">
+        <div class="card-content">
+            <h3 style="color:#1e3a8a;">⚡ Trending X Topics</h3>
+            <div class="trending-topics" id="trendingTopics">
+                <span class="trending-topic">AI news</span>
+                <span class="trending-topic">crypto</span>
+                <span class="trending-topic">gaming</span>
+                <span class="trending-topic">business tips</span>
+                <span class="trending-topic">tech</span>
+                <span class="trending-topic">marketing</span>
+            </div>
+            <h3 style="color:#1e3a8a; margin-top:25px;">🕒 Recent Searches</h3>
+            <div id="recentSearches" class="recent-list"></div>
+        </div>
+    </div>
 
-        let currentHashtags = null;
-        let currentKeyword = '';
-        let favorites = JSON.parse(localStorage.getItem('x_favorites') || '[]');
+    <!-- Back to Home -->
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="index.html" class="home-link">🔘 Back to Home</a>
+    </div>
 
-        function renderHashtags(data) {
-            if(!data) return;
-            const categories = [
-                { title: "🔥 Trending", data: data.trending },
-                { title: "⚡ Viral", data: data.viral },
-                { title: "🔍 SEO", data: data.seo },
-                { title: "📰 News", data: data.news },
-                { title: "💻 Tech", data: data.tech },
-                { title: "💡 Recommended", data: data.recommended }
-            ];
-            let html = '';
-            categories.forEach(cat => {
-                html += `<div class="category-card"><h3>${cat.title}</h3><div class="hashtag-list">`;
-                cat.data.forEach(tag => {
-                    const isFav = favorites.includes(tag);
-                    html += `<div class="hashtag-item" data-tag="${tag}">
-                                ${tag}
-                                <span class="favorite-star" data-fav="${tag}">${isFav ? '★' : '☆'}</span>
-                             </div>`;
-                });
-                html += `</div></div>`;
-            });
-            document.getElementById('categoriesGrid').innerHTML = html;
-            
-            // Attach events
-            document.querySelectorAll('.hashtag-item').forEach(el => {
-                const tag = el.getAttribute('data-tag');
-                const starSpan = el.querySelector('.favorite-star');
-                // Copy on click (except star)
-                el.addEventListener('click', (e) => {
-                    if(e.target === starSpan) return;
-                    copyToClipboard(tag);
-                    showToast(`✅ Copied: ${tag}`);
-                });
-                // Favorite toggle
-                if(starSpan) {
-                    starSpan.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        toggleFavorite(tag);
-                        renderHashtags(currentHashtags); // re-render to update star
-                    });
-                }
-            });
-            updateStats(data);
-        }
+    <!-- Dynamic Other Tools Footer -->
+    <div id="dynamicCategoryFooter" style="margin: 20px 0;"></div>
 
-        function toggleFavorite(tag) {
-            if(favorites.includes(tag)) {
-                favorites = favorites.filter(t => t !== tag);
-                showToast(`❌ Removed from favorites: ${tag}`);
-            } else {
-                favorites.push(tag);
-                showToast(`⭐ Added to favorites: ${tag}`);
-            }
-            localStorage.setItem('x_favorites', JSON.stringify(favorites));
-            displayFavorites();
-        }
+    <!-- ========== SEO ARTICLE (same style as random number generator) ========== -->
+    <div class="article-section">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span style="background: #1e3a8a; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px;">🐦 FREE TOOL</span>
+            <h2 style="border-bottom: none; margin-top: 15px;">X (Twitter) Hashtag Generator: Boost Your Reach in 2026</h2>
+            <p style="color: #6b7280;">Last Updated: May 2026 | Trusted by 50,000+ creators</p>
+        </div>
 
-        function displayFavorites() {
-            const container = document.getElementById('favoritesList');
-            if(!favorites.length) {
-                container.innerHTML = '<p style="color:gray;">No favorite hashtags yet. Click ★ on any hashtag to save.</p>';
-                return;
-            }
-            container.innerHTML = favorites.map(tag => `<div class="favorite-item" data-fav="${tag}">${tag} ❌</div>`).join('');
-            document.querySelectorAll('.favorite-item').forEach(el => {
-                el.addEventListener('click', () => {
-                    const tag = el.getAttribute('data-fav');
-                    copyToClipboard(tag);
-                    showToast(`✅ Copied: ${tag}`);
-                });
-            });
-        }
+        <p>Hashtags on X (formerly Twitter) are still one of the most powerful ways to get your content discovered. Our <strong>free X hashtag generator</strong> creates the perfect mix of trending, viral, and SEO-friendly hashtags based on your topic. Simply type a keyword, get 30+ relevant hashtags, copy them with one click, and watch your engagement soar.</p>
 
-        function updateStats(data) {
-            const all = [...data.trending, ...data.viral, ...data.seo, ...data.news, ...data.tech, ...data.recommended];
-            document.getElementById('totalCount').innerText = all.length;
-            document.getElementById('totalChars').innerText = all.join(' ').length;
-            document.getElementById('livePreview').innerHTML = all.join(' ');
-        }
+        <h3>Why Use This X Hashtag Generator?</h3>
+        <p>Unlike generic hashtag tools, our generator understands X’s unique algorithm. It provides separate categories: trending hashtags (what’s popular now), viral hashtags (high-reach tags), SEO hashtags (search-optimized), news hashtags, tech hashtags, and recommended tags. This mix ensures your tweets appear in both trending feeds and niche searches.</p>
 
-        function getAllHashtagsText() {
-            if(!currentHashtags) return '';
-            const all = [...currentHashtags.trending, ...currentHashtags.viral, ...currentHashtags.seo, ...currentHashtags.news, ...currentHashtags.tech, ...currentHashtags.recommended];
-            return all.join(' ');
-        }
+        <h3>How to Use the X Hashtag Tool</h3>
+        <ul style="margin: 15px 0 15px 25px;">
+            <li>Enter your main topic (e.g., "crypto", "AI news", "small business")</li>
+            <li>Click "Generate Hashtags" – instant results appear in categories</li>
+            <li>Click any hashtag to copy it individually, or use "Copy All"</li>
+            <li>Paste into your tweet (remember: 1-3 hashtags max for best performance)</li>
+        </ul>
 
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text);
-        }
+        <div style="background: #e6f4ff; padding: 20px; border-radius: 16px; margin: 20px 0;">
+            <h3 style="margin-top: 0;">📈 X Growth Tips</h3>
+            <p>✅ Use 1-3 hashtags per tweet (more than 3 reduces engagement)<br>
+            ✅ Post between 8-10 AM or 6-8 PM in your target timezone<br>
+            ✅ Engage with replies within the first hour – X boosts active threads<br>
+            ✅ Combine a broad hashtag (#X) with a specific one (#SmallBizTips)</p>
+        </div>
 
-        function showToast(msg) {
-            const t = document.createElement('div');
-            t.className = 'toast';
-            t.innerText = msg;
-            document.body.appendChild(t);
-            setTimeout(() => t.remove(), 2000);
-        }
+        <div class="faq-item">
+            <div class="faq-question">Is this X hashtag generator really free?</div>
+            <div class="faq-answer">Yes, completely free with unlimited usage. No registration, no hidden fees.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How many hashtags should I use on X?</div>
+            <div class="faq-answer">Studies show 1-3 hashtags perform best. Our tool helps you pick the most relevant ones.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do hashtags still work on X in 2026?</div>
+            <div class="faq-answer">Absolutely. Hashtags remain a primary way content gets discovered, especially for trending topics and niche communities.</div>
+        </div>
 
-        function generateWithAnimation() {
-            const kw = document.getElementById('keywordInput').value.trim();
-            if(!kw) { showToast('❌ Enter a keyword'); return; }
-            const btn = document.getElementById('generateBtn');
-            const orig = btn.innerHTML;
-            btn.innerHTML = '⏳ Generating...';
-            btn.disabled = true;
-            setTimeout(() => {
-                const data = generateHashtags(kw);
-                if(data) {
-                    currentHashtags = data;
-                    currentKeyword = kw;
-                    renderHashtags(data);
-                    saveRecentSearch(kw);
-                    showToast('✨ Hashtags generated!');
-                } else { showToast('⚠️ Invalid keyword'); }
-                btn.innerHTML = orig;
-                btn.disabled = false;
-            }, 300);
-        }
+        <p>Start using our X (Twitter) hashtag generator today and reach thousands more users. Bookmark this page for daily hashtag inspiration!</p>
+    </div>
+</div>
 
-        function saveRecentSearch(kw) {
-            let recents = JSON.parse(localStorage.getItem('x_recent') || '[]');
-            recents = [kw, ...recents.filter(r => r !== kw)].slice(0, 5);
-            localStorage.setItem('x_recent', JSON.stringify(recents));
-            displayRecents();
-        }
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2026 Free Online Tools | X (Twitter) Hashtag Generator | 100% Free & Unlimited</p>
+    </div>
+</footer>
 
-        function displayRecents() {
-            const recents = JSON.parse(localStorage.getItem('x_recent') || '[]');
-            const container = document.getElementById('recentSearches');
-            if(!recents.length) { container.innerHTML = '<p style="color:gray;">No recent searches</p>'; return; }
-            container.innerHTML = recents.map(r => `<div class="recent-item" data-recent="${r}">${r}</div>`).join('');
-            document.querySelectorAll('.recent-item').forEach(el => {
-                el.addEventListener('click', () => {
-                    document.getElementById('keywordInput').value = el.innerText;
-                    generateWithAnimation();
-                });
-            });
-        }
+<script>
+// ========== HASHTAG GENERATION LOGIC ==========
+function generateHashtags(keyword) {
+    const k = keyword.toLowerCase().trim();
+    if (!k) return null;
+    const trending = [`#${k}`, `#Trending${k}`, `#NowTrending`, `#X${k}`, `#${k}Community`];
+    const viral = [`#viral${k}`, `#GoViral${k}`, `#TrendingNow`, `#Worldwide`];
+    const seo = [`#${k}2026`, `#Best${k}`, `#${k}Tips`, `#Learn${k}`, `#${k}Strategy`];
+    const news = [`#BreakingNews`, `#Latest${k}`, `#${k}Update`, `#NewsFlash`];
+    const tech = [`#Tech${k}`, `#${k}Innovation`, `#FutureTech`];
+    const recommended = [`#Explore`, `#XCommunity`, `#TrendingTopic`, `#MustRead`];
+    if (k.includes('ai')) tech.push('#ArtificialIntelligence', '#MachineLearning');
+    if (k.includes('crypto')) tech.push('#Bitcoin', '#Ethereum');
+    if (k.includes('game')) viral.push('#GamerLife');
+    if (k.includes('business')) seo.push('#Entrepreneur', '#StartupLife');
+    return { trending, viral, seo, news, tech, recommended };
+}
 
-        // Theme toggle
-        let isDark = true;
-        const themeBtn = document.getElementById('themeToggle');
-        themeBtn.addEventListener('click', () => {
-            isDark = !isDark;
-            if(isDark) {
-                document.body.classList.remove('light-mode');
-                themeBtn.innerHTML = '🌙 Dark';
-            } else {
-                document.body.classList.add('light-mode');
-                themeBtn.innerHTML = '☀️ Light';
-            }
-            localStorage.setItem('x_theme', isDark ? 'dark' : 'light');
+let currentHashtags = null;
+let currentKeyword = '';
+
+function renderHashtags(data) {
+    if (!data) return;
+    const categories = [
+        { title: "🔥 Trending", data: data.trending },
+        { title: "⚡ Viral", data: data.viral },
+        { title: "🔍 SEO", data: data.seo },
+        { title: "📰 News", data: data.news },
+        { title: "💻 Tech", data: data.tech },
+        { title: "💡 Recommended", data: data.recommended }
+    ];
+    let html = '';
+    categories.forEach(cat => {
+        html += `<div class="category-card"><h3>${cat.title}</h3><div class="hashtag-list">`;
+        cat.data.forEach(tag => {
+            html += `<div class="hashtag-item" data-tag="${tag}">${tag}</div>`;
         });
-        if(localStorage.getItem('x_theme') === 'light') {
-            isDark = false;
-            document.body.classList.add('light-mode');
-            themeBtn.innerHTML = '☀️ Light';
+        html += `</div></div>`;
+    });
+    document.getElementById('categoriesGrid').innerHTML = html;
+    
+    // Add click copy for each hashtag
+    document.querySelectorAll('.hashtag-item').forEach(el => {
+        el.addEventListener('click', () => {
+            const tag = el.getAttribute('data-tag');
+            copyToClipboard(tag);
+            showToast(`✅ Copied: ${tag}`);
+        });
+    });
+    updateStatsAndPreview(data);
+}
+
+function updateStatsAndPreview(data) {
+    const all = [...data.trending, ...data.viral, ...data.seo, ...data.news, ...data.tech, ...data.recommended];
+    document.getElementById('totalCount').innerText = all.length;
+    document.getElementById('totalChars').innerText = all.join(' ').length;
+    document.getElementById('livePreview').innerHTML = all.join(' ');
+}
+
+function getAllHashtagsText() {
+    if (!currentHashtags) return '';
+    const all = [...currentHashtags.trending, ...currentHashtags.viral, ...currentHashtags.seo, ...currentHashtags.news, ...currentHashtags.tech, ...currentHashtags.recommended];
+    return all.join(' ');
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+}
+
+function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+}
+
+function generateWithAnimation() {
+    const keyword = document.getElementById('keywordInput').value.trim();
+    if (!keyword) { showToast('❌ Please enter a keyword'); return; }
+    const btn = document.getElementById('generateBtn');
+    const original = btn.innerHTML;
+    btn.innerHTML = '⏳ Generating...';
+    btn.disabled = true;
+    setTimeout(() => {
+        const data = generateHashtags(keyword);
+        if (data) {
+            currentHashtags = data;
+            currentKeyword = keyword;
+            renderHashtags(data);
+            saveRecentSearch(keyword);
+            showToast('✨ Hashtags generated successfully!');
+        } else {
+            showToast('⚠️ Invalid keyword');
         }
+        btn.innerHTML = original;
+        btn.disabled = false;
+        // Animate result card
+        const resultCard = document.getElementById('resultCard');
+        resultCard.classList.add('animate');
+        setTimeout(() => resultCard.classList.remove('animate'), 500);
+    }, 300);
+}
 
-        // Scroll top
-        document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+// Recent searches (localStorage)
+function saveRecentSearch(kw) {
+    let recents = JSON.parse(localStorage.getItem('x_recent_search') || '[]');
+    recents = [kw, ...recents.filter(r => r !== kw)].slice(0, 5);
+    localStorage.setItem('x_recent_search', JSON.stringify(recents));
+    displayRecents();
+}
 
-        // Buttons
-        document.getElementById('generateBtn').addEventListener('click', generateWithAnimation);
-        document.getElementById('copyAllBtn').addEventListener('click', () => {
-            if(!currentHashtags) showToast('⚠️ Generate first');
-            else { copyToClipboard(getAllHashtagsText()); showToast('📋 All hashtags copied!'); }
-        });
-        document.getElementById('downloadBtn').addEventListener('click', () => {
-            if(!currentHashtags) showToast('⚠️ Generate first');
-            else {
-                const blob = new Blob([getAllHashtagsText()], {type:'text/plain'});
-                const a = document.createElement('a');
-                a.href = URL.createObjectURL(blob);
-                a.download = `x_hashtags_${currentKeyword}.txt`;
-                a.click(); showToast('💾 Downloaded');
-            }
-        });
-        document.getElementById('keywordInput').addEventListener('keypress', e => { if(e.key === 'Enter') generateWithAnimation(); });
-
-        // Trending topics
-        document.querySelectorAll('.trending-topic').forEach(t => {
-            t.addEventListener('click', () => {
-                document.getElementById('keywordInput').value = t.innerText;
-                generateWithAnimation();
-            });
-        });
-
-        // Initialize
-        displayRecents();
-        displayFavorites();
-        setTimeout(() => {
-            document.getElementById('keywordInput').value = 'X growth';
+function displayRecents() {
+    const recents = JSON.parse(localStorage.getItem('x_recent_search') || '[]');
+    const container = document.getElementById('recentSearches');
+    if (!recents.length) { container.innerHTML = '<p style="color:gray;">No recent searches</p>'; return; }
+    container.innerHTML = recents.map(r => `<span class="recent-item" data-recent="${r}">${r}</span>`).join('');
+    document.querySelectorAll('.recent-item').forEach(el => {
+        el.addEventListener('click', () => {
+            document.getElementById('keywordInput').value = el.innerText;
             generateWithAnimation();
-        }, 200);
+        });
+    });
+}
 
-        // Dropdown navbar
-        (function() {
-            const dd = document.getElementById('toolsDropdown');
-            const btn = document.getElementById('toolsBtn');
-            if(dd && btn) {
-                btn.addEventListener('click', (e) => { e.stopPropagation(); dd.classList.toggle('open'); });
-                document.addEventListener('click', () => dd.classList.remove('open'));
-                document.querySelectorAll('.dropdown-category').forEach(cat => {
-                    cat.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        const id = this.getAttribute('data-cat');
-                        const tools = document.getElementById(id + 'Tools');
-                        if(tools) tools.classList.toggle('show');
-                    });
-                });
-            }
-        })();
-    </script>
+// Event listeners
+document.getElementById('generateBtn').addEventListener('click', generateWithAnimation);
+document.getElementById('copyAllBtn').addEventListener('click', () => {
+    if (!currentHashtags) { showToast('⚠️ Generate hashtags first!'); return; }
+    copyToClipboard(getAllHashtagsText());
+    showToast('📋 All hashtags copied!');
+});
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    if (!currentHashtags) { showToast('⚠️ Generate hashtags first!'); return; }
+    const blob = new Blob([getAllHashtagsText()], {type: 'text/plain'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `x_hashtags_${currentKeyword}.txt`;
+    a.click();
+    showToast('💾 Downloaded as TXT file');
+});
+document.getElementById('keywordInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') generateWithAnimation();
+});
+
+// Trending topics click
+document.querySelectorAll('.trending-topic').forEach(t => {
+    t.addEventListener('click', () => {
+        document.getElementById('keywordInput').value = t.innerText;
+        generateWithAnimation();
+    });
+});
+
+// Dropdown navbar functionality
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if (dropdown && dropBtn) {
+        dropBtn.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('open'); });
+        document.addEventListener('click', () => dropdown.classList.remove('open'));
+        document.querySelectorAll('.dropdown-category').forEach(cat => {
+            cat.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const catId = this.getAttribute('data-cat');
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if (toolsDiv) toolsDiv.classList.toggle('show');
+            });
+        });
+    }
+})();
+
+// Dynamic other tools footer
+(function() {
+    const footerDiv = document.getElementById('dynamicCategoryFooter');
+    if (footerDiv) {
+        footerDiv.innerHTML = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+            <h3 style="color: #1e3a8a;">🔗 Other Social Media Tools</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px;">
+                <a href="tiktok-hashtag-generator.html" style="background: linear-gradient(135deg,#2563eb,#1e3a8a); color:white; padding:10px 20px; border-radius:40px; text-decoration:none;">🎵 TikTok Hashtag Generator</a>
+                <a href="instagram-hashtag-generator.html" style="background: linear-gradient(135deg,#2563eb,#1e3a8a); color:white; padding:10px 20px; border-radius:40px; text-decoration:none;">📸 Instagram Hashtag Generator</a>
+            </div>
+        </div>`;
+    }
+})();
+
+// Initial demo
+setTimeout(() => {
+    document.getElementById('keywordInput').value = 'X growth';
+    generateWithAnimation();
+}, 200);
+</script>
 </body>
 </html>
