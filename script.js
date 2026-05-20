@@ -197,15 +197,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // FETCH AND LOAD NAVBAR.HTML (unchanged, same as before)
     fetch("navbar.html")
-        .then(response => {
-            if (!response.ok) throw new Error("Navbar network response was not ok");
-            return response.text();
-        })
-        .then(htmlContent => {
-            const placeholder = document.getElementById("navbar-placeholder");
-            if (placeholder) {
-                placeholder.innerHTML = htmlContent;
-            }
-        })
-        .catch(err => console.error("Error loading navbar:", err));
+    .then(response => {
+        if (!response.ok) throw new Error("Navbar network response was not ok");
+        return response.text();
+    })
+    .then(htmlContent => {
+        const placeholder = document.getElementById("navbar-placeholder");
+
+        if (placeholder) {
+            placeholder.innerHTML = htmlContent;
+
+            const scripts = placeholder.querySelectorAll("script");
+
+            scripts.forEach(oldScript => {
+                const newScript = document.createElement("script");
+
+                if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                } else {
+                    newScript.textContent = oldScript.textContent;
+                }
+
+                document.body.appendChild(newScript);
+            });
+        }
+    })
+    .catch(err => console.error("Error loading navbar:", err));
 });
