@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Free Random Name Picker - Name Selector">
 <meta name="twitter:description" content="Pick random names instantly. Free and easy!">
 
-<!-- Google tag (gtag.js) - CORRECT ID -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -39,23 +39,13 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://freeonlinetools203.com/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Random Name Picker",
-      "item": "https://freeonlinetools203.com/random-name-picker.html"
-    }
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeonlinetools203.com/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Random Name Picker", "item": "https://freeonlinetools203.com/random-name-picker.html"}
   ]
 }
 </script>
 
-<!-- Schema Markup (No Rating) -->
+<!-- Schema Markup -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,15 +55,7 @@
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "url": "https://freeonlinetools203.com/random-name-picker.html",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "Free Online Tools"
-  }
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
 }
 </script>
 
@@ -86,651 +68,394 @@
     {
       "@type": "Question",
       "name": "How to use random name picker for classroom?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Enter your students' names in the list, spin the wheel, and it will randomly select a name. Perfect for calling on students, creating teams, or random prize drawings."
-      }
+      "acceptedAnswer": {"@type": "Answer", "text": "Enter your students' names in the list, spin the wheel, and it will randomly select a name. Perfect for calling on students, creating teams, or random prize drawings."}
     },
     {
       "@type": "Question",
       "name": "What is the best random name picker for secret santa?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our random name picker is perfect for secret santa! Add all participant names, spin the wheel, and it randomly assigns gift exchange partners."
-      }
+      "acceptedAnswer": {"@type": "Answer", "text": "Our random name picker is perfect for secret santa! Add all participant names, spin the wheel, and it randomly assigns gift exchange partners."}
     },
     {
       "@type": "Question",
       "name": "Is this random name picker free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes! This random name picker is completely free with no registration required. Use it unlimited times for all your name picking needs."
-      }
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes! This random name picker is completely free with no registration required. Use it unlimited times for all your name picking needs."}
     }
   ]
 }
 </script>
-    
-    <style>
-/* Your existing CSS for random-name-picker goes here */
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+}
+.nav-links li a:hover {
+    border-bottom: 2px solid white;
+}
+.dropdown { position: relative; display: inline-block; }
+.dropbtn { background: none; border: none; color: white; font-weight: 500; cursor: pointer; padding: 8px 0; font-size: 1rem; display: inline-flex; align-items: center; gap: 4px; }
+.dropdown-content { display: none; position: absolute; background: white; min-width: 280px; border-radius: 12px; top: 40px; left: 0; padding: 8px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 1001; }
+.dropdown.open .dropdown-content { display: block; }
+.dropdown-category { padding: 12px 16px; font-weight: 700; color: #1e3a8a; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; cursor: pointer; }
+.category-tools { display: none; background: #f9fafb; border-radius: 8px; margin: 4px 8px; overflow: hidden; }
+.category-tools.show { display: block; }
+.category-tools a { color: #1f2937 !important; padding: 10px 20px 10px 32px; text-decoration: none; display: block; font-size: 14px; }
+.category-tools a:hover { background: #e5e7eb; color: #2563eb !important; }
+
+/* Main Container */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.tool-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 30px 25px;
+    text-align: center;
+}
+.card-header h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.card-header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+.card-content {
+    padding: 35px;
+}
+
+/* Names Section */
+.names-section {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+.names-label {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 12px;
+    font-size: 15px;
+    display: block;
+}
+.names-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.name-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.name-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.name-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+.remove-name {
+    background: #dc2626;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.remove-name:hover {
+    background: #b91c1c;
+    transform: scale(1.02);
+}
+.add-name-btn {
+    background: #0D9488;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+}
+.add-name-btn:hover {
+    background: #0f766e;
+    transform: translateY(-2px);
+}
+
+/* Preset Section */
+.preset-section {
+    margin-bottom: 25px;
+}
+.preset-title {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.preset-btn {
+    background: #f1f5f9;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.preset-btn:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+/* Wheel Styles */
+.wheel-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.wheel {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.wheel:hover {
+    transform: scale(1.02);
+}
+.pointer {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 22px solid transparent;
+    border-right: 22px solid transparent;
+    border-top: 45px solid #dc2626;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+    z-index: 10;
+    animation: bounce 1s ease infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+}
+.spin-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 60px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+.spin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+.result-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+.result-card.winner {
+    animation: winnerPop 0.6s ease-out;
+}
+@keyframes winnerPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+.winner-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    word-break: break-word;
+    margin-bottom: 10px;
+}
+.winner-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+}
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+}
+.action-btn {
+    flex: 1;
+    background: #f1f5f9;
+    border: none;
+    padding: 12px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e3a8a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.action-btn:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+.home-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.home-link:hover {
+    transform: translateY(-2px);
+}
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2937;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 60px 20px 30px;
+    margin-top: 40px;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+.footer-col h3, .footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+.footer-col a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 0.9rem;
+}
+.footer-col a:hover {
+    color: #60a5fa;
+    transform: translateX(5px);
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 35px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+@media (max-width: 768px) {
+    .navbar { padding: 12px 20px; }
+    .nav-container { flex-direction: column; text-align: center; }
+    .card-content { padding: 25px 20px; }
+    .wheel { width: 240px; height: 240px; }
+    .winner-name { font-size: 24px; }
+}
 </style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f3f4f6;
-            min-height: 100vh;
-        }
-
-        /* ========== NAVBAR ========== */
-        .navbar {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo a {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 0;
-        }
-
-        .nav-links li a:hover {
-            border-bottom: 2px solid white;
-        }
-
-        .dropdown { position: relative; display: inline-block; }
-        .dropbtn { background: none; border: none; color: white; font-weight: 500; cursor: pointer; padding: 8px 0; font-size: 1rem; display: inline-flex; align-items: center; gap: 4px; }
-        .dropdown-content { display: none; position: absolute; background: white; min-width: 280px; border-radius: 12px; top: 40px; left: 0; padding: 8px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 1001; }
-        .dropdown.open .dropdown-content { display: block; }
-        .dropdown-category { padding: 12px 16px; font-weight: 700; color: #1e3a8a; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; cursor: pointer; }
-        .category-tools { display: none; background: #f9fafb; border-radius: 8px; margin: 4px 8px; overflow: hidden; }
-        .category-tools.show { display: block; }
-        .category-tools a { color: #1f2937 !important; padding: 10px 20px 10px 32px; text-decoration: none; display: block; font-size: 14px; }
-        .category-tools a:hover { background: #e5e7eb; color: #2563eb !important; }
-
-        /* Main Container */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .tool-card {
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            padding: 30px 25px;
-            text-align: center;
-        }
-
-        .card-header h1 {
-            color: white;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .card-header p {
-            color: rgba(255,255,255,0.9);
-            font-size: 16px;
-        }
-
-        .card-content {
-            padding: 35px;
-        }
-
-        /* Names Section */
-        .names-section {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 25px;
-        }
-
-        .names-label {
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 12px;
-            font-size: 15px;
-            display: block;
-        }
-
-        .names-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 15px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .name-item {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .name-input {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .name-input:focus {
-            outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .remove-name {
-            background: #dc2626;
-            color: white;
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .remove-name:hover {
-            background: #b91c1c;
-            transform: scale(1.02);
-        }
-
-        .add-name-btn {
-            background: #0D9488;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.2s;
-        }
-
-        .add-name-btn:hover {
-            background: #0f766e;
-            transform: translateY(-2px);
-        }
-
-        /* Preset Section */
-        .preset-section {
-            margin-bottom: 25px;
-        }
-
-        .preset-title {
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .preset-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .preset-btn {
-            background: #f1f5f9;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .preset-btn:hover {
-            background: #e5e7eb;
-            transform: translateY(-2px);
-        }
-
-        /* Wheel Styles */
-        .wheel-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        .wheel {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .wheel:hover {
-            transform: scale(1.02);
-        }
-
-        .pointer {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 22px solid transparent;
-            border-right: 22px solid transparent;
-            border-top: 45px solid #dc2626;
-            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
-            z-index: 10;
-            animation: bounce 1s ease infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-8px); }
-        }
-
-        .spin-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: white;
-            border: none;
-            padding: 16px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 60px;
-            cursor: pointer;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .spin-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-        }
-
-        .result-card {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            border-radius: 24px;
-            padding: 25px;
-            text-align: center;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .result-card.winner {
-            animation: winnerPop 0.6s ease-out;
-        }
-
-        @keyframes winnerPop {
-            0% { transform: scale(0.8); opacity: 0; }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .winner-name {
-            font-size: 32px;
-            font-weight: bold;
-            color: white;
-            word-break: break-word;
-            margin-bottom: 10px;
-        }
-
-        .winner-sub {
-            font-size: 14px;
-            color: rgba(255,255,255,0.85);
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 12px;
-            margin: 20px 0;
-        }
-
-        .action-btn {
-            flex: 1;
-            background: #f1f5f9;
-            border: none;
-            padding: 12px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e3a8a;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .action-btn:hover {
-            background: #e5e7eb;
-            transform: translateY(-2px);
-        }
-
-        .other-tools {
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            margin-top: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .other-tools h3 {
-            color: #1e3a8a;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
-        .tool-link {
-            display: block;
-            padding: 12px 18px;
-            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .tool-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
-        }
-
-        .home-link {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #6b7280;
-            color: white;
-            text-decoration: none;
-            border-radius: 40px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .home-link:hover {
-            background: #4b5563;
-            transform: translateY(-2px);
-        }
-
-        /* Article Styles */
-        .article-section {
-            background: white;
-            border-radius: 24px;
-            padding: 45px;
-            margin-top: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            line-height: 1.8;
-            color: #374151;
-        }
-
-        .article-section h2 {
-            color: #1e3a8a;
-            font-size: 28px;
-            margin: 30px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #2563eb;
-            display: inline-block;
-        }
-
-        .article-section h3 {
-            color: #2563eb;
-            font-size: 22px;
-            margin: 25px 0 15px 0;
-        }
-
-        .article-section p {
-            margin-bottom: 18px;
-            font-size: 16px;
-        }
-
-        .article-section ul, .article-section ol {
-            margin: 15px 0 20px 30px;
-        }
-
-        .article-section li {
-            margin-bottom: 8px;
-        }
-
-        .article-section table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: #f9fafb;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .article-section th, .article-section td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .article-section th {
-            background: #1e3a8a;
-            color: white;
-            font-weight: 600;
-        }
-
-        .article-section .highlight {
-            background: #fef9e3;
-            padding: 20px;
-            border-left: 4px solid #f59e0b;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-
-        .article-section .tip {
-            background: #e6f4ff;
-            padding: 20px;
-            border-left: 4px solid #2563eb;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .stat-card-article {
-            background: #f9fafb;
-            padding: 20px;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid #e5e7eb;
-        }
-
-        .faq-section-article {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .faq-item-article {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 15px;
-        }
-
-        .faq-question-article {
-            font-weight: 700;
-            color: #1e3a8a;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .faq-answer-article {
-            color: #475569;
-            line-height: 1.6;
-        }
-
-        .related-searches {
-            background: #f9fafb;
-            border-radius: 16px;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .related-searches h4 {
-            color: #1e3a8a;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .search-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .search-tag {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 30px;
-            padding: 6px 14px;
-            font-size: 13px;
-            color: #2563eb;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .search-tag:hover {
-            background: #2563eb;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .toast-notification {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1f2937;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 14px;
-            z-index: 1000;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #cbd5e1;
-            padding: 60px 20px 30px;
-            margin-top: 40px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-col h3, .footer-col h4 {
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .footer-col a {
-            display: block;
-            color: #94a3b8;
-            text-decoration: none;
-            padding: 6px 0;
-            font-size: 0.9rem;
-        }
-
-        .footer-col a:hover {
-            color: #60a5fa;
-            transform: translateX(5px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 35px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        @media (max-width: 768px) {
-            .navbar { padding: 12px 20px; }
-            .nav-container { flex-direction: column; text-align: center; }
-            .card-content { padding: 25px 20px; }
-            .wheel { width: 240px; height: 240px; }
-            .winner-name { font-size: 24px; }
-            .article-section { padding: 25px 20px; }
-            .article-section h2 { font-size: 22px; }
-        }
-    </style>
 </head>
 <body>
-    
+
 <!-- ========== NAVBAR PLACEHOLDER ========== -->
 <div id="navbar-placeholder"></div>
 <script>
@@ -738,7 +463,8 @@
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar-placeholder').innerHTML = data;
-        });
+        })
+        .catch(() => console.log('Navbar load failed'));
 </script>
 
 <div class="container">
@@ -751,26 +477,11 @@
             <div class="names-section">
                 <label class="names-label">📝 Enter Names</label>
                 <div class="names-list" id="namesList">
-                    <div class="name-item">
-                        <input type="text" class="name-input" placeholder="Name 1" value="Emma">
-                        <button class="remove-name" onclick="removeName(this)">✕</button>
-                    </div>
-                    <div class="name-item">
-                        <input type="text" class="name-input" placeholder="Name 2" value="Liam">
-                        <button class="remove-name" onclick="removeName(this)">✕</button>
-                    </div>
-                    <div class="name-item">
-                        <input type="text" class="name-input" placeholder="Name 3" value="Sophia">
-                        <button class="remove-name" onclick="removeName(this)">✕</button>
-                    </div>
-                    <div class="name-item">
-                        <input type="text" class="name-input" placeholder="Name 4" value="Noah">
-                        <button class="remove-name" onclick="removeName(this)">✕</button>
-                    </div>
-                    <div class="name-item">
-                        <input type="text" class="name-input" placeholder="Name 5" value="Olivia">
-                        <button class="remove-name" onclick="removeName(this)">✕</button>
-                    </div>
+                    <div class="name-item"><input type="text" class="name-input" value="Emma"><button class="remove-name" onclick="removeName(this)">✕</button></div>
+                    <div class="name-item"><input type="text" class="name-input" value="Liam"><button class="remove-name" onclick="removeName(this)">✕</button></div>
+                    <div class="name-item"><input type="text" class="name-input" value="Sophia"><button class="remove-name" onclick="removeName(this)">✕</button></div>
+                    <div class="name-item"><input type="text" class="name-input" value="Noah"><button class="remove-name" onclick="removeName(this)">✕</button></div>
+                    <div class="name-item"><input type="text" class="name-input" value="Olivia"><button class="remove-name" onclick="removeName(this)">✕</button></div>
                 </div>
                 <button class="add-name-btn" onclick="addName()">+ Add Name</button>
             </div>
@@ -805,284 +516,53 @@
         </div>
     </div>
 
-     <!-- Category Footer & Back to Home Button -->
-<div class="category-footer" style="max-width: 1200px; margin: 40px auto 20px; padding: 0 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="index.html" class="home-link" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px 28px; border-radius: 40px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">🔘 Back to Home</a>
-  </div>
-  <div id="dynamicCategoryFooter"></div>
-</div>
+    <!-- Back to Home & Category Footer -->
+    <div class="category-footer" style="max-width: 1200px; margin: 40px auto 20px; padding: 0 20px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" class="home-link">🔘 Back to Home</a>
+        </div>
+        <div id="dynamicCategoryFooter"></div>
+    </div>
 
-<script>
-  (function() {
-    // Automatic category detection from filename
-    function getCurrentCategory() {
-      const path = window.location.pathname;
-      console.log("Current path:", path);
-      if (path.includes('age-calculator') || path.includes('gst') || path.includes('percentage') || path.includes('sip') || path.includes('discount') || path.includes('profit-loss') || path.includes('gpa') || path.includes('date-calculator') || path.includes('qr-code') || path.includes('youtube-thumbnail') || path.includes('currency-converter') || path.includes('age-difference')) return 'popular';
-      if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie') || path.includes('meal-planner')) return 'health';
-      if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) return 'financial';
-      if (path.includes('word-counter') || path.includes('line-counter') || path.includes('text-case') || path.includes('password-generator')) return 'text';
-      if (path.includes('image-compressor')) return 'media';
-      if (path.includes('spin') || path.includes('yes-no') || path.includes('decision-roulette') || path.includes('random-number')) return 'fun';
-      return 'popular';
-    }
-
-    const categories = {
-      popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "Age Difference", url: "age-difference-calculator.html" }, { name: "Discount Calculator", url: "discount-calculator.html" }, { name: "Profit & Loss", url: "profit-loss-calculator.html" }, { name: "GPA Calculator", url: "gpa-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "SIP Calculator", url: "sip-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Date Calculator", url: "date-calculator.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
-      health: { name: "🏃‍♂️ Health & Fitness", tools: [ { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "BMR Calculator", url: "bmr-calculator.html" }, { name: "Calorie Calculator", url: "calorie-calculator.html" }, { name: "Meal Planner", url: "meal-planner.html" } ] },
-      financial: { name: "💰 Financial Tools", tools: [ { name: "EMI Calculator", url: "emi-calculator.html" }, { name: "Loan Calculator", url: "loan-calculator.html" }, { name: "Zakat Calculator", url: "zakat-calculator.html" } ] },
-      text: { name: "📝 Text & Writing", tools: [ { name: "Word Counter", url: "word-counter.html" }, { name: "Line Counter", url: "line-counter.html" }, { name: "Text Case Converter", url: "text-case-converter.html" }, { name: "Password Generator", url: "password-generator.html" } ] },
-      media: { name: "🖼️ Image & Media", tools: [ { name: "Image Compressor", url: "image-compressor.html" } ] },
-      fun: { name: "🎲 Random & Fun", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Decision Roulette", url: "decision-roulette.html" }, { name: "Random Number", url: "random-number-generator.html" } ] }
-    };
-
-    function renderFooter() {
-      const footerContainer = document.getElementById('dynamicCategoryFooter');
-      if (!footerContainer) {
-        console.error("Element #dynamicCategoryFooter not found");
-        return;
-      }
-      const currentCategory = getCurrentCategory();
-      console.log("Detected category:", currentCategory);
-      const cat = categories[currentCategory];
-      if (!cat) {
-        footerContainer.innerHTML = '<p style="text-align:center;">Tools loading...</p>';
-        return;
-      }
-      let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-      cat.tools.forEach(tool => {
-        html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; transition: 0.2s; display: block;">🔘 ${tool.name}</a>`;
-      });
-      html += `</div></div>`;
-      footerContainer.innerHTML = html;
-    }
-
-    // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', renderFooter);
-    } else {
-      renderFooter();
-    }
-  })();
-</script>
-
-
-    <!-- ========== 2500+ WORD SEO ARTICLE ========== -->
-    <div class="article-section">
-        <h1 style="font-size: 32px; margin-bottom: 20px; border-bottom: none;">🏆 Complete Guide to Random Name Picker & Spin Wheel Selector</h1>
+    <!-- SEO Article Section -->
+    <div style="background: white; border-radius: 24px; padding: 45px; margin-top: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); line-height: 1.8; color: #374151;">
+        <h1 style="font-size: 32px; margin-bottom: 20px; color: #1e3a8a;">🏆 Complete Guide to Random Name Picker & Spin Wheel Selector</h1>
         <p style="color: #6b7280; margin-bottom: 30px;">Last Updated: April 7, 2026 | 12 min read | By Random Selection Experts</p>
-
-        <div class="stats-grid">
-            <div class="stat-card-article"><div class="stat-number" style="font-size: 28px; font-weight: 800;">28K+</div><div>Daily Users</div></div>
-            <div class="stat-card-article"><div class="stat-number" style="font-size: 28px; font-weight: 800;">4.9/5</div><div>User Rating</div></div>
-            <div class="stat-card-article"><div class="stat-number" style="font-size: 28px; font-weight: 800;">100%</div><div>Free</div></div>
-            <div class="stat-card-article"><div class="stat-number" style="font-size: 28px; font-weight: 800;">Custom</div><div>Names</div></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0;">
+            <div style="background: #f9fafb; padding: 20px; border-radius: 16px; text-align: center;"><div style="font-size: 28px; font-weight: 800;">28K+</div><div>Daily Users</div></div>
+            <div style="background: #f9fafb; padding: 20px; border-radius: 16px; text-align: center;"><div style="font-size: 28px; font-weight: 800;">4.9/5</div><div>User Rating</div></div>
+            <div style="background: #f9fafb; padding: 20px; border-radius: 16px; text-align: center;"><div style="font-size: 28px; font-weight: 800;">100%</div><div>Free</div></div>
+            <div style="background: #f9fafb; padding: 20px; border-radius: 16px; text-align: center;"><div style="font-size: 28px; font-weight: 800;">Custom</div><div>Names</div></div>
         </div>
-
-        <h2>🎯 What is a Random Name Picker?</h2>
+        <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 20px;">🎯 What is a Random Name Picker?</h2>
         <p>A <strong>random name picker</strong> is a digital tool that randomly selects a name from a list you provide. It's perfect for teachers who need to call on students, event organizers running raffles, or anyone who needs to make fair random selections. Our <strong>spin wheel name selector</strong> adds visual excitement to the random selection process.</p>
-
-        <div class="highlight">
-            <p><strong>📌 Did You Know?</strong> Random name pickers are used by over 1 million teachers worldwide to ensure fair participation in classrooms!</p>
+        <div style="background: #fef9e3; padding: 20px; border-left: 4px solid #f59e0b; border-radius: 12px; margin: 20px 0;"><p><strong>📌 Did You Know?</strong> Random name pickers are used by over 1 million teachers worldwide to ensure fair participation in classrooms!</p></div>
+        <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 20px;">👨‍🏫 Random Name Picker for Classroom</h2>
+        <p>Teachers love using our random name picker for classroom activities. It ensures every student gets a fair chance to participate.</p>
+        <div style="background: #e6f4ff; padding: 20px; border-left: 4px solid #2563eb; border-radius: 12px; margin: 20px 0;"><p><strong>💡 Pro Tip:</strong> Enter your students' names in the list, spin the wheel, and let it randomly select who goes next. It's fair, fun, and keeps everyone engaged!</p></div>
+        <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 20px;">🎅 Random Name Picker for Secret Santa</h2>
+        <p>Our random name picker secret santa tool makes holiday gift exchanges easy and fair.</p>
+        <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 20px;">❓ Frequently Asked Questions</h2>
+        <div style="background: #f8fafc; border-radius: 20px; padding: 30px; margin: 30px 0;">
+            <div style="margin-bottom: 20px;"><strong>❓ How to use random name picker for classroom?</strong><br>Enter your students' names, spin the wheel, and it randomly selects a name.</div>
+            <div style="margin-bottom: 20px;"><strong>❓ What is the best random name picker for secret santa?</strong><br>Our tool is perfect for secret santa – add participant names and spin!</div>
+            <div><strong>❓ Is this random name picker free?</strong><br>Yes! 100% free, no registration required.</div>
         </div>
-
-        <h2>👨‍🏫 Random Name Picker for Classroom</h2>
-        <p>Teachers love using our <strong>online stopwatch random name picker</strong> for classroom activities. It ensures every student gets a fair chance to participate. Popular uses include:</p>
-        <ul>
-            <li>🎓 Calling on students to answer questions</li>
-            <li>👥 Creating random teams for group projects</li>
-            <li>🎁 Randomly selecting prize winners</li>
-            <li>📝 Choosing presentation order</li>
-            <li>🏆 Classroom games and competitions</li>
-        </ul>
-
-        <div class="tip">
-            <p><strong>💡 Pro Tip:</strong> Enter your students' names in the list, spin the wheel, and let it randomly select who goes next. It's fair, fun, and keeps everyone engaged!</p>
-        </div>
-
-        <h2>🎅 Random Name Picker for Secret Santa</h2>
-        <p>Our <strong>random name picker secret santa</strong> tool makes holiday gift exchanges easy and fair. Simply add all participant names, spin the wheel, and it randomly assigns gift exchange partners. No more complicated drawings or biased selections!</p>
-
-        <h2>🎁 Random Name Picker for Gift Exchange</h2>
-        <p>The <strong>random name picker for gift exchange</strong> is perfect for family gatherings, office parties, and friend groups. Features include:</p>
-        <ul>
-            <li>🎄 White Elephant gift exchange</li>
-            <li>🎁 Christmas gift assignments</li>
-            <li>🎂 Birthday gift drawings</li>
-            <li>🏢 Office party exchanges</li>
-        </ul>
-
-        <h2>📱 Zoom Random Name Picker App</h2>
-        <p>Looking for a <strong>zoom random name picker app</strong>? Our tool works perfectly alongside Zoom for virtual classrooms and online meetings. Share your screen, spin the wheel, and let everyone see who gets selected!</p>
-
-        <h2>🎨 Canva Random Name Picker</h2>
-        <p>Our <strong>canva random name picker</strong> style wheel is visually appealing and perfect for presentations. The colorful wheel segments make it exciting to watch and spin during live events.</p>
-
-        <h2>🔧 Miniwebtool Random Name Picker Alternative</h2>
-        <p>Looking for a <strong>miniwebtool random name picker</strong> alternative? Our tool offers similar functionality with more features, better visuals, and completely free access with no limits.</p>
-
-        <h2>🏆 ViralSweep Random Name Picker</h2>
-        <p>Our <strong>viralsweep random name picker</strong> style tool is perfect for contest winners, giveaway drawings, and promotional events. Ensure fair winner selection with our random wheel spinner.</p>
-
-        <h2>🎡 Spin Wheel Name Selector Features</h2>
-        <div class="currency-table">
-            <table>
-                <thead>
-                    <tr><th>Feature</th><th>Description</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Custom Names</td><td>Add any number of names (2-12 recommended)</td></tr>
-                    <tr><td>Quick Presets</td><td>Students, team members, friends, family, secret santa</td></tr>
-                    <tr><td>Smooth Animation</td><td>Realistic spinning physics</td></tr>
-                    <tr><td>Color Coding</td><td>Each name gets a unique color</td></tr>
-                    <tr><td>Copy Winner</td><td>Copy selected name to clipboard</td></tr>
-                    <tr><td>Mobile Friendly</td><td>Works on all devices</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h2>🎯 How to Use Random Name Picker</h2>
-        <ol>
-            <li><strong>Step 1:</strong> Enter names in the input fields</li>
-            <li><strong>Step 2:</strong> Use presets for quick setup</li>
-            <li><strong>Step 3:</strong> Click "SPIN THE WHEEL" button</li>
-            <li><strong>Step 4:</strong> Watch the wheel spin and stop</li>
-            <li><strong>Step 5:</strong> See the winning name</li>
-            <li><strong>Step 6:</strong> Copy the winner if needed</li>
-        </ol>
-
-        <h2>✅ Why Choose Our Random Name Picker?</h2>
-        <ul>
-            <li><strong>✅ 100% Free:</strong> No hidden charges, no registration</li>
-            <li><strong>✅ Custom Names:</strong> Add any names you want</li>
-            <li><strong>✅ Quick Presets:</strong> Ready-to-use name lists</li>
-            <li><strong>✅ Truly Random:</strong> Fair selection algorithm</li>
-            <li><strong>✅ Smooth Animation:</strong> Realistic spinning</li>
-            <li><strong>✅ Copy Feature:</strong> Save your winners</li>
-            <li><strong>✅ Mobile Friendly:</strong> Works everywhere</li>
-            <li><strong>✅ Privacy Protected:</strong> No data stored</li>
-        </ul>
-
-        <h2>❓ Frequently Asked Questions</h2>
-
-        <div class="faq-section-article">
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ How to use random name picker for classroom?</div>
-                <div class="faq-answer-article">Enter your students' names in the list, spin the wheel, and it will randomly select a name. Perfect for calling on students, creating teams, or random prize drawings.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ What is the best random name picker for secret santa?</div>
-                <div class="faq-answer-article">Our random name picker is perfect for secret santa! Add all participant names, spin the wheel, and it randomly assigns gift exchange partners.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ Is this random name picker free?</div>
-                <div class="faq-answer-article">Yes! This random name picker is completely free with no registration required. Use it unlimited times for all your name picking needs.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ What is online stopwatch random name picker?</div>
-                <div class="faq-answer-article">Online stopwatch random name picker is a tool that randomly selects names. Our tool works exactly like that but with better visuals and more features.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ Can I use this for Zoom random name picker?</div>
-                <div class="faq-answer-article">Absolutely! Share your screen during Zoom calls and use our wheel to randomly select participants for activities, questions, or prizes.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ What is random name picker for gift exchange?</div>
-                <div class="faq-answer-article">It's a tool that randomly selects names for gift exchanges like Secret Santa, White Elephant, or holiday gift drawings.</div>
-            </div>
-        </div>
-
-        <!-- Related Searches -->
-        <div class="related-searches">
-            <h4>🔍 People Also Search For</h4>
-            <div class="search-tags">
-                <a href="#" class="search-tag">random name picker</a>
-                <a href="#" class="search-tag">online stopwatch random name picker</a>
-                <a href="#" class="search-tag">zoom random name picker app</a>
-                <a href="#" class="search-tag">viralsweep random name picker</a>
-                <a href="#" class="search-tag">random name picker secret santa</a>
-                <a href="#" class="search-tag">canva random name picker</a>
-                <a href="#" class="search-tag">miniwebtool random name picker</a>
-                <a href="#" class="search-tag">random name picker for gift exchange</a>
-                <a href="#" class="search-tag">spin wheel name selector</a>
-                <a href="#" class="search-tag">name picker wheel</a>
-                <a href="#" class="search-tag">classroom name picker</a>
-                <a href="#" class="search-tag">lucky draw name picker</a>
-                <a href="#" class="search-tag">random winner generator</a>
-                <a href="#" class="search-tag">secret santa name picker</a>
-                <a href="#" class="search-tag">gift exchange name picker</a>
-            </div>
-        </div>
-
-        <div class="tip">
-            <p><strong>📌 Bookmark This Page!</strong> Save our random name picker to your browser bookmarks for quick access whenever you need to pick names for classrooms, secret santa, gift exchanges, or any random selection needs! It's completely free and always available.</p>
-        </div>
-
-        <p style="margin-top: 30px; text-align: center; color: #6b7280;"><strong>Free Online Tools</strong> | Random Name Picker | Spin Wheel Name Selector | 100% Free | No Registration</p>
+        <p style="margin-top: 30px; text-align: center;">© 2026 Free Online Tools | Random Name Picker | Spin Wheel Name Selector</p>
     </div>
 </div>
 
 <footer class="footer">
     <div class="footer-container">
-        <div class="footer-col">
-            <h3>✨ Free Online Tools</h3>
-            <p>Random Name Picker - Spin wheel name selector. Perfect for classrooms, secret santa, gift exchange, and team selection. Trusted by 28,000+ daily users.</p>
-        </div>
-        <div class="footer-col">
-            <h4>📄 Quick Links</h4>
-            <a href="index.html">🏠 Home</a>
-            <a href="about.html">ℹ️ About Us</a>
-            <a href="contact.html">📧 Contact Us</a>
-            <a href="privacy-policy.html">🔒 Privacy Policy</a>
-        </div>
-        <div class="footer-col">
-            <h4>⭐ Spin Wheel Tools</h4>
-            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-            <a href="yes-no-wheel.html">✅ Yes/No Wheel</a>
-            <a href="decision-roulette.html">🎯 Decision Roulette</a>
-            <a href="random-name-picker.html">🏆 Random Name Picker</a>
-        </div>
-        <div class="footer-col">
-            <h4>🔧 All Tools</h4>
-            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
-            <a href="currency-converter.html">💱 Currency Converter</a>
-            <a href="line-counter.html">📝 Line Counter</a>
-        </div>
+        <div class="footer-col"><h3>✨ Free Online Tools</h3><p>Random Name Picker - Spin wheel name selector. Trusted by 28,000+ daily users.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="privacy-policy.html">🔒 Privacy</a></div>
+        <div class="footer-col"><h4>⭐ Spin Wheel Tools</h4><a href="spin-the-wheel.html">🎡 Spin The Wheel</a><a href="yes-no-wheel.html">✅ Yes/No Wheel</a><a href="decision-roulette.html">🎯 Decision Roulette</a><a href="random-name-picker.html">🏆 Random Name Picker</a></div>
+        <div class="footer-col"><h4>🔧 All Tools</h4><a href="bmi-calculator.html">⚖️ BMI Calculator</a><a href="currency-converter.html">💱 Currency Converter</a><a href="line-counter.html">📝 Line Counter</a></div>
     </div>
-    <div class="footer-bottom">
-        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ | Random name picker wheel</p>
-    </div>
+    <div class="footer-bottom"><p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ | Random name picker wheel</p></div>
 </footer>
 
 <script>
-// Dropdown functionality
-(function() {
-    const dropdown = document.getElementById('toolsDropdown');
-    const dropBtn = document.getElementById('toolsBtn');
-    if (dropdown && dropBtn) {
-        dropBtn.addEventListener('click', function(e) { e.stopPropagation(); dropdown.classList.toggle('open'); });
-        document.addEventListener('click', function(event) { if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) dropdown.classList.remove('open'); });
-    }
-    document.querySelectorAll('.dropdown-category').forEach(cat => {
-        cat.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const catId = this.getAttribute('data-cat');
-            if (catId) {
-                const toolsDiv = document.getElementById(catId + 'Tools');
-                if (toolsDiv) { toolsDiv.classList.toggle('show'); this.classList.toggle('active'); }
-            }
-        });
-    });
-})();
-
 // Random Name Picker Functionality
 let currentAngle = 0;
 let spinning = false;
@@ -1109,9 +589,7 @@ function updateNamesFromInputs() {
     names = [];
     inputs.forEach(input => {
         let val = input.value.trim();
-        if (val !== '') {
-            names.push(val);
-        }
+        if (val !== '') names.push(val);
     });
     if (names.length === 0) names = ['Name'];
     colors = generateColors(names.length);
@@ -1123,10 +601,7 @@ function addName() {
     let list = document.getElementById('namesList');
     let div = document.createElement('div');
     div.className = 'name-item';
-    div.innerHTML = `
-        <input type="text" class="name-input" placeholder="New Name" value="New Name">
-        <button class="remove-name" onclick="removeName(this)">✕</button>
-    `;
+    div.innerHTML = `<input type="text" class="name-input" placeholder="New Name" value="New Name"><button class="remove-name" onclick="removeName(this)">✕</button>`;
     list.appendChild(div);
     updateNamesFromInputs();
     showToast('Name added!');
@@ -1154,27 +629,21 @@ function resizeCanvas() {
 
 function drawWheel(angle) {
     if (names.length === 0) return;
-    
     let size = canvas.width;
     let centerX = size / 2;
     let centerY = size / 2;
     let radius = size / 2;
     let angleStep = (Math.PI * 2) / names.length;
-
     ctx.clearRect(0, 0, size, size);
-
     for (let i = 0; i < names.length; i++) {
         let startAngle = i * angleStep + angle;
         let endAngle = (i + 1) * angleStep + angle;
-        
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.arc(centerX, centerY, radius, startAngle, endAngle);
         ctx.closePath();
-        
         ctx.fillStyle = colors[i];
         ctx.fill();
-        
         ctx.strokeStyle = 'white';
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -1182,7 +651,6 @@ function drawWheel(angle) {
         ctx.arc(centerX, centerY, radius, startAngle, endAngle);
         ctx.lineTo(centerX, centerY);
         ctx.stroke();
-        
         ctx.save();
         ctx.translate(centerX, centerY);
         ctx.rotate(startAngle + angleStep / 2);
@@ -1196,7 +664,6 @@ function drawWheel(angle) {
         ctx.fillText(text, radius * 0.65, 0);
         ctx.restore();
     }
-    
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius * 0.1, 0, Math.PI * 2);
     ctx.fillStyle = '#1E3A8A';
@@ -1209,14 +676,11 @@ function drawWheel(angle) {
 function getNameAtPointer() {
     let pointerAngle = -Math.PI / 2;
     let actualAngle = pointerAngle - currentAngle;
-    
     while (actualAngle < 0) actualAngle += Math.PI * 2;
     while (actualAngle >= Math.PI * 2) actualAngle -= Math.PI * 2;
-    
     let angleStep = (Math.PI * 2) / names.length;
     let index = Math.floor(actualAngle / angleStep);
     index = Math.min(index, names.length - 1);
-    
     return names[index];
 }
 
@@ -1239,28 +703,17 @@ function createConfetti() {
 }
 
 const confettiStyle = document.createElement('style');
-confettiStyle.textContent = `
-    @keyframes confettiFall {
-        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-    }
-`;
+confettiStyle.textContent = `@keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }`;
 document.head.appendChild(confettiStyle);
 
 function spinWheel() {
     if (spinning) return;
-    if (names.length < 2) {
-        showToast('Add at least 2 names!');
-        return;
-    }
-    
+    if (names.length < 2) { showToast('Add at least 2 names!'); return; }
     spinning = true;
     spinStartTime = performance.now();
-    
     let fullRotations = 5 + Math.random() * 5;
     let finalAngleOffset = Math.random() * Math.PI * 2;
     spinEndAngle = currentAngle + (fullRotations * Math.PI * 2) + finalAngleOffset;
-    
     animateSpin(spinStartTime);
 }
 
@@ -1268,31 +721,20 @@ function animateSpin(now) {
     let elapsed = performance.now() - now;
     let t = Math.min(1, elapsed / spinDuration);
     let easeOut = 1 - Math.pow(1 - t, 3);
-    
     let newAngle = currentAngle + (spinEndAngle - currentAngle) * easeOut;
     currentAngle = newAngle % (Math.PI * 2);
     drawWheel(currentAngle);
-    
     if (t < 1) {
         requestAnimationFrame(() => animateSpin(now));
     } else {
         spinning = false;
         let winner = getNameAtPointer();
-        
         let resultCard = document.getElementById('resultCard');
-        let winnerName = document.getElementById('winnerName');
-        let winnerSub = document.getElementById('winnerSub');
-        
-        winnerName.innerHTML = winner;
-        winnerSub.innerHTML = '🎉 Congratulations! 🎉';
-        
+        document.getElementById('winnerName').innerHTML = winner;
+        document.getElementById('winnerSub').innerHTML = '🎉 Congratulations! 🎉';
         resultCard.classList.add('winner');
         createConfetti();
-        
-        setTimeout(() => {
-            resultCard.classList.remove('winner');
-        }, 600);
-        
+        setTimeout(() => resultCard.classList.remove('winner'), 600);
         showToast(`Winner: ${winner}`);
     }
 }
@@ -1308,10 +750,7 @@ function resetWheel() {
 
 function copyWinner() {
     let winner = document.getElementById('winnerName').innerHTML;
-    if (winner === '—') {
-        showToast('Please spin the wheel first!');
-        return;
-    }
+    if (winner === '—') { showToast('Please spin the wheel first!'); return; }
     navigator.clipboard.writeText(winner);
     showToast(`✅ Copied: ${winner}`);
 }
@@ -1319,30 +758,18 @@ function copyWinner() {
 function loadPreset(type) {
     let list = document.getElementById('namesList');
     list.innerHTML = '';
-    
     let presetNames = [];
-    if (type === 'students') {
-        presetNames = ['Emma', 'Liam', 'Sophia', 'Noah', 'Olivia', 'Mason', 'Isabella', 'Lucas'];
-    } else if (type === 'team') {
-        presetNames = ['John', 'Sarah', 'Mike', 'Lisa', 'David', 'Anna', 'Chris', 'Maria'];
-    } else if (type === 'friends') {
-        presetNames = ['Alex', 'Jordan', 'Taylor', 'Casey', 'Riley', 'Morgan', 'Cameron', 'Quinn'];
-    } else if (type === 'family') {
-        presetNames = ['Dad', 'Mom', 'Brother', 'Sister', 'Grandpa', 'Grandma', 'Uncle', 'Aunt'];
-    } else if (type === 'secret-santa') {
-        presetNames = ['Alice', 'Bob', 'Carol', 'Dave', 'Eve', 'Frank', 'Grace', 'Henry'];
-    }
-    
+    if (type === 'students') presetNames = ['Emma', 'Liam', 'Sophia', 'Noah', 'Olivia', 'Mason', 'Isabella', 'Lucas'];
+    else if (type === 'team') presetNames = ['John', 'Sarah', 'Mike', 'Lisa', 'David', 'Anna', 'Chris', 'Maria'];
+    else if (type === 'friends') presetNames = ['Alex', 'Jordan', 'Taylor', 'Casey', 'Riley', 'Morgan', 'Cameron', 'Quinn'];
+    else if (type === 'family') presetNames = ['Dad', 'Mom', 'Brother', 'Sister', 'Grandpa', 'Grandma', 'Uncle', 'Aunt'];
+    else if (type === 'secret-santa') presetNames = ['Alice', 'Bob', 'Carol', 'Dave', 'Eve', 'Frank', 'Grace', 'Henry'];
     presetNames.forEach(name => {
         let div = document.createElement('div');
         div.className = 'name-item';
-        div.innerHTML = `
-            <input type="text" class="name-input" value="${name}">
-            <button class="remove-name" onclick="removeName(this)">✕</button>
-        `;
+        div.innerHTML = `<input type="text" class="name-input" value="${name}"><button class="remove-name" onclick="removeName(this)">✕</button>`;
         list.appendChild(div);
     });
-    
     updateNamesFromInputs();
     showToast(`${presetNames.length} names loaded!`);
 }
@@ -1359,19 +786,43 @@ function showToast(msg) {
 document.getElementById('spinBtn').addEventListener('click', spinWheel);
 document.getElementById('resetBtn').addEventListener('click', resetWheel);
 document.getElementById('copyBtn').addEventListener('click', copyWinner);
-
 document.addEventListener('input', function(e) {
-    if (e.target.classList && e.target.classList.contains('name-input')) {
-        updateNamesFromInputs();
-    }
+    if (e.target.classList && e.target.classList.contains('name-input')) updateNamesFromInputs();
 });
-
 window.addEventListener('resize', () => resizeCanvas());
+window.onload = () => { updateNamesFromInputs(); drawWheel(currentAngle); };
 
-window.onload = () => {
-    updateNamesFromInputs();
-    drawWheel(currentAngle);
+// Dynamic category footer (FIXED - now detects random-name-picker as 'fun')
+function getCurrentCategory() {
+    const path = window.location.pathname;
+    if (path.includes('spin-the-wheel') || path.includes('yes-no-wheel') || path.includes('decision-roulette') || path.includes('random-name-picker') || path.includes('random-number')) return 'fun';
+    if (path.includes('age') || path.includes('gst') || path.includes('percentage') || path.includes('discount') || path.includes('profit') || path.includes('gpa') || path.includes('date') || path.includes('qr') || path.includes('currency')) return 'popular';
+    if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie')) return 'health';
+    if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) return 'financial';
+    if (path.includes('word') || path.includes('line') || path.includes('text') || path.includes('password')) return 'text';
+    if (path.includes('image')) return 'media';
+    return 'popular';
+}
+const categories = {
+    popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
+    fun: { name: "🎲 Random & Fun Tools", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Decision Roulette", url: "decision-roulette.html" }, { name: "Random Name Picker", url: "random-name-picker.html" }, { name: "Random Number Generator", url: "random-number-generator.html" } ] }
 };
+function renderFooter() {
+    const container = document.getElementById('dynamicCategoryFooter');
+    if (!container) return;
+    const cat = categories[getCurrentCategory()];
+    if (!cat) { container.innerHTML = '<p style="text-align:center;">Tools loading...</p>'; return; }
+    let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+        <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
+    cat.tools.forEach(tool => {
+        html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
+    });
+    html += `</div></div>`;
+    container.innerHTML = html;
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
+else renderFooter();
 </script>
 </body>
 </html>
