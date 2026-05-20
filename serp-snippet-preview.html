@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>SERP Snippet Preview - Google Result Tester | Free SEO Tool</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Preview your Google search result snippet. Test title, meta description & URL. Improve CTR with this free SEO tool. No registration required.">
+<meta name="keywords" content="SERP snippet preview, Google search preview, meta description tester, title tag preview, SEO snippet tool">
+<link rel="canonical" href="https://freeonlinetools203.com/serp-snippet-preview.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="SERP Snippet Preview Tool - Google Result Preview">
+<meta property="og:description" content="Preview and optimize your Google search snippet. Test title, meta description, and URL appearance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/serp-snippet-preview.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SERP Snippet Preview Tool">
+<meta name="twitter:description" content="Preview your Google search result snippet.">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SERP Snippet Preview Tool",
+  "description": "Preview and optimize your website's Google search result snippet.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/serp-snippet-preview.html",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ========== NAVBAR (same as age calculator) ========== */
+.navbar {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+
+.nav-links li a:hover {
+    color: #f0f0f0;
+    border-bottom: 2px solid white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 1rem;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    z-index: 1001;
+    top: 40px;
+    left: 0;
+    padding: 8px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-category {
+    cursor: pointer;
+    padding: 12px 16px;
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-tools {
+    display: none;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin: 4px 8px 8px 8px;
+    overflow: hidden;
+}
+
+.category-tools.show {
+    display: block;
+}
+
+.category-tools a {
+    color: #1f2937 !important;
+    padding: 10px 20px 10px 32px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.category-tools a:hover {
+    background: #e5e7eb;
+    color: #2563eb !important;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* Main Card */
+.serp-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    padding: 30px 25px;
+    text-align: center;
+}
+
+.card-header h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card-header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+
+.card-content {
+    padding: 35px;
+}
+
+/* SERP Preview Box */
+.serp-preview-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.preview-header h3 {
+    color: #1f2937;
+    font-size: 18px;
+}
+
+.device-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.device-btn {
+    padding: 6px 14px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.device-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* Google SERP Snippet Styling */
+.google-snippet {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    font-family: arial, sans-serif;
+    max-width: 600px;
+    transition: all 0.2s;
+}
+
+.google-snippet.mobile {
+    max-width: 100%;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.snippet-url {
+    color: #202124;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.snippet-title {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
+
+.snippet-title a {
+    color: #1a0dab;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.snippet-title a:hover {
+    text-decoration: underline;
+}
+
+.snippet-desc {
+    color: #4d5156;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 24px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.input-wrapper input, .input-wrapper textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.input-wrapper input:focus, .input-wrapper textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 6px;
+    color: #6b7280;
+}
+
+.char-counter.warning {
+    color: #eab308;
+}
+
+.char-counter.danger {
+    color: #ef4444;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.copy-btn {
+    flex: 1;
+    padding: 14px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: #e5e7eb;
+}
+
+.reset-btn {
+    flex: 1;
+    padding: 14px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-btn:hover {
+    background: #fee2e2;
+    border-color: #fecaca;
+}
+
+/* Toast */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2937;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Other Tools */
+.other-tools, .seo-article {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.other-tools h3, .seo-article h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.tool-link, .home-link {
+    display: block;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.tool-link:hover, .home-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(37,99,235,0.3);
+}
+
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 50px 20px 25px;
+    margin-top: 40px;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: white;
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+}
+
+.footer-col a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+    color: #60a5fa;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 35px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .google-snippet { max-width: 100%; }
+    .snippet-title a { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+        .catch(() => {});
+</script>
+
+<div class="container">
+    <div class="serp-card">
+        <div class="card-header">
+            <h1>SERP Snippet Preview Tool - Google Search Result Preview Generator</h1>
+            <p>See exactly how your title, meta description, and URL will appear in Google search results. Optimize for better click-through rates (CTR).</p>
+        </div>
+        <div class="card-content">
+            <!-- SERP Preview Display -->
+            <div class="serp-preview-box">
+                <div class="preview-header">
+                    <h3>🔍 Google Search Result Preview</h3>
+                    <div class="device-toggle">
+                        <button class="device-btn active" data-device="desktop">💻 Desktop</button>
+                        <button class="device-btn" data-device="mobile">📱 Mobile</button>
+                    </div>
+                </div>
+                <div id="snippetContainer" class="google-snippet desktop">
+                    <div class="snippet-url" id="previewUrl">example.com</div>
+                    <div class="snippet-title"><a href="#" id="previewTitle">Your Page Title Will Appear Here</a></div>
+                    <div class="snippet-desc" id="previewDesc">Your meta description will appear here. This is the short summary that users see below the title in search results. Keep it between 150-160 characters for best results.</div>
+                </div>
+            </div>
+
+            <!-- Input Fields -->
+            <div class="input-group">
+                <label>🔗 Page Title (Title Tag)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="titleInput" placeholder="e.g., Free Backlink Checker - Analyze Any Website Backlinks" maxlength="70">
+                </div>
+                <div class="char-counter" id="titleCounter">0 / 60 recommended</div>
+            </div>
+
+            <div class="input-group">
+                <label>📝 Meta Description</label>
+                <div class="input-wrapper">
+                    <textarea id="descInput" rows="3" placeholder="Write a compelling description that summarizes the page. Google typically displays 150-160 characters." maxlength="320"></textarea>
+                </div>
+                <div class="char-counter" id="descCounter">0 / 160 recommended</div>
+            </div>
+
+            <div class="input-group">
+                <label>🌐 URL (https:// or relative)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="urlInput" placeholder="https://example.com/page.html or example.com">
+                </div>
+                <div class="char-counter" id="urlCounter">—</div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="copy-btn" id="copySnippetBtn">📋 Copy Snippet Text</button>
+                <button class="reset-btn" id="resetBtn">↺ Reset to Example</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Home & Category Footer -->
+    <div class="category-footer" style="max-width: 1200px; margin: 40px auto 20px; padding: 0 20px;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" class="home-link" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e3a8a);">🔘 Back to Home</a>
+        </div>
+        <div id="dynamicCategoryFooter"></div>
+    </div>
+
+    <!-- SEO Article (summarized for brevity, but you can expand) -->
+    <div class="seo-article">
+        <h2>What is SERP Snippet Preview and Why It Matters?</h2>
+        <p style="color: #374151; line-height: 1.6;">A SERP snippet is the information Google displays for your webpage in search results – title, URL, and description. Optimizing these elements can significantly increase your click-through rate (CTR). Our free tool lets you test different variations before publishing.</p>
+        <h2>Best Practices for Title Tags</h2>
+        <ul style="margin-left: 20px; color: #374151;">
+            <li>Keep under 60 characters to avoid truncation.</li>
+            <li>Include primary keyword near the beginning.</li>
+            <li>Make it compelling and unique.</li>
+        </ul>
+        <h2>Meta Description Tips</h2>
+        <ul style="margin-left: 20px; color: #374151;">
+            <li>150-160 characters is ideal.</li>
+            <li>Include a call-to-action (e.g., "Learn more", "Try free").</li>
+            <li>Match user intent.</li>
+        </ul>
+        <p style="margin-top: 20px;">Use this SERP snippet preview tool to test and refine your snippets – no more guessing how your pages will look in Google search results!</p>
+        <p><small>Last updated: <span id="currentDate"></span></small></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>✨ Free Online Tools</h3><p>Your one-stop destination for free, fast, and accurate online utilities.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy</a></div>
+        <div class="footer-col"><h4>⭐ Popular Tools</h4><a href="age-calculator.html">Age Calculator</a><a href="backlink-checker.html">Backlink Checker</a><a href="percentage-calculator.html">Percentage Calculator</a></div>
+        <div class="footer-col"><h4>🔧 All Tools</h4><a href="emi-calculator.html">EMI Calculator</a><a href="word-counter.html">Word Counter</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 <strong>Free Online Tools</strong>. All rights reserved.</p></div>
+</footer>
+
+<script>
+    // DOM elements
+    const titleInput = document.getElementById('titleInput');
+    const descInput = document.getElementById('descInput');
+    const urlInput = document.getElementById('urlInput');
+    const previewTitle = document.getElementById('previewTitle');
+    const previewDesc = document.getElementById('previewDesc');
+    const previewUrl = document.getElementById('previewUrl');
+    const titleCounter = document.getElementById('titleCounter');
+    const descCounter = document.getElementById('descCounter');
+    const snippetContainer = document.getElementById('snippetContainer');
+
+    // Helper: update character counters
+    function updateCounters() {
+        let titleLen = titleInput.value.length;
+        titleCounter.innerText = `${titleLen} / 60 recommended`;
+        if (titleLen > 60) titleCounter.className = 'char-counter danger';
+        else if (titleLen > 50) titleCounter.className = 'char-counter warning';
+        else titleCounter.className = 'char-counter';
+
+        let descLen = descInput.value.length;
+        descCounter.innerText = `${descLen} / 160 recommended`;
+        if (descLen > 160) descCounter.className = 'char-counter danger';
+        else if (descLen > 150) descCounter.className = 'char-counter warning';
+        else descCounter.className = 'char-counter';
+    }
+
+    // Normalize URL display
+    function formatUrlForPreview(url) {
+        if (!url) return "example.com";
+        let clean = url.trim().toLowerCase();
+        clean = clean.replace(/^(https?:\/\/)/i, '');
+        clean = clean.replace(/^www\./i, '');
+        clean = clean.replace(/\/$/, '');
+        if (clean.length > 50) clean = clean.substring(0, 47) + '...';
+        return clean;
+    }
+
+    // Update full preview
+    function updatePreview() {
+        let title = titleInput.value.trim();
+        if (title === "") title = "Your Page Title Will Appear Here";
+        if (title.length > 70) title = title.substring(0, 70) + "...";
+        previewTitle.innerHTML = `<a href="#" style="cursor:default;">${escapeHtml(title)}</a>`;
+
+        let desc = descInput.value.trim();
+        if (desc === "") desc = "Your meta description will appear here. This is the short summary that users see below the title in search results.";
+        if (desc.length > 320) desc = desc.substring(0, 317) + "...";
+        previewDesc.innerText = desc;
+
+        let url = urlInput.value.trim();
+        previewUrl.innerText = formatUrlForPreview(url);
+
+        updateCounters();
+    }
+
+    // Simple escape to prevent XSS
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+
+    // Device toggle (desktop/mobile)
+    let currentDevice = 'desktop';
+    function setDevice(device) {
+        currentDevice = device;
+        snippetContainer.classList.remove('desktop', 'mobile');
+        snippetContainer.classList.add(device);
+        document.querySelectorAll('.device-btn').forEach(btn => {
+            if (btn.getAttribute('data-device') === device) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+        if (device === 'mobile') {
+            snippetContainer.style.maxWidth = '100%';
+        } else {
+            snippetContainer.style.maxWidth = '600px';
+        }
+    }
+
+    // Reset to example data
+    function resetToExample() {
+        titleInput.value = "Free SERP Snippet Preview Tool - Google Result Preview Generator";
+        descInput.value = "Test and optimize how your title, meta description, and URL appear in Google search results. Improve your CTR with this free SEO tool.";
+        urlInput.value = "https://freeonlinetools203.com/serp-snippet-preview.html";
+        updatePreview();
+        showToast("✅ Reset to example snippet", true);
+    }
+
+    // Copy snippet text
+    async function copySnippet() {
+        const titleText = previewTitle.innerText;
+        const urlText = previewUrl.innerText;
+        const descText = previewDesc.innerText;
+        const fullSnippet = `${titleText}\n${urlText}\n${descText}`;
+        try {
+            await navigator.clipboard.writeText(fullSnippet);
+            showToast("📋 Snippet copied to clipboard!", true);
+        } catch (err) {
+            showToast("❌ Failed to copy", false);
+        }
+    }
+
+    function showToast(msg, success) {
+        let existing = document.querySelector('.toast-notification');
+        if(existing) existing.remove();
+        let toast = document.createElement('div');
+        toast.className = 'toast-notification';
+        toast.style.backgroundColor = success ? '#10b981' : '#ef4444';
+        toast.innerText = msg;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2500);
+    }
+
+    // Event listeners
+    titleInput.addEventListener('input', updatePreview);
+    descInput.addEventListener('input', updatePreview);
+    urlInput.addEventListener('input', updatePreview);
+    document.getElementById('copySnippetBtn').addEventListener('click', copySnippet);
+    document.getElementById('resetBtn').addEventListener('click', resetToExample);
+    document.querySelectorAll('.device-btn').forEach(btn => {
+        btn.addEventListener('click', () => setDevice(btn.getAttribute('data-device')));
+    });
+
+    // Initialize
+    updatePreview();
+    setDevice('desktop');
+    document.getElementById('currentDate').innerText = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+
+    // Dynamic category footer (simple)
+    const footerDiv = document.getElementById('dynamicCategoryFooter');
+    if(footerDiv) {
+        footerDiv.innerHTML = `<div style="background:white; border-radius:20px; padding:30px; text-align:center;">
+            <h3 style="color:#1e3a8a;">🔗 Other SEO Tools</h3>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:20px;">
+                <a href="backlink-checker.html" style="background:linear-gradient(135deg,#2563eb,#1e3a8a); color:white; padding:12px; border-radius:40px; text-decoration:none;">🔘 Backlink Checker</a>
+                <a href="age-calculator.html" style="background:linear-gradient(135deg,#2563eb,#1e3a8a); color:white; padding:12px; border-radius:40px; text-decoration:none;">🔘 Age Calculator</a>
+                <a href="keyword-density-checker.html" style="background:linear-gradient(135deg,#2563eb,#1e3a8a); color:white; padding:12px; border-radius:40px; text-decoration:none;">🔘 Keyword Density Checker</a>
+            </div>
+        </div>`;
+    }
+
+    // Dropdown init (same as before)
+    function initDropdown() {
+        const dropdown = document.getElementById('toolsDropdown');
+        const dropBtn = document.getElementById('toolsBtn');
+        const dropdownContent = document.getElementById('dropdownContent');
+        if (!dropdown || !dropBtn || !dropdownContent) return;
+        function closeDropdown() { dropdown.classList.remove('open'); document.querySelectorAll('.dropdown-category.active').forEach(cat => { cat.classList.remove('active'); const targetId = cat.getAttribute('data-cat'); if(targetId) { const toolsDiv = document.getElementById(targetId + 'Tools'); if(toolsDiv) toolsDiv.classList.remove('show'); } }); }
+        function openDropdown() { dropdown.classList.add('open'); }
+        dropBtn.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.contains('open') ? closeDropdown() : openDropdown(); });
+        dropdownContent.addEventListener('click', e => e.stopPropagation());
+        document.addEventListener('click', function(event) { if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) closeDropdown(); });
+        document.querySelectorAll('.dropdown-category').forEach(cat => { cat.addEventListener('click', function(e) { e.stopPropagation(); const catId = this.getAttribute('data-cat'); if(catId) { const toolsDiv = document.getElementById(catId + 'Tools'); if(toolsDiv) { this.classList.toggle('active'); toolsDiv.classList.toggle('show'); } } }); });
+    }
+    if (document.getElementById('toolsDropdown')) initDropdown();
+    else {
+        const observer = new MutationObserver(() => { if(document.getElementById('toolsDropdown')) { initDropdown(); observer.disconnect(); } });
+        observer.observe(document.getElementById('navbar-placeholder'), { childList: true, subtree: true });
+    }
+</script>
+</body>
+</html>
