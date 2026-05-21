@@ -18,6 +18,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freeonlinetools203.com/prize-wheel.html">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Prize Wheel - Spin to Win">
+    <meta name="twitter:description" content="Custom prize wheel for giveaways, contests, and events. Free tool!">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
     <script>
@@ -26,6 +31,9 @@
       gtag('js', new Date());
       gtag('config', 'G-EQ8DLY7HYN');
     </script>
+
+    <!-- External script -->
+    <script src="https://freeonlinetools203.com/script.js"></script>
 
     <style>
         * {
@@ -36,11 +44,203 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f3f4f6;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
             min-height: 100vh;
         }
 
-        /* Main Container */
+        /* ========== MEGAMENU NAVBAR ========== */
+        .megamenu-container {
+            width: 100%;
+            background: linear-gradient(to right, #881e8a, #2563eb);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .megamenu-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            min-height: 60px;
+        }
+        .megamenu-logo a {
+            display: block;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 0;
+        }
+        .megamenu-nav {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        .megamenu-nav > li {
+            position: static;
+        }
+        .megamenu-nav > li > a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        .megamenu-nav > li > a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        .has-dropdown > a::after {
+            content: " ▼";
+            font-size: 10px;
+            margin-left: 5px;
+        }
+        .mega-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 1001;
+        }
+        .megamenu-nav > li:hover .mega-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropdown-scroll {
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        .dropdown-column h4 {
+            color: #881e8a;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2563eb;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+        .dropdown-column a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .dropdown-column a:hover {
+            color: #2563eb;
+            padding-left: 8px;
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .mobile-menu {
+            display: none;
+            background: white;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .mobile-menu.open {
+            display: block;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .mobile-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .mobile-nav > li {
+            border-bottom: 1px solid #eee;
+        }
+        .mobile-nav > li > a {
+            display: block;
+            padding: 14px 16px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .mobile-dropdown-toggle {
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mobile-dropdown-toggle::after {
+            content: "▼";
+            font-size: 10px;
+            color: #888;
+        }
+        .mobile-dropdown-toggle.open::after {
+            content: "▲";
+        }
+        .mobile-dropdown-content {
+            padding-left: 20px;
+            display: none;
+            background: #f9f9f9;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .mobile-dropdown-content.open {
+            display: block;
+        }
+        .mobile-dropdown-content h4 {
+            padding: 10px 0 5px 12px;
+            color: #881e8a;
+            font-size: 0.85rem;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            background: #f9f9f9;
+        }
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 8px 12px 8px 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #eee;
+        }
+        @media (max-width: 768px) {
+            .megamenu-nav { display: none; }
+            .mobile-toggle { display: block; }
+            .mega-dropdown { display: none; }
+        }
+
+        /* ========== MAIN CONTAINER ========== */
         .container {
             max-width: 1000px;
             margin: 40px auto;
@@ -49,15 +249,15 @@
 
         .tool-card {
             background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
             overflow: hidden;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .card-header {
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            padding: 30px 25px;
+            padding: 35px 30px;
             text-align: center;
         }
 
@@ -79,16 +279,17 @@
         /* Prize Settings */
         .settings-section {
             background: #f8fafc;
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 24px;
+            padding: 25px;
             margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
         }
 
         .settings-title {
             font-weight: 700;
             color: #1e3a8a;
             margin-bottom: 15px;
-            font-size: 15px;
+            font-size: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -101,8 +302,9 @@
             flex-direction: column;
             gap: 10px;
             margin-bottom: 15px;
-            max-height: 220px;
+            max-height: 240px;
             overflow-y: auto;
+            padding-right: 5px;
         }
 
         .prize-item {
@@ -113,11 +315,12 @@
 
         .prize-input {
             flex: 1;
-            padding: 12px;
-            border: 2px solid #e5e7eb;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
             border-radius: 12px;
             font-size: 14px;
             transition: all 0.3s ease;
+            background: white;
         }
 
         .prize-input:focus {
@@ -130,9 +333,9 @@
             background: #dc2626;
             color: white;
             border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
             font-size: 18px;
             cursor: pointer;
             transition: all 0.2s;
@@ -161,6 +364,12 @@
             transform: translateY(-2px);
         }
 
+        .preset-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
         .preset-btn {
             background: #e5e7eb;
             border: none;
@@ -181,12 +390,13 @@
             position: relative;
             display: flex;
             justify-content: center;
-            margin-bottom: 25px;
+            margin: 20px 0;
         }
 
         .wheel {
-            width: 280px;
-            height: 280px;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
             border-radius: 50%;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             cursor: pointer;
@@ -262,7 +472,7 @@
         }
 
         .result-prize {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
             color: white;
             margin-top: 8px;
@@ -279,6 +489,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .history-title {
@@ -317,6 +529,13 @@
             font-size: 13px;
             font-weight: 500;
             color: #1e3a8a;
+            word-break: break-word;
+        }
+
+        .category-footer {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
         }
 
         .home-link {
@@ -336,64 +555,7 @@
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
 
-        /* Article Styles */
-        .article-section {
-            background: white;
-            border-radius: 24px;
-            padding: 45px;
-            margin-top: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            line-height: 1.8;
-            color: #374151;
-        }
-
-        .article-section h2 {
-            color: #1e3a8a;
-            font-size: 28px;
-            margin: 30px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #2563eb;
-            display: inline-block;
-        }
-
-        .article-section p {
-            margin-bottom: 18px;
-            font-size: 16px;
-        }
-
-        .article-section ul {
-            margin: 15px 0 20px 30px;
-        }
-
-        .article-section li {
-            margin-bottom: 8px;
-        }
-
-        .faq-section-article {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .faq-item-article {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 15px;
-        }
-
-        .faq-question-article {
-            font-weight: 700;
-            color: #1e3a8a;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .faq-answer-article {
-            color: #475569;
-            line-height: 1.6;
-        }
-
+        /* Toast Notification */
         .toast-notification {
             position: fixed;
             bottom: 30px;
@@ -402,10 +564,11 @@
             background: #1f2937;
             color: white;
             padding: 12px 24px;
-            border-radius: 50px;
+            border-radius: 60px;
             font-size: 14px;
             z-index: 1000;
             animation: slideUp 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         @keyframes slideUp {
@@ -413,25 +576,57 @@
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
+        /* Confetti */
+        @keyframes confettiFall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
         /* Footer */
         .footer {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #cbd5e1;
-            padding: 60px 20px 30px;
-            margin-top: 40px;
+            padding: 60px 20px 35px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
         }
 
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 45px;
         }
 
         .footer-col h3, .footer-col h4 {
             color: white;
             margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h3::after, .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
         }
 
         .footer-col a {
@@ -440,6 +635,7 @@
             text-decoration: none;
             padding: 6px 0;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
         .footer-col a:hover {
@@ -450,30 +646,72 @@
         .footer-bottom {
             text-align: center;
             padding-top: 35px;
-            margin-top: 40px;
+            margin-top: 45px;
             border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #64748b;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .card-content { padding: 25px 20px; }
-            .wheel { width: 240px; height: 240px; }
-            .result-prize { font-size: 22px; }
-            .article-section { padding: 25px 20px; }
-            .article-section h2 { font-size: 22px; }
+            .container {
+                margin: 20px auto;
+            }
+            .card-content {
+                padding: 25px 20px;
+            }
+            .card-header h1 {
+                font-size: 24px;
+            }
+            .wheel {
+                max-width: 260px;
+            }
+            .result-prize {
+                font-size: 20px;
+            }
+            .preset-buttons {
+                justify-content: center;
+            }
+            .settings-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-container {
+                text-align: center;
+                gap: 35px;
+            }
+            .footer-col h3::after, .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wheel {
+                max-width: 220px;
+            }
+            .pointer {
+                border-left: 18px solid transparent;
+                border-right: 18px solid transparent;
+                border-top: 38px solid #dc2626;
+                top: -20px;
+            }
+            .result-prize {
+                font-size: 18px;
+            }
+            .prize-input {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            .remove-prize {
+                width: 34px;
+                height: 34px;
+            }
         }
     </style>
+<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
-
-<!-- ========== NAYA NAVBAR (SIRF 5 LINES) ========== -->
-<div id="navbar-placeholder"></div>
-<script>
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
-        });
-</script>
 
 <div class="container">
     <div class="tool-card">
@@ -486,7 +724,7 @@
             <div class="settings-section">
                 <div class="settings-title">
                     🎁 Customize Prizes
-                    <div style="display: flex; gap: 5px;">
+                    <div class="preset-buttons">
                         <button class="preset-btn" onclick="loadPreset('contest')">🏆 Contest</button>
                         <button class="preset-btn" onclick="loadPreset('game')">🎮 Game</button>
                         <button class="preset-btn" onclick="loadPreset('gift')">🎁 Gift</button>
@@ -545,11 +783,15 @@
         </div>
     </div>
 
-    <div style="text-align: center; margin: 30px 0;">
-        <a href="index.html" class="home-link">🔘 Back to Home</a>
+    <!-- Category Footer & Back to Home -->
+    <div class="category-footer">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" class="home-link">🔘 Back to Home</a>
+        </div>
+        <div id="dynamicCategoryFooter"></div>
     </div>
 
-    <!-- ========== SEO ARTICLE ========== -->
+    <!-- SEO ARTICLE SECTION -->
     <div class="article-section">
         <h2>🎯 What is a Prize Wheel?</h2>
         <p>A <strong>prize wheel</strong> is an exciting interactive tool that randomly selects prizes when spun. Also known as a <strong>tabletop prize wheel</strong> or <strong>prize spinner wheel</strong>, it's perfect for giveaways, contests, events, and marketing promotions. Our digital prize wheel lets you customize prizes, spin with realistic animation, and celebrate wins with confetti effects!</p>
@@ -598,11 +840,13 @@
             <h4>⭐ Popular Tools</h4>
             <a href="prize-wheel.html">🏆 Prize Wheel</a>
             <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+            <a href="yes-no-wheel.html">✅ Yes/No Wheel</a>
         </div>
         <div class="footer-col">
             <h4>🔧 All Tools</h4>
             <a href="random-name-picker.html">🏆 Random Name Picker</a>
             <a href="random-number-generator.html">🔢 Random Number Generator</a>
+            <a href="decision-roulette.html">🎯 Decision Roulette</a>
         </div>
     </div>
     <div class="footer-bottom">
@@ -611,7 +855,7 @@
 </footer>
 
 <script>
-// Prize Wheel Functionality
+// ========== PRIZE WHEEL FUNCTIONALITY ==========
 let prizes = ['$100 Gift Card', 'Free Coffee', '20% Discount', 'Try Again', 'Free Shipping', 'Grand Prize!'];
 let colors = [];
 let currentAngle = 0;
@@ -625,7 +869,7 @@ let canvas = document.getElementById('prizeWheel');
 let ctx = canvas.getContext('2d');
 
 function generateColors(count) {
-    const premiumColors = ['#FFD700', '#C0C0C0', '#CD7F32', '#FF6B6B', '#4ECDC4', '#9B59B6', '#F39C12', '#2ECC71'];
+    const premiumColors = ['#FFD700', '#C0C0C0', '#CD7F32', '#FF6B6B', '#4ECDC4', '#9B59B6', '#F39C12', '#2ECC71', '#E74C3C', '#3498DB'];
     let colorList = [];
     for (let i = 0; i < count; i++) {
         colorList.push(premiumColors[i % premiumColors.length]);
@@ -702,7 +946,9 @@ function loadPreset(type) {
 }
 
 function resizeCanvas() {
-    let size = window.innerWidth < 600 ? 280 : 350;
+    let container = canvas.parentElement;
+    let maxSize = Math.min(container.clientWidth, 350);
+    let size = window.innerWidth < 600 ? maxSize : 350;
     canvas.width = size;
     canvas.height = size;
     canvas.style.width = size + 'px';
@@ -746,11 +992,11 @@ function drawWheel(angle) {
         ctx.rotate(startAngle + angleStep / 2);
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        let fontSize = Math.min(size * 0.03, 11);
+        let fontSize = Math.min(size * 0.035, 12);
         ctx.font = `500 ${fontSize}px "Segoe UI"`;
         ctx.fillStyle = 'white';
         let text = prizes[i];
-        if (text.length > 12) text = text.substring(0, 10) + '..';
+        if (text.length > 14) text = text.substring(0, 12) + '..';
         ctx.fillText(text, radius * 0.7, 0);
         ctx.restore();
     }
@@ -779,7 +1025,7 @@ function getPrizeAtPointer() {
 }
 
 function createConfetti() {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 80; i++) {
         let confetti = document.createElement('div');
         confetti.style.position = 'fixed';
         confetti.style.width = Math.random() * 8 + 4 + 'px';
@@ -795,15 +1041,6 @@ function createConfetti() {
         setTimeout(() => confetti.remove(), 2000);
     }
 }
-
-const confettiStyle = document.createElement('style');
-confettiStyle.textContent = `
-    @keyframes confettiFall {
-        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-    }
-`;
-document.head.appendChild(confettiStyle);
 
 function spinWheel() {
     if (spinning) return;
@@ -900,13 +1137,117 @@ document.addEventListener('input', function(e) {
     }
 });
 
-window.addEventListener('resize', () => resizeCanvas());
+window.addEventListener('resize', () => {
+    resizeCanvas();
+});
 
+// Mobile menu toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+}
+const mobileToolsToggle = document.getElementById('mobileToolsToggle');
+const mobileToolsContent = document.getElementById('mobileToolsContent');
+if (mobileToolsToggle && mobileToolsContent) {
+    mobileToolsToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileToolsToggle.classList.toggle('open');
+        mobileToolsContent.classList.toggle('open');
+    });
+}
+
+// Dynamic Category Footer
+(function() {
+    function getCurrentCategory() {
+        const path = window.location.pathname;
+        if (path.includes('prize') || path.includes('spin') || path.includes('yes-no')) return 'fun';
+        return 'popular';
+    }
+    const categories = {
+        popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Unit Converter", url: "unit-converter.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
+        fun: { name: "🎲 Fun & Games", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Random Number Generator", url: "random-number-generator.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Prize Wheel", url: "prize-wheel.html" }, { name: "Decision Roulette", url: "decision-roulette.html" } ] }
+    };
+    function renderFooter() {
+        const footerContainer = document.getElementById('dynamicCategoryFooter');
+        if (!footerContainer) return;
+        const cat = categories[getCurrentCategory()] || categories.fun;
+        let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                      <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
+        cat.tools.forEach(tool => {
+            if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
+            html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
+        });
+        html += `</div></div>`;
+        footerContainer.innerHTML = html;
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
+    else renderFooter();
+})();
+
+// Initialize
 window.onload = () => {
+    resizeCanvas();
     updatePrizesFromInputs();
     drawWheel(currentAngle);
 };
 </script>
+
+<!-- Article Section Styles (missing from original) -->
+<style>
+.article-section {
+    background: white;
+    border-radius: 28px;
+    padding: 45px;
+    margin-top: 35px;
+    line-height: 1.8;
+    color: #374151;
+}
+.article-section h2 {
+    color: #1e3a8a;
+    font-size: 28px;
+    margin: 30px 0 20px 0;
+    border-bottom: 3px solid #2563eb;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.article-section p {
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+.article-section ul {
+    margin: 15px 0 20px 30px;
+}
+.article-section li {
+    margin-bottom: 8px;
+}
+.faq-section-article {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+}
+.faq-item-article {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+.faq-question-article {
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.faq-answer-article {
+    color: #475569;
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .article-section { padding: 25px 20px; }
+    .article-section h2 { font-size: 22px; }
+}
+</style>
 
 </body>
 </html>
