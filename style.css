@@ -389,3 +389,27 @@ body {
         margin: 0 8px;
     }
 }
+
+/* =========================================================================
+   8. FIX: Remove white line after top menu (seamless blue background)
+   ========================================================================= */
+.megamenu-container {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.megamenu-container + * {
+    margin-top: 0 !important;
+}
+
+.megamenu-container + hr,
+.megamenu-container + .separator,
+.megamenu-container + div[style*="border"] {
+    display: none !important;
+}
+
+.stats-section {
+    margin-top: 0 !important;
+    padding-top: 50px !important;
+}
