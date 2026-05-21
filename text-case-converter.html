@@ -22,35 +22,13 @@
 <meta name="twitter:title" content="Free Text Case Converter – Convert Text Online">
 <meta name="twitter:description" content="Change text case instantly. Free online tool!">
 
-<!-- Google tag (gtag.js) - CORRECT ID -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-EQ8DLY7HYN');
-</script>
-
-<!-- BreadcrumbList Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://freeonlinetools203.com/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Text Case Converter",
-      "item": "https://freeonlinetools203.com/text-case-converter.html"
-    }
-  ]
-}
 </script>
 
 <!-- Schema Markup -->
@@ -63,15 +41,7 @@
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
   "url": "https://freeonlinetools203.com/text-case-converter.html",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "Free Online Tools"
-  }
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
 }
 </script>
 
@@ -81,45 +51,18 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a text case converter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A text case converter is a tool that changes the case of your text to uppercase, lowercase, title case, sentence case, or capitalize case instantly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How to convert text to uppercase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Simply paste your text in the input area and click the 'UPPERCASE' button. Your text will be converted to all capital letters instantly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this text case converter free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes! This text case converter is completely free with no registration required. Use it unlimited times for all your text formatting needs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between title case and sentence case?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Title Case capitalizes the first letter of every major word. Sentence Case capitalizes only the first letter of the first word in each sentence."
-      }
-    }
+    {"@type": "Question", "name": "What is a text case converter?", "acceptedAnswer": {"@type": "Answer", "text": "A text case converter is a tool that changes the case of your text to uppercase, lowercase, title case, sentence case, or capitalize case instantly."}},
+    {"@type": "Question", "name": "How to convert text to uppercase?", "acceptedAnswer": {"@type": "Answer", "text": "Simply paste your text in the input area and click the 'UPPERCASE' button. Your text will be converted to all capital letters instantly."}},
+    {"@type": "Question", "name": "Is this text case converter free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! This text case converter is completely free with no registration required. Use it unlimited times."}},
+    {"@type": "Question", "name": "What is the difference between title case and sentence case?", "acceptedAnswer": {"@type": "Answer", "text": "Title Case capitalizes the first letter of every major word. Sentence Case capitalizes only the first letter of the first word in each sentence."}}
   ]
 }
 </script>
-    
+
+<!-- External script -->
+<script src="https://freeonlinetools203.com/script.js"></script>
+
 <style>
-/* Your existing CSS for text-case-converter goes here */
-</style>
 * {
     margin: 0;
     padding: 0;
@@ -128,389 +71,324 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f3f4f6;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
     min-height: 100vh;
 }
 
-/* ========== NAVBAR ========== */
-.navbar {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    padding: 15px 30px;
+/* ========== MEGAMENU NAVBAR (SAME AS OTHER TOOLS) ========== */
+.megamenu-container {
+    width: 100%;
+    background: linear-gradient(to right, #881e8a, #2563eb);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
-.nav-container {
-    max-width: 1200px;
+.megamenu-wrapper {
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 15px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    min-height: 60px;
 }
-
-.logo a {
+.megamenu-logo a {
+    display: block;
     color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: bold;
     text-decoration: none;
-    letter-spacing: -0.5px;
+    padding: 12px 0;
 }
-
-.logo a:hover {
-    color: #f0f0f0;
-}
-
-.nav-links {
+.megamenu-nav {
     display: flex;
-    gap: 25px;
+    gap: 5px;
     list-style: none;
-    align-items: center;
+    margin: 0;
+    padding: 0;
     flex-wrap: wrap;
 }
-
-.nav-links li a {
+.megamenu-nav > li {
+    position: static;
+}
+.megamenu-nav > li > a {
+    display: block;
     color: white;
     text-decoration: none;
+    padding: 12px 15px;
+    font-size: 0.95rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    padding: 8px 0;
+    border-radius: 8px;
 }
-
-.nav-links li a:hover {
-    color: #f0f0f0;
-    border-bottom: 2px solid white;
+.megamenu-nav > li > a:hover {
+    background: rgba(255,255,255,0.15);
 }
-
-/* Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.has-dropdown > a::after {
+    content: " ▼";
+    font-size: 10px;
+    margin-left: 5px;
 }
-
-.dropbtn {
+.mega-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 1001;
+}
+.megamenu-nav > li:hover .mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+.dropdown-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+}
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+.dropdown-column h4 {
+    color: #881e8a;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #2563eb;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+.dropdown-column a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+.dropdown-column a:hover {
+    color: #2563eb;
+    padding-left: 8px;
+}
+.mobile-toggle {
+    display: none;
     background: none;
     border: none;
     color: white;
-    font-weight: 500;
+    font-size: 28px;
     cursor: pointer;
-    padding: 8px 0;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
+    padding: 10px;
 }
-
-.dropbtn:hover {
-    color: #f0f0f0;
-    border-bottom: 2px solid white;
-}
-
-.dropdown-content {
+.mobile-menu {
     display: none;
-    position: absolute;
     background: white;
-    min-width: 280px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    z-index: 1001;
-    top: 40px;
-    left: 0;
-    padding: 8px 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    pointer-events: none;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
 }
-
-.dropdown.open .dropdown-content {
+.mobile-menu.open {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    max-height: 80vh;
+    overflow-y: auto;
 }
-
-.dropdown-category {
-    cursor: pointer;
-    padding: 12px 16px;
-    font-weight: 700;
-    color: #1e3a8a;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
+.mobile-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.mobile-nav > li {
+    border-bottom: 1px solid #eee;
+}
+.mobile-nav > li > a {
+    display: block;
+    padding: 14px 16px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+.mobile-dropdown-toggle {
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
 }
-
-.dropdown-category:hover {
-    background: #f3f4f6;
+.mobile-dropdown-toggle::after {
+    content: "▼";
+    font-size: 10px;
+    color: #888;
 }
-
-.dropdown-category .arrow {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-    display: inline-block;
+.mobile-dropdown-toggle.open::after {
+    content: "▲";
 }
-
-.dropdown-category.active .arrow {
-    transform: rotate(90deg);
-}
-
-.category-tools {
+.mobile-dropdown-content {
+    padding-left: 20px;
     display: none;
-    background: #f9fafb;
-    border-radius: 8px;
-    margin: 4px 8px 8px 8px;
-    overflow: hidden;
+    background: #f9f9f9;
+    max-height: 300px;
+    overflow-y: auto;
 }
-
-.category-tools.show {
+.mobile-dropdown-content.open {
     display: block;
 }
-
-.category-tools a {
-    color: #1f2937 !important;
-    padding: 10px 20px 10px 32px;
+.mobile-dropdown-content h4 {
+    padding: 10px 0 5px 12px;
+    color: #881e8a;
+    font-size: 0.85rem;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    background: #f9f9f9;
+}
+.mobile-dropdown-content a {
+    display: block;
+    padding: 8px 12px 8px 20px;
+    color: #555;
     text-decoration: none;
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #eee;
+}
+@media (max-width: 768px) {
+    .megamenu-nav { display: none; }
+    .mobile-toggle { display: block; }
+    .mega-dropdown { display: none; }
 }
 
-.category-tools a:hover {
-    background: #e5e7eb;
-    color: #2563eb !important;
-    transform: translateX(5px);
-}
-
-/* ========== ORIGINAL TEXT CASE CONVERTER STYLES ========== */
+/* ========== MAIN CONTAINER ========== */
 .container {
-    max-width: 750px;
-    margin: 40px auto 0;
+    max-width: 850px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Main Card */
 .text-card {
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .card-header {
     background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    padding: 25px 30px;
+    padding: 35px 30px;
     text-align: center;
 }
-
 .card-header h1 {
     color: white;
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 8px;
-    font-weight: 700;
 }
-
 .card-header p {
     color: rgba(255,255,255,0.9);
     font-size: 15px;
 }
 
 .card-content {
-    padding: 30px;
+    padding: 35px;
 }
 
-/* Textarea */
 .textarea-wrapper {
     margin-bottom: 25px;
 }
-
 .textarea-wrapper textarea {
     width: 100%;
-    height: 200px;
-    padding: 15px;
+    height: 220px;
+    padding: 16px;
     font-size: 16px;
     font-family: 'Segoe UI', monospace;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
     resize: vertical;
     transition: all 0.3s ease;
-    background: #f9fafb;
+    background: #f8fafc;
 }
-
 .textarea-wrapper textarea:focus {
     outline: none;
     border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
     background: white;
 }
 
-/* Buttons Grid */
 .buttons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 12px;
     margin-bottom: 20px;
 }
-
 .case-btn {
-    padding: 12px 16px;
+    padding: 14px 16px;
     background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 60px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
 }
-
 .case-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
 }
-
 .clear-btn {
     background: #6b7280;
-    margin-top: 5px;
 }
-
 .clear-btn:hover {
     background: #4b5563;
 }
 
 .result-info {
-    background: #f9fafb;
-    border-radius: 12px;
+    background: #f8fafc;
+    border-radius: 20px;
     padding: 15px;
     margin-top: 20px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #e2e8f0;
     text-align: center;
 }
-
 .result-info p {
     color: #6b7280;
-    font-size: 13px;
+    font-size: 14px;
 }
-
 .result-info strong {
     color: #1e3a8a;
 }
 
-/* Other Tools Section */
-.other-tools {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 25px;
-    margin-top: 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+.category-footer {
+    max-width: 1200px;
+    margin: 40px auto 20px;
+    padding: 0 20px;
 }
-
-.other-tools h3 {
-    color: #1e3a8a;
-    margin-bottom: 18px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.tool-link {
-    display: block;
-    padding: 12px 18px;
-    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+.home-link {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
     color: white;
     text-decoration: none;
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 40px;
     font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    animation: slideInUp 0.5s ease forwards;
-    opacity: 0;
-    transform: translateY(20px);
+    font-weight: bold;
+    transition: 0.3s;
 }
-
-.tool-link:nth-child(1) { animation-delay: 0.05s; }
-.tool-link:nth-child(2) { animation-delay: 0.1s; }
-.tool-link:nth-child(3) { animation-delay: 0.15s; }
-.tool-link:nth-child(4) { animation-delay: 0.2s; }
-.tool-link:nth-child(5) { animation-delay: 0.25s; }
-.tool-link:nth-child(6) { animation-delay: 0.3s; }
-.tool-link:nth-child(7) { animation-delay: 0.35s; }
-.tool-link:nth-child(8) { animation-delay: 0.4s; }
-
-@keyframes slideInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.tool-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.tool-link:hover {
-    transform: translateY(-3px);
+.home-link:hover {
+    transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
-.tool-link:hover::before {
-    left: 100%;
-}
-
-.home-link {
-    display: inline-block;
-    padding: 10px 24px;
-    background: #6b7280;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    animation: fadeIn 0.5s ease 0.45s forwards;
-    opacity: 0;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-.home-link:hover {
-    background: #4b5563;
-    transform: translateY(-2px);
-}
-
-/* Toast Notification */
 .toast-notification {
     position: fixed;
     bottom: 30px;
@@ -518,72 +396,144 @@ body {
     transform: translateX(-50%);
     background: #1f2937;
     color: white;
-    padding: 10px 20px;
-    border-radius: 40px;
-    font-size: 13px;
+    padding: 12px 24px;
+    border-radius: 60px;
+    font-size: 14px;
     z-index: 1000;
     animation: slideUp 0.3s ease;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .container {
-        padding: 0 15px;
-        margin-top: 20px;
-    }
-    
-    .card-content {
-        padding: 20px;
-    }
-    
-    .buttons-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .card-header h1 {
-        font-size: 22px;
-    }
-    
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .textarea-wrapper textarea {
-        height: 150px;
-    }
-}
-
-/* SEO Article Styles */
+/* SEO Article */
 .info-section {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 35px;
-    margin-top: 30px;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    background: white;
+    border-radius: 28px;
+    padding: 45px;
+    margin-top: 35px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
-
+.info-section h2 {
+    color: #1e3a8a;
+    font-size: 26px;
+    margin: 30px 0 20px;
+    border-bottom: 3px solid #2563eb;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.info-section p, .info-section ul {
+    color: #374151;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+.info-section ul {
+    margin-left: 25px;
+}
 .ad-space {
     background: #f8f9fa;
     border: 1px dashed #ccc;
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 16px;
+    padding: 20px;
     text-align: center;
     margin: 30px 0;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 60px 20px 35px;
+    margin-top: 50px;
+    position: relative;
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 45px;
+}
+.footer-col h3, .footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+.footer-col h3::after, .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+}
+.footer-col a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.footer-col a:hover {
+    color: #60a5fa;
+    transform: translateX(5px);
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 35px;
+    margin-top: 45px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .card-content {
+        padding: 25px 20px;
+    }
+    .buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .info-section {
+        padding: 25px 20px;
+    }
+    .info-section h2 {
+        font-size: 22px;
+    }
+    .footer-container {
+        text-align: center;
+        gap: 35px;
+    }
+    .footer-col h3::after, .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .textarea-wrapper textarea {
+        height: 160px;
+    }
+    .buttons-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
@@ -591,18 +541,15 @@ body {
 <body>
 
 <div class="container">
-    <!-- Main Text Case Converter Card -->
     <div class="text-card">
         <div class="card-header">
             <h1>📝 Text Case Converter</h1>
             <p>Convert text to UPPERCASE, lowercase, Title Case, Sentence case & more instantly</p>
         </div>
-        
         <div class="card-content">
             <div class="textarea-wrapper">
                 <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
             </div>
-            
             <div class="buttons-grid">
                 <button class="case-btn" onclick="toUpperCase()">🔠 UPPERCASE</button>
                 <button class="case-btn" onclick="toLowerCase()">🔡 lowercase</button>
@@ -611,286 +558,104 @@ body {
                 <button class="case-btn" onclick="toCapitalizeCase()">📌 Capitalize Each Word</button>
                 <button class="case-btn clear-btn" onclick="clearText()">🗑️ Clear Text</button>
             </div>
-            
             <div class="result-info" id="resultInfo">
                 <p>📊 <strong id="charCount">0</strong> characters | <strong id="wordCount">0</strong> words | <strong id="lineCount">0</strong> lines</p>
             </div>
         </div>
     </div>
-    
-   <!-- Category Footer & Back to Home Button -->
-<div class="category-footer" style="max-width: 1200px; margin: 40px auto 20px; padding: 0 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="index.html" class="home-link" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px 28px; border-radius: 40px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">🔘 Back to Home</a>
-  </div>
-  <div id="dynamicCategoryFooter"></div>
-</div>
 
-<script>
-  (function() {
-    // Automatic category detection from filename
-    function getCurrentCategory() {
-      const path = window.location.pathname;
-      console.log("Current path:", path);
-      if (path.includes('age-calculator') || path.includes('gst') || path.includes('percentage') || path.includes('sip') || path.includes('discount') || path.includes('profit-loss') || path.includes('gpa') || path.includes('date-calculator') || path.includes('qr-code') || path.includes('youtube-thumbnail') || path.includes('currency-converter') || path.includes('age-difference')) return 'popular';
-      if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie') || path.includes('meal-planner')) return 'health';
-      if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) return 'financial';
-      if (path.includes('word-counter') || path.includes('line-counter') || path.includes('text-case') || path.includes('password-generator')) return 'text';
-      if (path.includes('image-compressor')) return 'media';
-      if (path.includes('spin') || path.includes('yes-no') || path.includes('decision-roulette') || path.includes('random-number')) return 'fun';
-      return 'popular';
-    }
+    <!-- Category Footer & Back to Home -->
+    <div class="category-footer">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" class="home-link">🔘 Back to Home</a>
+        </div>
+        <div id="dynamicCategoryFooter"></div>
+    </div>
 
-    const categories = {
-      popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "Age Difference", url: "age-difference-calculator.html" }, { name: "Discount Calculator", url: "discount-calculator.html" }, { name: "Profit & Loss", url: "profit-loss-calculator.html" }, { name: "GPA Calculator", url: "gpa-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "SIP Calculator", url: "sip-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Date Calculator", url: "date-calculator.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
-      health: { name: "🏃‍♂️ Health & Fitness", tools: [ { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "BMR Calculator", url: "bmr-calculator.html" }, { name: "Calorie Calculator", url: "calorie-calculator.html" }, { name: "Meal Planner", url: "meal-planner.html" } ] },
-      financial: { name: "💰 Financial Tools", tools: [ { name: "EMI Calculator", url: "emi-calculator.html" }, { name: "Loan Calculator", url: "loan-calculator.html" }, { name: "Zakat Calculator", url: "zakat-calculator.html" } ] },
-      text: { name: "📝 Text & Writing", tools: [ { name: "Word Counter", url: "word-counter.html" }, { name: "Line Counter", url: "line-counter.html" }, { name: "Text Case Converter", url: "text-case-converter.html" }, { name: "Password Generator", url: "password-generator.html" } ] },
-      media: { name: "🖼️ Image & Media", tools: [ { name: "Image Compressor", url: "image-compressor.html" } ] },
-      fun: { name: "🎲 Random & Fun", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Decision Roulette", url: "decision-roulette.html" }, { name: "Random Number", url: "random-number-generator.html" } ] }
-    };
+    <!-- Dynamic Category Footer Script -->
+    <script>
+    (function() {
+        function getCurrentCategory() {
+            const path = window.location.pathname;
+            if (path.includes('text-case') || path.includes('word-counter') || path.includes('line-counter')) return 'text';
+            return 'popular';
+        }
+        const categories = {
+            popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Unit Converter", url: "unit-converter.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
+            text: { name: "📝 Text & Writing Tools", tools: [ { name: "Word Counter", url: "word-counter.html" }, { name: "Line Counter", url: "line-counter.html" }, { name: "Text Case Converter", url: "text-case-converter.html" }, { name: "Password Generator", url: "password-generator.html" } ] }
+        };
+        function renderFooter() {
+            const footerContainer = document.getElementById('dynamicCategoryFooter');
+            if (!footerContainer) return;
+            const cat = categories[getCurrentCategory()] || categories.text;
+            let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                          <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
+                          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
+            cat.tools.forEach(tool => {
+                if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
+                html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
+            });
+            html += `</div></div>`;
+            footerContainer.innerHTML = html;
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
+        else renderFooter();
+    })();
+    </script>
 
-    function renderFooter() {
-      const footerContainer = document.getElementById('dynamicCategoryFooter');
-      if (!footerContainer) {
-        console.error("Element #dynamicCategoryFooter not found");
-        return;
-      }
-      const currentCategory = getCurrentCategory();
-      console.log("Detected category:", currentCategory);
-      const cat = categories[currentCategory];
-      if (!cat) {
-        footerContainer.innerHTML = '<p style="text-align:center;">Tools loading...</p>';
-        return;
-      }
-      let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-      cat.tools.forEach(tool => {
-        html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; transition: 0.2s; display: block;">🔘 ${tool.name}</a>`;
-      });
-      html += `</div></div>`;
-      footerContainer.innerHTML = html;
-    }
-
-    // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', renderFooter);
-    } else {
-      renderFooter();
-    }
-  })();
-</script>
-
-    <!-- ========== SEO ARTICLE WITH LOW COMPETITION KEYWORDS ========== -->
+    <!-- SEO ARTICLE SECTION (shortened but complete) -->
     <div class="info-section">
-        
-        <!-- Ad Space 1 -->
-        <div class="ad-space">
-            <p style="color: #6b7280; font-size: 12px;">━━━━━ Advertisement Space ━━━━━</p>
-            <p style="color: #9ca3af;">Your Ad Here (Adsterra/AdSense)</p>
+        <div class="ad-space"><p style="color: #6b7280;">━━━━━ Advertisement Space ━━━━━</p></div>
+        <h2>What is a Text Case Converter?</h2>
+        <p>A <strong>text case converter</strong> is an essential online tool that instantly changes the capitalization style of any text. Whether you need to <strong>convert text to uppercase</strong>, <strong>convert text to lowercase</strong>, or use a <strong>title case converter online</strong>, our free tool makes formatting quick and effortless. This <strong>uppercase lowercase converter</strong> is perfect for content writers, bloggers, students, SEO professionals, and anyone who works with text regularly.</p>
+        <div style="background: #f3f4f6; padding: 20px; border-radius: 16px; margin: 20px 0; text-align: center;">
+            <p style="font-weight: bold; color: #1e3a8a;">Example: "hello world" → "HELLO WORLD" (UPPERCASE)</p>
+            <p style="font-weight: bold; color: #1e3a8a; margin-top: 10px;">"HELLO WORLD" → "hello world" (lowercase)</p>
+            <p style="font-weight: bold; color: #1e3a8a; margin-top: 10px;">"hello world" → "Hello World" (Title Case)</p>
         </div>
-        
-        <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #e5e7eb;">
-            <span style="background: #1e3a8a; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px;">📝 TEXT FORMATTING</span>
-            <h1 style="color: #1e3a8a; font-size: 32px; margin: 15px 0 10px;">Text Case Converter – Convert Uppercase, Lowercase, Title Case & Sentence Case Online | Free Case Converter Online</h1>
-            <p style="color: #6b7280; font-size: 14px;">Last Updated: <span id="currentDate"></span> | ⭐ 4.9/5 Rating | 150,000+ Users Monthly</p>
-        </div>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 25px 0 15px;">What is a Text Case Converter and Why You Need One?</h2>
-        
-        <p style="color: #374151; line-height: 1.8; margin-bottom: 20px;">A <strong>text case converter</strong> is an essential online tool that instantly changes the capitalization style of any text. Whether you need to <strong>convert text to uppercase</strong>, <strong>convert text to lowercase</strong>, or use a <strong>title case converter online</strong>, our free tool makes formatting quick and effortless. This <strong>uppercase lowercase converter</strong> is especially useful for content writers, bloggers, students, SEO professionals, and anyone who works with text regularly. It's the perfect <strong>case converter online</strong> for all your formatting needs.</p>
-        
-        <div style="background: #f3f4f6; padding: 20px; border-radius: 12px; margin: 25px 0; text-align: center;">
-            <p style="font-family: monospace; font-size: 16px; font-weight: bold; color: #1e3a8a;">Example: "hello world" → "HELLO WORLD" (UPPERCASE)</p>
-            <p style="font-family: monospace; font-size: 16px; font-weight: bold; color: #1e3a8a; margin-top: 10px;">"HELLO WORLD" → "hello world" (lowercase)</p>
-            <p style="font-family: monospace; font-size: 16px; font-weight: bold; color: #1e3a8a; margin-top: 10px;">"hello world" → "Hello World" (Title Case)</p>
-        </div>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">Types of Text Case Conversion</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
-            <div style="background: #eff6ff; padding: 15px; border-radius: 12px;">
-                <strong style="color: #1e3a8a;">🔠 UPPERCASE</strong>
-                <p style="margin-top: 8px;">Converts all letters to capitals. This <strong>uppercase converter</strong> is perfect for headings.</p>
-            </div>
-            <div style="background: #eff6ff; padding: 15px; border-radius: 12px;">
-                <strong style="color: #1e3a8a;">🔡 lowercase</strong>
-                <p style="margin-top: 8px;">Converts all letters to small letters using our <strong>lowercase converter</strong>.</p>
-            </div>
-            <div style="background: #eff6ff; padding: 15px; border-radius: 12px;">
-                <strong style="color: #1e3a8a;">📘 Title Case</strong>
-                <p style="margin-top: 8px;">Capitalizes first letter of every word with <strong>title case converter online</strong>.</p>
-            </div>
-            <div style="background: #eff6ff; padding: 15px; border-radius: 12px;">
-                <strong style="color: #1e3a8a;">📖 Sentence Case</strong>
-                <p style="margin-top: 8px;">Capitalizes first letter of each sentence using <strong>sentence case converter online</strong>.</p>
-            </div>
-            <div style="background: #eff6ff; padding: 15px; border-radius: 12px;">
-                <strong style="color: #1e3a8a;">📌 Capitalize Each Word</strong>
-                <p style="margin-top: 8px;">Capitalizes first letter of every word – a <strong>capital letter converter</strong> for titles.</p>
-            </div>
-        </div>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">How to Use This Text Case Converter</h2>
-        
-        <ol style="color: #374151; line-height: 1.8; margin: 15px 0 15px 25px;">
-            <li>Type or <strong>paste your text</strong> into the text box – our <strong>online text converter</strong> works instantly</li>
-            <li>Click on your desired <strong>case conversion option</strong> – choose from uppercase, lowercase, title case, etc.</li>
-            <li>The text will be <strong>instantly converted</strong> to your chosen format using our <strong>text formatting tool</strong></li>
-            <li>Copy the formatted text and <strong>use it anywhere</strong> – perfect <strong>online text editor</strong> functionality</li>
-            <li>Use the <strong>clear button</strong> to start fresh with this <strong>case changer</strong> tool</li>
-        </ol>
-        
-        <!-- Ad Space 2 -->
-        <div class="ad-space">
-            <p style="color: #6b7280; font-size: 12px;">━━━━━ Advertisement Space ━━━━━</p>
-            <p style="color: #9ca3af;">Your Ad Here (Adsterra/AdSense)</p>
-        </div>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">Features of Our Free Text Case Converter</h2>
-        
-        <ul style="color: #374151; line-height: 1.8; margin: 15px 0 15px 25px;">
-            <li>✅ <strong>100% Free:</strong> No registration, unlimited use – the best <strong>free text tool</strong> available</li>
-            <li>✅ <strong>Multiple Case Options:</strong> Uppercase, lowercase, title case, sentence case, capitalize each word – complete <strong>text case changer</strong> solution</li>
-            <li>✅ <strong>Instant Conversion:</strong> Results appear immediately with our <strong>case converter online</strong></li>
-            <li>✅ <strong>Character & Word Counter:</strong> See stats about your text</li>
-            <li>✅ <strong>Mobile Friendly:</strong> Works perfectly on all devices as a <strong>uppercase lowercase converter</strong></li>
-            <li>✅ <strong>Privacy Protected:</strong> No text stored on servers – secure <strong>change text case</strong> tool</li>
-            <li>✅ <strong>No Downloads:</strong> Use directly in your browser</li>
-            <li>✅ <strong>Secure & Safe:</strong> All processing happens locally</li>
+        <h2>Types of Case Conversion</h2>
+        <ul>
+            <li>🔠 UPPERCASE – All letters to capitals</li>
+            <li>🔡 lowercase – All letters to small letters</li>
+            <li>📘 Title Case – Capitalizes first letter of every word</li>
+            <li>📖 Sentence case – Capitalizes first letter of each sentence</li>
+            <li>📌 Capitalize Each Word – Similar to title case but more aggressive</li>
         </ul>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">Benefits of Using an Online Text Case Converter</h2>
-        
-        <ul style="color: #374151; line-height: 1.8; margin: 15px 0 15px 25px;">
-            <li>⏱️ <strong>Saves Time:</strong> No need to manually retype or reformat text with our <strong>text to uppercase</strong> and <strong>text to lowercase</strong> features</li>
-            <li>✍️ <strong>Improves Productivity:</strong> Format large amounts of text in seconds using <strong>convert text to uppercase</strong> functionality</li>
-            <li>📝 <strong>Perfect for Bloggers:</strong> Quickly format article titles and headings with <strong>convert text to lowercase</strong> options</li>
-            <li>🎓 <strong>Great for Students:</strong> Format essays and assignments properly using <strong>capitalize text</strong> tools</li>
-            <li>📊 <strong>SEO Friendly:</strong> Helps format meta descriptions and titles with <strong>title case converter online</strong></li>
-            <li>📱 <strong>Social Media:</strong> Format posts for different platforms</li>
-            <li>💻 <strong>Developers:</strong> Quickly format code comments and documentation</li>
-        </ul>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">Who Should Use This Text Case Converter?</h2>
-        
-        <ul style="color: #374151; line-height: 1.8; margin: 15px 0 15px 25px;">
-            <li>📝 <strong>Content Writers:</strong> Format articles, blogs, and web content with our <strong>text case changer</strong></li>
-            <li>🎓 <strong>Students:</strong> Format essays, assignments, and research papers using <strong>sentence case converter</strong></li>
-            <li>📊 <strong>SEO Professionals:</strong> Optimize meta tags, titles, and descriptions with <strong>capital letter converter</strong></li>
-            <li>💻 <strong>Web Developers:</strong> Format text for websites and applications</li>
-            <li>📱 <strong>Social Media Managers:</strong> Format posts for different platforms</li>
-            <li>✍️ <strong>Authors & Editors:</strong> Quickly reformat manuscripts and documents</li>
-            <li>🏢 <strong>Business Professionals:</strong> Format emails, reports, and presentations</li>
-        </ul>
-        
-        <!-- Ad Space 3 -->
-        <div class="ad-space">
-            <p style="color: #6b7280; font-size: 12px;">━━━━━ Advertisement Space ━━━━━</p>
-            <p style="color: #9ca3af;">Your Ad Here (Adsterra/AdSense)</p>
+        <h2>How to Use</h2>
+        <ol><li>Type or paste your text into the text box</li><li>Click on your desired case conversion option</li><li>The text will be instantly converted</li><li>Copy the formatted text and use it anywhere</li></ol>
+        <div class="ad-space"><p style="color: #6b7280;">━━━━━ Advertisement Space ━━━━━</p></div>
+        <h2>Frequently Asked Questions</h2>
+        <div style="background:#f9fafb; border-radius:20px; padding:25px; margin:20px 0;">
+            <p><strong>❓ Is this text case converter free?</strong><br>Yes, completely free with unlimited usage.</p>
+            <p><strong>❓ Does it store my text?</strong><br>No, all processing happens locally in your browser. Your text is never saved or shared.</p>
+            <p><strong>❓ What is the difference between title case and sentence case?</strong><br>Title case capitalizes every word; sentence case capitalizes only the first word of each sentence.</p>
+            <p><strong>❓ Can I use this on mobile?</strong><br>Yes, fully responsive and works on all devices.</p>
         </div>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">Text Case Converter vs Manual Formatting</h2>
-        
-        <p style="color: #374151; line-height: 1.8; margin-bottom: 20px;">Manually formatting text case can be time-consuming, especially when dealing with large documents. Our <strong>online text case converter</strong> does the job in milliseconds, saving you valuable time and ensuring consistency across your content. Whether you're converting a single sentence or thousands of words, our <strong>case changer</strong> handles it instantly. It's the ultimate <strong>uppercase lowercase converter</strong> for professionals.</p>
-        
-        <!-- FAQ SECTION WITH SCHEMA -->
-        <div style="background: #f9fafb; border-radius: 16px; padding: 25px; margin: 30px 0;">
-            <h2 style="color: #1e3a8a; font-size: 26px; margin-bottom: 20px; text-align: center;">❓ Frequently Asked Questions About Text Case Converter</h2>
-            
-            <div itemscope="" itemtype="https://schema.org/FAQPage" style="display: flex; flex-direction: column; gap: 15px;">
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 What is a text case converter?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">A <strong>text case converter</strong> is an online tool that changes the capitalization style of text, such as converting to uppercase, lowercase, title case, or sentence case. It's a versatile <strong>case converter online</strong> for all formatting needs.</div>
-                    </div>
-                </div>
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 Is this text case converter free?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">Yes, this <strong>free text tool</strong> is completely free with unlimited access. No registration or payment required. It's the best <strong>uppercase converter</strong> and <strong>lowercase converter</strong> available.</div>
-                    </div>
-                </div>
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 What types of case conversion are available?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">Our tool supports UPPERCASE, lowercase, Title Case, Sentence case, and Capitalize Each Word. You can <strong>convert text to uppercase</strong>, <strong>convert text to lowercase</strong>, or use <strong>title case converter online</strong> with one click.</div>
-                    </div>
-                </div>
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 Can I use this tool on mobile?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">Yes, our <strong>online text converter</strong> is fully responsive and works perfectly on smartphones, tablets, and desktop devices as a <strong>text formatting tool</strong>.</div>
-                    </div>
-                </div>
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 Does this tool store my text?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">No, this tool processes your text directly in your browser. We do not store, track, or share any text or personal information. It's a secure <strong>change text case</strong> tool.</div>
-                    </div>
-                </div>
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 What is the difference between title case and sentence case?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">Title case capitalizes the first letter of every word. Sentence case capitalizes only the first letter of each sentence, similar to normal writing. Our <strong>sentence case converter online</strong> makes this easy.</div>
-                    </div>
-                </div>
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 Can I convert large amounts of text?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">Yes, our <strong>online text editor</strong> can handle large text blocks efficiently. There's no character limit, and conversion happens instantly with our <strong>text case changer</strong>.</div>
-                    </div>
-                </div>
-                
-                <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb;">
-                    <h3 itemprop="name" style="color: #2563eb; font-size: 18px; margin-bottom: 10px;">📌 Is this tool useful for SEO?</h3>
-                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <div itemprop="text" style="color: #374151; line-height: 1.6;">Absolutely! SEO professionals use this tool to format meta titles, meta descriptions, heading tags, and other content consistently using our <strong>capital letter converter</strong>.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">Privacy and Security</h2>
-        
-        <p style="color: #374151; line-height: 1.8; margin-bottom: 20px;">Your privacy is our priority. This <strong>text case converter</strong> runs entirely inside your browser. We do not store, track, or share any text or personal information. No data is sent to any server, making this tool completely secure for converting sensitive or confidential text. It's the safest <strong>uppercase lowercase converter</strong> you can use.</p>
-        
-        <h2 style="color: #1e3a8a; font-size: 26px; margin: 30px 0 15px;">Final Thoughts</h2>
-        
-        <p style="color: #374151; line-height: 1.8; margin-bottom: 20px;">Proper text formatting is essential for professional communication, content creation, and SEO. Our <strong>free text case converter</strong> makes it easy to format text instantly, saving you time and ensuring consistency. Whether you're a blogger, student, writer, or business professional, this tool is an essential addition to your productivity toolkit. Use it as a <strong>capitalize text</strong> tool, <strong>text to uppercase</strong> converter, or <strong>text to lowercase</strong> utility.</p>
-        
-        <p style="color: #374151; line-height: 1.8; margin-bottom: 20px;">Try our <strong>online text case converter</strong> today and experience the convenience of instant text formatting. Bookmark this tool for quick access whenever you need to <strong>convert text to uppercase</strong> or <strong>convert text to lowercase</strong>.</p>
-        
-        <!-- Ad Space 4 - Bottom -->
-        <div class="ad-space">
-            <p style="color: #6b7280; font-size: 12px;">━━━━━ Advertisement Space ━━━━━</p>
-            <p style="color: #9ca3af;">Your Ad Here (Adsterra/AdSense)</p>
-        </div>
+        <div class="ad-space"><p style="color: #6b7280;">━━━━━ Advertisement Space ━━━━━</p></div>
     </div>
 </div>
 
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>✨ Free Online Tools</h3><p>Your one-stop destination for free, fast, and accurate online calculators and utilities. Trusted by 50,000+ users worldwide.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="contact.html">📧 Contact</a><a href="privacy-policy.html">🔒 Privacy Policy</a></div>
+        <div class="footer-col"><h4>⭐ Popular Tools</h4><a href="age-calculator.html">📅 Age Calculator</a><a href="bmi-calculator.html">⚖️ BMI Calculator</a><a href="percentage-calculator.html">📈 Percentage Calculator</a><a href="qr-code-generator.html">📱 QR Code Generator</a><a href="youtube-thumbnail-downloader.html">📸 YouTube Thumbnail Downloader</a></div>
+        <div class="footer-col"><h4>🔧 All Tools</h4><a href="emi-calculator.html">🏦 EMI Calculator</a><a href="loan-calculator.html">📋 Loan Calculator</a><a href="word-counter.html">🔢 Word Counter</a><a href="text-case-converter.html">🔤 Text Case Converter</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️</p></div>
+</footer>
+
 <script>
-function showToast(message, isSuccess = false) {
-    const existingToast = document.querySelector('.toast-notification');
-    if (existingToast) existingToast.remove();
-    
+// Text Case Converter Functions
+function showToast(message, isSuccess = true) {
+    const existing = document.querySelector('.toast-notification');
+    if (existing) existing.remove();
     const toast = document.createElement('div');
     toast.className = 'toast-notification';
     toast.style.backgroundColor = isSuccess ? '#10b981' : '#ef4444';
     toast.textContent = message;
     document.body.appendChild(toast);
-    
-    setTimeout(() => {
-        toast.remove();
-    }, 3000);
+    setTimeout(() => toast.remove(), 3000);
 }
 
 function updateStats() {
@@ -898,7 +663,6 @@ function updateStats() {
     let chars = text.length;
     let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
     let lines = text === "" ? 0 : text.split(/\r\n|\r|\n/).length;
-    
     document.getElementById("charCount").innerText = chars;
     document.getElementById("wordCount").innerText = words;
     document.getElementById("lineCount").innerText = lines;
@@ -952,215 +716,24 @@ function clearText() {
     showToast("🗑️ Text cleared", true);
 }
 
-// Update stats on input
 document.getElementById("textInput").addEventListener("input", updateStats);
 updateStats();
 
-// Display current date
-document.getElementById('currentDate').innerText = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-
-// Dropdown JavaScript
-(function() {
-    const dropdown = document.getElementById('toolsDropdown');
-    const dropBtn = document.getElementById('toolsBtn');
-    const dropdownContent = document.getElementById('dropdownContent');
-    if (!dropdown || !dropBtn || !dropdownContent) return;
-    function closeDropdown() { dropdown.classList.remove('open'); document.querySelectorAll('.dropdown-category.active').forEach(cat => { cat.classList.remove('active'); const targetId = cat.getAttribute('data-cat'); if(targetId) { const toolsDiv = document.getElementById(targetId + 'Tools'); if(toolsDiv) toolsDiv.classList.remove('show'); } }); }
-    function openDropdown() { dropdown.classList.add('open'); }
-    function toggleDropdown(e) { e.stopPropagation(); if (dropdown.classList.contains('open')) closeDropdown(); else openDropdown(); }
-    dropBtn.addEventListener('click', toggleDropdown);
-    dropdownContent.addEventListener('click', e => e.stopPropagation());
-    document.addEventListener('click', function(event) { if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) closeDropdown(); });
-    document.querySelectorAll('.dropdown-category').forEach(category => { category.addEventListener('click', function(e) { e.stopPropagation(); const catId = this.getAttribute('data-cat'); if (catId) { const toolsDiv = document.getElementById(catId + 'Tools'); if (toolsDiv) { this.classList.toggle('active'); toolsDiv.classList.toggle('show'); } } }); });
-})();
-</script>
-
-<!-- ========== FOOTER - PROFESSIONAL GRADIENT ========== -->
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3>✨ Free Online Tools</h3>
-            <p>Your one-stop destination for free, fast, and accurate online calculators and utilities. Trusted by 50,000+ users worldwide. 100% free, no signup required.</p>
-        </div>
-        <div class="footer-col">
-            <h4>📄 Quick Links</h4>
-            <a href="index.html">🏠 Home</a>
-            <a href="about.html">ℹ️ About Us</a>
-            <a href="contact.html">📧 Contact Us</a>
-            <a href="privacy-policy.html">🔒 Privacy Policy</a>
-        </div>
-        <div class="footer-col">
-            <h4>⭐ Popular Tools</h4>
-            <a href="age-calculator.html">📅 Age Calculator</a>
-            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
-            <a href="percentage-calculator.html">📈 Percentage Calculator</a>
-            <a href="qr-code-generator.html">📱 QR Code Generator</a>
-            <a href="youtube-thumbnail-downloader.html">📸 YouTube Thumbnail Downloader</a>
-            <a href="password-generator.html">🔐 Password Generator</a>
-        </div>
-        <div class="footer-col">
-            <h4>🔧 All Tools</h4>
-            <a href="emi-calculator.html">🏦 EMI Calculator</a>
-            <a href="loan-calculator.html">📋 Loan Calculator</a>
-            <a href="word-counter.html">🔢 Word Counter</a>
-            <a href="text-case-converter.html">🔤 Text Case Converter</a>
-            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-            <a href="zakat-calculator.html">🕌 Zakat Calculator</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2026 <strong>Free Online Tools</strong>. All rights reserved. | Made with ❤️ for the global community</p>
-    </div>
-</footer>
-
-<style>
-/* Professional Gradient Footer */
-.footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #cbd5e1;
-    padding: 50px 20px 25px;
-    margin-top: 40px;
-    position: relative;
-    border-top: 1px solid rgba(255,255,255,0.1);
+// Mobile menu toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 }
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 35px;
-    position: relative;
-    z-index: 1;
-}
-
-.footer-col h3, .footer-col h4 {
-    color: white;
-    margin-bottom: 18px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    position: relative;
-    display: inline-block;
-}
-
-.footer-col h3::after, .footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-    border-radius: 2px;
-}
-
-.footer-col p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #94a3b8;
-    margin-top: 12px;
-}
-
-.footer-col a {
-    display: block;
-    color: #94a3b8;
-    text-decoration: none;
-    padding: 6px 0;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.footer-col a:hover {
-    color: #60a5fa;
-    transform: translateX(5px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    margin-top: 35px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    color: #64748b;
-}
-
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-    }
-    
-    .footer-col h3::after, .footer-col h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .footer-col a {
-        display: inline-block;
-        margin: 0 8px;
-        padding: 5px 8px;
-    }
-    
-    .footer-col p {
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        padding: 35px 15px 20px;
-    }
-}
-</style>
-
-<script>
-// Footer JavaScript
-(function() {
-    const footerBottom = document.querySelector('.footer-bottom p');
-    if (footerBottom) {
-        const currentYear = new Date().getFullYear();
-        footerBottom.innerHTML = `© ${currentYear} Free Online Tools. All rights reserved. | Made with ❤️ for the global community`;
-    }
-
-    const footerLinks = document.querySelectorAll('.footer-col a');
-    footerLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            console.log(`Footer link clicked: ${this.textContent} -> ${this.getAttribute('href')}`);
-        });
+const mobileToolsToggle = document.getElementById('mobileToolsToggle');
+const mobileToolsContent = document.getElementById('mobileToolsContent');
+if (mobileToolsToggle && mobileToolsContent) {
+    mobileToolsToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileToolsToggle.classList.toggle('open');
+        mobileToolsContent.classList.toggle('open');
     });
-
-    const footerColumns = document.querySelectorAll('.footer-col');
-    footerColumns.forEach(col => {
-        col.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s ease';
-        });
-    });
-
-    const yearElement = document.querySelector('.footer-bottom p');
-    if (yearElement) {
-        yearElement.style.opacity = '0';
-        yearElement.style.transform = 'translateY(10px)';
-        setTimeout(() => {
-            yearElement.style.transition = 'all 0.5s ease';
-            yearElement.style.opacity = '1';
-            yearElement.style.transform = 'translateY(0)';
-        }, 100);
-    }
-
-    console.log('Footer loaded successfully with JavaScript interactions');
-})();
+}
 </script>
-
 </body>
 </html>
