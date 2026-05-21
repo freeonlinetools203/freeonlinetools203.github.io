@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Task Spinner | Random Task Picker | Free Online Tool</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free task spinner wheel. Add your own tasks, spin the wheel, and get a random task. Perfect for chore assignments, team tasks, daily routines, and fun games. 100% free, no registration.">
+    <meta name="keywords" content="task spinner, random task picker, chore wheel, task generator, spin the wheel tasks, daily task randomizer, team task assigner">
+    <meta name="author" content="Free Online Tools">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freeonlinetools203.com/task-spinner.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Task Spinner | Random Task Picker">
+    <meta property="og:description" content="Custom task spinner wheel. Add tasks and spin to choose randomly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeonlinetools203.com/task-spinner.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Task Spinner - Free Random Task Picker">
+    <meta name="twitter:description" content="Spin the wheel to get a random task from your custom list.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EQ8DLY7HYN');
+    </script>
+
+    <!-- External script -->
+    <script src="https://freeonlinetools203.com/script.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            min-height: 100vh;
+        }
+
+        /* ========== MEGAMENU NAVBAR ========== */
+        .megamenu-container {
+            width: 100%;
+            background: linear-gradient(to right, #881e8a, #2563eb);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .megamenu-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            min-height: 60px;
+        }
+        .megamenu-logo a {
+            display: block;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 0;
+        }
+        .megamenu-nav {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        .megamenu-nav > li {
+            position: static;
+        }
+        .megamenu-nav > li > a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        .megamenu-nav > li > a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        .has-dropdown > a::after {
+            content: " ▼";
+            font-size: 10px;
+            margin-left: 5px;
+        }
+        .mega-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 1001;
+        }
+        .megamenu-nav > li:hover .mega-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropdown-scroll {
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        .dropdown-column h4 {
+            color: #881e8a;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2563eb;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+        .dropdown-column a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .dropdown-column a:hover {
+            color: #2563eb;
+            padding-left: 8px;
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .mobile-menu {
+            display: none;
+            background: white;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .mobile-menu.open {
+            display: block;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .mobile-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .mobile-nav > li {
+            border-bottom: 1px solid #eee;
+        }
+        .mobile-nav > li > a {
+            display: block;
+            padding: 14px 16px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .mobile-dropdown-toggle {
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mobile-dropdown-toggle::after {
+            content: "▼";
+            font-size: 10px;
+            color: #888;
+        }
+        .mobile-dropdown-toggle.open::after {
+            content: "▲";
+        }
+        .mobile-dropdown-content {
+            padding-left: 20px;
+            display: none;
+            background: #f9f9f9;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .mobile-dropdown-content.open {
+            display: block;
+        }
+        .mobile-dropdown-content h4 {
+            padding: 10px 0 5px 12px;
+            color: #881e8a;
+            font-size: 0.85rem;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            background: #f9f9f9;
+        }
+        .mobile-dropdown-content a {
+            display: block;
+            padding: 8px 12px 8px 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #eee;
+        }
+        @media (max-width: 768px) {
+            .megamenu-nav { display: none; }
+            .mobile-toggle { display: block; }
+            .mega-dropdown { display: none; }
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            overflow: hidden;
+            margin-bottom: 35px;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .card-header h1 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .card-header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+        }
+
+        .card-content {
+            padding: 35px;
+        }
+
+        /* Task Settings */
+        .settings-section {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .settings-title {
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tasks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+            max-height: 240px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .task-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .task-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .task-input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .remove-task {
+            background: #dc2626;
+            color: white;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .remove-task:hover {
+            background: #b91c1c;
+            transform: scale(1.02);
+        }
+
+        .add-task-btn {
+            background: #0D9488;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .add-task-btn:hover {
+            background: #0f766e;
+            transform: translateY(-2px);
+        }
+
+        .preset-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            background: #e5e7eb;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .preset-btn:hover {
+            background: #d1d5db;
+            transform: translateY(-2px);
+        }
+
+        /* Wheel Styles */
+        .wheel-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .wheel {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .wheel:hover {
+            transform: scale(1.02);
+        }
+
+        .pointer {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-top: 45px solid #dc2626;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+            z-index: 10;
+            animation: bounce 1s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        .spin-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .spin-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            border-radius: 24px;
+            padding: 25px;
+            text-align: center;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .result-card.animate {
+            animation: winnerPop 0.5s ease-out;
+        }
+
+        @keyframes winnerPop {
+            0% { transform: scale(0.9); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .result-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 2px;
+        }
+
+        .result-task {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-top: 8px;
+            word-break: break-word;
+        }
+
+        /* History Section */
+        .history-section {
+            margin-top: 25px;
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .history-title {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 15px;
+        }
+
+        .clear-history {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .clear-history:hover {
+            background: #b91c1c;
+        }
+
+        .history-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            background: #f1f5f9;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #1e3a8a;
+            word-break: break-word;
+        }
+
+        .category-footer {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+        }
+
+        .home-link {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .home-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 60px 20px 35px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 45px;
+        }
+
+        .footer-col h3, .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h3::after, .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: #60a5fa;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 35px;
+            margin-top: 45px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+            }
+            .card-content {
+                padding: 25px 20px;
+            }
+            .card-header h1 {
+                font-size: 24px;
+            }
+            .wheel {
+                max-width: 260px;
+            }
+            .result-task {
+                font-size: 18px;
+            }
+            .preset-buttons {
+                justify-content: center;
+            }
+            .settings-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-container {
+                text-align: center;
+                gap: 35px;
+            }
+            .footer-col h3::after, .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wheel {
+                max-width: 220px;
+            }
+            .pointer {
+                border-left: 18px solid transparent;
+                border-right: 18px solid transparent;
+                border-top: 38px solid #dc2626;
+                top: -20px;
+            }
+            .task-input {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            .remove-task {
+                width: 34px;
+                height: 34px;
+            }
+        }
+    </style>
+<script src="https://freeonlinetools203.com/script.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="tool-card">
+        <div class="card-header">
+            <h1>📋 Task Spinner | Random Task Picker</h1>
+            <p>Add your own tasks, spin the wheel, and let fate decide what to do next! Perfect for chores, team tasks, daily routines, and fun games.</p>
+        </div>
+        <div class="card-content">
+            <!-- Task Settings -->
+            <div class="settings-section">
+                <div class="settings-title">
+                    📝 Customize Tasks
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="loadPreset('chores')">🧹 Chores</button>
+                        <button class="preset-btn" onclick="loadPreset('work')">💼 Work</button>
+                        <button class="preset-btn" onclick="loadPreset('fitness')">💪 Fitness</button>
+                        <button class="preset-btn" onclick="loadPreset('fun')">🎉 Fun</button>
+                    </div>
+                </div>
+                <div class="tasks-list" id="tasksList">
+                    <div class="task-item">
+                        <input type="text" class="task-input" placeholder="Task 1" value="Clean Room">
+                        <button class="remove-task" onclick="removeTask(this)">✕</button>
+                    </div>
+                    <div class="task-item">
+                        <input type="text" class="task-input" placeholder="Task 2" value="Do Laundry">
+                        <button class="remove-task" onclick="removeTask(this)">✕</button>
+                    </div>
+                    <div class="task-item">
+                        <input type="text" class="task-input" placeholder="Task 3" value="Take Out Trash">
+                        <button class="remove-task" onclick="removeTask(this)">✕</button>
+                    </div>
+                    <div class="task-item">
+                        <input type="text" class="task-input" placeholder="Task 4" value="Wash Dishes">
+                        <button class="remove-task" onclick="removeTask(this)">✕</button>
+                    </div>
+                    <div class="task-item">
+                        <input type="text" class="task-input" placeholder="Task 5" value="Walk Dog">
+                        <button class="remove-task" onclick="removeTask(this)">✕</button>
+                    </div>
+                    <div class="task-item">
+                        <input type="text" class="task-input" placeholder="Task 6" value="Study">
+                        <button class="remove-task" onclick="removeTask(this)">✕</button>
+                    </div>
+                </div>
+                <button class="add-task-btn" onclick="addTask()">+ Add Task</button>
+            </div>
+
+            <!-- Wheel -->
+            <div class="wheel-wrapper">
+                <div class="pointer"></div>
+                <canvas id="taskWheel" class="wheel" width="500" height="500"></canvas>
+            </div>
+
+            <button class="spin-btn" id="spinBtn">🎡 SPIN THE WHEEL</button>
+
+            <div class="result-card" id="resultCard">
+                <div class="result-label">🎯 YOUR TASK</div>
+                <div class="result-task" id="resultTask">Spin to get a task</div>
+            </div>
+
+            <div class="history-section">
+                <div class="history-header">
+                    <span class="history-title">📜 Task History</span>
+                    <button class="clear-history" id="clearHistoryBtn">Clear All</button>
+                </div>
+                <div class="history-list" id="historyList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Footer & Back to Home -->
+    <div class="category-footer">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" class="home-link">🔘 Back to Home</a>
+        </div>
+        <div id="dynamicCategoryFooter"></div>
+    </div>
+
+    <!-- SEO ARTICLE SECTION (minimal but friendly) -->
+    <div class="article-section">
+        <h2>🎯 What is a Task Spinner?</h2>
+        <p>A <strong>task spinner</strong> is a fun random tool that helps you pick a task from your custom list. Whether you need to assign chores, decide what to work on next, or just add some randomness to your daily routine – spin the wheel and let fate decide!</p>
+        <h2>✅ Why Choose Our Task Spinner?</h2>
+        <ul>
+            <li>✅ 100% Free – no registration, no limits</li>
+            <li>✅ Fully customizable tasks – add, edit, remove</li>
+            <li>✅ Quick presets – chores, work, fitness, fun</li>
+            <li>✅ Smooth wheel animation & confetti celebration</li>
+            <li>✅ Spin history – track all your past tasks</li>
+            <li>✅ Works on mobile, tablet, and desktop</li>
+        </ul>
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-section-article">
+            <div class="faq-item-article">
+                <div class="faq-question-article">❓ How do I add my own tasks?</div>
+                <div class="faq-answer-article">Simply click "Add Task", type your task, and it will appear on the wheel. You can also edit or delete any task.</div>
+            </div>
+            <div class="faq-item-article">
+                <div class="faq-question-article">❓ Is this task spinner free?</div>
+                <div class="faq-answer-article">Yes! Completely free, no registration, no hidden charges.</div>
+            </div>
+            <div class="faq-item-article">
+                <div class="faq-question-article">❓ Can I use this for team tasks?</div>
+                <div class="faq-answer-article">Absolutely! Perfect for assigning tasks among team members or for daily stand-ups.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>✨ Free Online Tools</h3>
+            <p>Task spinner – random task picker wheel. Customizable tasks for chores, work, fitness, and fun.</p>
+        </div>
+        <div class="footer-col">
+            <h4>📄 Quick Links</h4>
+            <a href="index.html">🏠 Home</a>
+            <a href="about.html">ℹ️ About</a>
+            <a href="contact.html">📧 Contact</a>
+            <a href="privacy-policy.html">🔒 Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>⭐ Popular Tools</h4>
+            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+            <a href="yes-no-wheel.html">✅ Yes/No Wheel</a>
+            <a href="prize-wheel.html">🏆 Prize Wheel</a>
+        </div>
+        <div class="footer-col">
+            <h4>🔧 All Tools</h4>
+            <a href="task-spinner.html">📋 Task Spinner</a>
+            <a href="random-name-picker.html">🏆 Random Name Picker</a>
+            <a href="decision-roulette.html">🎯 Decision Roulette</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ | Task Spinner</p>
+    </div>
+</footer>
+
+<script>
+// ========== TASK SPINNER FUNCTIONALITY ==========
+let tasks = ['Clean Room', 'Do Laundry', 'Take Out Trash', 'Wash Dishes', 'Walk Dog', 'Study'];
+let colors = [];
+let currentAngle = 0;
+let spinning = false;
+let spinStartTime = 0;
+let spinDuration = 2500;
+let spinEndAngle = 0;
+let history = [];
+
+let canvas = document.getElementById('taskWheel');
+let ctx = canvas.getContext('2d');
+
+function generateColors(count) {
+    const premiumColors = ['#FF6B6B', '#4ECDC4', '#9B59B6', '#F39C12', '#2ECC71', '#E74C3C', '#3498DB', '#1ABC9C', '#E67E22', '#95A5A6'];
+    let colorList = [];
+    for (let i = 0; i < count; i++) {
+        colorList.push(premiumColors[i % premiumColors.length]);
+    }
+    return colorList;
+}
+
+function updateTasksFromInputs() {
+    let inputs = document.querySelectorAll('.task-input');
+    tasks = [];
+    inputs.forEach(input => {
+        let val = input.value.trim();
+        if (val !== '') {
+            tasks.push(val);
+        }
+    });
+    if (tasks.length === 0) tasks = ['No Task'];
+    colors = generateColors(tasks.length);
+    resizeCanvas();
+    drawWheel(currentAngle);
+}
+
+function addTask() {
+    let list = document.getElementById('tasksList');
+    let div = document.createElement('div');
+    div.className = 'task-item';
+    div.innerHTML = `
+        <input type="text" class="task-input" placeholder="New Task" value="New Task">
+        <button class="remove-task" onclick="removeTask(this)">✕</button>
+    `;
+    list.appendChild(div);
+    updateTasksFromInputs();
+    showToast('Task added!');
+}
+
+function removeTask(btn) {
+    let list = document.getElementById('tasksList');
+    if (list.children.length <= 2) {
+        showToast('At least 2 tasks required!');
+        return;
+    }
+    btn.parentElement.remove();
+    updateTasksFromInputs();
+    showToast('Task removed');
+}
+
+function loadPreset(type) {
+    let list = document.getElementById('tasksList');
+    list.innerHTML = '';
+    let presetTasks = [];
+    if (type === 'chores') {
+        presetTasks = ['🧹 Sweep Floor', '🧺 Do Laundry', '🗑️ Take Trash', '🍽️ Wash Dishes', '🧼 Clean Bathroom', '🛒 Grocery Shopping'];
+    } else if (type === 'work') {
+        presetTasks = ['📧 Reply Emails', '📊 Make Report', '💻 Code Review', '📝 Write Docs', '📞 Client Call', '🧠 Brainstorming'];
+    } else if (type === 'fitness') {
+        presetTasks = ['🏃‍♂️ Run 2km', '💪 Push-ups', '🧘 Yoga', '🚴‍♂️ Cycling', '🏋️ Gym', '🤸 Stretching'];
+    } else if (type === 'fun') {
+        presetTasks = ['🎮 Play Game', '📺 Watch Movie', '🎵 Listen Music', '📖 Read Book', '🎨 Draw', '🍿 Snack Time'];
+    }
+    presetTasks.forEach(task => {
+        let div = document.createElement('div');
+        div.className = 'task-item';
+        div.innerHTML = `
+            <input type="text" class="task-input" value="${task}">
+            <button class="remove-task" onclick="removeTask(this)">✕</button>
+        `;
+        list.appendChild(div);
+    });
+    updateTasksFromInputs();
+    showToast(`${presetTasks.length} tasks loaded!`);
+}
+
+function resizeCanvas() {
+    let container = canvas.parentElement;
+    let maxSize = Math.min(container.clientWidth, 350);
+    let size = window.innerWidth < 600 ? maxSize : 350;
+    canvas.width = size;
+    canvas.height = size;
+    canvas.style.width = size + 'px';
+    canvas.style.height = size + 'px';
+    drawWheel(currentAngle);
+}
+
+function drawWheel(angle) {
+    if (tasks.length === 0) return;
+    let size = canvas.width;
+    let centerX = size / 2;
+    let centerY = size / 2;
+    let radius = size / 2;
+    let angleStep = (Math.PI * 2) / tasks.length;
+    ctx.clearRect(0, 0, size, size);
+    for (let i = 0; i < tasks.length; i++) {
+        let startAngle = i * angleStep + angle;
+        let endAngle = (i + 1) * angleStep + angle;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+        ctx.closePath();
+        ctx.fillStyle = colors[i];
+        ctx.fill();
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+        ctx.lineTo(centerX, centerY);
+        ctx.stroke();
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(startAngle + angleStep / 2);
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        let fontSize = Math.min(size * 0.032, 11);
+        ctx.font = `500 ${fontSize}px "Segoe UI"`;
+        ctx.fillStyle = 'white';
+        let text = tasks[i];
+        if (text.length > 12) text = text.substring(0, 10) + '..';
+        ctx.fillText(text, radius * 0.7, 0);
+        ctx.restore();
+    }
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius * 0.1, 0, Math.PI * 2);
+    ctx.fillStyle = '#1E3A8A';
+    ctx.fill();
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+}
+
+function getTaskAtPointer() {
+    let pointerAngle = -Math.PI / 2;
+    let actualAngle = pointerAngle - currentAngle;
+    while (actualAngle < 0) actualAngle += Math.PI * 2;
+    while (actualAngle >= Math.PI * 2) actualAngle -= Math.PI * 2;
+    let angleStep = (Math.PI * 2) / tasks.length;
+    let index = Math.floor(actualAngle / angleStep);
+    index = Math.min(index, tasks.length - 1);
+    return tasks[index];
+}
+
+function createConfetti() {
+    for (let i = 0; i < 80; i++) {
+        let confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        confetti.style.width = Math.random() * 8 + 4 + 'px';
+        confetti.style.height = Math.random() * 8 + 4 + 'px';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '-10px';
+        confetti.style.borderRadius = '2px';
+        confetti.style.zIndex = '9999';
+        confetti.style.pointerEvents = 'none';
+        confetti.style.animation = `confettiFall ${Math.random() * 1.5 + 1}s ease-out forwards`;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 2000);
+    }
+}
+
+function spinWheel() {
+    if (spinning) return;
+    if (tasks.length < 2) {
+        showToast('Add at least 2 tasks!');
+        return;
+    }
+    spinning = true;
+    spinStartTime = performance.now();
+    let fullRotations = 8 + Math.random() * 6;
+    let finalAngleOffset = Math.random() * Math.PI * 2;
+    spinEndAngle = currentAngle + (fullRotations * Math.PI * 2) + finalAngleOffset;
+    animateSpin(spinStartTime);
+}
+
+function animateSpin(now) {
+    let elapsed = performance.now() - now;
+    let t = Math.min(1, elapsed / spinDuration);
+    let easeOut = 1 - Math.pow(1 - t, 3);
+    let newAngle = currentAngle + (spinEndAngle - currentAngle) * easeOut;
+    currentAngle = newAngle % (Math.PI * 2);
+    drawWheel(currentAngle);
+    if (t < 1) {
+        requestAnimationFrame(() => animateSpin(now));
+    } else {
+        spinning = false;
+        let task = getTaskAtPointer();
+        let resultCard = document.getElementById('resultCard');
+        let resultTask = document.getElementById('resultTask');
+        resultTask.innerHTML = task;
+        resultCard.classList.add('animate');
+        createConfetti();
+        addToHistory(task);
+        setTimeout(() => resultCard.classList.remove('animate'), 500);
+        showToast(`🎉 Your task: ${task}! 🎉`);
+    }
+}
+
+function addToHistory(task) {
+    let now = new Date();
+    let time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    history.unshift({ task: task, time: time });
+    if (history.length > 8) history.pop();
+    renderHistory();
+}
+
+function renderHistory() {
+    let container = document.getElementById('historyList');
+    container.innerHTML = '';
+    history.forEach(item => {
+        let div = document.createElement('div');
+        div.className = 'history-item';
+        div.innerHTML = item.task;
+        container.appendChild(div);
+    });
+}
+
+function clearHistory() {
+    history = [];
+    renderHistory();
+    showToast('History cleared!');
+}
+
+function showToast(msg) {
+    let toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+}
+
+// Event Listeners
+document.getElementById('spinBtn').addEventListener('click', spinWheel);
+document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
+document.addEventListener('input', function(e) {
+    if (e.target.classList && e.target.classList.contains('task-input')) {
+        updateTasksFromInputs();
+    }
+});
+window.addEventListener('resize', () => resizeCanvas());
+
+// Mobile menu toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+}
+const mobileToolsToggle = document.getElementById('mobileToolsToggle');
+const mobileToolsContent = document.getElementById('mobileToolsContent');
+if (mobileToolsToggle && mobileToolsContent) {
+    mobileToolsToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileToolsToggle.classList.toggle('open');
+        mobileToolsContent.classList.toggle('open');
+    });
+}
+
+// Dynamic Category Footer
+(function() {
+    function getCurrentCategory() {
+        const path = window.location.pathname;
+        if (path.includes('task') || path.includes('spin') || path.includes('yes-no')) return 'fun';
+        return 'popular';
+    }
+    const categories = {
+        popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Unit Converter", url: "unit-converter.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
+        fun: { name: "🎲 Fun & Games", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Random Number Generator", url: "random-number-generator.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Prize Wheel", url: "prize-wheel.html" }, { name: "Task Spinner", url: "task-spinner.html" } ] }
+    };
+    function renderFooter() {
+        const footerContainer = document.getElementById('dynamicCategoryFooter');
+        if (!footerContainer) return;
+        const cat = categories[getCurrentCategory()] || categories.fun;
+        let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                      <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
+        cat.tools.forEach(tool => {
+            if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
+            html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
+        });
+        html += `</div></div>`;
+        footerContainer.innerHTML = html;
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
+    else renderFooter();
+})();
+
+// Initialize
+window.onload = () => {
+    resizeCanvas();
+    updateTasksFromInputs();
+    drawWheel(currentAngle);
+};
+</script>
+
+<style>
+.article-section {
+    background: white;
+    border-radius: 28px;
+    padding: 45px;
+    margin-top: 35px;
+    line-height: 1.8;
+    color: #374151;
+}
+.article-section h2 {
+    color: #1e3a8a;
+    font-size: 28px;
+    margin: 30px 0 20px 0;
+    border-bottom: 3px solid #2563eb;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.article-section p {
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+.article-section ul {
+    margin: 15px 0 20px 30px;
+}
+.article-section li {
+    margin-bottom: 8px;
+}
+.faq-section-article {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+}
+.faq-item-article {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+.faq-question-article {
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.faq-answer-article {
+    color: #475569;
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .article-section { padding: 25px 20px; }
+    .article-section h2 { font-size: 22px; }
+}
+</style>
+</body>
+</html>
