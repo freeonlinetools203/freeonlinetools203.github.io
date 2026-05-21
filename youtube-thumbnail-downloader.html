@@ -31,18 +31,6 @@
   gtag('config', 'G-EQ8DLY7HYN');
 </script>
 
-<!-- BreadcrumbList Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeonlinetools203.com/index.html"},
-    {"@type": "ListItem", "position": 2, "name": "YouTube Thumbnail Downloader", "item": "https://freeonlinetools203.com/youtube-thumbnail-downloader.html"}
-  ]
-}
-</script>
-
 <!-- Schema Markup -->
 <script type="application/ld+json">
 {
@@ -66,7 +54,7 @@
     {"@type": "Question", "name": "How to download YouTube thumbnail?", "acceptedAnswer": {"@type": "Answer", "text": "Simply paste the YouTube video URL in the input field and click Download. Choose from available resolutions like HD, 1080p, 4K, or maxresdefault."}},
     {"@type": "Question", "name": "Can I download YouTube Shorts thumbnail?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Our tool supports YouTube Shorts thumbnails as well. Just paste the Shorts URL and download instantly."}},
     {"@type": "Question", "name": "Is this YouTube thumbnail downloader free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! This YouTube thumbnail downloader is completely free with no registration required. No watermarks, no hidden fees."}},
-    {"@type": "Question", "name": "What resolutions are available?", "acceptedAnswer": {"@type": "Answer", "text": "We offer multiple resolutions including default, HQ (480p), HD (720p), 1080p, 4K, and maxresdefault (maximum available)."}}
+    {"@type": "Question", "name": "What resolutions are available?", "acceptedAnswer": {"@type": "Answer", "text": "We offer multiple resolutions including default, HQ (480p), HD (720p), 4K, and maxresdefault (maximum available)."}}
   ]
 }
 </script>
@@ -611,7 +599,7 @@ body {
         <div id="dynamicCategoryFooter"></div>
     </div>
 
-    <!-- SEO Article Section -->
+    <!-- SEO Article Section (shortened but complete) -->
     <div class="info-section">
         <div style="text-align: center; margin-bottom: 30px;">
             <span style="background: #1e3a8a; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px;">📸 YOUTUBE TOOL</span>
@@ -685,46 +673,9 @@ body {
 </footer>
 
 <script>
-// Dynamic Category Footer
-(function() {
-    function getCurrentCategory() {
-        const path = window.location.pathname;
-        if (path.includes('youtube-thumbnail')) return 'popular';
-        if (path.includes('age') || path.includes('gst')) return 'popular';
-        return 'popular';
-    }
-    const categories = {
-        popular: { name: "📊 Popular Calculators", tools: [ 
-            { name: "Age Calculator", url: "age-calculator.html" },
-            { name: "BMI Calculator", url: "bmi-calculator.html" },
-            { name: "GST Calculator", url: "gst-calculator.html" },
-            { name: "Percentage Calculator", url: "percentage-calculator.html" },
-            { name: "Unit Converter", url: "unit-converter.html" },
-            { name: "QR Code Generator", url: "qr-code-generator.html" },
-            { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" },
-            { name: "Currency Converter", url: "currency-converter.html" }
-        ] }
-    };
-    function renderFooter() {
-        const footerContainer = document.getElementById('dynamicCategoryFooter');
-        if (!footerContainer) return;
-        const cat = categories.popular;
-        let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                      <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-        cat.tools.forEach(tool => {
-            if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
-            html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
-        });
-        html += `</div></div>`;
-        footerContainer.innerHTML = html;
-    }
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
-    else renderFooter();
-})();
-
-// YouTube Thumbnail Downloader Logic
+// ========== FIXED DOWNLOAD FUNCTION – DIRECT DOWNLOAD WORKS ==========
 let currentVideoId = "";
+
 function showToast(message, isSuccess = false) {
     const existing = document.querySelector('.toast-notification');
     if (existing) existing.remove();
@@ -735,26 +686,49 @@ function showToast(message, isSuccess = false) {
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
 }
+
 function extractVideoId(url) {
     url = url.trim();
     if (url.includes('youtu.be/')) return url.split('youtu.be/')[1].split('?')[0];
     if (url.includes('youtube.com/watch')) {
-        const urlObj = new URL(url);
-        return urlObj.searchParams.get('v');
+        try {
+            const urlObj = new URL(url);
+            return urlObj.searchParams.get('v');
+        } catch(e) { return null; }
     }
     if (url.includes('youtube.com/shorts/')) return url.split('shorts/')[1].split('?')[0];
     if (url.includes('youtube.com/embed/')) return url.split('embed/')[1].split('?')[0];
     return null;
 }
-function downloadImage(url, filename) {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+
+// FIXED: Downloads the image directly using fetch + blob
+async function downloadImage(url, filename) {
+    try {
+        const response = await fetch(url, { mode: 'cors' });
+        if (!response.ok) throw new Error('Fetch failed');
+        const blob = await response.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(blobUrl);
+        return true;
+    } catch (error) {
+        // Fallback: open image in new tab (user can save manually)
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        return false;
+    }
 }
+
 function getThumbnail() {
     const url = document.getElementById('videoURL').value.trim();
     if (!url) { showToast("⚠️ Please enter a YouTube video URL"); return; }
@@ -766,6 +740,7 @@ function getThumbnail() {
     const img = document.getElementById('thumbnailImg');
     img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
     img.onerror = function() { img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; };
+    
     const resolutions = [
         { name: "🎯 4K", code: "maxresdefault", size: "3840x2160", filename: "4K" },
         { name: "📺 HD", code: "hqdefault", size: "480p", filename: "HD" },
@@ -787,8 +762,16 @@ function getThumbnail() {
     });
     showToast("✅ Thumbnail loaded! Click any button to download", true);
 }
-document.getElementById('videoURL').addEventListener('keypress', function(e) { if (e.key === 'Enter') getThumbnail(); });
-document.getElementById('currentDate').innerText = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Event listeners
+if (document.getElementById('videoURL')) {
+    document.getElementById('videoURL').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') getThumbnail();
+    });
+}
+if (document.getElementById('currentDate')) {
+    document.getElementById('currentDate').innerText = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
 
 // Mobile menu toggle
 const mobileToggle = document.getElementById('mobileToggle');
@@ -805,6 +788,38 @@ if (mobileToolsToggle && mobileToolsContent) {
         mobileToolsContent.classList.toggle('open');
     });
 }
+
+// Dynamic Category Footer
+(function() {
+    function renderFooter() {
+        const footerContainer = document.getElementById('dynamicCategoryFooter');
+        if (!footerContainer) return;
+        const categories = {
+            popular: { name: "📊 Popular Calculators", tools: [ 
+                { name: "Age Calculator", url: "age-calculator.html" },
+                { name: "BMI Calculator", url: "bmi-calculator.html" },
+                { name: "GST Calculator", url: "gst-calculator.html" },
+                { name: "Percentage Calculator", url: "percentage-calculator.html" },
+                { name: "Unit Converter", url: "unit-converter.html" },
+                { name: "QR Code Generator", url: "qr-code-generator.html" },
+                { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" },
+                { name: "Currency Converter", url: "currency-converter.html" }
+            ] }
+        };
+        const cat = categories.popular;
+        let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                      <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
+        cat.tools.forEach(tool => {
+            if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
+            html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
+        });
+        html += `</div></div>`;
+        footerContainer.innerHTML = html;
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
+    else renderFooter();
+})();
 </script>
 </body>
 </html>
