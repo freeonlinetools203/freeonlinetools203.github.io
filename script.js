@@ -52,21 +52,152 @@ const toolsDatabase = {
     }
 };
 
+// =========================================================================
+// TOOL URL MAPPING (for non-standard filenames)
+// =========================================================================
+const toolUrlMap = {
+    // Developer & Security Tools
+    "MD5 Hash Generator": "md5-generator.html",
+    "SHA-256 Hash Generator": "sha256-generator.html",
+    "SHA-1 Hash Generator": "sha1-generator.html",
+    "Base64 Encoder/Decoder": "base64-encoder-decoder.html",
+    "URL Encoder/Decoder": "url-encoder-decoder.html",
+    "HTML Encoder/Decoder": "html-encoder-decoder.html",
+    
+    // Popular Calculators
+    "Unit Converter": "unit-converter.html",
+    "Age Calculator": "age-calculator.html",
+    "Age Difference Calculator": "age-difference-calculator.html",
+    "Discount Calculator": "discount-calculator.html",
+    "Profit & Loss Calculator": "profit-loss-calculator.html",
+    "GPA Calculator": "gpa-calculator.html",
+    "GST Calculator": "gst-calculator.html",
+    "Percentage Calculator": "percentage-calculator.html",
+    "Date Calculator": "date-calculator.html",
+    "QR Code Generator": "qr-code-generator.html",
+    "YouTube Thumbnail Downloader": "youtube-thumbnail-downloader.html",
+    "Currency Converter": "currency-converter.html",
+    
+    // Health & Fitness
+    "BMI Calculator": "bmi-calculator.html",
+    "BMR Calculator": "bmr-calculator.html",
+    "Calorie Calculator": "calorie-calculator.html",
+    "TDEE Calculator": "tdee-calculator.html",
+    
+    // Financial Tools
+    "EMI Calculator": "emi-calculator.html",
+    "Loan Calculator": "loan-calculator.html",
+    "Zakat Calculator": "zakat-calculator.html",
+    
+    // Text & Writing
+    "Word Counter": "word-counter.html",
+    "Line Counter": "line-counter.html",
+    "Text Case Converter": "text-case-converter.html",
+    "Password Generator": "password-generator.html",
+    "Password Strength Checker": "password-checker.html",
+    
+    // Fun Tools
+    "Spin The Wheel": "spin-the-wheel.html",
+    "Random Color Picker": "random-color-picker.html",
+    "Yes/No Wheel": "yes-no-wheel.html",
+    "Decision Roulette": "decision-roulette.html",
+    "Random Name Picker": "random-name-picker.html",
+    "Random Number Generator": "random-number-generator.html",
+    "Prize Wheel": "prize-wheel.html",
+    "Task Spinner": "task-spinner.html",
+    
+    // Animal Pregnancy
+    "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
+    "Cat Pregnancy Calculator": "cat-pregnancy-calculator.html",
+    "Cow Pregnancy Calculator": "cow-pregnancy-calculator.html",
+    "Rabbit Pregnancy Calculator": "rabbit-pregnancy-calculator.html",
+    "Goat Pregnancy Calculator": "goat-pregnancy-calculator.html",
+    "Horse Pregnancy Calculator": "horse-pregnancy-calculator.html",
+    "Sheep Pregnancy Calculator": "sheep-pregnancy-calculator.html",
+    "Pig Pregnancy Calculator": "pig-pregnancy-calculator.html",
+    
+    // SEO Tools
+    "Keyword Density Checker": "keyword-density-checker.html",
+    "Meta Tags Generator": "meta-tags-generator.html",
+    "Meta Tag Analyzer": "meta-tag-analyzer.html",
+    
+    // Hashtag Tools
+    "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
+    "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
+    "Facebook Hashtag Generator": "facebook-hashtag-generator.html",
+    "Pinterest Hashtag Generator": "pinterest-hashtag-generator.html",
+    "AI Hashtag Generator": "ai-hashtag-generator.html",
+    "SEO Hashtags Generator": "seo-hashtags-generator.html",
+    
+    // Color Tools
+    "Color Palette Generator": "color-palette-generator.html",
+    "Color Shades Generator": "color-shades-generator.html",
+    "Color Gradient Maker": "color-gradient-maker.html",
+    "Color Contrast Checker": "color-contrast-checker.html",
+    "Color Name Finder": "color-name-finder.html",
+    
+    // PDF Tools
+    "PDF Merger": "pdf-merger.html",
+    "PDF Splitter": "pdf-splitter.html",
+    "PDF to Image": "pdf-to-image.html",
+    "PDF to JPG": "pdf-to-jpg.html",
+    "PDF to PNG": "pdf-to-png.html",
+    "PDF to BMP": "pdf-to-bmp.html",
+    "PDF to WEBP": "pdf-to-webp.html",
+    "PDF to TIFF": "pdf-to-tiff.html",
+    "PDF to Word": "pdf-to-word.html",
+    "PDF to Excel": "pdf-to-excel.html",
+    "PDF to Text": "pdf-to-text.html",
+    "PDF Rotator": "pdf-rotator.html",
+    
+    // Image Tools
+    "Image Color Extractor": "image-color-extractor.html",
+    "Image Converter": "image-converter.html",
+    "Image Cropper": "image-cropper.html",
+    "Image Resizer": "image-resizer.html",
+    "Image to PDF": "image-to-pdf.html",
+    "Image Upscaler": "image-upscaler.html",
+    "Image Compressor": "image-compressor.html"
+};
+
 function getUrl(toolName) {
+    if (toolUrlMap[toolName]) {
+        return "https://freeonlinetools203.com/" + toolUrlMap[toolName];
+    }
     if (toolName.endsWith('.html')) return toolName;
-    if (toolName === "GPA Calculator") return "https://freeonlinetools203.com/gpa-calculator.html";
     return "https://freeonlinetools203.com/" + toolName.toLowerCase().trim().replace(/ /g, '-').replace(/[^\w\-]/g, '') + '.html';
 }
 
+// =========================================================================
+// RENDER DASHBOARD - Most Popular Categories सबसे ऊपर
+// =========================================================================
 function renderDashboard() {
     const container = document.getElementById('toolsContainer');
     if (!container) return;
+    
+    // पहले सबसे ज्यादा उपयोग होने वाले categories
+    const orderedCategoryKeys = [
+        "catPop",    // 📊 Popular Calculators
+        "catHash",   // 📱 Social Media Hashtag Tools
+        "catDev",    // 🔐 Developer & Security Tools
+        "catFun"     // 🎲 Random & Fun Tools
+    ];
+    
+    // बाकी categories को उनके original order में शामिल करें
+    for (const key of Object.keys(toolsDatabase)) {
+        if (!orderedCategoryKeys.includes(key)) {
+            orderedCategoryKeys.push(key);
+        }
+    }
+    
     let html = '';
-    for (const [key, category] of Object.entries(toolsDatabase)) {
+    for (const key of orderedCategoryKeys) {
+        const cat = toolsDatabase[key];
+        if (!cat) continue;
         html += `<div class="section" data-category="${key}" id="section_${key}">
-            <h2>${category.name}</h2>
+            <h2>${cat.name}</h2>
             <div class="tools-grid">
-                ${category.tools.map(tool => `
+                ${cat.tools.map(tool => `
                     <div class="tool-card">
                         <a href="${getUrl(tool)}">${tool}</a>
                     </div>`).join('')}
@@ -356,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
     populateFooter();
 
-    // Navbar CSS + HTML inject karo - navbar.html ki zaroorat nahi!
+    // Navbar CSS + HTML inject karo
     document.head.insertAdjacentHTML('beforeend', navbarCSS);
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
 
