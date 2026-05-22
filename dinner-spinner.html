@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Drink Picker Wheel | What to Drink</title>
+<title>Dinner Spinner | What to Eat Today</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQ8DLY7HYN');</script>
 <style>
+/* Same CSS as above - copy from FILE 4 */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;min-height:100vh;}
 .navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
@@ -77,29 +78,103 @@ body.dark .result-pop{background:#374151;color:#60a5fa;}
 .winning-glow canvas{box-shadow:0 0 0 8px #10b981,0 0 40px #10b981;transition:box-shadow 0.3s ease;}
 @media (max-width:768px){.card-content{padding:20px;}.canvas-container{max-width:280px;}.spin-center-btn{width:55px;height:55px;font-size:0.8rem;}.result-pop{font-size:1rem;}}
 </style>
-<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
-<nav class="navbar"><div class="nav-container"><div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
-<ul class="nav-links"><li><a href="index.html">🏠 Home</a></li>
-<li class="dropdown" id="toolsDropdown"><button class="dropbtn" id="toolsBtn">🛠️ All Tools ▼</button>
-<div class="dropdown-content" id="dropdownContent"><div class="dropdown-category" data-cat="wheel">🎡 Spin Wheels <span>▶</span></div>
-<div class="category-tools" id="wheelTools"><a href="drink-wheel.html">🍹 Drink Wheel</a><a href="random-fact-wheel.html">📚 Fact Wheel</a><a href="color-wheel.html">🎨 Color Wheel</a><a href="decision-wheel.html">🤔 Decision Wheel</a><a href="holiday-wheel.html">🎄 Holiday Wheel</a></div></div></li>
-<li><a href="about.html">ℹ️ About</a></li></ul></div></nav>
-<div class="container"><div class="wheel-card"><div class="card-header"><h1>🍹 Drink Picker Wheel</h1><p>Spin to decide your drink!</p></div>
-<div class="card-content"><div class="top-bar"><div class="mode-category-wrap"><label>📌 Select Category:</label><select id="modeSelect"><option value="alcoholic">🍸 Alcoholic</option><option value="nonalcoholic">🥤 Non-Alcoholic</option><option value="coffee">☕ Coffee & Tea</option></select></div><button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button></div>
-<div class="wheel-panel"><div class="wheel-container"><div class="arrow" id="arrowPointer"></div><div class="canvas-container" id="canvasContainer"><canvas id="wheelCanvas" width="500" height="500"></canvas><button class="spin-center-btn" id="spinButton">SPIN</button></div><div class="result-pop" id="resultPopup">✨ Cheers!</div></div>
-<div class="controls-card"><h2>✏️ Edit Drinks</h2><div class="input-group"><input type="text" id="itemInput" placeholder="Enter drink"><button id="addItemBtn">➕ Add</button></div><div class="button-row"><button id="removeLastBtn">✖️ Remove last</button><button id="resetWheelBtn">⟲ Reset</button></div><div class="tag-list" id="tagContainer"></div><p style="color:#6b7280;font-size:12px;margin-top:10px;">Click ✕ to delete any drink</p></div></div>
-<div class="color-picker-section"><h3>🎨 Color Picker</h3><div class="color-picker-row"><input type="color" id="colorPicker" value="#1e3a8a"><div class="hex-field"><input type="text" id="hexValue" value="#1e3a8a" readonly><button class="copy-btn" id="copyHexBtn">Copy HEX</button></div></div></div></div></div>
-<div class="category-footer"><a href="index.html" class="home-link">🔘 Back to Home</a></div></div>
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+<ul class="nav-links">
+<li><a href="index.html">🏠 Home</a></li>
+<li class="dropdown" id="toolsDropdown">
+<button class="dropbtn" id="toolsBtn">🛠️ All Tools ▼</button>
+<div class="dropdown-content" id="dropdownContent">
+<div class="dropdown-category" data-cat="wheel">🎡 Spin Wheels <span>▶</span></div>
+<div class="category-tools" id="wheelTools">
+<a href="name-picker-wheel.html">👤 Name Picker Wheel</a>
+<a href="truth-dare-wheel.html">💭 Truth or Dare Wheel</a>
+<a href="workout-spinner.html">💪 Workout Spinner</a>
+<a href="chore-wheel.html">🧹 Chore Wheel</a>
+<a href="dinner-spinner.html">🍽️ Dinner Spinner</a>
+<a href="movie-picker-wheel.html">🎬 Movie Picker Wheel</a>
+<a href="country-picker-wheel.html">🌍 Country Picker Wheel</a>
+</div>
+<div class="dropdown-category" data-cat="tools">🔧 Other Tools <span>▶</span></div>
+<div class="category-tools" id="otherTools">
+<a href="#">Age Calculator</a>
+<a href="#">BMI Calculator</a>
+<a href="#">QR Generator</a>
+</div>
+</div>
+</li>
+<li><a href="about.html">ℹ️ About</a></li>
+</ul>
+</div>
+</nav>
+<div class="container">
+<div class="wheel-card">
+<div class="card-header">
+<h1>🍽️ Dinner Spinner</h1>
+<p>Never ask "what's for dinner?" again!</p>
+</div>
+<div class="card-content">
+<div class="top-bar">
+<div class="mode-category-wrap">
+<label>📌 Select Category:</label>
+<select id="modeSelect">
+<option value="italian">🇮🇹 Italian</option>
+<option value="asian">🥢 Asian</option>
+<option value="fastfood">🍔 Fast Food</option>
+</select>
+</div>
+<button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button>
+</div>
+<div class="wheel-panel">
+<div class="wheel-container">
+<div class="arrow" id="arrowPointer"></div>
+<div class="canvas-container" id="canvasContainer">
+<canvas id="wheelCanvas" width="500" height="500"></canvas>
+<button class="spin-center-btn" id="spinButton">SPIN</button>
+</div>
+<div class="result-pop" id="resultPopup">✨ Dinner Time!</div>
+</div>
+<div class="controls-card">
+<h2>✏️ Edit Meals</h2>
+<div class="input-group">
+<input type="text" id="itemInput" placeholder="Enter meal name">
+<button id="addItemBtn">➕ Add</button>
+</div>
+<div class="button-row">
+<button id="removeLastBtn">✖️ Remove last</button>
+<button id="resetWheelBtn">⟲ Reset</button>
+</div>
+<div class="tag-list" id="tagContainer"></div>
+<p style="color:#6b7280;font-size:12px;margin-top:10px;">Click ✕ to delete any meal</p>
+</div>
+</div>
+<div class="color-picker-section">
+<h3>🎨 Color Picker</h3>
+<div class="color-picker-row">
+<input type="color" id="colorPicker" value="#f59e0b">
+<div class="hex-field">
+<input type="text" id="hexValue" value="#f59e0b" readonly>
+<button class="copy-btn" id="copyHexBtn">Copy HEX</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="category-footer">
+<a href="index.html" class="home-link">🔘 Back to Home</a>
+</div>
+</div>
 <canvas id="confettiCanvas"></canvas>
 <script>
-let items = ['🍹 Mojito', '🍺 Beer', '🍷 Wine', '🥃 Whiskey', '🍸 Martini', '🍹 Margarita'];
+let items = ['🍕 Pizza', '🍝 Pasta', '🌮 Tacos', '🍣 Sushi', '🍔 Burger', '🥗 Salad'];
 let spinAngle = 0, isSpinning = false, animFrame = null, confettiActive = false;
 const CATEGORY_SETS = {
-alcoholic: ['🍹 Mojito', '🍺 Beer', '🍷 Wine', '🥃 Whiskey', '🍸 Martini', '🍹 Margarita', '🍹 Pina Colada', '🍸 Cosmopolitan'],
-nonalcoholic: ['🥤 Soda', '🧃 Juice', '💧 Water', '🍹 Mocktail', '🥛 Milkshake', '🍵 Iced Tea', '🍋 Lemonade', '🥤 Energy Drink'],
-coffee: ['☕ Espresso', '☕ Latte', '☕ Cappuccino', '🍵 Green Tea', '🍵 Black Tea', '☕ Americano', '🍵 Chai Latte', '☕ Mocha']
+italian: ['🍕 Pizza', '🍝 Pasta', '🍝 Lasagna', '🍚 Risotto', '🥖 Calzone', '🦞 Ravioli'],
+asian: ['🍣 Sushi', '🍜 Ramen', '🥟 Dumplings', '🍛 Curry', '🍚 Fried Rice', '🥘 Pad Thai'],
+fastfood: ['🍔 Burger', '🍟 Fries', '🍕 Pizza', '🌮 Tacos', '🍗 Fried Chicken', '🥙 Wrap']
 };
 const canvas = document.getElementById('wheelCanvas'), ctx = canvas.getContext('2d');
 const spinBtn = document.getElementById('spinButton'), resultPopup = document.getElementById('resultPopup');
@@ -110,7 +185,7 @@ const tagContainer = document.getElementById('tagContainer'), colorPicker = docu
 const hexValue = document.getElementById('hexValue'), copyHexBtn = document.getElementById('copyHexBtn');
 const arrowPointer = document.getElementById('arrowPointer');
 function resizeCanvas(){const container=document.getElementById('canvasContainer');const size=container.clientWidth;canvas.width=size;canvas.height=size;drawWheel();}
-function drawWheel(){const count=items.length;if(count===0)return;const centerX=canvas.width/2,centerY=canvas.height/2,radius=Math.min(canvas.width,canvas.height)*0.45,angleStep=(Math.PI*2)/count;for(let i=0;i<count;i++){const start=i*angleStep+spinAngle,end=start+angleStep;ctx.beginPath();ctx.moveTo(centerX,centerY);ctx.arc(centerX,centerY,radius,start,end);ctx.closePath();ctx.fillStyle=i%2?'#1e3a8a':'#06b6d4';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();ctx.save();ctx.translate(centerX,centerY);ctx.rotate(start+angleStep/2);ctx.textAlign='center';ctx.font='bold '+Math.max(12,radius*0.1)+'px "Segoe UI"';ctx.fillStyle='#fff';ctx.fillText(items[i].substring(0,12),radius*0.65,8);ctx.restore();}}
+function drawWheel(){const count=items.length;if(count===0)return;const centerX=canvas.width/2,centerY=canvas.height/2,radius=Math.min(canvas.width,canvas.height)*0.45,angleStep=(Math.PI*2)/count;for(let i=0;i<count;i++){const start=i*angleStep+spinAngle,end=start+angleStep;ctx.beginPath();ctx.moveTo(centerX,centerY);ctx.arc(centerX,centerY,radius,start,end);ctx.closePath();ctx.fillStyle=i%2?'#f59e0b':'#fbbf24';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();ctx.save();ctx.translate(centerX,centerY);ctx.rotate(start+angleStep/2);ctx.textAlign='center';ctx.font='bold '+Math.max(12,radius*0.1)+'px "Segoe UI"';ctx.fillStyle='#fff';ctx.fillText(items[i].substring(0,12),radius*0.65,8);ctx.restore();}}
 function renderTags(){tagContainer.innerHTML='';items.forEach((item,idx)=>{const span=document.createElement('span');span.className='item-tag';span.innerHTML=`${item} <button data-index="${idx}">✕</button>`;tagContainer.appendChild(span);});document.querySelectorAll('.item-tag button').forEach(btn=>{btn.addEventListener('click',(e)=>{const idx=parseInt(btn.getAttribute('data-index'));if(items.length>1){items.splice(idx,1);updateWheel();}});});}
 function updateWheel(){drawWheel();renderTags();}
 function loadMode(mode){items=[...CATEGORY_SETS[mode]];spinAngle=0;updateWheel();}
