@@ -1,5 +1,5 @@
 // =========================================================================
-// CENTRALIZED TOOLS DATABASE
+// CENTRALIZED TOOLS DATABASE (UPDATED WITH ALL NEW SPIN WHEELS)
 // =========================================================================
 const toolsDatabase = {
     catSeo: {
@@ -48,12 +48,16 @@ const toolsDatabase = {
     },
     catFun: {
         name: "🎲 Random & Fun Tools",
-        tools: ["Spin The Wheel","Random Color Picker","Yes/No Wheel","Decision Roulette","Random Name Picker","Random Number Generator","Prize Wheel","Task Spinner"]
+        tools: [
+            "Spin The Wheel", "Random Color Picker", "Yes/No Wheel", "Decision Roulette",
+            "Random Name Picker", "Random Number Generator", "Prize Wheel", "Task Spinner",
+            "Zodiac Wheel", "You vs. Food Wheel", "Random Animal Wheel", "Holiday Activity Wheel"
+        ]
     }
 };
 
 // =========================================================================
-// TOOL URL MAPPING (for non-standard filenames)
+// TOOL URL MAPPING (UPDATED WITH NEW SPIN WHEELS)
 // =========================================================================
 const toolUrlMap = {
     // Developer & Security Tools
@@ -96,7 +100,7 @@ const toolUrlMap = {
     "Password Generator": "password-generator.html",
     "Password Strength Checker": "password-checker.html",
     
-    // Fun Tools
+    // Fun Tools (existing)
     "Spin The Wheel": "spin-the-wheel.html",
     "Random Color Picker": "random-color-picker.html",
     "Yes/No Wheel": "yes-no-wheel.html",
@@ -105,6 +109,12 @@ const toolUrlMap = {
     "Random Number Generator": "random-number-generator.html",
     "Prize Wheel": "prize-wheel.html",
     "Task Spinner": "task-spinner.html",
+    
+    // NEW SPIN WHEELS
+    "Zodiac Wheel": "zodiac-wheel.html",
+    "You vs. Food Wheel": "you-vs-food-wheel.html",
+    "Random Animal Wheel": "random-animal-wheel.html",
+    "Holiday Activity Wheel": "holiday-wheel.html",
     
     // Animal Pregnancy
     "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
@@ -175,7 +185,6 @@ function renderDashboard() {
     const container = document.getElementById('toolsContainer');
     if (!container) return;
     
-    // पहले सबसे ज्यादा उपयोग होने वाले categories
     const orderedCategoryKeys = [
         "catPop",    // 📊 Popular Calculators
         "catHash",   // 📱 Social Media Hashtag Tools
@@ -183,7 +192,6 @@ function renderDashboard() {
         "catFun"     // 🎲 Random & Fun Tools
     ];
     
-    // बाकी categories को उनके original order में शामिल करें
     for (const key of Object.keys(toolsDatabase)) {
         if (!orderedCategoryKeys.includes(key)) {
             orderedCategoryKeys.push(key);
@@ -219,7 +227,7 @@ function populateFooter() {
 }
 
 // =========================================================================
-// NAVBAR - Automatic (navbar.html ki zaroorat nahi!)
+// NAVBAR - Automatic (UPDATED WITH ALL SPIN WHEELS)
 // =========================================================================
 const navbarCSS = `<style>
 .megamenu-container{width:100%;background:linear-gradient(to right,#881e8a,#2563eb);position:relative;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
@@ -361,14 +369,19 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/image-to-pdf.html">Image to PDF</a>
                 <a href="https://freeonlinetools203.com/image-upscaler.html">Image Upscaler</a>
                 <a href="https://freeonlinetools203.com/image-compressor.html">Image Compressor</a>
-                <h4>🎲 Fun Tools</h4>
-                <a href="https://freeonlinetools203.com/spin-the-wheel.html">Spin The Wheel</a>
-                <a href="https://freeonlinetools203.com/random-number-generator.html">Random Number Generator</a>
-                <a href="https://freeonlinetools203.com/yes-no-wheel.html">Yes/No Wheel</a>
-                <a href="https://freeonlinetools203.com/decision-roulette.html">Decision Roulette</a>
-                <a href="https://freeonlinetools203.com/random-name-picker.html">Random Name Picker</a>
-                <a href="https://freeonlinetools203.com/prize-wheel.html">Prize Wheel</a>
-                <a href="https://freeonlinetools203.com/task-spinner.html">Task Spinner</a>
+                <h4>🎲 Fun Tools (Spin Wheels)</h4>
+                <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
+                <a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
+                <a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
+                <a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
+                <a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
+                <a href="https://freeonlinetools203.com/you-vs-food-wheel.html">🍕 You vs. Food Wheel</a>
+                <a href="https://freeonlinetools203.com/random-animal-wheel.html">🐘 Random Animal Wheel</a>
+                <a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
+                <a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
+                <a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
+                <a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
+                <a href="https://freeonlinetools203.com/random-color-picker.html">🎨 Random Color Picker</a>
               </div>
             </div>
           </div>
@@ -388,87 +401,19 @@ const navbarHTML = `
       <li>
         <a href="#" class="mobile-dropdown-toggle" id="mobileToolsToggle">🛠️ All Tools</a>
         <div class="mobile-dropdown-content" id="mobileToolsContent">
-          <h4>🔍 SEO Tools</h4>
-          <a href="https://freeonlinetools203.com/keyword-density-checker.html">Keyword Density Checker</a>
-          <a href="https://freeonlinetools203.com/meta-tags-generator.html">Meta Tags Generator</a>
-          <a href="https://freeonlinetools203.com/meta-tag-analyzer.html">Meta Tag Analyzer</a>
-          <h4>📱 Social Media Hashtag</h4>
-          <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">Instagram Hashtag Generator</a>
-          <a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">LinkedIn Hashtag Generator</a>
-          <a href="https://freeonlinetools203.com/facebook-hashtag-generator.html">Facebook Hashtag Generator</a>
-          <a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html">Pinterest Hashtag Generator</a>
-          <a href="https://freeonlinetools203.com/ai-hashtag-generator.html">AI Hashtag Generator</a>
-          <a href="https://freeonlinetools203.com/seo-hashtags-generator.html">SEO Hashtags Generator</a>
-          <h4>🐾 Animal Pregnancy</h4>
-          <a href="https://freeonlinetools203.com/dog-pregnancy-calculator.html">Dog Pregnancy Calculator</a>
-          <a href="https://freeonlinetools203.com/cat-pregnancy-calculator.html">Cat Pregnancy Calculator</a>
-          <a href="https://freeonlinetools203.com/cow-pregnancy-calculator.html">Cow Pregnancy Calculator</a>
-          <a href="https://freeonlinetools203.com/rabbit-pregnancy-calculator.html">Rabbit Pregnancy Calculator</a>
-          <a href="https://freeonlinetools203.com/goat-pregnancy-calculator.html">Goat Pregnancy Calculator</a>
-          <a href="https://freeonlinetools203.com/horse-pregnancy-calculator.html">Horse Pregnancy Calculator</a>
-          <a href="https://freeonlinetools203.com/sheep-pregnancy-calculator.html">Sheep Pregnancy Calculator</a>
-          <a href="https://freeonlinetools203.com/pig-pregnancy-calculator.html">Pig Pregnancy Calculator</a>
-          <h4>🔐 Developer & Security</h4>
-          <a href="https://freeonlinetools203.com/md5-generator.html">MD5 Hash Generator</a>
-          <a href="https://freeonlinetools203.com/sha256-generator.html">SHA-256 Hash Generator</a>
-          <a href="https://freeonlinetools203.com/sha1-generator.html">SHA-1 Hash Generator</a>
-          <a href="https://freeonlinetools203.com/base64-encoder-decoder.html">Base64 Encoder/Decoder</a>
-          <a href="https://freeonlinetools203.com/url-encoder-decoder.html">URL Encoder/Decoder</a>
-          <a href="https://freeonlinetools203.com/html-encoder-decoder.html">HTML Encoder/Decoder</a>
-          <h4>🎨 Color Tools</h4>
-          <a href="https://freeonlinetools203.com/color-palette-generator.html">Color Palette Generator</a>
-          <a href="https://freeonlinetools203.com/color-shades-generator.html">Color Shades Generator</a>
-          <a href="https://freeonlinetools203.com/color-gradient-maker.html">Color Gradient Maker</a>
-          <a href="https://freeonlinetools203.com/color-contrast-checker.html">Color Contrast Checker</a>
-          <a href="https://freeonlinetools203.com/color-name-finder.html">Color Name Finder</a>
-          <a href="https://freeonlinetools203.com/random-color-picker.html">Random Color Picker</a>
-          <h4>📊 Popular Calculators</h4>
-          <a href="https://freeonlinetools203.com/unit-converter.html">Unit Converter</a>
-          <a href="https://freeonlinetools203.com/age-calculator.html">Age Calculator</a>
-          <a href="https://freeonlinetools203.com/age-difference-calculator.html">Age Difference Calculator</a>
-          <a href="https://freeonlinetools203.com/discount-calculator.html">Discount Calculator</a>
-          <a href="https://freeonlinetools203.com/profit-loss-calculator.html">Profit & Loss Calculator</a>
-          <a href="https://freeonlinetools203.com/gpa-calculator.html">GPA Calculator</a>
-          <a href="https://freeonlinetools203.com/gst-calculator.html">GST Calculator</a>
-          <a href="https://freeonlinetools203.com/percentage-calculator.html">Percentage Calculator</a>
-          <a href="https://freeonlinetools203.com/date-calculator.html">Date Calculator</a>
-          <a href="https://freeonlinetools203.com/qr-code-generator.html">QR Code Generator</a>
-          <a href="https://freeonlinetools203.com/youtube-thumbnail-downloader.html">YouTube Thumbnail Downloader</a>
-          <a href="https://freeonlinetools203.com/currency-converter.html">Currency Converter</a>
-          <h4>🏃 Health & Fitness</h4>
-          <a href="https://freeonlinetools203.com/bmi-calculator.html">BMI Calculator</a>
-          <a href="https://freeonlinetools203.com/bmr-calculator.html">BMR Calculator</a>
-          <a href="https://freeonlinetools203.com/calorie-calculator.html">Calorie Calculator</a>
-          <a href="https://freeonlinetools203.com/tdee-calculator.html">TDEE Calculator</a>
-          <h4>💰 Financial Tools</h4>
-          <a href="https://freeonlinetools203.com/emi-calculator.html">EMI Calculator</a>
-          <a href="https://freeonlinetools203.com/loan-calculator.html">Loan Calculator</a>
-          <a href="https://freeonlinetools203.com/zakat-calculator.html">Zakat Calculator</a>
-          <h4>📝 Text & Writing</h4>
-          <a href="https://freeonlinetools203.com/word-counter.html">Word Counter</a>
-          <a href="https://freeonlinetools203.com/line-counter.html">Line Counter</a>
-          <a href="https://freeonlinetools203.com/text-case-converter.html">Text Case Converter</a>
-          <a href="https://freeonlinetools203.com/password-generator.html">Password Generator</a>
-          <a href="https://freeonlinetools203.com/password-checker.html">Password Strength Checker</a>
-          <h4>📄 PDF Tools</h4>
-          <a href="https://freeonlinetools203.com/pdf-merger.html">PDF Merger</a>
-          <a href="https://freeonlinetools203.com/pdf-splitter.html">PDF Splitter</a>
-          <a href="https://freeonlinetools203.com/pdf-to-jpg.html">PDF to JPG</a>
-          <a href="https://freeonlinetools203.com/pdf-to-png.html">PDF to PNG</a>
-          <a href="https://freeonlinetools203.com/pdf-to-word.html">PDF to Word</a>
-          <a href="https://freeonlinetools203.com/pdf-to-excel.html">PDF to Excel</a>
-          <a href="https://freeonlinetools203.com/pdf-rotator.html">PDF Rotator</a>
-          <h4>🖼️ Image Tools</h4>
-          <a href="https://freeonlinetools203.com/image-converter.html">Image Converter</a>
-          <a href="https://freeonlinetools203.com/image-cropper.html">Image Cropper</a>
-          <a href="https://freeonlinetools203.com/image-resizer.html">Image Resizer</a>
-          <a href="https://freeonlinetools203.com/image-compressor.html">Image Compressor</a>
-          <h4>🎲 Fun Tools</h4>
-          <a href="https://freeonlinetools203.com/spin-the-wheel.html">Spin The Wheel</a>
-          <a href="https://freeonlinetools203.com/random-number-generator.html">Random Number Generator</a>
-          <a href="https://freeonlinetools203.com/yes-no-wheel.html">Yes/No Wheel</a>
-          <a href="https://freeonlinetools203.com/prize-wheel.html">Prize Wheel</a>
-          <a href="https://freeonlinetools203.com/task-spinner.html">Task Spinner</a>
+          <h4>🎲 Fun Tools (Spin Wheels)</h4>
+          <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
+          <a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
+          <a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
+          <a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
+          <a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
+          <a href="https://freeonlinetools203.com/you-vs-food-wheel.html">🍕 You vs. Food Wheel</a>
+          <a href="https://freeonlinetools203.com/random-animal-wheel.html">🐘 Random Animal Wheel</a>
+          <a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
+          <a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
+          <a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
+          <a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
+          <a href="https://freeonlinetools203.com/random-color-picker.html">🎨 Random Color Picker</a>
         </div>
       </li>
       <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
@@ -487,11 +432,9 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
     populateFooter();
 
-    // Navbar CSS + HTML inject karo
     document.head.insertAdjacentHTML('beforeend', navbarCSS);
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
 
-    // Mobile toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     if (mobileToggle && mobileMenu) {
@@ -500,7 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile dropdown
     const mobileToolsToggle = document.getElementById('mobileToolsToggle');
     const mobileToolsContent = document.getElementById('mobileToolsContent');
     if (mobileToolsToggle && mobileToolsContent) {
