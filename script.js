@@ -30,10 +30,10 @@ const toolsDatabase = {
         name: "🏃‍♂️ Health & Fitness",
         tools: ["BMI Calculator","BMR Calculator","Calorie Calculator","TDEE Calculator"]
     },
-    catFin: {
-        name: "💰 Financial Tools",
-        tools: ["EMI Calculator","Loan Calculator","Zakat Calculator"]
-    },
+   catFin: {
+    name: "💰 Financial Tools",
+    tools: ["EMI Calculator","Loan Calculator","Zakat Calculator","SIP Calculator"]
+},
     catText: {
         name: "📝 Text & Writing Tools",
         tools: ["Word Counter","Line Counter","Text Case Converter","Password Generator","Password Strength Checker"]
@@ -92,6 +92,7 @@ const toolUrlMap = {
     "EMI Calculator": "emi-calculator.html",
     "Loan Calculator": "loan-calculator.html",
     "Zakat Calculator": "zakat-calculator.html",
+    "SIP Calculator": "sip-calculator.html",
     
     // Text & Writing
     "Word Counter": "word-counter.html",
@@ -340,6 +341,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/emi-calculator.html">EMI Calculator</a>
                 <a href="https://freeonlinetools203.com/loan-calculator.html">Loan Calculator</a>
                 <a href="https://freeonlinetools203.com/zakat-calculator.html">Zakat Calculator</a>
+                <a href="https://freeonlinetools203.com/sip-calculator.html">📊 SIP Calculator</a>
                 <h4>📝 Text & Writing</h4>
                 <a href="https://freeonlinetools203.com/word-counter.html">Word Counter</a>
                 <a href="https://freeonlinetools203.com/line-counter.html">Line Counter</a>
