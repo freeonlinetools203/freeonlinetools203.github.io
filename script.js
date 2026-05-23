@@ -1,5 +1,5 @@
 // =========================================================================
-// CENTRALIZED TOOLS DATABASE (UPDATED WITH ALL NEW SPIN WHEELS)
+// CENTRALIZED TOOLS DATABASE (UPDATED WITH ALL NEW SPIN WHEELS + NEW GAMES)
 // =========================================================================
 const toolsDatabase = {
     catSeo: {
@@ -30,10 +30,10 @@ const toolsDatabase = {
         name: "🏃‍♂️ Health & Fitness",
         tools: ["BMI Calculator","BMR Calculator","Calorie Calculator","TDEE Calculator"]
     },
-   catFin: {
-    name: "💰 Financial Tools",
-    tools: ["EMI Calculator","Loan Calculator","Zakat Calculator","SIP Calculator"]
-},
+    catFin: {
+        name: "💰 Financial Tools",
+        tools: ["EMI Calculator","Loan Calculator","Zakat Calculator","SIP Calculator"]
+    },
     catText: {
         name: "📝 Text & Writing Tools",
         tools: ["Word Counter","Line Counter","Text Case Converter","Password Generator","Password Strength Checker"]
@@ -51,13 +51,14 @@ const toolsDatabase = {
         tools: [
             "Spin The Wheel", "Random Color Picker", "Yes/No Wheel", "Decision Roulette",
             "Random Name Picker", "Random Number Generator", "Prize Wheel", "Task Spinner",
-            "Zodiac Wheel", "You vs. Food Wheel", "Random Animal Wheel", "Holiday Activity Wheel"
+            "Zodiac Wheel", "You vs. Food Wheel", "Random Animal Wheel", "Holiday Activity Wheel",
+            "Dare or Draw", "Hot Seat Challenge", "Sketch or Dare", "Truth or Dare Generator", "Twister Spinner"
         ]
     }
 };
 
 // =========================================================================
-// TOOL URL MAPPING (UPDATED WITH NEW SPIN WHEELS)
+// TOOL URL MAPPING (UPDATED WITH ALL TOOLS)
 // =========================================================================
 const toolUrlMap = {
     // Developer & Security Tools
@@ -101,7 +102,7 @@ const toolUrlMap = {
     "Password Generator": "password-generator.html",
     "Password Strength Checker": "password-checker.html",
     
-    // Fun Tools (existing)
+    // Fun Tools (existing + new)
     "Spin The Wheel": "spin-the-wheel.html",
     "Random Color Picker": "random-color-picker.html",
     "Yes/No Wheel": "yes-no-wheel.html",
@@ -110,12 +111,15 @@ const toolUrlMap = {
     "Random Number Generator": "random-number-generator.html",
     "Prize Wheel": "prize-wheel.html",
     "Task Spinner": "task-spinner.html",
-    
-    // NEW SPIN WHEELS
     "Zodiac Wheel": "zodiac-wheel.html",
     "You vs. Food Wheel": "you-vs-food-wheel.html",
     "Random Animal Wheel": "random-animal-wheel.html",
     "Holiday Activity Wheel": "holiday-wheel.html",
+    "Dare or Draw": "dare-or-draw-seo.html",
+    "Hot Seat Challenge": "hot-seat-challenge-seo.html",
+    "Sketch or Dare": "sketch-or-dare-seo.html",
+    "Truth or Dare Generator": "truth-or-dare-generator.html",
+    "Twister Spinner": "twister-spinner-seo.html",
     
     // Animal Pregnancy
     "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
@@ -180,25 +184,15 @@ function getUrl(toolName) {
 }
 
 // =========================================================================
-// RENDER DASHBOARD - Most Popular Categories सबसे ऊपर
+// RENDER DASHBOARD - Most Popular Categories
 // =========================================================================
 function renderDashboard() {
     const container = document.getElementById('toolsContainer');
     if (!container) return;
-    
-    const orderedCategoryKeys = [
-        "catPop",    // 📊 Popular Calculators
-        "catHash",   // 📱 Social Media Hashtag Tools
-        "catDev",    // 🔐 Developer & Security Tools
-        "catFun"     // 🎲 Random & Fun Tools
-    ];
-    
+    const orderedCategoryKeys = ["catPop","catHash","catDev","catFin","catFun"];
     for (const key of Object.keys(toolsDatabase)) {
-        if (!orderedCategoryKeys.includes(key)) {
-            orderedCategoryKeys.push(key);
-        }
+        if (!orderedCategoryKeys.includes(key)) orderedCategoryKeys.push(key);
     }
-    
     let html = '';
     for (const key of orderedCategoryKeys) {
         const cat = toolsDatabase[key];
@@ -206,10 +200,7 @@ function renderDashboard() {
         html += `<div class="section" data-category="${key}" id="section_${key}">
             <h2>${cat.name}</h2>
             <div class="tools-grid">
-                ${cat.tools.map(tool => `
-                    <div class="tool-card">
-                        <a href="${getUrl(tool)}">${tool}</a>
-                    </div>`).join('')}
+                ${cat.tools.map(tool => `<div class="tool-card"><a href="${getUrl(tool)}">${tool}</a></div>`).join('')}
             </div>
         </div>`;
     }
@@ -221,19 +212,18 @@ function populateFooter() {
     if (!footerCol) return;
     const popularTools = toolsDatabase.catPop.tools.slice(0, 6);
     let html = '<h4>Popular Tools</h4>';
-    popularTools.forEach(tool => {
-        html += `<a href="${getUrl(tool)}">${tool}</a>`;
-    });
+    popularTools.forEach(tool => { html += `<a href="${getUrl(tool)}">${tool}</a>`; });
     footerCol.innerHTML = html;
 }
 
 // =========================================================================
-// NAVBAR - Automatic (UPDATED WITH ALL SPIN WHEELS)
+// NAVBAR CSS STYLES
 // =========================================================================
 const navbarCSS = `<style>
 .megamenu-container{width:100%;background:linear-gradient(to right,#881e8a,#2563eb);position:relative;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
 .megamenu-wrapper{max-width:1400px;margin:0 auto;padding:0 15px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;min-height:60px}
-.megamenu-logo a{display:block;color:white;font-size:1.2rem;font-weight:bold;text-decoration:none;padding:12px 0}
+.megamenu-logo a{display:flex;align-items:center;gap:8px;color:white;font-size:1.2rem;font-weight:bold;text-decoration:none;padding:12px 0}
+.megamenu-logo img{height:40px;width:auto}
 .megamenu-nav{display:flex;gap:5px;list-style:none;margin:0;padding:0}
 .megamenu-nav>li{position:static}
 .megamenu-nav>li>a{display:block;color:white;text-decoration:none;padding:12px 15px;font-size:0.95rem;font-weight:500;transition:all 0.3s ease;border-radius:8px}
@@ -250,6 +240,7 @@ const navbarCSS = `<style>
 .dropdown-column a{display:block;color:#333;text-decoration:none;padding:6px 0;font-size:0.8rem;transition:all 0.2s;border-bottom:1px solid #f0f0f0}
 .dropdown-column a:hover{color:#2563eb;padding-left:8px}
 .mobile-toggle{display:none;background:none;border:none;color:white;font-size:28px;cursor:pointer;padding:10px}
+.mobile-toggle{font-weight:bold;font-size:1.3rem}
 .mobile-menu{display:none;background:white;width:100%;max-height:0;overflow:hidden;transition:max-height 0.4s ease}
 .mobile-menu.open{display:block;max-height:80vh;overflow-y:auto}
 .mobile-nav{list-style:none;margin:0;padding:0}
@@ -265,11 +256,17 @@ const navbarCSS = `<style>
 @media(max-width:768px){.megamenu-nav{display:none}.mobile-toggle{display:block}.mega-dropdown{display:none}}
 </style>`;
 
+// =========================================================================
+// DESKTOP NAVBAR HTML (MEGAMENU)
+// =========================================================================
 const navbarHTML = `
 <div class="megamenu-container">
   <div class="megamenu-wrapper">
     <div class="megamenu-logo">
-      <a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools</a>
+      <a href="https://freeonlinetools203.com/index.html">
+        <img src="https://freeonlinetools203.com/3.jpeg.png" alt="Free Online Tools">
+        <span>✨ Free Online Tools</span>
+      </a>
     </div>
     <ul class="megamenu-nav">
       <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
@@ -278,6 +275,7 @@ const navbarHTML = `
         <div class="mega-dropdown">
           <div class="dropdown-scroll">
             <div class="dropdown-grid">
+              <!-- COLUMN 1 -->
               <div class="dropdown-column">
                 <h4>🔍 SEO Tools</h4>
                 <a href="https://freeonlinetools203.com/keyword-density-checker.html">Keyword Density Checker</a>
@@ -291,6 +289,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/ai-hashtag-generator.html">AI Hashtag Generator</a>
                 <a href="https://freeonlinetools203.com/seo-hashtags-generator.html">SEO Hashtags Generator</a>
               </div>
+              <!-- COLUMN 2 -->
               <div class="dropdown-column">
                 <h4>🐾 Animal Pregnancy</h4>
                 <a href="https://freeonlinetools203.com/dog-pregnancy-calculator.html">Dog Pregnancy Calculator</a>
@@ -309,6 +308,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/url-encoder-decoder.html">URL Encoder/Decoder</a>
                 <a href="https://freeonlinetools203.com/html-encoder-decoder.html">HTML Encoder/Decoder</a>
               </div>
+              <!-- COLUMN 3 -->
               <div class="dropdown-column">
                 <h4>🎨 Color Tools</h4>
                 <a href="https://freeonlinetools203.com/color-palette-generator.html">Color Palette Generator</a>
@@ -331,6 +331,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/youtube-thumbnail-downloader.html">YouTube Thumbnail Downloader</a>
                 <a href="https://freeonlinetools203.com/currency-converter.html">Currency Converter</a>
               </div>
+              <!-- COLUMN 4 -->
               <div class="dropdown-column">
                 <h4>🏃 Health & Fitness</h4>
                 <a href="https://freeonlinetools203.com/bmi-calculator.html">BMI Calculator</a>
@@ -340,8 +341,8 @@ const navbarHTML = `
                 <h4>💰 Financial Tools</h4>
                 <a href="https://freeonlinetools203.com/emi-calculator.html">EMI Calculator</a>
                 <a href="https://freeonlinetools203.com/loan-calculator.html">Loan Calculator</a>
-                <a href="https://freeonlinetools203.com/zakat-calculator.html">Zakat Calculator</a>
                 <a href="https://freeonlinetools203.com/sip-calculator.html">📊 SIP Calculator</a>
+                <a href="https://freeonlinetools203.com/zakat-calculator.html">Zakat Calculator</a>
                 <h4>📝 Text & Writing</h4>
                 <a href="https://freeonlinetools203.com/word-counter.html">Word Counter</a>
                 <a href="https://freeonlinetools203.com/line-counter.html">Line Counter</a>
@@ -349,6 +350,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/password-generator.html">Password Generator</a>
                 <a href="https://freeonlinetools203.com/password-checker.html">Password Strength Checker</a>
               </div>
+              <!-- COLUMN 5 -->
               <div class="dropdown-column">
                 <h4>📄 PDF Tools</h4>
                 <a href="https://freeonlinetools203.com/pdf-merger.html">PDF Merger</a>
@@ -371,7 +373,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/image-to-pdf.html">Image to PDF</a>
                 <a href="https://freeonlinetools203.com/image-upscaler.html">Image Upscaler</a>
                 <a href="https://freeonlinetools203.com/image-compressor.html">Image Compressor</a>
-                <h4>🎲 Fun Tools (Spin Wheels)</h4>
+                <h4>🎲 Fun Tools (Spin Wheels & Games)</h4>
                 <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
                 <a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
                 <a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
@@ -384,6 +386,11 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
                 <a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
                 <a href="https://freeonlinetools203.com/random-color-picker.html">🎨 Random Color Picker</a>
+                <a href="https://freeonlinetools203.com/dare-or-draw-seo.html">🎭 Dare or Draw</a>
+                <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
+                <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
+                <a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
+                <a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
               </div>
             </div>
           </div>
@@ -397,13 +404,35 @@ const navbarHTML = `
     </ul>
     <button class="mobile-toggle" id="mobileToggle">☰</button>
   </div>
+
+  <!-- ========================================================================= -->
+  <!-- MOBILE MENU SECTION - Mobile devices par ye menu show hota hai            -->
+  <!-- Isme naya tool add karne ke liye "🎲 Fun Tools (Spin Wheels & Games)"     -->
+  <!-- heading ke neeche naya <a> tag laga den.                                 -->
+  <!-- ========================================================================= -->
   <div class="mobile-menu" id="mobileMenu">
     <ul class="mobile-nav">
       <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
       <li>
         <a href="#" class="mobile-dropdown-toggle" id="mobileToolsToggle">🛠️ All Tools</a>
         <div class="mobile-dropdown-content" id="mobileToolsContent">
-          <h4>🎲 Fun Tools (Spin Wheels)</h4>
+          <h4>📊 Popular Calculators</h4>
+          <a href="https://freeonlinetools203.com/unit-converter.html">Unit Converter</a>
+          <a href="https://freeonlinetools203.com/age-calculator.html">Age Calculator</a>
+          <a href="https://freeonlinetools203.com/age-difference-calculator.html">Age Difference Calculator</a>
+          <a href="https://freeonlinetools203.com/discount-calculator.html">Discount Calculator</a>
+          <a href="https://freeonlinetools203.com/percentage-calculator.html">Percentage Calculator</a>
+          <a href="https://freeonlinetools203.com/gst-calculator.html">GST Calculator</a>
+          <a href="https://freeonlinetools203.com/qr-code-generator.html">QR Code Generator</a>
+          <a href="https://freeonlinetools203.com/currency-converter.html">Currency Converter</a>
+          
+          <h4>💰 Financial Tools</h4>
+          <a href="https://freeonlinetools203.com/emi-calculator.html">EMI Calculator</a>
+          <a href="https://freeonlinetools203.com/loan-calculator.html">Loan Calculator</a>
+          <a href="https://freeonlinetools203.com/sip-calculator.html">📊 SIP Calculator</a>
+          <a href="https://freeonlinetools203.com/zakat-calculator.html">Zakat Calculator</a>
+          
+          <h4>🎲 Fun Tools (Spin Wheels & Games)</h4>
           <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
           <a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
           <a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
@@ -416,6 +445,19 @@ const navbarHTML = `
           <a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
           <a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
           <a href="https://freeonlinetools203.com/random-color-picker.html">🎨 Random Color Picker</a>
+          <a href="https://freeonlinetools203.com/dare-or-draw-seo.html">🎭 Dare or Draw</a>
+          <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
+          <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
+          <a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
+          <a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
+          
+          <h4>🔐 Developer & Security</h4>
+          <a href="https://freeonlinetools203.com/md5-generator.html">MD5 Hash Generator</a>
+          <a href="https://freeonlinetools203.com/sha256-generator.html">SHA-256 Hash Generator</a>
+          <a href="https://freeonlinetools203.com/sha1-generator.html">SHA-1 Hash Generator</a>
+          <a href="https://freeonlinetools203.com/base64-encoder-decoder.html">Base64 Encoder/Decoder</a>
+          <a href="https://freeonlinetools203.com/url-encoder-decoder.html">URL Encoder/Decoder</a>
+          <a href="https://freeonlinetools203.com/html-encoder-decoder.html">HTML Encoder/Decoder</a>
         </div>
       </li>
       <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
@@ -428,29 +470,24 @@ const navbarHTML = `
 </div>`;
 
 // =========================================================================
-// PAGE ONLOAD
+// PAGE ONLOAD - INITIALIZE EVERYTHING
 // =========================================================================
 document.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
     populateFooter();
-
     document.head.insertAdjacentHTML('beforeend', navbarCSS);
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('open');
-        });
+        mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     }
-
     const mobileToolsToggle = document.getElementById('mobileToolsToggle');
     const mobileToolsContent = document.getElementById('mobileToolsContent');
     if (mobileToolsToggle && mobileToolsContent) {
-        mobileToolsToggle.addEventListener('click', function(e) {
+        mobileToolsToggle.addEventListener('click', (e) => {
             e.preventDefault();
-            this.classList.toggle('open');
+            mobileToolsToggle.classList.toggle('open');
             mobileToolsContent.classList.toggle('open');
         });
     }
