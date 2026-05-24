@@ -40,7 +40,535 @@
     <main class="container" id="toolsContainer">
         <div class="loader">Loading professional tools...</div>
     </main>
+<!-- ============================================================
+     SEO ARTICLE SECTION — freeonlinetools203.com
+     Paste karo index.html mein </main> tag se PEHLE
+     Koi bhi existing code change mat karo — sirf yeh add karo
+     ============================================================ -->
 
+<style>
+  /* === SEO ARTICLE STYLES — site ke existing CSS se match === */
+  .seo-article-wrap {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(229,231,235,0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Main H1 — gradient matching navbar purple→blue */
+  .seo-article-wrap .art-h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #881e8a, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+
+  .seo-article-wrap .art-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .seo-article-wrap .art-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .seo-article-wrap .art-intro {
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: #374151;
+    margin-bottom: 30px;
+    padding: 18px 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid #2563eb;
+  }
+
+  .seo-article-wrap .art-intro a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .seo-article-wrap .art-intro a:hover {
+    text-decoration: underline;
+  }
+
+  /* Section heading — exact match to site's .section h2 */
+  .seo-article-wrap .art-sec-h {
+    color: #1e3a8a;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 32px;
+    position: relative;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .seo-article-wrap .art-sec-h::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #2563eb;
+    border-radius: 2px;
+  }
+
+  /* Icon badge — matches tool-card gradient */
+  .seo-article-wrap .sec-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .seo-article-wrap .art-sec-body {
+    font-size: 0.97rem;
+    line-height: 1.85;
+    color: #4b5563;
+    margin-bottom: 10px;
+  }
+
+  .seo-article-wrap .art-sec-body a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .seo-article-wrap .art-sec-body a:hover {
+    text-decoration: underline;
+  }
+
+  /* Keyword tags */
+  .seo-article-wrap .kw-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 10px 0 6px 0;
+  }
+
+  .seo-article-wrap .kw-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 20px;
+    font-size: 11.5px;
+    color: #1e40af;
+    font-weight: 500;
+  }
+
+  /* Why-us cards — matches feature-item style */
+  .seo-article-wrap .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .seo-article-wrap .why-card {
+    text-align: center;
+    padding: 22px 16px;
+    background: #f8fafc;
+    border-radius: 15px;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .seo-article-wrap .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(30,58,138,0.1);
+  }
+
+  .seo-article-wrap .why-card .wc-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .seo-article-wrap .why-card h4 {
+    color: #1e3a8a;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .seo-article-wrap .why-card p {
+    color: #6b7280;
+    font-size: 0.87rem;
+    line-height: 1.6;
+  }
+
+  /* Divider */
+  .seo-article-wrap .art-divider {
+    border: none;
+    border-top: 1px solid #f1f5f9;
+    margin: 28px 0;
+  }
+
+  /* Footer note */
+  .seo-article-wrap .art-footer-note {
+    text-align: center;
+    margin-top: 28px;
+    padding: 18px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    border-radius: 12px;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .seo-article-wrap { padding: 22px 16px; }
+    .seo-article-wrap .art-h1 { font-size: 1.4rem; }
+    .seo-article-wrap .art-sec-h { font-size: 1.15rem; }
+    .seo-article-wrap .why-grid { grid-template-columns: 1fr 1fr; }
+    .seo-article-wrap .art-meta { gap: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .seo-article-wrap .why-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<article class="seo-article-wrap">
+
+  <!-- ── TITLE + META ─────────────────────────────────────────── -->
+  <h1 class="art-h1">Free Online Tools — 100+ Calculators, Converters, SEO &amp; Fun Utilities</h1>
+
+  <div class="art-meta">
+    <span>📅 Updated: May 24, 2026</span>
+    <span>🛠️ 100+ Tools</span>
+    <span>⚡ Instant &amp; Free</span>
+    <span>🔒 No Sign-up Needed</span>
+    <span>⭐ 4.9 / 5 Rating</span>
+  </div>
+
+  <!-- ── INTRO ─────────────────────────────────────────────────── -->
+  <p class="art-intro">
+    Welcome to <strong>Free Online Tools</strong> — your one-stop destination for 100+ browser-based utilities.
+    Whether you need an <a href="/age-calculator.html">Age Calculator</a>, a
+    <a href="/bmi-calculator.html">BMI Calculator</a>, a
+    <a href="/qr-code-generator.html">QR Code Generator</a>, or a fun
+    <a href="/spin-the-wheel.html">Spin the Wheel</a> —
+    everything runs instantly in your browser. <strong>No downloads. No sign-up. Always free.</strong>
+  </p>
+
+  <!-- ── SEO TOOLS ─────────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">🔍</span> SEO Tools</h2>
+  <p class="art-sec-body">
+    Our free SEO tools help bloggers, digital marketers, and website owners improve Google rankings — without spending a single rupee.
+    The <a href="/keyword-density-checker.html">Keyword Density Checker</a> shows how often your target keyword appears
+    in any article. Build perfect meta titles and descriptions with the <a href="/meta-tags-generator.html">Meta Tags Generator</a>,
+    and audit any live webpage's existing tags using the <a href="/meta-tag-analyzer.html">Meta Tag Analyzer</a>.
+    These tools are ideal for beginners doing on-page SEO and for professionals who need quick audits.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 free keyword density checker online</span>
+    <span class="kw-tag">🔎 meta tags generator no login</span>
+    <span class="kw-tag">🔎 on-page SEO tool free</span>
+    <span class="kw-tag">🔎 meta tag analyzer tool</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── WHEEL / RANDOM ────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">🎡</span> Spin the Wheel &amp; Random Decision Tools</h2>
+  <p class="art-sec-body">
+    Can't make a decision? Let the wheel decide — fairly and instantly!
+    Our popular <a href="/spin-the-wheel.html">Spin the Wheel</a> lets you add unlimited custom options and spin for a random, unbiased result.
+    Use the <a href="/yes-no-wheel.html">Yes or No Wheel</a> for quick answers, or the
+    <a href="/decision-wheel.html">Decision Wheel</a> when you have multiple choices.
+    Settling tonight's dinner? Try the <a href="/dinner-spinner.html">Dinner Spinner</a> or
+    <a href="/food-picker-wheel.html">Food Picker Wheel</a>.
+    For parties and game nights, we have the <a href="/truth-or-dare-generator.html">Truth or Dare Generator</a>,
+    <a href="/twister-spinner-seo.html">Twister Spinner</a>,
+    <a href="/hot-seat-challenge-seo.html">Hot Seat Challenge</a>,
+    <a href="/sketch-or-dare-seo.html">Sketch or Dare</a>, and
+    <a href="/icebreaker-wheel-seo.html">Icebreaker Wheel</a>.
+    Explore more: <a href="/zodiac-wheel.html">Zodiac Wheel</a>,
+    <a href="/exercise-wheel.html">Exercise Wheel</a>,
+    <a href="/drink-wheel.html">Drink Wheel</a>,
+    <a href="/art-roulette-seo.html">Art Roulette</a>,
+    <a href="/chore-wheel-seo.html">Chore Wheel</a>, and
+    <a href="/country-picker-wheel-seo.html">Country Picker Wheel</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 spin the wheel online free custom</span>
+    <span class="kw-tag">🔎 random decision maker wheel</span>
+    <span class="kw-tag">🔎 truth or dare generator online</span>
+    <span class="kw-tag">🔎 dinner picker wheel free</span>
+    <span class="kw-tag">🔎 yes no wheel spinner</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── CALCULATORS ───────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">📊</span> Popular Calculators</h2>
+  <p class="art-sec-body">
+    From everyday math to complex planning — our calculators are fast, accurate, and mobile-friendly.
+    The <a href="/age-calculator.html">Age Calculator</a> gives your exact age in years, months, and days.
+    The <a href="/percentage-calculator.html">Percentage Calculator</a> handles discounts, tax, and growth rates.
+    Use the <a href="/discount-calculator.html">Discount Calculator</a> before shopping, and the
+    <a href="/profit-loss-calculator.html">Profit &amp; Loss Calculator</a> for business decisions.
+    Students love our <a href="/gpa-calculator.html">GPA Calculator</a>, and users in Pakistan and India rely on the
+    <a href="/gst-calculator.html">GST Calculator</a> for tax calculations.
+    The <a href="/currency-converter.html">Currency Converter</a> offers live exchange rates for 150+ currencies,
+    and the <a href="/date-calculator.html">Date Calculator</a> finds exact differences between any two dates.
+    Generate a QR code for any link in seconds with our <a href="/qr-code-generator.html">QR Code Generator</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 age calculator in years months days</span>
+    <span class="kw-tag">🔎 free currency converter live rates</span>
+    <span class="kw-tag">🔎 QR code generator free no signup</span>
+    <span class="kw-tag">🔎 GST calculator Pakistan India</span>
+    <span class="kw-tag">🔎 profit loss calculator online</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── HEALTH ────────────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">🏃</span> Health &amp; Fitness Tools</h2>
+  <p class="art-sec-body">
+    Track and improve your health with our fitness calculators — no app download, no account needed.
+    The <a href="/bmi-calculator.html">BMI Calculator</a> checks your Body Mass Index based on height and weight.
+    The <a href="/bmr-calculator.html">BMR Calculator</a> shows how many calories your body burns at rest,
+    while the <a href="/tdee-calculator.html">TDEE Calculator</a> gives your total daily energy expenditure based on activity level.
+    Plan a healthy diet with the <a href="/calorie-calculator.html">Calorie Calculator</a>
+    and the <a href="/meal-planner.html">Meal Planner</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 BMI calculator metric and imperial</span>
+    <span class="kw-tag">🔎 TDEE calculator free 2026</span>
+    <span class="kw-tag">🔎 daily calorie calculator weight loss</span>
+    <span class="kw-tag">🔎 BMR calculator online free</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── FINANCIAL ─────────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">💰</span> Financial Tools</h2>
+  <p class="art-sec-body">
+    Make smarter money decisions without a spreadsheet or financial advisor.
+    The <a href="/emi-calculator.html">EMI Calculator</a> breaks down your exact monthly loan installments.
+    The <a href="/loan-calculator.html">Loan Calculator</a> shows total repayment amount and interest over any period.
+    Planning your investments? Use our <a href="/sip-calculator.html">SIP Calculator</a> to estimate mutual fund returns.
+    Muslims can easily calculate their annual Zakat obligation using our accurate
+    <a href="/zakat-calculator.html">Zakat Calculator</a> — one of the most trusted free Zakat tools online.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 EMI calculator free online</span>
+    <span class="kw-tag">🔎 zakat calculator 2026</span>
+    <span class="kw-tag">🔎 SIP calculator mutual fund</span>
+    <span class="kw-tag">🔎 loan repayment calculator no signup</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── TEXT TOOLS ────────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">📝</span> Text &amp; Writing Tools</h2>
+  <p class="art-sec-body">
+    Writers, students, and content creators use our text utilities every day.
+    The <a href="/word-counter.html">Word Counter</a> counts words, characters, sentences, and paragraphs in real time.
+    The <a href="/text-case-converter.html">Text Case Converter</a> switches between UPPER, lower, Title, and Sentence case in one click.
+    Generate strong, unique passwords with the <a href="/password-generator.html">Password Generator</a>
+    and verify how secure any existing password is using the <a href="/password-checker.html">Password Strength Checker</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 word counter online free real time</span>
+    <span class="kw-tag">🔎 strong password generator no ads</span>
+    <span class="kw-tag">🔎 text case converter uppercase lowercase</span>
+    <span class="kw-tag">🔎 password strength checker free</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── DEVELOPER ─────────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">🔐</span> Developer &amp; Security Tools</h2>
+  <p class="art-sec-body">
+    Developers trust our browser-based encoding and hashing tools — all processing happens locally,
+    so your data never leaves your device.
+    Hash any text instantly with the <a href="/md5-generator.html">MD5 Generator</a>,
+    <a href="/sha256-generator.html">SHA-256 Generator</a>, or <a href="/sha1-generator.html">SHA-1 Generator</a>.
+    Encode and decode data using the <a href="/base64-encoder-decoder.html">Base64 Encoder/Decoder</a>,
+    <a href="/url-encoder-decoder.html">URL Encoder/Decoder</a>, or
+    <a href="/html-encoder-decoder.html">HTML Encoder/Decoder</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 MD5 hash generator online free</span>
+    <span class="kw-tag">🔎 base64 encode decode browser</span>
+    <span class="kw-tag">🔎 SHA256 generator no install</span>
+    <span class="kw-tag">🔎 URL encoder decoder online</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── COLOR TOOLS ───────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">🎨</span> Color Tools for Designers</h2>
+  <p class="art-sec-body">
+    Designers and developers use our color suite to build beautiful, accessible interfaces.
+    Generate harmonious <a href="/color-palette-generator.html">Color Palettes</a>,
+    explore every shade with the <a href="/color-shades-generator.html">Color Shades Generator</a>,
+    and build smooth transitions with the <a href="/color-gradient-maker.html">Color Gradient Maker</a>.
+    Check WCAG accessibility compliance using the <a href="/color-contrast-checker.html">Color Contrast Checker</a>,
+    identify any color's exact name with the <a href="/color-name-finder.html">Color Name Finder</a>,
+    or get instant design inspiration from the <a href="/random-color-picker.html">Random Color Picker</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 color palette generator free online</span>
+    <span class="kw-tag">🔎 color contrast checker WCAG</span>
+    <span class="kw-tag">🔎 CSS gradient maker online</span>
+    <span class="kw-tag">🔎 color name finder hex</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── PDF TOOLS ─────────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">📄</span> PDF Tools</h2>
+  <p class="art-sec-body">
+    Handle all your PDF tasks online — no software installation, no file size limits, no account needed.
+    Combine multiple files into one with the <a href="/pdf-merger.html">PDF Merger</a>,
+    or split large PDFs using the <a href="/pdf-splitter.html">PDF Splitter</a>.
+    Convert PDFs to <a href="/pdf-to-jpg.html">JPG</a>, <a href="/pdf-to-png.html">PNG</a>,
+    <a href="/pdf-to-word.html">Word</a>, <a href="/pdf-to-excel.html">Excel</a>, or
+    <a href="/pdf-to-text.html">plain Text</a> in one click.
+    Rotate pages, fix orientation, and more with the <a href="/pdf-rotator.html">PDF Rotator</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 PDF to Word converter free online</span>
+    <span class="kw-tag">🔎 merge PDF files online no limit</span>
+    <span class="kw-tag">🔎 PDF to JPG converter free</span>
+    <span class="kw-tag">🔎 split PDF online free</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── IMAGE TOOLS ───────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">🖼️</span> Image Tools</h2>
+  <p class="art-sec-body">
+    Edit, convert, and optimize images directly in your browser — no Photoshop needed.
+    The <a href="/image-resizer.html">Image Resizer</a> resizes any image to exact pixel dimensions.
+    The <a href="/image-compressor.html">Image Compressor</a> reduces file size without visible quality loss —
+    perfect for faster website loading.
+    Convert between formats with the <a href="/image-converter.html">Image Converter</a>,
+    crop with precision using the <a href="/image-cropper.html">Image Cropper</a>,
+    and upscale blurry or low-resolution photos with the <a href="/image-upscaler.html">AI Image Upscaler</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 image compressor free no watermark</span>
+    <span class="kw-tag">🔎 resize image online free</span>
+    <span class="kw-tag">🔎 AI image upscaler free 2026</span>
+    <span class="kw-tag">🔎 image converter JPG PNG WEBP</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── SOCIAL MEDIA ──────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">📱</span> Social Media Hashtag Generators</h2>
+  <p class="art-sec-body">
+    Grow your social media reach with our AI-powered hashtag generators — built for every major platform.
+    Generate the most relevant, trending hashtags for
+    <a href="/instagram-hashtag-generator.html">Instagram</a>,
+    <a href="/linkedin-hashtag-generator.html">LinkedIn</a>,
+    <a href="/facebook-hashtag-generator.html">Facebook</a>, and
+    <a href="/pinterest-hashtag-generator.html">Pinterest</a>.
+    The <a href="/ai-hashtag-generator.html">AI Hashtag Generator</a> works for any niche, industry, or topic —
+    just enter a keyword and get 30+ targeted hashtags instantly.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 Instagram hashtag generator free 2026</span>
+    <span class="kw-tag">🔎 LinkedIn hashtag generator online</span>
+    <span class="kw-tag">🔎 AI hashtag generator any topic</span>
+    <span class="kw-tag">🔎 Pinterest hashtag generator free</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── ANIMAL PREGNANCY ──────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">🐾</span> Animal Pregnancy Calculators</h2>
+  <p class="art-sec-body">
+    Pet owners, veterinarians, and farmers trust our animal pregnancy calculators to predict accurate due dates.
+    Simply enter the mating or last breeding date to get the expected delivery date for
+    <a href="/dog-pregnancy-calculator.html">dogs</a> (63 days),
+    <a href="/cat-pregnancy-calculator.html">cats</a> (65 days),
+    <a href="/cow-pregnancy-calculator.html">cows</a> (283 days),
+    <a href="/horse-pregnancy-calculator.html">horses</a> (340 days),
+    <a href="/goat-pregnancy-calculator.html">goats</a>,
+    <a href="/sheep-pregnancy-calculator.html">sheep</a>,
+    <a href="/pig-pregnancy-calculator.html">pigs</a>, and
+    <a href="/rabbit-pregnancy-calculator.html">rabbits</a>.
+  </p>
+  <div class="kw-row">
+    <span class="kw-tag">🔎 dog pregnancy calculator due date</span>
+    <span class="kw-tag">🔎 cat gestation period calculator</span>
+    <span class="kw-tag">🔎 cow pregnancy calculator free</span>
+    <span class="kw-tag">🔎 horse pregnancy due date calculator</span>
+  </div>
+
+  <hr class="art-divider">
+
+  <!-- ── WHY US ────────────────────────────────────────────────── -->
+  <h2 class="art-sec-h"><span class="sec-badge">✨</span> Why Choose Free Online Tools?</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="wc-icon">⚡</span>
+      <h4>Instant Results</h4>
+      <p>Every tool runs in your browser. Zero server wait times, zero loading screens.</p>
+    </div>
+    <div class="why-card">
+      <span class="wc-icon">🔓</span>
+      <h4>No Account Needed</h4>
+      <p>Use any tool, unlimited times, completely free — no email or sign-up ever required.</p>
+    </div>
+    <div class="why-card">
+      <span class="wc-icon">📱</span>
+      <h4>All Devices</h4>
+      <p>Fully optimized for mobile, tablet, and desktop. Works on any screen size.</p>
+    </div>
+    <div class="why-card">
+      <span class="wc-icon">🔒</span>
+      <h4>Private &amp; Secure</h4>
+      <p>Your data stays in your browser. We never store, log, or share what you type.</p>
+    </div>
+  </div>
+
+  <!-- ── FOOTER NOTE ───────────────────────────────────────────── -->
+  <div class="art-footer-note">
+    🔄 New tools added regularly based on user feedback — bookmark this page and visit again soon!
+  </div>
+
+</article>
+
+<!-- ============================================================
+     END — Paste karo index.html mein </main> tag se PEHLE
+     ============================================================ -->
     <section class="features-section">
         <h2>✨ Why Choose Our Free Tools?</h2>
         <div class="features-grid">
