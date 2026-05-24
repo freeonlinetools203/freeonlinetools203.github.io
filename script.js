@@ -46,15 +46,17 @@ const toolsDatabase = {
         name: "🖼️ Image Tools",
         tools: ["Image Color Extractor","Image Converter","Image Cropper","Image Resizer","Image to PDF","Image Upscaler","Image Compressor"]
     },
-    catFun: {
-        name: "🎲 Random & Fun Tools",
-        tools: [
-            "Spin The Wheel", "Random Color Picker", "Yes/No Wheel", "Decision Roulette",
-            "Random Name Picker", "Random Number Generator", "Prize Wheel", "Task Spinner",
-            "Zodiac Wheel", "You vs. Food Wheel", "Random Animal Wheel", "Holiday Activity Wheel",
-            "Dare or Draw", "Hot Seat Challenge", "Sketch or Dare", "Truth or Dare Generator", "Twister Spinner"
-        ]
-    }
+  catFun: {
+    name: "🎲 Random & Fun Tools",
+    tools: [
+        "Spin The Wheel", "Yes/No Wheel", "Decision Roulette", "Random Name Picker",
+        "Random Number Generator", "Prize Wheel", "Task Spinner", "Art Roulette",
+        "Chore Wheel", "Country Picker Wheel", "Decision Wheel", "Dinner Spinner",
+        "Icebreaker Wheel", "Random Fact Wheel", "Zodiac Wheel", "Twister Spinner",
+        "Truth or Dare Generator", "Sketch or Dare", "Hot Seat Challenge",
+        "Holiday Activity Wheel", "Food Picker Wheel", "Drink Picker Wheel", "Exercise Wheel"
+    ]
+}
 };
 
 // =========================================================================
@@ -102,24 +104,30 @@ const toolUrlMap = {
     "Password Generator": "password-generator.html",
     "Password Strength Checker": "password-checker.html",
     
-    // Fun Tools (existing + new)
+       // Fun Tools (all 23 tools)
     "Spin The Wheel": "spin-the-wheel.html",
-    "Random Color Picker": "random-color-picker.html",
     "Yes/No Wheel": "yes-no-wheel.html",
     "Decision Roulette": "decision-roulette.html",
     "Random Name Picker": "random-name-picker.html",
     "Random Number Generator": "random-number-generator.html",
     "Prize Wheel": "prize-wheel.html",
     "Task Spinner": "task-spinner.html",
+    "Art Roulette": "art-roulette-seo.html",
+    "Chore Wheel": "chore-wheel-seo.html",
+    "Country Picker Wheel": "country-picker-wheel-seo.html",
+    "Decision Wheel": "decision-wheel.html",
+    "Dinner Spinner": "dinner-spinner.html",
+    "Icebreaker Wheel": "icebreaker-wheel-seo.html",
+    "Random Fact Wheel": "random-fact-wheel-seo.html",
     "Zodiac Wheel": "zodiac-wheel.html",
-    "You vs. Food Wheel": "you-vs-food-wheel.html",
-    "Random Animal Wheel": "random-animal-wheel.html",
-    "Holiday Activity Wheel": "holiday-wheel.html",
-    "Dare or Draw": "dare-or-draw-seo.html",
-    "Hot Seat Challenge": "hot-seat-challenge-seo.html",
-    "Sketch or Dare": "sketch-or-dare-seo.html",
-    "Truth or Dare Generator": "truth-or-dare-generator.html",
     "Twister Spinner": "twister-spinner-seo.html",
+    "Truth or Dare Generator": "truth-or-dare-generator.html",
+    "Sketch or Dare": "sketch-or-dare-seo.html",
+    "Hot Seat Challenge": "hot-seat-challenge-seo.html",
+    "Holiday Activity Wheel": "holiday-wheel.html",
+    "Food Picker Wheel": "food-picker-wheel.html",
+    "Drink Picker Wheel": "drink-wheel.html",
+    "Exercise Wheel": "exercise-wheel.html"
     
     // Animal Pregnancy
     "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
@@ -373,25 +381,30 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/image-to-pdf.html">Image to PDF</a>
                 <a href="https://freeonlinetools203.com/image-upscaler.html">Image Upscaler</a>
                 <a href="https://freeonlinetools203.com/image-compressor.html">Image Compressor</a>
-                <h4>🎲 Fun Tools (Spin Wheels & Games)</h4>
-                <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
-                <a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
-                <a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
-                <a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
-                <a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
-                <a href="https://freeonlinetools203.com/you-vs-food-wheel.html">🍕 You vs. Food Wheel</a>
-                <a href="https://freeonlinetools203.com/random-animal-wheel.html">🐘 Random Animal Wheel</a>
-                <a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
-                <a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
-                <a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
-                <a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
-                <a href="https://freeonlinetools203.com/random-color-picker.html">🎨 Random Color Picker</a>
-                <a href="https://freeonlinetools203.com/dare-or-draw-seo.html">🎭 Dare or Draw</a>
-                <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
-                <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
-                <a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
-                <a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
-              </div>
+               <h4>🎲 Fun Tools (Spin Wheels & Games)</h4>
+<a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
+<a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
+<a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
+<a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
+<a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
+<a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
+<a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
+<a href="https://freeonlinetools203.com/art-roulette-seo.html">🎨 Art Roulette</a>
+<a href="https://freeonlinetools203.com/chore-wheel-seo.html">🧹 Chore Wheel</a>
+<a href="https://freeonlinetools203.com/country-picker-wheel-seo.html">🌍 Country Picker Wheel</a>
+<a href="https://freeonlinetools203.com/decision-wheel.html">🤔 Decision Wheel</a>
+<a href="https://freeonlinetools203.com/dinner-spinner.html">🍽️ Dinner Spinner</a>
+<a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html">🗣️ Icebreaker Wheel</a>
+<a href="https://freeonlinetools203.com/random-fact-wheel-seo.html">📚 Random Fact Wheel</a>
+<a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
+<a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
+<a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
+<a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
+<a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
+<a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
+<a href="https://freeonlinetools203.com/food-picker-wheel.html">🍕 Food Picker Wheel</a>
+<a href="https://freeonlinetools203.com/drink-wheel.html">🍹 Drink Picker Wheel</a>
+<a href="https://freeonlinetools203.com/exercise-wheel.html">🏋️ Exercise Wheel</a>
             </div>
           </div>
         </div>
