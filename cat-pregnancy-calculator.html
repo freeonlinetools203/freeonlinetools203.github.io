@@ -549,217 +549,44 @@ body {
         <p>feline pregnancy calculator | cat due date calculator | how long are cats pregnant | cat gestation period | pregnant cat due date calculator | cat pregnancy week by week | queening date calculator | cat breeding calculator | feline gestation timeline</p>
     </div>
 
-<!-- Category Footer & Back to Home Button -->
-<div class="category-footer" style="max-width: 1200px; margin: 40px auto 20px; padding: 0 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="index.html" class="home-link" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px 28px; border-radius: 40px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">🏠 Back to Home</a>
-  </div>
-  <div id="dynamicCategoryFooter"></div>
+
+  <!-- Category Footer with Animations - SEO Tools -->
+<style>
+.related-section { max-width:1200px; margin:3rem auto; padding:0 1rem; opacity:0; transform:scale(0.98); animation:sectionFadeIn 0.5s cubic-bezier(0.2,0.9,0.4,1.1) forwards; }
+@keyframes sectionFadeIn { to { opacity:1; transform:scale(1); } }
+.btn-home { display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1e3a8a,#2563eb); color:#fff; padding:12px 28px; border-radius:50px; font-size:1.1rem; font-weight:600; text-decoration:none; transition:all 0.3s ease; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-bottom:1.5rem; }
+.btn-home:hover { transform:translateY(-3px) scale(1.02); background:linear-gradient(135deg,#2563eb,#1d4ed8); }
+.btn-home:active { transform:scale(0.97); background:linear-gradient(135deg,#0f2b5e,#1e3a8a); transition:0.05s; }
+.tools-box { background:#f8fafc; border-radius:28px; padding:1.8rem; border:1px solid #e2e8f0; position:relative; overflow:hidden; }
+.tools-box::before { content:''; position:absolute; inset:0; border-radius:28px; padding:2px; background:linear-gradient(125deg,transparent 0%,rgba(37,99,235,0.3) 40%,rgba(59,130,246,0.6) 60%,transparent 100%); mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity 0.5s; pointer-events:none; }
+.tools-box:hover::before { opacity:1; animation:shimmer 1.2s infinite linear; }
+@keyframes shimmer { 0% { transform:translateX(-100%); } 100% { transform:translateX(100%); } }
+.tools-title { font-size:1.6rem; font-weight:700; color:#0f3b7a; margin-bottom:1.5rem; border-left:5px solid #2563eb; padding-left:18px; }
+.tools-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:12px; }
+.tool-btn { display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #dbeafe; padding:10px 16px; border-radius:60px; text-decoration:none; color:#1e40af; font-weight:500; font-size:0.95rem; transition:all 0.25s cubic-bezier(0.2,0.9,0.4,1.1); opacity:0; transform:translateY(15px); position:relative; overflow:hidden; }
+.tool-btn:hover { background:#2563eb; color:#fff; border-color:#2563eb; transform:translateX(5px) scale(1.02); box-shadow:0 6px 12px rgba(37,99,235,0.2); }
+.tool-btn:active { transform:translateX(2px) scale(0.97); background:#0f2b5e !important; color:#fff !important; border-color:#0f2b5e !important; transition:0.05s linear; }
+.tool-btn::after { content:''; position:absolute; top:50%; left:50%; width:0; height:0; border-radius:50%; background:rgba(255,255,255,0.5); transform:translate(-50%,-50%); transition:width 0.3s, height 0.3s, opacity 0.3s; opacity:0; pointer-events:none; }
+.tool-btn:active::after { width:200px; height:200px; opacity:1; transition:0s; }
+.tool-btn.visible { opacity:1; transform:translateY(0); }
+@media (max-width:640px){ .tools-grid { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); } .tool-btn { font-size:0.85rem; padding:8px 12px; } }
+</style>
+<div class="related-section">
+    <a href="https://freeonlinetools203.com/index.html" class="btn-home">🔘 🏠 Back to Home</a>
+    <div class="tools-box">
+        <div class="tools-title">🔗 Other Tools in 🔍 SEO Tools</div>
+        <div class="tools-grid">
+            <a href="https://freeonlinetools203.com/keyword-density-checker.html" class="tool-btn">🔍 Keyword Density Checker</a>
+            <a href="https://freeonlinetools203.com/meta-tags-generator.html" class="tool-btn">🏷️ Meta Tags Generator</a>
+            <a href="https://freeonlinetools203.com/meta-tag-analyzer.html" class="tool-btn">📊 Meta Tag Analyzer</a>
+        </div>
+    </div>
 </div>
-
 <script>
-  (function() {
-    // Automatic category detection from filename
-    function getCurrentCategory() {
-      const path = window.location.pathname;
-      
-      // Animal Pregnancy Tools (NEW!)
-      if (path.includes('dog-pregnancy') || path.includes('cat-pregnancy') || path.includes('cow-pregnancy') || path.includes('rabbit-pregnancy')) {
-        return 'animal';
-      }
-      
-      // Popular Calculators
-      if (path.includes('age-calculator') || path.includes('gst') || path.includes('percentage') || path.includes('sip') || path.includes('discount') || path.includes('profit-loss') || path.includes('gpa') || path.includes('date-calculator') || path.includes('qr-code') || path.includes('youtube-thumbnail') || path.includes('currency-converter') || path.includes('age-difference') || path.includes('unit-converter')) {
-        return 'popular';
-      }
-      
-      // Health & Fitness
-      if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie') || path.includes('meal-planner') || path.includes('tdee')) {
-        return 'health';
-      }
-      
-      // Financial Tools
-      if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) {
-        return 'financial';
-      }
-      
-      // Text & Writing
-      if (path.includes('word-counter') || path.includes('line-counter') || path.includes('text-case') || path.includes('password-generator') || path.includes('password-checker')) {
-        return 'text';
-      }
-      
-      // PDF Tools
-      if (path.includes('pdf-merger') || path.includes('pdf-splitter') || path.includes('pdf-to') || path.includes('pdf-rotator')) {
-        return 'pdf';
-      }
-      
-      // Image Tools
-      if (path.includes('image-converter') || path.includes('image-cropper') || path.includes('image-resizer') || path.includes('image-compressor') || path.includes('image-upscaler')) {
-        return 'image';
-      }
-      
-      // Color Tools
-      if (path.includes('color-shades') || path.includes('color-gradient') || path.includes('color-palette') || path.includes('color-contrast') || path.includes('color-name') || path.includes('random-color')) {
-        return 'color';
-      }
-      
-      // Random & Fun
-      if (path.includes('spin') || path.includes('yes-no') || path.includes('decision-roulette') || path.includes('random-number') || path.includes('random-name') || path.includes('prize-wheel') || path.includes('task-spinner')) {
-        return 'fun';
-      }
-      
-      return 'popular';
-    }
-
-    const categories = {
-      // NEW: Animal Pregnancy Tools
-      animal: { 
-        name: "🐾 Animal Pregnancy Tools", 
-        tools: [ 
-          { name: "🐕 Dog Pregnancy (63 days)", url: "dog-pregnancy-calculator.html" },
-          { name: "🐱 Cat Pregnancy (65 days)", url: "cat-pregnancy-calculator.html" },
-          { name: "🐄 Cow Pregnancy (283 days)", url: "cow-pregnancy-calculator.html" },
-          { name: "🐰 Rabbit Pregnancy (31 days)", url: "rabbit-pregnancy-calculator.html" }
-        ] 
-      },
-      
-      popular: { 
-        name: "📊 Popular Calculators", 
-        tools: [ 
-          { name: "Unit Converter", url: "unit-converter.html" },
-          { name: "Age Calculator", url: "age-calculator.html" },
-          { name: "Age Difference", url: "age-difference-calculator.html" },
-          { name: "Discount Calculator", url: "discount-calculator.html" },
-          { name: "Profit & Loss", url: "profit-loss-calculator.html" },
-          { name: "GPA Calculator", url: "gpa-calculator.html" },
-          { name: "GST Calculator", url: "gst-calculator.html" },
-          { name: "SIP Calculator", url: "sip-calculator.html" },
-          { name: "Percentage Calculator", url: "percentage-calculator.html" },
-          { name: "Date Calculator", url: "date-calculator.html" },
-          { name: "QR Code Generator", url: "qr-code-generator.html" },
-          { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" },
-          { name: "Currency Converter", url: "currency-converter.html" }
-        ] 
-      },
-      
-      health: { 
-        name: "🏃‍♂️ Health & Fitness", 
-        tools: [ 
-          { name: "BMI Calculator", url: "bmi-calculator.html" },
-          { name: "BMR Calculator", url: "bmr-calculator.html" },
-          { name: "Calorie Calculator", url: "calorie-calculator.html" },
-          { name: "TDEE Calculator", url: "tdee-calculator.html" }
-        ] 
-      },
-      
-      financial: { 
-        name: "💰 Financial Tools", 
-        tools: [ 
-          { name: "EMI Calculator", url: "emi-calculator.html" },
-          { name: "Loan Calculator", url: "loan-calculator.html" },
-          { name: "Zakat Calculator", url: "zakat-calculator.html" }
-        ] 
-      },
-      
-      text: { 
-        name: "📝 Text & Writing", 
-        tools: [ 
-          { name: "Word Counter", url: "word-counter.html" },
-          { name: "Line Counter", url: "line-counter.html" },
-          { name: "Text Case Converter", url: "text-case-converter.html" },
-          { name: "Password Generator", url: "password-generator.html" },
-          { name: "Password Checker", url: "password-checker.html" }
-        ] 
-      },
-      
-      pdf: { 
-        name: "📄 PDF Tools", 
-        tools: [ 
-          { name: "PDF Merger", url: "pdf-merger.html" },
-          { name: "PDF Splitter", url: "pdf-splitter.html" },
-          { name: "PDF to Word", url: "pdf-to-word.html" },
-          { name: "PDF to Image", url: "pdf-to-image.html" },
-          { name: "PDF to Excel", url: "pdf-to-excel.html" },
-          { name: "PDF to Text", url: "pdf-to-text.html" },
-          { name: "PDF Rotator", url: "pdf-rotator.html" }
-        ] 
-      },
-      
-      image: { 
-        name: "🖼️ Image Tools", 
-        tools: [ 
-          { name: "Image Converter", url: "image-converter.html" },
-          { name: "Image Cropper", url: "image-cropper.html" },
-          { name: "Image Resizer", url: "image-resizer.html" },
-          { name: "Image Compressor", url: "image-compressor.html" },
-          { name: "Image Upscaler", url: "image-upscaler.html" },
-          { name: "Image to PDF", url: "image-to-pdf.html" },
-          { name: "Image Color Extractor", url: "image-color-extractor.html" }
-        ] 
-      },
-      
-      color: { 
-        name: "🎨 Color Tools", 
-        tools: [ 
-          { name: "Color Shades Generator", url: "color-shades-generator.html" },
-          { name: "Color Gradient Maker", url: "color-gradient-maker.html" },
-          { name: "Color Palette Generator", url: "color-palette-generator.html" },
-          { name: "Color Contrast Checker", url: "color-contrast-checker.html" },
-          { name: "Color Name Finder", url: "color-name-finder.html" },
-          { name: "Random Color Picker", url: "random-color-picker.html" }
-        ] 
-      },
-      
-      fun: { 
-        name: "🎲 Random & Fun", 
-        tools: [ 
-          { name: "Spin The Wheel", url: "spin-the-wheel.html" },
-          { name: "Yes/No Wheel", url: "yes-no-wheel.html" },
-          { name: "Decision Roulette", url: "decision-roulette.html" },
-          { name: "Random Name Picker", url: "random-name-picker.html" },
-          { name: "Random Number Generator", url: "random-number-generator.html" },
-          { name: "Prize Wheel", url: "prize-wheel.html" },
-          { name: "Task Spinner", url: "task-spinner.html" }
-        ] 
-      }
-    };
-
-    function renderFooter() {
-      const footerContainer = document.getElementById('dynamicCategoryFooter');
-      if (!footerContainer) {
-        console.error("Element #dynamicCategoryFooter not found");
-        return;
-      }
-      const currentCategory = getCurrentCategory();
-      const cat = categories[currentCategory];
-      if (!cat) {
-        footerContainer.innerHTML = '<p style="text-align:center;">Tools loading...</p>';
-        return;
-      }
-      
-      let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-      
-      cat.tools.forEach(tool => {
-        // Skip current page to avoid self-link
-        const currentPath = window.location.pathname;
-        if (currentPath.includes(tool.url.replace('.html', ''))) return;
-        html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; transition: 0.2s; display: block;">🔘 ${tool.name}</a>`;
-      });
-      
-      html += `</div></div>`;
-      footerContainer.innerHTML = html;
-    }
-
-    // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', renderFooter);
-    } else {
-      renderFooter();
-    }
-  })();
+(function(){function animateGrid(g){if(!g)return;const b=Array.from(g.querySelectorAll('.tool-btn'));if(!b.length)return;const rows=[];let curY=null,curRow=[];b.forEach(btn=>{const y=btn.getBoundingClientRect().top;if(curY===null||Math.abs(y-curY)<10){curY=y;curRow.push(btn);}else{rows.push(curRow);curRow=[btn];curY=y;}});if(curRow.length)rows.push(curRow);rows.forEach((row,idx)=>{setTimeout(()=>{row.forEach(btn=>btn.classList.add('visible'));},idx*120);});}
+window.addEventListener('load',()=>document.querySelectorAll('.tools-grid').forEach(animateGrid));let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{document.querySelectorAll('.tools-grid').forEach(grid=>{const btns=grid.querySelectorAll('.tool-btn');let allVisible=true;btns.forEach(btn=>{if(!btn.classList.contains('visible'))allVisible=false;});if(!allVisible){btns.forEach(btn=>btn.classList.remove('visible'));animateGrid(grid);}});},200);});})();
 </script>
+  
 
 <footer class="footer">
     <div class="footer-container">
