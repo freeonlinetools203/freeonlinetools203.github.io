@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Heading Structure Checker | SEO Heading Analyzer Tool</title>
+<meta name="description" content="Free Heading Structure Checker – analyze H1, H2, H3, H4, H5, H6 tags of any webpage. Get SEO recommendations to improve your site's heading hierarchy. Fast, accurate, and free.">
+<meta name="keywords" content="heading structure checker, heading analyzer, h1 h2 h3 checker, seo heading tool, html heading analyzer, heading hierarchy tool">
+<meta name="author" content="Free Online Tools">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeonlinetools203.com/heading-structure-checker.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Heading Structure Checker | SEO Heading Analyzer">
+<meta property="og:description" content="Analyze heading tags of any webpage. Fix H1-H6 hierarchy issues for better SEO.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/heading-structure-checker.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Heading Structure Checker – SEO Tool">
+<meta name="twitter:description" content="Free SEO heading analyzer tool.">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQ8DLY7HYN');</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is a heading structure checker?","acceptedAnswer": {"@type": "Answer","text": "It's an SEO tool that analyzes H1, H2, H3, H4, H5, and H6 tags on a webpage to ensure proper hierarchy for search engines and accessibility."}},
+    {"@type": "Question", "name": "Why is heading structure important for SEO?","acceptedAnswer": {"@type": "Answer","text": "Proper heading hierarchy helps Google understand your content structure. It also improves user experience and accessibility."}},
+    {"@type": "Question", "name": "How many H1 tags should a page have?","acceptedAnswer": {"@type": "Answer","text": "Best practice is one H1 tag per page. Multiple H1 tags can confuse search engines."}},
+    {"@type": "Question", "name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes, completely free with no registration. Unlimited usage."}},
+    {"@type": "Question", "name": "Does this tool work on any website?","acceptedAnswer": {"@type": "Answer","text": "Yes, it can analyze any public webpage by entering its URL."}}
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;min-height:100vh;transition:background 0.3s;}
+body.dark{background:#111827;}
+
+/* Navbar */
+.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;transition:0.3s;}
+.nav-links li a:hover{color:#f0f0f0;border-bottom:2px solid white;}
+
+/* Main Container */
+.container{max-width:1000px;margin:40px auto;padding:0 20px;}
+.tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+body.dark .tool-card{background:#1f2937;border-color:#374151;}
+.card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
+body.dark .card-header{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);}
+.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
+.card-header p{color:rgba(255,255,255,0.9);font-size:16px;}
+.card-content{padding:35px;}
+
+/* URL Input Section */
+.input-section{background:#f8fafc;border-radius:20px;padding:25px;margin-bottom:25px;border:1px solid #e2e8f0;}
+body.dark .input-section{background:#374151;border-color:#4b5563;}
+.input-group{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:15px;}
+.input-group input{flex:1;padding:14px 18px;border:2px solid #e2e8f0;border-radius:14px;font-size:16px;transition:0.3s;}
+.input-group input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.2);}
+body.dark .input-group input{background:#1f2937;border-color:#4b5563;color:white;}
+.analyze-btn{background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border:none;padding:14px 28px;border-radius:14px;font-size:16px;font-weight:bold;cursor:pointer;transition:0.3s;}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+
+/* Top Bar (Dark & Sound) */
+.top-bar{display:flex;justify-content:flex-end;gap:10px;margin-bottom:20px;}
+.dark-toggle{background:#6b7280;color:white;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:14px;}
+
+/* Result Section */
+.result-section{display:none;margin-top:25px;}
+.result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;flex-wrap:wrap;gap:10px;}
+.result-header h3{color:#1e3a8a;font-size:20px;}
+body.dark .result-header h3{color:#60a5fa;}
+.copy-btn{background:#6b7280;color:white;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;}
+.copy-btn:hover{background:#4b5563;}
+.summary-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:25px;}
+.summary-card{background:#f1f5f9;border-radius:16px;padding:15px;text-align:center;}
+body.dark .summary-card{background:#374151;}
+.summary-card .label{font-size:12px;color:#6b7280;text-transform:uppercase;letter-spacing:1px;}
+body.dark .summary-card .label{color:#9ca3af;}
+.summary-card .value{font-size:32px;font-weight:700;color:#1e3a8a;margin-top:5px;}
+body.dark .summary-card .value{color:#60a5fa;}
+.issues-list{background:#fef2f2;border-left:4px solid #dc2626;border-radius:12px;padding:15px;margin-bottom:25px;}
+body.dark .issues-list{background:#450a0a;border-left-color:#ef4444;}
+.issues-list h4{color:#dc2626;margin-bottom:10px;font-size:16px;}
+.issues-list ul{margin-left:20px;color:#b91c1c;}
+body.dark .issues-list ul{color:#fca5a5;}
+.heading-table{width:100%;border-collapse:collapse;background:#f8fafc;border-radius:16px;overflow:hidden;}
+body.dark .heading-table{background:#374151;}
+.heading-table th,.heading-table td{padding:12px 15px;text-align:left;border-bottom:1px solid #e2e8f0;}
+body.dark .heading-table th,body.dark .heading-table td{border-bottom-color:#4b5563;}
+.heading-table th{background:#e2e8f0;font-weight:600;}
+body.dark .heading-table th{background:#4b5563;color:white;}
+.h1-badge{background:#dc2626;color:white;padding:2px 8px;border-radius:20px;font-size:11px;display:inline-block;}
+.h2-badge{background:#f97316;color:white;padding:2px 8px;border-radius:20px;font-size:11px;display:inline-block;}
+.h3-badge{background:#eab308;color:white;padding:2px 8px;border-radius:20px;font-size:11px;display:inline-block;}
+.h4-badge{background:#10b981;color:white;padding:2px 8px;border-radius:20px;font-size:11px;display:inline-block;}
+.h5-badge{background:#3b82f6;color:white;padding:2px 8px;border-radius:20px;font-size:11px;display:inline-block;}
+.h6-badge{background:#8b5cf6;color:white;padding:2px 8px;border-radius:20px;font-size:11px;display:inline-block;}
+.text-muted{color:#6b7280;font-size:12px;}
+body.dark .text-muted{color:#9ca3af;}
+.loading{text-align:center;padding:40px;color:#6b7280;}
+.error-msg{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:15px;color:#dc2626;margin-top:15px;}
+.success-msg{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:15px;color:#10b981;margin-top:15px;}
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:60px 20px 35px;margin-top:50px;}
+.footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:45px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:20px;font-size:1.1rem;font-weight:600;position:relative;display:inline-block;}
+.footer-col h3::after,.footer-col h4::after{content:'';position:absolute;bottom:-8px;left:0;width:40px;height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:2px;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:6px 0;font-size:0.9rem;transition:0.3s;}
+.footer-col a:hover{color:#60a5fa;transform:translateX(5px);}
+.footer-bottom{text-align:center;padding-top:35px;margin-top:45px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:#64748b;}
+@media(max-width:768px){.card-content{padding:25px 20px;}.card-header h1{font-size:24px;}.input-group{flex-direction:column;}}
+.article-section{background:white;border-radius:28px;padding:45px;margin-top:35px;line-height:1.8;color:#374151;}
+body.dark .article-section{background:#1f2937;color:#e5e7eb;}
+.article-section h2{color:#1e3a8a;font-size:28px;margin:30px 0 20px;border-bottom:3px solid #2563eb;display:inline-block;padding-bottom:5px;}
+body.dark .article-section h2{color:#60a5fa;}
+.article-section h3{color:#2563eb;margin:25px 0 15px;font-size:22px;}
+.article-section ul{margin:15px 0 20px 30px;}
+.article-section li{margin-bottom:8px;}
+.faq-section{background:#f8fafc;border-radius:20px;padding:30px;margin:30px 0;}
+body.dark .faq-section{background:#374151;}
+.faq-item{margin-bottom:20px;border-bottom:1px solid #e2e8f0;padding-bottom:15px;}
+body.dark .faq-item{border-bottom-color:#4b5563;}
+.faq-question{font-weight:700;color:#1e3a8a;font-size:18px;margin-bottom:10px;}
+body.dark .faq-question{color:#60a5fa;}
+.faq-answer{color:#475569;line-height:1.6;}
+body.dark .faq-answer{color:#9ca3af;}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo"><a href="index.html">📋 Free Online Tools</a></div>
+<ul class="nav-links">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">ℹ️ About</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="container">
+<div class="tool-card">
+<div class="card-header">
+<h1>📋 Heading Structure Checker | SEO Heading Analyzer</h1>
+<p>Analyze H1, H2, H3, H4, H5, H6 tags of any webpage. Get SEO recommendations to improve your heading hierarchy.</p>
+</div>
+<div class="card-content">
+<div class="top-bar">
+<button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button>
+</div>
+
+<div class="input-section">
+<div class="input-group">
+<input type="url" id="urlInput" placeholder="Enter webpage URL (e.g., https://example.com)">
+<button class="analyze-btn" id="analyzeBtn">🔍 Analyze Headings</button>
+</div>
+<p class="text-muted" style="margin-top:10px;">Enter a full URL with http:// or https://</p>
+</div>
+
+<div id="resultSection" class="result-section">
+<div class="result-header">
+<h3>📊 Heading Analysis Results</h3>
+<button class="copy-btn" id="copyResultsBtn">📋 Copy Results</button>
+</div>
+
+<div class="summary-cards" id="summaryCards"></div>
+
+<div id="issuesContainer" class="issues-list" style="display:none;">
+<h4>⚠️ SEO Issues Found</h4>
+<ul id="issuesList"></ul>
+</div>
+
+<div style="overflow-x: auto;">
+<table class="heading-table" id="headingTable">
+<thead>
+<tr><th>Tag Type</th><th>Heading Text</th></tr>
+</thead>
+<tbody id="headingTableBody"></tbody>
+</table>
+</div>
+</div>
+
+<div id="loadingMsg" class="loading" style="display:none;">🔄 Analyzing webpage headings... Please wait.</div>
+<div id="errorMsg" class="error-msg" style="display:none;"></div>
+</div>
+</div>
+
+<div class="article-section">
+<h1 style="color:#1e3a8a; font-size:32px; margin-bottom:20px;">Heading Structure Checker – Complete Guide</h1>
+
+<h2>📌 What is a Heading Structure Checker?</h2>
+<p>A <strong>Heading Structure Checker</strong> is an SEO tool that analyzes the heading tags (H1 to H6) on any webpage. It helps you understand if your content has a logical hierarchy, which is crucial for both search engines and users. Proper heading structure improves readability, accessibility, and can boost your search rankings.</p>
+
+<h2>🎯 Why Heading Structure Matters for SEO</h2>
+<p>Search engines like Google use headings to understand the main topics and subtopics of your content. A well-organized heading structure:</p>
+<ul>
+<li>Helps Google crawl and index your page more effectively</li>
+<li>Improves user experience by breaking content into scannable sections</li>
+<li>Increases chances of featured snippets and rich results</li>
+<li>Makes your content accessible to screen readers</li>
+</ul>
+
+<h2>✅ Best Practices for Heading Tags</h2>
+<ul>
+<li><strong>One H1 per page:</strong> Your H1 should clearly describe the page's main topic</li>
+<li><strong>Use H2 for main sections:</strong> Break your content into logical chapters</li>
+<li><strong>Use H3 for subsections:</strong> Organize content under each H2</li>
+<li><strong>Avoid skipping levels:</strong> Don't jump from H2 to H4 without H3</li>
+<li><strong>Include keywords naturally:</strong> Use target keywords in headings, but don't overdo it</li>
+<li><strong>Keep headings concise:</strong> Aim for 50-60 characters maximum</li>
+</ul>
+
+<h2>🔧 How to Use This Tool</h2>
+<p>1. Enter the full URL of the webpage you want to analyze<br>
+2. Click the "Analyze Headings" button<br>
+3. The tool will fetch the page and extract all H1-H6 tags<br>
+4. Review the summary and detailed table of headings<br>
+5. Check the SEO issues section for recommendations</p>
+
+<h2>📊 Understanding the Results</h2>
+<p>The tool shows you:</p>
+<ul>
+<li>Total count of each heading type (H1, H2, H3, etc.)</li>
+<li>A complete list of all headings with their text</li>
+<li>SEO issues like multiple H1 tags, missing H1, or skipped heading levels</li>
+</ul>
+
+<h2>📈 Common Heading Issues & Fixes</h2>
+<ul>
+<li><strong>Multiple H1 tags:</strong> Combine or convert extra H1s to H2</li>
+<li><strong>Missing H1:</strong> Add a descriptive H1 tag at the top of your content</li>
+<li><strong>No H2 tags:</strong> Break your content into sections with H2 subheadings</li>
+<li><strong>Skipped heading levels:</strong> Reorganize to ensure proper hierarchy (H1 → H2 → H3)</li>
+<li><strong>Empty headings:</strong> Remove or fill with meaningful text</li>
+</ul>
+
+<div class="faq-section">
+<h3 style="color:#1e3a8a; margin-bottom:20px;">❓ Frequently Asked Questions</h3>
+<div class="faq-item"><div class="faq-question">❓ What is a good heading structure for SEO?</div><div class="faq-answer">A single H1 followed by multiple H2s, with H3s under H2s as needed. Avoid skipping levels.</div></div>
+<div class="faq-item"><div class="faq-question">❓ How many H1 tags should a page have?</div><div class="faq-answer">Exactly one. Multiple H1s can confuse search engines and dilute your SEO.</div></div>
+<div class="faq-item"><div class="faq-question">❓ Can I analyze any website?</div><div class="faq-answer">Yes, as long as the website is publicly accessible and doesn't block cross-origin requests.</div></div>
+<div class="faq-item"><div class="faq-question">❓ Is this tool free?</div><div class="faq-answer">Yes, completely free with no registration or limits.</div></div>
+</div>
+
+<h2>🚀 Final Tips</h2>
+<p>Regularly audit your heading structure, especially after publishing new content or redesigning your site. Use our tool weekly to catch issues early. Proper headings not only help SEO but also make your content easier to read and navigate.</p>
+</div>
+
+<div class="category-footer" style="text-align:center; margin:40px 0;">
+<a href="index.html" class="home-link" style="display:inline-block; padding:12px 28px; background:linear-gradient(135deg,#2563eb,#1e3a8a); color:white; text-decoration:none; border-radius:40px;">🔘 Back to Home</a>
+</div>
+</div>
+
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-col"><h3>📋 Free Online Tools</h3><p>Heading Structure Checker – analyze and improve your heading hierarchy for better SEO.</p></div>
+<div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="privacy-policy.html">🔒 Privacy</a></div>
+<div class="footer-col"><h4>⭐ Popular Tools</h4><a href="meta-tag-analyzer.html">📋 Meta Tag Analyzer</a><a href="keyword-density-checker.html">🔍 Keyword Density Checker</a><a href="heading-structure-checker.html">📊 Heading Structure Checker</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Free Online Tools. All rights reserved. | Heading Structure Checker – perfect your SEO hierarchy.</p>
+</div>
+</footer>
+
+<script>
+// Dark Mode Toggle
+const darkToggle = document.getElementById('darkToggle');
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+});
+
+// Helper function to fetch page HTML via CORS proxy
+async function fetchPageHTML(url) {
+    // Using a free CORS proxy to avoid cross-origin issues
+    const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(url);
+    try {
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        if (data && data.contents) {
+            return data.contents;
+        } else {
+            throw new Error('Unable to fetch page content');
+        }
+    } catch (error) {
+        throw new Error('Failed to fetch: ' + error.message);
+    }
+}
+
+// Parse HTML string and extract headings
+function extractHeadings(html) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const headings = {
+        h1: [], h2: [], h3: [], h4: [], h5: [], h6: []
+    };
+    for (let i = 1; i <= 6; i++) {
+        const tag = `h${i}`;
+        const elements = doc.querySelectorAll(tag);
+        elements.forEach(el => {
+            headings[tag].push(el.textContent.trim());
+        });
+    }
+    return headings;
+}
+
+// Generate SEO recommendations
+function getRecommendations(headings) {
+    const issues = [];
+    const totalH1 = headings.h1.length;
+    if (totalH1 === 0) {
+        issues.push('❌ No H1 tag found. Every page should have one H1 tag describing the main topic.');
+    } else if (totalH1 > 1) {
+        issues.push(`⚠️ Multiple H1 tags found (${totalH1}). Use only one H1 tag per page.`);
+    }
+    if (headings.h2.length === 0) {
+        issues.push('⚠️ No H2 tags found. Use H2 tags to organize main sections of your content.');
+    }
+    // Check for skipped levels
+    const hasH1 = headings.h1.length > 0;
+    const hasH2 = headings.h2.length > 0;
+    const hasH3 = headings.h3.length > 0;
+    if (hasH1 && !hasH2 && hasH3) {
+        issues.push('⚠️ H3 tags found but no H2 tags. Avoid skipping heading levels (H1 → H3).');
+    }
+    if (hasH2 && !hasH3 && headings.h4.length > 0) {
+        issues.push('⚠️ H4 tags found but no H3 tags. Maintain proper hierarchy (H2 → H3 → H4).');
+    }
+    return issues;
+}
+
+// Render results
+function renderResults(headings) {
+    const resultSection = document.getElementById('resultSection');
+    resultSection.style.display = 'block';
+    
+    // Summary cards
+    const summaryCards = document.getElementById('summaryCards');
+    summaryCards.innerHTML = '';
+    const headingTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    headingTypes.forEach(type => {
+        const count = headings[type].length;
+        const card = document.createElement('div');
+        card.className = 'summary-card';
+        card.innerHTML = `<div class="label">${type.toUpperCase()} Tags</div><div class="value">${count}</div>`;
+        summaryCards.appendChild(card);
+    });
+    
+    // Issues
+    const issues = getRecommendations(headings);
+    const issuesContainer = document.getElementById('issuesContainer');
+    const issuesList = document.getElementById('issuesList');
+    if (issues.length > 0) {
+        issuesContainer.style.display = 'block';
+        issuesList.innerHTML = '';
+        issues.forEach(issue => {
+            const li = document.createElement('li');
+            li.textContent = issue;
+            issuesList.appendChild(li);
+        });
+    } else {
+        issuesContainer.style.display = 'block';
+        issuesList.innerHTML = '<li style="color:#10b981;">✅ Great job! Your heading structure looks good.</li>';
+    }
+    
+    // Heading table
+    const tableBody = document.getElementById('headingTableBody');
+    tableBody.innerHTML = '';
+    headingTypes.forEach(type => {
+        const badgeClass = {
+            h1: 'h1-badge', h2: 'h2-badge', h3: 'h3-badge', h4: 'h4-badge', h5: 'h5-badge', h6: 'h6-badge'
+        };
+        headings[type].forEach(heading => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><span class="${badgeClass[type]}">${type.toUpperCase()}</span></td>
+                <td>${escapeHtml(heading) || '<em>empty</em>'}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    });
+    if (tableBody.children.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="2" style="text-align:center;">No heading tags found on this page</td></tr>';
+    }
+}
+
+function escapeHtml(text) {
+    if (!text) return text;
+    return text.replace(/[&<>]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        return m;
+    });
+}
+
+function showLoading(show) {
+    document.getElementById('loadingMsg').style.display = show ? 'block' : 'none';
+    document.getElementById('resultSection').style.display = show ? 'none' : 'block';
+    document.getElementById('errorMsg').style.display = 'none';
+}
+
+function showError(message) {
+    const errorDiv = document.getElementById('errorMsg');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('loadingMsg').style.display = 'none';
+}
+
+async function analyzeUrl() {
+    let url = document.getElementById('urlInput').value.trim();
+    if (!url) {
+        showError('Please enter a URL');
+        return;
+    }
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+        document.getElementById('urlInput').value = url;
+    }
+    showLoading(true);
+    try {
+        const html = await fetchPageHTML(url);
+        const headings = extractHeadings(html);
+        renderResults(headings);
+        showLoading(false);
+    } catch (error) {
+        showError('Error: ' + error.message + '. Make sure the URL is correct and accessible.');
+    }
+}
+
+// Copy results
+document.getElementById('copyResultsBtn').addEventListener('click', () => {
+    const headings = {
+        h1: [], h2: [], h3: [], h4: [], h5: [], h6: []
+    };
+    // Get from table
+    const rows = document.querySelectorAll('#headingTableBody tr');
+    let copyText = 'HEADING STRUCTURE REPORT\n\n';
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 2) {
+            copyText += `${cells[0].innerText}: ${cells[1].innerText}\n`;
+        }
+    });
+    copyText += '\n--- SEO Issues ---\n';
+    const issues = document.querySelectorAll('#issuesList li');
+    issues.forEach(issue => {
+        copyText += issue.innerText + '\n';
+    });
+    navigator.clipboard.writeText(copyText).then(() => {
+        alert('Results copied to clipboard!');
+    }).catch(() => {
+        alert('Could not copy. Select manually.');
+    });
+});
+
+// Analyze button click
+document.getElementById('analyzeBtn').addEventListener('click', analyzeUrl);
+// Enter key support
+document.getElementById('urlInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') analyzeUrl();
+});
+</script>
+</body>
+</html>
