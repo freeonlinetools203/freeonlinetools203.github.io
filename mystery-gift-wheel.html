@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Mystery Gift Wheel | Surprise Spinner | Daily Mystery Gift</title>
+<title>Mystery Gift Wheel | Surprise Spinner | Daily Mystery Gift | Free Online Tool</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Mystery gift wheel – spin to reveal surprise gifts! Daily mystery prize changes every day. Perfect for fun, giveaways, and unboxing excitement.">
-<meta name="keywords" content="mystery gift wheel, surprise spinner, mystery box wheel, daily mystery prize, gift wheel, surprise gift generator">
+<meta name="description" content="Mystery gift wheel – spin to reveal surprise gifts! Daily mystery prize changes every day. Perfect for fun, giveaways, and unboxing excitement. Free mystery box spinner.">
+<meta name="keywords" content="mystery gift wheel, surprise spinner, mystery box wheel, daily mystery prize, gift wheel, surprise gift generator, mystery prize wheel, online spinner, free mystery wheel">
 <meta name="author" content="Free Online Tools">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://freeonlinetools203.com/mystery-gift-wheel.html">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Mystery Gift Wheel | Surprise Spinner">
-<meta property="og:description" content="Spin the mystery wheel and reveal hidden gifts! Daily mystery prize changes every day.">
+<meta property="og:description" content="Spin the mystery wheel and reveal hidden gifts! Daily mystery prize changes every day. Free mystery gift unboxing experience.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeonlinetools203.com/mystery-gift-wheel.html">
+<meta property="og:image" content="https://freeonlinetools203.com/images/mystery-wheel-og.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -26,6 +27,24 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQ8DLY7HYN');</script>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mystery Gift Wheel",
+  "description": "Spin the mystery wheel to reveal surprise gifts. Daily mystery prize changes every day. Free online mystery box unboxing tool.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/mystery-gift-wheel.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 
 <style>
 * {
@@ -40,7 +59,7 @@ body {
     min-height: 100vh;
 }
 
-/* ========== MEGAMENU NAVBAR (same as original) ========== */
+/* ========== MEGAMENU NAVBAR ========== */
 .megamenu-container {
     width: 100%;
     background: linear-gradient(to right, #6b21a5, #ec4899);
@@ -552,29 +571,6 @@ body {
     word-break: break-word;
 }
 
-.category-footer {
-    max-width: 1200px;
-    margin: 40px auto 20px;
-    padding: 0 20px;
-}
-
-.home-link {
-    display: inline-block;
-    padding: 12px 28px;
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
-    color: white;
-    text-decoration: none;
-    border-radius: 40px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.home-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
-}
-
 /* Toast Notification */
 .toast-notification {
     position: fixed;
@@ -596,7 +592,6 @@ body {
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-/* Confetti fall */
 @keyframes confettiFall {
     0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
     100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
@@ -689,6 +684,7 @@ body {
     .result-prize { font-size: 18px; }
 }
 </style>
+<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
 
@@ -699,7 +695,7 @@ body {
             <p>Unbox surprise gifts! Spin the mystery wheel and discover hidden treasures. Daily mystery prize changes every day!</p>
         </div>
         <div class="card-content">
-            <!-- Daily Mystery Gift (changes daily) -->
+            <!-- Daily Mystery Gift -->
             <div class="daily-mystery">
                 <h3>🔮 Today's Mystery Gift</h3>
                 <div class="daily-gift" id="dailyGift">-- loading --</div>
@@ -715,9 +711,7 @@ body {
                         <button class="preset-btn" onclick="loadPreset('enchanted')">✨ Enchanted Gifts</button>
                     </div>
                 </div>
-                <div class="prizes-list" id="prizesList">
-                    <!-- Dynamic items from JS -->
-                </div>
+                <div class="prizes-list" id="prizesList"></div>
                 <button class="add-prize-btn" onclick="addPrize()">+ Add Mystery Gift</button>
             </div>
 
@@ -744,11 +738,51 @@ body {
         </div>
     </div>
 
-    <div class="category-footer">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <a href="index.html" class="home-link">🔘 Back to Home</a>
+    <!-- Category Footer (Exactly as provided - Merged) -->
+    <style>
+        .related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+        .btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+        .btn-home:hover{transform:translateY(-2px);background:#2563eb}
+        .btn-home:active{transform:scale(.97);background:#1d4ed8}
+        .tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+        .tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+        .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+        .tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
+        .tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+        .tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+        @media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+    </style>
+
+    <div class="related-section">
+        <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+        <div class="tools-box">
+            <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
+            <div class="tools-grid">
+                <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
+                <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
+                <a href="https://freeonlinetools203.com/decision-roulette.html" class="tool-btn">🎲 Decision Roulette</a>
+                <a href="https://freeonlinetools203.com/random-name-picker.html" class="tool-btn">📛 Random Name Picker</a>
+                <a href="https://freeonlinetools203.com/random-number-generator.html" class="tool-btn">🔢 Random Number Generator</a>
+                <a href="https://freeonlinetools203.com/prize-wheel.html" class="tool-btn">🏆 Prize Wheel</a>
+                <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
+                <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
+                <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
+                <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
+                <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
+                <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
+                <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
+                <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
+                <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
+                <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
+                <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
+                <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
+                <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
+                <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
+                <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="tool-btn">🍕 Food Picker Wheel</a>
+                <a href="https://freeonlinetools203.com/exercise-wheel.html" class="tool-btn">🏋️ Exercise Wheel</a>
+                <a href="https://freeonlinetools203.com/drink-wheel.html" class="tool-btn">🍹 Drink Wheel</a>
+            </div>
         </div>
-        <div id="dynamicCategoryFooter"></div>
     </div>
 </div>
 
@@ -785,7 +819,7 @@ body {
 
 <script>
 // ========== MYSTERY GIFT WHEEL ==========
-let gifts = []; // will be loaded from presets
+let gifts = [];
 let colors = [];
 let currentAngle = 0;
 let spinning = false;
@@ -797,7 +831,6 @@ let history = [];
 let canvas = document.getElementById('mysteryWheel');
 let ctx = canvas.getContext('2d');
 
-// Generate daily mystery gift based on date
 function getDailyMysteryGift() {
     const today = new Date();
     const dateStr = today.toISOString().slice(0,10);
@@ -807,38 +840,25 @@ function getDailyMysteryGift() {
         hash |= 0;
     }
     const seed = Math.abs(hash);
-    const mysteryGifts = [
-        "🎁 Mysterious Chest", "💎 Rare Crystal", "✨ Sparkle Dust", "🍀 Lucky Clover", 
-        "🌟 Star Power", "🃏 Joker Card", "🎲 Dice of Fate", "🔮 Magic Orb", 
-        "🐉 Dragon Scale", "🧚 Fairy Blessing", "🌙 Moonstone", "⚡ Thunder Gem"
-    ];
-    const index = seed % mysteryGifts.length;
-    return mysteryGifts[index];
+    const mysteryGifts = ["🎁 Mysterious Chest", "💎 Rare Crystal", "✨ Sparkle Dust", "🍀 Lucky Clover", "🌟 Star Power", "🃏 Joker Card", "🎲 Dice of Fate", "🔮 Magic Orb", "🐉 Dragon Scale", "🧚 Fairy Blessing", "🌙 Moonstone", "⚡ Thunder Gem"];
+    return mysteryGifts[seed % mysteryGifts.length];
 }
 
-// Display daily gift
 function updateDailyGift() {
     document.getElementById('dailyGift').innerText = getDailyMysteryGift();
 }
 
-// Generate vibrant colors for wheel slices (purple/pink/orange theme)
 function generateColors(count) {
     const premiumColors = ['#c084fc', '#f472b6', '#fb923c', '#a855f7', '#e879f9', '#f97316', '#d946ef', '#fbbf24'];
     let colorList = [];
-    for (let i = 0; i < count; i++) {
-        colorList.push(premiumColors[i % premiumColors.length]);
-    }
+    for (let i = 0; i < count; i++) colorList.push(premiumColors[i % premiumColors.length]);
     return colorList;
 }
 
-// Update gifts from input fields
 function updateGiftsFromInputs() {
     let inputs = document.querySelectorAll('.prize-input');
     gifts = [];
-    inputs.forEach(input => {
-        let val = input.value.trim();
-        if (val !== '') gifts.push(val);
-    });
+    inputs.forEach(input => { let val = input.value.trim(); if (val !== '') gifts.push(val); });
     if (gifts.length === 0) gifts = ['🎁 Mystery Box'];
     colors = generateColors(gifts.length);
     resizeCanvas();
@@ -849,10 +869,7 @@ function addPrize() {
     let list = document.getElementById('prizesList');
     let div = document.createElement('div');
     div.className = 'prize-item';
-    div.innerHTML = `
-        <input type="text" class="prize-input" placeholder="New Mystery Gift" value="🎁 Secret Surprise">
-        <button class="remove-prize" onclick="removePrize(this)">✕</button>
-    `;
+    div.innerHTML = `<input type="text" class="prize-input" placeholder="New Mystery Gift" value="🎁 Secret Surprise"><button class="remove-prize" onclick="removePrize(this)">✕</button>`;
     list.appendChild(div);
     updateGiftsFromInputs();
     showToast('Mystery gift added!');
@@ -860,10 +877,7 @@ function addPrize() {
 
 function removePrize(btn) {
     let list = document.getElementById('prizesList');
-    if (list.children.length <= 2) {
-        showToast('At least 2 mystery gifts required!');
-        return;
-    }
+    if (list.children.length <= 2) { showToast('At least 2 mystery gifts required!'); return; }
     btn.parentElement.remove();
     updateGiftsFromInputs();
     showToast('Gift removed');
@@ -873,25 +887,15 @@ function loadPreset(type) {
     let list = document.getElementById('prizesList');
     list.innerHTML = '';
     let presetGifts = [];
-    
-    if (type === 'mystery') {
-        presetGifts = ['🎁 Mystery Box', '💎 Rare Crystal', '✨ Magic Sparkle', '🍀 Lucky Charm', '🌟 Star Power', '🃏 Joker Card'];
-    } else if (type === 'treasure') {
-        presetGifts = ['🏴‍☠️ Pirate Gold', '🗺️ Treasure Map', '⚓ Anchor Charm', '💎 Emerald', '🔑 Golden Key', '🏆 Crown'];
-    } else if (type === 'enchanted') {
-        presetGifts = ['🧚 Fairy Dust', '🔮 Magic Orb', '🐉 Dragon Scale', '🌙 Moonstone', '⚡ Thunder Gem', '🕯️ Enchanted Candle'];
-    }
-    
+    if (type === 'mystery') presetGifts = ['🎁 Mystery Box', '💎 Rare Crystal', '✨ Magic Sparkle', '🍀 Lucky Charm', '🌟 Star Power', '🃏 Joker Card'];
+    else if (type === 'treasure') presetGifts = ['🏴‍☠️ Pirate Gold', '🗺️ Treasure Map', '⚓ Anchor Charm', '💎 Emerald', '🔑 Golden Key', '🏆 Crown'];
+    else if (type === 'enchanted') presetGifts = ['🧚 Fairy Dust', '🔮 Magic Orb', '🐉 Dragon Scale', '🌙 Moonstone', '⚡ Thunder Gem', '🕯️ Enchanted Candle'];
     presetGifts.forEach(gift => {
         let div = document.createElement('div');
         div.className = 'prize-item';
-        div.innerHTML = `
-            <input type="text" class="prize-input" value="${gift}">
-            <button class="remove-prize" onclick="removePrize(this)">✕</button>
-        `;
+        div.innerHTML = `<input type="text" class="prize-input" value="${gift}"><button class="remove-prize" onclick="removePrize(this)">✕</button>`;
         list.appendChild(div);
     });
-    
     updateGiftsFromInputs();
     showToast(`${presetGifts.length} mystery gifts loaded!`);
 }
@@ -909,27 +913,18 @@ function resizeCanvas() {
 
 function drawWheel(angle) {
     if (gifts.length === 0) return;
-    
-    let size = canvas.width;
-    let centerX = size / 2;
-    let centerY = size / 2;
-    let radius = size / 2;
+    let size = canvas.width, centerX = size/2, centerY = size/2, radius = size/2;
     let angleStep = (Math.PI * 2) / gifts.length;
-
     ctx.clearRect(0, 0, size, size);
-
     for (let i = 0; i < gifts.length; i++) {
         let startAngle = i * angleStep + angle;
         let endAngle = (i + 1) * angleStep + angle;
-        
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.arc(centerX, centerY, radius, startAngle, endAngle);
         ctx.closePath();
-        
         ctx.fillStyle = colors[i];
         ctx.fill();
-        
         ctx.strokeStyle = 'white';
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -937,7 +932,6 @@ function drawWheel(angle) {
         ctx.arc(centerX, centerY, radius, startAngle, endAngle);
         ctx.lineTo(centerX, centerY);
         ctx.stroke();
-        
         ctx.save();
         ctx.translate(centerX, centerY);
         ctx.rotate(startAngle + angleStep / 2);
@@ -946,12 +940,10 @@ function drawWheel(angle) {
         let fontSize = Math.min(size * 0.035, 12);
         ctx.font = `500 ${fontSize}px "Segoe UI"`;
         ctx.fillStyle = 'white';
-        let text = gifts[i];
-        if (text.length > 14) text = text.substring(0, 12) + '..';
+        let text = gifts[i].length > 14 ? gifts[i].substring(0,12)+'..' : gifts[i];
         ctx.fillText(text, radius * 0.7, 0);
         ctx.restore();
     }
-    
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius * 0.1, 0, Math.PI * 2);
     ctx.fillStyle = '#6b21a5';
@@ -964,14 +956,11 @@ function drawWheel(angle) {
 function getGiftAtPointer() {
     let pointerAngle = -Math.PI / 2;
     let actualAngle = pointerAngle - currentAngle;
-    
     while (actualAngle < 0) actualAngle += Math.PI * 2;
     while (actualAngle >= Math.PI * 2) actualAngle -= Math.PI * 2;
-    
     let angleStep = (Math.PI * 2) / gifts.length;
     let index = Math.floor(actualAngle / angleStep);
     index = Math.min(index, gifts.length - 1);
-    
     return gifts[index];
 }
 
@@ -994,19 +983,12 @@ function createConfetti() {
 }
 
 function spinWheel() {
-    if (spinning) return;
-    if (gifts.length < 2) {
-        showToast('Add at least 2 mystery gifts!');
-        return;
-    }
-    
+    if (spinning || gifts.length < 2) return;
     spinning = true;
     spinStartTime = performance.now();
-    
     let fullRotations = 8 + Math.random() * 6;
     let finalAngleOffset = Math.random() * Math.PI * 2;
     spinEndAngle = currentAngle + (fullRotations * Math.PI * 2) + finalAngleOffset;
-    
     animateSpin(spinStartTime);
 }
 
@@ -1014,32 +996,19 @@ function animateSpin(now) {
     let elapsed = performance.now() - now;
     let t = Math.min(1, elapsed / spinDuration);
     let easeOut = 1 - Math.pow(1 - t, 3);
-    
     let newAngle = currentAngle + (spinEndAngle - currentAngle) * easeOut;
     currentAngle = newAngle % (Math.PI * 2);
     drawWheel(currentAngle);
-    
-    if (t < 1) {
-        requestAnimationFrame(() => animateSpin(now));
-    } else {
+    if (t < 1) requestAnimationFrame(() => animateSpin(now));
+    else {
         spinning = false;
         let gift = getGiftAtPointer();
-        
+        document.getElementById('resultPrize').innerHTML = gift;
         let resultCard = document.getElementById('resultCard');
-        let resultPrize = document.getElementById('resultPrize');
-        
-        resultPrize.innerHTML = gift;
         resultCard.classList.add('animate');
-        
-        // Always confetti for mystery reveal
         createConfetti();
-        
         addToHistory(gift);
-        
-        setTimeout(() => {
-            resultCard.classList.remove('animate');
-        }, 500);
-        
+        setTimeout(() => resultCard.classList.remove('animate'), 500);
         showToast(`🎉 You unboxed: ${gift}! 🎉`);
     }
 }
@@ -1055,84 +1024,19 @@ function addToHistory(gift) {
 function renderHistory() {
     let container = document.getElementById('historyList');
     container.innerHTML = '';
-    history.forEach(item => {
-        let div = document.createElement('div');
-        div.className = 'history-item';
-        div.innerHTML = item.gift;
-        container.appendChild(div);
-    });
+    history.forEach(item => { let div = document.createElement('div'); div.className = 'history-item'; div.innerHTML = item.gift; container.appendChild(div); });
 }
 
-function clearHistory() {
-    history = [];
-    renderHistory();
-    showToast('Unboxing history cleared!');
-}
+function clearHistory() { history = []; renderHistory(); showToast('Unboxing history cleared!'); }
+function showToast(msg) { let toast = document.createElement('div'); toast.className = 'toast-notification'; toast.textContent = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 2000); }
 
-function showToast(msg) {
-    let toast = document.createElement('div');
-    toast.className = 'toast-notification';
-    toast.textContent = msg;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 2000);
-}
-
-// Event Listeners
 document.getElementById('spinBtn').addEventListener('click', spinWheel);
 document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
+document.addEventListener('input', function(e) { if (e.target.classList && e.target.classList.contains('prize-input')) updateGiftsFromInputs(); });
+window.addEventListener('resize', () => resizeCanvas());
+document.getElementById('mobileToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
 
-document.addEventListener('input', function(e) {
-    if (e.target.classList && e.target.classList.contains('prize-input')) {
-        updateGiftsFromInputs();
-    }
-});
-
-window.addEventListener('resize', () => {
-    resizeCanvas();
-});
-
-// Mobile menu (if exists, but we keep for consistency)
-const mobileToggle = document.getElementById('mobileToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-}
-
-// Dynamic Category Footer (minimal)
-(function() {
-    function getCurrentCategory() {
-        const path = window.location.pathname;
-        if (path.includes('mystery') || path.includes('prize') || path.includes('spin')) return 'fun';
-        return 'popular';
-    }
-    const categories = {
-        popular: { name: "📊 Popular Tools", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" } ] },
-        fun: { name: "🎲 Mystery & Fun Tools", tools: [ { name: "Mystery Gift Wheel", url: "mystery-gift-wheel.html" }, { name: "Prize Wheel", url: "prize-wheel.html" }, { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Random Number Generator", url: "random-number-generator.html" } ] }
-    };
-    function renderFooter() {
-        const footerContainer = document.getElementById('dynamicCategoryFooter');
-        if (!footerContainer) return;
-        const cat = categories[getCurrentCategory()] || categories.fun;
-        let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                      <h3 style="color: #6b21a5; margin-bottom: 20px;">🔗 Other Mystery Tools</h3>
-                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-        cat.tools.forEach(tool => {
-            if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
-            html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #8b5cf6, #ec4899); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
-        });
-        html += `</div></div>`;
-        footerContainer.innerHTML = html;
-    }
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
-    else renderFooter();
-})();
-
-// Initial load
-window.onload = () => {
-    updateDailyGift();
-    loadPreset('mystery'); // default preset
-    resizeCanvas();
-};
+window.onload = () => { updateDailyGift(); loadPreset('mystery'); resizeCanvas(); };
 </script>
 </body>
 </html>
