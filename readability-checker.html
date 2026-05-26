@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Readability Score Checker | Flesch-Kincaid Test | SEO Tool</title>
+<meta name="description" content="Check readability score of any text. Flesch-Kincaid Grade Level, Reading Ease, and suggestions to improve content clarity.">
+<meta name="keywords" content="readability checker, flesch kincaid, text readability, seo content tool, reading level">
+<meta name="author" content="Free Online Tools">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeonlinetools203.com/readability-checker.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQ8DLY7HYN');</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;min-height:100vh;transition:background 0.3s;}
+body.dark{background:#111827;}
+.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;transition:0.3s;}
+.nav-links li a:hover{color:#f0f0f0;border-bottom:2px solid white;}
+.container{max-width:1000px;margin:40px auto;padding:0 20px;}
+.tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+body.dark .tool-card{background:#1f2937;}
+.card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
+body.dark .card-header{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);}
+.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
+.card-header p{color:rgba(255,255,255,0.9);font-size:16px;}
+.card-content{padding:35px;}
+.top-bar{display:flex;justify-content:flex-end;gap:10px;margin-bottom:20px;}
+.dark-toggle{background:#6b7280;color:white;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:14px;}
+textarea{width:100%;padding:15px;border:2px solid #e2e8f0;border-radius:16px;font-family:'Segoe UI',sans-serif;font-size:16px;line-height:1.5;resize:vertical;background:white;min-height:250px;}
+body.dark textarea{background:#1f2937;border-color:#4b5563;color:#e5e7eb;}
+textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.2);}
+.button-row{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0;}
+.action-btn{background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border:none;padding:12px 20px;border-radius:12px;font-weight:600;cursor:pointer;transition:0.3s;}
+.action-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-bottom:25px;}
+.stat-card{background:#f1f5f9;border-radius:16px;padding:20px;text-align:center;}
+body.dark .stat-card{background:#374151;}
+.stat-card .label{font-size:13px;color:#6b7280;text-transform:uppercase;margin-bottom:8px;}
+body.dark .stat-card .label{color:#9ca3af;}
+.stat-card .value{font-size:36px;font-weight:700;color:#1e3a8a;}
+body.dark .stat-card .value{color:#60a5fa;}
+.stat-card .unit{font-size:14px;color:#6b7280;}
+.suggestion{background:#eff6ff;border-left:4px solid #2563eb;border-radius:12px;padding:15px;margin-top:20px;}
+body.dark .suggestion{background:#1e3a5f;border-left-color:#60a5fa;}
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:60px 20px 35px;margin-top:50px;}
+.footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:45px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:20px;font-size:1.1rem;font-weight:600;position:relative;display:inline-block;}
+.footer-col h3::after,.footer-col h4::after{content:'';position:absolute;bottom:-8px;left:0;width:40px;height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:2px;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:6px 0;font-size:0.9rem;transition:0.3s;}
+.footer-col a:hover{color:#60a5fa;transform:translateX(5px);}
+.footer-bottom{text-align:center;padding-top:35px;margin-top:45px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:#64748b;}
+.home-link{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;text-decoration:none;border-radius:40px;margin:20px 0;transition:0.3s;}
+.home-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,99,235,0.4);}
+@media(max-width:768px){.card-content{padding:25px 20px;}.card-header h1{font-size:24px;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo"><a href="index.html">📖 Free Online Tools</a></div>
+<ul class="nav-links">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">ℹ️ About</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="container">
+<div class="tool-card">
+<div class="card-header">
+<h1>📖 Readability Score Checker</h1>
+<p>Check Flesch-Kincaid Grade Level & Reading Ease. Improve your content for better SEO.</p>
+</div>
+<div class="card-content">
+<div class="top-bar">
+<button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button>
+</div>
+
+<textarea id="textInput" placeholder="Paste your text here..."></textarea>
+
+<div class="button-row">
+<button class="action-btn" id="analyzeBtn">🔍 Analyze Readability</button>
+<button class="action-btn" id="clearBtn">🗑️ Clear</button>
+<button class="action-btn" id="loadSampleBtn">📋 Load Sample</button>
+</div>
+
+<div id="resultsSection" style="display:none;">
+<div class="stats-grid">
+<div class="stat-card"><div class="label">Flesch Reading Ease</div><div class="value" id="readingEase">0</div><div class="unit">/100</div></div>
+<div class="stat-card"><div class="label">Grade Level</div><div class="value" id="gradeLevel">0</div><div class="unit">U.S. grade</div></div>
+<div class="stat-card"><div class="label">Total Words</div><div class="value" id="wordCount">0</div></div>
+<div class="stat-card"><div class="label">Total Sentences</div><div class="value" id="sentenceCount">0</div></div>
+<div class="stat-card"><div class="label">Avg. Words/Sentence</div><div class="value" id="avgWords">0</div></div>
+<div class="stat-card"><div class="label">Avg. Syllables/Word</div><div class="value" id="avgSyllables">0.00</div></div>
+</div>
+<div class="suggestion" id="suggestion"></div>
+</div>
+</div>
+</div>
+
+<div style="text-align:center; margin:40px 0;">
+<a href="index.html" class="home-link">🔘 Back to Home</a>
+</div>
+</div>
+
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-col"><h3>📖 Free Online Tools</h3><p>Readability Score Checker – improve content clarity.</p></div>
+<div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="privacy-policy.html">🔒 Privacy</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Free Online Tools. All rights reserved.</p></div>
+</footer>
+
+<script>
+// Dark Mode
+const darkToggle = document.getElementById('darkToggle');
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+});
+
+// Helper: Count syllables (simple approximation)
+function countSyllables(word) {
+    word = word.toLowerCase();
+    if (word.length <= 3) return 1;
+    word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+    word = word.replace(/^y/, '');
+    const syllables = word.match(/[aeiouy]{1,2}/g);
+    return syllables ? syllables.length : 1;
+}
+
+function analyzeReadability() {
+    const text = document.getElementById('textInput').value.trim();
+    if (!text) {
+        alert('Please enter some text to analyze.');
+        return;
+    }
+    
+    // Split into words and sentences
+    const words = text.match(/\b\w+\b/g) || [];
+    const wordCount = words.length;
+    if (wordCount === 0) {
+        alert('No words found.');
+        return;
+    }
+    
+    // Sentences: split by .!?
+    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+    const sentenceCount = sentences.length;
+    const avgWordsPerSentence = wordCount / sentenceCount;
+    
+    // Count syllables
+    let totalSyllables = 0;
+    words.forEach(w => { totalSyllables += countSyllables(w); });
+    const avgSyllablesPerWord = totalSyllables / wordCount;
+    
+    // Flesch Reading Ease: 206.835 - 1.015*(words/sentences) - 84.6*(syllables/words)
+    const readingEase = 206.835 - (1.015 * avgWordsPerSentence) - (84.6 * avgSyllablesPerWord);
+    const readingEaseRounded = Math.min(100, Math.max(0, Math.round(readingEase)));
+    
+    // Flesch-Kincaid Grade Level: 0.39*(words/sentences) + 11.8*(syllables/words) - 15.59
+    const gradeLevel = (0.39 * avgWordsPerSentence) + (11.8 * avgSyllablesPerWord) - 15.59;
+    const gradeLevelRounded = Math.round(gradeLevel * 10) / 10;
+    
+    // Display results
+    document.getElementById('readingEase').innerText = readingEaseRounded;
+    document.getElementById('gradeLevel').innerText = gradeLevelRounded;
+    document.getElementById('wordCount').innerText = wordCount;
+    document.getElementById('sentenceCount').innerText = sentenceCount;
+    document.getElementById('avgWords').innerText = avgWordsPerSentence.toFixed(1);
+    document.getElementById('avgSyllables').innerText = avgSyllablesPerWord.toFixed(2);
+    
+    // Suggestion
+    const suggestionDiv = document.getElementById('suggestion');
+    let suggestion = '';
+    if (readingEaseRounded >= 80) {
+        suggestion = '✅ Excellent readability! Very easy to read. Suitable for 5th graders.';
+    } else if (readingEaseRounded >= 60) {
+        suggestion = '👍 Good readability. Plain English, easy to understand. Ideal for most audiences.';
+    } else if (readingEaseRounded >= 40) {
+        suggestion = '⚠️ Moderate readability. Somewhat difficult. Consider shortening sentences and using simpler words.';
+    } else if (readingEaseRounded >= 20) {
+        suggestion = '❌ Difficult to read. Best for college-level readers. Try breaking down long sentences.';
+    } else {
+        suggestion = '🔥 Very difficult. Highly technical. Consider rewriting for broader audience.';
+    }
+    suggestionDiv.innerHTML = `<strong>💡 Suggestion:</strong> ${suggestion}`;
+    
+    document.getElementById('resultsSection').style.display = 'block';
+}
+
+function clearAll() {
+    document.getElementById('textInput').value = '';
+    document.getElementById('resultsSection').style.display = 'none';
+}
+
+function loadSample() {
+    const sample = `Readability is an important aspect of SEO. Content that is easy to read keeps users engaged longer. Search engines like Google prefer content that is clear and understandable. To improve readability, use short sentences, simple words, and break up long paragraphs. You can also use headings, bullet points, and images to make text more scannable. This is a sample text for testing the readability checker. It has moderate length and varied sentence structures. Some sentences are longer, but overall it should score reasonably well.`;
+    document.getElementById('textInput').value = sample;
+    analyzeReadability();
+}
+
+document.getElementById('analyzeBtn').addEventListener('click', analyzeReadability);
+document.getElementById('clearBtn').addEventListener('click', clearAll);
+document.getElementById('loadSampleBtn').addEventListener('click', loadSample);
+</script>
+</body>
+</html>
