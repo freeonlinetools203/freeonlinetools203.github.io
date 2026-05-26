@@ -128,20 +128,63 @@ body.dark .article-content h2, body.dark .article-content h3{color:#facc15;}
 .article-content th{background:#eef2ff;color:#1e3a8a;}
 @media (max-width:650px){.article-content{padding:20px;}}
 </style>
+<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
-<nav class="navbar"><div class="nav-container"><div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
-<ul class="nav-links"><li><a href="index.html">🏠 Home</a></li>
-<li class="dropdown" id="toolsDropdown"><button class="dropbtn" id="toolsBtn">🛠️ All Tools ▼</button>
-<div class="dropdown-content" id="dropdownContent"><div class="dropdown-category" data-cat="wheel">🎡 Spin Wheels <span>▶</span></div>
-<div class="category-tools" id="wheelTools"><a href="drink-wheel.html">🍹 Drink Wheel</a><a href="random-fact-wheel.html">📚 Fact Wheel</a><a href="color-wheel.html">🎨 Color Wheel</a><a href="decision-wheel.html">🤔 Decision Wheel</a><a href="holiday-wheel.html">🎄 Holiday Wheel</a></div></div></li>
-<li><a href="about.html">ℹ️ About</a></li></ul></div></nav>
+
 <div class="container"><div class="wheel-card"><div class="card-header"><h1>🍹 Drink Picker Wheel</h1><p>Spin to decide your drink!</p></div>
 <div class="card-content"><div class="top-bar"><div class="mode-category-wrap"><label>📌 Select Category:</label><select id="modeSelect"><option value="alcoholic">🍸 Alcoholic</option><option value="nonalcoholic">🥤 Non-Alcoholic</option><option value="coffee">☕ Coffee & Tea</option></select></div><button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button></div>
 <div class="wheel-panel"><div class="wheel-container"><div class="arrow" id="arrowPointer"></div><div class="canvas-container" id="canvasContainer"><canvas id="wheelCanvas" width="500" height="500"></canvas><button class="spin-center-btn" id="spinButton">SPIN</button></div><div class="result-pop" id="resultPopup">✨ Cheers!</div></div>
 <div class="controls-card"><h2>✏️ Edit Drinks</h2><div class="input-group"><input type="text" id="itemInput" placeholder="Enter drink"><button id="addItemBtn">➕ Add</button></div><div class="button-row"><button id="removeLastBtn">✖️ Remove last</button><button id="resetWheelBtn">⟲ Reset</button></div><div class="tag-list" id="tagContainer"></div><p style="color:#6b7280;font-size:12px;margin-top:10px;">Click ✕ to delete any drink</p></div></div>
 <div class="color-picker-section"><h3>🎨 Color Picker</h3><div class="color-picker-row"><input type="color" id="colorPicker" value="#1e3a8a"><div class="hex-field"><input type="text" id="hexValue" value="#1e3a8a" readonly><button class="copy-btn" id="copyHexBtn">Copy HEX</button></div></div></div></div></div>
 
+  <!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
+<style>
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+</style>
+
+<div class="related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+  <div class="tools-box">
+    <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
+    <div class="tools-grid">
+      <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
+      <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-roulette.html" class="tool-btn">🎲 Decision Roulette</a>
+      <a href="https://freeonlinetools203.com/random-name-picker.html" class="tool-btn">📛 Random Name Picker</a>
+      <a href="https://freeonlinetools203.com/random-number-generator.html" class="tool-btn">🔢 Random Number Generator</a>
+      <a href="https://freeonlinetools203.com/prize-wheel.html" class="tool-btn">🏆 Prize Wheel</a>
+      <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
+      <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
+      <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
+      <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
+      <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
+      <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
+      <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
+      <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
+      <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
+      <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
+      <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
+      <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
+      <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
+      <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="tool-btn">🍕 Food Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/exercise-wheel.html" class="tool-btn">🏋️ Exercise Wheel</a>
+      <a href="https://freeonlinetools203.com/drink-wheel.html" class="tool-btn">🍹 Drink Wheel</a>
+    </div>
+  </div>
+</div>
+  
 <!-- SEO OPTIMIZED 2500+ WORD ARTICLE SECTION -->
 <div class="seo-article-section">
 <div class="article-content">
