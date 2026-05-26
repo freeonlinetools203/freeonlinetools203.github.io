@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>HTML Minifier Pro | Compress HTML Code | SEO Optimizer</title>
+<meta name="description" content="Free HTML Minifier Pro – compress, clean, and optimize HTML code. Remove whitespace, comments, and boost Core Web Vitals for better SEO rankings.">
+<meta name="keywords" content="html minifier, html compressor, minify html, seo optimizer, core web vitals, html code cleaner">
+<meta name="author" content="Free Online Tools">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeonlinetools203.com/html-minifier-pro.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQ8DLY7HYN');</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is HTML Minifier?","acceptedAnswer": {"@type": "Answer","text": "HTML Minifier compresses HTML code by removing unnecessary whitespace, comments, and line breaks to reduce file size."}},
+    {"@type": "Question", "name": "Will minification break my website?","acceptedAnswer": {"@type": "Answer","text": "No. Our tool preserves all functional code including scripts and styles."}},
+    {"@type": "Question", "name": "Is this tool free?","acceptedAnswer": {"@type": "Answer","text": "Yes, completely free with unlimited usage."}}
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;min-height:100vh;transition:background 0.3s;}
+body.dark{background:#111827;}
+
+.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;transition:0.3s;}
+.nav-links li a:hover{color:#f0f0f0;border-bottom:2px solid white;}
+
+.container{max-width:1000px;margin:40px auto;padding:0 20px;}
+.tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+body.dark .tool-card{background:#1f2937;}
+.card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
+body.dark .card-header{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);}
+.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
+.card-header p{color:rgba(255,255,255,0.9);font-size:16px;}
+.card-content{padding:35px;}
+
+.top-bar{display:flex;justify-content:flex-end;gap:10px;margin-bottom:20px;}
+.dark-toggle{background:#6b7280;color:white;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-size:14px;}
+
+/* Settings Panel */
+.settings-panel{background:#f8fafc;border-radius:20px;padding:20px;margin-bottom:25px;border:1px solid #e2e8f0;}
+body.dark .settings-panel{background:#374151;border-color:#4b5563;}
+.settings-title{font-weight:700;color:#1e3a8a;margin-bottom:15px;font-size:16px;}
+body.dark .settings-title{color:#60a5fa;}
+.checkbox-group{display:flex;gap:20px;flex-wrap:wrap;}
+.checkbox-group label{display:flex;align-items:center;gap:8px;cursor:pointer;color:#374151;}
+body.dark .checkbox-group label{color:#9ca3af;}
+
+/* Stats Panel */
+.stats-panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-bottom:25px;}
+.stat-card{background:#f1f5f9;border-radius:16px;padding:15px;text-align:center;}
+body.dark .stat-card{background:#374151;}
+.stat-card .label{font-size:12px;color:#6b7280;text-transform:uppercase;}
+body.dark .stat-card .label{color:#9ca3af;}
+.stat-card .value{font-size:28px;font-weight:700;color:#1e3a8a;margin-top:5px;}
+body.dark .stat-card .value{color:#60a5fa;}
+
+/* Editor Section */
+.editor-section{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:25px;}
+@media(max-width:768px){.editor-section{grid-template-columns:1fr;}}
+.editor-box{background:#f8fafc;border-radius:20px;padding:15px;border:1px solid #e2e8f0;}
+body.dark .editor-box{background:#374151;border-color:#4b5563;}
+.editor-box h3{color:#1e3a8a;margin-bottom:10px;font-size:16px;}
+body.dark .editor-box h3{color:#60a5fa;}
+textarea{width:100%;padding:15px;border:2px solid #e2e8f0;border-radius:16px;font-family:'Consolas','Monaco',monospace;font-size:13px;line-height:1.5;resize:vertical;background:white;min-height:280px;}
+body.dark textarea{background:#1f2937;border-color:#4b5563;color:#e5e7eb;}
+textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.2);}
+
+/* Button Row */
+.button-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.action-btn{background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border:none;padding:12px 20px;border-radius:12px;font-weight:600;cursor:pointer;transition:0.3s;}
+.action-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+.secondary-btn{background:#6b7280;}
+.secondary-btn:hover{background:#4b5563;}
+
+/* Footer */
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:60px 20px 35px;margin-top:50px;}
+.footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:45px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:20px;font-size:1.1rem;font-weight:600;position:relative;display:inline-block;}
+.footer-col h3::after,.footer-col h4::after{content:'';position:absolute;bottom:-8px;left:0;width:40px;height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:2px;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:6px 0;font-size:0.9rem;transition:0.3s;}
+.footer-col a:hover{color:#60a5fa;transform:translateX(5px);}
+.footer-bottom{text-align:center;padding-top:35px;margin-top:45px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:#64748b;}
+
+.article-section{background:white;border-radius:28px;padding:45px;margin-top:35px;line-height:1.8;color:#374151;}
+body.dark .article-section{background:#1f2937;color:#e5e7eb;}
+.article-section h2{color:#1e3a8a;font-size:28px;margin:30px 0 20px;border-bottom:3px solid #2563eb;display:inline-block;padding-bottom:5px;}
+body.dark .article-section h2{color:#60a5fa;}
+.article-section ul{margin:15px 0 20px 30px;}
+.faq-section{background:#f8fafc;border-radius:20px;padding:30px;margin:30px 0;}
+body.dark .faq-section{background:#374151;}
+.faq-item{margin-bottom:20px;border-bottom:1px solid #e2e8f0;padding-bottom:15px;}
+body.dark .faq-item{border-bottom-color:#4b5563;}
+.faq-question{font-weight:700;color:#1e3a8a;font-size:18px;margin-bottom:10px;}
+body.dark .faq-question{color:#60a5fa;}
+.faq-answer{color:#475569;line-height:1.6;}
+body.dark .faq-answer{color:#9ca3af;}
+.home-link{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;text-decoration:none;border-radius:40px;margin:20px 0;transition:0.3s;}
+.home-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,99,235,0.4);}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo"><a href="index.html">📦 Free Online Tools</a></div>
+<ul class="nav-links">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">ℹ️ About</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="container">
+<div class="tool-card">
+<div class="card-header">
+<h1>📦 HTML Minifier Pro | SEO Code Compressor</h1>
+<p>Compress, clean & optimize HTML code – boost Core Web Vitals and increase SEO ranking.</p>
+</div>
+<div class="card-content">
+<div class="top-bar">
+<button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button>
+</div>
+
+<div class="settings-panel">
+<div class="settings-title">⚙️ Minifier Settings</div>
+<div class="checkbox-group">
+<label><input type="checkbox" id="removeComments" checked> Remove Comments</label>
+<label><input type="checkbox" id="removeWhitespace" checked> Remove Whitespace</label>
+<label><input type="checkbox" id="preserveScripts" checked> Preserve Scripts/Content</label>
+</div>
+</div>
+
+<div class="stats-panel" id="statsPanel" style="display:none;">
+<div class="stat-card"><div class="label">Input Size</div><div class="value" id="inputSize">0 bytes</div></div>
+<div class="stat-card"><div class="label">Minified Size</div><div class="value" id="outputSize">0 bytes</div></div>
+<div class="stat-card"><div class="label">Compression</div><div class="value" id="compression">0%</div></div>
+</div>
+
+<div class="editor-section">
+<div class="editor-box">
+<h3>📝 Input HTML</h3>
+<textarea id="htmlInput" placeholder="Paste your HTML code here..."></textarea>
+</div>
+<div class="editor-box">
+<h3>⚡ Minified + SEO Ready</h3>
+<textarea id="htmlOutput" placeholder="Minified HTML will appear here..." readonly></textarea>
+</div>
+</div>
+
+<div class="button-row">
+<button class="action-btn" id="clearBtn">🗑️ Clear</button>
+<button class="action-btn" id="loadSampleBtn">📋 Load Sample</button>
+<button class="action-btn" id="minifyBtn">🚀 Minify & Optimize SEO</button>
+<button class="action-btn secondary-btn" id="copyBtn">📋 Copy Output</button>
+</div>
+</div>
+</div>
+
+<div class="article-section">
+<h2>📌 What is HTML Minifier?</h2>
+<p><strong>HTML Minifier Pro</strong> compresses HTML code by removing unnecessary whitespace, comments, and line breaks. This reduces file size, improves page load speed, and enhances Core Web Vitals.</p>
+
+<h2>🎯 Why Minification is Critical for SEO</h2>
+<ul>
+<li>Faster Page Speed</li>
+<li>Lower Bounce Rate</li>
+<li>Better Crawl Budget</li>
+<li>Improved Core Web Vitals</li>
+</ul>
+
+<div class="faq-section">
+<h3>❓ Frequently Asked Questions</h3>
+<div class="faq-item"><div class="faq-question">❓ Will minification break my website?</div><div class="faq-answer">No. Our tool preserves all functional code.</div></div>
+<div class="faq-item"><div class="faq-question">❓ Is this tool free?</div><div class="faq-answer">Yes, completely free with unlimited usage.</div></div>
+</div>
+</div>
+
+<div style="text-align:center; margin:40px 0;">
+<a href="index.html" class="home-link">🔘 Back to Home</a>
+</div>
+</div>
+
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-col"><h3>📦 Free Online Tools</h3><p>HTML Minifier Pro – compress HTML for better SEO.</p></div>
+<div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="privacy-policy.html">🔒 Privacy</a></div>
+<div class="footer-col"><h4>⭐ Developer Tools</h4><a href="html-minifier-pro.html">📦 HTML Minifier</a><a href="json-formatter-validator.html">📋 JSON Formatter</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Free Online Tools. All rights reserved.</p></div>
+</footer>
+
+<script>
+// Dark Mode
+const darkToggle = document.getElementById('darkToggle');
+if(darkToggle){
+    darkToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+    });
+}
+
+// DOM Elements
+const htmlInput = document.getElementById('htmlInput');
+const htmlOutput = document.getElementById('htmlOutput');
+const removeComments = document.getElementById('removeComments');
+const removeWhitespace = document.getElementById('removeWhitespace');
+const preserveScripts = document.getElementById('preserveScripts');
+const clearBtn = document.getElementById('clearBtn');
+const loadSampleBtn = document.getElementById('loadSampleBtn');
+const minifyBtn = document.getElementById('minifyBtn');
+const copyBtn = document.getElementById('copyBtn');
+const statsPanel = document.getElementById('statsPanel');
+const inputSizeSpan = document.getElementById('inputSize');
+const outputSizeSpan = document.getElementById('outputSize');
+const compressionSpan = document.getElementById('compression');
+
+// Minify HTML function
+function minifyHTML(html, options) {
+    let result = html;
+    if (options.removeComments) {
+        result = result.replace(/<!--[\s\S]*?-->/g, '');
+    }
+    if (options.removeWhitespace) {
+        result = result.replace(/>\s+</g, '><');
+        result = result.replace(/^\s+|\s+$/g, '');
+        result = result.replace(/\s{2,}/g, ' ');
+        result = result.replace(/\n\s*/g, '');
+        result = result.replace(/\r/g, '');
+    }
+    if (result === '') result = ' ';
+    return result;
+}
+
+// Update stats
+function updateStats(input, output) {
+    const inputBytes = new Blob([input]).size;
+    const outputBytes = new Blob([output]).size;
+    const compressionPercent = inputBytes > 0 ? ((1 - outputBytes / inputBytes) * 100).toFixed(1) : 0;
+    if(inputSizeSpan) inputSizeSpan.textContent = inputBytes + ' bytes';
+    if(outputSizeSpan) outputSizeSpan.textContent = outputBytes + ' bytes';
+    if(compressionSpan) compressionSpan.textContent = compressionPercent + '%';
+    if(statsPanel && inputBytes > 0) statsPanel.style.display = 'grid';
+}
+
+// Minify action
+function minify() {
+    if(!htmlInput) return;
+    const inputHTML = htmlInput.value;
+    if (!inputHTML.trim()) {
+        alert('Please paste HTML code first or click "Load Sample".');
+        return;
+    }
+    const options = {
+        removeComments: removeComments ? removeComments.checked : true,
+        removeWhitespace: removeWhitespace ? removeWhitespace.checked : true,
+        preserveScripts: preserveScripts ? preserveScripts.checked : true
+    };
+    const minified = minifyHTML(inputHTML, options);
+    if(htmlOutput) htmlOutput.value = minified;
+    updateStats(inputHTML, minified);
+    
+    const successMsg = document.createElement('div');
+    successMsg.textContent = '✅ HTML minified successfully!';
+    successMsg.style.cssText = 'position:fixed; bottom:20px; right:20px; background:#10b981; color:white; padding:10px 20px; border-radius:40px; z-index:9999;';
+    document.body.appendChild(successMsg);
+    setTimeout(() => successMsg.remove(), 2000);
+}
+
+// Clear
+function clearAll() {
+    if(htmlInput) htmlInput.value = '';
+    if(htmlOutput) htmlOutput.value = '';
+    if(statsPanel) statsPanel.style.display = 'none';
+    if(inputSizeSpan) inputSizeSpan.textContent = '0 bytes';
+    if(outputSizeSpan) outputSizeSpan.textContent = '0 bytes';
+    if(compressionSpan) compressionSpan.textContent = '0%';
+}
+
+// Load sample
+function loadSample() {
+    if(!htmlInput) return;
+    const sampleHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Test Page</title>
+</head>
+<body>
+    <!-- This comment will be removed -->
+    <h1>Hello Pakistan!</h1>
+    <p>This is a test page with extra spaces.
+        After minification, it will become clean!
+    </p>
+</body>
+</html>`;
+    htmlInput.value = sampleHTML;
+    minify();
+}
+
+// Copy output
+function copyOutput() {
+    if(!htmlOutput) return;
+    const output = htmlOutput.value;
+    if (!output || output === 'Minified HTML will appear here...') {
+        alert('Nothing to copy. Please minify HTML first.');
+        return;
+    }
+    navigator.clipboard.writeText(output).then(() => {
+        alert('Minified HTML copied to clipboard!');
+    }).catch(() => {
+        alert('Could not copy.');
+    });
+}
+
+// Event listeners
+if(clearBtn) clearBtn.addEventListener('click', clearAll);
+if(loadSampleBtn) loadSampleBtn.addEventListener('click', loadSample);
+if(minifyBtn) minifyBtn.addEventListener('click', minify);
+if(copyBtn) copyBtn.addEventListener('click', copyOutput);
+
+// Auto load sample on page load
+window.addEventListener('DOMContentLoaded', () => {
+    loadSample();
+});
+</script>
+</body>
+</html>
