@@ -262,53 +262,51 @@ body.dark .faq-item { background: #374151; }
     </div>
 
   
-<!-- Fun Tools Footer - Professional, No Conflict, Fast -->
+<!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
 <style>
-.ft-section { max-width:1200px; margin:2rem auto; padding:0 1rem; }
-.ft-home { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1e3a8a,#2563eb); color:#fff; padding:10px 24px; border-radius:50px; font-size:1rem; font-weight:600; text-decoration:none; transition:0.2s; box-shadow:0 2px 8px rgba(0,0,0,0.1); margin-bottom:1.5rem; }
-.ft-home:hover { transform:translateY(-2px); background:#1d4ed8; }
-.ft-box { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-radius:28px; padding:1.5rem; border:1px solid #7dd3fc; position:relative; overflow:hidden; }
-.ft-box::before { content:''; position:absolute; inset:0; border-radius:28px; padding:2px; background:linear-gradient(125deg,transparent 0%,rgba(37,99,235,0.4) 40%,rgba(59,130,246,0.8) 60%,transparent 100%); mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity 0.3s; pointer-events:none; }
-.ft-box:hover::before { opacity:1; animation:ftShimmer 0.8s linear infinite; }
-@keyframes ftShimmer { 0% { transform:translateX(-100%); } 100% { transform:translateX(100%); } }
-.ft-title { font-size:1.5rem; font-weight:700; color:#0f3b7a; margin-bottom:1.2rem; border-left:5px solid #2563eb; padding-left:16px; }
-.ft-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:12px; }
-.ft-btn { display:flex; align-items:center; gap:10px; background:#ffffff; border:1px solid #93c5fd; padding:8px 14px; border-radius:60px; text-decoration:none; color:#1e3a8a; font-weight:500; font-size:0.9rem; transition:all 0.2s ease; }
-.ft-btn:hover { background:#2563eb; color:#fff; border-color:#2563eb; transform:translateX(4px); box-shadow:0 4px 10px rgba(37,99,235,0.2); }
-.ft-btn:active { transform:scale(0.97); background:#0f2b5e !important; }
-@media (max-width:640px){ .ft-grid { grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); } .ft-btn { font-size:0.8rem; padding:6px 12px; } }
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
 </style>
 
-<div class="ft-section">
-    <div><a href="https://freeonlinetools203.com/index.html" class="ft-home">🔘 🏠 Back to Home</a></div>
-    <div class="ft-box">
-        <div class="ft-title">🔗 Other Tools in 🎲 Fun & Random Tools</div>
-        <div class="ft-grid">
-            <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="ft-btn">🎡 Spin The Wheel</a>
-            <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="ft-btn">✅❌ Yes/No Wheel</a>
-            <a href="https://freeonlinetools203.com/decision-roulette.html" class="ft-btn">🎲 Decision Roulette</a>
-            <a href="https://freeonlinetools203.com/random-name-picker.html" class="ft-btn">📛 Random Name Picker</a>
-            <a href="https://freeonlinetools203.com/random-number-generator.html" class="ft-btn">🔢 Random Number Generator</a>
-            <a href="https://freeonlinetools203.com/prize-wheel.html" class="ft-btn">🏆 Prize Wheel</a>
-            <a href="https://freeonlinetools203.com/task-spinner.html" class="ft-btn">✅ Task Spinner</a>
-            <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="ft-btn">🎨 Art Roulette</a>
-            <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="ft-btn">🧹 Chore Wheel</a>
-            <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="ft-btn">🌍 Country Picker Wheel</a>
-            <a href="https://freeonlinetools203.com/decision-wheel.html" class="ft-btn">⚖️ Decision Wheel</a>
-            <a href="https://freeonlinetools203.com/dinner-spinner.html" class="ft-btn">🍽️ Dinner Spinner</a>
-            <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="ft-btn">💬 Icebreaker Wheel</a>
-            <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="ft-btn">📖 Random Fact Wheel</a>
-            <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="ft-btn">♈ Zodiac Wheel</a>
-            <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="ft-btn">🔄 Twister Spinner</a>
-            <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="ft-btn">🎭 Truth or Dare Generator</a>
-            <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="ft-btn">✏️ Sketch or Dare</a>
-            <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="ft-btn">🔥 Hot Seat Challenge</a>
-            <a href="https://freeonlinetools203.com/holiday-wheel.html" class="ft-btn">🎄 Holiday Wheel</a>
-            <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="ft-btn">🍕 Food Picker Wheel</a>
-            <a href="https://freeonlinetools203.com/exercise-wheel.html" class="ft-btn">🏋️ Exercise Wheel</a>
-            <a href="https://freeonlinetools203.com/drink-wheel.html" class="ft-btn">🍹 Drink Wheel</a>
-        </div>
+<div class="related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+  <div class="tools-box">
+    <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
+    <div class="tools-grid">
+      <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
+      <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-roulette.html" class="tool-btn">🎲 Decision Roulette</a>
+      <a href="https://freeonlinetools203.com/random-name-picker.html" class="tool-btn">📛 Random Name Picker</a>
+      <a href="https://freeonlinetools203.com/random-number-generator.html" class="tool-btn">🔢 Random Number Generator</a>
+      <a href="https://freeonlinetools203.com/prize-wheel.html" class="tool-btn">🏆 Prize Wheel</a>
+      <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
+      <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
+      <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
+      <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
+      <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
+      <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
+      <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
+      <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
+      <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
+      <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
+      <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
+      <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
+      <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
+      <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="tool-btn">🍕 Food Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/exercise-wheel.html" class="tool-btn">🏋️ Exercise Wheel</a>
+      <a href="https://freeonlinetools203.com/drink-wheel.html" class="tool-btn">🍹 Drink Wheel</a>
     </div>
+  </div>
 </div>
   
 
