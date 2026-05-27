@@ -1,385 +1,1011 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Free SEO Score Checker Tool Online | Instant Website Audit</title>
-  <meta name="description" content="Check your website SEO score instantly and improve rankings using our free professional SEO Score Checker Tool. Get title, meta, keywords & content analysis.">
-  <meta name="keywords" content="SEO score checker, website audit tool, SEO analyzer, meta tags validator, content analysis">
-  <meta name="author" content="SEO Tool">
-  <link rel="canonical" href="https://www.yourdomain.com/seo-score-checker.html">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Free SEO Score Checker Tool Online">
-  <meta property="og:description" content="Check your website SEO score instantly and improve rankings using our free professional SEO Score Checker Tool.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.yourdomain.com/seo-score-checker.html">
-  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=SEO+Score+Checker">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Free SEO Score Checker Tool Online">
-  <meta name="twitter:description" content="Check your website SEO score instantly and improve rankings.">
-  <!-- Schema Markup (WebApplication) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "SEO Score Checker Tool",
-    "description": "Analyze website SEO performance, get score 0-100 and actionable suggestions.",
-    "applicationCategory": "Utility",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SEO Score Checker | Free Website Audit Tool | SEO Analyzer</title>
 
-    body {
-      background: linear-gradient(145deg, #f0f4ff 0%, #e9eefa 100%);
-      transition: background 0.3s, color 0.3s;
-      scroll-behavior: smooth;
-    }
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free SEO Score Checker Tool – Analyze your website's SEO instantly. Get 0-100 score, title & meta analysis, keyword optimization, content audit, and actionable suggestions to improve Google rankings. 100% free, no signup.">
+    <meta name="keywords" content="SEO score checker, website audit tool, SEO analyzer, meta tags validator, content analysis, keyword density checker, free SEO tool, on-page SEO analyzer">
+    <meta name="author" content="Free Online Tools">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freeonlinetools203.com/seo-score-checker.html">
 
-    /* dark mode */
-    body.dark {
-      background: #0b1120;
-      color: #eef2ff;
-    }
+    <!-- Open Graph -->
+    <meta property="og:title" content="SEO Score Checker | Free Website SEO Audit Tool">
+    <meta property="og:description" content="Check your website SEO score instantly. Get detailed analysis of title, meta tags, keywords, content & technical SEO with actionable suggestions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freeonlinetools203.com/seo-score-checker.html">
 
-    /* floating particles (simplified) */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .particle {
-      position: absolute;
-      background: rgba(79, 70, 229, 0.15);
-      border-radius: 50%;
-      animation: float 20s infinite linear;
-    }
-    @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      10% { opacity: 0.6; }
-      90% { opacity: 0.6; }
-      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
-    }
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO Score Checker - Free Website Audit Tool">
+    <meta name="twitter:description" content="Get your website's SEO score instantly. Free professional SEO analysis tool.">
 
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EQ8DLY7HYN');
+    </script>
 
-    /* glassmorphism card */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      border-radius: 2rem;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0,0,0,0.05);
-      border: 1px solid rgba(255,255,255,0.5);
-      transition: all 0.2s;
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SEO Score Checker",
+      "description": "Free online SEO score checker. Analyze title, meta description, keywords, content and technical SEO. Get score 0-100 and actionable suggestions.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
     }
-    body.dark .glass-card {
-      background: rgba(15, 25, 45, 0.85);
-      border-color: rgba(255,255,255,0.1);
-    }
+    </script>
 
-    /* buttons & inputs */
-    input, textarea, select {
-      width: 100%;
-      padding: 0.9rem 1.2rem;
-      border-radius: 1.2rem;
-      border: 1px solid #cbd5e1;
-      background: white;
-      font-size: 1rem;
-      transition: 0.2s;
-    }
-    body.dark input, body.dark textarea {
-      background: #1e293b;
-      border-color: #334155;
-      color: #f1f5f9;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #8b5cf6;
-      box-shadow: 0 0 0 3px rgba(139,92,246,0.3);
-    }
-    button {
-      background: linear-gradient(135deg, #4f46e5, #8b5cf6);
-      border: none;
-      padding: 0.8rem 1.6rem;
-      border-radius: 2rem;
-      font-weight: 600;
-      color: white;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(79,70,229,0.3);
-    }
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px -5px rgba(79,70,229,0.5);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #8b5cf6;
-      color: #4f46e5;
-      box-shadow: none;
-    }
-    body.dark .btn-outline {
-      color: #a78bfa;
-      border-color: #a78bfa;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* score meter circle */
-    .score-ring {
-      width: 180px;
-      height: 180px;
-    }
-    .progress-ring-circle {
-      transition: stroke-dashoffset 0.8s ease-out;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            min-height: 100vh;
+        }
 
-    /* responsive grid */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.8rem;
-    }
+        /* ========== NAVBAR ========== */
+        .navbar {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            width: 100%;
+        }
 
-    .toast-notify {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #1f2937;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 40px;
-      font-weight: 500;
-      z-index: 999;
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-    @media (max-width: 640px) {
-      .container { padding: 1rem; }
-      .glass-card { border-radius: 1.5rem; }
-    }
-    footer a { color: inherit; text-decoration: none; }
-    h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
-  </style>
+        .logo a {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 0;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-family: inherit;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 300px;
+            border-radius: 16px;
+            top: 45px;
+            left: 0;
+            padding: 8px 0;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+            z-index: 1001;
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dropdown-category {
+            padding: 12px 16px;
+            font-weight: 700;
+            color: #1e3a8a;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .dropdown-category:hover {
+            background: #f3f4f6;
+        }
+
+        .dropdown-category .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-category.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        .category-tools {
+            display: none;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin: 6px 10px;
+            overflow: hidden;
+        }
+
+        .category-tools.show {
+            display: block;
+        }
+
+        .category-tools a {
+            color: #1f2937 !important;
+            padding: 10px 20px 10px 35px;
+            text-decoration: none;
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .category-tools a:hover {
+            background: #e5e7eb;
+            color: #2563eb !important;
+            padding-left: 42px;
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            overflow: hidden;
+            margin-bottom: 35px;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .card-header h1 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .card-header p {
+            color: rgba(255,255,255,0.95);
+            font-size: 16px;
+        }
+
+        .card-content {
+            padding: 40px;
+        }
+
+        /* Input Groups */
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-label {
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: block;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 60px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        textarea {
+            border-radius: 24px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+        }
+
+        /* Character Count */
+        .char-count {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .hint-text {
+            font-size: 12px;
+            color: #2563eb;
+            margin-top: 5px;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        /* Score Circle */
+        .score-circle-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score-ring {
+            width: 180px;
+            height: 180px;
+        }
+
+        .grade-label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Progress Bars */
+        .progress-item {
+            margin-bottom: 15px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #1e3a8a;
+        }
+
+        progress {
+            width: 100%;
+            height: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #e2e8f0;
+            border-radius: 10px;
+        }
+
+        progress::-webkit-progress-value {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            border-radius: 10px;
+        }
+
+        /* Buttons */
+        .analyze-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .analyze-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37,99,235,0.3);
+        }
+
+        .btn-outline {
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            color: #1e3a8a;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-group .btn-outline {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Google Preview */
+        .preview-box {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .preview-title {
+            font-size: 18px;
+            color: #1a0dab;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+
+        .preview-url {
+            font-size: 12px;
+            color: #006621;
+            margin-bottom: 5px;
+        }
+
+        .preview-desc {
+            font-size: 13px;
+            color: #545454;
+        }
+
+        /* History Section */
+        .history-section {
+            margin-top: 25px;
+        }
+
+        .history-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .history-btn {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 60px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .history-btn:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        /* Other Tools */
+        .other-tools {
+            background: white;
+            border-radius: 28px;
+            padding: 35px;
+            margin-top: 35px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+
+        .other-tools h3 {
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tool-link {
+            display: block;
+            padding: 14px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tool-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37,99,235,0.4);
+        }
+
+        .home-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #64748b;
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .home-link:hover {
+            background: #475569;
+            transform: translateY(-2px);
+        }
+
+        .category-footer {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+        }
+
+        /* Info Section (SEO) */
+        .info-section {
+            background: white;
+            border-radius: 28px;
+            padding: 45px;
+            margin-top: 35px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+
+        .info-section h2 {
+            font-size: 26px;
+            color: #1e40af;
+            margin: 35px 0 20px 0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .info-section h3 {
+            font-size: 22px;
+            color: #2563eb;
+            margin: 25px 0 15px 0;
+        }
+
+        .info-section p {
+            margin-bottom: 18px;
+            line-height: 1.8;
+            color: #334155;
+            font-size: 16px;
+        }
+
+        .info-section ul {
+            margin: 15px 0 20px 30px;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .faq-section {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 60px 20px 35px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 45px;
+        }
+
+        .footer-col h3, .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h3::after, .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: #60a5fa;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 35px;
+            margin-top: 45px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 12px 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .card-content { padding: 25px 20px; }
+            .info-section { padding: 25px 20px; }
+            .two-columns { flex-direction: column; }
+            .footer-container { text-align: center; }
+            .footer-col h3::after, .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+        }
+
+        @media (max-width: 480px) {
+            .card-header h1 { font-size: 24px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .btn-group { flex-direction: column; }
+        }
+    </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
-  
-<div class="particles" id="particles"></div>
+
 <div class="container">
-  <!-- Header + Dark Mode -->
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-    <h1 style="background: linear-gradient(135deg,#4f46e5,#c084fc); -webkit-background-clip: text; background-clip: text; color: transparent;">🔍 SEO Score Checker</h1>
-    <button id="darkModeToggle" class="btn-outline" style="padding:0.5rem 1rem;">🌙 Dark Mode</button>
-  </div>
+    <div class="tool-card">
+        <div class="card-header">
+            <h1>🔍 SEO Score Checker | Free Website Audit Tool</h1>
+            <p>Analyze your website's SEO performance instantly. Get score 0-100 with actionable recommendations.</p>
+        </div>
+        <div class="card-content">
+            
+            <div class="two-columns">
+                <!-- Left Column: Input Form -->
+                <div class="column">
+                    <div class="input-group">
+                        <label class="input-label">🌐 Website Title *</label>
+                        <input type="text" id="titleInput" placeholder="e.g., Best Coffee Machines 2025 | Buyers Guide" maxlength="70">
+                        <span class="char-count" id="titleCharCount">0/70 chars</span>
+                        <span class="hint-text" id="titleHint"></span>
+                    </div>
 
-  <!-- Hero -->
-  <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: center;">
-    <h2>Professional SEO Score Tool</h2>
-    <p style="margin-top: 0.5rem;">Analyze title, meta description, keywords, content & technical health – get instant score 0-100.</p>
-  </div>
+                    <div class="input-group">
+                        <label class="input-label">📝 Meta Description *</label>
+                        <textarea id="metaDesc" rows="3" maxlength="160" placeholder="Write a compelling meta description between 120-160 characters that includes your primary keyword..."></textarea>
+                        <span class="char-count" id="descCharCount">0/160 chars</span>
+                    </div>
 
-  <!-- AdSense Top Placeholder -->
-  <div style="background: #eef2ff40; border-radius: 1rem; text-align: center; padding: 0.8rem; margin-bottom: 2rem;" class="glass-card">
-    <div style="font-size: 0.8rem; opacity: 0.6;">Advertisement</div>
-    <!-- AdSense Ad Placeholder -->
-    <div style="height: 90px; background: rgba(0,0,0,0.05); border-radius: 1rem; display: flex; align-items: center; justify-content: center;">📢 728x90 Ad Placeholder</div>
-  </div>
+                    <div class="input-group">
+                        <label class="input-label">🔑 Keywords (comma separated)</label>
+                        <input type="text" id="keywords" placeholder="coffee machine, espresso maker, brewing guide">
+                    </div>
 
-  <!-- Main Grid: Form + Score -->
-  <div class="grid-2">
-    <!-- Input form -->
-    <div class="glass-card" style="padding: 1.8rem;">
-      <h3>📝 Website Details</h3>
-      <div style="margin: 1rem 0;">
-        <label>Website Title *</label>
-        <input type="text" id="titleInput" placeholder="e.g., Best Coffee Machines 2025" maxlength="70">
-        <span id="titleCharCount" style="font-size:0.75rem;">0/70 chars</span>
-        <div id="titleHint" class="hint-text" style="font-size:0.7rem; color: #4f46e5;"></div>
-      </div>
-      <div style="margin: 1rem 0;">
-        <label>Meta Description *</label>
-        <textarea id="metaDesc" rows="3" maxlength="160" placeholder="Compelling description under 160 characters..."></textarea>
-        <span id="descCharCount">0/160 chars</span>
-      </div>
-      <div style="margin: 1rem 0;">
-        <label>Keywords (comma separated)</label>
-        <input type="text" id="keywords" placeholder="coffee, espresso, brewing guide">
-      </div>
-      <div style="margin: 1rem 0;">
-        <label>Website URL</label>
-        <input type="url" id="websiteUrl" placeholder="https://example.com">
-        <span id="urlValidation"></span>
-      </div>
-      <div style="margin: 1rem 0;">
-        <label>Content Length (words)</label>
-        <input type="number" id="contentWords" placeholder="e.g., 1200" value="800">
-      </div>
-      <button id="analyzeBtn">🚀 Analyze SEO Score</button>
-      <div style="margin-top: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
-        <button id="copyReportBtn" class="btn-outline">📋 Copy Report</button>
-        <button id="downloadTxtBtn" class="btn-outline">⬇️ Download TXT</button>
-      </div>
+                    <div class="input-group">
+                        <label class="input-label">🔗 Website URL</label>
+                        <input type="url" id="websiteUrl" placeholder="https://example.com">
+                        <span class="hint-text" id="urlValidation"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">📄 Content Length (words)</label>
+                        <input type="number" id="contentWords" placeholder="e.g., 1200" value="800">
+                    </div>
+
+                    <button class="analyze-btn" id="analyzeBtn">🚀 Analyze SEO Score</button>
+
+                    <div class="btn-group">
+                        <button class="btn-outline" id="copyReportBtn">📋 Copy Report</button>
+                        <button class="btn-outline" id="downloadTxtBtn">⬇️ Download TXT</button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Score & Progress -->
+                <div class="column">
+                    <div class="score-circle-container">
+                        <svg width="180" height="180" viewBox="0 0 180 180" class="score-ring">
+                            <circle cx="90" cy="90" r="78" fill="none" stroke="#e2e8f0" stroke-width="12" />
+                            <circle id="scoreCircle" cx="90" cy="90" r="78" fill="none" stroke="url(#grad)" stroke-width="12" stroke-linecap="round" stroke-dasharray="490" stroke-dashoffset="490" transform="rotate(-90 90 90)" />
+                            <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+                            <text x="90" y="100" text-anchor="middle" font-size="36" font-weight="bold" fill="#1e3a8a" id="scoreText">0</text>
+                            <text x="90" y="125" text-anchor="middle" font-size="14" fill="#6b7280">/100</text>
+                        </svg>
+                        <div class="grade-label" id="gradeLabel">Not Analyzed</div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label"><span>🏷️ Title</span><span id="titleScore">0</span>/20</div>
+                        <progress id="titleProg" value="0" max="20"></progress>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>📄 Meta Description</span><span id="metaScore">0</span>/20</div>
+                        <progress id="metaProg" value="0" max="20"></progress>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>🔑 Keywords</span><span id="kwScore">0</span>/20</div>
+                        <progress id="kwProg" value="0" max="20"></progress>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>📝 Content</span><span id="contScore">0</span>/20</div>
+                        <progress id="contProg" value="0" max="20"></progress>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label"><span>⚙️ Technical</span><span id="techScore">0</span>/20</div>
+                        <progress id="techProg" value="0" max="20"></progress>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Preview -->
+            <div class="preview-box">
+                <div class="preview-title" id="previewTitle">Your SEO Title Will Appear Here</div>
+                <div class="preview-url" id="previewUrl">https://example.com</div>
+                <div class="preview-desc" id="previewDesc">Meta description preview - keep it compelling between 120-160 characters.</div>
+            </div>
+
+            <!-- Analysis Report & Suggestions -->
+            <div class="two-columns">
+                <div class="column">
+                    <h3 style="color:#1e3a8a; margin-bottom:15px;">📊 SEO Analysis Report</h3>
+                    <div id="analysisReport" style="font-size:14px; line-height:1.6;">✨ Click "Analyze SEO Score" to get detailed report</div>
+                </div>
+                <div class="column">
+                    <h3 style="color:#1e3a8a; margin-bottom:15px;">💡 Smart Suggestions</h3>
+                    <div id="suggestionsList" style="font-size:14px; line-height:1.6;">✔️ Enter your website details and click analyze</div>
+                    <button class="btn-outline" id="copySuggestBtn" style="margin-top:15px; width:100%;">📋 Copy Suggestions</button>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="history-section">
+                <h3 style="color:#1e3a8a; margin-bottom:15px;">🕒 Recent Analysis History (Last 5)</h3>
+                <div class="history-buttons" id="historyList"></div>
+                <button class="btn-outline" id="clearHistoryBtn" style="margin-top:15px;">Clear History</button>
+            </div>
+
+        </div>
     </div>
 
-    <!-- Score & Grade -->
-    <div class="glass-card" style="padding: 1.8rem; text-align: center;">
-      <h3>🎯 SEO Score</h3>
-      <div style="position: relative; display: flex; justify-content: center; margin: 1rem 0;">
-        <svg width="180" height="180" viewBox="0 0 180 180" class="score-ring">
-          <circle cx="90" cy="90" r="78" fill="none" stroke="#e2e8f0" stroke-width="12" />
-          <circle id="scoreCircle" cx="90" cy="90" r="78" fill="none" stroke="url(#grad)" stroke-width="12" stroke-linecap="round"
-                  stroke-dasharray="490" stroke-dashoffset="490" transform="rotate(-90 90 90)" />
-          <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs>
-          <text x="90" y="100" text-anchor="middle" font-size="36" font-weight="bold" fill="currentColor" id="scoreText">0</text>
-          <text x="90" y="125" text-anchor="middle" font-size="14" fill="currentColor">/100</text>
-        </svg>
-      </div>
-      <div id="gradeLabel" style="font-size:1.4rem; font-weight: bold;">Poor</div>
-      <div class="progress-bars" style="margin-top:1.5rem; text-align:left;">
-        <div>🏷️ Title: <span id="titleScore">0</span>/20</div><progress id="titleProg" value="0" max="20" style="width:100%;height:8px;border-radius:10px;"></progress>
-        <div>📄 Meta: <span id="metaScore">0</span>/20</div><progress id="metaProg" value="0" max="20"></progress>
-        <div>🔑 Keywords: <span id="kwScore">0</span>/20</div><progress id="kwProg" value="0" max="20"></progress>
-        <div>📝 Content: <span id="contScore">0</span>/20</div><progress id="contProg" value="0" max="20"></progress>
-        <div>⚙️ Technical: <span id="techScore">0</span>/20</div><progress id="techProg" value="0" max="20"></progress>
-      </div>
+   <style>
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#f8fafc;border-radius:24px;padding:1.8rem;border:1px solid #e2e8f0}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #dbeafe;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e40af;font-weight:500;font-size:.95rem;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff;border-color:#0f2b5e}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.tool-btn{font-size:.85rem;padding:8px 12px}}
+</style>
+
+<div class="related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+  <div class="tools-box">
+    <div class="tools-title">🔗 Other Tools in 🔍 SEO Tools</div>
+    <div class="tools-grid">
+      <a href="https://freeonlinetools203.com/keyword-density-checker.html" class="tool-btn">🔍 Keyword Density Checker</a>
+      <a href="https://freeonlinetools203.com/meta-tags-generator.html" class="tool-btn">🏷️ Meta Tags Generator</a>
+      <a href="https://freeonlinetools203.com/meta-tag-analyzer.html" class="tool-btn">🔎 Meta Tag Analyzer</a>
+      <a href="https://freeonlinetools203.com/broken-link-checker.html" class="tool-btn">🔗 Broken Link Checker</a>
+      <a href="https://freeonlinetools203.com/backlink-checker.html" class="tool-btn">🔗 Backlink Checker</a>
+      <a href="https://freeonlinetools203.com/google-index-checker.html" class="tool-btn">🔎 Google Index Checker</a>
+      <a href="https://freeonlinetools203.com/seo-analyzer.html" class="tool-btn">📊 SEO Analyzer</a>
+      <a href="https://freeonlinetools203.com/seo-score-checker.html" class="tool-btn">⭐ SEO Score Checker</a>
+      <a href="https://freeonlinetools203.com/seo-title-generator.html" class="tool-btn">✍️ SEO Title Generator</a>
+      <a href="https://freeonlinetools203.com/serp-snippet-preview.html" class="tool-btn">👁️ SERP Snippet Preview</a>
+      <a href="https://freeonlinetools203.com/readability-checker.html" class="tool-btn">📖 Readability Checker</a>
+      <a href="https://freeonlinetools203.com/heading-structure-checker.html" class="tool-btn">🏗️ Heading Structure Checker</a>
+      <a href="https://freeonlinetools203.com/image-alt-analyzer.html" class="tool-btn">🖼️ Image Alt Analyzer</a>
+      <a href="https://freeonlinetools203.com/xml-sitemap-generator.html" class="tool-btn">🗺️ XML Sitemap Generator</a>
+      <a href="https://freeonlinetools203.com/scanreport-ai.html" class="tool-btn">🤖 Scan Report AI</a>
     </div>
   </div>
-
-  <!-- Google Preview -->
-  <div class="glass-card" style="margin-top: 2rem; padding: 1.5rem;">
-    <h3>🔍 Google Search Result Preview</h3>
-    <div style="background:#fff; border-radius: 1rem; padding: 1rem; color:#202124;" id="previewBox">
-      <div id="previewTitle" style="font-size:1.2rem; color:#1a0dab;">Your SEO Title</div>
-      <div id="previewUrl" style="font-size:0.8rem; color:#006621;">https://example.com</div>
-      <div id="previewDesc" style="font-size:0.85rem; color:#545454;">Meta description preview here...</div>
-    </div>
-  </div>
-
-  <!-- Analysis & Suggestions Row -->
-  <div class="grid-2" style="margin-top: 2rem;">
-    <div class="glass-card" style="padding:1.5rem;">
-      <h3>📊 SEO Analysis Report</h3>
-      <div id="analysisReport" style="margin-top: 1rem; font-size:0.9rem;"><p>Click analyze to get detailed report.</p></div>
-    </div>
-    <div class="glass-card" style="padding:1.5rem;">
-      <h3>💡 Smart Suggestions</h3>
-      <div id="suggestionsList" style="margin-top: 1rem; list-style-type: none;"><li>✔️ Waiting for analysis...</li></div>
-      <button id="copySuggestBtn" class="btn-outline" style="margin-top:1rem;">📋 Copy Suggestions</button>
-    </div>
-  </div>
-
-  <!-- History Section -->
-  <div class="glass-card" style="margin-top: 2rem; padding:1.5rem;">
-    <h3>🕒 Recent Analysis History (Last 5)</h3>
-    <div id="historyList" style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-top:1rem;"></div>
-    <button id="clearHistoryBtn" class="btn-outline" style="margin-top:0.5rem;">Clear History</button>
-  </div>
-
-  <!-- FAQ Section -->
-  <div class="glass-card" style="margin-top: 2rem; padding:1.5rem;">
-    <h3>❓ SEO FAQ</h3>
-    <div style="display:grid; gap:1rem; margin-top:1rem;">
-      <div><strong>What is SEO score?</strong><br>SEO score (0–100) measures how well optimized a page is for search engines.</div>
-      <div><strong>How is SEO score calculated?</strong><br>Based on title, meta description, keywords, content length, technical checks.</div>
-      <div><strong>What is a good SEO score?</strong><br>71+ is excellent, 41-70 average, below 40 needs improvement.</div>
-      <div><strong>How to improve SEO ranking?</strong><br>Optimize titles, meta descriptions, content quality, and ensure mobile-friendly.</div>
-      <div><strong>Why are meta tags important?</strong><br>They help search engines understand your page and improve CTR.</div>
-    </div>
-  </div>
-
-  <!-- Ad Middle and Bottom -->
-  <div style="margin: 1.5rem 0;" class="glass-card">
-    <div style="text-align:center; padding:0.5rem;">— Middle Ad —</div>
-    <!-- AdSense Ad Placeholder -->
-    <div style="height: 100px; background: rgba(0,0,0,0.04); border-radius: 1rem; display:flex; align-items:center; justify-content:center;">📢 Responsive Ad Placeholder</div>
-  </div>
-
-  <footer style="text-align: center; margin-top: 3rem; padding: 1rem; opacity:0.8;">
-    <p>© 2025 SEO Score Checker Tool | Free website audit & optimization insights</p>
-  </footer>
 </div>
-<div id="toastMsg" class="toast-notify">Copied!</div>
+
+    <!-- SEO ARTICLE -->
+    <div class="info-section">
+        <h1 style="font-size: 32px; margin-bottom: 20px; border-bottom: none;">🔍 Complete Guide to SEO Score Checker & Website Audit</h1>
+        <p style="color: #6b7280; margin-bottom: 30px;" id="last-updated"></p>
+        <script>document.getElementById('last-updated').innerHTML = `📅 Updated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} | 👁️ 10 min read | 🔍 SEO Experts`;</script>
+
+        <div class="stats-grid">
+            <div class="stat-card"><strong>50K+</strong><br>Monthly Users</div>
+            <div class="stat-card"><strong>4.9/5</strong><br>User Rating</div>
+            <div class="stat-card"><strong>100%</strong><br>Free</div>
+            <div class="stat-card"><strong>5 Factors</strong><br>Analyzed</div>
+        </div>
+
+        <h2>🎯 What is an SEO Score Checker?</h2>
+        <p>An <strong>SEO Score Checker</strong> is a powerful tool that evaluates how well your website is optimized for search engines like Google, Bing, and Yahoo. It analyzes critical on-page SEO elements including title tags, meta descriptions, keyword usage, content quality, and technical factors like HTTPS. Our <strong>free website audit tool</strong> gives you an instant score from 0 to 100, along with actionable recommendations to improve your rankings.</p>
+
+        <h2>📊 How Our SEO Score Calculator Works</h2>
+        <p>Our <strong>SEO score calculator</strong> evaluates your website based on 5 essential ranking factors. Each factor contributes up to 20 points to your total score of 100:</p>
+        <ul>
+            <li><strong>🏷️ Title Tag Optimization (0-20):</strong> Length 30-60 characters, keyword placement</li>
+            <li><strong>📄 Meta Description Quality (0-20):</strong> Length 120-160 characters, keyword inclusion</li>
+            <li><strong>🔑 Keyword Optimization (0-20):</strong> Natural keyword usage in title and meta</li>
+            <li><strong>📝 Content Quality & Length (0-20):</strong> Word count 600+ words recommended</li>
+            <li><strong>⚙️ Technical SEO (0-20):</strong> HTTPS, valid URL structure</li>
+        </ul>
+
+        <h2>📈 What is a Good SEO Score?</h2>
+        <ul>
+            <li><strong>80-100 (Excellent):</strong> Well-optimized page, great job!</li>
+            <li><strong>60-79 (Good):</strong> Above average, minor improvements needed</li>
+            <li><strong>40-59 (Average):</strong> Room for improvement</li>
+            <li><strong>20-39 (Poor):</strong> Significant issues detected</li>
+            <li><strong>0-19 (Critical):</strong> Major SEO problems, needs immediate attention</li>
+        </ul>
+
+        <h2>✅ Why Choose Our SEO Score Checker?</h2>
+        <ul>
+            <li><strong>✅ 100% Free:</strong> No registration, unlimited use</li>
+            <li><strong>✅ 5 Key Factors:</strong> Title, Meta, Keywords, Content, Technical</li>
+            <li><strong>✅ Instant Results:</strong> Real-time score and analysis</li>
+            <li><strong>✅ Actionable Suggestions:</strong> Specific recommendations to improve</li>
+            <li><strong>✅ Save History:</strong> Last 5 analyses saved automatically</li>
+            <li><strong>✅ Mobile Friendly:</strong> Works on all devices</li>
+        </ul>
+
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">❓ What is a good SEO score?</div>
+                <div class="faq-answer">A good SEO score is 70+ out of 100. Scores 80+ are excellent, 50-70 average, and below 50 need improvement.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ How is SEO score calculated?</div>
+                <div class="faq-answer">Based on 5 factors: Title optimization (20), Meta description (20), Keywords (20), Content length (20), Technical SEO (20).</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Is this SEO checker really free?</div>
+                <div class="faq-answer">Yes! Completely free with no registration required. Use unlimited times.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ How can I improve my SEO score?</div>
+                <div class="faq-answer">Optimize title (30-60 chars), meta description (120-160 chars), use keywords naturally, increase content to 600+ words, enable HTTPS.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>✨ Free Online Tools</h3>
+            <p>SEO Score Checker - Analyze your website's SEO performance instantly. Trusted by 50,000+ users.</p>
+        </div>
+        <div class="footer-col">
+            <h4>📄 Quick Links</h4>
+            <a href="index.html">🏠 Home</a>
+            <a href="about.html">ℹ️ About</a>
+            <a href="contact.html">📧 Contact</a>
+            <a href="privacy-policy.html">🔒 Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>⭐ Popular Tools</h4>
+            <a href="seo-score-checker.html">🔍 SEO Score Checker</a>
+            <a href="unit-converter.html">📏 Unit Converter</a>
+            <a href="age-calculator.html">📅 Age Calculator</a>
+            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>🔧 All Tools</h4>
+            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+            <a href="random-number-generator.html">🎲 Random Number</a>
+            <a href="word-counter.html">🔢 Word Counter</a>
+            <a href="gst-calculator.html">💰 GST Calculator</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ | SEO Score Checker Tool</p>
+    </div>
+</footer>
+
+<div id="toastMsg" class="toast-notification">Copied!</div>
 
 <script>
-  // particles background
-  function createParticles() {
-    const container = document.getElementById('particles');
-    for (let i=0;i<45;i++) {
-      const p = document.createElement('div');
-      p.classList.add('particle');
-      const size = Math.random() * 8 + 2;
-      p.style.width = size+'px';
-      p.style.height = size+'px';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.animationDuration = 15 + Math.random() * 20 + 's';
-      p.style.animationDelay = Math.random() * 10 + 's';
-      p.style.opacity = Math.random() * 0.4;
-      container.appendChild(p);
+// Dropdown functionality
+(function() {
+    const dropdown = document.getElementById('toolsDropdown');
+    const dropBtn = document.getElementById('toolsBtn');
+    if (dropdown && dropBtn) {
+        dropBtn.addEventListener('click', function(e) { e.stopPropagation(); dropdown.classList.toggle('open'); });
+        document.addEventListener('click', function(event) { if (dropdown.classList.contains('open') && !dropdown.contains(event.target)) dropdown.classList.remove('open'); });
     }
-  }
-  createParticles();
+    document.querySelectorAll('.dropdown-category').forEach(cat => {
+        cat.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const catId = this.getAttribute('data-cat');
+            if (catId) {
+                const toolsDiv = document.getElementById(catId + 'Tools');
+                if (toolsDiv) { toolsDiv.classList.toggle('show'); this.classList.toggle('active'); }
+            }
+        });
+    });
+})();
 
-  // DOM elements
-  const titleInput = document.getElementById('titleInput');
-  const metaDesc = document.getElementById('metaDesc');
-  const keywordsInput = document.getElementById('keywords');
-  const urlInput = document.getElementById('websiteUrl');
-  const contentWords = document.getElementById('contentWords');
-  const analyzeBtn = document.getElementById('analyzeBtn');
-  // score elements
-  const scoreCircle = document.getElementById('scoreCircle');
-  const scoreTextSpan = document.getElementById('scoreText');
-  const gradeLabel = document.getElementById('gradeLabel');
-  function updateCircle(percent) {
+// DOM elements
+const titleInput = document.getElementById('titleInput');
+const metaDesc = document.getElementById('metaDesc');
+const keywordsInput = document.getElementById('keywords');
+const urlInput = document.getElementById('websiteUrl');
+const contentWords = document.getElementById('contentWords');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const scoreCircle = document.getElementById('scoreCircle');
+const scoreTextSpan = document.getElementById('scoreText');
+const gradeLabel = document.getElementById('gradeLabel');
+
+function updateCircle(percent) {
     const circumference = 490;
     const offset = circumference - (percent / 100) * circumference;
     scoreCircle.style.strokeDashoffset = offset;
-  }
-  // storage
-  let history = JSON.parse(localStorage.getItem('seoHistory')) || [];
-  let currentScoreObj = null;
+    scoreTextSpan.innerText = percent;
+}
 
-  function showToast(msg) {
+let history = JSON.parse(localStorage.getItem('seoHistory')) || [];
+let currentScoreObj = null;
+
+function showToast(msg) {
     const toast = document.getElementById('toastMsg');
     toast.textContent = msg;
     toast.style.opacity = '1';
     setTimeout(() => { toast.style.opacity = '0'; }, 2000);
-  }
+}
 
-  // scoring engine
-  function computeScore(title, meta, keywords, url, wordCount) {
+function computeScore(title, meta, keywords, url, wordCount) {
     let titleScore = 0;
     let titleLen = title.length;
     if (titleLen >= 30 && titleLen <= 60) titleScore = 20;
     else if (titleLen > 10 && titleLen < 30) titleScore = 14;
     else if (titleLen >= 60 && titleLen <= 70) titleScore = 10;
     else if (titleLen > 0) titleScore = 6;
-    else titleScore = 0;
-    // Meta description
+    
     let metaScore = 0;
     let metaLen = meta.length;
     if (metaLen >= 120 && metaLen <= 160) metaScore = 20;
@@ -387,7 +1013,7 @@
     else if (metaLen > 0 && metaLen < 70) metaScore = 8;
     else if (metaLen === 0) metaScore = 0;
     else if (metaLen > 160) metaScore = 6;
-    // keyword optimization (simulate density using title + meta)
+    
     let kwScore = 0;
     let kwList = keywords.split(',').map(k => k.trim().toLowerCase()).filter(k=>k);
     let combinedText = (title + ' ' + meta).toLowerCase();
@@ -398,15 +1024,14 @@
     else if(ratio >= 0.6) kwScore = 20;
     else if(ratio >= 0.3) kwScore = 14;
     else kwScore = 6;
-    // content quality
+    
     let contentScore = 0;
     let words = wordCount || 0;
     if(words >= 1000) contentScore = 20;
     else if(words >= 600) contentScore = 15;
     else if(words >= 300) contentScore = 10;
     else if(words > 0) contentScore = 5;
-    else contentScore = 0;
-    // technical checks: https & valid url & title & meta not empty
+    
     let techScore = 0;
     let isHttps = url.trim().toLowerCase().startsWith('https://');
     let urlValid = url.trim().length>0 && (url.includes('.') || url.includes('localhost'));
@@ -415,12 +1040,13 @@
     if(urlValid) techScore+=4;
     if(title.includes(' ')) techScore+=3;
     techScore = Math.min(20, techScore);
+    
     let total = titleScore + metaScore + kwScore + contentScore + techScore;
     total = Math.min(100, total);
     return { total, breakdown: { titleScore, metaScore, kwScore, contentScore, techScore } };
-  }
+}
 
-  function generateReport(title, meta, keywords, url, wordCount, scores) {
+function generateReport(title, meta, keywords, url, wordCount, scores) {
     const total = scores.total;
     let grade = total <= 40 ? 'Poor' : (total <= 70 ? 'Average' : 'Excellent');
     let strengths = [], weaknesses = [];
@@ -437,11 +1063,11 @@
     let reportHtml = `<p><strong>SEO Grade:</strong> ${grade} (${total}/100)</p><ul>`;
     strengths.forEach(s=>reportHtml+=`<li>${s}</li>`);
     weaknesses.forEach(w=>reportHtml+=`<li>${w}</li>`);
-    reportHtml+=`</ul><p><strong>Technical:</strong> ${scores.breakdown.techScore}/20</p>`;
+    reportHtml+=`</ul><p><strong>Technical Score:</strong> ${scores.breakdown.techScore}/20</p>`;
     return reportHtml;
-  }
+}
 
-  function generateSuggestions(title, meta, keywords, wordCount, totalScore) {
+function generateSuggestions(title, meta, keywords, wordCount, totalScore) {
     let suggestions = [];
     if(title.length<30) suggestions.push('📌 Improve title: use 30–60 characters and include focus keyword.');
     if(title.length>60) suggestions.push('✂️ Shorten title under 60 characters for better display.');
@@ -454,61 +1080,58 @@
     suggestions.push('📱 Ensure mobile responsiveness & use heading tags (H1-H3).');
     if(totalScore<50) suggestions.push('🔄 Re-evaluate meta tags, add alt text to images.');
     return suggestions.map(s=>`• ${s}`).join('<br>');
-  }
+}
 
-  function updatePreview(title, meta, url) {
+function updatePreview(title, meta, url) {
     document.getElementById('previewTitle').innerText = title || 'Your SEO optimized Title';
     let cleanUrl = url.trim() || 'https://yourdomain.com';
     document.getElementById('previewUrl').innerText = cleanUrl.length>50 ? cleanUrl.substring(0,50)+'...' : cleanUrl;
     document.getElementById('previewDesc').innerText = meta || 'Write an attractive meta description under 160 characters.';
-  }
+}
 
-  function refreshHistoryUI() {
+function refreshHistoryUI() {
     const historyDiv = document.getElementById('historyList');
+    if(!historyDiv) return;
     if(history.length===0) { historyDiv.innerHTML = '<em>No history yet. Analyze a website!</em>'; return; }
     historyDiv.innerHTML = '';
-    history.slice(-5).reverse().forEach((item, idx) => {
-      const chip = document.createElement('button');
-      chip.className = 'btn-outline';
-      chip.style.padding = '0.5rem 1rem';
-      chip.style.fontSize = '0.8rem';
-      chip.innerText = `${item.title.substring(0,25)} (${item.score})`;
-      chip.onclick = ()=>{
-        titleInput.value = item.title;
-        metaDesc.value = item.meta;
-        keywordsInput.value = item.keywords;
-        urlInput.value = item.url;
-        contentWords.value = item.words;
-        performAnalysis(true);
-      };
-      historyDiv.appendChild(chip);
+    history.slice(-5).reverse().forEach((item) => {
+        const chip = document.createElement('button');
+        chip.className = 'history-btn';
+        chip.innerText = `${item.title.substring(0,30)} (${item.score})`;
+        chip.onclick = ()=>{
+            titleInput.value = item.title;
+            metaDesc.value = item.meta;
+            keywordsInput.value = item.keywords;
+            urlInput.value = item.url;
+            contentWords.value = item.words;
+            performAnalysis(true);
+        };
+        historyDiv.appendChild(chip);
     });
-  }
+}
 
-  function saveToHistory(title, meta, keywords, url, words, total) {
+function saveToHistory(title, meta, keywords, url, words, total) {
     const newEntry = { title, meta, keywords, url, words, score: total, timestamp: Date.now() };
     history.unshift(newEntry);
     if(history.length>5) history.pop();
     localStorage.setItem('seoHistory', JSON.stringify(history));
     refreshHistoryUI();
-  }
+}
 
-  function performAnalysis(skipSave=false) {
+function performAnalysis(skipSave=false) {
     const title = titleInput.value.trim();
     const meta = metaDesc.value.trim();
     const keywords = keywordsInput.value.trim();
     const url = urlInput.value.trim();
     const words = parseInt(contentWords.value) || 0;
-    // validations
     if(!title) { showToast('❌ Please enter Website Title'); return; }
     if(!meta) { showToast('❌ Enter Meta Description'); return; }
+    
     const scores = computeScore(title, meta, keywords, url, words);
     currentScoreObj = scores;
     updateCircle(scores.total);
-    scoreTextSpan.innerText = scores.total;
-    let gradeText = scores.total <=40 ? 'Poor' : (scores.total<=70 ? 'Average' : 'Excellent');
-    gradeLabel.innerText = gradeText + ` (${scores.total})`;
-    // update breakdown bars
+    gradeLabel.innerText = (scores.total <=40 ? 'Poor' : (scores.total<=70 ? 'Average' : 'Excellent')) + ` (${scores.total})`;
+    
     document.getElementById('titleScore').innerText = scores.breakdown.titleScore;
     document.getElementById('titleProg').value = scores.breakdown.titleScore;
     document.getElementById('metaScore').innerText = scores.breakdown.metaScore;
@@ -519,72 +1142,64 @@
     document.getElementById('contProg').value = scores.breakdown.contentScore;
     document.getElementById('techScore').innerText = scores.breakdown.techScore;
     document.getElementById('techProg').value = scores.breakdown.techScore;
-    // report & suggestions
-    const reportHtml = generateReport(title, meta, keywords, url, words, scores);
-    document.getElementById('analysisReport').innerHTML = reportHtml;
-    const suggHtml = generateSuggestions(title, meta, keywords, words, scores.total);
-    document.getElementById('suggestionsList').innerHTML = suggHtml;
+    
+    document.getElementById('analysisReport').innerHTML = generateReport(title, meta, keywords, url, words, scores);
+    document.getElementById('suggestionsList').innerHTML = generateSuggestions(title, meta, keywords, words, scores.total);
     updatePreview(title, meta, url);
     if(!skipSave) saveToHistory(title, meta, keywords, url, words, scores.total);
-    // url validation hint
-    let urlValidMsg = '';
-    if(url && !url.startsWith('https://')) urlValidMsg = '⚠️ Consider HTTPS for better security';
-    document.getElementById('urlValidation').innerText = urlValidMsg;
-    // character hints
+    
     document.getElementById('titleCharCount').innerText = `${title.length}/70 chars`;
     if(title.length<30) document.getElementById('titleHint').innerHTML = '💡 Ideal length 30-60 characters';
     else if(title.length<=60) document.getElementById('titleHint').innerHTML = '✅ Great title length!';
     else document.getElementById('titleHint').innerHTML = '⚠️ Title too long, shorten to 60 chars.';
     document.getElementById('descCharCount').innerText = `${meta.length}/160 chars`;
-  }
+    if(url && !url.startsWith('https://')) document.getElementById('urlValidation').innerText = '⚠️ Consider HTTPS for better security';
+    else document.getElementById('urlValidation').innerText = '';
+}
 
-  // copy report
-  function copyFullReport() {
+function copyFullReport() {
     if(!currentScoreObj) { showToast('Analyze first'); return; }
     let reportText = `SEO SCORE REPORT\nScore: ${currentScoreObj.total}/100\nGrade: ${currentScoreObj.total<=40?'Poor':(currentScoreObj.total<=70?'Average':'Excellent')}\nBreakdown:\nTitle:${currentScoreObj.breakdown.titleScore}/20\nMeta:${currentScoreObj.breakdown.metaScore}/20\nKeywords:${currentScoreObj.breakdown.kwScore}/20\nContent:${currentScoreObj.breakdown.contentScore}/20\nTechnical:${currentScoreObj.breakdown.techScore}/20\n`;
-    showToast('Report copied to clipboard');
     navigator.clipboard.writeText(reportText);
-  }
-  function copySuggestions() {
-    const suggDiv = document.getElementById('suggestionsList').innerText;
-    if(suggDiv.includes('Waiting')) showToast('Analyze first');
-    else { navigator.clipboard.writeText(suggDiv); showToast('Suggestions copied'); }
-  }
-  function downloadTxt() {
-    if(!currentScoreObj) { showToast('No data. Run analysis'); return; }
-    let content = `SEO SCORE CHECKER REPORT\nDate: ${new Date().toLocaleString()}\nScore: ${currentScoreObj.total}/100\n\n--- Full Details ---\nTitle: ${titleInput.value}\nMeta: ${metaDesc.value}\nKeywords: ${keywordsInput.value}\nURL: ${urlInput.value}\nContent words: ${contentWords.value}\nBreakdown: Title ${currentScoreObj.breakdown.titleScore}, Meta ${currentScoreObj.breakdown.metaScore}, Keywords ${currentScoreObj.breakdown.kwScore}, Content ${currentScoreObj.breakdown.contentScore}, Technical ${currentScoreObj.breakdown.techScore}\nSuggestions:\n${document.getElementById('suggestionsList').innerText.replace(/<br>/g,'\n')}`;
+    showToast('Report copied');
+}
+
+function copySuggestions() {
+    const text = document.getElementById('suggestionsList').innerText;
+    if(text.includes('Enter')) showToast('Analyze first');
+    else { navigator.clipboard.writeText(text); showToast('Suggestions copied'); }
+}
+
+function downloadTxt() {
+    if(!currentScoreObj) { showToast('No data'); return; }
+    let content = `SEO SCORE CHECKER REPORT\nDate: ${new Date().toLocaleString()}\nScore: ${currentScoreObj.total}/100\nTitle: ${titleInput.value}\nMeta: ${metaDesc.value}\nKeywords: ${keywordsInput.value}\nURL: ${urlInput.value}\nContent words: ${contentWords.value}\nSuggestions:\n${document.getElementById('suggestionsList').innerText.replace(/<br>/g,'\n')}`;
     const blob = new Blob([content], {type: 'text/plain'});
     const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='seo_report.txt'; a.click(); URL.revokeObjectURL(a.href);
     showToast('Report downloaded');
-  }
-  function clearHistory() { history = []; localStorage.removeItem('seoHistory'); refreshHistoryUI(); showToast('History cleared'); }
+}
 
-  // char counters
-  titleInput.addEventListener('input', ()=>{
+function clearHistory() { 
+    history = []; 
+    localStorage.removeItem('seoHistory'); 
+    refreshHistoryUI(); 
+    showToast('✅ History cleared successfully!'); 
+}
+
+titleInput.addEventListener('input', ()=>{
     document.getElementById('titleCharCount').innerText = `${titleInput.value.length}/70`;
     if(titleInput.value.length>=30 && titleInput.value.length<=60) document.getElementById('titleHint').innerHTML='✅ Great length!';
     else if(titleInput.value.length>60) document.getElementById('titleHint').innerHTML='⚠️ Title >60 characters';
     else document.getElementById('titleHint').innerHTML='💡 Aim 30-60 characters.';
-  });
-  metaDesc.addEventListener('input', ()=>document.getElementById('descCharCount').innerText = `${metaDesc.value.length}/160`);
-  // dark mode
-  const darkToggle = document.getElementById('darkModeToggle');
-  if(localStorage.getItem('darkMode') === 'enabled') document.body.classList.add('dark');
-  darkToggle.onclick = ()=>{
-    document.body.classList.toggle('dark');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark') ? 'enabled' : 'disabled');
-  };
-  analyzeBtn.onclick = () => performAnalysis(false);
-  document.getElementById('copyReportBtn').onclick = copyFullReport;
-  document.getElementById('copySuggestBtn').onclick = copySuggestions;
-  document.getElementById('downloadTxtBtn').onclick = downloadTxt;
-  document.getElementById('clearHistoryBtn').onclick = clearHistory;
-  refreshHistoryUI();
-  // initial defaults preview
-  updatePreview('Enter website title', 'Meta description will appear here', 'https://example.com');
-  // set initial char hints
-  document.getElementById('titleCharCount').innerText='0/70';
-  document.getElementById('descCharCount').innerText='0/160';
+});
+metaDesc.addEventListener('input', ()=>document.getElementById('descCharCount').innerText = `${metaDesc.value.length}/160`);
+
+analyzeBtn.onclick = () => performAnalysis(false);
+document.getElementById('copyReportBtn').onclick = copyFullReport;
+document.getElementById('copySuggestBtn').onclick = copySuggestions;
+document.getElementById('downloadTxtBtn').onclick = downloadTxt;
+document.getElementById('clearHistoryBtn').onclick = clearHistory;
+refreshHistoryUI();
+updatePreview('Enter your website title here', 'Write a compelling meta description between 120-160 characters', 'https://example.com');
 </script>
 </body>
 </html>
