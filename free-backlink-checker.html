@@ -114,7 +114,6 @@ body.dark .faq-question{color:#60a5fa;}
 @media(max-width:768px){.footer-container{grid-template-columns:1fr;text-align:center;gap:30px;}.footer-col h3::after,.footer-col h4::after{left:50%;transform:translateX(-50%);}.footer-col a{display:inline-block;margin:0 8px;}}
 @media(max-width:768px){.card-content{padding:25px 20px;}.input-group{flex-direction:column;}.summary-cards{grid-template-columns:repeat(2,1fr);}.article-section{padding:25px 20px;}}
 </style>
-<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
 
@@ -131,7 +130,8 @@ body.dark .faq-question{color:#60a5fa;}
 
 <div class="input-section">
 <div class="input-group">
-<input type="text" id="urlInput" placeholder="Enter website URL or domain (e.g., example.com)" value="freeonlinetools203.com">
+<!-- ========== FIXED: "value" ATTRIBUTE HATAYA GAYA HAI ========== -->
+<input type="text" id="urlInput" placeholder="Enter website URL or domain (e.g., example.com)">
 <button class="analyze-btn" id="analyzeBtn">🔍 Check Backlinks & Analyze</button>
 </div>
 <p style="font-size:12px; color:#6b7280; margin-top:10px;">💡 Enter domain name without protocol (example.com) or with protocol (https://example.com)</p>
@@ -156,20 +156,6 @@ body.dark .faq-question{color:#60a5fa;}
 </div>
 
 <!-- ========== RELATED TOOLS SECTION ========== -->
-<style>
-.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
-.btn-home:hover{transform:translateY(-2px);background:#2563eb}
-.btn-home:active{transform:scale(.97);background:#1d4ed8}
-.tools-box{background:#f8fafc;border-radius:24px;padding:1.8rem;border:1px solid #e2e8f0}
-.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #dbeafe;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e40af;font-weight:500;font-size:.95rem;transition:background .2s,color .2s,border-color .2s,transform .15s}
-.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
-.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff;border-color:#0f2b5e}
-@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.tool-btn{font-size:.85rem;padding:8px 12px}}
-</style>
-
 <div class="related-section">
   <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
   <div class="tools-box">
@@ -208,19 +194,19 @@ body.dark .faq-question{color:#60a5fa;}
 </div>
 
 <h2>🔗 What is a Backlink Checker?</h2>
-<p>A <strong>free backlink checker</strong> is an essential SEO tool that analyzes and displays all external hyperlinks (backlinks) pointing to a specific website or webpage. Backlinks are one of Google's top three ranking factors – websites with high-quality backlinks from authoritative domains consistently rank higher in search results. Our <strong>backlink analysis tool</strong> provides instant insights into any website's link profile, helping you understand your own SEO performance and spy on competitors' strategies.</p>
+<p>A <strong>free backlink checker</strong> is an essential SEO tool that analyzes and displays all external hyperlinks (backlinks) pointing to a specific website or webpage. Backlinks are one of Google's top three ranking factors – websites with high-quality backlinks from authoritative domains consistently rank higher in search results.</p>
 
 <h2>📈 Why Backlinks Are Critical for SEO</h2>
 <p>Backlinks serve as "votes of confidence" from other websites. When authoritative sites link to your content, search engines interpret this as a signal that your content is valuable, trustworthy, and deserves higher rankings.</p>
 
 <h3>1. Increase Domain Authority (DA)</h3>
-<p><strong>Domain Authority (DA)</strong> is a search engine ranking score that predicts how well a website will rank. Scores range from 1 to 100, with higher scores indicating greater ranking ability. Backlinks from high-DA websites (scores above 50) are significantly more valuable.</p>
+<p><strong>Domain Authority (DA)</strong> is a search engine ranking score that predicts how well a website will rank. Scores range from 1 to 100.</p>
 
 <h3>2. Drive Referral Traffic</h3>
-<p>Quality backlinks don't just help SEO – they send direct referral traffic. When someone clicks a link from another website to yours, that's a potential customer who discovered you through trusted content.</p>
+<p>Quality backlinks send direct referral traffic to your website.</p>
 
 <h3>3. Faster Indexing</h3>
-<p>Search engines discover new pages primarily through links. Quality backlinks help Google's crawlers find and index your content faster, especially for new websites.</p>
+<p>Search engines discover new pages primarily through links.</p>
 
 <h2>🎯 How to Use Our Free Backlink Checker Tool</h2>
 <ul style="margin: 15px 0 15px 25px;">
@@ -231,17 +217,16 @@ body.dark .faq-question{color:#60a5fa;}
 </ul>
 
 <h2>📊 Understanding Backlink Metrics</h2>
-<p><strong>Domain Authority (DA):</strong> Scores range from 1-100. New websites typically start below 20, while established authority sites like Wikipedia have scores above 90.</p>
-<p><strong>Total Backlinks vs Referring Domains:</strong> Total backlinks count every individual link. Referring domains count unique websites linking to you. More referring domains is better than many links from one source.</p>
+<p><strong>Domain Authority (DA):</strong> Scores range from 1-100. 30+ is decent, 50+ is good, 70+ is excellent.</p>
+<p><strong>Total Backlinks vs Referring Domains:</strong> Total backlinks count every individual link. Referring domains count unique websites linking to you.</p>
 <p><strong>Dofollow vs Nofollow Links:</strong> Dofollow links pass SEO value. Nofollow links don't pass authority. A healthy profile has 60-80% dofollow links.</p>
 
 <h2>🛠️ How to Build High-Quality Backlinks</h2>
 <ul style="margin: 15px 0 15px 25px;">
-<li><strong>Guest Posting:</strong> Write valuable content for reputable websites in your niche</li>
-<li><strong>Create Linkable Assets:</strong> Develop comprehensive guides, original research, infographics</li>
-<li><strong>Broken Link Building:</strong> Find broken links on relevant websites and suggest your content</li>
-<li><strong>HARO:</strong> Respond to journalist queries to earn high-authority backlinks</li>
-<li><strong>Skyscraper Technique:</strong> Create better content than existing popular pieces</li>
+<li><strong>Guest Posting:</strong> Write valuable content for reputable websites</li>
+<li><strong>Create Linkable Assets:</strong> Develop comprehensive guides, original research</li>
+<li><strong>Broken Link Building:</strong> Find broken links and suggest your content</li>
+<li><strong>HARO:</strong> Respond to journalist queries for high-authority backlinks</li>
 </ul>
 
 <div class="faq-item"><div class="faq-question">❓ Is this backlink checker really free?</div><p>Yes, completely free. No registration, no credit card, no API key required.</p></div>
@@ -438,12 +423,8 @@ document.getElementById('urlInput').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') analyzeBacklinks();
 });
 
-// Auto-run on page load with default domain
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        analyzeBacklinks();
-    }, 500);
-});
+// ========== FIXED: AUTO-RUN REMOVED ==========
+// User ko khud URL daalni hogi aur button click karna hoga
 </script>
 </body>
 </html>
