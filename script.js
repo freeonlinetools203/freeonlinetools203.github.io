@@ -32,8 +32,8 @@ const toolsDatabase = {
         "XML Sitemap Generator",
         "Ultrasound Scanner"
     ]
-},
-   catHash: {
+  },
+  catHash: {
     name: "📱 Social Media Hashtag Tools",
     tools: [
         "Instagram Hashtag Generator",
@@ -51,44 +51,44 @@ const toolsDatabase = {
         "YouTube Hashtag Generator",
         "Social Media Caption Generator"
     ]
-},
-    catPreg: {
-        name: "🐾 Animal Pregnancy Tools",
-        tools: ["Dog Pregnancy Calculator","Cat Pregnancy Calculator","Cow Pregnancy Calculator","Rabbit Pregnancy Calculator","Goat Pregnancy Calculator","Horse Pregnancy Calculator","Sheep Pregnancy Calculator","Pig Pregnancy Calculator"]
-    },
-    catDev: {
-        name: "🔐 Developer & Security Tools",
-        tools: ["MD5 Hash Generator","SHA-256 Hash Generator","SHA-1 Hash Generator","Base64 Encoder/Decoder","URL Encoder/Decoder","HTML Encoder/Decoder"]
-    },
-    catColor: {
-        name: "🎨 Color Tools",
-        tools: ["Color Palette Generator","Color Shades Generator","Color Gradient Maker","Color Contrast Checker","Color Name Finder","Random Color Picker"]
-    },
-    catPop: {
-        name: "📊 Popular Calculators",
-        tools: ["Unit Converter","Age Calculator","Age Difference Calculator","Discount Calculator","Profit & Loss Calculator","GPA Calculator","GST Calculator","Percentage Calculator","Date Calculator","QR Code Generator","YouTube Thumbnail Downloader","Currency Converter"]
-    },
-    catHealth: {
-        name: "🏃‍♂️ Health & Fitness",
-        tools: ["BMI Calculator","BMR Calculator","Calorie Calculator","TDEE Calculator"]
-    },
-    catFin: {
-        name: "💰 Financial Tools",
-        tools: ["EMI Calculator","Loan Calculator","Zakat Calculator","SIP Calculator"]
-    },
-    catText: {
-        name: "📝 Text & Writing Tools",
-        tools: ["Word Counter","Line Counter","Text Case Converter","Password Generator","Password Strength Checker"]
-    },
-    catPdf: {
-        name: "📄 PDF Tools",
-        tools: ["PDF Merger","PDF Splitter","PDF to Image","PDF to JPG","PDF to PNG","PDF to BMP","PDF to WEBP","PDF to TIFF","PDF to Word","PDF to Excel","PDF to Text","PDF Rotator"]
-    },
-    catImage: {
-        name: "🖼️ Image Tools",
-        tools: ["Image Color Extractor","Image Converter","Image Cropper","Image Resizer","Image to PDF","Image Upscaler","Image Compressor"]
-    },
-   catFun: {
+  },
+  catPreg: {
+    name: "🐾 Animal Pregnancy Tools",
+    tools: ["Dog Pregnancy Calculator","Cat Pregnancy Calculator","Cow Pregnancy Calculator","Rabbit Pregnancy Calculator","Goat Pregnancy Calculator","Horse Pregnancy Calculator","Sheep Pregnancy Calculator","Pig Pregnancy Calculator"]
+  },
+  catDev: {
+    name: "🔐 Developer & Security Tools",
+    tools: ["MD5 Hash Generator","SHA-256 Hash Generator","SHA-1 Hash Generator","Base64 Encoder/Decoder","URL Encoder/Decoder","HTML Encoder/Decoder"]
+  },
+  catColor: {
+    name: "🎨 Color Tools",
+    tools: ["Color Palette Generator","Color Shades Generator","Color Gradient Maker","Color Contrast Checker","Color Name Finder","Random Color Picker"]
+  },
+  catPop: {
+    name: "📊 Popular Calculators",
+    tools: ["Unit Converter","Age Calculator","Age Difference Calculator","Discount Calculator","Profit & Loss Calculator","GPA Calculator","GST Calculator","Percentage Calculator","Date Calculator","QR Code Generator","YouTube Thumbnail Downloader","Currency Converter"]
+  },
+  catHealth: {
+    name: "🏃‍♂️ Health & Fitness",
+    tools: ["BMI Calculator","BMR Calculator","Calorie Calculator","TDEE Calculator"]
+  },
+  catFin: {
+    name: "💰 Financial Tools",
+    tools: ["EMI Calculator","Loan Calculator","Zakat Calculator","SIP Calculator"]
+  },
+  catText: {
+    name: "📝 Text & Writing Tools",
+    tools: ["Word Counter","Line Counter","Text Case Converter","Password Generator","Password Strength Checker"]
+  },
+  catPdf: {
+    name: "📄 PDF Tools",
+    tools: ["PDF Merger","PDF Splitter","PDF to Image","PDF to JPG","PDF to PNG","PDF to BMP","PDF to WEBP","PDF to TIFF","PDF to Word","PDF to Excel","PDF to Text","PDF Rotator"]
+  },
+  catImage: {
+    name: "🖼️ Image Tools",
+    tools: ["Image Color Extractor","Image Converter","Image Cropper","Image Resizer","Image to PDF","Image Upscaler","Image Compressor"]
+  },
+  catFun: {
     name: "🎲 Random & Fun Tools",
     tools: [
         // Existing Tools
@@ -107,10 +107,10 @@ const toolsDatabase = {
         "Board Game Spin Wheel",
         "Carnival Game Spin Wheel"
     ]
-}
-
+  }  // <------------- YAHAN COMMA NAHI LAGEGA (YE LAST ITEM HAI)
+};  // <------------- YAHAN SEMICOLON HONA CHAHIYE
 // =========================================================================
-// TOOL URL MAPPING (SAME - NO CHANGES)
+// TOOL URL MAPPING (UPDATED - CORRECT SYNTAX)
 // =========================================================================
 const toolUrlMap = {
     "Keyword Density Checker": "keyword-density-checker.html",
@@ -128,20 +128,20 @@ const toolUrlMap = {
     "Image Alt Analyzer": "image-alt-analyzer.html",
     "XML Sitemap Generator": "xml-sitemap-generator.html",
     "Ultrasound Scanner": "ultrasound-scanner.html",
-"Instagram Hashtag Generator": "instagram-hashtag-generator.html",
-"LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
-"Facebook Hashtag Generator": "facebook-hashtag-generator.html",
-"Pinterest Hashtag Generator": "pinterest-hashtag-generator.html",
-"AI Hashtag Generator": "ai-hashtag-generator.html",
-"SEO Hashtags Generator": "seo-hashtags-generator.html",
-"Random Hashtag Generator": "random-hashtag-generator.html",
-"TikTok Hashtag Generator": "tiktok-hashtag-generator.html",
-"Twitter Hashtag Generator": "twitter-hashtag-generator.html",
-"Threads Hashtag Generator": "threads-hashtag-generator.html",
-"Trending Hashtags Today": "trending-hashtags-today.html",
-"Viral Hashtag Generator": "viral-hashtag-generator.html",
-"YouTube Hashtag Generator": "youtube-hashtag-generator.html",
-"Social Media Caption Generator": "social-media-caption-generator.html",
+    "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
+    "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
+    "Facebook Hashtag Generator": "facebook-hashtag-generator.html",
+    "Pinterest Hashtag Generator": "pinterest-hashtag-generator.html",
+    "AI Hashtag Generator": "ai-hashtag-generator.html",
+    "SEO Hashtags Generator": "seo-hashtags-generator.html",
+    "Random Hashtag Generator": "random-hashtag-generator.html",
+    "TikTok Hashtag Generator": "tiktok-hashtag-generator.html",
+    "Twitter Hashtag Generator": "twitter-hashtag-generator.html",
+    "Threads Hashtag Generator": "threads-hashtag-generator.html",
+    "Trending Hashtags Today": "trending-hashtags-today.html",
+    "Viral Hashtag Generator": "viral-hashtag-generator.html",
+    "YouTube Hashtag Generator": "youtube-hashtag-generator.html",
+    "Social Media Caption Generator": "social-media-caption-generator.html",
     "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
     "Cat Pregnancy Calculator": "cat-pregnancy-calculator.html",
     "Cow Pregnancy Calculator": "cow-pregnancy-calculator.html",
@@ -229,8 +229,6 @@ const toolUrlMap = {
     "Food Picker Wheel": "food-picker-wheel.html",
     "Drink Picker Wheel": "drink-wheel.html",
     "Exercise Wheel": "exercise-wheel.html",
-    
-    // ✅ 6 NEW SPIN WHEEL TOOLS
     "Squid Game Spin Wheel": "squid-game-wheel.html",
     "Game Character Spin Wheel": "game-character-spin-wheel.html",
     "Party Games Spin Wheel": "party-games-spin-wheel.html",
@@ -245,7 +243,6 @@ function getUrl(toolName) {
     }
     return "https://freeonlinetools203.com/" + toolName.toLowerCase().trim().replace(/ /g, '-').replace(/[^\w\-]/g, '') + '.html';
 }
-
 // =========================================================================
 // RENDER DASHBOARD
 // =========================================================================
