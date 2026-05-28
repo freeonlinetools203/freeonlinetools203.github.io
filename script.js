@@ -1,7 +1,18 @@
 // =========================================================================
-// CENTRALIZED TOOLS DATABASE (UNCHANGED)
+// CENTRALIZED TOOLS DATABASE (FINAL CORRECT VERSION)
 // =========================================================================
 const toolsDatabase = {
+  // ✅ MOST POPULAR TOOLS - sirf 5 tools (koi extra nahi)
+  catMostPopular: {
+    name: "✨ Most Popular Tools",
+    tools: [
+      "Spin The Wheel",
+      "Random Color Picker",
+      "Keyword Density Checker",
+      "Instagram Hashtag Generator",
+      "Age Calculator"
+    ]
+  },
   catSeo: {
     name: "🔍 SEO Tools",
     tools: [
@@ -76,10 +87,9 @@ const toolsDatabase = {
 };
 
 // =========================================================================
-// TOOL URL MAPPING (SAME AS BEFORE)
+// TOOL URL MAPPING (SAME - NO CHANGES)
 // =========================================================================
 const toolUrlMap = {
-    // SEO Tools
     "Keyword Density Checker": "keyword-density-checker.html",
     "Meta Tags Generator": "meta-tags-generator.html",
     "Meta Tag Analyzer": "meta-tag-analyzer.html",
@@ -95,14 +105,12 @@ const toolUrlMap = {
     "Image Alt Analyzer": "image-alt-analyzer.html",
     "XML Sitemap Generator": "xml-sitemap-generator.html",
     "Ultrasound Scanner": "ultrasound-scanner.html",
-    // Hashtag Tools
     "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
     "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
     "Facebook Hashtag Generator": "facebook-hashtag-generator.html",
     "Pinterest Hashtag Generator": "pinterest-hashtag-generator.html",
     "AI Hashtag Generator": "ai-hashtag-generator.html",
     "SEO Hashtags Generator": "seo-hashtags-generator.html",
-    // Animal Pregnancy
     "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
     "Cat Pregnancy Calculator": "cat-pregnancy-calculator.html",
     "Cow Pregnancy Calculator": "cow-pregnancy-calculator.html",
@@ -111,21 +119,18 @@ const toolUrlMap = {
     "Horse Pregnancy Calculator": "horse-pregnancy-calculator.html",
     "Sheep Pregnancy Calculator": "sheep-pregnancy-calculator.html",
     "Pig Pregnancy Calculator": "pig-pregnancy-calculator.html",
-    // Developer & Security
     "MD5 Hash Generator": "md5-generator.html",
     "SHA-256 Hash Generator": "sha256-generator.html",
     "SHA-1 Hash Generator": "sha1-generator.html",
     "Base64 Encoder/Decoder": "base64-encoder-decoder.html",
     "URL Encoder/Decoder": "url-encoder-decoder.html",
     "HTML Encoder/Decoder": "html-encoder-decoder.html",
-    // Color Tools
     "Color Palette Generator": "color-palette-generator.html",
     "Color Shades Generator": "color-shades-generator.html",
     "Color Gradient Maker": "color-gradient-maker.html",
     "Color Contrast Checker": "color-contrast-checker.html",
     "Color Name Finder": "color-name-finder.html",
     "Random Color Picker": "random-color-picker.html",
-    // Popular Calculators
     "Unit Converter": "unit-converter.html",
     "Age Calculator": "age-calculator.html",
     "Age Difference Calculator": "age-difference-calculator.html",
@@ -138,23 +143,19 @@ const toolUrlMap = {
     "QR Code Generator": "qr-code-generator.html",
     "YouTube Thumbnail Downloader": "youtube-thumbnail-downloader.html",
     "Currency Converter": "currency-converter.html",
-    // Health & Fitness
     "BMI Calculator": "bmi-calculator.html",
     "BMR Calculator": "bmr-calculator.html",
     "Calorie Calculator": "calorie-calculator.html",
     "TDEE Calculator": "tdee-calculator.html",
-    // Financial
     "EMI Calculator": "emi-calculator.html",
     "Loan Calculator": "loan-calculator.html",
     "Zakat Calculator": "zakat-calculator.html",
     "SIP Calculator": "sip-calculator.html",
-    // Text & Writing
     "Word Counter": "word-counter.html",
     "Line Counter": "line-counter.html",
     "Text Case Converter": "text-case-converter.html",
     "Password Generator": "password-generator.html",
     "Password Strength Checker": "password-checker.html",
-    // PDF Tools
     "PDF Merger": "pdf-merger.html",
     "PDF Splitter": "pdf-splitter.html",
     "PDF to Image": "pdf-to-image.html",
@@ -167,7 +168,6 @@ const toolUrlMap = {
     "PDF to Excel": "pdf-to-excel.html",
     "PDF to Text": "pdf-to-text.html",
     "PDF Rotator": "pdf-rotator.html",
-    // Image Tools
     "Image Color Extractor": "image-color-extractor.html",
     "Image Converter": "image-converter.html",
     "Image Cropper": "image-cropper.html",
@@ -175,7 +175,6 @@ const toolUrlMap = {
     "Image to PDF": "image-to-pdf.html",
     "Image Upscaler": "image-upscaler.html",
     "Image Compressor": "image-compressor.html",
-    // Fun Tools
     "Spin The Wheel": "spin-the-wheel.html",
     "Yes/No Wheel": "yes-no-wheel.html",
     "Decision Roulette": "decision-roulette.html",
@@ -209,14 +208,12 @@ function getUrl(toolName) {
 }
 
 // =========================================================================
-// RENDER DASHBOARD (FIXED – now includes all categories including catSeo)
+// RENDER DASHBOARD
 // =========================================================================
 function renderDashboard() {
     const container = document.getElementById('toolsContainer');
     if (!container) return;
-    // Order categories as desired – include all keys
-    const orderedCategoryKeys = ["catPop","catSeo","catHash","catDev","catFin","catFun","catPreg","catColor","catHealth","catText","catPdf","catImage"];
-    // Ensure all keys are included
+    const orderedCategoryKeys = ["catMostPopular", "catPop", "catSeo", "catHash", "catDev", "catFin", "catFun", "catPreg", "catColor", "catHealth", "catText", "catPdf", "catImage"];
     for (const key of Object.keys(toolsDatabase)) {
         if (!orderedCategoryKeys.includes(key)) orderedCategoryKeys.push(key);
     }
@@ -235,7 +232,7 @@ function renderDashboard() {
 }
 
 // =========================================================================
-// GENERATE MOBILE MENU DYNAMICALLY (so that all tools appear)
+// GENERATE MOBILE MENU
 // =========================================================================
 function generateMobileMenu() {
     let html = `<ul class="mobile-nav">
@@ -244,7 +241,6 @@ function generateMobileMenu() {
         <a href="#" class="mobile-dropdown-toggle" id="mobileToolsToggle">🛠️ All Tools</a>
         <div class="mobile-dropdown-content" id="mobileToolsContent">`;
 
-    // Add each category and its tools
     for (const [catKey, catData] of Object.entries(toolsDatabase)) {
         html += `<h4>${catData.name}</h4>`;
         catData.tools.forEach(tool => {
@@ -263,7 +259,7 @@ function generateMobileMenu() {
 }
 
 // =========================================================================
-// POPULATE FOOTER (unchanged)
+// POPULATE FOOTER
 // =========================================================================
 function populateFooter() {
     const footerCol = document.getElementById('footerPopularTools');
@@ -275,7 +271,7 @@ function populateFooter() {
 }
 
 // =========================================================================
-// NAVBAR CSS (unchanged)
+// NAVBAR CSS
 // =========================================================================
 const navbarCSS = `<style>
 .megamenu-container{width:100%;background:linear-gradient(to right,#881e8a,#2563eb);position:relative;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
@@ -315,7 +311,7 @@ const navbarCSS = `<style>
 </style>`;
 
 // =========================================================================
-// NAVBAR HTML (DESKTOP MENU REMAINS UNCHANGED – already includes all tools)
+// NAVBAR HTML (TOP MENU - sirf 5 Most Popular tools)
 // =========================================================================
 const navbarHTML = `
 <div class="megamenu-container">
@@ -334,22 +330,29 @@ const navbarHTML = `
           <div class="dropdown-scroll">
             <div class="dropdown-grid">
               <div class="dropdown-column">
-              <h4>🔍 SEO Tools</h4>
-<a href="https://freeonlinetools203.com/keyword-density-checker.html">Keyword Density Checker</a>
-<a href="https://freeonlinetools203.com/meta-tags-generator.html">Meta Tags Generator</a>
-<a href="https://freeonlinetools203.com/meta-tag-analyzer.html">Meta Tag Analyzer</a>
-<a href="https://freeonlinetools203.com/broken-link-checker.html">Broken Link Checker</a>
-<a href="https://freeonlinetools203.com/free-backlink-checker.html">Free Backlink Checker</a>
-<a href="https://freeonlinetools203.com/google-index-checker.html">Google Index Checker</a>
-<a href="https://freeonlinetools203.com/seo-analyzer.html">SEO Analyzer</a>
-<a href="https://freeonlinetools203.com/seo-score-checker.html">SEO Score Checker</a>
-<a href="https://freeonlinetools203.com/seo-title-generator.html">SEO Title Generator</a>
-<a href="https://freeonlinetools203.com/serp-snippet-preview.html">SERP Snippet Preview</a>
-<a href="https://freeonlinetools203.com/readability-checker.html">Readability Checker</a>
-<a href="https://freeonlinetools203.com/heading-structure-checker.html">Heading Structure Checker</a>
-<a href="https://freeonlinetools203.com/image-alt-analyzer.html">Image Alt Analyzer</a>
-<a href="https://freeonlinetools203.com/xml-sitemap-generator.html">XML Sitemap Generator</a>
-<a href="https://freeonlinetools203.com/ultrasound-scanner.html">🩺 Ultrasound Scanner</a>
+                <h4>✨ Most Popular Tools</h4>
+                <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
+                <a href="https://freeonlinetools203.com/random-color-picker.html">🎨 Random Color Picker</a>
+                <a href="https://freeonlinetools203.com/keyword-density-checker.html">🔑 Keyword Density Checker</a>
+                <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">📱 Instagram Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a>
+                
+                <h4>🔍 SEO Tools</h4>
+                <a href="https://freeonlinetools203.com/keyword-density-checker.html">Keyword Density Checker</a>
+                <a href="https://freeonlinetools203.com/meta-tags-generator.html">Meta Tags Generator</a>
+                <a href="https://freeonlinetools203.com/meta-tag-analyzer.html">Meta Tag Analyzer</a>
+                <a href="https://freeonlinetools203.com/broken-link-checker.html">Broken Link Checker</a>
+                <a href="https://freeonlinetools203.com/free-backlink-checker.html">Free Backlink Checker</a>
+                <a href="https://freeonlinetools203.com/google-index-checker.html">Google Index Checker</a>
+                <a href="https://freeonlinetools203.com/seo-analyzer.html">SEO Analyzer</a>
+                <a href="https://freeonlinetools203.com/seo-score-checker.html">SEO Score Checker</a>
+                <a href="https://freeonlinetools203.com/seo-title-generator.html">SEO Title Generator</a>
+                <a href="https://freeonlinetools203.com/serp-snippet-preview.html">SERP Snippet Preview</a>
+                <a href="https://freeonlinetools203.com/readability-checker.html">Readability Checker</a>
+                <a href="https://freeonlinetools203.com/heading-structure-checker.html">Heading Structure Checker</a>
+                <a href="https://freeonlinetools203.com/image-alt-analyzer.html">Image Alt Analyzer</a>
+                <a href="https://freeonlinetools203.com/xml-sitemap-generator.html">XML Sitemap Generator</a>
+                <a href="https://freeonlinetools203.com/ultrasound-scanner.html">🩺 Ultrasound Scanner</a>
                 <h4>📱 Social Media Hashtag</h4>
                 <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">Instagram Hashtag Generator</a>
                 <a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">LinkedIn Hashtag Generator</a>
@@ -479,24 +482,20 @@ const navbarHTML = `
 </div>`;
 
 // =========================================================================
-// PAGE ONLOAD (INITIALIZATION)
+// PAGE ONLOAD
 // =========================================================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Insert navbar CSS and HTML
     document.head.insertAdjacentHTML('beforeend', navbarCSS);
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
     
-    // Generate dynamic mobile menu content (so that all tools appear)
     const mobileMenuDiv = document.getElementById('mobileMenu');
     if (mobileMenuDiv) {
         mobileMenuDiv.innerHTML = generateMobileMenu();
     }
     
-    // Render dashboard
     renderDashboard();
     populateFooter();
     
-    // Mobile menu toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     if (mobileToggle && mobileMenu) {
@@ -505,7 +504,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Mobile dropdown toggle inside dynamically generated content
     document.addEventListener('click', (e) => {
         if (e.target && e.target.id === 'mobileToolsToggle') {
             e.preventDefault();
