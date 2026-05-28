@@ -43,22 +43,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;min-height:100vh;}
-.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
-.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
-.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
-.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
-.nav-links li a{color:white;text-decoration:none;font-weight:500;transition:all 0.3s ease;}
-.nav-links li a:hover{color:#f0f0f0;border-bottom:2px solid white;}
-.dropdown{position:relative;display:inline-block;}
-.dropbtn{background:none;border:none;color:white;font-weight:500;cursor:pointer;padding:8px 0;font-size:1rem;font-family:inherit;}
-.dropdown-content{display:none;position:absolute;background:white;min-width:280px;box-shadow:0 10px 25px rgba(0,0,0,0.15);border-radius:12px;z-index:1001;top:40px;left:0;padding:8px 0;}
-.dropdown.open .dropdown-content{display:block;}
-.dropdown-category{cursor:pointer;padding:12px 16px;font-weight:700;color:#1e3a8a;font-size:0.9rem;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;}
-.dropdown-category:hover{background:#f3f4f6;}
-.category-tools{display:none;background:#f9fafb;border-radius:8px;margin:4px 8px 8px 8px;overflow:hidden;}
-.category-tools.show{display:block;}
-.category-tools a{color:#1f2937 !important;padding:10px 20px 10px 32px;text-decoration:none;display:block;font-size:14px;}
-.category-tools a:hover{background:#e5e7eb;color:#2563eb !important;}
 .container{max-width:1200px;margin:40px auto 0;padding:0 20px;}
 .wheel-card{background:#ffffff;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.05);overflow:hidden;margin-bottom:30px;}
 .card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:25px 30px;text-align:center;}
@@ -98,9 +82,6 @@ canvas#wheelCanvas{width:100% !important;height:100% !important;border-radius:50
 .hex-field{display:flex;gap:10px;flex:1;}
 .hex-field input{padding:10px 15px;border:1px solid #e5e7eb;border-radius:10px;background:white;}
 .copy-btn{padding:10px 18px;background:#6b7280;color:white;border:none;border-radius:10px;cursor:pointer;}
-.category-footer{max-width:1200px;margin:40px auto 20px;padding:0 20px;text-align:center;}
-.home-link{display:inline-block;background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;text-decoration:none;padding:12px 28px;border-radius:40px;font-weight:bold;transition:0.3s;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
-.home-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,99,235,0.4);}
 body.dark{background:#111827;}
 body.dark .wheel-card,body.dark .top-bar,body.dark .wheel-container,body.dark .controls-card,body.dark .color-picker-section{background:#1f2937;border-color:#374151;}
 body.dark .card-header{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%);}
@@ -172,7 +153,6 @@ body.dark .result-pop{background:#374151;color:#60a5fa;}
 </div>
 </div>
 
-
 <canvas id="confettiCanvas"></canvas>
 
 <script>
@@ -186,7 +166,6 @@ function initAudio() {
     if (audioCtx) return;
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     const sampleRate = audioCtx.sampleRate;
-    // spin sound (whoosh)
     const spinDuration = 0.5;
     const spinFrameCount = sampleRate * spinDuration;
     const spinBuffer = audioCtx.createBuffer(1, spinFrameCount, sampleRate);
@@ -198,7 +177,6 @@ function initAudio() {
         spinChannel[i] = Math.sin(2 * Math.PI * freq * t) * amp;
     }
     spinSoundBuffer = spinBuffer;
-    // win sound (ding)
     const winDuration = 0.4;
     const winFrameCount = sampleRate * winDuration;
     const winBuffer = audioCtx.createBuffer(1, winFrameCount, sampleRate);
@@ -213,14 +191,8 @@ function initAudio() {
 }
 function playSpinSound() { if(!soundEnabled||!audioCtx) return; if(audioCtx.state==='suspended') audioCtx.resume(); const s=audioCtx.createBufferSource(); s.buffer=spinSoundBuffer; s.connect(audioCtx.destination); s.start(); }
 function playWinSound() { if(!soundEnabled||!audioCtx) return; if(audioCtx.state==='suspended') audioCtx.resume(); const s=audioCtx.createBufferSource(); s.buffer=winSoundBuffer; s.connect(audioCtx.destination); s.start(); }
-const soundToggleBtn = document.getElementById('soundToggle');
-soundToggleBtn.addEventListener('click', () => {
-    soundEnabled = !soundEnabled;
-    if (soundEnabled) { soundToggleBtn.innerHTML = '🔊 Sound On'; soundToggleBtn.classList.remove('muted'); }
-    else { soundToggleBtn.innerHTML = '🔇 Sound Off'; soundToggleBtn.classList.add('muted'); }
-});
 
-// ========== WHEEL FUNCTIONALITY (original + sound) ==========
+// ========== WHEEL FUNCTIONALITY ==========
 let items = ['🧺 Laundry', '🍽️ Dishes', '🧹 Vacuum', '🗑️ Trash', '🧽 Dusting', '🧹 Mop'];
 let spinAngle = 0, isSpinning = false, animFrame = null, confettiActive = false;
 const CATEGORY_SETS = {
@@ -236,6 +208,14 @@ const removeLastBtn = document.getElementById('removeLastBtn'), resetBtn = docum
 const tagContainer = document.getElementById('tagContainer'), colorPicker = document.getElementById('colorPicker');
 const hexValue = document.getElementById('hexValue'), copyHexBtn = document.getElementById('copyHexBtn');
 const arrowPointer = document.getElementById('arrowPointer');
+const soundToggleBtn = document.getElementById('soundToggle');
+
+soundToggleBtn.addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    if (soundEnabled) { soundToggleBtn.innerHTML = '🔊 Sound On'; soundToggleBtn.classList.remove('muted'); }
+    else { soundToggleBtn.innerHTML = '🔇 Sound Off'; soundToggleBtn.classList.add('muted'); }
+});
+
 function resizeCanvas(){const container=document.getElementById('canvasContainer');const size=container.clientWidth;canvas.width=size;canvas.height=size;drawWheel();}
 function drawWheel(){const count=items.length;if(count===0)return;const centerX=canvas.width/2,centerY=canvas.height/2,radius=Math.min(canvas.width,canvas.height)*0.45,angleStep=(Math.PI*2)/count;for(let i=0;i<count;i++){const start=i*angleStep+spinAngle,end=start+angleStep;ctx.beginPath();ctx.moveTo(centerX,centerY);ctx.arc(centerX,centerY,radius,start,end);ctx.closePath();ctx.fillStyle=i%2?'#3b82f6':'#06b6d4';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();ctx.save();ctx.translate(centerX,centerY);ctx.rotate(start+angleStep/2);ctx.textAlign='center';ctx.font='bold '+Math.max(12,radius*0.1)+'px "Segoe UI"';ctx.fillStyle='#fff';ctx.fillText(items[i].substring(0,12),radius*0.65,8);ctx.restore();}}
 function renderTags(){tagContainer.innerHTML='';items.forEach((item,idx)=>{const span=document.createElement('span');span.className='item-tag';span.innerHTML=`${item} <button data-index="${idx}">✕</button>`;tagContainer.appendChild(span);});document.querySelectorAll('.item-tag button').forEach(btn=>{btn.addEventListener('click',(e)=>{const idx=parseInt(btn.getAttribute('data-index'));if(items.length>1){items.splice(idx,1);updateWheel();}});});}
@@ -248,9 +228,10 @@ addBtn.addEventListener('click',()=>{const val=itemInput.value.trim();if(val){it
 removeLastBtn.addEventListener('click',()=>{if(items.length>1)items.pop();updateWheel();});
 resetBtn.addEventListener('click',()=>loadMode(modeSelect.value));
 colorPicker.addEventListener('input',(e)=>{hexValue.value=e.target.value;});
+
+// ========== FIXED COPY FUNCTION (Works on HTTP) ==========
 copyHexBtn.addEventListener('click', () => {
     const text = hexValue.value;
-    // Fallback method that works on HTTP
     const textarea = document.createElement('textarea');
     textarea.value = text;
     textarea.style.position = 'fixed';
@@ -261,7 +242,6 @@ copyHexBtn.addEventListener('click', () => {
     textarea.setSelectionRange(0, text.length);
     document.execCommand('copy');
     document.body.removeChild(textarea);
-    // Show feedback
     const originalText = copyHexBtn.textContent;
     copyHexBtn.textContent = '✅ Copied!';
     copyHexBtn.style.background = '#10b981';
@@ -271,76 +251,126 @@ copyHexBtn.addEventListener('click', () => {
     }, 2000);
 });
 
-<!-- ========== SEO ARTICLE SECTION (2200+ WORDS) ========== -->
+window.addEventListener('resize',()=>{resizeCanvas();drawWheel();});resizeCanvas();renderTags();
+</script>
+
+  <!-- ========== CATEGORY FOOTER ========== -->
+<!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
+<style>
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+</style>
+
+<div class="related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+  <div class="tools-box">
+    <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
+    <div class="tools-grid">
+      <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
+      <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-roulette.html" class="tool-btn">🎲 Decision Roulette</a>
+      <a href="https://freeonlinetools203.com/random-name-picker.html" class="tool-btn">📛 Random Name Picker</a>
+      <a href="https://freeonlinetools203.com/random-number-generator.html" class="tool-btn">🔢 Random Number Generator</a>
+      <a href="https://freeonlinetools203.com/prize-wheel.html" class="tool-btn">🏆 Prize Wheel</a>
+      <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
+      <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
+      <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
+      <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
+      <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
+      <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
+      <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
+      <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
+      <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
+      <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
+      <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
+      <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
+      <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
+      <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="tool-btn">🍕 Food Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/exercise-wheel.html" class="tool-btn">🏋️ Exercise Wheel</a>
+      <a href="https://freeonlinetools203.com/drink-wheel.html" class="tool-btn">🍹 Drink Wheel</a>
+    </div>
+  </div>
+</div>
+  
+<!-- ========== SEO ARTICLE SECTION ========== -->
 <div style="max-width:1200px; margin:40px auto; padding:0 20px;">
   <div style="background:white; border-radius:28px; padding:45px; box-shadow:0 20px 40px rgba(0,0,0,0.05); line-height:1.7; color:#374151;">
-    <h1 style="color:#1e3a8a; font-size:32px; margin-bottom:20px;">Chore Wheel – The Fair Way to Assign Household Tasks</h1>
+    <h2 style="color:#1e3a8a; font-size:28px; margin-bottom:20px;">Chore Wheel – The Fair Way to Assign Household Tasks</h2>
     <p>The <strong>Chore Wheel</strong> is a simple, fun, and impartial tool that randomly selects household chores. Whether you're a parent trying to teach responsibility, a group of roommates splitting duties, or just someone who wants to add surprise to cleaning, this wheel takes the argument out of "who does what."</p>
     <p>Our wheel offers three preset categories: <strong>Daily Chores</strong> (laundry, dishes, vacuuming), <strong>Weekly Chores</strong> (grocery shopping, bathroom cleaning, window washing), and <strong>Monthly Chores</strong> (garage organizing, garden work, deep cleaning). You can also add your own custom tasks, change colors, enable dark mode, and even turn on realistic sound effects.</p>
 
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">How to Use the Chore Wheel</h2>
-    <p><strong>Step 1:</strong> Choose a category – Daily, Weekly, or Monthly – depending on which tasks need assigning.</p>
-    <p><strong>Step 2:</strong> Spin the wheel. Each family member or roommate takes a turn spinning, or you can spin once for the entire group.</p>
-    <p><strong>Step 3:</strong> Whoever the wheel lands on (or the selected chore) does that task. Mark it done, then spin again for the next chore.</p>
-    <p><strong>For families:</strong> Let each child spin and do the chore they land on – it turns responsibility into a game.</p>
-    <p><strong>For roommates:</strong> Assign each chore to a different person by spinning the wheel once per chore.</p>
+    <h3 style="color:#1e3a8a; font-size:22px; margin:25px 0 10px;">How to Use the Chore Wheel</h3>
+    <p><strong>Step 1:</strong> Choose a category – Daily, Weekly, or Monthly.<br>
+    <strong>Step 2:</strong> Spin the wheel. Each family member or roommate takes a turn spinning.<br>
+    <strong>Step 3:</strong> Whoever the wheel lands on does that task. Mark it done, then spin again.</p>
 
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">Why a Chore Wheel Works Better Than a Fixed Schedule</h2>
-    <p>Traditional chore charts can become boring or feel unfair. The chore wheel introduces randomness, which makes the process more exciting. No one can complain that they "always" get the worst task – the wheel decides. It also encourages everyone to learn all the chores, because tomorrow you might land on a different one. Studies show that gamifying household tasks increases participation and reduces friction.</p>
+    <h3 style="color:#1e3a8a; font-size:22px; margin:25px 0 10px;">Why a Chore Wheel Works Better</h3>
+    <p>Traditional chore charts can become boring or feel unfair. The chore wheel introduces randomness, making the process more exciting. No one can complain that they "always" get the worst task – the wheel decides.</p>
 
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">Best Chores to Add for Kids & Teenagers</h2>
-    <p>If you have children, consider adding age‑appropriate tasks:</p>
+    <h3 style="color:#1e3a8a; font-size:22px; margin:25px 0 10px;">Customizing Your Chore Wheel</h3>
     <ul style="margin-left:25px; margin-bottom:20px;">
-      <li><strong>Ages 4-7:</strong> "Make bed", "Put toys away", "Feed pet", "Water plants"</li>
-      <li><strong>Ages 8-12:</strong> "Empty dishwasher", "Take out trash", "Fold towels", "Sweep floor"</li>
-      <li><strong>Teens:</strong> "Clean bathroom", "Vacuum entire house", "Cook one meal", "Mow lawn"</li>
-    </ul>
-    <p>You can easily add these using the edit box.</p>
-
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">Roommate Edition – Split Chores Fairly</h2>
-    <p>Living with roommates often leads to disputes over cleaning. The chore wheel removes bias. Each week, spin the wheel for each chore – or assign each roommate a spin and the chore they land on becomes theirs for the week. If someone lands on "Trash", they're responsible. Next week, spin again. Our weekly preset includes tasks like grocery shopping, bathroom scrubbing, and window cleaning – all common friction points.</p>
-
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">Customizing Your Chore Wheel</h2>
-    <p>Our tool is fully customizable. You can:</p>
-    <ul style="margin-left:25px; margin-bottom:20px;">
-      <li><strong>Add new chores:</strong> Type any chore into the input box and click "Add".</li>
-      <li><strong>Delete chores:</strong> Click the ✕ button next to any chore to remove it.</li>
-      <li><strong>Switch between presets:</strong> Daily, Weekly, or Monthly – or mix them up.</li>
-      <li><strong>Change wheel colors:</strong> Use the built‑in color picker.</li>
+      <li><strong>Add new chores:</strong> Type any chore and click "Add".</li>
+      <li><strong>Delete chores:</strong> Click the ✕ button next to any chore.</li>
+      <li><strong>Switch between presets:</strong> Daily, Weekly, or Monthly.</li>
+      <li><strong>Change wheel colors:</strong> Use the color picker.</li>
       <li><strong>Enable dark mode:</strong> Perfect for evening chore planning.</li>
     </ul>
-    <p>All changes happen instantly, and you can reset to the original presets with one click.</p>
 
     <div style="background:#eff6ff; border-radius:20px; padding:25px; margin:30px 0;">
-      <h3 style="color:#1e3a8a; margin-bottom:15px;">❓ Frequently Asked Questions (FAQ)</h3>
-      <div style="margin-bottom:12px;"><strong>❓ Can I use the chore wheel for free?</strong><br>Yes, completely free with no registration. Unlimited spins.</div>
-      <div style="margin-bottom:12px;"><strong>❓ How many chores can I add?</strong><br>As many as you want. The wheel automatically resizes to fit.</div>
-      <div style="margin-bottom:12px;"><strong>❓ Does the chore wheel work on mobile?</strong><br>Yes, it's fully responsive and works on smartphones, tablets, and computers.</div>
-      <div style="margin-bottom:12px;"><strong>❓ What if I don't like the default chores?</strong><br>You can delete any chore and add your own. The edit section is very flexible.</div>
-      <div style="margin-bottom:12px;"><strong>❓ Is there a sound option?</strong><br>Yes, click the "Sound On" button to enable spin and win sounds. Mute anytime.</div>
+      <h3 style="color:#1e3a8a; margin-bottom:15px;">❓ Frequently Asked Questions</h3>
+      <div style="margin-bottom:12px;"><strong>Is the chore wheel free?</strong><br>Yes, completely free with no registration.</div>
+      <div style="margin-bottom:12px;"><strong>How many chores can I add?</strong><br>As many as you want. The wheel automatically resizes.</div>
+      <div style="margin-bottom:12px;"><strong>Does it work on mobile?</strong><br>Yes, fully responsive on all devices.</div>
     </div>
 
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">Chore Wheel for Special Occasions</h2>
-    <p>You can also use the wheel for one‑time events like spring cleaning, holiday preparation, or moving day. For example, before a party, spin for tasks like "vacuum living room", "clean kitchen counters", "take out recycling". The random element makes even big projects feel manageable.</p>
-
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">Teaching Responsibility Through Games</h2>
-    <p>Parents have told us that the chore wheel turns "nagging" into "game time". When children know that a spin could land on "feed the cat" or "fold the laundry", they become more engaged. You can even offer small rewards for completing a certain number of spins – like extra screen time or choosing the weekend movie.</p>
-
-    <h2 style="color:#1e3a8a; font-size:24px; margin:30px 0 15px;">Final Thoughts – Stop Arguing, Start Spinning</h2>
-    <p>The Chore Wheel is a lightweight, fun, and effective tool for any household. It removes bias, encourages everyone to pitch in, and adds a little excitement to mundane tasks. Bookmark this page, share it with your family or roommates, and let the wheel decide. You might be surprised how quickly cleaning gets done when it becomes a game.</p>
-    <p><strong>Ready to assign chores?</strong> Choose a category above, hit SPIN, and let the wheel do the work. No more arguments – just clean results!</p>
+    <p><strong>Ready to assign chores?</strong> Choose a category above, hit SPIN, and let the wheel do the work!</p>
   </div>
 </div>
 
 <!-- ========== PROFESSIONAL FOOTER ========== -->
 <footer style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%); color:#cbd5e1; padding:60px 20px 35px; margin-top:50px;">
   <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:45px;">
-    <div><h3 style="color:white;">🧹 Chore Wheel</h3><p>Random household task assigner – fair, fun, and free. Perfect for families and roommates.</p></div>
-    <div><h4 style="color:white;">📄 Quick Links</h4><a href="https://freeonlinetools203.com/index.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🏠 Home</a><a href="https://freeonlinetools203.com/about.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">ℹ️ About</a><a href="https://freeonlinetools203.com/privacy-policy.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔒 Privacy</a></div>
-    <div><h4 style="color:white;">⭐ Related Tools</h4><a href="https://freeonlinetools203.com/chore-wheel-seo.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🧹 Chore Wheel</a><a href="https://freeonlinetools203.com/dinner-spinner.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🍽️ Dinner Spinner</a></div>
-    <div><h4 style="color:white;">🔧 More Tools</h4><a href="https://freeonlinetools203.com/spin-the-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🎡 Spin Wheel</a><a href="https://freeonlinetools203.com/random-number-generator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔢 Random Number</a></div>
+    <div>
+      <h3 style="color:white;">🧹 Chore Wheel</h3>
+      <p>Random household task assigner – fair, fun, and free. Perfect for families and roommates.</p>
+    </div>
+    <div>
+      <h4 style="color:white;">📄 Quick Links</h4>
+      <a href="https://freeonlinetools203.com/index.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🏠 Home</a>
+      <a href="https://freeonlinetools203.com/about.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">ℹ️ About</a>
+      <a href="https://freeonlinetools203.com/contact.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">📧 Contact</a>
+      <a href="https://freeonlinetools203.com/privacy-policy.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔒 Privacy</a>
+      <a href="https://freeonlinetools203.com/terms-conditions.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">📜 Terms</a>
+      <a href="https://freeonlinetools203.com/disclaimer.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">⚠️ Disclaimer</a>
+    </div>
+    <div>
+      <h4 style="color:white;">⭐ Related Tools</h4>
+      <a href="https://freeonlinetools203.com/spin-the-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🎡 Spin The Wheel</a>
+      <a href="https://freeonlinetools203.com/random-number-generator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔢 Random Number</a>
+      <a href="https://freeonlinetools203.com/decision-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">⚖️ Decision Wheel</a>
+      <a href="https://freeonlinetools203.com/yes-no-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">✅ Yes/No Wheel</a>
+    </div>
+    <div>
+      <h4 style="color:white;">🔧 More Tools</h4>
+      <a href="https://freeonlinetools203.com/age-calculator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">📅 Age Calculator</a>
+      <a href="https://freeonlinetools203.com/keyword-density-checker.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔑 Keyword Density</a>
+      <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">📱 Hashtag Generator</a>
+      <a href="https://freeonlinetools203.com/bmi-calculator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">💪 BMI Calculator</a>
+    </div>
   </div>
-  <div style="text-align:center; padding-top:35px; margin-top:45px; border-top:1px solid rgba(255,255,255,0.1); font-size:0.85rem; color:#64748b;">© 2025 Free Online Tools. All rights reserved. | Chore Wheel – make household tasks fun again | Over 2200 words of original SEO content.</div>
+  <div style="text-align:center; padding-top:35px; margin-top:45px; border-top:1px solid rgba(255,255,255,0.1); font-size:0.85rem; color:#64748b;">
+    © 2025 Free Online Tools. All rights reserved. | Chore Wheel – make household tasks fun again
+  </div>
 </footer>
 
 </body>
