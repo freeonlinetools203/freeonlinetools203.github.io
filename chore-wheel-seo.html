@@ -168,12 +168,11 @@ body.dark .result-pop{background:#374151;color:#60a5fa;}
 <div class="hex-field">
 <input type="text" id="hexValue" value="#3b82f6" readonly>
 <button class="copy-btn" id="copyHexBtn">Copy HEX</button>
-</div>  <!-- closes hex-field -->
-</div>  <!-- closes color-picker-row -->
-</div>  <!-- closes color-picker-section -->
+</div>
+</div>
+</div>
 
-  
-<!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
+<!-- ========== NEW INTERNAL LINKING (FIXED - NO CONFLICT) ========== -->
 <style>
 .related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
 .btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
@@ -219,12 +218,10 @@ body.dark .result-pop{background:#374151;color:#60a5fa;}
     </div>
   </div>
 </div>
-  
 
 <canvas id="confettiCanvas"></canvas>
+
 <script>
-    // Your existing script here (confetti, color picker logic)
-</script>
 // ========== SOUND EFFECTS ==========
 let audioCtx = null;
 let soundEnabled = true;
@@ -297,10 +294,28 @@ addBtn.addEventListener('click',()=>{const val=itemInput.value.trim();if(val){it
 removeLastBtn.addEventListener('click',()=>{if(items.length>1)items.pop();updateWheel();});
 resetBtn.addEventListener('click',()=>loadMode(modeSelect.value));
 colorPicker.addEventListener('input',(e)=>{hexValue.value=e.target.value;});
-copyHexBtn.addEventListener('click',()=>{navigator.clipboard.writeText(hexValue.value);alert('HEX code copied!');});
-window.addEventListener('resize',()=>{resizeCanvas();drawWheel();});resizeCanvas();renderTags();
-(function(){const dropdown=document.getElementById('toolsDropdown');const dropBtn=document.getElementById('toolsBtn');if(dropdown){dropBtn.addEventListener('click',(e)=>{e.stopPropagation();dropdown.classList.toggle('open');});document.addEventListener('click',()=>dropdown.classList.remove('open'));document.querySelectorAll('.dropdown-category').forEach(cat=>{cat.addEventListener('click',function(e){e.stopPropagation();const catId=this.getAttribute('data-cat');const toolsDiv=document.getElementById(catId+'Tools');if(toolsDiv)toolsDiv.classList.toggle('show');});});}})();
-</script>
+copyHexBtn.addEventListener('click', () => {
+    const text = hexValue.value;
+    // Fallback method that works on HTTP
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-9999px';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, text.length);
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    // Show feedback
+    const originalText = copyHexBtn.textContent;
+    copyHexBtn.textContent = '✅ Copied!';
+    copyHexBtn.style.background = '#10b981';
+    setTimeout(() => {
+        copyHexBtn.textContent = originalText;
+        copyHexBtn.style.background = '#6b7280';
+    }, 2000);
+});
 
 <!-- ========== SEO ARTICLE SECTION (2200+ WORDS) ========== -->
 <div style="max-width:1200px; margin:40px auto; padding:0 20px;">
@@ -367,9 +382,9 @@ window.addEventListener('resize',()=>{resizeCanvas();drawWheel();});resizeCanvas
 <footer style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%); color:#cbd5e1; padding:60px 20px 35px; margin-top:50px;">
   <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:45px;">
     <div><h3 style="color:white;">🧹 Chore Wheel</h3><p>Random household task assigner – fair, fun, and free. Perfect for families and roommates.</p></div>
-    <div><h4 style="color:white;">📄 Quick Links</h4><a href="index.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🏠 Home</a><a href="about.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">ℹ️ About</a><a href="privacy-policy.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔒 Privacy</a></div>
-    <div><h4 style="color:white;">⭐ Related Tools</h4><a href="chore-wheel-seo.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🧹 Chore Wheel</a><a href="dinner-spinner.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🍽️ Dinner Spinner</a><a href="workout-spinner.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">💪 Workout Spinner</a></div>
-    <div><h4 style="color:white;">🔧 More Tools</h4><a href="spin-the-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🎡 Spin Wheel</a><a href="random-number-generator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔢 Random Number</a></div>
+    <div><h4 style="color:white;">📄 Quick Links</h4><a href="https://freeonlinetools203.com/index.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🏠 Home</a><a href="https://freeonlinetools203.com/about.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">ℹ️ About</a><a href="https://freeonlinetools203.com/privacy-policy.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔒 Privacy</a></div>
+    <div><h4 style="color:white;">⭐ Related Tools</h4><a href="https://freeonlinetools203.com/chore-wheel-seo.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🧹 Chore Wheel</a><a href="https://freeonlinetools203.com/dinner-spinner.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🍽️ Dinner Spinner</a></div>
+    <div><h4 style="color:white;">🔧 More Tools</h4><a href="https://freeonlinetools203.com/spin-the-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🎡 Spin Wheel</a><a href="https://freeonlinetools203.com/random-number-generator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:6px 0;">🔢 Random Number</a></div>
   </div>
   <div style="text-align:center; padding-top:35px; margin-top:45px; border-top:1px solid rgba(255,255,255,0.1); font-size:0.85rem; color:#64748b;">© 2025 Free Online Tools. All rights reserved. | Chore Wheel – make household tasks fun again | Over 2200 words of original SEO content.</div>
 </footer>
