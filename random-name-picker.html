@@ -250,33 +250,34 @@ body {
     transform: translateY(-2px);
 }
 
-/* Preset Section */
+/* Preset Dropdown */
 .preset-section {
     margin-bottom: 25px;
-}
-.preset-title {
-    font-weight: 700;
-    color: #1e3a8a;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-.preset-buttons {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    justify-content: flex-end;
 }
-.preset-btn {
-    background: #f1f5f9;
-    border: none;
-    padding: 8px 16px;
+.preset-select {
+    padding: 10px 20px;
     border-radius: 50px;
-    font-size: 12px;
+    border: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-.preset-btn:hover {
-    background: #e5e7eb;
+.preset-select:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+.preset-select:focus {
+    outline: none;
+}
+.preset-select option {
+    background: white;
+    color: #1e3a8a;
 }
 
 /* Wheel Styles */
@@ -284,53 +285,70 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
-.wheel {
-    width: 280px;
-    height: 280px;
+.canvas-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+}
+canvas#nameWheel {
+    width: 100% !important;
+    height: 100% !important;
     border-radius: 50%;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    cursor: pointer;
     transition: transform 0.3s ease;
 }
-.wheel:hover {
+canvas#nameWheel:hover {
     transform: scale(1.02);
+}
+.spin-center-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #2563eb;
+    color: #2563eb;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.spin-center-btn:active {
+    transform: translate(-50%, -50%) scale(0.95);
 }
 .pointer {
     position: absolute;
-    top: -25px;
+    top: -28px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 22px solid transparent;
-    border-right: 22px solid transparent;
-    border-top: 45px solid #dc2626;
-    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-top: 50px solid #dc2626;
+    filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.8)) drop-shadow(0 5px 10px rgba(0,0,0,0.3));
     z-index: 10;
-    animation: bounce 1s ease infinite;
+    animation: bounce 1s ease infinite, pointerGlow 1.5s ease-in-out infinite alternate;
 }
 @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(-8px); }
 }
-.spin-btn {
-    width: 100%;
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    color: white;
-    border: none;
-    padding: 16px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 60px;
-    cursor: pointer;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-}
-.spin-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+@keyframes pointerGlow {
+    0% { filter: drop-shadow(0 0 5px #dc2626) drop-shadow(0 5px 10px rgba(0,0,0,0.3)); border-top-color: #dc2626; }
+    100% { filter: drop-shadow(0 0 25px #ff6b6b) drop-shadow(0 5px 10px rgba(0,0,0,0.3)); border-top-color: #ff6b6b; }
 }
 .result-card {
     background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
@@ -378,20 +396,6 @@ body {
 }
 .action-btn:hover {
     background: #e5e7eb;
-    transform: translateY(-2px);
-}
-.home-link {
-    display: inline-block;
-    background: linear-gradient(135deg, #2563eb, #1e3a8a);
-    color: white;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.home-link:hover {
     transform: translateY(-2px);
 }
 .toast-notification {
@@ -449,8 +453,9 @@ body {
     .navbar { padding: 12px 20px; }
     .nav-container { flex-direction: column; text-align: center; }
     .card-content { padding: 25px 20px; }
-    .wheel { width: 240px; height: 240px; }
     .winner-name { font-size: 24px; }
+    .spin-center-btn { width: 55px; height: 55px; font-size: 0.8rem; }
+    .preset-section { justify-content: center; }
 }
 </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
@@ -464,6 +469,40 @@ body {
             <p>Spin the wheel to randomly pick names. Perfect for classroom, secret santa, gift exchange, team selection, and lucky draws.</p>
         </div>
         <div class="card-content">
+            
+            <!-- Wheel FIRST (upar) -->
+            <div class="wheel-wrapper">
+                <div class="pointer"></div>
+                <div class="canvas-container" id="canvasContainer">
+                    <canvas id="nameWheel" width="500" height="500"></canvas>
+                    <button class="spin-center-btn" id="spinBtn">SPIN</button>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="result-card" id="resultCard">
+                <div class="winner-name" id="winnerName">—</div>
+                <div class="winner-sub" id="winnerSub">Add names and spin the wheel</div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn" id="resetBtn">🔄 Reset Wheel</button>
+                <button class="action-btn" id="copyBtn">📋 Copy Winner</button>
+            </div>
+
+            <!-- Quick Presets Dropdown -->
+            <div class="preset-section">
+                <select id="presetSelect" class="preset-select">
+                    <option value="">⚡ Quick Presets</option>
+                    <option value="students">🎓 Students</option>
+                    <option value="team">👥 Team Members</option>
+                    <option value="friends">👫 Friends</option>
+                    <option value="family">👪 Family</option>
+                    <option value="secret-santa">🎅 Secret Santa</option>
+                </select>
+            </div>
+
+            <!-- Names Section (niche) -->
             <div class="names-section">
                 <label class="names-label">📝 Enter Names</label>
                 <div class="names-list" id="namesList">
@@ -475,39 +514,10 @@ body {
                 </div>
                 <button class="add-name-btn" onclick="addName()">+ Add Name</button>
             </div>
-
-            <div class="preset-section">
-                <div class="preset-title">⚡ Quick Presets</div>
-                <div class="preset-buttons">
-                    <button class="preset-btn" onclick="loadPreset('students')">🎓 Students</button>
-                    <button class="preset-btn" onclick="loadPreset('team')">👥 Team Members</button>
-                    <button class="preset-btn" onclick="loadPreset('friends')">👫 Friends</button>
-                    <button class="preset-btn" onclick="loadPreset('family')">👪 Family</button>
-                    <button class="preset-btn" onclick="loadPreset('secret-santa')">🎅 Secret Santa</button>
-                </div>
-            </div>
-
-            <div class="wheel-wrapper">
-                <div class="pointer"></div>
-                <canvas id="nameWheel" class="wheel" width="500" height="500"></canvas>
-            </div>
-
-            <button class="spin-btn" id="spinBtn">🎡 SPIN THE WHEEL</button>
-
-            <div class="result-card" id="resultCard">
-                <div class="winner-name" id="winnerName">—</div>
-                <div class="winner-sub" id="winnerSub">Add names and spin the wheel</div>
-            </div>
-
-            <div class="action-buttons">
-                <button class="action-btn" id="resetBtn">🔄 Reset Wheel</button>
-                <button class="action-btn" id="copyBtn">📋 Copy Winner</button>
-            </div>
         </div>
     </div>
 
-    
-  <!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
+    <!-- ========== CATEGORY FOOTER (FUN TOOLS – SAME DESIGN) ========== -->
 <style>
 .related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
 .btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
@@ -525,7 +535,7 @@ body {
 <div class="related-section">
   <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
   <div class="tools-box">
-    <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
+    <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Games</div>
     <div class="tools-grid">
       <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
       <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
@@ -536,14 +546,11 @@ body {
       <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
       <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
       <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
-      <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
-      <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
-      <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
       <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
       <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
       <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
       <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
-      <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
+      <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare</a>
       <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
       <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
       <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
@@ -553,7 +560,6 @@ body {
     </div>
   </div>
 </div>
-    
 
     <!-- SEO Article Section -->
     <div style="background: white; border-radius: 24px; padding: 45px; margin-top: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); line-height: 1.8; color: #374151;">
@@ -606,11 +612,25 @@ let colors = [];
 let canvas = document.getElementById('nameWheel');
 let ctx = canvas.getContext('2d');
 
-function generateColors(count) {
+// UNIQUE PROFESSIONAL GRADIENT COLORS (different from Decision Roulette)
+const namePickerColors = [
+    { start: '#7e22ce', end: '#a855f7' },  // Purple
+    { start: '#be123c', end: '#f43f5e' },  // Pink/Rose
+    { start: '#ea580c', end: '#f97316' },  // Orange
+    { start: '#0f766e', end: '#14b8a6' },  // Teal
+    { start: '#4338ca', end: '#6366f1' },  // Indigo
+    { start: '#b45309', end: '#d97706' },  // Amber
+    { start: '#0891b2', end: '#06b6d4' },  // Cyan
+    { start: '#86198f', end: '#d946ef' },  // Fuchsia
+    { start: '#047857', end: '#10b981' },  // Emerald
+    { start: '#9d174d', end: '#db2777' }   // Pink
+];
+
+function generateNamePickerColors(count) {
     let colorList = [];
     for (let i = 0; i < count; i++) {
-        let hue = (i * 360 / count) % 360;
-        colorList.push(`hsl(${hue}, 70%, 55%)`);
+        let colorIndex = i % namePickerColors.length;
+        colorList.push(namePickerColors[colorIndex]);
     }
     return colorList;
 }
@@ -623,7 +643,7 @@ function updateNamesFromInputs() {
         if (val !== '') names.push(val);
     });
     if (names.length === 0) names = ['Name'];
-    colors = generateColors(names.length);
+    colors = generateNamePickerColors(names.length);
     resizeCanvas();
     drawWheel(currentAngle);
 }
@@ -650,11 +670,10 @@ function removeName(btn) {
 }
 
 function resizeCanvas() {
-    let size = window.innerWidth < 600 ? 280 : 320;
+    let container = document.getElementById('canvasContainer');
+    let size = container.clientWidth;
     canvas.width = size;
     canvas.height = size;
-    canvas.style.width = size + 'px';
-    canvas.style.height = size + 'px';
     drawWheel(currentAngle);
 }
 
@@ -673,9 +692,17 @@ function drawWheel(angle) {
         ctx.moveTo(centerX, centerY);
         ctx.arc(centerX, centerY, radius, startAngle, endAngle);
         ctx.closePath();
-        ctx.fillStyle = colors[i];
+        let gradient = ctx.createLinearGradient(
+            centerX + Math.cos(startAngle) * radius * 0.3,
+            centerY + Math.sin(startAngle) * radius * 0.3,
+            centerX + Math.cos(endAngle) * radius * 0.7,
+            centerY + Math.sin(endAngle) * radius * 0.7
+        );
+        gradient.addColorStop(0, colors[i].start);
+        gradient.addColorStop(1, colors[i].end);
+        ctx.fillStyle = gradient;
         ctx.fill();
-        ctx.strokeStyle = 'white';
+        ctx.strokeStyle = 'rgba(255,255,255,0.6)';
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
@@ -687,21 +714,28 @@ function drawWheel(angle) {
         ctx.rotate(startAngle + angleStep / 2);
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        let fontSize = Math.min(size * 0.035, 14);
-        ctx.font = `500 ${fontSize}px "Segoe UI"`;
+        let fontSize = Math.min(size * 0.04, 16);
+        ctx.font = `600 ${fontSize}px "Segoe UI"`;
         ctx.fillStyle = 'white';
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = 'rgba(0,0,0,0.3)';
         let text = names[i];
-        if (text.length > 10) text = text.substring(0, 8) + '..';
+        if (text.length > 12) text = text.substring(0, 10) + '..';
         ctx.fillText(text, radius * 0.65, 0);
+        ctx.shadowBlur = 0;
         ctx.restore();
     }
     ctx.beginPath();
-    ctx.arc(centerX, centerY, radius * 0.1, 0, Math.PI * 2);
+    ctx.arc(centerX, centerY, radius * 0.12, 0, Math.PI * 2);
     ctx.fillStyle = '#1E3A8A';
     ctx.fill();
-    ctx.strokeStyle = 'white';
+    ctx.strokeStyle = 'rgba(255,255,255,0.8)';
     ctx.lineWidth = 3;
     ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius * 0.06, 0, Math.PI * 2);
+    ctx.fillStyle = '#2563eb';
+    ctx.fill();
 }
 
 function getNameAtPointer() {
@@ -716,18 +750,18 @@ function getNameAtPointer() {
 }
 
 function createConfetti() {
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 100; i++) {
         let confetti = document.createElement('div');
         confetti.style.position = 'fixed';
         confetti.style.width = Math.random() * 8 + 4 + 'px';
         confetti.style.height = Math.random() * 8 + 4 + 'px';
-        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 60%)`;
         confetti.style.left = Math.random() * 100 + '%';
         confetti.style.top = '-10px';
         confetti.style.borderRadius = '2px';
         confetti.style.zIndex = '9999';
         confetti.style.pointerEvents = 'none';
-        confetti.style.animation = `confettiFall ${Math.random() * 1 + 1.5}s ease-out forwards`;
+        confetti.style.animation = `confettiFall ${Math.random() * 1.5 + 1}s ease-out forwards`;
         document.body.appendChild(confetti);
         setTimeout(() => confetti.remove(), 2000);
     }
@@ -742,7 +776,7 @@ function spinWheel() {
     if (names.length < 2) { showToast('Add at least 2 names!'); return; }
     spinning = true;
     spinStartTime = performance.now();
-    let fullRotations = 5 + Math.random() * 5;
+    let fullRotations = 6 + Math.random() * 5;
     let finalAngleOffset = Math.random() * Math.PI * 2;
     spinEndAngle = currentAngle + (fullRotations * Math.PI * 2) + finalAngleOffset;
     animateSpin(spinStartTime);
@@ -751,7 +785,7 @@ function spinWheel() {
 function animateSpin(now) {
     let elapsed = performance.now() - now;
     let t = Math.min(1, elapsed / spinDuration);
-    let easeOut = 1 - Math.pow(1 - t, 3);
+    let easeOut = 1 - Math.pow(1 - t, 4);
     let newAngle = currentAngle + (spinEndAngle - currentAngle) * easeOut;
     currentAngle = newAngle % (Math.PI * 2);
     drawWheel(currentAngle);
@@ -782,7 +816,14 @@ function resetWheel() {
 function copyWinner() {
     let winner = document.getElementById('winnerName').innerHTML;
     if (winner === '—') { showToast('Please spin the wheel first!'); return; }
-    navigator.clipboard.writeText(winner);
+    const textarea = document.createElement('textarea');
+    textarea.value = winner;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
     showToast(`✅ Copied: ${winner}`);
 }
 
@@ -817,43 +858,23 @@ function showToast(msg) {
 document.getElementById('spinBtn').addEventListener('click', spinWheel);
 document.getElementById('resetBtn').addEventListener('click', resetWheel);
 document.getElementById('copyBtn').addEventListener('click', copyWinner);
+
+// Preset Dropdown Event
+const presetSelect = document.getElementById('presetSelect');
+if (presetSelect) {
+    presetSelect.addEventListener('change', function() {
+        if (this.value) {
+            loadPreset(this.value);
+            this.value = '';
+        }
+    });
+}
+
 document.addEventListener('input', function(e) {
     if (e.target.classList && e.target.classList.contains('name-input')) updateNamesFromInputs();
 });
 window.addEventListener('resize', () => resizeCanvas());
 window.onload = () => { updateNamesFromInputs(); drawWheel(currentAngle); };
-
-// Dynamic category footer (FIXED - now detects random-name-picker as 'fun')
-function getCurrentCategory() {
-    const path = window.location.pathname;
-    if (path.includes('spin-the-wheel') || path.includes('yes-no-wheel') || path.includes('decision-roulette') || path.includes('random-name-picker') || path.includes('random-number')) return 'fun';
-    if (path.includes('age') || path.includes('gst') || path.includes('percentage') || path.includes('discount') || path.includes('profit') || path.includes('gpa') || path.includes('date') || path.includes('qr') || path.includes('currency')) return 'popular';
-    if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie')) return 'health';
-    if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) return 'financial';
-    if (path.includes('word') || path.includes('line') || path.includes('text') || path.includes('password')) return 'text';
-    if (path.includes('image')) return 'media';
-    return 'popular';
-}
-const categories = {
-    popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
-    fun: { name: "🎲 Random & Fun Tools", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Decision Roulette", url: "decision-roulette.html" }, { name: "Random Name Picker", url: "random-name-picker.html" }, { name: "Random Number Generator", url: "random-number-generator.html" } ] }
-};
-function renderFooter() {
-    const container = document.getElementById('dynamicCategoryFooter');
-    if (!container) return;
-    const cat = categories[getCurrentCategory()];
-    if (!cat) { container.innerHTML = '<p style="text-align:center;">Tools loading...</p>'; return; }
-    let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-        <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-    cat.tools.forEach(tool => {
-        html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
-    });
-    html += `</div></div>`;
-    container.innerHTML = html;
-}
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
-else renderFooter();
 </script>
 </body>
 </html>
