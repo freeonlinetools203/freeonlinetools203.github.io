@@ -25,7 +25,7 @@
 <meta name="twitter:title" content="Free Decision Roulette - Decision Maker Wheel">
 <meta name="twitter:description" content="Let the wheel decide for you!">
 
-<!-- Google tag (gtag.js) - CORRECT ID -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -56,7 +56,7 @@
 }
 </script>
 
-<!-- Schema Markup (No Rating) -->
+<!-- Schema Markup -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -89,7 +89,7 @@
             "name": "What is Decision Roulette?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Decision Roulette is a free online wheel spinner that helps you make random decisions. You can add custom options, spin the wheel, and let fate decide!"
+                "text": "Decision Roulette is a free online wheel spinner that helps you make random decisions."
             }
         },
         {
@@ -97,7 +97,7 @@
             "name": "How to use random name picker?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Enter names in the options list, click SPIN, and the wheel will randomly select a name. Perfect for classroom activities, team selection, and raffles."
+                "text": "Enter names in the options list, click SPIN, and the wheel will randomly select a name."
             }
         },
         {
@@ -105,7 +105,7 @@
             "name": "Is this spin the wheel game free?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes! This spin the wheel game is completely free with no registration required. Use it unlimited times for all your decision-making needs."
+                "text": "Yes! Completely free with no registration required."
             }
         }
     ]
@@ -217,6 +217,40 @@
             padding: 35px;
         }
 
+        /* Preset Dropdown - Simple */
+        .preset-section {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .preset-select {
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid #e5e7eb;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .preset-select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .preset-select:focus {
+            outline: none;
+        }
+        
+        .preset-select option {
+            background: white;
+            color: #1e3a8a;
+        }
+
         /* Options Section */
         .options-section {
             background: #f8fafc;
@@ -238,6 +272,8 @@
             flex-direction: column;
             gap: 10px;
             margin-bottom: 15px;
+            max-height: 250px;
+            overflow-y: auto;
         }
 
         .option-item {
@@ -296,73 +332,74 @@
             transform: translateY(-2px);
         }
 
-        /* Preset Section */
-        .preset-section {
-            margin-bottom: 25px;
-        }
-
-        .preset-title {
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .preset-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .preset-btn {
-            background: #f1f5f9;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .preset-btn:hover {
-            background: #e5e7eb;
-            transform: translateY(-2px);
-        }
-
         /* Wheel Styles */
         .wheel-wrapper {
             position: relative;
             display: flex;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        .wheel {
-            width: 280px;
-            height: 280px;
+        .canvas-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            aspect-ratio: 1/1;
+        }
+
+        canvas#decisionWheel {
+            width: 100% !important;
+            height: 100% !important;
             border-radius: 50%;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
-        .wheel:hover {
+        canvas#decisionWheel:hover {
             transform: scale(1.02);
         }
 
+        .spin-center-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #2563eb;
+            color: #2563eb;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.1s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .spin-center-btn:active {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+
+        /* Pointer with Enhanced Glow Effect */
         .pointer {
             position: absolute;
-            top: -25px;
+            top: -28px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             height: 0;
-            border-left: 22px solid transparent;
-            border-right: 22px solid transparent;
-            border-top: 45px solid #dc2626;
-            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+            border-left: 24px solid transparent;
+            border-right: 24px solid transparent;
+            border-top: 50px solid #dc2626;
+            filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.8)) drop-shadow(0 5px 10px rgba(0,0,0,0.3));
             z-index: 10;
-            animation: bounce 1s ease infinite;
+            animation: bounce 1s ease infinite, pointerGlow 1.5s ease-in-out infinite alternate;
         }
 
         @keyframes bounce {
@@ -370,23 +407,9 @@
             50% { transform: translateX(-50%) translateY(-8px); }
         }
 
-        .spin-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: white;
-            border: none;
-            padding: 16px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 60px;
-            cursor: pointer;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .spin-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        @keyframes pointerGlow {
+            0% { filter: drop-shadow(0 0 5px #dc2626) drop-shadow(0 5px 10px rgba(0,0,0,0.3)); border-top-color: #dc2626; }
+            100% { filter: drop-shadow(0 0 25px #ff6b6b) drop-shadow(0 5px 10px rgba(0,0,0,0.3)); border-top-color: #ff6b6b; }
         }
 
         .result-card {
@@ -445,62 +468,6 @@
             transform: translateY(-2px);
         }
 
-        .other-tools {
-            background: white;
-            border-radius: 24px;
-            padding: 30px;
-            margin-top: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .other-tools h3 {
-            color: #1e3a8a;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
-        .tool-link {
-            display: block;
-            padding: 12px 18px;
-            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .tool-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
-        }
-
-        .home-link {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #6b7280;
-            color: white;
-            text-decoration: none;
-            border-radius: 40px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .home-link:hover {
-            background: #4b5563;
-            transform: translateY(-2px);
-        }
-
         /* Article Styles */
         .article-section {
             background: white;
@@ -521,60 +488,9 @@
             display: inline-block;
         }
 
-        .article-section h3 {
-            color: #2563eb;
-            font-size: 22px;
-            margin: 25px 0 15px 0;
-        }
-
         .article-section p {
             margin-bottom: 18px;
             font-size: 16px;
-        }
-
-        .article-section ul, .article-section ol {
-            margin: 15px 0 20px 30px;
-        }
-
-        .article-section li {
-            margin-bottom: 8px;
-        }
-
-        .article-section table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: #f9fafb;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .article-section th, .article-section td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .article-section th {
-            background: #1e3a8a;
-            color: white;
-            font-weight: 600;
-        }
-
-        .article-section .highlight {
-            background: #fef9e3;
-            padding: 20px;
-            border-left: 4px solid #f59e0b;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-
-        .article-section .tip {
-            background: #e6f4ff;
-            padding: 20px;
-            border-left: 4px solid #2563eb;
-            border-radius: 12px;
-            margin: 20px 0;
         }
 
         .stats-grid {
@@ -617,18 +533,28 @@
             line-height: 1.6;
         }
 
+        .highlight {
+            background: #fef9e3;
+            padding: 20px;
+            border-left: 4px solid #f59e0b;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .tip {
+            background: #e6f4ff;
+            padding: 20px;
+            border-left: 4px solid #2563eb;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
         .related-searches {
             background: #f9fafb;
             border-radius: 16px;
             padding: 20px;
             margin: 30px 0;
             text-align: center;
-        }
-
-        .related-searches h4 {
-            color: #1e3a8a;
-            margin-bottom: 15px;
-            font-size: 18px;
         }
 
         .search-tags {
@@ -719,10 +645,11 @@
             .navbar { padding: 12px 20px; }
             .nav-container { flex-direction: column; text-align: center; }
             .card-content { padding: 25px 20px; }
-            .wheel { width: 240px; height: 240px; }
             .decision-text { font-size: 22px; }
             .article-section { padding: 25px 20px; }
             .article-section h2 { font-size: 22px; }
+            .spin-center-btn { width: 55px; height: 55px; font-size: 0.8rem; }
+            .preset-section { justify-content: center; }
         }
     </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
@@ -736,45 +663,15 @@
             <p>Customizable decision wheel - Add your options, spin the wheel, and let fate decide! Perfect for random name picker, classroom activities, and games.</p>
         </div>
         <div class="card-content">
-            <!-- Options Section -->
-            <div class="options-section">
-                <label class="options-label">📝 Enter Your Options</label>
-                <div class="options-list" id="optionsList">
-                    <div class="option-item">
-                        <input type="text" class="option-input" placeholder="Option 1" value="Pizza 🍕">
-                        <button class="remove-option" onclick="removeOption(this)">✕</button>
-                    </div>
-                    <div class="option-item">
-                        <input type="text" class="option-input" placeholder="Option 2" value="Burger 🍔">
-                        <button class="remove-option" onclick="removeOption(this)">✕</button>
-                    </div>
-                    <div class="option-item">
-                        <input type="text" class="option-input" placeholder="Option 3" value="Sushi 🍣">
-                        <button class="remove-option" onclick="removeOption(this)">✕</button>
-                    </div>
-                </div>
-                <button class="add-option-btn" onclick="addOption()">+ Add Option</button>
-            </div>
-
-            <!-- Preset Options -->
-            <div class="preset-section">
-                <div class="preset-title">⚡ Quick Presets</div>
-                <div class="preset-buttons">
-                    <button class="preset-btn" onclick="loadPreset('food')">🍕 What to Eat</button>
-                    <button class="preset-btn" onclick="loadPreset('movie')">🎬 What to Watch</button>
-                    <button class="preset-btn" onclick="loadPreset('names')">👥 Random Names</button>
-                    <button class="preset-btn" onclick="loadPreset('activity')">🏃 Activities</button>
-                    <button class="preset-btn" onclick="loadPreset('travel')">✈️ Travel</button>
-                </div>
-            </div>
-
-            <!-- Wheel -->
+            
+            <!-- Wheel FIRST (upar) -->
             <div class="wheel-wrapper">
                 <div class="pointer"></div>
-                <canvas id="decisionWheel" class="wheel" width="500" height="500"></canvas>
+                <div class="canvas-container" id="canvasContainer">
+                    <canvas id="decisionWheel" width="500" height="500"></canvas>
+                    <button class="spin-center-btn" id="spinBtn">SPIN</button>
+                </div>
             </div>
-
-            <button class="spin-btn" id="spinBtn">🎡 SPIN THE WHEEL</button>
 
             <!-- Result -->
             <div class="result-card" id="resultCard">
@@ -786,10 +683,50 @@
                 <button class="action-btn" id="resetBtn">🔄 Reset Wheel</button>
                 <button class="action-btn" id="copyBtn">📋 Copy Decision</button>
             </div>
+
+            <!-- Quick Presets Dropdown - Simple ek option -->
+            <div class="preset-section">
+                <select id="presetSelect" class="preset-select">
+                    <option value="">⚡ Quick Presets</option>
+                    <option value="food">🍕 What to Eat</option>
+                    <option value="movie">🎬 What to Watch</option>
+                    <option value="names">👥 Random Names</option>
+                    <option value="activity">🏃 Activities</option>
+                    <option value="travel">✈️ Travel</option>
+                </select>
+            </div>
+
+            <!-- Options Section (niche) -->
+            <div class="options-section">
+                <label class="options-label">📝 Enter Your Options</label>
+                <div class="options-list" id="optionsList">
+                    <div class="option-item">
+                        <input type="text" class="option-input" placeholder="Option 1" value="🏖️ Beach">
+                        <button class="remove-option" onclick="removeOption(this)">✕</button>
+                    </div>
+                    <div class="option-item">
+                        <input type="text" class="option-input" placeholder="Option 2" value="🏔️ Mountains">
+                        <button class="remove-option" onclick="removeOption(this)">✕</button>
+                    </div>
+                    <div class="option-item">
+                        <input type="text" class="option-input" placeholder="Option 3" value="🌆 City">
+                        <button class="remove-option" onclick="removeOption(this)">✕</button>
+                    </div>
+                    <div class="option-item">
+                        <input type="text" class="option-input" placeholder="Option 4" value="🌲 Forest">
+                        <button class="remove-option" onclick="removeOption(this)">✕</button>
+                    </div>
+                    <div class="option-item">
+                        <input type="text" class="option-input" placeholder="Option 5" value="🏝️ Island">
+                        <button class="remove-option" onclick="removeOption(this)">✕</button>
+                    </div>
+                </div>
+                <button class="add-option-btn" onclick="addOption()">+ Add Option</button>
+            </div>
         </div>
     </div>
     
-<!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
+<!-- Category Footer - Fun Tools -->
 <style>
 .related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
 .btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
@@ -850,162 +787,53 @@
         </div>
 
         <h2>🎯 What is Decision Roulette?</h2>
-        <p><strong>Decision Roulette</strong> is a powerful and fun online tool that helps you make random decisions by spinning a customizable wheel. Whether you need a <strong>random name picker</strong> for your classroom, a <strong>spin the wheel game</strong> for parties, or a <strong>yes or no generator</strong> for quick decisions, our decision roulette has you covered.</p>
-        <p>Unlike traditional decision-making methods, our wheel adds an element of excitement and fairness to every choice. Simply add your options, spin the wheel, and let fate decide!</p>
+        <p><strong>Decision Roulette</strong> is a powerful and fun online tool that helps you make random decisions by spinning a customizable wheel.</p>
 
         <div class="highlight">
-            <p><strong>📌 Did You Know?</strong> Decision wheels are used by millions of teachers, event planners, and game masters worldwide to make random selections fair and fun!</p>
+            <p><strong>📌 Did You Know?</strong> Decision wheels are used by millions of teachers, event planners, and game masters worldwide!</p>
         </div>
 
         <h2>👥 Random Name Picker for Classrooms</h2>
-        <p>Teachers love using our <strong>random name picker</strong> for classroom activities. It ensures every student gets a fair chance to participate. Popular uses include:</p>
-        <ul>
-            <li>👨‍🎓 Calling on students to answer questions</li>
-            <li>👥 Creating random teams for group projects</li>
-            <li>🎁 Randomly selecting prize winners</li>
-            <li>📝 Choosing presentation order</li>
-            <li>🎯 Classroom games and activities</li>
-        </ul>
+        <p>Teachers love using our <strong>random name picker</strong> for classroom activities. It ensures every student gets a fair chance.</p>
 
         <div class="tip">
-            <p><strong>💡 Pro Tip:</strong> Enter your students' names in the options list, spin the wheel, and let it randomly select who goes next. It's fair, fun, and keeps everyone engaged!</p>
+            <p><strong>💡 Pro Tip:</strong> Enter your students' names, spin the wheel, and let it randomly select who goes next.</p>
         </div>
 
         <h2>🎮 Spin The Wheel Game for Parties</h2>
-        <p>The <strong>spin the wheel game</strong> is a hit at any party or social gathering. Here are some fun ways to use it:</p>
-        <ul>
-            <li>🎉 Truth or Dare challenges</li>
-            <li>🍺 Drinking game decisions (drink responsibly)</li>
-            <li>🎤 Karaoke song selection</li>
-            <li>🎁 Gift exchange order</li>
-            <li>🎲 Board game turn order</li>
-        </ul>
-
-        <h2>📱 Wheel of Names App Alternative</h2>
-        <p>Looking for a <strong>wheel of names app</strong> alternative? Our decision roulette works perfectly on any device - no download required! Just open your browser, add names, and spin. It's free, fast, and works on iPhone, Android, and desktop.</p>
-
-        <h2>🎯 Random Name Picker Balloon Style</h2>
-        <p>Our <strong>random name picker balloon</strong> style wheel is visually engaging and perfect for younger audiences. The colorful wheel segments make it exciting to watch and spin.</p>
-
-        <h2>✅ Yes or No Generator Online</h2>
-        <p>Need a quick <strong>yes or no generator</strong>? While our decision roulette supports multiple options, you can also use it as a yes/no decision maker by adding just two options: YES and NO.</p>
-
-        <h2>🎲 Yes or No Dice Alternative</h2>
-        <p>Don't have dice? Use our <strong>yes or no dice</strong> alternative. The wheel provides the same random results as rolling dice but with more visual appeal!</p>
-
-        <h2>📱 Yes or No Flip Online</h2>
-        <p>Our <strong>yes or no flip online</strong> feature gives you instant random answers. Perfect for when you're stuck between two choices and need a quick decision.</p>
-
-        <h2>🏠 Yes or No Generator Home</h2>
-        <p>Keep our <strong>yes or no generator home</strong> page bookmarked for all your quick decision needs. It's always available, always free!</p>
-
-        <h2>🎡 Decision Roulette Wheel Features</h2>
-        <div class="currency-table">
-            <table>
-                <thead>
-                    <tr><th>Feature</th><th>Description</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Custom Options</td><td>Add any number of options (2-12 recommended)</td></tr>
-                    <tr><td>Quick Presets</td><td>Food, movies, names, activities, travel</td></tr>
-                    <tr><td>Smooth Animation</td><td>Realistic spinning physics</td></tr>
-                    <tr><td>Color Coding</td><td>Each option gets a unique color</td></tr>
-                    <tr><td>Copy Result</td><td>Copy decision to clipboard</td></tr>
-                    <tr><td>Mobile Friendly</td><td>Works on all devices</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h2>🎯 Decision Roulette Online - How to Use</h2>
-        <ol>
-            <li><strong>Step 1:</strong> Add your options in the input fields</li>
-            <li><strong>Step 2:</strong> Use presets for quick setup</li>
-            <li><strong>Step 3:</strong> Click "SPIN THE WHEEL" button</li>
-            <li><strong>Step 4:</strong> Watch the wheel spin and stop</li>
-            <li><strong>Step 5:</strong> See the winning option</li>
-            <li><strong>Step 6:</strong> Copy the decision if needed</li>
-        </ol>
-
-        <h2>✅ Why Choose Our Decision Roulette?</h2>
-        <ul>
-            <li><strong>✅ 100% Free:</strong> No hidden charges, no registration</li>
-            <li><strong>✅ Custom Options:</strong> Add your own choices</li>
-            <li><strong>✅ Quick Presets:</strong> Ready-to-use categories</li>
-            <li><strong>✅ Truly Random:</strong> Fair algorithm</li>
-            <li><strong>✅ Smooth Animation:</strong> Realistic spinning</li>
-            <li><strong>✅ Copy Feature:</strong> Save your decisions</li>
-            <li><strong>✅ Mobile Friendly:</strong> Works everywhere</li>
-            <li><strong>✅ Privacy Protected:</strong> No data stored</li>
-        </ul>
+        <p>The <strong>spin the wheel game</strong> is a hit at any party or social gathering.</p>
 
         <h2>❓ Frequently Asked Questions</h2>
-
         <div class="faq-section-article">
             <div class="faq-item-article">
                 <div class="faq-question-article">❓ What is Decision Roulette?</div>
-                <div class="faq-answer-article">Decision Roulette is a free online wheel spinner that helps you make random decisions. You can add custom options, spin the wheel, and let fate decide!</div>
+                <div class="faq-answer-article">A free online wheel spinner that helps you make random decisions.</div>
             </div>
-
             <div class="faq-item-article">
                 <div class="faq-question-article">❓ How to use random name picker?</div>
-                <div class="faq-answer-article">Enter names in the options list, click SPIN, and the wheel will randomly select a name. Perfect for classroom activities, team selection, and raffles.</div>
+                <div class="faq-answer-article">Enter names, click SPIN, and the wheel randomly selects a name.</div>
             </div>
-
             <div class="faq-item-article">
                 <div class="faq-question-article">❓ Is this spin the wheel game free?</div>
-                <div class="faq-answer-article">Yes! This spin the wheel game is completely free with no registration required. Use it unlimited times for all your decision-making needs.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ What is wheel of names app?</div>
-                <div class="faq-answer-article">Wheel of names is a random name picker tool. Our decision roulette works exactly like a wheel of names app but is completely free and works in any browser.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ How to make a decision roulette wheel?</div>
-                <div class="faq-answer-article">Simply add your options using our interface, and the wheel automatically creates segments for each option. No coding needed!</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ Can I use this for yes or no decisions?</div>
-                <div class="faq-answer-article">Absolutely! Just add two options: YES and NO. The wheel will randomly select between them.</div>
-            </div>
-
-            <div class="faq-item-article">
-                <div class="faq-question-article">❓ Is there a random name picker balloon style?</div>
-                <div class="faq-answer-article">Our colorful wheel segments create a balloon-like appearance that's fun and engaging, especially for younger audiences.</div>
+                <div class="faq-answer-article">Yes! Completely free with no registration required.</div>
             </div>
         </div>
 
-        <!-- Related Searches -->
         <div class="related-searches">
             <h4>🔍 People Also Search For</h4>
             <div class="search-tags">
                 <a href="#" class="search-tag">decision roulette</a>
                 <a href="#" class="search-tag">random name picker</a>
                 <a href="#" class="search-tag">spin the wheel game</a>
-                <a href="#" class="search-tag">wheel of names app</a>
                 <a href="#" class="search-tag">yes or no generator</a>
-                <a href="#" class="search-tag">decision roulette wheel</a>
-                <a href="#" class="search-tag">random name picker balloon</a>
-                <a href="#" class="search-tag">fun random name picker free</a>
-                <a href="#" class="search-tag">decision roulette yes or no</a>
-                <a href="#" class="search-tag">yes or no dice</a>
-                <a href="#" class="search-tag">yes or no flip online</a>
-                <a href="#" class="search-tag">yes or no generator home</a>
-                <a href="#" class="search-tag">spin the wheel random picker</a>
-                <a href="#" class="search-tag">custom spin wheel</a>
-                <a href="#" class="search-tag">random name selector</a>
-                <a href="#" class="search-tag">classroom name picker</a>
-                <a href="#" class="search-tag">party decision wheel</a>
             </div>
         </div>
 
         <div class="tip">
-            <p><strong>📌 Bookmark This Page!</strong> Save our decision roulette to your browser bookmarks for quick access whenever you need to make random decisions, pick names, or just have fun! It's completely free and always available.</p>
+            <p><strong>📌 Bookmark This Page!</strong> Save our decision roulette for quick access whenever you need to make random decisions!</p>
         </div>
 
-        <p style="margin-top: 30px; text-align: center; color: #6b7280;"><strong>Free Online Tools</strong> | Decision Roulette | Random Name Picker | Spin The Wheel | 100% Free | No Registration</p>
+        <p style="margin-top: 30px; text-align: center; color: #6b7280;"><strong>Free Online Tools</strong> | Decision Roulette | Random Name Picker | 100% Free</p>
     </div>
 </div>
 
@@ -1013,7 +841,7 @@
     <div class="footer-container">
         <div class="footer-col">
             <h3>✨ Free Online Tools</h3>
-            <p>Decision Roulette - Random name picker and spin the wheel game. Perfect for classrooms, parties, and quick decisions. Trusted by 22,000+ daily users.</p>
+            <p>Decision Roulette - Random name picker and spin the wheel game. Perfect for classrooms, parties, and quick decisions.</p>
         </div>
         <div class="footer-col">
             <h4>📄 Quick Links</h4>
@@ -1067,17 +895,31 @@ let spinning = false;
 let spinStartTime = 0;
 let spinDuration = 2000;
 let spinEndAngle = 0;
-let options = ['Pizza 🍕', 'Burger 🍔', 'Sushi 🍣'];
+let options = ['🏖️ Beach', '🏔️ Mountains', '🌆 City', '🌲 Forest', '🏝️ Island'];
 let colors = [];
 
 let canvas = document.getElementById('decisionWheel');
 let ctx = canvas.getContext('2d');
 
-function generateColors(count) {
+// Professional gradient colors
+const professionalColors = [
+    { start: '#1e3a8a', end: '#2563eb' },
+    { start: '#7e22ce', end: '#a855f7' },
+    { start: '#047857', end: '#10b981' },
+    { start: '#ea580c', end: '#f97316' },
+    { start: '#be123c', end: '#f43f5e' },
+    { start: '#d97706', end: '#fbbf24' },
+    { start: '#0891b2', end: '#06b6d4' },
+    { start: '#4f46e5', end: '#6366f1' },
+    { start: '#b45309', end: '#d97706' },
+    { start: '#0f766e', end: '#14b8a6' }
+];
+
+function generateProfessionalColors(count) {
     let colorList = [];
     for (let i = 0; i < count; i++) {
-        let hue = (i * 360 / count) % 360;
-        colorList.push(`hsl(${hue}, 70%, 55%)`);
+        let colorIndex = i % professionalColors.length;
+        colorList.push(professionalColors[colorIndex]);
     }
     return colorList;
 }
@@ -1089,12 +931,10 @@ function updateOptionsFromInputs() {
         let val = input.value.trim();
         if (val !== '') {
             options.push(val);
-        } else {
-            options.push('Option');
         }
     });
     if (options.length === 0) options = ['Option'];
-    colors = generateColors(options.length);
+    colors = generateProfessionalColors(options.length);
     resizeCanvas();
     drawWheel(currentAngle);
 }
@@ -1124,11 +964,10 @@ function removeOption(btn) {
 }
 
 function resizeCanvas() {
-    let size = window.innerWidth < 600 ? 280 : 320;
+    let container = document.getElementById('canvasContainer');
+    let size = container.clientWidth;
     canvas.width = size;
     canvas.height = size;
-    canvas.style.width = size + 'px';
-    canvas.style.height = size + 'px';
     drawWheel(currentAngle);
 }
 
@@ -1152,10 +991,18 @@ function drawWheel(angle) {
         ctx.arc(centerX, centerY, radius, startAngle, endAngle);
         ctx.closePath();
         
-        ctx.fillStyle = colors[i];
+        let gradient = ctx.createLinearGradient(
+            centerX + Math.cos(startAngle) * radius * 0.3,
+            centerY + Math.sin(startAngle) * radius * 0.3,
+            centerX + Math.cos(endAngle) * radius * 0.7,
+            centerY + Math.sin(endAngle) * radius * 0.7
+        );
+        gradient.addColorStop(0, colors[i].start);
+        gradient.addColorStop(1, colors[i].end);
+        ctx.fillStyle = gradient;
         ctx.fill();
         
-        ctx.strokeStyle = 'white';
+        ctx.strokeStyle = 'rgba(255,255,255,0.6)';
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
@@ -1168,22 +1015,30 @@ function drawWheel(angle) {
         ctx.rotate(startAngle + angleStep / 2);
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        let fontSize = Math.min(size * 0.035, 14);
-        ctx.font = `500 ${fontSize}px "Segoe UI"`;
+        let fontSize = Math.min(size * 0.04, 16);
+        ctx.font = `600 ${fontSize}px "Segoe UI"`;
         ctx.fillStyle = 'white';
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = 'rgba(0,0,0,0.3)';
         let text = options[i];
-        if (text.length > 12) text = text.substring(0, 10) + '..';
+        if (text.length > 14) text = text.substring(0, 12) + '..';
         ctx.fillText(text, radius * 0.65, 0);
+        ctx.shadowBlur = 0;
         ctx.restore();
     }
     
     ctx.beginPath();
-    ctx.arc(centerX, centerY, radius * 0.1, 0, Math.PI * 2);
+    ctx.arc(centerX, centerY, radius * 0.12, 0, Math.PI * 2);
     ctx.fillStyle = '#1E3A8A';
     ctx.fill();
-    ctx.strokeStyle = 'white';
+    ctx.strokeStyle = 'rgba(255,255,255,0.8)';
     ctx.lineWidth = 3;
     ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius * 0.06, 0, Math.PI * 2);
+    ctx.fillStyle = '#2563eb';
+    ctx.fill();
 }
 
 function getDecisionAtPointer() {
@@ -1201,18 +1056,18 @@ function getDecisionAtPointer() {
 }
 
 function createConfetti() {
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 100; i++) {
         let confetti = document.createElement('div');
         confetti.style.position = 'fixed';
         confetti.style.width = Math.random() * 8 + 4 + 'px';
         confetti.style.height = Math.random() * 8 + 4 + 'px';
-        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 60%)`;
         confetti.style.left = Math.random() * 100 + '%';
         confetti.style.top = '-10px';
         confetti.style.borderRadius = '2px';
         confetti.style.zIndex = '9999';
         confetti.style.pointerEvents = 'none';
-        confetti.style.animation = `confettiFall ${Math.random() * 1 + 1.5}s ease-out forwards`;
+        confetti.style.animation = `confettiFall ${Math.random() * 1.5 + 1}s ease-out forwards`;
         document.body.appendChild(confetti);
         setTimeout(() => confetti.remove(), 2000);
     }
@@ -1237,7 +1092,7 @@ function spinWheel() {
     spinning = true;
     spinStartTime = performance.now();
     
-    let fullRotations = 5 + Math.random() * 5;
+    let fullRotations = 6 + Math.random() * 5;
     let finalAngleOffset = Math.random() * Math.PI * 2;
     spinEndAngle = currentAngle + (fullRotations * Math.PI * 2) + finalAngleOffset;
     
@@ -1247,7 +1102,7 @@ function spinWheel() {
 function animateSpin(now) {
     let elapsed = performance.now() - now;
     let t = Math.min(1, elapsed / spinDuration);
-    let easeOut = 1 - Math.pow(1 - t, 3);
+    let easeOut = 1 - Math.pow(1 - t, 4);
     
     let newAngle = currentAngle + (spinEndAngle - currentAngle) * easeOut;
     currentAngle = newAngle % (Math.PI * 2);
@@ -1292,7 +1147,14 @@ function copyDecision() {
         showToast('Please spin the wheel first!');
         return;
     }
-    navigator.clipboard.writeText(decision);
+    const textarea = document.createElement('textarea');
+    textarea.value = decision;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
     showToast(`✅ Copied: ${decision}`);
 }
 
@@ -1339,6 +1201,17 @@ function showToast(msg) {
 document.getElementById('spinBtn').addEventListener('click', spinWheel);
 document.getElementById('resetBtn').addEventListener('click', resetWheel);
 document.getElementById('copyBtn').addEventListener('click', copyDecision);
+
+// Preset Dropdown Event
+const presetSelect = document.getElementById('presetSelect');
+if (presetSelect) {
+    presetSelect.addEventListener('change', function() {
+        if (this.value) {
+            loadPreset(this.value);
+            this.value = '';
+        }
+    });
+}
 
 document.addEventListener('input', function(e) {
     if (e.target.classList && e.target.classList.contains('option-input')) {
