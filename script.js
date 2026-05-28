@@ -19,7 +19,7 @@ const toolsDatabase = {
         "Heading Structure Checker",
         "Image Alt Analyzer",
         "XML Sitemap Generator",
-        "Scan Report AI"
+        "ultrasound-scanner.html"
     ]
 },
     catHash: {
@@ -94,7 +94,7 @@ const toolUrlMap = {
     "Heading Structure Checker": "heading-structure-checker.html",
     "Image Alt Analyzer": "image-alt-analyzer.html",
     "XML Sitemap Generator": "xml-sitemap-generator.html",
-    "Scan Report AI": "scanreport-ai.html",
+    "Ultrasound Scanner": "ultrasound-scanner.html",
     // Hashtag Tools
     "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
     "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
@@ -349,7 +349,7 @@ const navbarHTML = `
 <a href="https://freeonlinetools203.com/heading-structure-checker.html">Heading Structure Checker</a>
 <a href="https://freeonlinetools203.com/image-alt-analyzer.html">Image Alt Analyzer</a>
 <a href="https://freeonlinetools203.com/xml-sitemap-generator.html">XML Sitemap Generator</a>
-<a href="https://freeonlinetools203.com/scanreport-ai.html">Scan Report AI</a>
+<a href="https://freeonlinetools203.com/ultrasound-scanner.html">🩺 Ultrasound Scanner</a>
                 <h4>📱 Social Media Hashtag</h4>
                 <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">Instagram Hashtag Generator</a>
                 <a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">LinkedIn Hashtag Generator</a>
