@@ -347,7 +347,7 @@ const navbarCSS = `<style>
 </style>`;
 
 // =========================================================================
-// NAVBAR HTML (TOP MENU - sirf 5 Most Popular tools)
+// NAVBAR HTML (TOP MENU - CORRECTED STRUCTURE)
 // =========================================================================
 const navbarHTML = `
 <div class="megamenu-container">
@@ -365,6 +365,8 @@ const navbarHTML = `
         <div class="mega-dropdown">
           <div class="dropdown-scroll">
             <div class="dropdown-grid">
+              
+              <!-- Column 1 -->
               <div class="dropdown-column">
                 <h4>✨ Most Popular Tools</h4>
                 <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
@@ -389,23 +391,27 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/image-alt-analyzer.html">Image Alt Analyzer</a>
                 <a href="https://freeonlinetools203.com/xml-sitemap-generator.html">XML Sitemap Generator</a>
                 <a href="https://freeonlinetools203.com/ultrasound-scanner.html">🩺 Ultrasound Scanner</a>
-               <h4>📱 Social Media Hashtag Tools</h4>
-<a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">📸 Instagram Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">💼 LinkedIn Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/facebook-hashtag-generator.html">📘 Facebook Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html">📌 Pinterest Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/ai-hashtag-generator.html">🤖 AI Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/seo-hashtags-generator.html">🔎 SEO Hashtags Generator</a>
-<a href="https://freeonlinetools203.com/random-hashtag-generator.html">🎲 Random Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html">🎵 TikTok Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/twitter-hashtag-generator.html">🐦 Twitter Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/threads-hashtag-generator.html">🧵 Threads Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/trending-hashtags-today.html">📈 Trending Hashtags Today</a>
-<a href="https://freeonlinetools203.com/viral-hashtag-generator.html">⚡ Viral Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/youtube-hashtag-generator.html">📺 YouTube Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/social-media-caption-generator.html">✍️ Social Media Caption Generator</a>
+              </div>
+              
+              <!-- Column 2 -->
               <div class="dropdown-column">
-                <h4>🐾 Animal Pregnancy</h4>
+                <h4>📱 Social Media Hashtag Tools</h4>
+                <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">📸 Instagram Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">💼 LinkedIn Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/facebook-hashtag-generator.html">📘 Facebook Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html">📌 Pinterest Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/ai-hashtag-generator.html">🤖 AI Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/seo-hashtags-generator.html">🔎 SEO Hashtags Generator</a>
+                <a href="https://freeonlinetools203.com/random-hashtag-generator.html">🎲 Random Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html">🎵 TikTok Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/twitter-hashtag-generator.html">🐦 Twitter Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/threads-hashtag-generator.html">🧵 Threads Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/trending-hashtags-today.html">📈 Trending Hashtags Today</a>
+                <a href="https://freeonlinetools203.com/viral-hashtag-generator.html">⚡ Viral Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/youtube-hashtag-generator.html">📺 YouTube Hashtag Generator</a>
+                <a href="https://freeonlinetools203.com/social-media-caption-generator.html">✍️ Social Media Caption Generator</a>
+                
+                <h4>🐾 Animal Pregnancy Tools</h4>
                 <a href="https://freeonlinetools203.com/dog-pregnancy-calculator.html">Dog Pregnancy Calculator</a>
                 <a href="https://freeonlinetools203.com/cat-pregnancy-calculator.html">Cat Pregnancy Calculator</a>
                 <a href="https://freeonlinetools203.com/cow-pregnancy-calculator.html">Cow Pregnancy Calculator</a>
@@ -414,15 +420,18 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/horse-pregnancy-calculator.html">Horse Pregnancy Calculator</a>
                 <a href="https://freeonlinetools203.com/sheep-pregnancy-calculator.html">Sheep Pregnancy Calculator</a>
                 <a href="https://freeonlinetools203.com/pig-pregnancy-calculator.html">Pig Pregnancy Calculator</a>
-                <h4>🔐 Developer & Security</h4>
+              </div>
+              
+              <!-- Column 3 -->
+              <div class="dropdown-column">
+                <h4>🔐 Developer & Security Tools</h4>
                 <a href="https://freeonlinetools203.com/md5-generator.html">MD5 Hash Generator</a>
                 <a href="https://freeonlinetools203.com/sha256-generator.html">SHA-256 Hash Generator</a>
                 <a href="https://freeonlinetools203.com/sha1-generator.html">SHA-1 Hash Generator</a>
                 <a href="https://freeonlinetools203.com/base64-encoder-decoder.html">Base64 Encoder/Decoder</a>
                 <a href="https://freeonlinetools203.com/url-encoder-decoder.html">URL Encoder/Decoder</a>
                 <a href="https://freeonlinetools203.com/html-encoder-decoder.html">HTML Encoder/Decoder</a>
-              </div>
-              <div class="dropdown-column">
+                
                 <h4>🎨 Color Tools</h4>
                 <a href="https://freeonlinetools203.com/color-palette-generator.html">Color Palette Generator</a>
                 <a href="https://freeonlinetools203.com/color-shades-generator.html">Color Shades Generator</a>
@@ -430,6 +439,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/color-contrast-checker.html">Color Contrast Checker</a>
                 <a href="https://freeonlinetools203.com/color-name-finder.html">Color Name Finder</a>
                 <a href="https://freeonlinetools203.com/random-color-picker.html">Random Color Picker</a>
+                
                 <h4>📊 Popular Calculators</h4>
                 <a href="https://freeonlinetools203.com/unit-converter.html">Unit Converter</a>
                 <a href="https://freeonlinetools203.com/age-calculator.html">Age Calculator</a>
@@ -444,24 +454,30 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/youtube-thumbnail-downloader.html">YouTube Thumbnail Downloader</a>
                 <a href="https://freeonlinetools203.com/currency-converter.html">Currency Converter</a>
               </div>
+              
+              <!-- Column 4 -->
               <div class="dropdown-column">
-                <h4>🏃 Health & Fitness</h4>
+                <h4>🏃‍♂️ Health & Fitness</h4>
                 <a href="https://freeonlinetools203.com/bmi-calculator.html">BMI Calculator</a>
                 <a href="https://freeonlinetools203.com/bmr-calculator.html">BMR Calculator</a>
                 <a href="https://freeonlinetools203.com/calorie-calculator.html">Calorie Calculator</a>
                 <a href="https://freeonlinetools203.com/tdee-calculator.html">TDEE Calculator</a>
+                
                 <h4>💰 Financial Tools</h4>
                 <a href="https://freeonlinetools203.com/emi-calculator.html">EMI Calculator</a>
                 <a href="https://freeonlinetools203.com/loan-calculator.html">Loan Calculator</a>
                 <a href="https://freeonlinetools203.com/sip-calculator.html">SIP Calculator</a>
                 <a href="https://freeonlinetools203.com/zakat-calculator.html">Zakat Calculator</a>
-                <h4>📝 Text & Writing</h4>
+                
+                <h4>📝 Text & Writing Tools</h4>
                 <a href="https://freeonlinetools203.com/word-counter.html">Word Counter</a>
                 <a href="https://freeonlinetools203.com/line-counter.html">Line Counter</a>
                 <a href="https://freeonlinetools203.com/text-case-converter.html">Text Case Converter</a>
                 <a href="https://freeonlinetools203.com/password-generator.html">Password Generator</a>
                 <a href="https://freeonlinetools203.com/password-checker.html">Password Strength Checker</a>
               </div>
+              
+              <!-- Column 5 -->
               <div class="dropdown-column">
                 <h4>📄 PDF Tools</h4>
                 <a href="https://freeonlinetools203.com/pdf-merger.html">PDF Merger</a>
@@ -476,6 +492,7 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/pdf-to-excel.html">PDF to Excel</a>
                 <a href="https://freeonlinetools203.com/pdf-to-text.html">PDF to Text</a>
                 <a href="https://freeonlinetools203.com/pdf-rotator.html">PDF Rotator</a>
+                
                 <h4>🖼️ Image Tools</h4>
                 <a href="https://freeonlinetools203.com/image-color-extractor.html">Image Color Extractor</a>
                 <a href="https://freeonlinetools203.com/image-converter.html">Image Converter</a>
@@ -484,38 +501,43 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/image-to-pdf.html">Image to PDF</a>
                 <a href="https://freeonlinetools203.com/image-upscaler.html">Image Upscaler</a>
                 <a href="https://freeonlinetools203.com/image-compressor.html">Image Compressor</a>
-               <h4>🎲 Fun Tools</h4>
-<a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
-<a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
-<a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
-<a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
-<a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
-<a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
-<a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
-<a href="https://freeonlinetools203.com/art-roulette-seo.html">🎨 Art Roulette</a>
-<a href="https://freeonlinetools203.com/chore-wheel-seo.html">🧹 Chore Wheel</a>
-<a href="https://freeonlinetools203.com/country-picker-wheel-seo.html">🌍 Country Picker Wheel</a>
-<a href="https://freeonlinetools203.com/decision-wheel.html">🤔 Decision Wheel</a>
-<a href="https://freeonlinetools203.com/dinner-spinner.html">🍽️ Dinner Spinner</a>
-<a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html">🗣️ Icebreaker Wheel</a>
-<a href="https://freeonlinetools203.com/random-fact-wheel-seo.html">📚 Random Fact Wheel</a>
-<a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
-<a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
-<a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
-<a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
-<a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
-<a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
-<a href="https://freeonlinetools203.com/food-picker-wheel.html">🍕 Food Picker Wheel</a>
-<a href="https://freeonlinetools203.com/drink-wheel.html">🍹 Drink Picker Wheel</a>
-<a href="https://freeonlinetools203.com/exercise-wheel.html">🏋️ Exercise Wheel</a>
-
-<!-- ✅ 6 NEW SPIN WHEEL TOOLS -->
-<a href="https://freeonlinetools203.com/squid-game-wheel.html">🦑 Squid Game Spin Wheel</a>
-<a href="https://freeonlinetools203.com/game-character-spin-wheel.html">🎮 Game Character Spin Wheel</a>
-<a href="https://freeonlinetools203.com/party-games-spin-wheel.html">🎉 Party Games Spin Wheel</a>
-<a href="https://freeonlinetools203.com/drinking-game-spin-wheel.html">🍻 Drinking Game Spin Wheel</a>
-<a href="https://freeonlinetools203.com/board-game-spin-wheel.html">🎲 Board Game Spin Wheel</a>
-<a href="https://freeonlinetools203.com/carnival-game-spin-wheel.html">🎪 Carnival Game Spin Wheel</a>
+                
+                <h4>🎲 Random & Fun Tools</h4>
+                <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
+                <a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
+                <a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
+                <a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
+                <a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
+                <a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
+                <a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
+                <a href="https://freeonlinetools203.com/art-roulette-seo.html">🎨 Art Roulette</a>
+                <a href="https://freeonlinetools203.com/chore-wheel-seo.html">🧹 Chore Wheel</a>
+                <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html">🌍 Country Picker Wheel</a>
+                <a href="https://freeonlinetools203.com/decision-wheel.html">🤔 Decision Wheel</a>
+                <a href="https://freeonlinetools203.com/dinner-spinner.html">🍽️ Dinner Spinner</a>
+                <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html">🗣️ Icebreaker Wheel</a>
+                <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html">📚 Random Fact Wheel</a>
+                <a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
+                <a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
+                <a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
+                <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
+                <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
+                <a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
+                <a href="https://freeonlinetools203.com/food-picker-wheel.html">🍕 Food Picker Wheel</a>
+                <a href="https://freeonlinetools203.com/drink-wheel.html">🍹 Drink Picker Wheel</a>
+                <a href="https://freeonlinetools203.com/exercise-wheel.html">🏋️ Exercise Wheel</a>
+                <a href="https://freeonlinetools203.com/squid-game-wheel.html">🦑 Squid Game Spin Wheel</a>
+                <a href="https://freeonlinetools203.com/game-character-spin-wheel.html">🎮 Game Character Spin Wheel</a>
+                <a href="https://freeonlinetools203.com/party-games-spin-wheel.html">🎉 Party Games Spin Wheel</a>
+                <a href="https://freeonlinetools203.com/drinking-game-spin-wheel.html">🍻 Drinking Game Spin Wheel</a>
+                <a href="https://freeonlinetools203.com/board-game-spin-wheel.html">🎲 Board Game Spin Wheel</a>
+                <a href="https://freeonlinetools203.com/carnival-game-spin-wheel.html">🎪 Carnival Game Spin Wheel</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </li>
       <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
       <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
       <li><a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a></li>
@@ -526,7 +548,6 @@ const navbarHTML = `
   </div>
   <div class="mobile-menu" id="mobileMenu"></div>
 </div>`;
-
 // =========================================================================
 // PAGE ONLOAD
 // =========================================================================
