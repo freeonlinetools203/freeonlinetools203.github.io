@@ -29,8 +29,7 @@ const toolsDatabase = {
         "Readability Checker",
         "Heading Structure Checker",
         "Image Alt Analyzer",
-        "XML Sitemap Generator",
-        "Ultrasound Scanner"
+       "XML Sitemap Generator"
     ]
   },
   catHash: {
@@ -127,7 +126,6 @@ const toolUrlMap = {
     "Heading Structure Checker": "heading-structure-checker.html",
     "Image Alt Analyzer": "image-alt-analyzer.html",
     "XML Sitemap Generator": "xml-sitemap-generator.html",
-    "Ultrasound Scanner": "ultrasound-scanner.html",
     "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
     "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
     "Facebook Hashtag Generator": "facebook-hashtag-generator.html",
@@ -390,7 +388,6 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/heading-structure-checker.html">Heading Structure Checker</a>
                 <a href="https://freeonlinetools203.com/image-alt-analyzer.html">Image Alt Analyzer</a>
                 <a href="https://freeonlinetools203.com/xml-sitemap-generator.html">XML Sitemap Generator</a>
-                <a href="https://freeonlinetools203.com/ultrasound-scanner.html">🩺 Ultrasound Scanner</a>
               </div>
               
               <!-- Column 2 -->
