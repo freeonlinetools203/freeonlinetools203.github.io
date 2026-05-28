@@ -2,7 +2,7 @@
 // CENTRALIZED TOOLS DATABASE (UNCHANGED)
 // =========================================================================
 const toolsDatabase = {
-   catSeo: {
+  catSeo: {
     name: "🔍 SEO Tools",
     tools: [
         "Keyword Density Checker",
@@ -19,7 +19,7 @@ const toolsDatabase = {
         "Heading Structure Checker",
         "Image Alt Analyzer",
         "XML Sitemap Generator",
-        "ultrasound-scanner.html"
+        "Ultrasound Scanner"
     ]
 },
     catHash: {
