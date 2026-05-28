@@ -3,9 +3,16 @@
 // =========================================================================
 const toolsDatabase = {
     catSeo: {
-        name: "🔍 SEO Tools",
-        tools: ["Keyword Density Checker","Meta Tags Generator","Meta Tag Analyzer"]
-    },
+    name: "🔍 SEO Tools",
+    tools: [
+        "Keyword Density Checker","Meta Tags Generator","Meta Tag Analyzer",
+        "Broken Link Checker","Backlink Checker","Free Backlink Checker",
+        "Google Index Checker","SEO Analyzer","SEO Score Checker",
+        "SEO Title Generator","SERP Snippet Preview","Readability Checker",
+        "Heading Structure Checker","Image Alt Analyzer","XML Sitemap Generator",
+        "Scan Report AI"
+    ]
+},
     catHash: {
         name: "📱 Social Media Hashtag Tools",
         tools: ["Instagram Hashtag Generator","LinkedIn Hashtag Generator","Facebook Hashtag Generator","Pinterest Hashtag Generator","AI Hashtag Generator","SEO Hashtags Generator"]
@@ -64,9 +71,22 @@ const toolsDatabase = {
 // =========================================================================
 const toolUrlMap = {
     // SEO Tools
-    "Keyword Density Checker": "keyword-density-checker.html",
-    "Meta Tags Generator": "meta-tags-generator.html",
-    "Meta Tag Analyzer": "meta-tag-analyzer.html",
+"Keyword Density Checker": "keyword-density-checker.html",
+"Meta Tags Generator": "meta-tags-generator.html",
+"Meta Tag Analyzer": "meta-tag-analyzer.html",
+"Broken Link Checker": "broken-link-checker.html",
+"Backlink Checker": "backlink-checker.html",
+"Free Backlink Checker": "free-backlink-checker.html",
+"Google Index Checker": "google-index-checker.html",
+"SEO Analyzer": "seo-analyzer.html",
+"SEO Score Checker": "seo-score-checker.html",
+"SEO Title Generator": "seo-title-generator.html",
+"SERP Snippet Preview": "serp-snippet-preview.html",
+"Readability Checker": "readability-checker.html",
+"Heading Structure Checker": "heading-structure-checker.html",
+"Image Alt Analyzer": "image-alt-analyzer.html",
+"XML Sitemap Generator": "xml-sitemap-generator.html",
+"Scan Report AI": "scanreport-ai.html",
     // Hashtag Tools
     "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
     "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
@@ -306,10 +326,23 @@ const navbarHTML = `
           <div class="dropdown-scroll">
             <div class="dropdown-grid">
               <div class="dropdown-column">
-                <h4>🔍 SEO Tools</h4>
-                <a href="https://freeonlinetools203.com/keyword-density-checker.html">Keyword Density Checker</a>
-                <a href="https://freeonlinetools203.com/meta-tags-generator.html">Meta Tags Generator</a>
-                <a href="https://freeonlinetools203.com/meta-tag-analyzer.html">Meta Tag Analyzer</a>
+               <h4>🔍 SEO Tools</h4>
+    <a href="https://freeonlinetools203.com/keyword-density-checker.html">Keyword Density Checker</a>
+    <a href="https://freeonlinetools203.com/meta-tags-generator.html">Meta Tags Generator</a>
+    <a href="https://freeonlinetools203.com/meta-tag-analyzer.html">Meta Tag Analyzer</a>
+    <a href="https://freeonlinetools203.com/broken-link-checker.html">Broken Link Checker</a>
+    <a href="https://freeonlinetools203.com/backlink-checker.html">Backlink Checker</a>
+    <a href="https://freeonlinetools203.com/free-backlink-checker.html">Free Backlink Checker</a>
+    <a href="https://freeonlinetools203.com/google-index-checker.html">Google Index Checker</a>
+    <a href="https://freeonlinetools203.com/seo-analyzer.html">SEO Analyzer</a>
+    <a href="https://freeonlinetools203.com/seo-score-checker.html">SEO Score Checker</a>
+    <a href="https://freeonlinetools203.com/seo-title-generator.html">SEO Title Generator</a>
+    <a href="https://freeonlinetools203.com/serp-snippet-preview.html">SERP Snippet Preview</a>
+    <a href="https://freeonlinetools203.com/readability-checker.html">Readability Checker</a>
+    <a href="https://freeonlinetools203.com/heading-structure-checker.html">Heading Structure Checker</a>
+    <a href="https://freeonlinetools203.com/image-alt-analyzer.html">Image Alt Analyzer</a>
+    <a href="https://freeonlinetools203.com/xml-sitemap-generator.html">XML Sitemap Generator</a>
+    <a href="https://freeonlinetools203.com/scanreport-ai.html">Scan Report AI</a>
                 <h4>📱 Social Media Hashtag</h4>
                 <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">Instagram Hashtag Generator</a>
                 <a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">LinkedIn Hashtag Generator</a>
