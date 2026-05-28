@@ -33,10 +33,25 @@ const toolsDatabase = {
         "Ultrasound Scanner"
     ]
 },
-    catHash: {
-        name: "📱 Social Media Hashtag Tools",
-        tools: ["Instagram Hashtag Generator","LinkedIn Hashtag Generator","Facebook Hashtag Generator","Pinterest Hashtag Generator","AI Hashtag Generator","SEO Hashtags Generator"]
-    },
+   catHash: {
+    name: "📱 Social Media Hashtag Tools",
+    tools: [
+        "Instagram Hashtag Generator",
+        "LinkedIn Hashtag Generator",
+        "Facebook Hashtag Generator",
+        "Pinterest Hashtag Generator",
+        "AI Hashtag Generator",
+        "SEO Hashtags Generator",
+        "Random Hashtag Generator",
+        "TikTok Hashtag Generator",
+        "Twitter Hashtag Generator",
+        "Threads Hashtag Generator",
+        "Trending Hashtags Today",
+        "Viral Hashtag Generator",
+        "YouTube Hashtag Generator",
+        "Social Media Caption Generator"
+    ]
+},
     catPreg: {
         name: "🐾 Animal Pregnancy Tools",
         tools: ["Dog Pregnancy Calculator","Cat Pregnancy Calculator","Cow Pregnancy Calculator","Rabbit Pregnancy Calculator","Goat Pregnancy Calculator","Horse Pregnancy Calculator","Sheep Pregnancy Calculator","Pig Pregnancy Calculator"]
@@ -73,18 +88,26 @@ const toolsDatabase = {
         name: "🖼️ Image Tools",
         tools: ["Image Color Extractor","Image Converter","Image Cropper","Image Resizer","Image to PDF","Image Upscaler","Image Compressor"]
     },
-    catFun: {
-        name: "🎲 Random & Fun Tools",
-        tools: [
-            "Spin The Wheel","Yes/No Wheel","Decision Roulette","Random Name Picker",
-            "Random Number Generator","Prize Wheel","Task Spinner","Art Roulette",
-            "Chore Wheel","Country Picker Wheel","Decision Wheel","Dinner Spinner",
-            "Icebreaker Wheel","Random Fact Wheel","Zodiac Wheel","Twister Spinner",
-            "Truth or Dare Generator","Sketch or Dare","Hot Seat Challenge",
-            "Holiday Activity Wheel","Food Picker Wheel","Drink Picker Wheel","Exercise Wheel"
-        ]
-    }
-};
+   catFun: {
+    name: "🎲 Random & Fun Tools",
+    tools: [
+        // Existing Tools
+        "Spin The Wheel", "Yes/No Wheel", "Decision Roulette", "Random Name Picker",
+        "Random Number Generator", "Prize Wheel", "Task Spinner", "Art Roulette",
+        "Chore Wheel", "Country Picker Wheel", "Decision Wheel", "Dinner Spinner",
+        "Icebreaker Wheel", "Random Fact Wheel", "Zodiac Wheel", "Twister Spinner",
+        "Truth or Dare Generator", "Sketch or Dare", "Hot Seat Challenge",
+        "Holiday Activity Wheel", "Food Picker Wheel", "Drink Picker Wheel", "Exercise Wheel",
+        
+        // ✅ 6 NEW SPIN WHEEL TOOLS
+        "Squid Game Spin Wheel",
+        "Game Character Spin Wheel",
+        "Party Games Spin Wheel",
+        "Drinking Game Spin Wheel",
+        "Board Game Spin Wheel",
+        "Carnival Game Spin Wheel"
+    ]
+}
 
 // =========================================================================
 // TOOL URL MAPPING (SAME - NO CHANGES)
@@ -105,12 +128,20 @@ const toolUrlMap = {
     "Image Alt Analyzer": "image-alt-analyzer.html",
     "XML Sitemap Generator": "xml-sitemap-generator.html",
     "Ultrasound Scanner": "ultrasound-scanner.html",
-    "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
-    "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
-    "Facebook Hashtag Generator": "facebook-hashtag-generator.html",
-    "Pinterest Hashtag Generator": "pinterest-hashtag-generator.html",
-    "AI Hashtag Generator": "ai-hashtag-generator.html",
-    "SEO Hashtags Generator": "seo-hashtags-generator.html",
+"Instagram Hashtag Generator": "instagram-hashtag-generator.html",
+"LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
+"Facebook Hashtag Generator": "facebook-hashtag-generator.html",
+"Pinterest Hashtag Generator": "pinterest-hashtag-generator.html",
+"AI Hashtag Generator": "ai-hashtag-generator.html",
+"SEO Hashtags Generator": "seo-hashtags-generator.html",
+"Random Hashtag Generator": "random-hashtag-generator.html",
+"TikTok Hashtag Generator": "tiktok-hashtag-generator.html",
+"Twitter Hashtag Generator": "twitter-hashtag-generator.html",
+"Threads Hashtag Generator": "threads-hashtag-generator.html",
+"Trending Hashtags Today": "trending-hashtags-today.html",
+"Viral Hashtag Generator": "viral-hashtag-generator.html",
+"YouTube Hashtag Generator": "youtube-hashtag-generator.html",
+"Social Media Caption Generator": "social-media-caption-generator.html",
     "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
     "Cat Pregnancy Calculator": "cat-pregnancy-calculator.html",
     "Cow Pregnancy Calculator": "cow-pregnancy-calculator.html",
@@ -197,7 +228,15 @@ const toolUrlMap = {
     "Holiday Activity Wheel": "holiday-wheel.html",
     "Food Picker Wheel": "food-picker-wheel.html",
     "Drink Picker Wheel": "drink-wheel.html",
-    "Exercise Wheel": "exercise-wheel.html"
+    "Exercise Wheel": "exercise-wheel.html",
+    
+    // ✅ 6 NEW SPIN WHEEL TOOLS
+    "Squid Game Spin Wheel": "squid-game-wheel.html",
+    "Game Character Spin Wheel": "game-character-spin-wheel.html",
+    "Party Games Spin Wheel": "party-games-spin-wheel.html",
+    "Drinking Game Spin Wheel": "drinking-game-spin-wheel.html",
+    "Board Game Spin Wheel": "board-game-spin-wheel.html",
+    "Carnival Game Spin Wheel": "carnival-game-spin-wheel.html"
 };
 
 function getUrl(toolName) {
@@ -353,14 +392,21 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/image-alt-analyzer.html">Image Alt Analyzer</a>
                 <a href="https://freeonlinetools203.com/xml-sitemap-generator.html">XML Sitemap Generator</a>
                 <a href="https://freeonlinetools203.com/ultrasound-scanner.html">🩺 Ultrasound Scanner</a>
-                <h4>📱 Social Media Hashtag</h4>
-                <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">Instagram Hashtag Generator</a>
-                <a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">LinkedIn Hashtag Generator</a>
-                <a href="https://freeonlinetools203.com/facebook-hashtag-generator.html">Facebook Hashtag Generator</a>
-                <a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html">Pinterest Hashtag Generator</a>
-                <a href="https://freeonlinetools203.com/ai-hashtag-generator.html">AI Hashtag Generator</a>
-                <a href="https://freeonlinetools203.com/seo-hashtags-generator.html">SEO Hashtags Generator</a>
-              </div>
+               <h4>📱 Social Media Hashtag Tools</h4>
+<a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">📸 Instagram Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html">💼 LinkedIn Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/facebook-hashtag-generator.html">📘 Facebook Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html">📌 Pinterest Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/ai-hashtag-generator.html">🤖 AI Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/seo-hashtags-generator.html">🔎 SEO Hashtags Generator</a>
+<a href="https://freeonlinetools203.com/random-hashtag-generator.html">🎲 Random Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html">🎵 TikTok Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/twitter-hashtag-generator.html">🐦 Twitter Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/threads-hashtag-generator.html">🧵 Threads Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/trending-hashtags-today.html">📈 Trending Hashtags Today</a>
+<a href="https://freeonlinetools203.com/viral-hashtag-generator.html">⚡ Viral Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/youtube-hashtag-generator.html">📺 YouTube Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/social-media-caption-generator.html">✍️ Social Media Caption Generator</a>
               <div class="dropdown-column">
                 <h4>🐾 Animal Pregnancy</h4>
                 <a href="https://freeonlinetools203.com/dog-pregnancy-calculator.html">Dog Pregnancy Calculator</a>
@@ -441,35 +487,38 @@ const navbarHTML = `
                 <a href="https://freeonlinetools203.com/image-to-pdf.html">Image to PDF</a>
                 <a href="https://freeonlinetools203.com/image-upscaler.html">Image Upscaler</a>
                 <a href="https://freeonlinetools203.com/image-compressor.html">Image Compressor</a>
-                <h4>🎲 Fun Tools</h4>
-                <a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
-                <a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
-                <a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
-                <a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
-                <a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
-                <a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
-                <a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
-                <a href="https://freeonlinetools203.com/art-roulette-seo.html">🎨 Art Roulette</a>
-                <a href="https://freeonlinetools203.com/chore-wheel-seo.html">🧹 Chore Wheel</a>
-                <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html">🌍 Country Picker Wheel</a>
-                <a href="https://freeonlinetools203.com/decision-wheel.html">🤔 Decision Wheel</a>
-                <a href="https://freeonlinetools203.com/dinner-spinner.html">🍽️ Dinner Spinner</a>
-                <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html">🗣️ Icebreaker Wheel</a>
-                <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html">📚 Random Fact Wheel</a>
-                <a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
-                <a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
-                <a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
-                <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
-                <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
-                <a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
-                <a href="https://freeonlinetools203.com/food-picker-wheel.html">🍕 Food Picker Wheel</a>
-                <a href="https://freeonlinetools203.com/drink-wheel.html">🍹 Drink Picker Wheel</a>
-                <a href="https://freeonlinetools203.com/exercise-wheel.html">🏋️ Exercise Wheel</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
+               <h4>🎲 Fun Tools</h4>
+<a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
+<a href="https://freeonlinetools203.com/yes-no-wheel.html">✅ Yes/No Wheel</a>
+<a href="https://freeonlinetools203.com/decision-roulette.html">🎯 Decision Roulette</a>
+<a href="https://freeonlinetools203.com/random-name-picker.html">🏷️ Random Name Picker</a>
+<a href="https://freeonlinetools203.com/random-number-generator.html">🔢 Random Number Generator</a>
+<a href="https://freeonlinetools203.com/prize-wheel.html">🏆 Prize Wheel</a>
+<a href="https://freeonlinetools203.com/task-spinner.html">📋 Task Spinner</a>
+<a href="https://freeonlinetools203.com/art-roulette-seo.html">🎨 Art Roulette</a>
+<a href="https://freeonlinetools203.com/chore-wheel-seo.html">🧹 Chore Wheel</a>
+<a href="https://freeonlinetools203.com/country-picker-wheel-seo.html">🌍 Country Picker Wheel</a>
+<a href="https://freeonlinetools203.com/decision-wheel.html">🤔 Decision Wheel</a>
+<a href="https://freeonlinetools203.com/dinner-spinner.html">🍽️ Dinner Spinner</a>
+<a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html">🗣️ Icebreaker Wheel</a>
+<a href="https://freeonlinetools203.com/random-fact-wheel-seo.html">📚 Random Fact Wheel</a>
+<a href="https://freeonlinetools203.com/zodiac-wheel.html">♈ Zodiac Wheel</a>
+<a href="https://freeonlinetools203.com/twister-spinner-seo.html">🌀 Twister Spinner</a>
+<a href="https://freeonlinetools203.com/truth-or-dare-generator.html">💬 Truth or Dare Generator</a>
+<a href="https://freeonlinetools203.com/sketch-or-dare-seo.html">✏️ Sketch or Dare</a>
+<a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html">🔥 Hot Seat Challenge</a>
+<a href="https://freeonlinetools203.com/holiday-wheel.html">🎄 Holiday Activity Wheel</a>
+<a href="https://freeonlinetools203.com/food-picker-wheel.html">🍕 Food Picker Wheel</a>
+<a href="https://freeonlinetools203.com/drink-wheel.html">🍹 Drink Picker Wheel</a>
+<a href="https://freeonlinetools203.com/exercise-wheel.html">🏋️ Exercise Wheel</a>
+
+<!-- ✅ 6 NEW SPIN WHEEL TOOLS -->
+<a href="https://freeonlinetools203.com/squid-game-wheel.html">🦑 Squid Game Spin Wheel</a>
+<a href="https://freeonlinetools203.com/game-character-spin-wheel.html">🎮 Game Character Spin Wheel</a>
+<a href="https://freeonlinetools203.com/party-games-spin-wheel.html">🎉 Party Games Spin Wheel</a>
+<a href="https://freeonlinetools203.com/drinking-game-spin-wheel.html">🍻 Drinking Game Spin Wheel</a>
+<a href="https://freeonlinetools203.com/board-game-spin-wheel.html">🎲 Board Game Spin Wheel</a>
+<a href="https://freeonlinetools203.com/carnival-game-spin-wheel.html">🎪 Carnival Game Spin Wheel</a>
       <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
       <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
       <li><a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a></li>
