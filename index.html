@@ -40,6 +40,199 @@
     <main class="container" id="toolsContainer">
         <div class="loader">Loading professional tools...</div>
     </main>
+
+    <!-- ============================================================
+  SEARCH BAR — index.html mein paste karein
+  Jagah: </main> tag se PEHLE, ya header ke baad
+  Menu ya kisi bhi tool se koi connection NAHI hai
+  ============================================================ -->
+
+<style>
+/* === SEARCH BAR STYLES === */
+.tool-search-section {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(229,231,235,0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.tool-search-section h2 {
+    color: #1e3a8a;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.tool-search-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 60px; height: 4px;
+    background: #2563eb;
+    border-radius: 2px;
+}
+.tool-search-section p {
+    color: #6b7280;
+    font-size: 0.97rem;
+    margin: 12px 0 20px 0;
+    line-height: 1.6;
+}
+.ts-bar-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.ts-bar-wrap svg {
+    position: absolute;
+    left: 16px;
+    color: #2563eb;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+#tsInput {
+    width: 100%;
+    height: 52px;
+    padding: 0 145px 0 50px;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    background: #ffffff;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+#tsInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+#tsInput::placeholder { color: #94a3b8; }
+.ts-search-btn {
+    position: absolute;
+    right: 6px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 22px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    transition: opacity 0.15s;
+}
+.ts-search-btn:hover { opacity: 0.9; }
+.ts-quick-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.ts-tag {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.15s;
+}
+.ts-tag:hover {
+    background: #1e3a8a;
+    color: #ffffff;
+    border-color: #1e3a8a;
+}
+.ts-results-label {
+    font-size: 12px;
+    color: #2563eb;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.ts-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+}
+.ts-result-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(30,58,138,0.2);
+    transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    text-decoration: none;
+    display: block;
+}
+.ts-result-card a,
+.ts-result-card {
+    padding: 14px 16px;
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+.ts-result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(30,58,138,0.3);
+}
+.ts-no-result {
+    color: #6b7280;
+    font-size: 14px;
+    padding: 10px 0;
+}
+@media (max-width: 600px) {
+    .tool-search-section { padding: 22px 16px; }
+    .tool-search-section h2 { font-size: 1.4rem; }
+    #tsInput { padding-right: 110px; font-size: 14px; }
+    .ts-search-btn { padding: 0 14px; font-size: 13px; }
+    .ts-results-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+<section class="tool-search-section" id="toolSearchSection">
+    <h2>🔍 Find Any Tool Instantly</h2>
+    <p>100+ free tools mein se search karein — BMI, PDF, QR Code, Currency aur bohat kuch</p>
+
+    <div class="ts-bar-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="tsInput"
+            placeholder="e.g. BMI Calculator, PDF Merger, QR Code..."
+            autocomplete="off" />
+        <button class="ts-search-btn" onclick="tsSearch()">Search</button>
+    </div>
+
+    <div class="ts-quick-tags">
+        <span class="ts-tag" onclick="tsQuick('BMI Calculator')">BMI Calculator</span>
+        <span class="ts-tag" onclick="tsQuick('QR Code Generator')">QR Code Generator</span>
+        <span class="ts-tag" onclick="tsQuick('PDF')">PDF Tools</span>
+        <span class="ts-tag" onclick="tsQuick('Currency Converter')">Currency Converter</span>
+        <span class="ts-tag" onclick="tsQuick('Password')">Password Generator</span>
+        <span class="ts-tag" onclick="tsQuick('Age Calculator')">Age Calculator</span>
+        <span class="ts-tag" onclick="tsQuick('Spin')">Spin The Wheel</span>
+        <span class="ts-tag" onclick="tsQuick('EMI')">EMI Calculator</span>
+    </div>
+
+    <div id="tsResultLabel" class="ts-results-label" style="display:none"></div>
+    <div id="tsResults" class="ts-results-grid"></div>
+</section>
+    
 <!-- ============================================================
      SEO ARTICLE SECTION — freeonlinetools203.com
      Paste karo index.html mein </main> tag se PEHLE
