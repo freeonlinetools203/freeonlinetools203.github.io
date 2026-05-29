@@ -580,81 +580,92 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-<!-- ============================================================
-  SEARCH BAR JAVASCRIPT
-  Ye code script.js ke ANDAR add karein — sabse NEECHE
-  YA index.html mein </body> se pehle paste karein
-  toolsDatabase se AUTOMATICALLY saare tools milenge
-  ============================================================ -->
-
-<script>
+// ========== SEARCH BAR FUNCTIONALITY (FIXED - TOOLS SAFE) ==========
 (function() {
-
-  /* toolsDatabase aur toolUrlMap already script.js mein hain —
-     inhe repeat karne ki zarurat NAHI hai.
-     Ye function un se automatically saari list banata hai. */
-
-  function tsGetAllTools() {
-    var list = [];
-    if (typeof toolUrlMap !== 'undefined') {
-      for (var name in toolUrlMap) {
-        if (toolUrlMap.hasOwnProperty(name)) {
-          list.push([name, toolUrlMap[name]]);
+  // Dashboard load hone ka wait karega taaki tools delete na ho
+  function waitForDashboard() {
+    var container = document.getElementById('toolsContainer');
+    if (container && container.innerHTML !== '<div class="loader">Loading professional tools...</div>') {
+      attachSearchEvents();
+    } else {
+      setTimeout(waitForDashboard, 100);
+    }
+  }
+  
+  function attachSearchEvents() {
+    var input = document.getElementById('tsInput');
+    if (!input) return;
+    
+    window.tsSearch = function() {
+      var q = document.getElementById('tsInput');
+      if (!q) return;
+      
+      var query = q.value.toLowerCase().trim();
+      var label = document.getElementById('tsResultLabel');
+      var grid = document.getElementById('tsResults');
+      
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      if (!query) {
+        if(label) label.style.display = 'none';
+        return;
+      }
+      
+      var list = [];
+      if (typeof toolUrlMap !== 'undefined') {
+        for (var name in toolUrlMap) {
+          if (toolUrlMap.hasOwnProperty(name)) {
+            list.push([name, toolUrlMap[name]]);
+          }
         }
       }
-    }
-    return list;
-  }
-
-  window.tsSearch = function() {
-    var q = document.getElementById('tsInput').value.toLowerCase().trim();
-    var label = document.getElementById('tsResultLabel');
-    var grid  = document.getElementById('tsResults');
-    if (!grid) return;
-    grid.innerHTML = '';
-    if (!q) { label.style.display='none'; return; }
-
-    var tools = tsGetAllTools();
-    var found = tools.filter(function(t){
-      return t[0].toLowerCase().indexOf(q) !== -1;
-    });
-
-    label.style.display = 'block';
-    if (found.length === 0) {
-      label.textContent = '';
-      grid.innerHTML = '<div class="ts-no-result">Koi tool nahi mila — dusra keyword try karein.</div>';
-      return;
-    }
-    label.textContent = found.length + ' tool(s) mile:';
-    found.forEach(function(t) {
-      var a = document.createElement('a');
-      a.className = 'ts-result-card';
-      a.href = 'https://freeonlinetools203.com/' + t[1];
-      a.textContent = t[0];
-      grid.appendChild(a);
-    });
-  };
-
-  window.tsQuick = function(val) {
-    var inp = document.getElementById('tsInput');
-    if (inp) { inp.value = val; tsSearch(); }
-  };
-
-  /* Enter key support */
-  document.addEventListener('DOMContentLoaded', function() {
-    var inp = document.getElementById('tsInput');
-    if (!inp) return;
-    inp.addEventListener('keyup', function(e) {
-      if (e.key === 'Enter' || this.value.length >= 2) tsSearch();
-      else if (this.value.length === 0) {
+      
+      var found = list.filter(function(t) {
+        return t[0].toLowerCase().indexOf(query) !== -1;
+      });
+      
+      if(label) {
+        label.style.display = 'block';
+        if (found.length === 0) {
+          label.textContent = '';
+          grid.innerHTML = '<div class="ts-no-result">❌ Koi tool nahi mila — dusra keyword try karein.</div>';
+          return;
+        }
+        label.textContent = '✨ ' + found.length + ' tool(s) mile:';
+      }
+      
+      found.forEach(function(t) {
+        var a = document.createElement('a');
+        a.className = 'ts-result-card';
+        a.href = 'https://freeonlinetools203.com/' + t[1];
+        a.textContent = t[0];
+        grid.appendChild(a);
+      });
+    };
+    
+    window.tsQuick = function(val) {
+      var inp = document.getElementById('tsInput');
+      if (inp) {
+        inp.value = val;
+        tsSearch();
+      }
+    };
+    
+    input.addEventListener('keyup', function(e) {
+      var val = this.value;
+      if (e.key === 'Enter') {
+        tsSearch();
+      } else if (val.length >= 2) {
+        tsSearch();
+      } else if (val.length === 0) {
         var lbl = document.getElementById('tsResultLabel');
         var grd = document.getElementById('tsResults');
-        if(lbl) lbl.style.display='none';
-        if(grd) grd.innerHTML='';
+        if(lbl) lbl.style.display = 'none';
+        if(grd) grd.innerHTML = '';
       }
     });
-  });
-
+  }
+  
+  waitForDashboard();
 })();
-</script>
