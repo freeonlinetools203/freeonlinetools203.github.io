@@ -136,6 +136,19 @@ body.dark .faq-item{border-bottom-color:#4b5563;}
 body.dark .faq-question{color:#60a5fa;}
 .faq-answer{color:#475569;line-height:1.6;}
 body.dark .faq-answer{color:#9ca3af;}
+
+/* Related tools styling - moved before article but visible */
+.related-section{max-width:1000px;margin:2rem auto 1.5rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.tool-btn{font-size:.85rem;padding:8px 12px}}
 </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
 </head>
@@ -166,21 +179,29 @@ body.dark .faq-answer{color:#9ca3af;}
 <button class="copy-btn" id="copyResultsBtn">📋 Copy Results</button>
 </div>
 
-  <!-- ========== RELATED TOOLS SECTION ========== -->
-<style>
-.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
-.btn-home:hover{transform:translateY(-2px);background:#2563eb}
-.btn-home:active{transform:scale(.97);background:#1d4ed8}
-.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
-.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,border-color .2s,transform .15s}
-.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
-.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
-@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.tool-btn{font-size:.85rem;padding:8px 12px}}
-</style>
+<div class="summary-cards" id="summaryCards"></div>
 
+<div id="issuesContainer" class="issues-list" style="display:none;">
+<h4>⚠️ SEO Issues Found</h4>
+<ul id="issuesList"></ul>
+</div>
+
+<div style="overflow-x: auto;">
+<table class="heading-table" id="headingTable">
+<thead>
+<tr><th>Tag Type</th><th>Heading Text</th></tr>
+</thead>
+<tbody id="headingTableBody"></tbody>
+</table>
+</div>
+</div>
+
+<div id="loadingMsg" class="loading" style="display:none;">🔄 Analyzing webpage headings... Please wait.</div>
+<div id="errorMsg" class="error-msg" style="display:none;"></div>
+</div>
+</div>
+
+<!-- ========== INTERNAL LINKING (RELATED TOOLS) MOVED HERE - BEFORE ARTICLE ========== -->
 <div class="related-section">
   <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
   <div class="tools-box">
@@ -204,29 +225,7 @@ body.dark .faq-answer{color:#9ca3af;}
   </div>
 </div>
 
-  <!-- ========== PROFESSIONAL SEO ARTICLE WITH SCHEMA (NO CHANGES) ========== -->
-<div class="summary-cards" id="summaryCards"></div>
-
-<div id="issuesContainer" class="issues-list" style="display:none;">
-<h4>⚠️ SEO Issues Found</h4>
-<ul id="issuesList"></ul>
-</div>
-
-<div style="overflow-x: auto;">
-<table class="heading-table" id="headingTable">
-<thead>
-<tr><th>Tag Type</th><th>Heading Text</th></tr>
-</thead>
-<tbody id="headingTableBody"></tbody>
-</table>
-</div>
-</div>
-
-<div id="loadingMsg" class="loading" style="display:none;">🔄 Analyzing webpage headings... Please wait.</div>
-<div id="errorMsg" class="error-msg" style="display:none;"></div>
-</div>
-</div>
-
+<!-- ========== PROFESSIONAL SEO ARTICLE ========== -->
 <div class="article-section">
 <h1 style="color:#1e3a8a; font-size:32px; margin-bottom:20px;">Heading Structure Checker – Complete Guide</h1>
 
@@ -308,7 +307,6 @@ darkToggle.addEventListener('click', () => {
 
 // Helper function to fetch page HTML via CORS proxy
 async function fetchPageHTML(url) {
-    // Using a free CORS proxy to avoid cross-origin issues
     const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(url);
     try {
         const response = await fetch(proxyUrl);
@@ -352,7 +350,6 @@ function getRecommendations(headings) {
     if (headings.h2.length === 0) {
         issues.push('⚠️ No H2 tags found. Use H2 tags to organize main sections of your content.');
     }
-    // Check for skipped levels
     const hasH1 = headings.h1.length > 0;
     const hasH2 = headings.h2.length > 0;
     const hasH3 = headings.h3.length > 0;
@@ -370,7 +367,6 @@ function renderResults(headings) {
     const resultSection = document.getElementById('resultSection');
     resultSection.style.display = 'block';
     
-    // Summary cards
     const summaryCards = document.getElementById('summaryCards');
     summaryCards.innerHTML = '';
     const headingTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -382,7 +378,6 @@ function renderResults(headings) {
         summaryCards.appendChild(card);
     });
     
-    // Issues
     const issues = getRecommendations(headings);
     const issuesContainer = document.getElementById('issuesContainer');
     const issuesList = document.getElementById('issuesList');
@@ -399,7 +394,6 @@ function renderResults(headings) {
         issuesList.innerHTML = '<li style="color:#10b981;">✅ Great job! Your heading structure looks good.</li>';
     }
     
-    // Heading table
     const tableBody = document.getElementById('headingTableBody');
     tableBody.innerHTML = '';
     headingTypes.forEach(type => {
@@ -465,12 +459,7 @@ async function analyzeUrl() {
     }
 }
 
-// Copy results
 document.getElementById('copyResultsBtn').addEventListener('click', () => {
-    const headings = {
-        h1: [], h2: [], h3: [], h4: [], h5: [], h6: []
-    };
-    // Get from table
     const rows = document.querySelectorAll('#headingTableBody tr');
     let copyText = 'HEADING STRUCTURE REPORT\n\n';
     rows.forEach(row => {
@@ -491,9 +480,7 @@ document.getElementById('copyResultsBtn').addEventListener('click', () => {
     });
 });
 
-// Analyze button click
 document.getElementById('analyzeBtn').addEventListener('click', analyzeUrl);
-// Enter key support
 document.getElementById('urlInput').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') analyzeUrl();
 });
