@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>YouTube Keyword Research Tool | Free SEO Keyword Generator</title>
+<meta name="description" content="Free YouTube keyword research tool. Enter any seed keyword and get related keywords, tags, and search terms used by top videos. Perfect for YouTube SEO.">
+<meta name="keywords" content="youtube keyword research, keyword generator, seo keywords, youtube tags, keyword tool">
+<meta name="author" content="Free Online Tools">
+<link rel="canonical" href="https://freeonlinetools203.com/youtube-keyword-research.html">
+<meta property="og:title" content="YouTube Keyword Research Tool | Free SEO Tool">
+<meta property="og:description" content="Discover high-value keywords for YouTube. Analyze top videos and get keyword suggestions.">
+<meta name="twitter:card" content="summary_large_image">
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is YouTube Keyword Research Tool?","acceptedAnswer": {"@type": "Answer","text": "It analyzes top videos for any keyword and suggests related keywords, tags, and search terms."}},
+    {"@type": "Question", "name": "How is this different from tags generator?","acceptedAnswer": {"@type": "Answer","text": "Tags generator gives exact tags. This tool focuses on keyword ideas, volume, and related search terms."}},
+    {"@type": "Question", "name": "Is it free?","acceptedAnswer": {"@type": "Answer","text": "Yes, completely free."}}
+  ]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;transition:0.3s;color:#1f2937;}
+body.dark{background:#111827;color:#e2e8f0;}
+.navbar{background:linear-gradient(135deg,#1e3a8a,#2563eb);padding:15px 30px;position:sticky;top:0;z-index:1000;}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:25px;list-style:none;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;}
+.container{max-width:1100px;margin:40px auto;padding:0 20px;}
+.tool-card,.article-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);margin-bottom:35px;overflow:hidden;}
+body.dark .tool-card,body.dark .article-card{background:#1e293b;}
+.card-header{background:linear-gradient(135deg,#1e3a8a,#2563eb);padding:35px 30px;text-align:center;}
+.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
+.card-header p{color:rgba(255,255,255,0.9);}
+.card-content{padding:35px;}
+.top-bar{display:flex;justify-content:flex-end;margin-bottom:20px;}
+.dark-toggle{background:#6b7280;color:white;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;}
+.input-group{margin-bottom:20px;}
+.input-group label{font-weight:600;display:block;margin-bottom:8px;}
+.input-group input{width:100%;padding:12px 15px;border:2px solid #e2e8f0;border-radius:12px;background:white;font-size:1rem;}
+body.dark .input-group input{background:#0f172a;border-color:#334155;color:#f3f4f6;}
+.action-btn{background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border:none;padding:12px 20px;border-radius:12px;font-weight:600;cursor:pointer;width:100%;transition:0.2s;}
+.action-btn:hover{transform:translateY(-2px);}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin:20px 0;}
+.metric-card{background:#f1f5f9;border-radius:16px;padding:18px;text-align:center;}
+body.dark .metric-card{background:#0f172a;}
+.metric-card h3{font-size:1rem;margin-bottom:8px;}
+.metric-card p{font-size:1.5rem;font-weight:bold;color:#1e3a8a;}
+body.dark .metric-card p{color:#60a5fa;}
+.keyword-cloud{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0;justify-content:center;}
+.keyword{background:#e2e8f0;padding:8px 18px;border-radius:40px;font-size:0.9rem;cursor:pointer;transition:0.2s;}
+body.dark .keyword{background:#334155;color:#f3f4f6;}
+.keyword:hover{background:#2563eb;color:white;transform:scale(1.02);}
+.loading{text-align:center;padding:40px;display:none;}
+.toast{position:fixed;bottom:30px;right:30px;background:#1f2937;color:white;padding:12px 24px;border-radius:60px;z-index:1000;animation:slideIn 0.3s;}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0;}to{transform:translateX(0);opacity:1;}}
+.footer{background:linear-gradient(135deg,#0f172a,#1e293b);color:#cbd5e1;padding:40px 20px;margin-top:50px;}
+.footer-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:15px;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:5px 0;transition:0.3s;}
+.footer-col a:hover{color:#60a5fa;transform:translateX(5px);}
+.footer-bottom{text-align:center;padding-top:30px;margin-top:30px;border-top:1px solid rgba(255,255,255,0.1);}
+.home-link{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border-radius:40px;text-decoration:none;margin:20px 0;}
+.article-card .card-content{line-height:1.8;}
+.article-card h2{color:#1e3a8a;font-size:26px;margin:30px 0 20px;border-bottom:3px solid #2563eb;display:inline-block;}
+body.dark .article-card h2{color:#60a5fa;}
+.article-card h3{font-size:22px;margin:25px 0 15px;}
+.article-card ul,.article-card ol{margin:15px 0 15px 30px;}
+@media(max-width:768px){.card-content{padding:20px;}}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><div class="logo"><a href="index.html">🚀 Free Online Tools</a></div><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li></ul></div></nav>
+<div class="container">
+<div class="tool-card">
+<div class="card-header"><h1>🔍 YouTube Keyword Research Tool</h1><p>Enter a seed keyword → Get related keywords, tags, and search terms used by top videos</p></div>
+<div class="card-content">
+<div class="top-bar"><button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button></div>
+<div class="input-group"><label>🔑 Seed Keyword (e.g., gaming, weight loss)</label><input type="text" id="seedKeyword" placeholder="e.g., gaming, cooking, AI tools" value="gaming"></div>
+<button class="action-btn" id="researchBtn">📊 Research Keywords</button>
+<div class="loading" id="loading">⏳ Analyzing top YouTube videos...</div>
+<div id="resultArea"></div>
+</div></div>
+
+<div style="text-align:center;"><a href="index.html" class="home-link">🔘 Back to Home</a></div>
+
+<div class="article-card"><div class="card-header" style="background:linear-gradient(135deg,#1e3a8a,#2563eb);"><h2 style="color:white;">📖 Complete Guide: YouTube Keyword Research for Channel Growth</h2></div>
+<div class="card-content">
+<h2>What is YouTube Keyword Research Tool?</h2>
+<p>This tool helps you discover high-value keywords for your YouTube videos. Instead of guessing, you get real data from top-performing videos. Enter any seed keyword (e.g., "weight loss", "gaming", "digital marketing") and the tool analyzes titles, tags, and descriptions from the most viewed videos in that niche. It then extracts the most frequently used words and phrases – giving you a ready-to-use list of keywords for your video optimization.</p>
+<p>Keywords are the foundation of YouTube SEO. They tell the algorithm what your content is about and help you rank for search queries. Our tool uses the official YouTube Data API v3 to fetch real-time data from the top 50 videos for your keyword.</p>
+
+<h2>Why Keyword Research Matters</h2>
+<ul>
+<li><strong>Find low-competition niches:</strong> Discover keywords that have high search volume but fewer high-quality videos.</li>
+<li><strong>Optimize video titles & descriptions:</strong> Use exact keywords that viewers are searching for.</li>
+<li><strong>Generate video ideas:</strong> See what topics are already popular and create your unique angle.</li>
+<li><strong>Improve your tags:</strong> Use the extracted tags directly in your YouTube uploads.</li>
+</ul>
+
+<h2>How to Use This Tool</h2>
+<ol>
+<li>Type a seed keyword related to your niche (e.g., "cooking", "fitness", "tech reviews").</li>
+<li>Click "Research Keywords".</li>
+<li>The tool fetches top 50 videos and analyzes their metadata.</li>
+<li>You'll see:
+   <ul><li>Total videos analyzed</li><li>Keyword suggestions grouped by relevance</li><li>Click any keyword to copy it</li></ul>
+</li>
+<li>Use these keywords in your video title, description, tags, and even thumbnail text.</li>
+</ol>
+
+<h2>Understanding the Results</h2>
+<p>The tool presents keywords in a word cloud sorted by frequency. More frequent keywords indicate higher search intent. For best results, include a mix of:</p>
+<ul>
+<li><strong>Head terms:</strong> Broad keywords (e.g., "gaming") – high search volume, high competition.</li>
+<li><strong>Long-tail keywords:</strong> Specific phrases (e.g., "best gaming setup under $500") – lower competition, higher conversion.</li>
+<li><strong>LSI keywords:</strong> Latent semantic indexing terms (e.g., "gamer", "gameplay", "streaming") – help YouTube understand context.</li>
+</ul>
+
+<h2>YouTube SEO Best Practices</h2>
+<ul>
+<li><strong>Place primary keyword in first 60 characters of title.</strong></li>
+<li><strong>Use keyword in description first sentence.</strong></li>
+<li><strong>Add 10-15 tags including your main keyword and long-tail variations.</strong></li>
+<li><strong>Keyword in filename of uploaded video.</strong></li>
+<li><strong>Keyword in closed captions if possible.</strong></li>
+</ul>
+
+<h2>Frequently Asked Questions (FAQ)</h2>
+<h3>Is this tool free?</h3>
+<p>Yes, completely free. No sign-up or payment required.</p>
+<h3>How accurate are the keyword suggestions?</h3>
+<p>They come directly from real YouTube videos – 100% accurate based on actual usage.</p>
+<h3>Can I use this for any niche?</h3>
+<p>Any niche – as long as there are videos on YouTube for that keyword.</p>
+<h3>How many videos are analyzed?</h3>
+<p>Up to 50 top-ranked videos for your seed keyword.</p>
+<h3>Do I need an API key?</h3>
+<p>No – the tool includes a pre-configured key restricted to this domain.</p>
+
+<h2>Conclusion</h2>
+<p>Stop guessing what keywords to target. Use real YouTube data to rank higher and grow your channel faster. Bookmark this keyword research tool and use it before every video upload. With consistent keyword optimization, you'll see improved search visibility and more views.</p>
+<p><strong>Last updated:</strong> May 31, 2026 | <strong>Data source:</strong> YouTube Data API v3</p>
+</div></div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col"><h3>🚀 Free Online Tools</h3><p>YouTube Keyword Research – dominate search results.</p></div>
+        <div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="privacy-policy.html">🔒 Privacy</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Free Online Tools | YouTube Keyword Research Tool | Data-Driven SEO</p></div>
+</footer>
+
+<script>
+// 🔑 === REPLACE 'YOUR_API_KEY_HERE' WITH YOUR ACTUAL YOUTUBE API KEY ===
+const YOUTUBE_API_KEY = 'AIzaSyA_JNivi_56nUrmQTjy94Q36joKskjkYOc';
+
+// Dark mode
+const darkToggle = document.getElementById('darkToggle');
+darkToggle.addEventListener('click',()=>{
+    document.body.classList.toggle('dark');
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('kwTheme', document.body.classList.contains('dark') ? 'dark' : 'light');
+});
+if(localStorage.getItem('kwTheme') === 'dark') document.body.classList.add('dark');
+
+function showToast(msg, isErr=false){
+    let t=document.createElement('div'); t.className='toast'; t.innerText=msg;
+    if(isErr) t.style.background='#dc2626';
+    document.body.appendChild(t);
+    setTimeout(()=>t.remove(),2500);
+}
+
+async function researchKeywords(seed){
+    // Search top 50 videos for seed keyword
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(seed)}&maxResults=50&order=viewCount&type=video&key=${YOUTUBE_API_KEY}&regionCode=IN`;
+    const searchRes = await fetch(searchUrl);
+    const searchData = await searchRes.json();
+    if(searchData.error) throw new Error(searchData.error.message);
+    if(!searchData.items || searchData.items.length===0) throw new Error('No videos found for this keyword');
+    
+    const videoIds = searchData.items.map(i => i.id.videoId).filter(v=>v);
+    // Get video details (tags and titles)
+    const videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoIds.join(',')}&key=${YOUTUBE_API_KEY}`;
+    const videosRes = await fetch(videosUrl);
+    const videosData = await videosRes.json();
+    
+    let allWords = [];
+    let allTags = [];
+    for(let vid of (videosData.items||[])){
+        // Extract words from title (min 3 chars, remove common stop words)
+        let title = vid.snippet.title.toLowerCase();
+        let words = title.split(/[\s\-–—,.:;!?"'()]+/);
+        let filtered = words.filter(w => w.length > 2 && !['the','and','for','with','this','that','from','have','are','was','were','you','your','not','but','what','when','where','who','how','get','can','will','just','like','about','then','than','into','out','up','down','only','very','here','there','their','they','whats','hes','shes','its','https','http','www','com','youtube','video','watch'].includes(w));
+        allWords.push(...filtered);
+        if(vid.snippet.tags){
+            allTags.push(...vid.snippet.tags.map(t => t.toLowerCase()));
+        }
+    }
+    // Combine tags and title words
+    let combined = [...allWords, ...allTags];
+    // Count frequency
+    const freq = {};
+    combined.forEach(w => { freq[w] = (freq[w]||0)+1; });
+    // Sort and get top 40 keywords
+    const sorted = Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,40);
+    const keywords = sorted.map(item => item[0]);
+    return { keywords, totalVideos: videoIds.length, totalTitleWords: allWords.length, totalTags: allTags.length };
+}
+
+function renderKeywords(kwData){
+    let html = `<div class="grid-2">
+        <div class="metric-card"><h3>📹 Videos Analyzed</h3><p>${kwData.totalVideos}</p></div>
+        <div class="metric-card"><h3>📝 Title Words</h3><p>${kwData.totalTitleWords}</p></div>
+        <div class="metric-card"><h3>🏷️ Tags Extracted</h3><p>${kwData.totalTags}</p></div>
+    </div>
+    <h3>🔥 Keyword Suggestions (Click to copy)</h3>
+    <div class="keyword-cloud">`;
+    for(let kw of kwData.keywords){
+        html += `<div class="keyword" data-keyword="${escapeHtml(kw)}">${escapeHtml(kw)}</div>`;
+    }
+    html += `</div><div style="text-align:center; margin-top:20px;"><button id="copyAllKeywordsBtn" style="background:#6b7280; border:none; padding:8px 20px; border-radius:40px; color:white; cursor:pointer;">📋 Copy All Keywords</button></div>`;
+    document.getElementById('resultArea').innerHTML = html;
+    document.querySelectorAll('.keyword').forEach(el=>{
+        el.addEventListener('click',()=>{
+            let kw = el.getAttribute('data-keyword');
+            navigator.clipboard.writeText(kw);
+            showToast(`✅ Copied: ${kw}`);
+        });
+    });
+    const copyAllBtn = document.getElementById('copyAllKeywordsBtn');
+    if(copyAllBtn){
+        copyAllBtn.addEventListener('click',()=>{
+            let all = kwData.keywords.join(', ');
+            navigator.clipboard.writeText(all);
+            showToast(`📋 Copied ${kwData.keywords.length} keywords`);
+        });
+    }
+}
+
+function escapeHtml(str){ return str.replace(/[&<>]/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]); }
+
+document.getElementById('researchBtn').addEventListener('click', async ()=>{
+    let seed = document.getElementById('seedKeyword').value.trim();
+    if(!seed){ showToast('❌ Please enter a seed keyword', true); return; }
+    if(YOUTUBE_API_KEY === 'YOUR_API_KEY_HERE'){ showToast('❌ API key not configured. Replace YOUR_API_KEY_HERE with your actual YouTube API key.', true); return; }
+    const loading = document.getElementById('loading');
+    const resultDiv = document.getElementById('resultArea');
+    loading.style.display = 'block';
+    resultDiv.innerHTML = '';
+    try{
+        const kwData = await researchKeywords(seed);
+        renderKeywords(kwData);
+        showToast(`✅ Found ${kwData.keywords.length} keywords from ${kwData.totalVideos} videos`);
+    }catch(err){
+        console.error(err);
+        showToast(`❌ Error: ${err.message}`, true);
+        resultDiv.innerHTML = `<div class="metric-card"><p style="color:#dc2626;">Error: ${err.message}. Check API key or try different keyword.</p></div>`;
+    }finally{
+        loading.style.display = 'none';
+    }
+});
+</script>
+</body>
+</html>
