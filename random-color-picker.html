@@ -793,46 +793,39 @@
         </div>
     </div>
 
-    <!-- Category Footer & Back to Home Button -->
-    <div class="category-footer">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <a href="index.html" class="home-link">🔘 Back to Home</a>
-        </div>
-        <div id="dynamicCategoryFooter"></div>
+   <!-- ========== CATEGORY FOOTER ========== -->
+<!-- Category Footer - Color Tools (Fixed, No Conflict) -->
+<style>
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+</style>
+<div class="related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+  <div class="tools-box">
+    <div class="tools-title">🔗 Other Tools in 🎨 Color Tools</div>
+    <div class="tools-grid">
+      <a href="https://freeonlinetools203.com/color-palette-generator.html" class="tool-btn">🎨 Color Palette Generator</a>
+      <a href="https://freeonlinetools203.com/color-shades-generator.html" class="tool-btn">🌈 Color Shades Generator</a>
+      <a href="https://freeonlinetools203.com/color-gradient-maker.html" class="tool-btn">🖌️ Color Gradient Maker</a>
+      <a href="https://freeonlinetools203.com/color-contrast-checker.html" class="tool-btn">🔍 Color Contrast Checker</a>
+      <a href="https://freeonlinetools203.com/color-name-finder.html" class="tool-btn">🏷️ Color Name Finder</a>
+      <a href="https://freeonlinetools203.com/random-color-picker.html" class="tool-btn">🎲 Random Color Picker</a>
+      <a href="https://freeonlinetools203.com/color-wheel-seo.html" class="tool-btn">🎡 Color Wheel</a>
+      <a href="https://freeonlinetools203.com/palette-generator.html" class="tool-btn">🖼️ Palette Generator</a>
+      <a href="https://freeonlinetools203.com/image-color-extractor.html" class="tool-btn">💧 Image Color Extractor</a>
     </div>
-
-    <!-- Dynamic Category Footer Script -->
-    <script>
-    (function() {
-        function getCurrentCategory() {
-            const path = window.location.pathname;
-            if (path.includes('spin') || path.includes('random') || path.includes('decision')) return 'fun';
-            return 'popular';
-        }
-        const categories = {
-            popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "SIP Calculator", url: "sip-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" } ] },
-            fun: { name: "🎲 Fun & Games", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Random Number Generator", url: "random-number-generator.html" }, { name: "Decision Roulette", url: "decision-roulette.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" } ] }
-        };
-        function renderFooter() {
-            const footerContainer = document.getElementById('dynamicCategoryFooter');
-            if (!footerContainer) return;
-            const cat = categories[getCurrentCategory()];
-            if (!cat) return;
-            let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                          <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-            cat.tools.forEach(tool => {
-                if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
-                html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
-            });
-            html += `</div></div>`;
-            footerContainer.innerHTML = html;
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
-        else renderFooter();
-    })();
-    </script>
-
+  </div>
+</div>
+    
     <!-- ========== 2000+ WORD SEO ARTICLE ========== -->
     <div class="article-section">
         <h1 style="font-size: 32px; margin-bottom: 20px; border-bottom: none;">🎡 Complete Guide to Spin The Wheel Games & Random Decision Making</h1>
