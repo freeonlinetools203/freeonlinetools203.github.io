@@ -802,50 +802,43 @@
         </div>
     </div>
 
-    <!-- Category Footer & Back to Home Button -->
-    <div class="category-footer">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <a href="index.html" class="home-link">🔘 Back to Home</a>
-        </div>
-        <div id="dynamicCategoryFooter"></div>
+  <!-- ========== CATEGORY FOOTER ========== -->
+<!-- Category Footer - Calculators (Fixed, No Conflict) -->
+<style>
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.tool-btn{font-size:.85rem;padding:8px 12px}}
+</style>
+
+<div class="related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+  <div class="tools-box">
+    <div class="tools-title">🔗 Other Tools in 📊 Calculators</div>
+    <div class="tools-grid">
+      <a href="https://freeonlinetools203.com/unit-converter.html" class="tool-btn">📏 Unit Converter</a>
+      <a href="https://freeonlinetools203.com/age-calculator.html" class="tool-btn">📅 Age Calculator</a>
+      <a href="https://freeonlinetools203.com/age-difference-calculator.html" class="tool-btn">📊 Age Difference</a>
+      <a href="https://freeonlinetools203.com/discount-calculator.html" class="tool-btn">🏷️ Discount Calculator</a>
+      <a href="https://freeonlinetools203.com/profit-loss-calculator.html" class="tool-btn">📈 Profit & Loss</a>
+      <a href="https://freeonlinetools203.com/gpa-calculator.html" class="tool-btn">🎓 GPA Calculator</a>
+      <a href="https://freeonlinetools203.com/gst-calculator.html" class="tool-btn">💰 GST Calculator</a>
+      <a href="https://freeonlinetools203.com/percentage-calculator.html" class="tool-btn">📊 Percentage Calculator</a>
+      <a href="https://freeonlinetools203.com/date-calculator.html" class="tool-btn">📆 Date Calculator</a>
+      <a href="https://freeonlinetools203.com/currency-converter.html" class="tool-btn">💱 Currency Converter</a>
+      <a href="https://freeonlinetools203.com/sip-calculator.html" class="tool-btn">📈 SIP Calculator</a>
+      <a href="https://freeonlinetools203.com/qr-code-generator.html" class="tool-btn">📱 QR Code Generator</a>
     </div>
-
-    <!-- Dynamic Category Footer Script -->
-    <script>
-    (function() {
-        function getCurrentCategory() {
-            const path = window.location.pathname;
-            if (path.includes('unit-converter')) return 'popular';
-            if (path.includes('age') || path.includes('gst') || path.includes('percentage')) return 'popular';
-            if (path.includes('bmi') || path.includes('bmr')) return 'health';
-            if (path.includes('emi') || path.includes('loan')) return 'financial';
-            if (path.includes('word-counter') || path.includes('line-counter')) return 'text';
-            if (path.includes('spin') || path.includes('wheel')) return 'fun';
-            return 'popular';
-        }
-        const categories = {
-            popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "SIP Calculator", url: "sip-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
-            fun: { name: "🎲 Fun & Games", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Random Number Generator", url: "random-number-generator.html" }, { name: "Decision Roulette", url: "decision-roulette.html" } ] }
-        };
-        function renderFooter() {
-            const footerContainer = document.getElementById('dynamicCategoryFooter');
-            if (!footerContainer) return;
-            const cat = categories[getCurrentCategory()] || categories.popular;
-            let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                          <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-            cat.tools.forEach(tool => {
-                if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
-                html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
-            });
-            html += `</div></div>`;
-            footerContainer.innerHTML = html;
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
-        else renderFooter();
-    })();
-    </script>
-
+  </div>
+</div>
+    
     <!-- ========== SEO ARTICLE ========== -->
     <div class="info-section">
         <h1 style="font-size: 32px; margin-bottom: 20px; border-bottom: none;">📏 Complete Guide to Unit Converter & Measurement Conversion</h1>
