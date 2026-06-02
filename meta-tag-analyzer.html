@@ -685,16 +685,17 @@
     });
 })();
 
-// Meta Tag Analyzer Logic
+// ========== REAL META TAG ANALYZER (NO FAKE DATA) ==========
 const analyzeBtn = document.getElementById('analyzeBtn');
 const urlInput = document.getElementById('urlInput');
 const resultSection = document.getElementById('resultSection');
 const metaScore = document.getElementById('metaScore');
 
-function showToast(msg) {
+function showToast(msg, isError = false) {
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = msg;
+    if(isError) toast.style.background = '#dc2626';
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
 }
@@ -708,124 +709,183 @@ function getStatusBadge(status, text) {
     return `<span class="status-badge ${className}">${text}</span>`;
 }
 
-function analyzeMetaTags() {
+// Fetch real meta tags using free CORS proxy
+async function fetchRealMetaTags(url) {
+    try {
+        showToast('🌐 Fetching real meta tags from ' + url);
+        
+        // Free CORS proxy - AllOrigins
+        const proxyUrl = 'https://api.allorigins.win/raw?url=';
+        const response = await fetch(proxyUrl + encodeURIComponent(url));
+        
+        if (!response.ok) throw new Error('Failed to fetch');
+        
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        // Extract all meta tags
+        const title = doc.querySelector('title')?.textContent || '';
+        const metaDescription = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+        const metaKeywords = doc.querySelector('meta[name="keywords"]')?.getAttribute('content') || '';
+        const ogTitle = doc.querySelector('meta[property="og:title"]')?.getAttribute('content') || '';
+        const ogDescription = doc.querySelector('meta[property="og:description"]')?.getAttribute('content') || '';
+        const ogImage = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+        const twitterCard = doc.querySelector('meta[name="twitter:card"]')?.getAttribute('content') || '';
+        const canonical = doc.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+        const robots = doc.querySelector('meta[name="robots"]')?.getAttribute('content') || '';
+        
+        return { title, metaDescription, metaKeywords, ogTitle, ogDescription, ogImage, twitterCard, canonical, robots };
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function analyzeMetaTags() {
     let url = urlInput.value.trim();
-    if(!url) { showToast('❌ Please enter a URL to analyze'); return; }
+    if(!url) { showToast('❌ Please enter a URL to analyze', true); return; }
     if(!url.startsWith('http')) url = 'https://' + url;
     
     resultSection.classList.add('show');
-    showToast('🔍 Analyzing meta tags...');
     
-    // Simulated analysis (client-side demo)
-    setTimeout(() => {
-        // Random but realistic analysis
-        const titleLength = Math.random() > 0.3 ? Math.floor(Math.random() * 40) + 40 : Math.floor(Math.random() * 30) + 20;
-        const descLength = Math.random() > 0.3 ? Math.floor(Math.random() * 40) + 140 : Math.floor(Math.random() * 80) + 60;
-        const hasTitle = Math.random() > 0.1;
-        const hasDesc = Math.random() > 0.15;
-        const hasKeywords = Math.random() > 0.5;
-        const hasOgTitle = Math.random() > 0.3;
-        const hasOgDesc = Math.random() > 0.4;
-        const hasOgImage = Math.random() > 0.5;
-        const hasTwitter = Math.random() > 0.4;
-        const hasCanonical = Math.random() > 0.3;
-        const hasRobots = Math.random() > 0.2;
-        
-        let score = 0;
-        let scoreCount = 0;
-        
-        // Title analysis
-        let titleStatus, titleText, titleRec;
-        if(!hasTitle) { titleStatus = 'bad'; titleText = 'Missing'; titleRec = '❌ Meta title is missing! Add a unique title tag (50-60 characters).'; }
-        else if(titleLength >= 50 && titleLength <= 60) { titleStatus = 'good'; titleText = `"Sample Page Title - Brand Name" (${titleLength} chars)`; titleRec = '✅ Perfect length! Title is within 50-60 characters.'; score += 10; }
-        else if(titleLength > 60) { titleStatus = 'warning'; titleText = `"This is a very long sample page title that exceeds the recommended length" (${titleLength} chars)`; titleRec = '⚠️ Title is too long (should be 50-60 characters). It may get truncated in search results.'; score += 5; }
-        else { titleStatus = 'warning'; titleText = `"Short Title" (${titleLength} chars)`; titleRec = '⚠️ Title is too short. Use 50-60 characters for optimal display.'; score += 5; }
-        scoreCount++;
-        document.getElementById('titleStatus').innerHTML = getStatusBadge(titleStatus, titleStatus === 'good' ? '✅ Good' : (titleStatus === 'warning' ? '⚠️ Warning' : '❌ Bad'));
-        document.getElementById('titleContent').textContent = titleText;
-        document.getElementById('titleRecommendation').innerHTML = titleRec;
-        
-        // Description analysis
-        let descStatus, descText, descRec;
-        if(!hasDesc) { descStatus = 'bad'; descText = 'Missing'; descRec = '❌ Meta description is missing! Add a compelling description (150-160 characters).'; }
-        else if(descLength >= 150 && descLength <= 160) { descStatus = 'good'; descText = `This is a sample meta description that has the perfect length for SEO purposes. It includes keywords naturally. (${descLength} chars)`; descRec = '✅ Perfect length! Description is within 150-160 characters.'; score += 10; }
-        else if(descLength > 160) { descStatus = 'warning'; descText = `This is a very long sample meta description that exceeds the recommended length for search results. It will likely get truncated in Google SERPs. (${descLength} chars)`; descRec = '⚠️ Description is too long (should be 150-160 characters). It may get truncated.'; score += 5; }
-        else { descStatus = 'warning'; descText = `Short description (${descLength} chars)`; descRec = '⚠️ Description is too short. Use 150-160 characters for full visibility.'; score += 5; }
-        scoreCount++;
-        document.getElementById('descStatus').innerHTML = getStatusBadge(descStatus, descStatus === 'good' ? '✅ Good' : (descStatus === 'warning' ? '⚠️ Warning' : '❌ Bad'));
-        document.getElementById('descContent').textContent = descText;
-        document.getElementById('descRecommendation').innerHTML = descRec;
-        
-        // Keywords analysis
-        let keywordsStatus, keywordsText, keywordsRec;
-        if(!hasKeywords) { keywordsStatus = 'missing'; keywordsText = 'Not found'; keywordsRec = 'ℹ️ Meta keywords not found. (Optional - Google doesn\'t use them, but Bing may).'; score += 2; }
-        else { keywordsStatus = 'good'; keywordsText = 'seo, meta tags, website optimization, search engine'; keywordsRec = '✅ Meta keywords found. (Google ignores them, but fine to keep).'; score += 5; }
-        scoreCount++;
-        document.getElementById('keywordsStatus').innerHTML = getStatusBadge(keywordsStatus, keywordsStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
-        document.getElementById('keywordsContent').textContent = keywordsText;
-        document.getElementById('keywordsRecommendation').innerHTML = keywordsRec;
-        
-        // OG Title
-        let ogTitleStatus, ogTitleText;
-        if(!hasOgTitle) { ogTitleStatus = 'missing'; ogTitleText = 'Not found'; }
-        else { ogTitleStatus = 'good'; ogTitleText = 'Sample Page Title - Brand Name'; score += 5; }
-        scoreCount++;
-        document.getElementById('ogTitleStatus').innerHTML = getStatusBadge(ogTitleStatus, ogTitleStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
-        document.getElementById('ogTitleContent').textContent = ogTitleText;
-        
-        // OG Description
-        let ogDescStatus, ogDescText;
-        if(!hasOgDesc) { ogDescStatus = 'missing'; ogDescText = 'Not found'; }
-        else { ogDescStatus = 'good'; ogDescText = 'This is a sample Open Graph description for social media sharing.'; score += 5; }
-        scoreCount++;
-        document.getElementById('ogDescStatus').innerHTML = getStatusBadge(ogDescStatus, ogDescStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
-        document.getElementById('ogDescContent').textContent = ogDescText;
-        
-        // OG Image
-        let ogImageStatus, ogImageText;
-        if(!hasOgImage) { ogImageStatus = 'missing'; ogImageText = 'Not found'; }
-        else { ogImageStatus = 'good'; ogImageText = 'https://example.com/og-image.jpg'; score += 5; }
-        scoreCount++;
-        document.getElementById('ogImageStatus').innerHTML = getStatusBadge(ogImageStatus, ogImageStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
-        document.getElementById('ogImageContent').textContent = ogImageText;
-        
-        // Twitter Card
-        let twitterStatus, twitterText;
-        if(!hasTwitter) { twitterStatus = 'missing'; twitterText = 'Not found'; }
-        else { twitterStatus = 'good'; twitterText = 'summary_large_image'; score += 5; }
-        scoreCount++;
-        document.getElementById('twitterStatus').innerHTML = getStatusBadge(twitterStatus, twitterStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
-        document.getElementById('twitterContent').textContent = twitterText;
-        
-        // Canonical
-        let canonicalStatus, canonicalText;
-        if(!hasCanonical) { canonicalStatus = 'missing'; canonicalText = 'Not found'; }
-        else { canonicalStatus = 'good'; canonicalText = url; score += 5; }
-        scoreCount++;
-        document.getElementById('canonicalStatus').innerHTML = getStatusBadge(canonicalStatus, canonicalStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
-        document.getElementById('canonicalContent').textContent = canonicalText;
-        
-        // Robots
-        let robotsStatus, robotsText;
-        if(!hasRobots) { robotsStatus = 'missing'; robotsText = 'Not found (default: index, follow)'; }
-        else { robotsStatus = 'good'; robotsText = 'index, follow'; score += 5; }
-        scoreCount++;
-        document.getElementById('robotsStatus').innerHTML = getStatusBadge(robotsStatus, robotsStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
-        document.getElementById('robotsContent').textContent = robotsText;
-        
-        const finalScore = Math.round((score / (scoreCount * 10)) * 100);
-        metaScore.textContent = finalScore;
-        
-    }, 1500);
+    // Show loading state
+    metaScore.textContent = '...';
+    document.getElementById('titleContent').textContent = 'Loading...';
+    document.getElementById('descContent').textContent = 'Loading...';
+    document.getElementById('keywordsContent').textContent = 'Loading...';
+    document.getElementById('ogTitleContent').textContent = 'Loading...';
+    document.getElementById('ogDescContent').textContent = 'Loading...';
+    document.getElementById('ogImageContent').textContent = 'Loading...';
+    document.getElementById('twitterContent').textContent = 'Loading...';
+    document.getElementById('canonicalContent').textContent = 'Loading...';
+    document.getElementById('robotsContent').textContent = 'Loading...';
+    
+    const meta = await fetchRealMetaTags(url);
+    
+    if (!meta) {
+        showToast('❌ Failed to fetch. Check URL or try again.', true);
+        metaScore.textContent = '0';
+        return;
+    }
+    
+    let score = 0;
+    let scoreCount = 0;
+    
+    // ===== TITLE =====
+    const titleLen = meta.title.length;
+    let titleStatus, titleText, titleRec;
+    if(!meta.title || titleLen === 0) {
+        titleStatus = 'bad'; titleText = '❌ Missing'; titleRec = '❌ Meta title is missing! Add a unique title (50-60 chars).';
+    } else if(titleLen >= 50 && titleLen <= 60) {
+        titleStatus = 'good'; titleText = `"${meta.title.substring(0, 80)}${meta.title.length > 80 ? '...' : ''}" (${titleLen} chars)`;
+        titleRec = '✅ Perfect length! Title is within 50-60 characters.'; score += 10;
+    } else if(titleLen > 60) {
+        titleStatus = 'warning'; titleText = `"${meta.title.substring(0, 80)}${meta.title.length > 80 ? '...' : ''}" (${titleLen} chars)`;
+        titleRec = `⚠️ Title is too long (${titleLen} chars). Should be 50-60 characters.`; score += 5;
+    } else {
+        titleStatus = 'warning'; titleText = `"${meta.title.substring(0, 80)}${meta.title.length > 80 ? '...' : ''}" (${titleLen} chars)`;
+        titleRec = `⚠️ Title is too short (${titleLen} chars). Use 50-60 characters.`; score += 5;
+    }
+    scoreCount++;
+    document.getElementById('titleStatus').innerHTML = getStatusBadge(titleStatus, titleStatus === 'good' ? '✅ Good' : (titleStatus === 'warning' ? '⚠️ Warning' : '❌ Bad'));
+    document.getElementById('titleContent').textContent = titleText;
+    document.getElementById('titleRecommendation').innerHTML = titleRec;
+    
+    // ===== DESCRIPTION =====
+    const descLen = meta.metaDescription.length;
+    let descStatus, descText, descRec;
+    if(!meta.metaDescription || descLen === 0) {
+        descStatus = 'bad'; descText = '❌ Missing'; descRec = '❌ Meta description is missing! Add a compelling description (150-160 chars).';
+    } else if(descLen >= 150 && descLen <= 160) {
+        descStatus = 'good'; descText = `"${meta.metaDescription.substring(0, 100)}${meta.metaDescription.length > 100 ? '...' : ''}" (${descLen} chars)`;
+        descRec = '✅ Perfect length! Description is within 150-160 characters.'; score += 10;
+    } else if(descLen > 160) {
+        descStatus = 'warning'; descText = `"${meta.metaDescription.substring(0, 100)}${meta.metaDescription.length > 100 ? '...' : ''}" (${descLen} chars)`;
+        descRec = `⚠️ Description is too long (${descLen} chars). Should be 150-160 characters.`; score += 5;
+    } else {
+        descStatus = 'warning'; descText = `"${meta.metaDescription.substring(0, 100)}${meta.metaDescription.length > 100 ? '...' : ''}" (${descLen} chars)`;
+        descRec = `⚠️ Description is too short (${descLen} chars). Use 150-160 characters.`; score += 5;
+    }
+    scoreCount++;
+    document.getElementById('descStatus').innerHTML = getStatusBadge(descStatus, descStatus === 'good' ? '✅ Good' : (descStatus === 'warning' ? '⚠️ Warning' : '❌ Bad'));
+    document.getElementById('descContent').textContent = descText;
+    document.getElementById('descRecommendation').innerHTML = descRec;
+    
+    // ===== KEYWORDS =====
+    let kwStatus, kwText, kwRec;
+    if(!meta.metaKeywords || meta.metaKeywords.length === 0) {
+        kwStatus = 'missing'; kwText = 'Not found'; kwRec = 'ℹ️ Meta keywords not found. (Optional - Google ignores them).'; score += 2;
+    } else {
+        kwStatus = 'good'; kwText = meta.metaKeywords.substring(0, 100); kwRec = '✅ Meta keywords found.'; score += 5;
+    }
+    scoreCount++;
+    document.getElementById('keywordsStatus').innerHTML = getStatusBadge(kwStatus, kwStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
+    document.getElementById('keywordsContent').textContent = kwText;
+    document.getElementById('keywordsRecommendation').innerHTML = kwRec;
+    
+    // ===== OG TITLE =====
+    let ogtStatus, ogtText;
+    if(!meta.ogTitle || meta.ogTitle.length === 0) { ogtStatus = 'missing'; ogtText = 'Not found'; }
+    else { ogtStatus = 'good'; ogtText = meta.ogTitle.substring(0, 100); score += 5; }
+    scoreCount++;
+    document.getElementById('ogTitleStatus').innerHTML = getStatusBadge(ogtStatus, ogtStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
+    document.getElementById('ogTitleContent').textContent = ogtText;
+    
+    // ===== OG DESCRIPTION =====
+    let ogdStatus, ogdText;
+    if(!meta.ogDescription || meta.ogDescription.length === 0) { ogdStatus = 'missing'; ogdText = 'Not found'; }
+    else { ogdStatus = 'good'; ogdText = meta.ogDescription.substring(0, 100); score += 5; }
+    scoreCount++;
+    document.getElementById('ogDescStatus').innerHTML = getStatusBadge(ogdStatus, ogdStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
+    document.getElementById('ogDescContent').textContent = ogdText;
+    
+    // ===== OG IMAGE =====
+    let ogiStatus, ogiText;
+    if(!meta.ogImage || meta.ogImage.length === 0) { ogiStatus = 'missing'; ogiText = 'Not found'; }
+    else { ogiStatus = 'good'; ogiText = meta.ogImage.substring(0, 100); score += 5; }
+    scoreCount++;
+    document.getElementById('ogImageStatus').innerHTML = getStatusBadge(ogiStatus, ogiStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
+    document.getElementById('ogImageContent').textContent = ogiText;
+    
+    // ===== TWITTER CARD =====
+    let twStatus, twText;
+    if(!meta.twitterCard || meta.twitterCard.length === 0) { twStatus = 'missing'; twText = 'Not found'; }
+    else { twStatus = 'good'; twText = meta.twitterCard; score += 5; }
+    scoreCount++;
+    document.getElementById('twitterStatus').innerHTML = getStatusBadge(twStatus, twStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
+    document.getElementById('twitterContent').textContent = twText;
+    
+    // ===== CANONICAL =====
+    let canStatus, canText;
+    if(!meta.canonical || meta.canonical.length === 0) { canStatus = 'missing'; canText = 'Not found'; }
+    else { canStatus = 'good'; canText = meta.canonical; score += 5; }
+    scoreCount++;
+    document.getElementById('canonicalStatus').innerHTML = getStatusBadge(canStatus, canStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
+    document.getElementById('canonicalContent').textContent = canText;
+    
+    // ===== ROBOTS =====
+    let robStatus, robText;
+    if(!meta.robots || meta.robots.length === 0) { robStatus = 'missing'; robText = 'Not found (default: index, follow)'; }
+    else { robStatus = 'good'; robText = meta.robots; score += 5; }
+    scoreCount++;
+    document.getElementById('robotsStatus').innerHTML = getStatusBadge(robStatus, robStatus === 'good' ? '✅ Good' : 'ℹ️ Missing');
+    document.getElementById('robotsContent').textContent = robText;
+    
+    const finalScore = Math.round((score / (scoreCount * 10)) * 100);
+    metaScore.textContent = finalScore;
+    showToast(`✅ Analysis complete! Score: ${finalScore}/100`);
 }
 
 analyzeBtn.addEventListener('click', analyzeMetaTags);
 urlInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') analyzeMetaTags(); });
 
+// Don't auto-load on page load - user enters URL
 window.addEventListener('load', () => {
-    urlInput.value = 'https://freeonlinetools203.github.io/';
-    analyzeMetaTags();
+    urlInput.value = '';
+    resultSection.classList.remove('show');
 });
 </script>
+    
 </body>
 </html>
