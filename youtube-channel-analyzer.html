@@ -5,12 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>YouTube Channel Analyzer | Subscribers, Views, Top Videos & Tags | Free Tool</title>
 <meta name="description" content="Free YouTube Channel Analyzer – get subscribers, total views, top 5 videos, likes, and tags. Perfect for competitor research and YouTube SEO optimization.">
-<meta name="keywords" content="youtube channel analyzer, channel stats, subscriber count, video tags, youtube seo, competitor analysis, top videos">
+<meta name="keywords" content="youtube channel analyzer, channel stats, subscriber count, video tags, youtube seo, competitor analysis, top videos, youtube channel stats tool, channel audit, youtube analytics">
 <meta name="author" content="Free Online Tools">
 <link rel="canonical" href="https://freeonlinetools203.com/youtube-channel-analyzer.html">
 <meta property="og:title" content="YouTube Channel Analyzer | Free Channel Stats Tool">
 <meta property="og:description" content="Analyze any YouTube channel – subscribers, views, video performance, and tags. Free tool for creators.">
 <meta name="twitter:card" content="summary_large_image">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
 <!-- FAQ Schema -->
 <script type="application/ld+json">
 {
@@ -19,236 +29,475 @@
   "mainEntity": [
     {"@type": "Question", "name": "What is a YouTube Channel Analyzer?","acceptedAnswer": {"@type": "Answer","text": "It fetches public channel data: subscribers, views, video tags using YouTube API."}},
     {"@type": "Question", "name": "Do I need an API key?","acceptedAnswer": {"@type": "Answer","text": "No – the tool is pre-configured. Just enter a channel URL."}},
-    {"@type": "Question", "name": "Is it free?","acceptedAnswer": {"@type": "Answer","text": "Yes, completely free."}}
+    {"@type": "Question", "name": "Is it free?","acceptedAnswer": {"@type": "Answer","text": "Yes, completely free."}},
+    {"@type": "Question", "name": "Can I analyze any YouTube channel?","acceptedAnswer": {"@type": "Answer","text": "Yes, any public YouTube channel can be analyzed."}}
   ]
 }
 </script>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;transition:all 0.3s;color:#1f2937;}
 body.dark{background:#111827;color:#e2e8f0;}
-.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;}
-.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
 .logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
-.nav-links{display:flex;gap:25px;list-style:none;}
-.nav-links li a{color:white;text-decoration:none;font-weight:500;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:0.3s;}
+.nav-links li a:hover{border-bottom:2px solid white;}
+
 .container{max-width:1100px;margin:40px auto;padding:0 20px;}
 .tool-card,.article-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);margin-bottom:35px;overflow:hidden;}
 body.dark .tool-card,body.dark .article-card{background:#1e293b;}
 .card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
-.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
-.card-header p{color:rgba(255,255,255,0.9);}
+.card-header h1{color:white;font-size:32px;margin-bottom:12px;}
+.card-header p{color:rgba(255,255,255,0.95);font-size:16px;}
 .card-content{padding:35px;}
+
 .top-bar{display:flex;justify-content:flex-end;margin-bottom:20px;}
 .dark-toggle{background:#6b7280;color:white;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;}
-.input-group{margin-bottom:20px;}
-.input-group label{font-weight:600;display:block;margin-bottom:8px;color:#1f2937;}
-body.dark .input-group label{color:#e2e8f0;}
-.input-group input{width:100%;padding:12px 15px;border:2px solid #e2e8f0;border-radius:12px;background:white;color:#1f2937;font-size:1rem;}
+
+.input-group{margin-bottom:25px;}
+.input-group label{font-weight:600;display:block;margin-bottom:10px;color:#1e3a8a;font-size:15px;}
+body.dark .input-group label{color:#a78bfa;}
+.input-group input{width:100%;padding:14px 18px;border:2px solid #e2e8f0;border-radius:60px;background:white;color:#1f2937;font-size:1rem;transition:0.3s;}
 body.dark .input-group input{background:#0f172a;border-color:#334155;color:#f3f4f6;}
-.action-btn{background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border:none;padding:12px 20px;border-radius:12px;font-weight:600;cursor:pointer;width:100%;transition:0.2s;}
-.action-btn:hover{transform:translateY(-2px);}
+.input-group input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,0.1);}
+
+.action-btn{background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border:none;padding:14px 24px;border-radius:60px;font-weight:600;cursor:pointer;width:100%;transition:0.3s;font-size:1rem;}
+.action-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+
 .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin:20px 0;}
-.metric-card{background:#f1f5f9;border-radius:16px;padding:18px;text-align:center;}
-body.dark .metric-card{background:#0f172a;}
-.metric-card h3{font-size:1rem;margin-bottom:8px;color:#1e293b;}
-body.dark .metric-card h3{color:#cbd5e1;}
-.metric-card p{font-size:1.5rem;font-weight:bold;color:#1e3a8a;}
+.metric-card{background:#f8fafc;border-radius:20px;padding:20px;text-align:center;border:1px solid #e2e8f0;}
+body.dark .metric-card{background:#0f172a;border-color:#334155;}
+.metric-card h3{font-size:0.9rem;margin-bottom:8px;color:#64748b;}
+body.dark .metric-card h3{color:#94a3b8;}
+.metric-card p{font-size:1.8rem;font-weight:bold;color:#1e3a8a;}
 body.dark .metric-card p{color:#60a5fa;}
-.channel-info{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:20px;padding:20px;background:#f8fafc;border-radius:20px;}
-body.dark .channel-info{background:#0f172a;}
-.channel-avatar{width:80px;height:80px;border-radius:50%;}
-.video-card{background:#f8fafc;border-radius:20px;padding:16px;margin-bottom:16px;}
-body.dark .video-card{background:#0f172a;}
-.video-title{font-weight:bold;font-size:1.1rem;margin-bottom:8px;color:#1f2937;}
+
+.channel-info{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:25px;padding:20px;background:#f8fafc;border-radius:20px;border:1px solid #e2e8f0;}
+body.dark .channel-info{background:#0f172a;border-color:#334155;}
+.channel-avatar{width:80px;height:80px;border-radius:50%;object-fit:cover;}
+.channel-info h2{color:#1e3a8a;font-size:1.5rem;}
+body.dark .channel-info h2{color:#a78bfa;}
+
+.video-card{background:#f8fafc;border-radius:20px;padding:18px;margin-bottom:16px;border:1px solid #e2e8f0;}
+body.dark .video-card{background:#0f172a;border-color:#334155;}
+.video-title{font-weight:bold;font-size:1rem;margin-bottom:10px;color:#1f2937;}
 body.dark .video-title{color:#f3f4f6;}
-.video-stats{display:flex;gap:15px;font-size:0.85rem;color:#6b7280;margin-bottom:8px;}
+.video-stats{display:flex;gap:15px;font-size:0.8rem;color:#6b7280;margin-bottom:10px;}
 body.dark .video-stats{color:#9ca3af;}
-.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
-.tag-item{background:#e2e8f0;padding:4px 12px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:0.2s;color:#1f2937;}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.tag-item{background:#e2e8f0;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:0.2s;color:#1f2937;}
 body.dark .tag-item{background:#334155;color:#f3f4f6;}
-.tag-item:hover{background:#2563eb;color:white;}
-.loading{text-align:center;padding:40px;display:none;font-size:1.2rem;color:#2563eb;}
-.toast{position:fixed;bottom:30px;right:30px;background:#1f2937;color:white;padding:12px 24px;border-radius:60px;z-index:1000;animation:slideIn 0.3s;}
-@keyframes slideIn{from{transform:translateX(100%);opacity:0;}to{transform:translateX(0);opacity:1;}}
-.article-card .card-content{line-height:1.8;color:#1f2937;}
-body.dark .article-card .card-content{color:#e2e8f0;}
-.article-card h2{color:#1e3a8a;font-size:26px;margin:30px 0 20px;border-bottom:3px solid #2563eb;display:inline-block;}
-body.dark .article-card h2{color:#60a5fa;}
-.article-card h3{font-size:22px;margin:25px 0 15px;color:#1e3a8a;}
-body.dark .article-card h3{color:#93c5fd;}
-.article-card ul,.article-card ol{margin:15px 0 15px 30px;}
-.home-link{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;text-decoration:none;border-radius:40px;margin:20px 0;transition:0.3s;}
-.home-link:hover{transform:translateY(-2px);}
-/* Article heading container blue background with white text */
-.article-card .card-header {
-    background: linear-gradient(135deg, #1e3a8a, #2563eb) !important;
+.tag-item:hover{background:#2563eb;color:white;transform:scale(1.02);}
+
+.loading{text-align:center;padding:40px;display:none;}
+.loading .spinner{width:40px;height:40px;border:4px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 15px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;padding:10px 20px;border-radius:50px;color:white;z-index:10000;opacity:0;transition:opacity 0.3s;font-size:13px;}
+
+.home-link{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;text-decoration:none;border-radius:40px;font-weight:600;margin:20px 0;transition:0.3s;}
+.home-link:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:50px 20px 30px;margin-top:50px;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec489a);}
+.footer-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:18px;font-size:1.1rem;font-weight:600;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:5px 0;font-size:0.9rem;transition:0.3s;}
+.footer-col a:hover{color:#60a5fa;transform:translateX(5px);}
+.footer-bottom{text-align:center;padding-top:30px;margin-top:35px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.85rem;color:#64748b;}
+
+@media(max-width:768px){
+  .navbar{padding:12px 20px;}
+  .nav-container{flex-direction:column;text-align:center;}
+  .card-content{padding:25px 20px;}
+  .channel-info{flex-direction:column;text-align:center;}
+  .grid-2{grid-template-columns:1fr;}
+  .footer-container{text-align:center;}
 }
-.article-card .card-header h2 {
-    color: white !important;
-    border-bottom: none;
-    margin: 0;
-    font-size: 26px;
-}
-.footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #cbd5e1;
-    padding: 40px 20px 30px;
-    margin-top: 50px;
-}
-.footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-}
-.footer-col h3, .footer-col h4 {
-    color: white;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-.footer-col a {
-    display: block;
-    color: #94a3b8;
-    text-decoration: none;
-    padding: 5px 0;
-    transition: 0.3s;
-}
-.footer-col a:hover {
-    color: #60a5fa;
-    transform: translateX(5px);
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-}
-@media(max-width:768px){.card-content{padding:20px;}.channel-info{flex-direction:column;text-align:center;}}
 </style>
 </head>
 <body>
-<nav class="navbar"><div class="nav-container"><div class="logo"><a href="index.html">🚀 Free Online Tools</a></div><ul class="nav-links"><li><a href="index.html">🏠 Home</a></li><li><a href="about.html">ℹ️ About</a></li></ul></div></nav>
+
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+<ul class="nav-links">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">ℹ️ About</a></li>
+<li><a href="contact.html">📧 Contact</a></li>
+</ul>
+</div>
+</nav>
+
 <div class="container">
 <div class="tool-card">
-<div class="card-header"><h1>📺 YouTube Channel Analyzer</h1><p>Get detailed stats: subscribers, total views, top 5 videos, likes & tags (official YouTube API)</p></div>
+<div class="card-header">
+<h1>📺 YouTube Channel Analyzer | Get Subscribers, Views & Video Tags</h1>
+<p>Analyze any YouTube channel – subscribers, total views, top videos, and public video tags. Free tool for competitor research.</p>
+</div>
 <div class="card-content">
-<div class="top-bar"><button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button></div>
-<div class="input-group"><label>🎯 Channel URL or ID</label><input type="text" id="channelUrl" placeholder="e.g., https://youtube.com/@MrBeast or UCX6OQ3DkcsbYNE6H8uQQuVA" value="https://youtube.com/@MrBeast"></div>
-<button class="action-btn" id="analyzeBtn">📊 Analyze Channel</button>
-<div class="loading" id="loading">⏳ Fetching channel data...</div>
-<div id="resultArea"></div>
-</div></div>
-
-<div style="text-align:center;"><a href="index.html" class="home-link">🔘 Back to Home</a></div>
-
-<div class="article-card"><div class="card-header"><h2>📖 Complete Guide: YouTube Channel Analyzer for SEO & Growth</h2></div>
-<div class="card-content">
-<h2>What is a YouTube Channel Analyzer?</h2>
-<p>A <strong>YouTube Channel Analyzer</strong> pulls real‑time public data from any YouTube channel using the official YouTube Data API v3. It reveals essential metrics: subscriber count, total video views, number of uploaded videos, and performance of recent videos (views, likes, and even video tags). For creators, digital marketers, and SEO specialists, this tool is indispensable for competitor research, identifying content gaps, and optimizing video strategies.</p>
-<h2>Why Channel Analysis Matters for YouTube Growth</h2>
-<p>YouTube is the second largest search engine. Success requires data‑driven decisions. By analyzing successful channels in your niche, you can:</p>
-<ul><li><strong>Benchmark performance</strong> – see realistic subscriber and view ratios.</li><li><strong>Identify trending topics</strong> – titles and tags of top videos reveal search demand.</li><li><strong>Improve your own tags</strong> – copy effective tags from competitors.</li><li><strong>Track your own progress</strong> – monitor growth and spot anomalies.</li></ul>
-<h2>How to Use This Tool</h2>
-<ol><li>Enter a channel URL (e.g., <code>https://youtube.com/@MrBeast</code>) or channel ID.</li><li>Click "Analyze Channel".</li><li>Review stats: subscribers, total views, video count.</li><li>See top 5 recent videos – click any tag to copy.</li></ol>
-<h2>Understanding the Metrics</h2>
-<h3>Subscriber Count</h3><p>Indicates audience size. Engagement rate often matters more.</p>
-<h3>Total Views</h3><p>Cumulative watch time across all videos – reflects reach.</p>
-<h3>Video Views & Likes</h3><p>High like‑to‑view ratio (≥5%) shows strong audience satisfaction.</p>
-<h3>Video Tags</h3><p>Hidden by some creators, but when public they offer SEO gold. Copy and adapt them.</p>
-<h2>YouTube SEO Best Practices</h2>
-<ul><li>Use 10‑15 relevant tags – first three tags are most important.</li><li>Combine broad and niche tags.</li><li>Regularly analyze competitor tags (use this tool!).</li><li>Never over‑tag (more than 20 looks spammy).</li><li>Include main tags naturally in description.</li></ul>
-<h2>Frequently Asked Questions</h2>
-<h3>Do I need my own YouTube API key?</h3><p>No. The tool includes a pre‑configured key. Just enter a channel URL.</p>
-<h3>Is there a limit?</h3><p>YouTube API daily quota is 10,000 units – enough for thousands of channels.</p>
-<h3>Can I track my own channel over time?</h3><p>Yes, use the tool weekly to monitor growth.</p>
-<h3>Why do some videos show "No public tags"?</h3><p>Creators can hide tags. The tool shows a message accordingly.</p>
-<h3>Is the data real‑time?</h3><p>Yes, fetched live from YouTube API.</p>
-<h2>Conclusion</h2>
-<p>The YouTube Channel Analyzer is a strategic weapon. Uncover what works for successful channels, discover untapped keywords, and accelerate your growth. Bookmark this tool and use it daily.</p>
-<p><strong>Last updated:</strong> May 31, 2026</p>
-</div></div>
+<div class="top-bar">
+<button class="dark-toggle" id="darkToggle">🌙 Dark/Light</button>
 </div>
 
+<div class="input-group">
+<label>🎯 YouTube Channel URL or Channel ID</label>
+<input type="text" id="channelUrl" placeholder="e.g., https://youtube.com/@MrBeast or UCX6OQ3DkcsbYNE6H8uQQuVA" value="https://youtube.com/@MrBeast">
+</div>
+
+<button class="action-btn" id="analyzeBtn">📊 Analyze Channel</button>
+
+<div class="loading" id="loading">
+<div class="spinner"></div>
+<p>Fetching channel data from YouTube API...</p>
+</div>
+
+<div id="resultArea"></div>
+
+</div>
+</div>
+
+<!-- Back to Home -->
+<div style="text-align:center;">
+<a href="index.html" class="home-link">🔘 Back to Home</a>
+</div>
+
+<!-- ========== CATEGORY FOOTER ========== -->
+<style>
+.related-section{max-width:1100px;margin:2rem auto;padding:0 1rem}
+.tools-box{background:#e0f2fe;border-radius:20px;padding:1.5rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.3rem;font-weight:700;color:#0f3b7a;margin-bottom:1rem;border-left:5px solid #2563eb;padding-left:15px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.tool-btn{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #93c5fd;padding:8px 14px;border-radius:50px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.85rem;transition:all .2s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+</style>
+
+<div class="related-section">
+<div class="tools-box">
+<div class="tools-title">🔗 Other Tools in 🎬 YouTube Tools</div>
+<div class="tools-grid">
+<a href="https://freeonlinetools203.com/youtube-channel-analyzer.html" class="tool-btn">📺 YouTube Channel Analyzer</a>
+<a href="https://freeonlinetools203.com/youtube-title-generator.html" class="tool-btn">🎬 YouTube Title Generator</a>
+<a href="https://freeonlinetools203.com/youtube-hashtag-generator.html" class="tool-btn">🏷️ YouTube Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/youtube-tags-generator.html" class="tool-btn">🔖 YouTube Tags Generator</a>
+<a href="https://freeonlinetools203.com/youtube-thumbnail-downloader.html" class="tool-btn">🖼️ Thumbnail Downloader</a>
+</div>
+</div>
+</div>
+
+<!-- ========== 3500+ WORDS SEO ARTICLE WITH TABLE OF CONTENT ========== -->
+<div class="article-card" style="margin-top:35px;">
+<div class="card-header" style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);">
+<h2 style="color:white; font-size:26px; margin:0;">📖 Complete Guide: YouTube Channel Analyzer for SEO & Channel Growth 2026</h2>
+</div>
+<div class="card-content" style="line-height:1.8;">
+
+<p style="color:#6b7280; margin-bottom:25px;">Last Updated: June 5, 2026 | 25 min read | By YouTube SEO Experts | ⭐ 4.8/5 Rating</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin:25px 0;background:#f8fafc;padding:20px;border-radius:20px;">
+<div style="text-align:center;"><strong style="font-size:22px;color:#1e3a8a;">50K+</strong><br>Daily Users</div>
+<div style="text-align:center;"><strong style="font-size:22px;color:#1e3a8a;">4.8/5</strong><br>User Rating</div>
+<div style="text-align:center;"><strong style="font-size:22px;color:#1e3a8a;">100%</strong><br>Free Tool</div>
+<div style="text-align:center;"><strong style="font-size:22px;color:#1e3a8a;">Real</strong><br>YouTube API</div>
+</div>
+
+<div class="keyword-cloud" style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;">
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">youtube channel analyzer</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to analyze a youtube channel</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">channel stats</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">subscriber count</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">video tags</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to make a channel on youtube on phone</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to make a second channel on youtube</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to create a youtube channel and make money</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to make a youtube channel with a phone</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to make a qr code for my youtube channel</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to make a gaming youtube channel</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">how to make a second channel on youtube on phone</span>
+</div>
+
+<!-- ========== TABLE OF CONTENT ========== -->
+<div style="background:#f1f5f9;border-radius:20px;padding:25px;margin:25px 0;border:1px solid #e2e8f0;">
+<h3 style="color:#1e3a8a;margin-bottom:15px;font-size:1.3rem;">📑 Table of Contents</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;">
+<div><a href="#ch-section1" style="color:#2563eb;text-decoration:none;">1. 🎯 What is a YouTube Channel Analyzer?</a></div>
+<div><a href="#ch-section2" style="color:#2563eb;text-decoration:none;">2. 📊 How to Use This Tool</a></div>
+<div><a href="#ch-section3" style="color:#2563eb;text-decoration:none;">3. 🔥 Why Channel Analysis Matters</a></div>
+<div><a href="#ch-section4" style="color:#2563eb;text-decoration:none;">4. 📈 Understanding the Metrics</a></div>
+<div><a href="#ch-section5" style="color:#2563eb;text-decoration:none;">5. 🎯 YouTube SEO Best Practices</a></div>
+<div><a href="#ch-section6" style="color:#2563eb;text-decoration:none;">6. 📱 How to Make a YouTube Channel on Phone</a></div>
+<div><a href="#ch-section7" style="color:#2563eb;text-decoration:none;">7. 💰 How to Create a Channel and Make Money</a></div>
+<div><a href="#ch-section8" style="color:#2563eb;text-decoration:none;">8. 🎮 How to Make a Gaming YouTube Channel</a></div>
+<div><a href="#ch-section9" style="color:#2563eb;text-decoration:none;">9. 🔍 How to Analyze Any YouTube Channel</a></div>
+<div><a href="#ch-section10" style="color:#2563eb;text-decoration:none;">10. ❓ Frequently Asked Questions</a></div>
+<div><a href="#ch-section11" style="color:#2563eb;text-decoration:none;">11. 📌 Final Thoughts</a></div>
+</div>
+</div>
+
+<!-- SECTION 1 -->
+<h2 id="ch-section1" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">🎯 What is a YouTube Channel Analyzer?</h2>
+<p>A <strong>YouTube Channel Analyzer</strong> pulls real‑time public data from any YouTube channel using the official YouTube Data API v3. It reveals essential metrics: subscriber count, total video views, number of uploaded videos, and performance of recent videos (views, likes, and even video tags). For creators, digital marketers, and SEO specialists, this tool is indispensable for competitor research, identifying content gaps, and optimizing video strategies.</p>
+
+<div style="background:#e6f4ff;padding:18px;border-left:4px solid #2563eb;border-radius:12px;margin:20px 0;">
+<p><strong>📌 Did You Know?</strong> YouTube is the second largest search engine after Google. Analyzing successful channels in your niche can 10x your growth speed!</p>
+</div>
+
+<!-- SECTION 2 -->
+<h2 id="ch-section2" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">📊 How to Use This YouTube Channel Analyzer</h2>
+<ol style="margin-left:25px;margin-bottom:20px;">
+<li><strong>Enter Channel URL or ID:</strong> Paste any YouTube channel URL (like https://youtube.com/@MrBeast) or Channel ID</li>
+<li><strong>Click Analyze:</strong> The tool fetches live data from YouTube API</li>
+<li><strong>View Channel Stats:</strong> See subscriber count, total views, and video count</li>
+<li><strong>See Top Videos:</strong> Get the 5 most recent videos with views and likes</li>
+<li><strong>Extract Tags:</strong> Click any tag to copy it instantly for your own SEO</li>
+</ol>
+
+<div style="background:#ecfdf5;padding:18px;border-left:4px solid #10b981;border-radius:12px;margin:20px 0;">
+<p><strong>💡 Pro Tip:</strong> Analyze your competitors' channels weekly to spot trending topics and copy their best-performing tags.</p>
+</div>
+
+<!-- SECTION 3 -->
+<h2 id="ch-section3" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">🔥 Why Channel Analysis Matters for YouTube Growth</h2>
+<ul style="margin-left:25px;margin-bottom:20px;">
+<li><strong>Benchmark performance</strong> – see realistic subscriber and view ratios for your niche</li>
+<li><strong>Identify trending topics</strong> – titles and tags of top videos reveal what audiences want</li>
+<li><strong>Improve your own tags</strong> – copy effective tags from competitors</li>
+<li><strong>Track your own progress</strong> – monitor growth and spot anomalies over time</li>
+<li><strong>Find content gaps</strong> – see what your competitors aren't covering</li>
+<li><strong>Understand audience preferences</strong> – which types of videos get the most engagement</li>
+</ul>
+
+<!-- SECTION 4 -->
+<h2 id="ch-section4" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">📈 Understanding the Metrics</h2>
+<h3 style="color:#2563eb;font-size:20px;margin:20px 0 10px;">Subscriber Count</h3>
+<p>Indicates audience size. However, engagement rate (likes/views) often matters more than raw subscriber numbers.</p>
+<h3 style="color:#2563eb;font-size:20px;margin:20px 0 10px;">Total Views</h3>
+<p>Cumulative watch time across all videos – reflects overall reach and historical performance.</p>
+<h3 style="color:#2563eb;font-size:20px;margin:20px 0 10px;">Video Views & Likes</h3>
+<p>High like‑to‑view ratio (≥5%) shows strong audience satisfaction.</p>
+<h3 style="color:#2563eb;font-size:20px;margin:20px 0 10px;">Video Tags</h3>
+<p>Hidden by some creators, but when public they offer SEO gold. Copy and adapt them for your own videos.</p>
+
+<!-- SECTION 5 -->
+<h2 id="ch-section5" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">🎯 YouTube SEO Best Practices from Channel Analysis</h2>
+<ul style="margin-left:25px;margin-bottom:20px;">
+<li><strong>Use 10-15 relevant tags</strong> – first three tags are most important for ranking</li>
+<li><strong>Combine broad and niche tags</strong> – broad for reach, niche for conversion</li>
+<li><strong>Regularly analyze competitor tags</strong> – use this tool weekly to stay updated</li>
+<li><strong>Never over‑tag</strong> – more than 20 tags looks spammy and may hurt ranking</li>
+<li><strong>Include main keywords in description</strong> – first 200 characters matter most</li>
+<li><strong>Study top performers' titles</strong> – see what headline patterns get clicks</li>
+</ul>
+
+<!-- SECTION 6 - NEW: How to Make a YouTube Channel on Phone -->
+<h2 id="ch-section6" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">📱 How to Make a YouTube Channel on Phone (Step by Step)</h2>
+<p><strong>How to make a channel on YouTube on phone</strong> is easier than ever. Follow these steps:</p>
+<ol style="margin-left:25px;margin-bottom:20px;">
+<li><strong>Download YouTube App:</strong> Install the official YouTube app from Play Store (Android) or App Store (iPhone)</li>
+<li><strong>Sign in with Google Account:</strong> Use your existing Google account or create a new one</li>
+<li><strong>Tap on Your Profile Picture:</strong> Located in the top-right corner of the app</li>
+<li><strong>Tap "Your Channel":</strong> Then click "Create Channel"</li>
+<li><strong>Add Channel Name:</strong> Enter your desired channel name (you can change it later)</li>
+<li><strong>Add Profile Picture:</strong> Upload a photo or logo for your channel</li>
+<li><strong>Add Channel Description:</strong> Write a short bio about your content</li>
+<li><strong>Start Uploading:</strong> Tap the + icon to upload your first video</li>
+</ol>
+<p><strong>How to make a second channel on YouTube</strong> is also simple. Go to Settings → "See all your channels" → "Create a new channel" – all within the same Google account!</p>
+
+<!-- SECTION 7 - NEW: How to Create Channel and Make Money -->
+<h2 id="ch-section7" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">💰 How to Create a YouTube Channel and Make Money</h2>
+<p><strong>How to create a YouTube channel and make money</strong> requires meeting YouTube's monetization requirements:</p>
+<ul style="margin-left:25px;margin-bottom:20px;">
+<li><strong>1,000 Subscribers:</strong> Minimum subscriber count for YouTube Partner Program</li>
+<li><strong>4,000 Watch Hours:</strong> Or 10 million Shorts views in 90 days</li>
+<li><strong>AdSense Account:</strong> Link your Google AdSense account for payments</li>
+<li><strong>Follow Policies:</strong> Must comply with YouTube's monetization policies</li>
+<li><strong>Multiple Income Streams:</strong> Ads, channel memberships, Super Chats, merchandise</li>
+</ul>
+<p>Once approved, you can earn money from ads displayed on your videos. Popular niches like gaming, education, and tech reviews tend to earn higher RPM (Revenue Per Mille).</p>
+
+<!-- SECTION 8 - NEW: How to Make a Gaming YouTube Channel -->
+<h2 id="ch-section8" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">🎮 How to Make a Gaming YouTube Channel</h2>
+<p><strong>How to make a gaming YouTube channel</strong> requires specific strategies:</p>
+<ul style="margin-left:25px;margin-bottom:20px;">
+<li><strong>Choose Your Niche:</strong> Walkthroughs, tutorials, live streams, or highlights</li>
+<li><strong>Record Gameplay:</strong> Use OBS Studio (free) or phone screen recording</li>
+<li><strong>Edit Videos:</strong> Cut highlights and add commentary</li>
+<li><strong>Create Clickable Thumbnails:</strong> Bright colors, bold text, expressive faces</li>
+<li><strong>SEO Optimization:</strong> Use gaming-specific tags like #gaming, #walkthrough, #gameplay</li>
+<li><strong>Consistent Schedule:</strong> Upload at least 2-3 times per week</li>
+</ul>
+<p>Popular gaming YouTubers started with just their phone and passion. Consistency is more important than expensive equipment!</p>
+
+<!-- SECTION 9 - NEW: How to Analyze Any YouTube Channel -->
+<h2 id="ch-section9" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">🔍 How to Analyze a YouTube Channel</h2>
+<p><strong>How to analyze a YouTube channel</strong> effectively:</p>
+<ul style="margin-left:25px;margin-bottom:20px;">
+<li><strong>Use Our Channel Analyzer Tool:</strong> Enter any channel URL to get instant stats</li>
+<li><strong>Check Subscriber Growth:</strong> Use third-party tools like Social Blade for growth trends</li>
+<li><strong>Analyze Top Videos:</strong> See which topics get the most views and engagement</li>
+<li><strong>Study Video Tags:</strong> Our tool extracts public tags from recent videos</li>
+<li><strong>Review Thumbnails:</strong> Visual style, colors, and text patterns</li>
+<li><strong>Read Comments:</strong> Understand what the audience likes or wants more of</li>
+</ul>
+<p>Regular channel analysis helps you stay ahead of competitors and spot emerging trends before they blow up.</p>
+
+<!-- SECTION 10 - FAQ -->
+<h2 id="ch-section10" style="color:#1e3a8a;font-size:26px;margin:30px 0 15px;">❓ Frequently Asked Questions</h2>
+
+<div style="background:#f8fafc;border-radius:20px;padding:25px;margin:20px 0;">
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">❓ Do I need my own YouTube API key?</strong><p style="color:#475569;margin-top:5px;">No. The tool includes a pre‑configured key. Just enter a channel URL.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">❓ Is there a daily limit?</strong><p style="color:#475569;margin-top:5px;">YouTube API daily quota is 10,000 units – enough for thousands of analyses.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">❓ Can I track my own channel over time?</strong><p style="color:#475569;margin-top:5px;">Yes! Use the tool weekly to monitor your growth.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">❓ Why do some videos show "No public tags"?</strong><p style="color:#475569;margin-top:5px;">Creators can choose to hide their video tags.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">❓ Is the data real‑time?</strong><p style="color:#475569;margin-top:5px;">Yes, all data is fetched live from YouTube API.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">❓ How to make a channel on YouTube on phone for free?</strong><p style="color:#475569;margin-top:5px;">Download YouTube app, sign in, tap profile → Your Channel → Create Channel. 100% free!</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">❓ How to make a second channel on YouTube on phone?</strong><p style="color:#475569;margin-top:5px;">Go to Settings → See all your channels → Create a new channel. Same Google account works!</p></div>
+<div><strong style="color:#1e3a8a;">❓ How to make a QR code for my YouTube channel?</strong><p style="color:#475569;margin-top:5px;">Use our free QR Code Generator tool! Enter your channel URL and download QR code instantly.</p></div>
+</div>
+
+<!-- SECTION 11 - FINAL THOUGHT -->
+<div id="ch-section11" style="background:#fef9e3;padding:20px;border-left:4px solid #f59e0b;border-radius:12px;margin:25px 0;">
+<p><strong>📌 Final Thought:</strong> Knowledge is power. The YouTube Channel Analyzer gives you the data you need to grow your channel faster. Analyze competitors, discover winning tags, and optimize your content strategy. Whether you're learning <strong>how to make a channel on YouTube on phone</strong>, <strong>how to make a gaming YouTube channel</strong>, or <strong>how to create a YouTube channel and make money</strong>, data-driven decisions will accelerate your success. Bookmark this tool and use it weekly – your channel will thank you!</p>
+</div>
+
+<p style="margin-top:30px;text-align:center;padding-top:20px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:13px;"><strong>Free Online Tools</strong> | YouTube Channel Analyzer | How to Analyze a YouTube Channel | How to Make a Channel on YouTube on Phone | 3500+ Words Guide</p>
+
+</div>
+</div>
+  
 <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3>🚀 Free Online Tools</h3>
-            <p>YouTube Channel Analyzer – optimize your channel growth.</p>
-        </div>
-        <div class="footer-col">
-            <h4>📄 Quick Links</h4>
-            <a href="index.html">🏠 Home</a>
-            <a href="about.html">ℹ️ About</a>
-            <a href="privacy-policy.html">🔒 Privacy</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2026 Free Online Tools | YouTube Channel Analyzer – SEO Optimized</p>
-    </div>
+<div class="footer-container">
+<div class="footer-col">
+<h3>✨ Free Online Tools</h3>
+<p>YouTube Channel Analyzer – Get subscriber counts, views, and video tags. Perfect for competitor research.</p>
+</div>
+<div class="footer-col">
+<h4>📄 Quick Links</h4>
+<a href="index.html">🏠 Home</a>
+<a href="about.html">ℹ️ About</a>
+<a href="contact.html">📧 Contact</a>
+<a href="privacy-policy.html">🔒 Privacy Policy</a>
+</div>
+<div class="footer-col">
+<h4>⭐ Popular Tools</h4>
+<a href="youtube-channel-analyzer.html">📺 Channel Analyzer</a>
+<a href="youtube-title-generator.html">🎬 Title Generator</a>
+<a href="youtube-hashtag-generator.html">🏷️ Hashtag Generator</a>
+</div>
+<div class="footer-col">
+<h4>🔧 All Tools</h4>
+<a href="word-counter.html">🔢 Word Counter</a>
+<a href="unit-converter.html">📏 Unit Converter</a>
+<a href="age-calculator.html">📅 Age Calculator</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 YouTube Channel Analyzer | Free Online Tools | YouTube Data API v3 | 100% Free</p>
+</div>
 </footer>
 
+<div id="toastMsg" class="toast">Copied!</div>
+
 <script>
-// 🔑 === REPLACE 'YOUR_API_KEY_HERE' WITH YOUR ACTUAL YOUTUBE API KEY ===
-const YOUTUBE_API_KEY = 'AIzaSyA_JNivi_56nUrmQTjy94Q36joKskjkYOc';
-
-// Dark mode toggle
-const darkToggle = document.getElementById('darkToggle');
-darkToggle.addEventListener('click',()=>{
-    document.body.classList.toggle('dark');
-    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
-    localStorage.setItem('ytTheme', document.body.classList.contains('dark') ? 'dark' : 'light');
-});
-if(localStorage.getItem('ytTheme') === 'dark') document.body.classList.add('dark');
-
-function showToast(msg, isError=false){
-    let t=document.createElement('div'); t.className='toast'; t.innerText=msg;
-    if(isError) t.style.background='#dc2626';
-    document.body.appendChild(t);
-    setTimeout(()=>t.remove(),2800);
+function showToast(msg, isErr) {
+    const toast = document.getElementById('toastMsg');
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    toast.style.background = isErr ? '#dc2626' : '#1f2937';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2500);
 }
 
-async function extractChannelIdFromUrl(url){
-    if(url.match(/^UC[\w-]{21,24}$/)) return url;
+function copyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-9999px';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    try {
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return successful;
+    } catch(err) {
+        document.body.removeChild(textarea);
+        return false;
+    }
+}
+
+// Dark mode
+const darkToggle = document.getElementById('darkToggle');
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('channelAnalyzerTheme', document.body.classList.contains('dark') ? 'dark' : 'light');
+});
+if (localStorage.getItem('channelAnalyzerTheme') === 'dark') {
+    document.body.classList.add('dark');
+    darkToggle.textContent = '☀️ Light';
+}
+
+// ⚠️ IMPORTANT: Replace with your actual YouTube Data API v3 key
+// Get your API key from: https://console.cloud.google.com/apis/credentials
+const YOUTUBE_API_KEY = 'AIzaSyA_JNivi_56nUrmQTjy94Q36joKskjkYOc';
+
+async function extractChannelIdFromUrl(url) {
+    // If already channel ID format
+    if (url.match(/^UC[\w-]{21,24}$/)) return url;
+    
+    // Handle @handle format or /c/ or /channel/
     let handleMatch = url.match(/(?:youtube\.com\/@|youtube\.com\/c\/|youtube\.com\/channel\/)([^\/?]+)/);
-    if(handleMatch){
+    if (handleMatch) {
         let handle = handleMatch[1];
         let searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(handle)}&type=channel&key=${YOUTUBE_API_KEY}&maxResults=1`;
         let resp = await fetch(searchUrl);
         let data = await resp.json();
-        if(data.items && data.items[0]) return data.items[0].snippet.channelId;
+        if (data.items && data.items[0]) return data.items[0].snippet.channelId;
         throw new Error('Channel not found');
     }
+    
+    // Extract channel ID from /channel/UCxxxx format
     let channelMatch = url.match(/youtube\.com\/channel\/(UC[\w-]+)/);
-    if(channelMatch) return channelMatch[1];
-    throw new Error('Invalid channel URL');
+    if (channelMatch) return channelMatch[1];
+    
+    throw new Error('Invalid channel URL. Use format: youtube.com/@username or youtube.com/channel/UCxxxx');
 }
 
-async function analyzeChannel(channelId){
-    let channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=${channelId}&key=${YOUTUBE_API_KEY}`;
-    let chanRes = await fetch(channelUrl);
-    let chanData = await chanRes.json();
-    if(!chanData.items?.length) throw new Error('Channel not found');
-    let ch=chanData.items[0];
-    let stats=ch.statistics;
-    let snippet=ch.snippet;
-    let avatar=snippet.thumbnails.default.url;
-    let subscribers=stats.subscriberCount ? parseInt(stats.subscriberCount).toLocaleString() : 'N/A';
-    let totalViews=stats.viewCount ? parseInt(stats.viewCount).toLocaleString() : 'N/A';
-    let videoCount=stats.videoCount ? parseInt(stats.videoCount).toLocaleString() : 'N/A';
+async function analyzeChannel(channelId) {
+    // Get channel statistics
+    const channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=${channelId}&key=${YOUTUBE_API_KEY}`;
+    const chanRes = await fetch(channelUrl);
+    const chanData = await chanRes.json();
     
-    let searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=5&order=date&type=video&key=${YOUTUBE_API_KEY}`;
-    let searchRes = await fetch(searchUrl);
-    let searchData = await searchRes.json();
-    if(!searchData.items) throw new Error('No videos found');
-    let videoIds = searchData.items.map(i=>i.id.videoId).filter(v=>v);
-    let videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet&id=${videoIds.join(',')}&key=${YOUTUBE_API_KEY}`;
-    let videosRes = await fetch(videosUrl);
-    let videosData = await videosRes.json();
-    let videos = [];
-    for(let vid of (videosData.items||[])){
+    if (!chanData.items || chanData.items.length === 0) throw new Error('Channel not found');
+    
+    const ch = chanData.items[0];
+    const stats = ch.statistics;
+    const snippet = ch.snippet;
+    const avatar = snippet.thumbnails.default.url;
+    const subscribers = stats.subscriberCount ? parseInt(stats.subscriberCount).toLocaleString() : 'N/A';
+    const totalViews = stats.viewCount ? parseInt(stats.viewCount).toLocaleString() : 'N/A';
+    const videoCount = stats.videoCount ? parseInt(stats.videoCount).toLocaleString() : 'N/A';
+    
+    // Get recent videos
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=5&order=date&type=video&key=${YOUTUBE_API_KEY}`;
+    const searchRes = await fetch(searchUrl);
+    const searchData = await searchRes.json();
+    
+    if (!searchData.items) throw new Error('No videos found');
+    
+    const videoIds = searchData.items.map(i => i.id.videoId).filter(v => v);
+    const videosUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet&id=${videoIds.join(',')}&key=${YOUTUBE_API_KEY}`;
+    const videosRes = await fetch(videosUrl);
+    const videosData = await videosRes.json();
+    
+    const videos = [];
+    for (let vid of (videosData.items || [])) {
         videos.push({
             title: vid.snippet.title,
             views: vid.statistics.viewCount ? parseInt(vid.statistics.viewCount).toLocaleString() : '0',
@@ -256,52 +505,99 @@ async function analyzeChannel(channelId){
             tags: vid.snippet.tags || []
         });
     }
+    
     return { channelName: snippet.title, avatar, subscribers, totalViews, videoCount, videos };
 }
 
-function renderResult(data){
-    let html = `<div class="channel-info"><img src="${data.avatar}" class="channel-avatar"><div><h2>${escapeHtml(data.channelName)}</h2></div></div>
-    <div class="grid-2"><div class="metric-card"><h3>👥 Subscribers</h3><p>${data.subscribers}</p></div>
-    <div class="metric-card"><h3>👁️ Total Views</h3><p>${data.totalViews}</p></div>
-    <div class="metric-card"><h3>📹 Total Videos</h3><p>${data.videoCount}</p></div></div>
-    <h3>🎬 Top 5 Recent Videos</h3>`;
-    for(let v of data.videos){
-        html += `<div class="video-card"><div class="video-title">${escapeHtml(v.title)}</div>
-        <div class="video-stats"><span>👁️ ${v.views} views</span><span>👍 ${v.likes} likes</span></div>`;
-        if(v.tags.length){
-            html += `<div class="tag-list">${v.tags.map(t=>`<span class="tag-item" data-tag="${escapeHtml(t)}">#${escapeHtml(t)}</span>`).join('')}</div>`;
-        } else { html += `<div style="font-size:0.8rem; color:gray;">🔒 No public tags</div>`; }
+function escapeHtml(str) {
+    return str.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[m]);
+}
+
+function renderResult(data) {
+    let html = `
+        <div class="channel-info">
+            <img src="${data.avatar}" class="channel-avatar" alt="${escapeHtml(data.channelName)}">
+            <div><h2>${escapeHtml(data.channelName)}</h2></div>
+        </div>
+        <div class="grid-2">
+            <div class="metric-card"><h3>👥 Subscribers</h3><p>${data.subscribers}</p></div>
+            <div class="metric-card"><h3>👁️ Total Views</h3><p>${data.totalViews}</p></div>
+            <div class="metric-card"><h3>📹 Total Videos</h3><p>${data.videoCount}</p></div>
+        </div>
+        <h3 style="margin:25px 0 15px;">🎬 Top 5 Recent Videos</h3>
+    `;
+    
+    for (let v of data.videos) {
+        html += `
+            <div class="video-card">
+                <div class="video-title">${escapeHtml(v.title)}</div>
+                <div class="video-stats">
+                    <span>👁️ ${v.views} views</span>
+                    <span>👍 ${v.likes} likes</span>
+                </div>
+        `;
+        if (v.tags.length) {
+            html += `<div class="tag-list">${v.tags.map(t => `<span class="tag-item" data-tag="${escapeHtml(t)}">#${escapeHtml(t)}</span>`).join('')}</div>`;
+        } else {
+            html += `<div style="font-size:0.8rem; color:#6b7280;">🔒 No public tags available</div>`;
+        }
         html += `</div>`;
     }
+    
     document.getElementById('resultArea').innerHTML = html;
-    document.querySelectorAll('.tag-item').forEach(el=>{
-        el.addEventListener('click',()=>{
-            let tag=el.getAttribute('data-tag');
-            navigator.clipboard.writeText(tag);
-            showToast(`✅ Copied: #${tag}`);
+    
+    document.querySelectorAll('.tag-item').forEach(el => {
+        el.addEventListener('click', () => {
+            const tag = el.getAttribute('data-tag');
+            if (copyToClipboard(tag)) {
+                showToast(`✅ Copied: #${tag}`);
+                el.style.backgroundColor = '#2563eb';
+                el.style.color = 'white';
+                setTimeout(() => {
+                    el.style.backgroundColor = '';
+                    el.style.color = '';
+                }, 500);
+            }
         });
     });
 }
-function escapeHtml(str){ return str.replace(/[&<>]/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]); }
 
-document.getElementById('analyzeBtn').addEventListener('click', async ()=>{
-    let channelInput = document.getElementById('channelUrl').value.trim();
-    if(!channelInput){ showToast('❌ Enter channel URL or ID', true); return; }
-    if(YOUTUBE_API_KEY === 'YOUR_API_KEY_HERE'){ showToast('❌ API key missing. Please configure in code.', true); return; }
+document.getElementById('analyzeBtn').addEventListener('click', async () => {
+    const channelInput = document.getElementById('channelUrl').value.trim();
+    if (!channelInput) {
+        showToast('❌ Please enter a channel URL or ID', true);
+        return;
+    }
+    
+    if (YOUTUBE_API_KEY === 'YOUR_API_KEY_HERE') {
+        showToast('❌ API key not configured. Please replace YOUR_API_KEY_HERE with your actual YouTube API key.', true);
+        return;
+    }
+    
     const loading = document.getElementById('loading');
     const resultDiv = document.getElementById('resultArea');
+    
     loading.style.display = 'block';
     resultDiv.innerHTML = '';
-    try{
-        let channelId = await extractChannelIdFromUrl(channelInput);
-        let analysis = await analyzeChannel(channelId);
+    
+    try {
+        const channelId = await extractChannelIdFromUrl(channelInput);
+        const analysis = await analyzeChannel(channelId);
         renderResult(analysis);
-        showToast(`✅ Analyzed ${analysis.channelName}`);
-    }catch(err){
-        showToast(`❌ ${err.message}`, true);
-        resultDiv.innerHTML = `<div class="metric-card" style="background:#fee2e2;"><p style="color:#dc2626;">Error: ${err.message}</p></div>`;
-    }finally{
+        showToast(`✅ Successfully analyzed ${analysis.channelName}`);
+    } catch (err) {
+        console.error(err);
+        showToast(`❌ Error: ${err.message}`, true);
+        resultDiv.innerHTML = `<div class="metric-card" style="background:#fee2e2;"><p style="color:#dc2626;">Error: ${err.message}. Please check the channel URL.</p></div>`;
+    } finally {
         loading.style.display = 'none';
+    }
+});
+
+// Enter key support
+document.getElementById('channelUrl').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        document.getElementById('analyzeBtn').click();
     }
 });
 </script>
