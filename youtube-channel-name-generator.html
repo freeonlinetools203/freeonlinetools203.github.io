@@ -338,7 +338,7 @@
 </footer>
 
 <script>
-// ========== FINAL FIXED - YOUTUBE CHANNEL NAME GENERATOR ==========
+// ========== SIMPLE & CLEAN - NO DUPLICATES, NO NUMBERS ==========
 
 // Dropdown Functionality
 (function() {
@@ -360,163 +360,101 @@
     });
 })();
 
-// Channel Name Generator Logic
-let currentStyle = 'islamic';
 let currentNames = [];
 
-// ========== FIXED: STYLE BUTTONS - UPDATE SEARCH BAR AND GENERATE ==========
+// Style buttons - UPDATE SEARCH BAR & GENERATE
 document.querySelectorAll('.style-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-        // Remove active class from all buttons
         document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         
-        // Get selected style
-        const selectedStyle = this.getAttribute('data-style');
-        currentStyle = selectedStyle;
+        const style = this.getAttribute('data-style');
         
-        // Set keyword based on selected style
-        let keyword = '';
-        if(selectedStyle === 'gaming') keyword = 'gaming';
-        else if(selectedStyle === 'tech') keyword = 'tech';
-        else if(selectedStyle === 'vlog') keyword = 'vlog';
-        else if(selectedStyle === 'ai') keyword = 'ai';
-        else if(selectedStyle === 'funny') keyword = 'comedy';
-        else if(selectedStyle === 'professional') keyword = 'business';
-        else if(selectedStyle === 'shorts') keyword = 'shorts';
-        else if(selectedStyle === 'brand') keyword = 'brand';
-        else if(selectedStyle === 'islamic') keyword = 'islamic';
+        // Set keyword based on style
+        let keyword = style;
+        if(style === 'funny') keyword = 'comedy';
+        if(style === 'professional') keyword = 'business';
+        if(style === 'islamic') keyword = 'islamic';
         
-        // UPDATE SEARCH BAR
         document.getElementById('keywordInput').value = keyword;
-        
-        // GENERATE NAMES
-        generateCleanNames(keyword, selectedStyle);
+        generateSimpleNames(keyword, style);
     });
 });
 
-// ========== FIXED: CLEAN NAME GENERATION - NO DUPLICATES ==========
-function generateCleanNames(keyword, style) {
+// SIMPLE NAME GENERATION - NO DUPLICATES
+function generateSimpleNames(keyword, style) {
     if(!keyword || keyword === '') {
         keyword = 'islamic';
         document.getElementById('keywordInput').value = keyword;
     }
     
-    const lowerKeyword = keyword.toLowerCase();
+    const kw = keyword.toLowerCase();
     
-    // Style-specific word lists
-    const styleWords = {
-        gaming: ['Gamer', 'Pro', 'Legend', 'King', 'Master', 'Elite', 'Shadow', 'Fusion', 'Nova', 'Rogue', 'Phantom', 'Vortex', 'Epic', 'Beast', 'Storm'],
-        tech: ['Tech', 'Digital', 'Cyber', 'Code', 'Dev', 'Innovate', 'Future', 'NextGen', 'Alpha', 'Quantum', 'Pixel', 'Byte', 'Cloud', 'Smart', 'Nerd'],
-        vlog: ['Vlog', 'Daily', 'Life', 'Journey', 'Moments', 'Diary', 'Adventures', 'Stories', 'Living', 'Real', 'Simple', 'Everyday', 'My', 'Our', 'True'],
-        ai: ['AI', 'Neural', 'Smart', 'Intelligent', 'Deep', 'Cognitive', 'Auto', 'Genius', 'Synth', 'Mind', 'Logic', 'Data', 'Robot', 'Cyber', 'Future'],
-        funny: ['Crazy', 'Silly', 'Funny', 'LOL', 'Goofy', 'Wacky', 'Zany', 'Hilarious', 'Comedy', 'Jester', 'Panda', 'Noodle', 'Wild', 'Savage', 'Epic'],
-        professional: ['Official', 'Media', 'Studio', 'Productions', 'Network', 'Global', 'Insights', 'Academy', 'Group', 'Solutions', 'Pro', 'Experts', 'Hub', 'Central'],
-        shorts: ['Shorts', 'Quick', 'Fast', 'Snappy', 'Daily', 'Bite', 'Flash', 'Mini', 'Reel', 'Viral', 'Trend', 'Now', 'Snap', 'Zip', 'Dash'],
-        brand: ['Co', 'Brand', 'Creative', 'Vision', 'Empire', 'Media', 'House', 'Collective', 'Society', 'League', 'Nation', 'Zone', 'Labs', 'Studio', 'Works'],
-        islamic: ['Islamic', 'Muslim', 'Quran', 'Deen', 'Iman', 'Hidayah', 'Sunnah', 'Dawah', 'Tawheed', 'Blessings', 'Mercy', 'Guidance', 'Wisdom', 'Light', 'Faith', 'Peace', 'Rahma', 'Jannah']
+    // Words for each style
+    const words = {
+        gaming: ['Gamer', 'Pro', 'Legend', 'King', 'Master', 'Elite', 'Shadow', 'Fusion', 'Nova', 'Rogue', 'Phantom', 'Vortex', 'Epic', 'Beast'],
+        tech: ['Tech', 'Digital', 'Cyber', 'Code', 'Dev', 'Innovate', 'Future', 'Alpha', 'Quantum', 'Pixel', 'Byte', 'Cloud', 'Smart'],
+        vlog: ['Daily', 'Life', 'Journey', 'Moments', 'Diary', 'Adventures', 'Stories', 'Living', 'Real', 'Simple', 'Everyday', 'True'],
+        ai: ['AI', 'Neural', 'Smart', 'Intelligent', 'Deep', 'Cognitive', 'Auto', 'Genius', 'Mind', 'Logic', 'Data', 'Robot', 'Cyber'],
+        funny: ['Crazy', 'Silly', 'Funny', 'LOL', 'Goofy', 'Wacky', 'Zany', 'Hilarious', 'Comedy', 'Jester', 'Panda', 'Wild', 'Savage'],
+        professional: ['Official', 'Media', 'Studio', 'Productions', 'Network', 'Global', 'Insights', 'Academy', 'Group', 'Solutions', 'Pro', 'Experts'],
+        shorts: ['Quick', 'Fast', 'Snappy', 'Daily', 'Bite', 'Flash', 'Mini', 'Reel', 'Viral', 'Trend', 'Now', 'Snap', 'Dash'],
+        brand: ['Creative', 'Vision', 'Empire', 'Media', 'House', 'Collective', 'Society', 'League', 'Nation', 'Zone', 'Labs', 'Studio'],
+        islamic: ['Islamic', 'Muslim', 'Quran', 'Deen', 'Iman', 'Hidayah', 'Sunnah', 'Dawah', 'Blessings', 'Mercy', 'Guidance', 'Wisdom', 'Light', 'Faith', 'Peace']
     };
     
-    const endings = {
-        gaming: ['Plays', 'TV', 'Zone', 'World', 'Nation', 'Empire', 'Squad', 'Clan', 'Army', 'Lab', 'Central', 'HQ', 'Network', 'Hub', 'Gaming'],
-        tech: ['Lab', 'Hub', 'Central', 'Sys', 'Net', 'Codex', 'Forge', 'Works', 'Factory', 'Source', 'Base', 'Core', 'Studio', 'Zone', 'Tech'],
-        vlog: ['World', 'Life', 'Days', 'Time', 'Space', 'Room', 'Place', 'Vibes', 'Scenes', 'Tales', 'Chronicles', 'Diary', 'Hub', 'Vlog'],
-        ai: ['Mind', 'Core', 'Engine', 'Forge', 'Works', 'Studio', 'Lab', 'Brain', 'Logic', 'Sense', 'Spark', 'Hub', 'Zone', 'AI'],
-        funny: ['Zone', 'Land', 'Time', 'Show', 'Club', 'Nation', 'World', 'Fails', 'Moments', 'Fun', 'Humor', 'Corner', 'Hub', 'Funny'],
-        professional: ['Hub', 'Central', 'HQ', 'Network', 'Platform', 'Portal', 'Connect', 'Link', 'Bridge', 'Point', 'Media', 'Zone', 'Pro'],
-        shorts: ['Cut', 'Clip', 'Snap', 'Tap', 'Now', 'Spot', 'Dash', 'Spark', 'Flash', 'Rush', 'Burst', 'Reel', 'Hub', 'Shorts'],
-        brand: ['Official', 'Studios', 'Creative', 'Collective', 'Empire', 'Group', 'Co', 'Labs', 'Agency', 'House', 'HQ', 'Zone', 'Brand'],
-        islamic: ['Hub', 'Zone', 'Central', 'World', 'Network', 'Academy', 'Channel', 'TV', 'Daily', 'Diaries', 'Stories', 'Wisdom', 'Light', 'Path', 'Guidance', 'Blessings', 'Vibes', 'Spot']
+    const suffixes = {
+        gaming: ['Plays', 'Zone', 'World', 'Nation', 'Empire', 'Squad', 'Army', 'Central', 'Hub', 'Gaming'],
+        tech: ['Lab', 'Hub', 'Central', 'Codex', 'Forge', 'Works', 'Source', 'Base', 'Core', 'Studio'],
+        vlog: ['Vlog', 'Life', 'Days', 'Time', 'Space', 'Room', 'Place', 'Vibes', 'Scenes', 'Tales', 'Diary'],
+        ai: ['Mind', 'Core', 'Engine', 'Forge', 'Works', 'Studio', 'Lab', 'Brain', 'Sense', 'Hub'],
+        funny: ['Zone', 'Land', 'Time', 'Show', 'Club', 'World', 'Fails', 'Moments', 'Fun', 'Humor', 'Corner'],
+        professional: ['Hub', 'Central', 'Network', 'Platform', 'Portal', 'Connect', 'Link', 'Bridge', 'Point', 'Media'],
+        shorts: ['Cut', 'Clip', 'Snap', 'Tap', 'Spot', 'Dash', 'Spark', 'Flash', 'Rush', 'Burst', 'Reel'],
+        brand: ['Studios', 'Creative', 'Collective', 'Empire', 'Group', 'Labs', 'Agency', 'House', 'Works', 'Media'],
+        islamic: ['Hub', 'Zone', 'Central', 'World', 'Network', 'Academy', 'Channel', 'Daily', 'Diaries', 'Stories', 'Wisdom', 'Light', 'Path']
     };
     
-    const words = styleWords[style] || styleWords.islamic;
-    const ends = endings[style] || endings.islamic;
+    const wordList = words[style] || words.islamic;
+    const suffixList = suffixes[style] || suffixes.islamic;
     
-    let uniqueNames = new Set();
+    let nameSet = new Set();
     
-    // Generate names: Word + keyword (without duplication)
-    for(let i = 0; i < words.length && uniqueNames.size < 30; i++) {
-        let name1 = `${words[i]} ${lowerKeyword}`;
-        let name2 = `${words[i]}${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`;
-        let name3 = `${lowerKeyword} ${ends[i % ends.length]}`;
-        let name4 = `${lowerKeyword}${ends[i % ends.length]}`;
-        
-        if(name1.length <= 35 && name1.length >= 3) uniqueNames.add(name1);
-        if(name2.length <= 35 && name2.length >= 3) uniqueNames.add(name2);
-        if(name3.length <= 35 && name3.length >= 3) uniqueNames.add(name3);
-        if(name4.length <= 35 && name4.length >= 3) uniqueNames.add(name4);
+    // Generate clean names (space wala format ONLY, no duplicate)
+    for(let i = 0; i < wordList.length && nameSet.size < 30; i++) {
+        nameSet.add(`${wordList[i]} ${kw}`);
     }
     
-    // Additional good names
-    const moreNames = [
-        `${lowerKeyword}Life`, `${lowerKeyword}Journey`, `${lowerKeyword}Daily`,
-        `${lowerKeyword}Time`, `${lowerKeyword}Space`, `${lowerKeyword}Room`,
-        `The${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`,
-        `My${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`,
-        `${lowerKeyword}Official`, `${lowerKeyword}Channel`
+    for(let i = 0; i < suffixList.length && nameSet.size < 30; i++) {
+        nameSet.add(`${kw} ${suffixList[i]}`);
+    }
+    
+    // Add some special names
+    const specials = [
+        `The${kw.charAt(0).toUpperCase() + kw.slice(1)}`,
+        `My${kw.charAt(0).toUpperCase() + kw.slice(1)}`,
+        `${kw}Life`,
+        `${kw}Daily`,
+        `${kw}Journey`
     ];
     
-    for(let name of moreNames) {
-        if(name.length <= 35 && name.length >= 3) uniqueNames.add(name);
+    for(let name of specials) {
+        if(name.length <= 35) nameSet.add(name);
     }
     
-    // Convert to array, limit to 24
-    let nameArray = Array.from(uniqueNames);
-    nameArray = nameArray.slice(0, 24);
+    // Convert to array and limit to 24
+    let finalNames = Array.from(nameSet);
+    finalNames = finalNames.slice(0, 24);
     
-    currentNames = nameArray;
-    renderNames(nameArray);
+    currentNames = finalNames;
+    displayNames(finalNames);
     
-    let styleDisplay = style === 'islamic' ? 'Islamic/Religious' : style;
-    showToast(`✅ ${nameArray.length} unique ${styleDisplay} channel names generated!`);
+    let styleName = style === 'islamic' ? 'Islamic' : style;
+    showToast(`✅ ${finalNames.length} ${styleName} channel names generated!`);
 }
 
-// ========== MAIN GENERATE FUNCTION ==========
-function generateNames() {
-    let keyword = document.getElementById('keywordInput').value.trim();
-    
-    if(!keyword || keyword === '') {
-        showToast('❌ Please enter a keyword first!');
-        return;
-    }
-    
-    // Clean keyword
-    keyword = keyword.toLowerCase();
-    keyword = keyword.split(' ')[0];
-    keyword = keyword.replace(/[^a-z]/g, '');
-    
-    if(keyword === '') keyword = 'islamic';
-    
-    document.getElementById('keywordInput').value = keyword;
-    
-    // Auto-detect style
-    let detectedStyle = 'islamic';
-    if(keyword.includes('game') || keyword.includes('gaming')) detectedStyle = 'gaming';
-    else if(keyword.includes('tech') || keyword.includes('code')) detectedStyle = 'tech';
-    else if(keyword.includes('vlog') || keyword.includes('daily')) detectedStyle = 'vlog';
-    else if(keyword.includes('ai') || keyword.includes('artificial')) detectedStyle = 'ai';
-    else if(keyword.includes('funny') || keyword.includes('comedy')) detectedStyle = 'funny';
-    else if(keyword.includes('business') || keyword.includes('professional')) detectedStyle = 'professional';
-    else if(keyword.includes('short') || keyword.includes('reel')) detectedStyle = 'shorts';
-    else if(keyword.includes('brand')) detectedStyle = 'brand';
-    else detectedStyle = 'islamic';
-    
-    currentStyle = detectedStyle;
-    
-    // Update active button
-    document.querySelectorAll('.style-btn').forEach(btn => {
-        if(btn.getAttribute('data-style') === detectedStyle) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    
-    generateCleanNames(keyword, detectedStyle);
-}
-
-// ========== RENDER NAMES FUNCTION ==========
-function renderNames(names) {
+// Display names
+function displayNames(names) {
     const groups = [
         { title: "🔥 Trending Names", names: names.slice(0, 8) },
         { title: "🌟 Unique Names", names: names.slice(8, 16) },
@@ -563,39 +501,72 @@ function renderNames(names) {
     });
 }
 
-function escapeHtml(str) {
-    return str.replace(/[&<>]/g, function(m) {
-        if(m === '&') return '&amp;';
-        if(m === '<') return '&lt;';
-        if(m === '>') return '&gt;';
-        return m;
+// Main generate function
+function generateNames() {
+    let keyword = document.getElementById('keywordInput').value.trim();
+    
+    if(!keyword) {
+        showToast('❌ Please enter a keyword!');
+        return;
+    }
+    
+    keyword = keyword.toLowerCase();
+    keyword = keyword.split(' ')[0];
+    keyword = keyword.replace(/[^a-z]/g, '');
+    
+    if(!keyword) keyword = 'islamic';
+    
+    document.getElementById('keywordInput').value = keyword;
+    
+    // Detect style
+    let style = 'islamic';
+    if(keyword.includes('game')) style = 'gaming';
+    else if(keyword.includes('tech')) style = 'tech';
+    else if(keyword.includes('vlog') || keyword.includes('daily') || keyword.includes('life')) style = 'vlog';
+    else if(keyword.includes('ai')) style = 'ai';
+    else if(keyword.includes('funny') || keyword.includes('comedy')) style = 'funny';
+    else if(keyword.includes('business') || keyword.includes('pro')) style = 'professional';
+    else if(keyword.includes('short')) style = 'shorts';
+    else if(keyword.includes('brand')) style = 'brand';
+    
+    // Update active button
+    document.querySelectorAll('.style-btn').forEach(btn => {
+        if(btn.getAttribute('data-style') === style) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
     });
+    
+    generateSimpleNames(keyword, style);
+}
+
+function escapeHtml(str) {
+    return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]);
 }
 
 function copyAllNames() {
     if(currentNames.length === 0) {
-        showToast('❌ No names to copy. Generate first.');
+        showToast('❌ Generate names first!');
         return;
     }
-    const text = currentNames.join('\n');
-    navigator.clipboard.writeText(text);
-    showToast(`📋 Copied ${currentNames.length} unique names!`);
+    navigator.clipboard.writeText(currentNames.join('\n'));
+    showToast(`📋 Copied ${currentNames.length} names!`);
 }
 
 function downloadTXT() {
     if(currentNames.length === 0) {
-        showToast('❌ No names to download. Generate first.');
+        showToast('❌ Generate names first!');
         return;
     }
     const content = `YouTube Channel Names\nGenerated: ${new Date().toLocaleString()}\n\n${currentNames.join('\n')}`;
     const blob = new Blob([content], {type: 'text/plain'});
-    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
+    a.href = URL.createObjectURL(blob);
     a.download = `youtube_channel_names_${Date.now()}.txt`;
     a.click();
     URL.revokeObjectURL(url);
-    showToast('💾 File downloaded!');
+    showToast('💾 Downloaded!');
 }
 
 function clearAll() {
@@ -620,11 +591,9 @@ document.getElementById('generateBtn').addEventListener('click', generateNames);
 document.getElementById('copyAllBtn').addEventListener('click', copyAllNames);
 document.getElementById('downloadBtn').addEventListener('click', downloadTXT);
 document.getElementById('clearBtn').addEventListener('click', clearAll);
-document.getElementById('keywordInput').addEventListener('keypress', (e) => { 
-    if(e.key === 'Enter') generateNames(); 
-});
+document.getElementById('keywordInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') generateNames(); });
 
-// Initialize on page load
+// Initialize
 window.addEventListener('load', () => {
     document.getElementById('keywordInput').value = 'islamic';
     generateNames();
