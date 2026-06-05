@@ -338,7 +338,7 @@
 </footer>
 
 <script>
-// ========== FIXED JAVASCRIPT CODE - YOUTUBE CHANNEL NAME GENERATOR ==========
+// ========== FULLY FIXED JAVASCRIPT CODE - YOUTUBE CHANNEL NAME GENERATOR ==========
 
 // Dropdown Functionality
 (function() {
@@ -364,35 +364,36 @@
 let currentStyle = 'gaming';
 let currentNames = [];
 
-// FIXED: Style buttons - AUTO GENERATE when clicked
+// FIXED: Style buttons - AUTO GENERATE with current keyword
 document.querySelectorAll('.style-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         currentStyle = this.getAttribute('data-style');
         
-        // Auto-generate when style changes
+        // IMPORTANT FIX: Get keyword from input field
         let keyword = document.getElementById('keywordInput').value.trim();
         
-        // If keyword is empty or invalid, use default
-        if(!keyword || keyword === '' || keyword === 'Enter your keyword...') {
-            keyword = 'gaming';
-            document.getElementById('keywordInput').value = 'gaming';
+        // If keyword is empty, show message
+        if(!keyword || keyword === '') {
+            showToast('❌ Please enter a keyword first!');
+            return;
         }
         
-        // Clean the keyword - remove any extra text
-        keyword = keyword.split(' ')[0].toLowerCase();
+        // Clean the keyword
+        keyword = cleanKeyword(keyword);
         document.getElementById('keywordInput').value = keyword;
         
-        generateNamesWithKeyword(keyword);
+        // Generate names with current keyword and new style
+        generateNamesWithKeyword(keyword, currentStyle);
     });
 });
 
 // Clean keyword function
 function cleanKeyword(keyword) {
-    if(!keyword) return 'gaming';
+    if(!keyword) return '';
     
-    // Remove any extra text
+    // Remove any extra text - take first word only
     let clean = keyword.trim().toLowerCase();
     
     // If keyword has spaces, take first word only
@@ -400,48 +401,49 @@ function cleanKeyword(keyword) {
         clean = clean.split(' ')[0];
     }
     
-    // Remove any non-alphabetic characters (keep letters only)
+    // Remove special characters but keep letters
     clean = clean.replace(/[^a-z]/g, '');
-    
-    // If empty after cleaning, use default
-    if(clean === '') return 'gaming';
     
     return clean;
 }
 
-// Generate names with keyword parameter
-function generateNamesWithKeyword(keyword) {
-    const style = currentStyle;
+// FIXED: Generate names with keyword AND style parameters
+function generateNamesWithKeyword(keyword, style) {
+    if(!keyword || keyword === '') {
+        showToast('❌ Please enter a keyword first!');
+        return;
+    }
+    
     const lowerKeyword = keyword.toLowerCase().trim();
     
     const prefixes = {
         gaming: ['Gamer', 'Pro', 'Legend', 'King', 'Queen', 'Master', 'Elite', 'Beast', 'Shadow', 'Fusion', 'Nova', 'Rogue', 'Phantom', 'Vortex', 'Epic'],
-        tech: ['Tech', 'Digital', 'Cyber', 'Code', 'Dev', 'Innovate', 'Future', 'NextGen', 'Alpha', 'Beta', 'Quantum', 'Pixel', 'Byte', 'Cloud'],
-        vlog: ['Vlog', 'Daily', 'Life', 'Journey', 'Moments', 'Diary', 'Adventures', 'Stories', 'Living', 'Real', 'Simple', 'Everyday', 'My'],
-        ai: ['AI', 'Neural', 'Smart', 'Intelligent', 'Deep', 'Cognitive', 'Auto', 'Genius', 'Synth', 'Mind', 'Logic', 'Data', 'Robot', 'Cyber'],
-        funny: ['Crazy', 'Silly', 'Funny', 'LOL', 'Goofy', 'Wacky', 'Zany', 'Hilarious', 'Comedy', 'Jester', 'Panda', 'Noodle', 'Silly'],
-        professional: ['Official', 'Media', 'Studio', 'Productions', 'Network', 'Global', 'Insights', 'Academy', 'Group', 'Solutions', 'Pro'],
-        shorts: ['Shorts', 'Quick', 'Fast', 'Snappy', 'Daily', 'Bite', 'Flash', 'Mini', 'Reel', 'Viral', 'Trend', 'Now', 'Snap'],
-        brand: ['Co', 'Brand', 'Creative', 'Vision', 'Empire', 'Media', 'House', 'Collective', 'Society', 'League', 'Nation', 'Zone']
+        tech: ['Tech', 'Digital', 'Cyber', 'Code', 'Dev', 'Innovate', 'Future', 'NextGen', 'Alpha', 'Beta', 'Quantum', 'Pixel', 'Byte', 'Cloud', 'Smart'],
+        vlog: ['Vlog', 'Daily', 'Life', 'Journey', 'Moments', 'Diary', 'Adventures', 'Stories', 'Living', 'Real', 'Simple', 'Everyday', 'My', 'Our'],
+        ai: ['AI', 'Neural', 'Smart', 'Intelligent', 'Deep', 'Cognitive', 'Auto', 'Genius', 'Synth', 'Mind', 'Logic', 'Data', 'Robot', 'Cyber', 'Future'],
+        funny: ['Crazy', 'Silly', 'Funny', 'LOL', 'Goofy', 'Wacky', 'Zany', 'Hilarious', 'Comedy', 'Jester', 'Panda', 'Noodle', 'Silly', 'Wild'],
+        professional: ['Official', 'Media', 'Studio', 'Productions', 'Network', 'Global', 'Insights', 'Academy', 'Group', 'Solutions', 'Pro', 'Experts'],
+        shorts: ['Shorts', 'Quick', 'Fast', 'Snappy', 'Daily', 'Bite', 'Flash', 'Mini', 'Reel', 'Viral', 'Trend', 'Now', 'Snap', 'Zip'],
+        brand: ['Co', 'Brand', 'Creative', 'Vision', 'Empire', 'Media', 'House', 'Collective', 'Society', 'League', 'Nation', 'Zone', 'Labs']
     };
     
     const suffixes = {
-        gaming: ['Plays', 'TV', 'Zone', 'World', 'Nation', 'Empire', 'Squad', 'Clan', 'Army', 'Lab', 'Central', 'HQ', 'Network'],
-        tech: ['Lab', 'Hub', 'Central', 'Sys', 'Net', 'Codex', 'Forge', 'Works', 'Factory', 'Source', 'Base', 'Core', 'Studio'],
-        vlog: ['World', 'Life', 'Days', 'Time', 'Space', 'Room', 'Place', 'Vibes', 'Scenes', 'Tales', 'Chronicles', 'Diary'],
-        ai: ['Mind', 'Core', 'Engine', 'Forge', 'Works', 'Studio', 'Lab', 'Brain', 'Logic', 'Sense', 'Spark', 'Hub'],
-        funny: ['Zone', 'Land', 'Time', 'Show', 'Club', 'Nation', 'World', 'Fails', 'Moments', 'Fun', 'Humor', 'Corner'],
-        professional: ['Hub', 'Central', 'HQ', 'Network', 'Platform', 'Portal', 'Connect', 'Link', 'Bridge', 'Point', 'Media'],
-        shorts: ['Cut', 'Clip', 'Snap', 'Tap', 'Now', 'Spot', 'Dash', 'Spark', 'Flash', 'Rush', 'Burst', 'Reel'],
-        brand: ['Official', 'Studios', 'Creative', 'Collective', 'Empire', 'Group', 'Co', 'Labs', 'Agency', 'House', 'HQ']
+        gaming: ['Plays', 'TV', 'Zone', 'World', 'Nation', 'Empire', 'Squad', 'Clan', 'Army', 'Lab', 'Central', 'HQ', 'Network', 'Hub'],
+        tech: ['Lab', 'Hub', 'Central', 'Sys', 'Net', 'Codex', 'Forge', 'Works', 'Factory', 'Source', 'Base', 'Core', 'Studio', 'Zone'],
+        vlog: ['World', 'Life', 'Days', 'Time', 'Space', 'Room', 'Place', 'Vibes', 'Scenes', 'Tales', 'Chronicles', 'Diary', 'Hub'],
+        ai: ['Mind', 'Core', 'Engine', 'Forge', 'Works', 'Studio', 'Lab', 'Brain', 'Logic', 'Sense', 'Spark', 'Hub', 'Zone'],
+        funny: ['Zone', 'Land', 'Time', 'Show', 'Club', 'Nation', 'World', 'Fails', 'Moments', 'Fun', 'Humor', 'Corner', 'Hub'],
+        professional: ['Hub', 'Central', 'HQ', 'Network', 'Platform', 'Portal', 'Connect', 'Link', 'Bridge', 'Point', 'Media', 'Zone'],
+        shorts: ['Cut', 'Clip', 'Snap', 'Tap', 'Now', 'Spot', 'Dash', 'Spark', 'Flash', 'Rush', 'Burst', 'Reel', 'Hub'],
+        brand: ['Official', 'Studios', 'Creative', 'Collective', 'Empire', 'Group', 'Co', 'Labs', 'Agency', 'House', 'HQ', 'Zone']
     };
     
-    let prefixList = prefixes[style] || prefixes.brand;
-    let suffixList = suffixes[style] || suffixes.brand;
+    let prefixList = prefixes[style] || prefixes.gaming;
+    let suffixList = suffixes[style] || suffixes.gaming;
     
     let names = new Set();
     
-    // Generate name combinations
+    // Generate name combinations with ACTUAL keyword
     for(let i = 0; i < prefixList.length; i++) {
         names.add(`${prefixList[i]} ${lowerKeyword}`);
         names.add(`${lowerKeyword} ${suffixList[i % suffixList.length]}`);
@@ -449,7 +451,7 @@ function generateNamesWithKeyword(keyword) {
         names.add(`${lowerKeyword}${suffixList[i % suffixList.length]}`);
     }
     
-    // Additional creative names
+    // Additional creative names with ACTUAL keyword
     const additional = [
         `Mr${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`,
         `The${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}Guy`,
@@ -474,12 +476,17 @@ function generateNamesWithKeyword(keyword) {
     
     currentNames = nameArray;
     renderNames(nameArray);
-    showToast(`✅ ${nameArray.length} channel names generated for "${keyword}"!`);
+    showToast(`✅ ${nameArray.length} ${style} channel names generated for "${lowerKeyword}"!`);
 }
 
-// Main generate function
+// FIXED: Main generate function - reads keyword from input
 function generateNames() {
     let keyword = document.getElementById('keywordInput').value.trim();
+    
+    if(!keyword || keyword === '') {
+        showToast('❌ Please enter a keyword or niche first!');
+        return;
+    }
     
     // Clean the keyword
     keyword = cleanKeyword(keyword);
@@ -487,7 +494,8 @@ function generateNames() {
     // Update input field with cleaned keyword
     document.getElementById('keywordInput').value = keyword;
     
-    generateNamesWithKeyword(keyword);
+    // Generate names with current keyword and selected style
+    generateNamesWithKeyword(keyword, currentStyle);
 }
 
 // Render names function
@@ -601,9 +609,11 @@ document.getElementById('keywordInput').addEventListener('keypress', (e) => {
     if(e.key === 'Enter') generateNames(); 
 });
 
-// Initialize on page load
+// Initialize on page load with demo but NOT hardcoded
 window.addEventListener('load', () => {
+    // Set default demo keyword
     document.getElementById('keywordInput').value = 'gaming';
+    // Generate with actual keyword
     generateNames();
 });
 </script>
