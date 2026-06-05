@@ -190,6 +190,12 @@ body.dark .theme-toggle{background:#475569;}
 <ul class="suggestions-list" id="suggestionsList"></ul>
 </div>
 
+<!-- History Section - ADDED FIX -->
+<div class="result-card" style="margin-top:20px;">
+<h3>🕒 Recent History</h3>
+<div id="historyList" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+</div>
+
 <div class="action-buttons">
 <button class="btn-secondary" id="copyReportBtn">📋 Copy Full Report</button>
 <button class="btn-secondary" id="copySuggestionsBtn">📋 Copy Suggestions</button>
@@ -407,6 +413,7 @@ body.dark .theme-toggle{background:#475569;}
 <div id="toastMsg" class="toast">Copied!</div>
 
 <script>
+// Toast message function
 function showToast(msg) {
     const toast = document.getElementById('toastMsg');
     toast.textContent = msg;
@@ -414,6 +421,7 @@ function showToast(msg) {
     setTimeout(() => { toast.style.opacity = '0'; }, 2000);
 }
 
+// Copy to clipboard function
 function copyToClipboard(text) {
     const textarea = document.createElement('textarea');
     textarea.value = text;
@@ -475,11 +483,6 @@ function drawScore(score) {
 function updateLivePreview() {
     document.getElementById('titleChar').innerText = document.getElementById('titleInput').value.length;
     document.getElementById('descChar').innerText = document.getElementById('descInput').value.length;
-    document.getElementById('previewTitle').innerText = document.getElementById('titleInput').value || 'Your video title';
-    let descShort = document.getElementById('descInput').value.substring(0, 100);
-    document.getElementById('previewDesc').innerText = descShort + (document.getElementById('descInput').value.length > 100 ? '...' : '');
-    let tags = document.getElementById('tagsInput').value;
-    document.getElementById('previewTags').innerText = tags || '-';
 }
 
 document.getElementById('titleInput').addEventListener('input', updateLivePreview);
@@ -540,7 +543,7 @@ function generateSuggestions(title, desc, tags, hashtags, scoreData) {
     if(title.length < 30) suggestions.push("📌 Make title more compelling with keywords near the beginning.");
     if(title.length > 70) suggestions.push("📌 Shorten title to under 70 characters for full display.");
     if(desc.length < 200) suggestions.push("📌 Expand description to 200+ characters with valuable info.");
-    if(!desc.toLowerCase().includes(title.toLowerCase().split(' ')[0]) && title.length>0)
+    if(!desc.toLowerCase().includes(title.toLowerCase().split(' ')[0]) && title.length>0 && title.split(' ')[0].length>2)
         suggestions.push("📌 Include primary keyword naturally in description.");
     let tagCount = tags.split(',').filter(t=>t.trim()).length;
     if(tagCount < 5) suggestions.push("📌 Add more tags (5-15) like synonyms and related phrases.");
@@ -549,24 +552,32 @@ function generateSuggestions(title, desc, tags, hashtags, scoreData) {
     if(!desc.toLowerCase().includes('subscribe') && !desc.toLowerCase().includes('like'))
         suggestions.push("🎯 Add a call-to-action: 'Subscribe for more' or 'Like if helpful'.");
     if(scoreData.score < 71) suggestions.push("🚀 Review title: use power words like 'Ultimate', 'Secret', 'Finally'.");
+    if(suggestions.length === 0) suggestions.push("🎉 Great job! Your video is well optimized for YouTube SEO!");
     return suggestions;
 }
 
 function saveToHistory(title, score) {
-    let entry = { title: title.substring(0, 40), score, date: new Date().toLocaleTimeString() };
-    history = [entry, ...history.filter(h => h.title !== title)].slice(0, 5);
+    let entry = { title: title.substring(0, 40), score: score, date: new Date().toLocaleTimeString() };
+    history = [entry, ...history.filter(h => h.title !== title.substring(0, 40))].slice(0, 5);
     localStorage.setItem('ytSeoHistory', JSON.stringify(history));
     renderHistory();
 }
 
 function renderHistory() {
     let container = document.getElementById('historyList');
-    if(history.length === 0) { container.innerHTML = '<p style="color:gray;">No previous analysis</p>'; return; }
-    container.innerHTML = history.map(h => `<div class="history-chip" data-title="${h.title}">🎬 ${h.title} (${h.score})</div>`).join('');
+    if(!container) return;
+    if(history.length === 0) { 
+        container.innerHTML = '<p style="color:gray; font-size:12px;">No previous analysis</p>'; 
+        return; 
+    }
+    container.innerHTML = history.map(h => `<div class="history-chip" data-title="${h.title.replace(/"/g, '&quot;')}" data-score="${h.score}">🎬 ${h.title} (${h.score})</div>`).join('');
     document.querySelectorAll('.history-chip').forEach(el => {
         el.addEventListener('click', () => {
-            let found = history.find(h => h.title === el.dataset.title);
-            if(found) showToast(`Loaded: ${found.title}`);
+            let title = el.dataset.title;
+            let found = history.find(h => h.title === title);
+            if(found) {
+                showToast(`Loaded: ${found.title} (Score: ${found.score})`);
+            }
         });
     });
 }
@@ -578,7 +589,13 @@ function showReport(scoreData) {
     document.getElementById('rankingPotential').innerHTML = `Ranking Potential: ${rankingText}`;
     document.getElementById('strengthsList').innerHTML = scoreData.strengths.map(s => `<li>${s}</li>`).join('');
     document.getElementById('weaknessesList').innerHTML = scoreData.weaknesses.map(w => `<li>${w}</li>`).join('');
-    let suggestions = generateSuggestions(document.getElementById('titleInput').value, document.getElementById('descInput').value, document.getElementById('tagsInput').value, document.getElementById('hashtagsInput').value, scoreData);
+    let suggestions = generateSuggestions(
+        document.getElementById('titleInput').value, 
+        document.getElementById('descInput').value, 
+        document.getElementById('tagsInput').value, 
+        document.getElementById('hashtagsInput').value, 
+        scoreData
+    );
     document.getElementById('suggestionsList').innerHTML = suggestions.map(s => `<li>${s}</li>`).join('');
     saveToHistory(document.getElementById('titleInput').value || "Untitled", scoreData.score);
     window.scrollTo({ top: document.getElementById('resultSection').offsetTop - 20, behavior: 'smooth' });
@@ -589,11 +606,17 @@ function analyze() {
     let desc = document.getElementById('descInput').value.trim();
     let tags = document.getElementById('tagsInput').value.trim();
     let hashtags = document.getElementById('hashtagsInput').value.trim();
-    if(!title) { showToast("⚠️ Please enter a video title"); return; }
+    
+    if(!title) { 
+        showToast("⚠️ Please enter a video title"); 
+        return; 
+    }
+    
     let btn = document.getElementById('analyzeBtn');
     let original = btn.innerHTML;
     btn.innerHTML = '⏳ Analyzing...';
     btn.disabled = true;
+    
     setTimeout(() => {
         let result = calculateSEO(title, desc, tags, hashtags);
         showReport(result);
@@ -611,7 +634,7 @@ function copyFullReport() {
     let strengths = document.getElementById('strengthsList').innerText;
     let weaknesses = document.getElementById('weaknessesList').innerText;
     let suggestions = document.getElementById('suggestionsList').innerText;
-    let report = `YOUTUBE SEO REPORT\n\nTitle: ${title}\nDescription: ${desc.substring(0,200)}\nTags: ${tags}\nHashtags: ${hashtags}\n\nSEO Score: ${score}/100\n\n✅ Strengths:\n${strengths}\n\n⚠️ Weaknesses:\n${weaknesses}\n\n💡 Improvement Suggestions:\n${suggestions}`;
+    let report = `YOUTUBE SEO REPORT\n\nTitle: ${title}\nDescription: ${desc.substring(0,500)}\nTags: ${tags}\nHashtags: ${hashtags}\n\nSEO Score: ${score}/100\n\n✅ Strengths:\n${strengths}\n\n⚠️ Weaknesses:\n${weaknesses}\n\n💡 Improvement Suggestions:\n${suggestions}`;
     if(copyToClipboard(report)) showToast("📋 Full report copied!");
 }
 
@@ -638,11 +661,13 @@ function downloadReport() {
     showToast("💾 Report downloaded!");
 }
 
+// Event Listeners
 document.getElementById('analyzeBtn').addEventListener('click', analyze);
 document.getElementById('copyReportBtn').addEventListener('click', copyFullReport);
 document.getElementById('copySuggestionsBtn').addEventListener('click', copySuggestionsOnly);
 document.getElementById('downloadReportBtn').addEventListener('click', downloadReport);
 
+// Initialize
 renderHistory();
 updateLivePreview();
 </script>
