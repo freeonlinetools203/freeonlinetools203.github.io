@@ -338,7 +338,7 @@
 </footer>
 
 <script>
-// ========== FULLY FIXED - AUTO DETECT KEYWORD STYLE ==========
+// ========== FULLY FIXED - NO DUPLICATE NAMES ==========
 
 // Dropdown Functionality
 (function() {
@@ -364,56 +364,34 @@
 let currentStyle = 'gaming';
 let currentNames = [];
 
-// FIXED: Auto-detect style based on keyword
+// Auto-detect style based on keyword
 function detectStyleFromKeyword(keyword) {
     const lowerKeyword = keyword.toLowerCase().trim();
     
-    // Islamic/Muslim keywords
     if(lowerKeyword.includes('islam') || lowerKeyword.includes('muslim') || lowerKeyword.includes('quran') || 
-        lowerKeyword.includes('deen') || lowerKeyword.includes('hadith') || lowerKeyword.includes('sunnah') ||
-        lowerKeyword.includes('ramadan') || lowerKeyword.includes('eid') || lowerKeyword.includes('hijab') ||
-        lowerKeyword.includes('imam') || lowerKeyword.includes('masjid') || lowerKeyword.includes('mosque')) {
+        lowerKeyword.includes('deen') || lowerKeyword.includes('hadith') || lowerKeyword.includes('sunnah')) {
         return 'islamic';
     }
-    // Gaming keywords
-    else if(lowerKeyword.includes('game') || lowerKeyword.includes('gaming') || lowerKeyword.includes('play') || 
-            lowerKeyword.includes('gamer') || lowerKeyword.includes('esports') || lowerKeyword.includes('stream')) {
+    else if(lowerKeyword.includes('game') || lowerKeyword.includes('gaming') || lowerKeyword.includes('play') || lowerKeyword.includes('gamer')) {
         return 'gaming';
     }
-    // Tech keywords
-    else if(lowerKeyword.includes('tech') || lowerKeyword.includes('code') || lowerKeyword.includes('digital') || 
-            lowerKeyword.includes('software') || lowerKeyword.includes('programming') || lowerKeyword.includes('coding')) {
+    else if(lowerKeyword.includes('tech') || lowerKeyword.includes('code') || lowerKeyword.includes('digital') || lowerKeyword.includes('software')) {
         return 'tech';
     }
-    // Vlog keywords
-    else if(lowerKeyword.includes('vlog') || lowerKeyword.includes('daily') || lowerKeyword.includes('life') || 
-            lowerKeyword.includes('journey') || lowerKeyword.includes('lifestyle')) {
+    else if(lowerKeyword.includes('vlog') || lowerKeyword.includes('daily') || lowerKeyword.includes('life') || lowerKeyword.includes('journey')) {
         return 'vlog';
     }
-    // AI keywords
-    else if(lowerKeyword.includes('ai') || lowerKeyword.includes('artificial') || lowerKeyword.includes('intelligence') || 
-            lowerKeyword.includes('robot') || lowerKeyword.includes('machine learning')) {
+    else if(lowerKeyword.includes('ai') || lowerKeyword.includes('artificial') || lowerKeyword.includes('intelligence')) {
         return 'ai';
     }
-    // Comedy/Funny keywords
-    else if(lowerKeyword.includes('funny') || lowerKeyword.includes('comedy') || lowerKeyword.includes('lol') || 
-            lowerKeyword.includes('humor') || lowerKeyword.includes('joke')) {
+    else if(lowerKeyword.includes('funny') || lowerKeyword.includes('comedy') || lowerKeyword.includes('lol') || lowerKeyword.includes('humor')) {
         return 'funny';
     }
-    // Business/Professional keywords
-    else if(lowerKeyword.includes('business') || lowerKeyword.includes('professional') || lowerKeyword.includes('corporate') || 
-            lowerKeyword.includes('office') || lowerKeyword.includes('marketing') || lowerKeyword.includes('finance')) {
+    else if(lowerKeyword.includes('business') || lowerKeyword.includes('professional') || lowerKeyword.includes('corporate')) {
         return 'professional';
     }
-    // Shorts keywords
-    else if(lowerKeyword.includes('short') || lowerKeyword.includes('reel') || lowerKeyword.includes('quick') || 
-            lowerKeyword.includes('fast') || lowerKeyword.includes('mini')) {
+    else if(lowerKeyword.includes('short') || lowerKeyword.includes('reel') || lowerKeyword.includes('quick')) {
         return 'shorts';
-    }
-    // Brand keywords
-    else if(lowerKeyword.includes('brand') || lowerKeyword.includes('logo') || lowerKeyword.includes('identity') || 
-            lowerKeyword.includes('label')) {
-        return 'brand';
     }
     else {
         return 'brand';
@@ -423,13 +401,13 @@ function detectStyleFromKeyword(keyword) {
 // Get prefixes based on style
 function getPrefixes(style) {
     const prefixes = {
-        gaming: ['Gamer', 'Pro', 'Legend', 'King', 'Queen', 'Master', 'Elite', 'Beast', 'Shadow', 'Fusion', 'Nova', 'Rogue', 'Phantom', 'Vortex', 'Epic'],
-        tech: ['Tech', 'Digital', 'Cyber', 'Code', 'Dev', 'Innovate', 'Future', 'NextGen', 'Alpha', 'Beta', 'Quantum', 'Pixel', 'Byte', 'Cloud', 'Smart'],
-        vlog: ['Vlog', 'Daily', 'Life', 'Journey', 'Moments', 'Diary', 'Adventures', 'Stories', 'Living', 'Real', 'Simple', 'Everyday', 'My', 'Our'],
-        ai: ['AI', 'Neural', 'Smart', 'Intelligent', 'Deep', 'Cognitive', 'Auto', 'Genius', 'Synth', 'Mind', 'Logic', 'Data', 'Robot', 'Cyber', 'Future'],
-        funny: ['Crazy', 'Silly', 'Funny', 'LOL', 'Goofy', 'Wacky', 'Zany', 'Hilarious', 'Comedy', 'Jester', 'Panda', 'Noodle', 'Silly', 'Wild'],
+        gaming: ['Gamer', 'Pro', 'Legend', 'King', 'Master', 'Elite', 'Shadow', 'Fusion', 'Nova', 'Rogue', 'Phantom', 'Vortex', 'Epic'],
+        tech: ['Tech', 'Digital', 'Cyber', 'Code', 'Dev', 'Innovate', 'Future', 'NextGen', 'Alpha', 'Quantum', 'Pixel', 'Byte', 'Cloud', 'Smart'],
+        vlog: ['Vlog', 'Daily', 'Life', 'Journey', 'Moments', 'Diary', 'Adventures', 'Stories', 'Living', 'Real', 'Simple', 'Everyday', 'My'],
+        ai: ['AI', 'Neural', 'Smart', 'Intelligent', 'Deep', 'Cognitive', 'Auto', 'Genius', 'Synth', 'Mind', 'Logic', 'Data', 'Robot', 'Cyber'],
+        funny: ['Crazy', 'Silly', 'Funny', 'LOL', 'Goofy', 'Wacky', 'Zany', 'Hilarious', 'Comedy', 'Jester', 'Panda', 'Noodle', 'Wild'],
         professional: ['Official', 'Media', 'Studio', 'Productions', 'Network', 'Global', 'Insights', 'Academy', 'Group', 'Solutions', 'Pro', 'Experts'],
-        shorts: ['Shorts', 'Quick', 'Fast', 'Snappy', 'Daily', 'Bite', 'Flash', 'Mini', 'Reel', 'Viral', 'Trend', 'Now', 'Snap', 'Zip'],
+        shorts: ['Shorts', 'Quick', 'Fast', 'Snappy', 'Daily', 'Bite', 'Flash', 'Mini', 'Reel', 'Viral', 'Trend', 'Now', 'Snap'],
         brand: ['Co', 'Brand', 'Creative', 'Vision', 'Empire', 'Media', 'House', 'Collective', 'Society', 'League', 'Nation', 'Zone', 'Labs'],
         islamic: ['Islamic', 'Muslim', 'Quran', 'Deen', 'Iman', 'Hidayah', 'Sunnah', 'Dawah', 'Tawheed', 'Blessings', 'Mercy', 'Guidance', 'Wisdom', 'Light', 'Faith', 'Peace']
     };
@@ -463,7 +441,7 @@ function cleanKeyword(keyword) {
     return clean;
 }
 
-// Generate names with keyword
+// Generate names with keyword - NO DUPLICATES
 function generateNamesWithKeyword(keyword, style) {
     if(!keyword || keyword === '') {
         showToast('❌ Please enter a keyword first!');
@@ -474,39 +452,58 @@ function generateNamesWithKeyword(keyword, style) {
     const prefixList = getPrefixes(style);
     const suffixList = getSuffixes(style);
     
-    let names = new Set();
+    let names = [];
+    let seenNames = new Set();  // For tracking duplicates
     
-    // Generate name combinations with ACTUAL keyword
+    // Generate unique name combinations
     for(let i = 0; i < prefixList.length; i++) {
         // Format 1: Prefix + keyword (with space)
-        names.add(`${prefixList[i]} ${lowerKeyword}`);
+        let name1 = `${prefixList[i]} ${lowerKeyword}`;
+        if(!seenNames.has(name1.toLowerCase())) {
+            seenNames.add(name1.toLowerCase());
+            names.push(name1);
+        }
+        
         // Format 2: Keyword + suffix (with space)
-        names.add(`${lowerKeyword} ${suffixList[i % suffixList.length]}`);
-        // Format 3: Prefix + Keyword (no space, capitalized)
-        names.add(`${prefixList[i]}${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`);
+        let name2 = `${lowerKeyword} ${suffixList[i % suffixList.length]}`;
+        if(!seenNames.has(name2.toLowerCase())) {
+            seenNames.add(name2.toLowerCase());
+            names.push(name2);
+        }
+        
+        // Format 3: Prefix + Keyword (no space)
+        let name3 = `${prefixList[i]}${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`;
+        if(!seenNames.has(name3.toLowerCase())) {
+            seenNames.add(name3.toLowerCase());
+            names.push(name3);
+        }
+        
         // Format 4: Keyword + suffix (no space)
-        names.add(`${lowerKeyword}${suffixList[i % suffixList.length]}`);
+        let name4 = `${lowerKeyword}${suffixList[i % suffixList.length]}`;
+        if(!seenNames.has(name4.toLowerCase())) {
+            seenNames.add(name4.toLowerCase());
+            names.push(name4);
+        }
     }
     
-    // Additional creative names with ACTUAL keyword
+    // Additional creative names
     const additional = [
-        `${lowerKeyword}Hub`,
-        `${lowerKeyword}Zone`,
-        `${lowerKeyword}Central`,
-        `${lowerKeyword}World`,
-        `${lowerKeyword}Network`,
-        `${lowerKeyword}Academy`,
-        `${lowerKeyword}Daily`,
-        `${lowerKeyword}TV`,
-        `${lowerKeyword}Official`,
+        `${lowerKeyword}Hub`, `${lowerKeyword}Zone`, `${lowerKeyword}Central`,
+        `${lowerKeyword}World`, `${lowerKeyword}Network`, `${lowerKeyword}Academy`,
+        `${lowerKeyword}Daily`, `${lowerKeyword}TV`, `${lowerKeyword}Official`,
         `The${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`,
-        `My${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`,
-        `WeLove${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`
+        `My${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`
     ];
-    additional.forEach(n => names.add(n));
     
-    let nameArray = Array.from(names);
-    nameArray = nameArray.filter(n => n.length >= 3 && n.length <= 35);
+    for(let name of additional) {
+        if(!seenNames.has(name.toLowerCase())) {
+            seenNames.add(name.toLowerCase());
+            names.push(name);
+        }
+    }
+    
+    // Filter and limit
+    let nameArray = names.filter(n => n.length >= 3 && n.length <= 35);
     nameArray = nameArray.slice(0, 24);
     
     currentNames = nameArray;
@@ -514,7 +511,7 @@ function generateNamesWithKeyword(keyword, style) {
     
     let styleDisplay = style;
     if(style === 'islamic') styleDisplay = 'Islamic/Religious';
-    showToast(`✅ ${nameArray.length} ${styleDisplay} channel names generated for "${lowerKeyword}"!`);
+    showToast(`✅ ${nameArray.length} unique ${styleDisplay} channel names generated for "${lowerKeyword}"!`);
 }
 
 // Main generate function
@@ -526,11 +523,9 @@ function generateNames() {
         return;
     }
     
-    // Clean the keyword
     keyword = cleanKeyword(keyword);
     document.getElementById('keywordInput').value = keyword;
     
-    // Auto-detect style from keyword
     const detectedStyle = detectStyleFromKeyword(keyword);
     currentStyle = detectedStyle;
     
@@ -544,11 +539,10 @@ function generateNames() {
         }
     });
     
-    // Generate names
     generateNamesWithKeyword(keyword, detectedStyle);
 }
 
-// Style buttons click - override with manual selection
+// Style buttons click
 document.querySelectorAll('.style-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
@@ -559,7 +553,6 @@ document.querySelectorAll('.style-btn').forEach(btn => {
         
         let keyword = document.getElementById('keywordInput').value.trim();
         if(!keyword || keyword === '') {
-            // If no keyword, use style name as keyword
             if(selectedStyle === 'gaming') keyword = 'gaming';
             else if(selectedStyle === 'tech') keyword = 'tech';
             else if(selectedStyle === 'vlog') keyword = 'vlog';
@@ -643,7 +636,7 @@ function copyAllNames() {
     }
     const text = currentNames.join('\n');
     navigator.clipboard.writeText(text);
-    showToast(`📋 Copied ${currentNames.length} names!`);
+    showToast(`📋 Copied ${currentNames.length} unique names!`);
 }
 
 function downloadTXT() {
