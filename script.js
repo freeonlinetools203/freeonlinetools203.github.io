@@ -461,7 +461,7 @@ const navbarCSS = `<style>
 </style>`;
 
 // =========================================================================
-// NAVBAR HTML (COMPLETE - WITH ALL TOOLS)
+// NAVBAR HTML (UPDATED - WITH YOUTUBE TOOLS COLUMN)
 // =========================================================================
 const navbarHTML = `<div class="megamenu-container">
   <div class="megamenu-wrapper">
@@ -503,7 +503,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="social-media-caption-generator.html">✍️ Social Media Caption Generator</a>
           </div>
           
-          <!-- COLUMN 2: SEO + Fun Tools -->
+          <!-- COLUMN 2: SEO Tools -->
           <div class="dropdown-column">
             <h4>🔍 SEO Tools</h4>
             <a href="keyword-density-checker.html">Keyword Density Checker</a>
@@ -553,7 +553,29 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="carnival-game-spin-wheel.html">🎪 Carnival Game Spin Wheel</a>
           </div>
           
-          <!-- COLUMN 3: Color + PDF + Image -->
+          <!-- COLUMN 3: YouTube Tools (NEW COLUMN) -->
+          <div class="dropdown-column">
+            <h4>🎬 YouTube Tools</h4>
+            <a href="youtube-seo-score-checker.html">📊 YouTube SEO Score Checker</a>
+            <a href="youtube-keyword-generator.html">🔑 YouTube Keyword Generator</a>
+            <a href="youtube-keyword-research.html">📈 YouTube Keyword Research</a>
+            <a href="youtube-video-tags-extractor.html">🏷️ YouTube Video Tags Extractor</a>
+            <a href="youtube-video-tags-generator.html">🏷️ YouTube Video Tags Generator</a>
+            <a href="youtube-title-generator.html">📝 YouTube Title Generator</a>
+            <a href="youtube-description-generator.html">📄 YouTube Description Generator</a>
+            <a href="youtube-channel-analyzer.html">📺 YouTube Channel Analyzer</a>
+            <a href="youtube-channel-comparison.html">⚖️ YouTube Channel Comparison</a>
+            <a href="youtube-channel-name-generator.html">🎬 YouTube Channel Name Generator</a>
+            <a href="youtube-content-planner-ai.html">📅 YouTube Content Planner AI</a>
+            <a href="youtube-community-post-generator.html">💬 YouTube Community Post Generator</a>
+            <a href="youtube-video-idea-generator.html">💡 YouTube Video Idea Generator</a>
+            <a href="youtube-shorts-hook-generator.html">🎯 YouTube Shorts Hook Generator</a>
+            <a href="youtube-viral-video-predictor.html">🚀 YouTube Viral Video Predictor</a>
+            <a href="youtube-hashtag-generator-v2.html">#️⃣ YouTube Hashtag Generator</a>
+            <a href="youtube-thumbnail-downloader.html">🖼️ YouTube Thumbnail Downloader</a>
+          </div>
+          
+          <!-- COLUMN 4: Color + PDF + Image -->
           <div class="dropdown-column">
             <h4>🎨 Color Tools</h4>
             <a href="color-palette-generator.html">Color Palette Generator</a>
@@ -587,7 +609,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="image-compressor.html">Image Compressor</a>
           </div>
           
-          <!-- COLUMN 4: Calculators + Developer -->
+          <!-- COLUMN 5: Calculators + Developer -->
           <div class="dropdown-column">
             <h4>📊 Popular Calculators</h4>
             <a href="unit-converter.html">Unit Converter</a>
@@ -612,7 +634,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="html-encoder-decoder.html">HTML Encoder/Decoder</a>
           </div>
           
-          <!-- COLUMN 5: Health + Finance + Text + Animal -->
+          <!-- COLUMN 6: Health + Finance + Text + Animal -->
           <div class="dropdown-column">
             <h4>🏃‍♂️ Health & Fitness</h4>
             <a href="bmi-calculator.html">BMI Calculator</a>
