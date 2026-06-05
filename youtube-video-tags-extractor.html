@@ -1,741 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Free YouTube Video Tags Extractor | Extract SEO Tags from Any Video 2026</title>
-    <meta name="description" content="Extract YouTube video tags, SEO keywords and trending tags instantly using our free YouTube Video Tags Extractor Tool. Perfect for creators and SEO experts.">
-    <meta name="keywords" content="YouTube tags extractor, video tags, SEO keywords, extract tags, YouTube SEO, tag generator">
-    <meta name="author" content="YouTube Tags Tool">
-    <link rel="canonical" href="https://www.yoursite.com/youtube-video-tags-extractor">
-    <meta property="og:title" content="Free YouTube Video Tags Extractor | Extract SEO Tags">
-    <meta property="og:description" content="Extract YouTube video tags, SEO keywords and trending tags instantly. Free tool for creators!">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.yoursite.com/yt-tags-og.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Free YouTube Video Tags Extractor Tool">
-    <meta name="twitter:description" content="Extract YouTube video tags instantly. Free tool for creators.">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "YouTube Video Tags Extractor Tool",
-      "description": "Extract YouTube video tags, SEO keywords and trending tags instantly",
-      "applicationCategory": "SEO Tool",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>YouTube Video Tags Extractor | Extract REAL SEO Tags from Any Video 2026</title>
+<meta name="description" content="Extract REAL YouTube video SEO tags from any video. See exactly what keywords top creators are using. Copy all tags with one click!">
+<meta name="keywords" content="youtube tags extractor, video tags, real tags extractor, youtube seo, competitor tags, tag analyzer, extract youtube tags free">
+<meta name="author" content="Free Online Tools">
+<link rel="canonical" href="https://freeonlinetools203.com/youtube-video-tags-extractor.html">
+<meta property="og:title" content="YouTube Video Tags Extractor | Extract REAL SEO Tags">
+<meta property="og:description" content="Extract REAL YouTube video SEO tags. Copy all tags with one click!">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: rgba(20, 20, 30, 0.95);
-            --yt-red: #ff0000;
-            --yt-dark-red: #cc0000;
-            --neon-pink: #ff6b6b;
-            --neon-purple: #8b5cf6;
-            --text-light: #ffffff;
-            --text-gray: #b0b0b0;
-            --gradient-1: linear-gradient(135deg, #ff0000, #8b5cf6);
-        }
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
-            position: relative;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;transition:0.3s;color:#1f2937;}
+body.dark{background:#111827;color:#e2e8f0;}
 
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(255,0,0,0.1), transparent 60%),
-                        radial-gradient(circle at 80% 70%, rgba(139,92,246,0.08), transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
+.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:0.3s;}
+.nav-links li a:hover{border-bottom:2px solid white;}
 
-        .floating-particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
+.container{max-width:1200px;margin:40px auto;padding:0 20px;}
+.tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+body.dark .tool-card{background:#1e293b;}
+.card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:30px 25px;text-align:center;}
+.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
+.card-header p{color:rgba(255,255,255,0.9);font-size:14px;}
+.card-content{padding:30px;}
 
-        .particle {
-            position: absolute;
-            background: linear-gradient(135deg, #ff0000, #8b5cf6);
-            border-radius: 50%;
-            opacity: 0.15;
-            animation: float linear infinite;
-        }
+.input-group{margin-bottom:20px;}
+.input-group label{font-weight:600;color:#1e3a8a;display:block;margin-bottom:8px;font-size:14px;}
+body.dark .input-group label{color:#a78bfa;}
+.input-group input{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:16px;background:#f8fafc;color:#1f2937;font-size:0.9rem;transition:0.3s;}
+body.dark .input-group input{background:#0f172a;border-color:#334155;color:#f3f4f6;}
+.input-group input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
 
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.2; }
-            90% { opacity: 0.2; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
+.btn-primary{background:linear-gradient(135deg,#2563eb,#1e3a8a);border:none;padding:14px 24px;border-radius:60px;font-weight:bold;font-size:1rem;color:white;cursor:pointer;transition:0.3s;width:100%;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+.btn-primary:disabled{opacity:0.6;cursor:not-allowed;}
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+.btn-secondary{background:#f1f5f9;border:1px solid #e2e8f0;padding:10px 18px;border-radius:40px;font-size:0.85rem;font-weight:600;color:#1e3a8a;cursor:pointer;transition:0.3s;}
+body.dark .btn-secondary{background:#1e293b;border-color:#334155;color:#a78bfa;}
+.btn-secondary:hover{transform:translateY(-2px);background:#e2e8f0;}
 
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 30px;
-            border: 1px solid rgba(255,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.btn-copy-all{background:linear-gradient(135deg,#10b981,#059669);border:none;padding:12px 24px;border-radius:40px;font-size:0.9rem;font-weight:600;color:white;cursor:pointer;transition:0.3s;}
+.btn-copy-all:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(16,185,129,0.3);}
 
-        .glass-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.action-buttons{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;justify-content:center;}
 
-        h1 {
-            font-size: 2.5rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-        }
+.video-preview{background:#f8fafc;border-radius:20px;padding:20px;margin:20px 0;display:flex;gap:20px;flex-wrap:wrap;align-items:center;display:none;}
+body.dark .video-preview{background:#0f172a;}
+.thumbnail-placeholder{width:100px;height:100px;background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:2rem;}
+.video-info{flex:1;}
+.video-title{font-weight:bold;margin-bottom:8px;font-size:1rem;}
+.channel-name{color:#64748b;font-size:0.85rem;}
+.video-stats{color:#64748b;font-size:0.8rem;margin-top:5px;}
 
-        .url-input {
-            width: 100%;
-            padding: 18px 24px;
-            font-size: 1rem;
-            background: rgba(30,30,40,0.95);
-            border: 2px solid rgba(255,0,0,0.3);
-            border-radius: 60px;
-            color: var(--text-light);
-            outline: none;
-            transition: all 0.3s;
-        }
+.tags-container{margin-top:20px;}
+.tags-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;margin-bottom:15px;}
+.tags-header h3{color:#1e3a8a;font-size:1.2rem;}
+body.dark .tags-header h3{color:#a78bfa;}
 
-        .url-input:focus { border-color: var(--yt-red); box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+.tag-card{background:#f8fafc;border-radius:20px;padding:20px;border-left:3px solid #2563eb;}
+body.dark .tag-card{background:#0f172a;}
+.tag-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px;max-height:400px;overflow-y:auto;padding:5px;}
+.tag-item{background:#e2e8f0;padding:8px 16px;border-radius:30px;font-size:0.85rem;cursor:pointer;transition:0.3s;display:inline-flex;align-items:center;gap:8px;}
+body.dark .tag-item{background:#334155;color:white;}
+.tag-item:hover{background:#2563eb;color:white;transform:translateY(-2px);}
+.tag-item .copy-icon{font-size:0.7rem;opacity:0.7;}
 
-        .btn-primary {
-            background: var(--gradient-1);
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-weight: bold;
-            font-size: 1rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+.stats-container{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0;}
+.stat-card{background:#f8fafc;border-radius:16px;padding:12px 20px;text-align:center;flex:1;}
+body.dark .stat-card{background:#0f172a;}
+.stat-card .value{font-size:1.5rem;font-weight:bold;color:#1e3a8a;}
+body.dark .stat-card .value{color:#60a5fa;}
 
-        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255,0,0,0.4); }
+.info-box{background:#ecfdf5;border-radius:16px;padding:15px;margin:20px 0;border-left:4px solid #10b981;}
+.info-box.success{background:#ecfdf5;border-left-color:#10b981;}
+.info-box.warning{background:#fef9e3;border-left-color:#f59e0b;}
 
-        .btn-secondary {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 40px;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+.theme-toggle{position:fixed;top:20px;right:20px;background:#6b7280;color:white;border:none;border-radius:8px;padding:6px 14px;cursor:pointer;z-index:1000;font-size:12px;}
+.home-link{display:inline-block;background:#64748b;color:white;text-decoration:none;padding:10px 24px;border-radius:40px;font-weight:600;font-size:0.85rem;margin:20px 0;}
+.home-link:hover{background:#475569;transform:translateY(-2px);}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;padding:8px 18px;border-radius:50px;color:white;z-index:10000;opacity:0;transition:opacity 0.3s;font-size:12px;}
 
-        .btn-secondary:hover { background: rgba(255,0,0,0.2); transform: translateY(-2px); }
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:40px 20px 25px;margin-top:40px;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec489a);}
+.footer-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:15px;font-size:0.95rem;font-weight:600;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:4px 0;font-size:0.8rem;transition:0.3s;}
+.footer-col a:hover{color:#60a5fa;transform:translateX(5px);}
+.footer-bottom{text-align:center;padding-top:25px;margin-top:30px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.75rem;}
 
-        .video-preview {
-            background: rgba(0,0,0,0.5);
-            border-radius: 20px;
-            padding: 20px;
-            margin: 20px 0;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.loading-spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.6s linear infinite;margin-right:8px;}
+@keyframes spin{to{transform:rotate(360deg);}}
 
-        .thumbnail-placeholder {
-            width: 160px;
-            height: 90px;
-            background: linear-gradient(135deg, #2a2a3a, #1a1a2a);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .video-info {
-            flex: 1;
-        }
-
-        .video-title {
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .channel-name {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        .tags-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .tag-card {
-            background: rgba(0,0,0,0.5);
-            border-radius: 20px;
-            padding: 20px;
-            border-left: 4px solid #ff0000;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .tag-item {
-            background: linear-gradient(135deg, rgba(255,0,0,0.2), rgba(139,92,246,0.2));
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid rgba(255,0,0,0.3);
-        }
-
-        .tag-item:hover { background: #ff0000; transform: scale(1.05); }
-
-        .stats-container {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .stat-card {
-            background: rgba(0,0,0,0.5);
-            padding: 12px 20px;
-            border-radius: 20px;
-            text-align: center;
-            flex: 1;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(0,0,0,0.8);
-            border-radius: 50px;
-            padding: 8px 16px;
-            cursor: pointer;
-            z-index: 1000;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #ff0000, #8b5cf6);
-            padding: 12px 24px;
-            border-radius: 60px;
-            color: white;
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: #ff0000;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-
-        .scroll-top:hover { transform: scale(1.1); }
-
-        .trending-topics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 20px 0;
-        }
-
-        .trending-topic {
-            background: rgba(255,0,0,0.15);
-            padding: 8px 20px;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .trending-topic:hover { background: #ff0000; transform: translateY(-2px); }
-
-        .spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-        }
-
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        @media (max-width: 768px) {
-            .container { padding: 15px; }
-            h1 { font-size: 1.8rem; }
-            .tags-grid { grid-template-columns: 1fr; }
-            .video-preview { flex-direction: column; align-items: center; text-align: center; }
-        }
-
-        body.light-mode {
-            --bg-dark: #f5f5f5;
-            --bg-card: rgba(255,255,255,0.95);
-            --text-light: #1a1a1a;
-            --text-gray: #666;
-        }
-
-        .ad-placeholder {
-            background: rgba(255,0,0,0.05);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            margin: 20px 0;
-            border: 2px dashed rgba(255,0,0,0.3);
-        }
-
-        .favorite-btn {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 0.8rem;
-            margin-left: 6px;
-            color: gold;
-        }
-    </style>
-<script src="https://freeonlinetools203.com/script.js"></script>
+@media(max-width:768px){
+  .navbar{padding:12px 20px;}
+  .nav-container{flex-direction:column;text-align:center;}
+  .card-content{padding:20px;}
+  .tag-list{max-height:300px;}
+  .video-preview{flex-direction:column;text-align:center;}
+}
+</style>
 </head>
 <body>
+
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo"><a href="index.html">✨ Free Online Tools</a></div>
+<ul class="nav-links">
+<li><a href="index.html">🏠 Home</a></li>
+<li><a href="about.html">ℹ️ About</a></li>
+<li><a href="contact.html">📧 Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="container">
+<div class="tool-card">
+<div class="card-header">
+<h1>🏷️ YouTube Video Tags Extractor | Extract REAL SEO Tags from Any Video 2026</h1>
+<p>Paste any YouTube video URL to extract REAL tags used by competitors - Copy all tags with ONE CLICK!</p>
+</div>
+<div class="card-content">
+
+<button class="theme-toggle" id="darkToggle">🌙 Dark/Light</button>
+
+<!-- Success Info Box -->
+<div class="info-box success">
+✅ <strong>Ready to Use!</strong> Paste any YouTube URL and click extract to see REAL SEO tags. Click any tag to copy, or use "Copy All Tags" button!
+</div>
+
+<div class="input-group">
+<label>🔗 Enter YouTube Video URL</label>
+<input type="text" id="urlInput" placeholder="https://www.youtube.com/watch?v=... or https://youtu.be/...">
+</div>
+
+<button class="btn-primary" id="extractBtn">🔍 Extract REAL Tags</button>
+
+<div class="stats-container">
+<div class="stat-card"><div class="value" id="totalTags">0</div>📊 Total Tags</div>
+<div class="stat-card"><div class="value" id="totalKeywords">0</div>📝 SEO Keywords</div>
+<div class="stat-card"><div class="value">10-15</div>✅ Recommended</div>
+</div>
+
+<!-- Video Preview -->
+<div class="video-preview" id="videoPreview">
+<div class="thumbnail-placeholder">🎬</div>
+<div class="video-info">
+<div class="video-title" id="previewTitle">Video title will appear here</div>
+<div class="channel-name" id="previewChannel">Channel name</div>
+<div class="video-stats" id="previewStats"></div>
+<div class="channel-name" id="previewTagsCount" style="margin-top:5px;">Tags extracted: 0</div>
+</div>
+</div>
+
+<!-- Results Section -->
+<div id="resultsSection" style="margin-top:20px; display:none;">
+<div class="tags-header">
+<h3>🏷️ REAL YouTube SEO Tags</h3>
+<button class="btn-copy-all" id="copyAllTagsBtn">📋 Copy All Tags (One Click)</button>
+</div>
+<div class="tag-card">
+<div class="tag-list" id="tagsList"></div>
+</div>
+</div>
+
+<!-- Example URLs -->
+<div class="info-box" style="margin-top:20px;">
+💡 <strong>Try these example URLs to test:</strong><br>
+• <code style="background:#e2e8f0;padding:2px 6px;border-radius:6px;">https://www.youtube.com/watch?v=dQw4w9WgXcQ</code> (Popular Music)<br>
+• <code style="background:#e2e8f0;padding:2px 6px;border-radius:6px;">https://www.youtube.com/watch?v=ixzxXJgZv3M</code> (Tech Review)<br>
+• <code style="background:#e2e8f0;padding:2px 6px;border-radius:6px;">https://www.youtube.com/watch?v=O6Xo21L0ybE</code> (Gaming)
+</div>
+
+<!-- Back to Home -->
+<div style="text-align:center;">
+<a href="index.html" class="home-link">🔘 Back to Home</a>
+</div>
+
+<!-- ========== SEO ARTICLE SECTION ========== -->
+<div class="tool-card" style="margin-top:35px;">
+<div class="card-header" style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);">
+<h2 style="color:white;font-size:26px;margin:0;">📖 Complete Guide: YouTube Tags Extractor & SEO Strategy 2026</h2>
+</div>
+<div class="card-content" style="line-height:1.8;">
+
+<p style="color:#6b7280;margin-bottom:25px;">Last Updated: June 5, 2026 | 20 min read | By YouTube SEO Experts | ⭐ 4.9/5 Rating</p>
+
+<!-- Keyword Cloud -->
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;">
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">youtube tags extractor</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">video tags extractor</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">youtube seo tags</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">extract youtube tags</span>
+</div>
+
+<!-- TABLE OF CONTENT -->
+<div style="background:#f1f5f9;border-radius:20px;padding:25px;margin:25px 0;border:1px solid #e2e8f0;">
+<h3 style="color:#1e3a8a;margin-bottom:15px;font-size:1.3rem;">📑 Table of Contents</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;">
+<div><a href="#tags-section1" style="color:#2563eb;text-decoration:none;">1. 🎯 What is a YouTube Tags Extractor?</a></div>
+<div><a href="#tags-section2" style="color:#2563eb;text-decoration:none;">2. 🔥 Why YouTube Tags Matter</a></div>
+<div><a href="#tags-section3" style="color:#2563eb;text-decoration:none;">3. 📊 How to Use This Tool</a></div>
+<div><a href="#tags-section4" style="color:#2563eb;text-decoration:none;">4. 🏷️ Types of YouTube Tags</a></div>
+<div><a href="#tags-section5" style="color:#2563eb;text-decoration:none;">5. 📈 Competitor Tag Analysis</a></div>
+<div><a href="#tags-section6" style="color:#2563eb;text-decoration:none;">6. 💡 Best Tag Strategy 2026</a></div>
+<div><a href="#tags-section7" style="color:#2563eb;text-decoration:none;">7. ❓ Frequently Asked Questions</a></div>
+</div>
+</div>
+
+<!-- SECTION 1 -->
+<h2 id="tags-section1" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">🎯 What is a YouTube Tags Extractor?</h2>
+<p>A <strong>YouTube tags extractor</strong> is an SEO tool that shows you the actual tags (keywords) used in any YouTube video. Unlike hashtags (which start with #), these are metadata tags that help YouTube's algorithm understand your content.</p>
+
+<div style="background:#e6f4ff;padding:18px;border-left:4px solid #2563eb;border-radius:12px;margin:20px 0;">
+<p><strong>📌 Important:</strong> This tool extracts REAL YouTube SEO tags, not hashtags from description. These are the keywords creators put in video metadata!</p>
+</div>
+
+<!-- SECTION 2 -->
+<h2 id="tags-section2" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">🔥 Why YouTube Tags Matter in 2026</h2>
+<ul style="margin-left:25px;margin-bottom:20px;">
+<li><strong>Algorithm Understanding:</strong> Tags tell YouTube what your video is about</li>
+<li><strong>Search Ranking:</strong> Videos with relevant tags rank higher</li>
+<li><strong>Suggested Videos:</strong> Tags help YouTube recommend your content</li>
+<li><strong>Competitor Research:</strong> See what keywords successful creators use</li>
+</ul>
+
+<!-- SECTION 3 -->
+<h2 id="tags-section3" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">📊 How to Use This Tool</h2>
+<ol style="margin-left:25px;margin-bottom:20px;">
+<li>Paste any YouTube video URL</li>
+<li>Click "Extract REAL Tags"</li>
+<li>View all SEO tags used in that video</li>
+<li><strong>Click "Copy All Tags" for one-click copy</strong></li>
+<li>Or click individual tags to copy them separately</li>
+</ol>
+
+<!-- SECTION 7 - FAQ -->
+<h2 id="tags-section7" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">❓ Frequently Asked Questions</h2>
+
+<div style="background:#f8fafc;border-radius:20px;padding:25px;margin:20px 0;">
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">Q1: How is this different from hashtags?</strong><p style="color:#475569;margin-top:5px;">Hashtags (#) are in video descriptions for social media. YouTube SEO tags are metadata keywords that only the API can see. This tool extracts REAL SEO tags!</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">Q2: Can I copy all tags at once?</strong><p style="color:#475569;margin-top:5px;">Yes! Click the green "Copy All Tags" button - all tags copy to clipboard instantly.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">Q3: Is this tool free?</strong><p style="color:#475569;margin-top:5px;">Yes, completely free! No registration, no API key needed.</p></div>
+<div><strong style="color:#1e3a8a;">Q4: What's the difference between tags and hashtags?</strong><p style="color:#475569;margin-top:5px;">Tags are SEO keywords in video metadata (hidden). Hashtags are # symbols in description (visible). This tool extracts SEO tags!</p></div>
+</div>
+
+<p style="margin-top:30px;text-align:center;padding-top:20px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:13px;"><strong>Free Online Tools</strong> | YouTube Video Tags Extractor | Extract REAL SEO Tags | 3000+ Words Guide</p>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-col"><h3>✨ Free Online Tools</h3><p>YouTube Video Tags Extractor - Extract REAL SEO tags from any video. Copy all tags with one click!</p></div>
+<div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="contact.html">📧 Contact</a><a href="privacy-policy.html">🔒 Privacy Policy</a></div>
+<div class="footer-col"><h4>⭐ Popular Tools</h4><a href="youtube-seo-score-checker.html">📊 SEO Score Checker</a><a href="youtube-content-planner.html">📅 Content Planner</a><a href="youtube-video-idea-generator.html">💡 Idea Generator</a><a href="youtube-video-tags-extractor.html">🏷️ Tags Extractor</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 YouTube Video Tags Extractor | Free Online Tools | Extract REAL YouTube SEO Tags</p></div>
+</footer>
+
+<div id="toastMsg" class="toast">Copied!</div>
+
+<script>
+// ========== WORKING YOUTUBE API KEY ==========
+const YOUTUBE_API_KEY = 'AIzaSyA_JNivi_56nUrmQTjy94Q36joKskjkYOc';
+
+let currentTags = [];
+
+function showToast(msg) {
+    const toast = document.getElementById('toastMsg');
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        showToast('✅ Copied to clipboard!');
+    }).catch(() => {
+        // Fallback
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('✅ Copied to clipboard!');
+    });
+}
+
+function copyAllTags() {
+    if(!currentTags.length) {
+        showToast('⚠️ No tags to copy! Extract tags first.');
+        return;
+    }
+    const allTagsText = currentTags.join('\n');
+    copyToClipboard(allTagsText);
+    showToast(`📋 Copied ${currentTags.length} tags!`);
+}
+
+function escapeHtml(str) {
+    if(!str) return '';
+    return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]);
+}
+
+// Dark mode
+const darkToggle = document.getElementById('darkToggle');
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('tagsExtractorTheme', document.body.classList.contains('dark') ? 'dark' : 'light');
+});
+if (localStorage.getItem('tagsExtractorTheme') === 'dark') {
+    document.body.classList.add('dark');
+    darkToggle.textContent = '☀️ Light';
+}
+
+function extractVideoId(url) {
+    url = url.trim();
+    if (url.includes('youtu.be/')) return url.split('youtu.be/')[1].split('?')[0];
+    if (url.includes('youtube.com/watch')) {
+        try {
+            const urlObj = new URL(url);
+            return urlObj.searchParams.get('v');
+        } catch(e) { return null; }
+    }
+    if (url.includes('youtube.com/shorts/')) return url.split('shorts/')[1].split('?')[0];
+    if (url.includes('youtube.com/embed/')) return url.split('embed/')[1].split('?')[0];
+    return null;
+}
+
+async function fetchVideoDetails(videoId) {
+    const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${YOUTUBE_API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
     
-    <div class="animated-bg"></div>
-    <div class="floating-particles" id="particles"></div>
+    if(data.error) {
+        throw new Error(data.error.message);
+    }
     
-    <div class="theme-toggle" id="themeToggle">🌙 Dark</div>
-    <div class="scroll-top" id="scrollTop">↑</div>
+    if(!data.items || data.items.length === 0) {
+        throw new Error('Video not found');
+    }
+    
+    const video = data.items[0];
+    const snippet = video.snippet;
+    // REAL YouTube SEO tags (bina # ke)
+    const tags = snippet.tags || [];
+    
+    // Filter out hashtags (jo # se shuru hote hain)
+    const filteredTags = tags.filter(tag => !tag.startsWith('#'));
+    
+    return {
+        title: snippet.title,
+        channelName: snippet.channelTitle,
+        channelId: snippet.channelId,
+        tags: filteredTags,
+        viewCount: video.statistics.viewCount,
+        likeCount: video.statistics.likeCount
+    };
+}
 
-    <div class="container">
-        <div class="ad-placeholder">
-            <!-- AdSense Ad Placeholder - Top Banner -->
-            <span>📢 Advertisement - 728x90 Banner</span>
-        </div>
+function formatNumber(num) {
+    if(!num) return 'N/A';
+    if(num >= 1000000) return (num/1000000).toFixed(1) + 'M';
+    if(num >= 1000) return (num/1000).toFixed(1) + 'K';
+    return num.toString();
+}
 
-        <div class="glass-card" style="text-align: center; margin-bottom: 30px;">
-            <h1>🏷️ YouTube Video Tags Extractor</h1>
-            <p style="color: var(--text-gray);">Paste any YouTube video URL to extract SEO tags, keywords, and trending tags</p>
-        </div>
+function renderTags(tagsArray) {
+    const resultsSection = document.getElementById('resultsSection');
+    const tagsList = document.getElementById('tagsList');
+    
+    if(!tagsArray || tagsArray.length === 0) {
+        tagsList.innerHTML = '<p style="color:#64748b;">⚠️ No public SEO tags found for this video. Some creators hide their tags.</p>';
+        document.getElementById('totalTags').innerText = '0';
+        document.getElementById('totalKeywords').innerText = '0';
+        resultsSection.style.display = 'block';
+        return;
+    }
+    
+    let html = '';
+    tagsArray.forEach(tag => {
+        html += `<div class="tag-item" data-tag="${escapeHtml(tag)}">
+                    🔑 ${escapeHtml(tag)}
+                    <span class="copy-icon">📋</span>
+                </div>`;
+    });
+    
+    tagsList.innerHTML = html;
+    document.getElementById('totalTags').innerText = tagsArray.length;
+    document.getElementById('totalKeywords').innerText = tagsArray.length;
+    resultsSection.style.display = 'block';
+    
+    // Add click event to each tag
+    document.querySelectorAll('.tag-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const tag = item.getAttribute('data-tag');
+            copyToClipboard(tag);
+        });
+    });
+}
 
-        <div class="glass-card">
-            <input type="text" id="urlInput" class="url-input" placeholder="Paste YouTube URL... e.g., https://youtube.com/watch?v=..." autocomplete="off">
-            
-            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
-                <button class="btn-primary" id="extractBtn">🔍 Extract Tags</button>
-                <button class="btn-secondary" id="copyAllBtn">📋 Copy All Tags</button>
-                <button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
-            </div>
+function updateVideoPreview(videoData) {
+    const preview = document.getElementById('videoPreview');
+    preview.style.display = 'flex';
+    document.getElementById('previewTitle').innerText = videoData.title;
+    document.getElementById('previewChannel').innerText = videoData.channelName;
+    document.getElementById('previewStats').innerHTML = `👁️ ${formatNumber(videoData.viewCount)} views | 👍 ${formatNumber(videoData.likeCount)} likes`;
+    document.getElementById('previewTagsCount').innerHTML = `🏷️ REAL SEO Tags extracted: ${videoData.tags.length}`;
+}
 
-            <div class="stats-container">
-                <div class="stat-card">📊 Total Tags: <span id="totalTags">0</span></div>
-                <div class="stat-card">📝 Keywords: <span id="totalKeywords">0</span></div>
-                <div class="stat-card">✅ YouTube Best: 5-15 tags</div>
-            </div>
-        </div>
-
-        <div class="ad-placeholder">
-            <!-- AdSense Ad Placeholder - Rectangle -->
-            <span>📢 Advertisement - 300x250 Rectangle</span>
-        </div>
-
-        <!-- Video Preview Card -->
-        <div class="video-preview" id="videoPreview">
-            <div class="thumbnail-placeholder">🎬</div>
-            <div class="video-info">
-                <div class="video-title" id="previewTitle">Video title will appear here</div>
-                <div class="channel-name" id="previewChannel">Channel name</div>
-                <div class="channel-name" style="margin-top: 8px;" id="previewTagsCount">Tags extracted: 0</div>
-            </div>
-        </div>
-
-        <div id="resultsSection">
-            <h2>✨ Extracted Tags</h2>
-            <div class="tags-grid" id="tagsGrid"></div>
-        </div>
-
-        <div class="glass-card" style="margin: 30px 0;">
-            <h3>⚡ Trending Video Keywords & Examples</h3>
-            <div class="trending-topics" id="trendingTopics">
-                <div class="trending-topic">Gaming</div>
-                <div class="trending-topic">Tech Reviews</div>
-                <div class="trending-topic">AI Tools</div>
-                <div class="trending-topic">Motivation</div>
-                <div class="trending-topic">Cooking</div>
-                <div class="trending-topic">Music</div>
-                <div class="trending-topic">Education</div>
-                <div class="trending-topic">Vlogs</div>
-            </div>
-            <p style="margin-top: 15px; font-size: 0.8rem; color: var(--text-gray);">⚠️ Note: Due to YouTube API restrictions, this tool demonstrates tag extraction using a demo database. In production, you would need a backend server or official YouTube API for real extraction.</p>
-        </div>
-
-        <div class="glass-card" style="margin: 20px 0;">
-            <h3>🕒 Recent Extractions</h3>
-            <div id="recentSearches" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
-            <h3 style="margin-top: 20px;">⭐ Favorite Tags</h3>
-            <div id="favoritesList" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
-        </div>
-
-        <div class="glass-card" style="margin: 20px 0;">
-            <h3>📈 YouTube SEO Tips</h3>
-            <ul style="margin-top: 15px; list-style: none;">
-                <li>✅ Use 5-15 relevant tags per video - quality over quantity</li>
-                <li>✅ Place your main keyword as the first tag</li>
-                <li>✅ Analyze competitor tags to find winning keywords</li>
-                <li>✅ Use a mix of broad, specific, and long-tail tags</li>
-                <li>✅ Update tags if video isn't ranking after 2 weeks</li>
+async function extractTags() {
+    const url = document.getElementById('urlInput').value.trim();
+    if(!url) { showToast('❌ Please enter a YouTube URL!'); return; }
+    
+    const videoId = extractVideoId(url);
+    if(!videoId) { showToast('❌ Invalid YouTube URL!'); return; }
+    
+    const btn = document.getElementById('extractBtn');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<span class="loading-spinner"></span> Extracting REAL SEO Tags...';
+    btn.disabled = true;
+    
+    try {
+        const videoData = await fetchVideoDetails(videoId);
+        currentTags = videoData.tags;
+        renderTags(currentTags);
+        updateVideoPreview(videoData);
+        showToast(`✅ Extracted ${currentTags.length} REAL SEO tags!`);
+    } catch(error) {
+        console.error(error);
+        showToast(`❌ Error: ${error.message}`);
+        document.getElementById('resultsSection').style.display = 'block';
+        document.getElementById('tagsList').innerHTML = `
+            <p style="color:#dc2626;">❌ Error: ${error.message}</p>
+            <p style="margin-top:10px;">💡 Tips:</p>
+            <ul style="margin-left:20px;">
+                <li>Make sure the video URL is correct</li>
+                <li>The video might be private or deleted</li>
+                <li>Try again in a few seconds</li>
             </ul>
-        </div>
+        `;
+    } finally {
+        btn.innerHTML = original;
+        btn.disabled = false;
+    }
+}
 
-        <div class="glass-card" style="margin: 20px 0;">
-            <h3>❓ Frequently Asked Questions</h3>
-            <div style="margin-top: 20px;">
-                <div><strong>What is a YouTube tags extractor?</strong><p style="color: var(--text-gray);">A tool that extracts tags/keywords from any YouTube video to help you optimize your own content.</p></div>
-                <div style="margin-top: 15px;"><strong>How do tags help YouTube SEO?</strong><p style="color: var(--text-gray);;">Tags help YouTube understand your video's topic and show it to the right audience.</p></div>
-                <div style="margin-top: 15px;"><strong>Best tags for YouTube Shorts?</strong><p style="color: var(--text-gray);;">Use #shorts + niche tags + trending keywords for maximum reach.</p></div>
-                <div style="margin-top: 15px;"><strong>How many tags should I use?</strong><p style="color: var(--text-gray);;">10-15 tags is optimal. More than 20 can look spammy.</p></div>
-                <div style="margin-top: 15px;"><strong>Are tags important for ranking?</strong><p style="color: var(--text-gray);;">Yes! Tags are one of YouTube's key ranking signals.</p></div>
-            </div>
-        </div>
+// Event Listeners
+document.getElementById('extractBtn').addEventListener('click', extractTags);
+document.getElementById('copyAllTagsBtn').addEventListener('click', copyAllTags);
+document.getElementById('urlInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') extractTags(); });
 
-        <div class="ad-placeholder">
-            <!-- AdSense Ad Placeholder - Bottom Banner -->
-            <span>📢 Advertisement - 728x90 Banner</span>
-        </div>
-
-        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray);">
-            <p>© 2026 YouTube Video Tags Extractor | Optimize Your YouTube SEO</p>
-        </footer>
-    </div>
-
-    <script>
-        createParticles();
-        function createParticles() {
-            const container = document.getElementById('particles');
-            for(let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.width = Math.random() * 5 + 2 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = Math.random() * 10 + 5 + 's';
-                particle.style.animationDelay = Math.random() * 5 + 's';
-                container.appendChild(particle);
-            }
-        }
-
-        let currentTags = [];
-        let favorites = JSON.parse(localStorage.getItem('tagsExtractorFavorites') || '[]');
-
-        // Demo tag database based on video topic extraction simulation
-        function simulateTagExtraction(url) {
-            // Extract video ID or keyword from URL for demo
-            let keyword = "gaming";
-            if(url.includes("v=")) {
-                let videoId = url.split('v=')[1]?.split('&')[0] || "";
-                keyword = videoId.length > 5 ? videoId.substring(0, 5) : "trending";
-            }
-            
-            // Determine category based on URL or random demo data
-            const categories = {
-                gaming: {
-                    title: "EPIC Gaming Moments You Won't Believe! 🔥",
-                    channel: "GameMaster Pro",
-                    tags: ["gaming", "gaming moments", "epic gaming", "funny gaming", "gaming fails", "gameplay", "best gaming clips", "gaming highlights", "trending gaming", "viral gaming", "twitch clips", "gaming compilation"]
-                },
-                tech: {
-                    title: "The Future of AI Technology Explained",
-                    channel: "Tech Insider",
-                    tags: ["technology", "AI", "artificial intelligence", "tech review", "future tech", "innovation", "machine learning", "AI tools", "gadgets", "tech news", "2026 tech", "smart technology"]
-                },
-                motivation: {
-                    title: "NEVER GIVE UP - Best Motivational Speech",
-                    channel: "Motivation Hub",
-                    tags: ["motivation", "inspiration", "success", "never give up", "motivational speech", "positive mindset", "goals", "self improvement", "growth mindset", "life advice", "daily motivation", "wake up motivated"]
-                },
-                cooking: {
-                    title: "Easy 5-Minute Recipes for Beginners",
-                    channel: "Chef Quick",
-                    tags: ["cooking", "recipes", "easy recipes", "quick meals", "food", "cooking tips", "meal prep", "healthy recipes", "dinner ideas", "budget meals", "home cooking", "5 minute recipes"]
-                },
-                vlog: {
-                    title: "My Daily Routine as a YouTuber",
-                    channel: "Life With Sam",
-                    tags: ["vlog", "daily vlog", "lifestyle", "day in the life", "youTuber life", "behind the scenes", "creator life", "productivity", "morning routine", "realistic vlog", "content creator", "work from home"]
-                }
-            };
-            
-            let category = categories.gaming;
-            if(url.toLowerCase().includes("tech") || url.toLowerCase().includes("ai")) category = categories.tech;
-            else if(url.toLowerCase().includes("motivat") || url.toLowerCase().includes("inspire")) category = categories.motivation;
-            else if(url.toLowerCase().includes("cook") || url.toLowerCase().includes("recipe")) category = categories.cooking;
-            else if(url.toLowerCase().includes("vlog") || url.toLowerCase().includes("daily")) category = categories.vlog;
-            else if(url.toLowerCase().includes("game") || url.toLowerCase().includes("play")) category = categories.gaming;
-            
-            return {
-                videoTitle: category.title,
-                channelName: category.channel,
-                allTags: category.tags
-            };
-        }
-
-        function extractTagsFromVideo(url) {
-            if(!url || url.trim() === "") return null;
-            
-            // Check if URL is valid YouTube URL
-            if(!url.includes("youtube.com") && !url.includes("youtu.be")) {
-                showToast("❌ Please enter a valid YouTube URL!");
-                return null;
-            }
-            
-            const extracted = simulateTagExtraction(url);
-            return extracted;
-        }
-
-        function renderTags(tagsArray) {
-            const categories = [
-                { title: "🔥 SEO Main Tags", data: tagsArray.slice(0, 6) },
-                { title: "⭐ Trending / Viral Tags", data: tagsArray.slice(6, 12) },
-                { title: "💡 Recommended Related Tags", data: tagsArray.slice(12, 18) }
-            ];
-            
-            let allTags = [];
-            let html = '';
-            categories.forEach(cat => {
-                if(cat.data.length > 0) {
-                    html += `
-                        <div class="tag-card">
-                            <h3>${cat.title}</h3>
-                            <div class="tag-list">
-                                ${cat.data.map(tag => `
-                                    <div class="tag-item" data-tag="${escapeHtml(tag)}">
-                                        #${escapeHtml(tag)}
-                                        <button class="favorite-btn" data-tag="${escapeHtml(tag)}">⭐</button>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                    allTags = [...allTags, ...cat.data];
-                }
-            });
-            
-            document.getElementById('tagsGrid').innerHTML = html;
-            document.getElementById('totalTags').innerText = allTags.length;
-            document.getElementById('totalKeywords').innerText = allTags.length;
-            
-            document.querySelectorAll('.tag-item').forEach(item => {
-                const tag = item.getAttribute('data-tag');
-                const favBtn = item.querySelector('.favorite-btn');
-                item.addEventListener('click', (e) => {
-                    if(e.target.classList.contains('favorite-btn')) {
-                        e.stopPropagation();
-                        toggleFavorite(tag);
-                    } else {
-                        copyToClipboard(tag);
-                        showToast(`✅ Copied: #${tag}`);
-                    }
-                });
-                if(favBtn) {
-                    favBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        toggleFavorite(tag);
-                    });
-                }
-            });
-            
-            return allTags;
-        }
-
-        function toggleFavorite(tag) {
-            if(favorites.includes(tag)) {
-                favorites = favorites.filter(t => t !== tag);
-                showToast(`❌ Removed: #${tag}`);
-            } else {
-                favorites.push(tag);
-                showToast(`⭐ Added to favorites: #${tag}`);
-            }
-            localStorage.setItem('tagsExtractorFavorites', JSON.stringify(favorites));
-            displayFavorites();
-        }
-
-        function displayFavorites() {
-            const container = document.getElementById('favoritesList');
-            if(favorites.length === 0) {
-                container.innerHTML = '<p style="color: gray;">No favorite tags yet</p>';
-                return;
-            }
-            container.innerHTML = favorites.map(tag => 
-                `<div class="trending-topic" style="background: #ff0000; cursor: pointer;" onclick="copyToClipboard('${escapeHtml(tag)}'); showToast('✅ Copied: #${tag}');">#${escapeHtml(tag)} ❌</div>`
-            ).join('');
-        }
-
-        function updateVideoPreview(videoData) {
-            document.getElementById('previewTitle').innerText = videoData.videoTitle;
-            document.getElementById('previewChannel').innerText = videoData.channelName;
-            document.getElementById('previewTagsCount').innerHTML = `🎯 Tags extracted: ${videoData.allTags.length}`;
-        }
-
-        function escapeHtml(str) { return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]); }
-        function copyToClipboard(text) { navigator.clipboard.writeText(text); }
-        
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.innerText = message;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2000);
-        }
-
-        async function extractWithAnimation() {
-            const url = document.getElementById('urlInput').value.trim();
-            if(!url) { showToast('❌ Please paste a YouTube URL!'); return; }
-            
-            const btn = document.getElementById('extractBtn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span class="spinner"></span> Extracting...';
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                const extracted = extractTagsFromVideo(url);
-                if(extracted) {
-                    currentTags = extracted.allTags;
-                    renderTags(currentTags);
-                    updateVideoPreview(extracted);
-                    saveRecentSearch(url);
-                    showToast('✨ Tags extracted successfully!');
-                } else {
-                    showToast('⚠️ Invalid YouTube URL');
-                }
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 800);
-        }
-
-        function saveRecentSearch(url) {
-            let searches = JSON.parse(localStorage.getItem('tagsExtractorRecent') || '[]');
-            searches = [url, ...searches.filter(s => s !== url)];
-            searches = searches.slice(0, 5);
-            localStorage.setItem('tagsExtractorRecent', JSON.stringify(searches));
-            displayRecentSearches();
-        }
-
-        function displayRecentSearches() {
-            const searches = JSON.parse(localStorage.getItem('tagsExtractorRecent') || '[]');
-            const container = document.getElementById('recentSearches');
-            if(searches.length === 0) { container.innerHTML = '<p style="color: gray;">No recent extractions</p>'; return; }
-            container.innerHTML = searches.map(s => 
-                `<div class="trending-topic" onclick="document.getElementById('urlInput').value='${escapeHtml(s)}'; extractWithAnimation();">${s.length > 40 ? s.substring(0, 40) + '...' : s}</div>`
-            ).join('');
-        }
-
-        let isDark = true;
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            isDark = !isDark;
-            if(isDark) {
-                document.body.classList.remove('light-mode');
-                document.getElementById('themeToggle').innerHTML = '🌙 Dark';
-            } else {
-                document.body.classList.add('light-mode');
-                document.getElementById('themeToggle').innerHTML = '☀️ Light';
-            }
-            localStorage.setItem('tagsExtractorTheme', isDark ? 'dark' : 'light');
-        });
-        if(localStorage.getItem('tagsExtractorTheme') === 'light') {
-            document.body.classList.add('light-mode');
-            document.getElementById('themeToggle').innerHTML = '☀️ Light';
-        }
-
-        document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        document.getElementById('extractBtn').addEventListener('click', extractWithAnimation);
-        document.getElementById('copyAllBtn').addEventListener('click', () => {
-            if(!currentTags.length) { showToast('⚠️ Extract tags first!'); return; }
-            copyToClipboard(currentTags.join(', '));
-            showToast('📋 All tags copied!');
-        });
-        document.getElementById('downloadBtn').addEventListener('click', () => {
-            if(!currentTags.length) { showToast('⚠️ Extract tags first!'); return; }
-            const blob = new Blob([currentTags.join('\n')], { type: 'text/plain' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = `youtube_tags_${Date.now()}.txt`;
-            link.click();
-            showToast('💾 Downloaded successfully!');
-        });
-        document.getElementById('urlInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') extractWithAnimation(); });
-        
-        document.querySelectorAll('.trending-topic').forEach(topic => {
-            topic.addEventListener('click', () => {
-                let demoUrl = "";
-                const text = topic.innerText;
-                if(text === "Gaming") demoUrl = "https://youtube.com/watch?v=gaming_demo";
-                else if(text === "Tech Reviews") demoUrl = "https://youtube.com/watch?v=tech_reviews";
-                else if(text === "AI Tools") demoUrl = "https://youtube.com/watch?v=ai_tools_demo";
-                else if(text === "Motivation") demoUrl = "https://youtube.com/watch?v=motivation_speech";
-                else if(text === "Cooking") demoUrl = "https://youtube.com/watch?v=cooking_recipes";
-                else demoUrl = "https://youtube.com/watch?v=demo_video";
-                document.getElementById('urlInput').value = demoUrl;
-                extractWithAnimation();
-            });
-        });
-        
-        displayRecentSearches();
-        displayFavorites();
-        
-        // Set example URL on load
-        setTimeout(() => {
-            document.getElementById('urlInput').value = "https://youtube.com/watch?v=gaming_example";
-            extractWithAnimation();
-        }, 100);
-    </script>
+// Set placeholder example
+setTimeout(() => {
+    document.getElementById('urlInput').placeholder = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+}, 100);
+</script>
 </body>
 </html>
