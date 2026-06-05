@@ -338,7 +338,9 @@
 </footer>
 
 <script>
-// Dropdown
+// ========== FIXED JAVASCRIPT CODE - YOUTUBE CHANNEL NAME GENERATOR ==========
+
+// Dropdown Functionality
 (function() {
     const dropdown = document.getElementById('toolsDropdown');
     const dropBtn = document.getElementById('toolsBtn');
@@ -362,23 +364,53 @@
 let currentStyle = 'gaming';
 let currentNames = [];
 
+// FIXED: Style buttons - AUTO GENERATE when clicked
 document.querySelectorAll('.style-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         currentStyle = this.getAttribute('data-style');
-        const keyword = document.getElementById('keywordInput').value.trim();
-        if(keyword) generateNames();
+        
+        // Auto-generate when style changes
+        let keyword = document.getElementById('keywordInput').value.trim();
+        
+        // If keyword is empty or invalid, use default
+        if(!keyword || keyword === '' || keyword === 'Enter your keyword...') {
+            keyword = 'gaming';
+            document.getElementById('keywordInput').value = 'gaming';
+        }
+        
+        // Clean the keyword - remove any extra text
+        keyword = keyword.split(' ')[0].toLowerCase();
+        document.getElementById('keywordInput').value = keyword;
+        
+        generateNamesWithKeyword(keyword);
     });
 });
 
-function generateNames() {
-    const keyword = document.getElementById('keywordInput').value.trim();
-    if(!keyword) {
-        showToast('❌ Please enter a keyword or niche');
-        return;
+// Clean keyword function
+function cleanKeyword(keyword) {
+    if(!keyword) return 'gaming';
+    
+    // Remove any extra text
+    let clean = keyword.trim().toLowerCase();
+    
+    // If keyword has spaces, take first word only
+    if(clean.includes(' ')) {
+        clean = clean.split(' ')[0];
     }
     
+    // Remove any non-alphabetic characters (keep letters only)
+    clean = clean.replace(/[^a-z]/g, '');
+    
+    // If empty after cleaning, use default
+    if(clean === '') return 'gaming';
+    
+    return clean;
+}
+
+// Generate names with keyword parameter
+function generateNamesWithKeyword(keyword) {
     const style = currentStyle;
     const lowerKeyword = keyword.toLowerCase().trim();
     
@@ -409,6 +441,7 @@ function generateNames() {
     
     let names = new Set();
     
+    // Generate name combinations
     for(let i = 0; i < prefixList.length; i++) {
         names.add(`${prefixList[i]} ${lowerKeyword}`);
         names.add(`${lowerKeyword} ${suffixList[i % suffixList.length]}`);
@@ -416,6 +449,7 @@ function generateNames() {
         names.add(`${lowerKeyword}${suffixList[i % suffixList.length]}`);
     }
     
+    // Additional creative names
     const additional = [
         `Mr${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}`,
         `The${lowerKeyword.charAt(0).toUpperCase() + lowerKeyword.slice(1)}Guy`,
@@ -440,9 +474,23 @@ function generateNames() {
     
     currentNames = nameArray;
     renderNames(nameArray);
-    showToast(`✅ ${nameArray.length} channel names generated!`);
+    showToast(`✅ ${nameArray.length} channel names generated for "${keyword}"!`);
 }
 
+// Main generate function
+function generateNames() {
+    let keyword = document.getElementById('keywordInput').value.trim();
+    
+    // Clean the keyword
+    keyword = cleanKeyword(keyword);
+    
+    // Update input field with cleaned keyword
+    document.getElementById('keywordInput').value = keyword;
+    
+    generateNamesWithKeyword(keyword);
+}
+
+// Render names function
 function renderNames(names) {
     const groups = [
         { title: "🔥 Trending Names", names: names.slice(0, 8) },
@@ -471,8 +519,14 @@ function renderNames(names) {
     
     document.getElementById('namesGrid').innerHTML = html;
     document.getElementById('totalCount').innerText = names.length;
-    let avgLen = Math.round(names.reduce((a,b) => a + b.length, 0) / names.length);
-    document.getElementById('avgLength').innerText = avgLen;
+    
+    if(names.length > 0) {
+        let avgLen = Math.round(names.reduce((a,b) => a + b.length, 0) / names.length);
+        document.getElementById('avgLength').innerText = avgLen;
+    } else {
+        document.getElementById('avgLength').innerText = '0';
+    }
+    
     document.getElementById('resultSection').classList.add('show');
     
     document.querySelectorAll('.name-item').forEach(item => {
@@ -538,12 +592,16 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 2500);
 }
 
+// Event Listeners
 document.getElementById('generateBtn').addEventListener('click', generateNames);
 document.getElementById('copyAllBtn').addEventListener('click', copyAllNames);
 document.getElementById('downloadBtn').addEventListener('click', downloadTXT);
 document.getElementById('clearBtn').addEventListener('click', clearAll);
-document.getElementById('keywordInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') generateNames(); });
+document.getElementById('keywordInput').addEventListener('keypress', (e) => { 
+    if(e.key === 'Enter') generateNames(); 
+});
 
+// Initialize on page load
 window.addEventListener('load', () => {
     document.getElementById('keywordInput').value = 'gaming';
     generateNames();
