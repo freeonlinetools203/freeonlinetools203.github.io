@@ -338,7 +338,7 @@
 </footer>
 
 <script>
-// ========== FULLY FIXED JAVASCRIPT CODE - YOUTUBE CHANNEL NAME GENERATOR ==========
+// ========== FULLY FIXED - WITH SEARCH BAR AUTO UPDATE ==========
 
 // Dropdown Functionality
 (function() {
@@ -364,27 +364,33 @@
 let currentStyle = 'gaming';
 let currentNames = [];
 
-// FIXED: Style buttons - AUTO GENERATE with current keyword
+// FIXED: Style buttons - UPDATE SEARCH BAR + GENERATE NAMES
 document.querySelectorAll('.style-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
-        currentStyle = this.getAttribute('data-style');
         
-        // IMPORTANT FIX: Get keyword from input field
-        let keyword = document.getElementById('keywordInput').value.trim();
+        // Get the style name
+        const selectedStyle = this.getAttribute('data-style');
+        currentStyle = selectedStyle;
         
-        // If keyword is empty, show message
-        if(!keyword || keyword === '') {
-            showToast('❌ Please enter a keyword first!');
-            return;
-        }
+        // IMPORTANT FIX: Update search bar with style name
+        let keyword = selectedStyle;  // Use style name as keyword
         
-        // Clean the keyword
-        keyword = cleanKeyword(keyword);
+        // Special handling for different styles
+        if(selectedStyle === 'gaming') keyword = 'gaming';
+        else if(selectedStyle === 'tech') keyword = 'tech';
+        else if(selectedStyle === 'vlog') keyword = 'vlog';
+        else if(selectedStyle === 'ai') keyword = 'artificial intelligence';
+        else if(selectedStyle === 'funny') keyword = 'comedy';
+        else if(selectedStyle === 'professional') keyword = 'business';
+        else if(selectedStyle === 'shorts') keyword = 'shorts';
+        else if(selectedStyle === 'brand') keyword = 'branding';
+        
+        // Update search bar value
         document.getElementById('keywordInput').value = keyword;
         
-        // Generate names with current keyword and new style
+        // Generate names with this keyword and style
         generateNamesWithKeyword(keyword, currentStyle);
     });
 });
@@ -407,7 +413,7 @@ function cleanKeyword(keyword) {
     return clean;
 }
 
-// FIXED: Generate names with keyword AND style parameters
+// Generate names with keyword AND style parameters
 function generateNamesWithKeyword(keyword, style) {
     if(!keyword || keyword === '') {
         showToast('❌ Please enter a keyword first!');
@@ -479,7 +485,7 @@ function generateNamesWithKeyword(keyword, style) {
     showToast(`✅ ${nameArray.length} ${style} channel names generated for "${lowerKeyword}"!`);
 }
 
-// FIXED: Main generate function - reads keyword from input
+// Main generate function - reads keyword from input
 function generateNames() {
     let keyword = document.getElementById('keywordInput').value.trim();
     
@@ -609,11 +615,9 @@ document.getElementById('keywordInput').addEventListener('keypress', (e) => {
     if(e.key === 'Enter') generateNames(); 
 });
 
-// Initialize on page load with demo but NOT hardcoded
+// Initialize on page load
 window.addEventListener('load', () => {
-    // Set default demo keyword
     document.getElementById('keywordInput').value = 'gaming';
-    // Generate with actual keyword
     generateNames();
 });
 </script>
