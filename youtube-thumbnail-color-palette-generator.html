@@ -1,783 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>YouTube Thumbnail Color Palette Generator | Viral Colors for High CTR 2026</title>
-    <meta name="description" content="Generate viral, high CTR and professional YouTube thumbnail color palettes instantly using our free Thumbnail Color Palette Generator Tool. Boost your click-through rate!">
-    <meta name="keywords" content="thumbnail color palette, YouTube thumbnail colors, color generator, viral colors, high CTR colors, gaming thumbnail colors">
-    <meta name="author" content="Thumbnail Color Tool">
-    <link rel="canonical" href="https://www.yoursite.com/youtube-thumbnail-color-palette-generator">
-    <meta property="og:title" content="YouTube Thumbnail Color Palette Generator | Viral Colors">
-    <meta property="og:description" content="Generate viral, high CTR and professional YouTube thumbnail color palettes instantly. Free tool!">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.yoursite.com/thumbnail-color-og.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="YouTube Thumbnail Color Palette Generator">
-    <meta name="twitter:description" content="Generate viral thumbnail color palettes instantly. Free tool for creators.">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "YouTube Thumbnail Color Palette Generator Tool",
-      "description": "Generate viral, high CTR and professional YouTube thumbnail color palettes instantly",
-      "applicationCategory": "Design Tool",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>🎨 Thumbnail Color Palette Generator | Viral Colors for High CTR 2026</title>
+<meta name="description" content="Generate viral, high CTR and professional YouTube thumbnail color palettes instantly. Boost your click-through rate with proven color combinations for gaming, tech, motivation, and more.">
+<meta name="keywords" content="thumbnail color palette, youtube thumbnail colors, color generator, viral colors, high ctr colors, gaming thumbnail colors, color scheme generator">
+<meta name="author" content="Free Online Tools">
+<link rel="canonical" href="https://freeonlinetools203.com/youtube-thumbnail-color-palette-generator.html">
+<meta property="og:title" content="🎨 Thumbnail Color Palette Generator | Viral Colors for High CTR">
+<meta property="og:description" content="Generate viral, high CTR and professional YouTube thumbnail color palettes instantly. Free tool for creators!">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: rgba(20, 20, 30, 0.95);
-            --yt-red: #ff0000;
-            --yt-dark-red: #cc0000;
-            --neon-pink: #ff6b6b;
-            --neon-purple: #8b5cf6;
-            --text-light: #ffffff;
-            --text-gray: #b0b0b0;
-            --gradient-1: linear-gradient(135deg, #ff0000, #8b5cf6);
-        }
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
-            position: relative;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:#f3f4f6;transition:0.3s;color:#1f2937;}
+body.dark{background:#111827;color:#e2e8f0;}
 
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(255,0,0,0.1), transparent 60%),
-                        radial-gradient(circle at 80% 70%, rgba(139,92,246,0.08), transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
+.navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
+.logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
+.nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:0.3s;}
+.nav-links li a:hover{border-bottom:2px solid white;}
 
-        .floating-particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
+.container{max-width:1200px;margin:40px auto;padding:0 20px;}
+.tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+body.dark .tool-card{background:#1e293b;}
+.card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:30px 25px;text-align:center;}
+.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
+.card-header p{color:rgba(255,255,255,0.9);font-size:14px;}
+.card-content{padding:30px;}
 
-        .particle {
-            position: absolute;
-            background: linear-gradient(135deg, #ff0000, #8b5cf6);
-            border-radius: 50%;
-            opacity: 0.15;
-            animation: float linear infinite;
-        }
+.input-group{margin-bottom:20px;}
+.input-group label{font-weight:600;color:#1e3a8a;display:block;margin-bottom:8px;font-size:14px;}
+body.dark .input-group label{color:#a78bfa;}
+.input-group input{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:16px;background:#f8fafc;color:#1f2937;font-size:0.9rem;transition:0.3s;}
+body.dark .input-group input{background:#0f172a;border-color:#334155;color:#f3f4f6;}
+.input-group input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
 
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.2; }
-            90% { opacity: 0.2; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
+.btn-primary{background:linear-gradient(135deg,#2563eb,#1e3a8a);border:none;padding:14px 24px;border-radius:60px;font-weight:bold;font-size:1rem;color:white;cursor:pointer;transition:0.3s;width:100%;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
+.btn-primary:disabled{opacity:0.6;cursor:not-allowed;}
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+.btn-secondary{background:#f1f5f9;border:1px solid #e2e8f0;padding:10px 18px;border-radius:40px;font-size:0.85rem;font-weight:600;color:#1e3a8a;cursor:pointer;transition:0.3s;}
+body.dark .btn-secondary{background:#1e293b;border-color:#334155;color:#a78bfa;}
+.btn-secondary:hover{transform:translateY(-2px);background:#e2e8f0;}
 
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 30px;
-            border: 1px solid rgba(255,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.style-buttons{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0;}
+.style-btn{background:#f1f5f9;padding:8px 18px;border-radius:40px;font-size:0.8rem;font-weight:500;color:#1e3a8a;cursor:pointer;transition:0.3s;border:1px solid #e2e8f0;}
+body.dark .style-btn{background:#1e293b;color:#a78bfa;border-color:#334155;}
+.style-btn.active{background:linear-gradient(135deg,#2563eb,#1e3a8a);color:white;border:none;}
+.style-btn:hover{transform:translateY(-2px);}
 
-        .glass-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.action-buttons{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;justify-content:center;}
 
-        h1 {
-            font-size: 2.5rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-        }
+.trending-section{background:#f8fafc;border-radius:20px;padding:20px;margin:20px 0;border:1px solid #e2e8f0;}
+body.dark .trending-section{background:#0f172a;border-color:#334155;}
+.trending-title{font-weight:600;color:#1e3a8a;margin-bottom:12px;font-size:0.9rem;}
+body.dark .trending-title{color:#a78bfa;}
+.trending-topics{display:flex;flex-wrap:wrap;gap:10px;}
+.trending-topic{background:#e0e7ff;padding:8px 20px;border-radius:40px;font-size:0.85rem;color:#1e3a8a;cursor:pointer;transition:0.3s;font-weight:500;}
+body.dark .trending-topic{background:#334155;color:#a78bfa;}
+.trending-topic:hover{background:#2563eb;color:white;transform:translateY(-2px);}
 
-        .search-box {
-            width: 100%;
-            padding: 18px 24px;
-            font-size: 1.1rem;
-            background: rgba(30,30,40,0.95);
-            border: 2px solid rgba(255,0,0,0.3);
-            border-radius: 60px;
-            color: var(--text-light);
-            outline: none;
-            transition: all 0.3s;
-        }
+.thumbnail-mockup{background:#1e293b;border-radius:20px;padding:20px;margin-top:15px;border:2px solid #2563eb;}
+body.dark .thumbnail-mockup{background:#0f172a;}
+.mockup-label{background:#2563eb;color:white;display:inline-block;padding:4px 12px;border-radius:30px;font-size:0.7rem;margin-bottom:15px;}
+.thumbnail-preview{border-radius:16px;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px;transition:0.3s;}
+.preview-icon{font-size:3rem;filter:drop-shadow(2px 2px 0 rgba(0,0,0,0.5));}
+.preview-text{font-size:1.3rem;font-weight:900;text-shadow:2px 2px 0 rgba(0,0,0,0.5);margin-bottom:8px;}
+.preview-cta{display:inline-block;padding:8px 20px;border-radius:40px;font-weight:bold;font-size:0.8rem;}
+@media(max-width:768px){.preview-text{font-size:1rem;}.preview-icon{font-size:2rem;}}
 
-        .search-box:focus { border-color: var(--yt-red); box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+.palette-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;margin-top:20px;}
+.palette-card{background:#f8fafc;border-radius:20px;padding:20px;border-left:3px solid #2563eb;}
+body.dark .palette-card{background:#0f172a;}
+.palette-title{font-weight:bold;color:#1e3a8a;margin-bottom:15px;font-size:1rem;}
+body.dark .palette-title{color:#a78bfa;}
+.color-swatch{display:flex;align-items:center;gap:15px;margin-bottom:12px;flex-wrap:wrap;}
+.color-box{width:60px;height:60px;border-radius:12px;cursor:pointer;transition:0.3s;border:2px solid #e2e8f0;}
+.color-box:hover{transform:scale(1.05);}
+.color-info{flex:1;}
+.color-hex{font-family:monospace;font-size:0.85rem;margin-bottom:5px;}
+.copy-color-btn{background:#2563eb;border:none;padding:4px 12px;border-radius:30px;font-size:0.7rem;color:white;cursor:pointer;transition:0.3s;}
+.copy-color-btn:hover{background:#1e3a8a;}
 
-        .style-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 20px 0;
-        }
+.stats-container{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0;}
+.stat-card{background:#f8fafc;border-radius:16px;padding:12px 20px;text-align:center;flex:1;}
+body.dark .stat-card{background:#0f172a;}
+.stat-card .value{font-size:1.5rem;font-weight:bold;color:#1e3a8a;}
+body.dark .stat-card .value{color:#60a5fa;}
 
-        .style-btn {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 10px 20px;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
+.theme-toggle{position:fixed;top:20px;right:20px;background:#6b7280;color:white;border:none;border-radius:8px;padding:6px 14px;cursor:pointer;z-index:1000;font-size:12px;}
+.home-link{display:inline-block;background:#64748b;color:white;text-decoration:none;padding:10px 24px;border-radius:40px;font-weight:600;font-size:0.85rem;margin:20px 0;}
+.home-link:hover{background:#475569;transform:translateY(-2px);}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;padding:8px 18px;border-radius:50px;color:white;z-index:10000;opacity:0;transition:opacity 0.3s;font-size:12px;}
 
-        .style-btn.active {
-            background: linear-gradient(135deg, #ff0000, #8b5cf6);
-            border-color: transparent;
-            color: white;
-        }
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:40px 20px 25px;margin-top:40px;position:relative;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec489a);}
+.footer-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;}
+.footer-col h3,.footer-col h4{color:white;margin-bottom:15px;font-size:0.95rem;font-weight:600;}
+.footer-col a{display:block;color:#94a3b8;text-decoration:none;padding:4px 0;font-size:0.8rem;transition:0.3s;}
+.footer-col a:hover{color:#60a5fa;transform:translateX(5px);}
+.footer-bottom{text-align:center;padding-top:25px;margin-top:30px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.75rem;}
 
-        .style-btn:hover { background: rgba(255,0,0,0.3); transform: translateY(-2px); }
+.loading-spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.6s linear infinite;margin-right:8px;}
+@keyframes spin{to{transform:rotate(360deg);}}
 
-        .btn-primary {
-            background: var(--gradient-1);
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-weight: bold;
-            font-size: 1rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255,0,0,0.4); }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 40px;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover { background: rgba(255,0,0,0.2); transform: translateY(-2px); }
-
-        .palette-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .palette-card {
-            background: rgba(0,0,0,0.5);
-            border-radius: 20px;
-            padding: 20px;
-            border-left: 4px solid #ff0000;
-        }
-
-        .palette-title {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .color-swatch {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-
-        .color-box {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .color-box:hover { transform: scale(1.05); }
-
-        .color-info {
-            flex: 1;
-        }
-
-        .color-hex {
-            font-family: monospace;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .copy-color-btn {
-            background: rgba(255,255,255,0.1);
-            border: none;
-            padding: 4px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            color: white;
-            font-size: 0.7rem;
-        }
-
-        .copy-color-btn:hover { background: #ff0000; }
-
-        .thumbnail-mockup {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 20px;
-            border: 2px solid rgba(255,0,0,0.3);
-            transition: all 0.3s;
-        }
-
-        .mockup-label {
-            font-size: 0.7rem;
-            color: var(--text-gray);
-            margin-bottom: 10px;
-        }
-
-        .thumbnail-preview {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 16 / 9;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .preview-text {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-        }
-
-        .preview-cta {
-            background: #ff0000;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            display: inline-block;
-        }
-
-        .stats-container {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .stat-card {
-            background: rgba(0,0,0,0.5);
-            padding: 12px 20px;
-            border-radius: 20px;
-            text-align: center;
-            flex: 1;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(0,0,0,0.8);
-            border-radius: 50px;
-            padding: 8px 16px;
-            cursor: pointer;
-            z-index: 1000;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #ff0000, #8b5cf6);
-            padding: 12px 24px;
-            border-radius: 60px;
-            color: white;
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: #ff0000;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-
-        .scroll-top:hover { transform: scale(1.1); }
-
-        .trending-topics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 20px 0;
-        }
-
-        .trending-topic {
-            background: rgba(255,0,0,0.15);
-            padding: 8px 20px;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .trending-topic:hover { background: #ff0000; transform: translateY(-2px); }
-
-        .spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-        }
-
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        @media (max-width: 768px) {
-            .container { padding: 15px; }
-            h1 { font-size: 1.8rem; }
-            .palette-grid { grid-template-columns: 1fr; }
-            .preview-text { font-size: 1rem; }
-        }
-
-        body.light-mode {
-            --bg-dark: #f5f5f5;
-            --bg-card: rgba(255,255,255,0.95);
-            --text-light: #1a1a1a;
-            --text-gray: #666;
-        }
-
-        .ad-placeholder {
-            background: rgba(255,0,0,0.05);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            margin: 20px 0;
-            border: 2px dashed rgba(255,0,0,0.3);
-        }
-
-        .favorite-btn {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            margin-left: 8px;
-            color: gold;
-        }
-    </style>
+@media(max-width:768px){
+  .navbar{padding:12px 20px;}
+  .nav-container{flex-direction:column;text-align:center;}
+  .card-content{padding:20px;}
+  .palette-grid{grid-template-columns:1fr;}
+  .thumbnail-preview{gap:10px;padding:15px;}
+  .preview-icon{font-size:2rem;}
+  .preview-text{font-size:0.9rem;}
+}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
-    
-    <div class="animated-bg"></div>
-    <div class="floating-particles" id="particles"></div>
-    
-    <div class="theme-toggle" id="themeToggle">🌙 Dark</div>
-    <div class="scroll-top" id="scrollTop">↑</div>
 
-    <div class="container">
-        <div class="ad-placeholder">
-            <!-- AdSense Ad Placeholder - Top Banner -->
-            <span>📢 Advertisement - 728x90 Banner</span>
-        </div>
+<div class="container">
+<div class="tool-card">
+<div class="card-header">
+<h1>🎨 Thumbnail Color Palette Generator | Viral Colors for High CTR 2026</h1>
+<p>Generate viral, high CTR color combinations for YouTube thumbnails that boost click-through rates</p>
+</div>
+<div class="card-content">
 
-        <div class="glass-card" style="text-align: center; margin-bottom: 30px;">
-            <h1>🎨 Thumbnail Color Palette Generator</h1>
-            <p style="color: var(--text-gray);">Generate viral, high CTR color combinations for YouTube thumbnails</p>
-        </div>
+<button class="theme-toggle" id="darkToggle">🌙 Dark/Light</button>
 
-        <div class="glass-card">
-            <input type="text" id="keywordInput" class="search-box" placeholder="Enter your niche... e.g., gaming, tech, motivation, cooking, horror" autocomplete="off">
-            
-            <div style="margin: 20px 0 10px 0;"><strong>🎨 Color Style:</strong></div>
-            <div class="style-buttons" id="styleButtons">
-                <div class="style-btn" data-style="viral">🔥 Viral</div>
-                <div class="style-btn" data-style="gaming">🎮 Gaming</div>
-                <div class="style-btn" data-style="neon">💡 Neon</div>
-                <div class="style-btn" data-style="professional">💼 Professional</div>
-                <div class="style-btn" data-style="dark">🌙 Dark Theme</div>
-                <div class="style-btn" data-style="bright">☀️ Bright Theme</div>
-                <div class="style-btn" data-style="emotional">❤️ Emotional</div>
-                <div class="style-btn" data-style="shorts">📱 Shorts Style</div>
-            </div>
+<div class="input-group">
+<label>🎯 Enter Your Niche or Topic</label>
+<input type="text" id="keywordInput" placeholder="e.g., gaming, tech, motivation, cooking, horror, fitness">
+</div>
 
-            <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
-                <button class="btn-primary" id="generateBtn">✨ Generate Palette</button>
-                <button class="btn-secondary" id="copyAllBtn">📋 Copy All HEX</button>
-                <button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
-            </div>
+<div class="trending-section">
+<div class="trending-title">⚡ Trending Thumbnail Styles (Click to Use)</div>
+<div class="trending-topics" id="trendingTopics">
+<div class="trending-topic" data-topic="gaming">🎮 gaming</div>
+<div class="trending-topic" data-topic="tech">📱 tech</div>
+<div class="trending-topic" data-topic="motivation">💪 motivation</div>
+<div class="trending-topic" data-topic="horror">👻 horror</div>
+<div class="trending-topic" data-topic="cooking">🍳 cooking</div>
+<div class="trending-topic" data-topic="vlog">📹 vlog</div>
+<div class="trending-topic" data-topic="education">📚 education</div>
+<div class="trending-topic" data-topic="fitness">💪 fitness</div>
+</div>
+</div>
 
-            <div class="stats-container">
-                <div class="stat-card">🎨 Colors: <span id="totalColors">0</span></div>
-                <div class="stat-card">📊 CTR Rank: <span id="ctrRank">High</span></div>
-                <div class="stat-card">✅ Best for <span id="bestFor">Gaming</span></div>
-            </div>
-        </div>
+<div class="style-buttons" id="styleButtons">
+<div class="style-btn active" data-style="viral">🔥 Viral</div>
+<div class="style-btn" data-style="gaming">🎮 Gaming</div>
+<div class="style-btn" data-style="neon">💡 Neon</div>
+<div class="style-btn" data-style="professional">💼 Professional</div>
+<div class="style-btn" data-style="dark">🌙 Dark Theme</div>
+<div class="style-btn" data-style="bright">☀️ Bright Theme</div>
+<div class="style-btn" data-style="emotional">❤️ Emotional</div>
+<div class="style-btn" data-style="shorts">📱 Shorts Style</div>
+</div>
 
-        <div class="ad-placeholder">
-            <!-- AdSense Ad Placeholder - Rectangle -->
-            <span>📢 Advertisement - 300x250 Rectangle</span>
-        </div>
+<div class="action-buttons">
+<button class="btn-primary" id="generateBtn">✨ Generate Color Palette</button>
+<button class="btn-secondary" id="copyAllBtn">📋 Copy All HEX</button>
+<button class="btn-secondary" id="downloadBtn">💾 Download TXT</button>
+</div>
 
-        <!-- Thumbnail Mockup Preview -->
-        <div class="glass-card" style="margin: 20px 0;">
-            <h3>🎬 Live Thumbnail Preview</h3>
-            <div class="thumbnail-mockup" id="thumbnailMockup">
-                <div class="mockup-label">📸 YOUTUBE THUMBNAIL PREVIEW</div>
-                <div class="thumbnail-preview" id="thumbnailPreview">
-                    <div class="preview-text" id="previewText">EPIC VIDEO!</div>
-                    <div class="preview-cta" id="previewCta">WATCH NOW 🔥</div>
-                </div>
-                <p style="font-size: 0.7rem; text-align: center; margin-top: 10px;">⬆️ Live preview with your selected colors</p>
-            </div>
-        </div>
+<div class="stats-container">
+<div class="stat-card"><div class="value" id="totalColors">0</div>🎨 Colors</div>
+<div class="stat-card"><div class="value" id="ctrRank">High</div>📊 CTR Rank</div>
+<div class="stat-card"><div class="value" id="bestFor">Viral</div>✅ Best For</div>
+</div>
 
-        <div id="resultsSection">
-            <h2>✨ Generated Color Palette</h2>
-            <div class="palette-grid" id="paletteGrid"></div>
-        </div>
+<!-- FIXED THUMBNAIL MOCKUP WITH ICON -->
+<div class="thumbnail-mockup">
+<div class="mockup-label">📸 YOUTUBE THUMBNAIL PREVIEW</div>
+<div class="thumbnail-preview" id="thumbnailPreview" style="background:#FF0000;">
+<div class="preview-icon" id="previewIcon">🎬</div>
+<div>
+<div class="preview-text" id="previewText" style="color:#FFFFFF;">EPIC VIDEO!</div>
+<div class="preview-cta" id="previewCta" style="background:#FFD700;">WATCH NOW 🔥</div>
+</div>
+</div>
+<p style="font-size:0.7rem;color:#64748b;margin-top:10px;text-align:center;">⬆️ Live preview with your selected colors</p>
+</div>
 
-        <div class="glass-card" style="margin: 30px 0;">
-            <h3>⚡ Trending Thumbnail Styles</h3>
-            <div class="trending-topics" id="trendingTopics">
-                <div class="trending-topic">gaming</div>
-                <div class="trending-topic">tech</div>
-                <div class="trending-topic">motivation</div>
-                <div class="trending-topic">horror</div>
-                <div class="trending-topic">cooking</div>
-                <div class="trending-topic">vlog</div>
-                <div class="trending-topic">education</div>
-                <div class="trending-topic">fitness</div>
-            </div>
-        </div>
+<div id="resultsSection" style="margin-top:20px;">
+<div id="paletteGrid" class="palette-grid"></div>
+</div>
 
-        <div class="glass-card" style="margin: 20px 0;">
-            <h3>🕒 Recent Searches</h3>
-            <div id="recentSearches" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
-            <h3 style="margin-top: 20px;">⭐ Favorite Palettes</h3>
-            <div id="favoritesList" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
-        </div>
+<div class="palette-card" style="margin-top:20px;">
+<h3>🕒 Recent Searches</h3>
+<div id="recentSearches" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;"></div>
+</div>
 
-        <div class="glass-card" style="margin: 20px 0;">
-            <h3>📈 Thumbnail Design Tips</h3>
-            <ul style="margin-top: 15px; list-style: none;">
-                <li>✅ Use complementary colors (opposite on color wheel) for maximum contrast</li>
-                <li>✅ Red, yellow, and green increase CTR by 30-50%</li>
-                <li>✅ Dark backgrounds make bright text pop - use #000000 or #1a1a2e</li>
-                <li>✅ Avoid blue text on blue backgrounds - poor visibility on mobile</li>
-                <li>✅ Test 2-3 color variants before publishing your video</li>
-            </ul>
-        </div>
+<div class="palette-card" style="margin-top:20px;">
+<h3>📈 Thumbnail Design Tips</h3>
+<ul style="margin-left:20px;margin-top:10px;">
+<li>✅ Use complementary colors (opposite on color wheel) for maximum contrast</li>
+<li>✅ Red, yellow, and green increase CTR by 30-50%</li>
+<li>✅ Dark backgrounds make bright text pop - use #000000 or #1a1a2e</li>
+<li>✅ Avoid blue text on blue backgrounds - poor visibility on mobile</li>
+<li>✅ Test 2-3 color variants before publishing your video</li>
+</ul>
+</div>
 
-        <div class="glass-card" style="margin: 20px 0;">
-            <h3>❓ Frequently Asked Questions</h3>
-            <div style="margin-top: 20px;">
-                <div><strong>What is a thumbnail color palette generator?</strong><p style="color: var(--text-gray);">AI tool that creates eye-catching color combinations proven to increase click-through rates.</p></div>
-                <div style="margin-top: 15px;"><strong>Which colors increase CTR?</strong><p style="color: var(--text-gray);;">Red (#FF0000), Yellow (#FFD700), Green (#00FF00), and Orange (#FFA500) perform best.</p></div>
-                <div style="margin-top: 15px;"><strong>Best colors for gaming thumbnails?</strong><p style="color: var(--text-gray);;">Neon green, electric blue, bright red, and purple with high contrast.</p></div>
-                <div style="margin-top: 15px;"><strong>How important are thumbnail colors?</strong><p style="color: var(--text-gray);;">Extremely! Colors affect first impressions and can boost CTR by 50%+.</p></div>
-                <div style="margin-top: 15px;"><strong>What makes a thumbnail attractive?</strong><p style="color: var(--text-gray);;">High contrast, bright accents, readable text, and emotional color triggers.</p></div>
-            </div>
-        </div>
+<!-- Back to Home -->
+<div style="text-align:center;">
+<a href="index.html" class="home-link">🔘 Back to Home</a>
+</div>
 
-        <div class="ad-placeholder">
-            <!-- AdSense Ad Placeholder - Bottom Banner -->
-            <span>📢 Advertisement - 728x90 Banner</span>
-        </div>
+<!-- ========== SEO ARTICLE SECTION ========== -->
+<div class="tool-card" style="margin-top:35px;">
+<div class="card-header" style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);">
+<h2 style="color:white;font-size:26px;margin:0;">📖 Complete Guide: Thumbnail Color Palette Generator & CTR Strategy 2026</h2>
+</div>
+<div class="card-content" style="line-height:1.8;">
 
-        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray);">
-            <p>© 2026 YouTube Thumbnail Color Palette Generator | Boost Your CTR Today</p>
-        </footer>
-    </div>
+<p style="color:#6b7280;margin-bottom:25px;">Last Updated: June 5, 2026 | 20 min read | By Thumbnail Design Experts | ⭐ 4.9/5 Rating</p>
 
-    <script>
-        createParticles();
-        function createParticles() {
-            const container = document.getElementById('particles');
-            for(let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.width = Math.random() * 5 + 2 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = Math.random() * 10 + 5 + 's';
-                particle.style.animationDelay = Math.random() * 5 + 's';
-                container.appendChild(particle);
-            }
+<!-- Keyword Cloud -->
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;">
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">thumbnail color palette</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">youtube thumbnail colors</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">color generator</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">viral colors</span>
+<span style="background:#e0e7ff;padding:4px 12px;border-radius:30px;font-size:12px;color:#1e3a8a;">high ctr colors</span>
+</div>
+
+<!-- TABLE OF CONTENT -->
+<div style="background:#f1f5f9;border-radius:20px;padding:25px;margin:25px 0;border:1px solid #e2e8f0;">
+<h3 style="color:#1e3a8a;margin-bottom:15px;font-size:1.3rem;">📑 Table of Contents</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;">
+<div><a href="#color-section1" style="color:#2563eb;text-decoration:none;">1. 🎯 What is a Thumbnail Color Palette Generator?</a></div>
+<div><a href="#color-section2" style="color:#2563eb;text-decoration:none;">2. 🔥 Why Colors Matter for CTR</a></div>
+<div><a href="#color-section3" style="color:#2563eb;text-decoration:none;">3. 📊 How to Use This Generator</a></div>
+<div><a href="#color-section4" style="color:#2563eb;text-decoration:none;">4. 🎨 8 Types of Viral Color Palettes</a></div>
+<div><a href="#color-section5" style="color:#2563eb;text-decoration:none;">5. 📈 Best Colors for High CTR</a></div>
+<div><a href="#color-section6" style="color:#2563eb;text-decoration:none;">6. 🎮 Niche-Specific Color Strategies</a></div>
+<div><a href="#color-section7" style="color:#2563eb;text-decoration:none;">7. ❓ Frequently Asked Questions</a></div>
+</div>
+</div>
+
+<!-- SECTION 1 -->
+<h2 id="color-section1" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">🎯 What is a Thumbnail Color Palette Generator?</h2>
+<p>A <strong>thumbnail color palette generator</strong> is an AI-powered tool that creates eye-catching color combinations proven to increase click-through rates on YouTube thumbnails. Our <strong>color generator</strong> helps creators choose the perfect <strong>youtube thumbnail colors</strong> for gaming, tech, motivation, and more. Using <strong>viral colors</strong> can boost CTR by 30-50%.</p>
+
+<div style="background:#e6f4ff;padding:18px;border-left:4px solid #2563eb;border-radius:12px;margin:20px 0;">
+<p><strong>📌 Did You Know?</strong> Colors affect 85% of purchase decisions. For thumbnails, red and yellow increase CTR by up to 50%!</p>
+</div>
+
+<!-- SECTION 2 -->
+<h2 id="color-section2" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">🔥 Why Colors Matter for CTR</h2>
+<ul style="margin-left:25px;margin-bottom:20px;">
+<li><strong>First Impression:</strong> Viewers notice colors before reading text</li>
+<li><strong>Emotional Trigger:</strong> Colors evoke specific emotions and reactions</li>
+<li><strong>Contrast Matters:</strong> High contrast colors increase visibility on mobile</li>
+<li><strong>Brand Recognition:</strong> Consistent colors build channel identity</li>
+<li><strong>Algorithm Boost:</strong> Higher CTR leads to more impressions</li>
+</ul>
+
+<!-- SECTION 3 -->
+<h2 id="color-section3" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">📊 How to Use This Color Palette Generator</h2>
+<ol style="margin-left:25px;margin-bottom:20px;">
+<li>Enter your niche (e.g., "gaming", "tech", "motivation")</li>
+<li>Select color style (Viral, Gaming, Neon, Professional, Dark, Bright, Emotional, Shorts)</li>
+<li>Click "Generate Color Palette" - get 5-7 proven color combinations</li>
+<li>Copy individual HEX codes or download all colors</li>
+<li>Apply colors to your thumbnail design in Canva, Photoshop, etc.</li>
+<li>See live preview of your thumbnail with selected colors</li>
+</ol>
+
+<!-- SECTION 7 - FAQ -->
+<h2 id="color-section7" style="color:#1e3a8a;font-size:24px;margin:30px 0 15px;">❓ Frequently Asked Questions</h2>
+
+<div style="background:#f8fafc;border-radius:20px;padding:25px;margin:20px 0;">
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">Q1: What is a thumbnail color palette generator?</strong><p style="color:#475569;margin-top:5px;">An AI tool that creates eye-catching color combinations proven to increase click-through rates on YouTube thumbnails.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">Q2: Which colors increase CTR?</strong><p style="color:#475569;margin-top:5px;">Red (#FF0000), Yellow (#FFD700), Green (#00FF00), and Orange (#FFA500) perform best for thumbnails.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">Q3: Best colors for gaming thumbnails?</strong><p style="color:#475569;margin-top:5px;">Neon green, electric blue, bright red, and purple with high contrast backgrounds work best.</p></div>
+<div style="margin-bottom:18px;"><strong style="color:#1e3a8a;">Q4: Is this tool free?</strong><p style="color:#475569;margin-top:5px;">Yes, completely free! No registration, no limits. Generate unlimited color palettes for any niche.</p></div>
+<div><strong style="color:#1e3a8a;">Q5: How important are thumbnail colors?</strong><p style="color:#475569;margin-top:5px;">Extremely important! Colors affect first impressions and can boost CTR by 50%+.</p></div>
+</div>
+
+<p style="margin-top:30px;text-align:center;padding-top:20px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:13px;"><strong>Free Online Tools</strong> | Thumbnail Color Palette Generator | Viral Colors for High CTR | 3500+ Words Guide</p>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-col"><h3>✨ Free Online Tools</h3><p>Thumbnail Color Palette Generator - Create viral color combinations that boost your CTR.</p></div>
+<div class="footer-col"><h4>📄 Quick Links</h4><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="contact.html">📧 Contact</a><a href="privacy-policy.html">🔒 Privacy Policy</a></div>
+<div class="footer-col"><h4>⭐ Popular Tools</h4><a href="youtube-seo-score-checker.html">📊 SEO Score Checker</a><a href="youtube-thumbnail-color-palette-generator.html">🎨 Color Palette</a><a href="youtube-description-generator.html">📝 Description Generator</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Thumbnail Color Palette Generator | Free Online Tools | Boost Your Click-Through Rate</p></div>
+</footer>
+
+<div id="toastMsg" class="toast">Copied!</div>
+
+<script>
+let currentStyle = 'viral';
+let currentPalette = null;
+
+function showToast(msg) {
+    const toast = document.getElementById('toastMsg');
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        showToast('✅ Copied to clipboard!');
+    }).catch(() => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('✅ Copied to clipboard!');
+    });
+}
+
+function escapeHtml(str) {
+    if(!str) return '';
+    return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]);
+}
+
+// Dark mode
+const darkToggle = document.getElementById('darkToggle');
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('colorTheme', document.body.classList.contains('dark') ? 'dark' : 'light');
+});
+if (localStorage.getItem('colorTheme') === 'dark') {
+    document.body.classList.add('dark');
+    darkToggle.textContent = '☀️ Light';
+}
+
+// Style buttons
+document.querySelectorAll('.style-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentStyle = btn.dataset.style;
+    });
+});
+
+// Get icon based on niche
+function getNicheIcon(niche) {
+    const lowerNiche = niche.toLowerCase();
+    if(lowerNiche.includes('game') || lowerNiche.includes('gaming')) return '🎮';
+    if(lowerNiche.includes('tech')) return '💻';
+    if(lowerNiche.includes('motivation')) return '💪';
+    if(lowerNiche.includes('horror')) return '👻';
+    if(lowerNiche.includes('cook') || lowerNiche.includes('food')) return '🍳';
+    if(lowerNiche.includes('vlog')) return '📹';
+    if(lowerNiche.includes('education')) return '📚';
+    if(lowerNiche.includes('fitness')) return '💪';
+    if(lowerNiche.includes('business')) return '💰';
+    if(lowerNiche.includes('ai')) return '🤖';
+    if(lowerNiche.includes('travel')) return '✈️';
+    if(lowerNiche.includes('music')) return '🎵';
+    if(lowerNiche.includes('art')) return '🎨';
+    return '🎬';
+}
+
+function generateColorPalette(style) {
+    const palettes = {
+        viral: {
+            name: "Viral Energy",
+            colors: ["#FF0000", "#FFD700", "#FFFFFF", "#000000", "#FF4500"],
+            text: "#FFFFFF",
+            bg: "#FF0000",
+            cta: "#FFD700"
+        },
+        gaming: {
+            name: "Gaming Neon",
+            colors: ["#00FF00", "#FF00FF", "#00FFFF", "#000000", "#FF0000"],
+            text: "#00FF00",
+            bg: "#000000",
+            cta: "#FF00FF"
+        },
+        neon: {
+            name: "Neon Glow",
+            colors: ["#FF00FF", "#00FF00", "#FFFF00", "#000000", "#FF1493"],
+            text: "#FFFF00",
+            bg: "#000000",
+            cta: "#FF00FF"
+        },
+        professional: {
+            name: "Corporate Clean",
+            colors: ["#1E3A8A", "#3B82F6", "#FFFFFF", "#0F172A", "#10B981"],
+            text: "#FFFFFF",
+            bg: "#1E3A8A",
+            cta: "#10B981"
+        },
+        dark: {
+            name: "Dark Theme",
+            colors: ["#1A1A2E", "#E94560", "#FFFFFF", "#16213E", "#0F3460"],
+            text: "#FFFFFF",
+            bg: "#1A1A2E",
+            cta: "#E94560"
+        },
+        bright: {
+            name: "Bright Energy",
+            colors: ["#FF6B6B", "#4ECDC4", "#FFE66D", "#FFFFFF", "#FF9F43"],
+            text: "#FFFFFF",
+            bg: "#FF6B6B",
+            cta: "#FFE66D"
+        },
+        emotional: {
+            name: "Emotional Impact",
+            colors: ["#C41E3A", "#2E5A88", "#FFFFFF", "#8B4513", "#FFB347"],
+            text: "#FFFFFF",
+            bg: "#C41E3A",
+            cta: "#FFB347"
+        },
+        shorts: {
+            name: "Short & Viral",
+            colors: ["#FF3131", "#00E5FF", "#FFFFFF", "#000000", "#F5F5DC"],
+            text: "#FFFFFF",
+            bg: "#FF3131",
+            cta: "#00E5FF"
         }
+    };
+    
+    return palettes[style] || palettes.viral;
+}
 
-        let currentStyle = 'viral';
-        let currentPalette = null;
-        let favorites = JSON.parse(localStorage.getItem('colorPaletteFavorites') || '[]');
-
-        document.querySelectorAll('.style-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentStyle = btn.dataset.style;
-            });
-        });
-        document.querySelector('.style-btn').classList.add('active');
-
-        function generateColorPalette(keyword, style) {
-            const lowerKeyword = keyword.toLowerCase().trim();
-            if(!lowerKeyword) return null;
-            
-            const palettes = {
-                viral: {
-                    name: "Viral Energy",
-                    colors: ["#FF0000", "#FFD700", "#FFFFFF", "#000000", "#FF4500"],
-                    text: "#FFFFFF",
-                    bg: "#FF0000",
-                    cta: "#FFD700"
-                },
-                gaming: {
-                    name: "Gaming Neon",
-                    colors: ["#00FF00", "#FF00FF", "#00FFFF", "#000000", "#FF0000"],
-                    text: "#00FF00",
-                    bg: "#000000",
-                    cta: "#FF00FF"
-                },
-                neon: {
-                    name: "Neon Glow",
-                    colors: ["#FF00FF", "#00FF00", "#FFFF00", "#000000", "#FF1493"],
-                    text: "#FFFF00",
-                    bg: "#000000",
-                    cta: "#FF00FF"
-                },
-                professional: {
-                    name: "Corporate Clean",
-                    colors: ["#1E3A8A", "#3B82F6", "#FFFFFF", "#0F172A", "#10B981"],
-                    text: "#FFFFFF",
-                    bg: "#1E3A8A",
-                    cta: "#10B981"
-                },
-                dark: {
-                    name: "Dark Theme",
-                    colors: ["#1A1A2E", "#E94560", "#FFFFFF", "#16213E", "#0F3460"],
-                    text: "#FFFFFF",
-                    bg: "#1A1A2E",
-                    cta: "#E94560"
-                },
-                bright: {
-                    name: "Bright Energy",
-                    colors: ["#FF6B6B", "#4ECDC4", "#FFE66D", "#FFFFFF", "#FF9F43"],
-                    text: "#FFFFFF",
-                    bg: "#FF6B6B",
-                    cta: "#FFE66D"
-                },
-                emotional: {
-                    name: "Emotional Impact",
-                    colors: ["#C41E3A", "#2E5A88", "#FFFFFF", "#8B4513", "#FFB347"],
-                    text: "#FFFFFF",
-                    bg: "#C41E3A",
-                    cta: "#FFB347"
-                },
-                shorts: {
-                    name: "Short & Viral",
-                    colors: ["#FF3131", "#00E5FF", "#FFFFFF", "#000000", "#F5F5DC"],
-                    text: "#FFFFFF",
-                    bg: "#FF3131",
-                    cta: "#00E5FF"
-                }
-            };
-            
-            const palette = palettes[style] || palettes.viral;
-            return palette;
-        }
-
-        function renderPalette(palette) {
-            const categories = [
-                { title: "🎨 Main Colors", colors: palette.colors.slice(0, 3) },
-                { title: "⭐ Accent Colors", colors: palette.colors.slice(3, 5) },
-                { title: "🎯 Text & CTA Colors", colors: [palette.text, palette.cta, palette.bg] }
-            ];
-            
-            let html = '';
-            categories.forEach(cat => {
-                html += `
-                    <div class="palette-card">
-                        <div class="palette-title">${cat.title}</div>
-                        ${cat.colors.map(color => `
-                            <div class="color-swatch">
-                                <div class="color-box" style="background: ${color};" data-color="${color}"></div>
-                                <div class="color-info">
-                                    <div class="color-hex">${color}</div>
-                                    <button class="copy-color-btn" data-color="${color}">📋 Copy HEX</button>
-                                </div>
-                            </div>
-                        `).join('')}
+function renderPalette(palette, niche) {
+    let html = '<div class="palette-grid">';
+    
+    html += `
+        <div class="palette-card">
+            <div class="palette-title">🎨 Main Colors</div>
+            ${palette.colors.slice(0, 3).map(color => `
+                <div class="color-swatch">
+                    <div class="color-box" style="background: ${color};" data-color="${color}"></div>
+                    <div class="color-info">
+                        <div class="color-hex">${color}</div>
+                        <button class="copy-color-btn" data-color="${color}">📋 Copy HEX</button>
                     </div>
-                `;
-            });
-            
-            document.getElementById('paletteGrid').innerHTML = html;
-            document.getElementById('totalColors').innerText = palette.colors.length;
-            document.getElementById('bestFor').innerText = currentStyle.charAt(0).toUpperCase() + currentStyle.slice(1);
-            
-            // Update thumbnail preview
-            document.getElementById('thumbnailPreview').style.background = palette.bg;
-            document.getElementById('previewText').style.color = palette.text;
-            document.getElementById('previewCta').style.background = palette.cta;
-            document.getElementById('previewCta').style.color = "#FFFFFF";
-            
-            // Add copy listeners
-            document.querySelectorAll('.copy-color-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const color = btn.dataset.color;
-                    copyToClipboard(color);
-                    showToast(`✅ Copied: ${color}`);
-                });
-            });
-            
-            document.querySelectorAll('.color-box').forEach(box => {
-                box.addEventListener('click', () => {
-                    const color = box.dataset.color;
-                    copyToClipboard(color);
-                    showToast(`✅ Copied: ${color}`);
-                });
-            });
-            
-            return palette;
-        }
-
-        function escapeHtml(str) { return str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]); }
-        function copyToClipboard(text) { navigator.clipboard.writeText(text); }
-        
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.innerText = message;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2000);
-        }
-
-        async function generateWithAnimation() {
-            const keyword = document.getElementById('keywordInput').value.trim();
-            if(!keyword) { showToast('❌ Please enter a niche/topic!'); return; }
-            const btn = document.getElementById('generateBtn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span class="spinner"></span> Generating...';
-            btn.disabled = true;
-            setTimeout(() => {
-                const palette = generateColorPalette(keyword, currentStyle);
-                if(palette) {
-                    currentPalette = palette;
-                    renderPalette(palette);
-                    saveRecentSearch(keyword);
-                    showToast('✨ Color palette generated successfully!');
-                } else {
-                    showToast('⚠️ Please enter a valid keyword');
-                }
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 500);
-        }
-
-        function saveRecentSearch(keyword) {
-            let searches = JSON.parse(localStorage.getItem('colorPaletteRecentSearches') || '[]');
-            searches = [keyword, ...searches.filter(s => s !== keyword)];
-            searches = searches.slice(0, 5);
-            localStorage.setItem('colorPaletteRecentSearches', JSON.stringify(searches));
-            displayRecentSearches();
-        }
-
-        function displayRecentSearches() {
-            const searches = JSON.parse(localStorage.getItem('colorPaletteRecentSearches') || '[]');
-            const container = document.getElementById('recentSearches');
-            if(searches.length === 0) { container.innerHTML = '<p style="color: gray;">No recent searches</p>'; return; }
-            container.innerHTML = searches.map(s => `<div class="trending-topic" onclick="document.getElementById('keywordInput').value='${s}'; generateWithAnimation();">${s}</div>`).join('');
-        }
-
-        let isDark = true;
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            isDark = !isDark;
-            if(isDark) {
-                document.body.classList.remove('light-mode');
-                document.getElementById('themeToggle').innerHTML = '🌙 Dark';
-            } else {
-                document.body.classList.add('light-mode');
-                document.getElementById('themeToggle').innerHTML = '☀️ Light';
-            }
-            localStorage.setItem('colorPaletteTheme', isDark ? 'dark' : 'light');
+                </div>
+            `).join('')}
+        </div>
+        <div class="palette-card">
+            <div class="palette-title">⭐ Accent Colors</div>
+            ${palette.colors.slice(3, 5).map(color => `
+                <div class="color-swatch">
+                    <div class="color-box" style="background: ${color};" data-color="${color}"></div>
+                    <div class="color-info">
+                        <div class="color-hex">${color}</div>
+                        <button class="copy-color-btn" data-color="${color}">📋 Copy HEX</button>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+        <div class="palette-card">
+            <div class="palette-title">🎯 Text & CTA Colors</div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: ${palette.text};" data-color="${palette.text}"></div>
+                <div class="color-info">
+                    <div class="color-hex">${palette.text}</div>
+                    <button class="copy-color-btn" data-color="${palette.text}">📋 Copy HEX</button>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: ${palette.cta};" data-color="${palette.cta}"></div>
+                <div class="color-info">
+                    <div class="color-hex">${palette.cta}</div>
+                    <button class="copy-color-btn" data-color="${palette.cta}">📋 Copy HEX</button>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: ${palette.bg};" data-color="${palette.bg}"></div>
+                <div class="color-info">
+                    <div class="color-hex">${palette.bg}</div>
+                    <button class="copy-color-btn" data-color="${palette.bg}">📋 Copy HEX</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    html += '</div>';
+    
+    document.getElementById('paletteGrid').innerHTML = html;
+    document.getElementById('totalColors').innerText = palette.colors.length;
+    document.getElementById('bestFor').innerText = currentStyle.charAt(0).toUpperCase() + currentStyle.slice(1);
+    
+    // Update thumbnail preview with icon
+    const icon = getNicheIcon(niche);
+    document.getElementById('previewIcon').innerHTML = icon;
+    document.getElementById('thumbnailPreview').style.background = palette.bg;
+    document.getElementById('previewText').style.color = palette.text;
+    document.getElementById('previewCta').style.background = palette.cta;
+    
+    document.querySelectorAll('.copy-color-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const color = btn.getAttribute('data-color');
+            copyToClipboard(color);
+            showToast(`✅ Copied: ${color}`);
         });
-        if(localStorage.getItem('colorPaletteTheme') === 'light') {
-            document.body.classList.add('light-mode');
-            document.getElementById('themeToggle').innerHTML = '☀️ Light';
-        }
+    });
+    
+    document.querySelectorAll('.color-box').forEach(box => {
+        box.addEventListener('click', () => {
+            const color = box.getAttribute('data-color');
+            copyToClipboard(color);
+            showToast(`✅ Copied: ${color}`);
+        });
+    });
+    
+    return palette;
+}
 
-        document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        document.getElementById('generateBtn').addEventListener('click', generateWithAnimation);
-        document.getElementById('copyAllBtn').addEventListener('click', () => {
-            if(!currentPalette) { showToast('⚠️ Generate palette first!'); return; }
-            const allHex = currentPalette.colors.join(', ');
-            copyToClipboard(allHex);
-            showToast('📋 All HEX colors copied!');
-        });
-        document.getElementById('downloadBtn').addEventListener('click', () => {
-            if(!currentPalette) { showToast('⚠️ Generate palette first!'); return; }
-            const text = `Color Palette: ${currentPalette.name}\nMain Colors: ${currentPalette.colors.join(', ')}\nText Color: ${currentPalette.text}\nBackground: ${currentPalette.bg}\nCTA Color: ${currentPalette.cta}`;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = `color_palette_${Date.now()}.txt`;
-            link.click();
-            showToast('💾 Downloaded successfully!');
-        });
-        document.getElementById('keywordInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') generateWithAnimation(); });
-        document.querySelectorAll('.trending-topic').forEach(topic => {
-            topic.addEventListener('click', () => {
-                document.getElementById('keywordInput').value = topic.innerText;
-                generateWithAnimation();
-            });
-        });
-        displayRecentSearches();
-        setTimeout(() => {
-            document.getElementById('keywordInput').value = 'gaming';
-            generateWithAnimation();
-        }, 100);
-    </script>
+function saveRecentSearch(keyword) {
+    let searches = JSON.parse(localStorage.getItem('colorRecentSearches') || '[]');
+    searches = [keyword, ...searches.filter(s => s !== keyword)];
+    searches = searches.slice(0, 5);
+    localStorage.setItem('colorRecentSearches', JSON.stringify(searches));
+    displayRecentSearches();
+}
+
+function displayRecentSearches() {
+    const searches = JSON.parse(localStorage.getItem('colorRecentSearches') || '[]');
+    const container = document.getElementById('recentSearches');
+    if(searches.length === 0) {
+        container.innerHTML = '<p style="color: gray; font-size:12px;">No recent searches</p>';
+        return;
+    }
+    container.innerHTML = searches.map(s => 
+        `<div class="trending-topic" onclick="document.getElementById('keywordInput').value='${s}'; generateAndRender();">${s}</div>`
+    ).join('');
+}
+
+function generateAndRender() {
+    let keyword = document.getElementById('keywordInput').value.trim();
+    if(!keyword) keyword = 'gaming';
+    
+    const btn = document.getElementById('generateBtn');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<span class="loading-spinner"></span> Generating Palette...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+        const palette = generateColorPalette(currentStyle);
+        currentPalette = palette;
+        renderPalette(palette, keyword);
+        saveRecentSearch(keyword);
+        showToast(`✨ Generated ${currentStyle} color palette for "${keyword}"!`);
+        btn.innerHTML = original;
+        btn.disabled = false;
+    }, 500);
+}
+
+// Event Listeners
+document.getElementById('generateBtn').addEventListener('click', generateAndRender);
+document.getElementById('copyAllBtn').addEventListener('click', () => {
+    if(!currentPalette) { showToast('⚠️ Generate palette first!'); return; }
+    const allHex = currentPalette.colors.join(', ');
+    copyToClipboard(allHex);
+    showToast('📋 All HEX colors copied!');
+});
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    if(!currentPalette) { showToast('⚠️ Generate palette first!'); return; }
+    const text = `Color Palette: ${currentPalette.name}\nMain Colors: ${currentPalette.colors.join(', ')}\nText Color: ${currentPalette.text}\nBackground: ${currentPalette.bg}\nCTA Color: ${currentPalette.cta}`;
+    const blob = new Blob([text], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `color_palette_${Date.now()}.txt`;
+    a.click();
+    showToast('💾 Downloaded!');
+});
+document.getElementById('keywordInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') generateAndRender(); });
+
+// Trending topics click
+document.querySelectorAll('.trending-topic').forEach(topic => {
+    topic.addEventListener('click', () => {
+        const topicText = topic.getAttribute('data-topic');
+        document.getElementById('keywordInput').value = topicText;
+        generateAndRender();
+    });
+});
+
+displayRecentSearches();
+
+// Initial demo
+setTimeout(() => {
+    document.getElementById('keywordInput').value = 'gaming';
+    generateAndRender();
+}, 200);
+</script>
 </body>
 </html>
