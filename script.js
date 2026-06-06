@@ -1,5 +1,5 @@
 // =========================================================================
-// CENTRALIZED TOOLS DATABASE (COMPLETE - CUSTOM ORDER)
+// CENTRALIZED TOOLS DATABASE (COMPLETE - 150 TOOLS)
 // =========================================================================
 const toolsDatabase = {
   // 1. MOST POPULAR TOOLS
@@ -56,7 +56,49 @@ const toolsDatabase = {
     ]
   },
 
-  // 4. RANDOM & FUN TOOLS
+  // 4. 🎬 YOUTUBE TOOLS (24 TOOLS)
+  catYoutube: {
+    name: "🎬 YouTube Tools",
+    tools: [
+      // YouTube SEO & Analytics (7 tools)
+      "YouTube SEO Score Checker",
+      "YouTube Keyword Generator",
+      "YouTube Keyword Research",
+      "YouTube Channel Analyzer",
+      "YouTube Channel Comparison",
+      "YouTube Viral Video Predictor",
+      "YouTube SEO Checklist Generator",
+      
+      // YouTube Content Creation (5 tools)
+      "YouTube Title Generator",
+      "YouTube Description Generator",
+      "YouTube Video Idea Generator",
+      "YouTube Video Outline Generator",
+      "YouTube Content Planner AI",
+      
+      // YouTube Tags & Hashtags (3 tools)
+      "YouTube Video Tags Extractor",
+      "YouTube Video Tags Generator",
+      "YouTube Hashtag Generator",
+      
+      // YouTube Thumbnail Tools (4 tools)
+      "YouTube Thumbnail Downloader",
+      "YouTube Thumbnail Text Generator",
+      "YouTube Thumbnail Color Palette Generator",
+      "YouTube Thumbnail Split Tester",
+      
+      // YouTube Shorts Tools (3 tools)
+      "YouTube Shorts Hook Generator",
+      "YouTube Shorts Script Generator",
+      "YouTube Shorts Idea Calendar Generator",
+      
+      // YouTube Branding & Community (2 tools)
+      "YouTube Channel Name Generator",
+      "YouTube Community Post Generator"
+    ]
+  },
+
+  // 5. RANDOM & FUN TOOLS
   catFun: {
     name: "🎲 Random & Fun Tools",
     tools: [
@@ -92,7 +134,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 5. COLOR TOOLS
+  // 6. COLOR TOOLS
   catColor: {
     name: "🎨 Color Tools",
     tools: [
@@ -105,7 +147,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 6. PDF TOOLS
+  // 7. PDF TOOLS
   catPdf: {
     name: "📄 PDF Tools",
     tools: [
@@ -124,7 +166,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 7. IMAGE TOOLS
+  // 8. IMAGE TOOLS
   catImage: {
     name: "🖼️ Image Tools",
     tools: [
@@ -138,7 +180,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 8. POPULAR CALCULATORS
+  // 9. POPULAR CALCULATORS
   catPop: {
     name: "📊 Popular Calculators",
     tools: [
@@ -157,7 +199,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 9. DEVELOPER & SECURITY TOOLS
+  // 10. DEVELOPER & SECURITY TOOLS
   catDev: {
     name: "🔐 Developer & Security Tools",
     tools: [
@@ -170,7 +212,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 10. HEALTH & FITNESS
+  // 11. HEALTH & FITNESS
   catHealth: {
     name: "🏃‍♂️ Health & Fitness",
     tools: [
@@ -181,7 +223,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 11. FINANCIAL TOOLS
+  // 12. FINANCIAL TOOLS
   catFin: {
     name: "💰 Financial Tools",
     tools: [
@@ -192,7 +234,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 12. TEXT & WRITING TOOLS
+  // 13. TEXT & WRITING TOOLS
   catText: {
     name: "📝 Text & Writing Tools",
     tools: [
@@ -204,7 +246,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 13. ANIMAL PREGNANCY TOOLS
+  // 14. ANIMAL PREGNANCY TOOLS
   catPreg: {
     name: "🐾 Animal Pregnancy Tools",
     tools: [
@@ -221,7 +263,7 @@ const toolsDatabase = {
 };
 
 // =========================================================================
-// TOOL URL MAPPING (COMPLETE)
+// TOOL URL MAPPING (COMPLETE - WITH ALL 24 YOUTUBE TOOLS)
 // =========================================================================
 const toolUrlMap = {
     "Keyword Density Checker": "keyword-density-checker.html",
@@ -238,6 +280,8 @@ const toolUrlMap = {
     "Heading Structure Checker": "heading-structure-checker.html",
     "Image Alt Analyzer": "image-alt-analyzer.html",
     "XML Sitemap Generator": "xml-sitemap-generator.html",
+    
+    // Social Media Hashtag Tools
     "Instagram Hashtag Generator": "instagram-hashtag-generator.html",
     "LinkedIn Hashtag Generator": "linkedin-hashtag-generator.html",
     "Facebook Hashtag Generator": "facebook-hashtag-generator.html",
@@ -252,6 +296,8 @@ const toolUrlMap = {
     "Viral Hashtag Generator": "viral-hashtag-generator.html",
     "YouTube Hashtag Generator": "youtube-hashtag-generator.html",
     "Social Media Caption Generator": "social-media-caption-generator.html",
+    
+    // Animal Pregnancy Tools
     "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
     "Cat Pregnancy Calculator": "cat-pregnancy-calculator.html",
     "Cow Pregnancy Calculator": "cow-pregnancy-calculator.html",
@@ -260,18 +306,24 @@ const toolUrlMap = {
     "Horse Pregnancy Calculator": "horse-pregnancy-calculator.html",
     "Sheep Pregnancy Calculator": "sheep-pregnancy-calculator.html",
     "Pig Pregnancy Calculator": "pig-pregnancy-calculator.html",
+    
+    // Developer & Security Tools
     "MD5 Hash Generator": "md5-generator.html",
     "SHA-256 Hash Generator": "sha256-generator.html",
     "SHA-1 Hash Generator": "sha1-generator.html",
     "Base64 Encoder/Decoder": "base64-encoder-decoder.html",
     "URL Encoder/Decoder": "url-encoder-decoder.html",
     "HTML Encoder/Decoder": "html-encoder-decoder.html",
+    
+    // Color Tools
     "Color Palette Generator": "color-palette-generator.html",
     "Color Shades Generator": "color-shades-generator.html",
     "Color Gradient Maker": "color-gradient-maker.html",
     "Color Contrast Checker": "color-contrast-checker.html",
     "Color Name Finder": "color-name-finder.html",
     "Random Color Picker": "random-color-picker.html",
+    
+    // Popular Calculators
     "Unit Converter": "unit-converter.html",
     "Age Calculator": "age-calculator.html",
     "Age Difference Calculator": "age-difference-calculator.html",
@@ -284,19 +336,27 @@ const toolUrlMap = {
     "QR Code Generator": "qr-code-generator.html",
     "YouTube Thumbnail Downloader": "youtube-thumbnail-downloader.html",
     "Currency Converter": "currency-converter.html",
+    
+    // Health & Fitness
     "BMI Calculator": "bmi-calculator.html",
     "BMR Calculator": "bmr-calculator.html",
     "Calorie Calculator": "calorie-calculator.html",
     "TDEE Calculator": "tdee-calculator.html",
+    
+    // Financial Tools
     "EMI Calculator": "emi-calculator.html",
     "Loan Calculator": "loan-calculator.html",
     "Zakat Calculator": "zakat-calculator.html",
     "SIP Calculator": "sip-calculator.html",
+    
+    // Text & Writing Tools
     "Word Counter": "word-counter.html",
     "Line Counter": "line-counter.html",
     "Text Case Converter": "text-case-converter.html",
     "Password Generator": "password-generator.html",
     "Password Strength Checker": "password-checker.html",
+    
+    // PDF Tools
     "PDF Merger": "pdf-merger.html",
     "PDF Splitter": "pdf-splitter.html",
     "PDF to Image": "pdf-to-image.html",
@@ -309,6 +369,8 @@ const toolUrlMap = {
     "PDF to Excel": "pdf-to-excel.html",
     "PDF to Text": "pdf-to-text.html",
     "PDF Rotator": "pdf-rotator.html",
+    
+    // Image Tools
     "Image Color Extractor": "image-color-extractor.html",
     "Image Converter": "image-converter.html",
     "Image Cropper": "image-cropper.html",
@@ -316,6 +378,8 @@ const toolUrlMap = {
     "Image to PDF": "image-to-pdf.html",
     "Image Upscaler": "image-upscaler.html",
     "Image Compressor": "image-compressor.html",
+    
+    // Wheel Games
     "Spin The Wheel": "spin-the-wheel.html",
     "Yes/No Wheel": "yes-no-wheel.html",
     "Decision Roulette": "decision-roulette.html",
@@ -344,7 +408,44 @@ const toolUrlMap = {
     "Party Games Spin Wheel": "party-games-spin-wheel.html",
     "Drinking Game Spin Wheel": "drinking-game-spin-wheel.html",
     "Board Game Spin Wheel": "board-game-spin-wheel.html",
-    "Carnival Game Spin Wheel": "carnival-game-spin-wheel.html"
+    "Carnival Game Spin Wheel": "carnival-game-spin-wheel.html",
+
+    // ========== YOUTUBE TOOLS (ALL 24 - INSIDE OBJECT) ==========
+    // YouTube SEO & Analytics (7 tools)
+    "YouTube SEO Score Checker": "youtube-seo-score-checker.html",
+    "YouTube Keyword Generator": "youtube-keyword-generator.html",
+    "YouTube Keyword Research": "youtube-keyword-research.html",
+    "YouTube Channel Analyzer": "youtube-channel-analyzer.html",
+    "YouTube Channel Comparison": "youtube-channel-comparison.html",
+    "YouTube Viral Video Predictor": "youtube-viral-video-predictor.html",
+    "YouTube SEO Checklist Generator": "youtube-seo-checklist-generator.html",
+    
+    // YouTube Content Creation (5 tools)
+    "YouTube Title Generator": "youtube-title-generator.html",
+    "YouTube Description Generator": "youtube-description-generator.html",
+    "YouTube Video Idea Generator": "youtube-video-idea-generator.html",
+    "YouTube Video Outline Generator": "youtube-video-outline-generator.html",
+    "YouTube Content Planner AI": "youtube-content-planner-ai.html",
+    
+    // YouTube Tags & Hashtags (3 tools)
+    "YouTube Video Tags Extractor": "youtube-video-tags-extractor.html",
+    "YouTube Video Tags Generator": "youtube-video-tags-generator.html",
+    "YouTube Hashtag Generator": "youtube-hashtag-generator-v2.html",
+    
+    // YouTube Thumbnail Tools (4 tools)
+    "YouTube Thumbnail Downloader": "youtube-thumbnail-downloader.html",
+    "YouTube Thumbnail Text Generator": "youtube-thumbnail-text-generator.html",
+    "YouTube Thumbnail Color Palette Generator": "youtube-thumbnail-color-palette-generator.html",
+    "YouTube Thumbnail Split Tester": "youtube-thumbnail-split-tester.html",
+    
+    // YouTube Shorts Tools (3 tools)
+    "YouTube Shorts Hook Generator": "youtube-shorts-hook-generator.html",
+    "YouTube Shorts Script Generator": "youtube-shorts-script-generator.html",
+    "YouTube Shorts Idea Calendar Generator": "youtube-shorts-idea-calendar-generator.html",
+    
+    // YouTube Branding & Community (2 tools)
+    "YouTube Channel Name Generator": "youtube-channel-name-generator.html",
+    "YouTube Community Post Generator": "youtube-community-post-generator.html"
 };
 
 function getUrl(toolName) {
@@ -353,18 +454,28 @@ function getUrl(toolName) {
     }
     return "https://freeonlinetools203.com/" + toolName.toLowerCase().trim().replace(/ /g, '-').replace(/[^\w\-]/g, '') + '.html';
 }
-
 // =========================================================================
-// RENDER DASHBOARD (CUSTOM ORDER)
+// RENDER DASHBOARD (CUSTOM ORDER - WITH YOUTUBE CATEGORY)
 // =========================================================================
 function renderDashboard() {
     const container = document.getElementById('toolsContainer');
     if (!container) return;
     
     const orderedCategoryKeys = [
-        "catMostPopular", "catHash", "catSeo", "catFun", "catColor",
-        "catPdf", "catImage", "catPop", "catDev", "catHealth",
-        "catFin", "catText", "catPreg"
+        "catMostPopular", 
+        "catHash", 
+        "catSeo", 
+        "catYoutube",      // ✅ YOUTUBE TOOLS CATEGORY ADDED
+        "catFun", 
+        "catColor",
+        "catPdf", 
+        "catImage", 
+        "catPop", 
+        "catDev", 
+        "catHealth",
+        "catFin", 
+        "catText", 
+        "catPreg"
     ];
     
     let html = '';
@@ -380,7 +491,6 @@ function renderDashboard() {
     }
     container.innerHTML = html;
 }
-
 // =========================================================================
 // GENERATE MOBILE MENU
 // =========================================================================
@@ -553,27 +663,44 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="carnival-game-spin-wheel.html">🎪 Carnival Game Spin Wheel</a>
           </div>
           
-          <!-- COLUMN 3: YouTube Tools (NEW COLUMN) -->
-          <div class="dropdown-column">
-            <h4>🎬 YouTube Tools</h4>
-            <a href="youtube-seo-score-checker.html">📊 YouTube SEO Score Checker</a>
-            <a href="youtube-keyword-generator.html">🔑 YouTube Keyword Generator</a>
-            <a href="youtube-keyword-research.html">📈 YouTube Keyword Research</a>
-            <a href="youtube-video-tags-extractor.html">🏷️ YouTube Video Tags Extractor</a>
-            <a href="youtube-video-tags-generator.html">🏷️ YouTube Video Tags Generator</a>
-            <a href="youtube-title-generator.html">📝 YouTube Title Generator</a>
-            <a href="youtube-description-generator.html">📄 YouTube Description Generator</a>
-            <a href="youtube-channel-analyzer.html">📺 YouTube Channel Analyzer</a>
-            <a href="youtube-channel-comparison.html">⚖️ YouTube Channel Comparison</a>
-            <a href="youtube-channel-name-generator.html">🎬 YouTube Channel Name Generator</a>
-            <a href="youtube-content-planner-ai.html">📅 YouTube Content Planner AI</a>
-            <a href="youtube-community-post-generator.html">💬 YouTube Community Post Generator</a>
-            <a href="youtube-video-idea-generator.html">💡 YouTube Video Idea Generator</a>
-            <a href="youtube-shorts-hook-generator.html">🎯 YouTube Shorts Hook Generator</a>
-            <a href="youtube-viral-video-predictor.html">🚀 YouTube Viral Video Predictor</a>
-            <a href="youtube-hashtag-generator-v2.html">#️⃣ YouTube Hashtag Generator</a>
-            <a href="youtube-thumbnail-downloader.html">🖼️ YouTube Thumbnail Downloader</a>
-          </div>
+         <!-- COLUMN 3: YouTube Tools (UPDATED - ALL 24 TOOLS) -->
+<div class="dropdown-column">
+    <h4>🎬 YouTube SEO & Analytics</h4>
+    <a href="youtube-seo-score-checker.html">📊 YouTube SEO Score Checker</a>
+    <a href="youtube-keyword-generator.html">🔑 YouTube Keyword Generator</a>
+    <a href="youtube-keyword-research.html">📈 YouTube Keyword Research</a>
+    <a href="youtube-channel-analyzer.html">📺 YouTube Channel Analyzer</a>
+    <a href="youtube-channel-comparison.html">⚖️ YouTube Channel Comparison</a>
+    <a href="youtube-viral-video-predictor.html">🚀 YouTube Viral Video Predictor</a>
+    <a href="youtube-seo-checklist-generator.html">✅ YouTube SEO Checklist Generator</a>
+    
+    <h4>📝 YouTube Content Creation</h4>
+    <a href="youtube-title-generator.html">📝 YouTube Title Generator</a>
+    <a href="youtube-description-generator.html">📄 YouTube Description Generator</a>
+    <a href="youtube-video-idea-generator.html">💡 YouTube Video Idea Generator</a>
+    <a href="youtube-video-outline-generator.html">📋 YouTube Video Outline Generator</a>
+    <a href="youtube-content-planner-ai.html">📅 YouTube Content Planner AI</a>
+    
+    <h4>🏷️ YouTube Tags & Hashtags</h4>
+    <a href="youtube-video-tags-extractor.html">🏷️ YouTube Video Tags Extractor</a>
+    <a href="youtube-video-tags-generator.html">🏷️ YouTube Video Tags Generator</a>
+    <a href="youtube-hashtag-generator-v2.html">#️⃣ YouTube Hashtag Generator</a>
+    
+    <h4>🎨 YouTube Thumbnail Tools</h4>
+    <a href="youtube-thumbnail-downloader.html">🖼️ YouTube Thumbnail Downloader</a>
+    <a href="youtube-thumbnail-text-generator.html">🎨 YouTube Thumbnail Text Generator</a>
+    <a href="youtube-thumbnail-color-palette-generator.html">🎨 YouTube Thumbnail Color Palette</a>
+    <a href="youtube-thumbnail-split-tester.html">🔄 YouTube Thumbnail Split Tester</a>
+    
+    <h4>📱 YouTube Shorts Tools</h4>
+    <a href="youtube-shorts-hook-generator.html">🎯 YouTube Shorts Hook Generator</a>
+    <a href="youtube-shorts-script-generator.html">🎬 YouTube Shorts Script Generator</a>
+    <a href="youtube-shorts-idea-calendar-generator.html">📅 YouTube Shorts Idea Calendar</a>
+    
+    <h4>🎬 YouTube Branding & Community</h4>
+    <a href="youtube-channel-name-generator.html">🎬 YouTube Channel Name Generator</a>
+    <a href="youtube-community-post-generator.html">💬 YouTube Community Post Generator</a>
+</div>
           
           <!-- COLUMN 4: Color + PDF + Image -->
           <div class="dropdown-column">
