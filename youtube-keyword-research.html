@@ -348,70 +348,52 @@ function getBadge(rank) {
     return { text: '⭐ LOW', class: 'low' };
 }
 
-// ========== 100% DUPLICATE-FREE KEYWORD GENERATION ==========
+// ========== 100% DUPLICATE-FREE - Set based generation ==========
 function researchKeywords(seed) {
     const lowerSeed = seed.toLowerCase().trim();
     
-    // Create Set - automatically removes duplicates
+    // Use Set - automatically removes duplicates
     let keywordsSet = new Set();
     
-    // Define all unique variations (NO DUPLICATES in this list)
-    const variations = [
-        lowerSeed,
-        `how to ${lowerSeed}`,
-        `best ${lowerSeed}`,
-        `top ${lowerSeed}`,
-        `new ${lowerSeed}`,
-        `free ${lowerSeed}`,
-        `learn ${lowerSeed}`,
-        `${lowerSeed} tips`,
-        `${lowerSeed} tutorial`,
-        `${lowerSeed} guide`,
-        `${lowerSeed} basics`,
-        `${lowerSeed} strategies`,
-        `${lowerSeed} tools`,
-        `${lowerSeed} software`,
-        `${lowerSeed} secrets`,
-        `${lowerSeed} hacks`,
-        `${lowerSeed} skills`,
-        `${lowerSeed} training`,
-        `${lowerSeed} mastery`,
-        `${lowerSeed} success`,
-        `${lowerSeed} review`,
-        `${lowerSeed} examples`,
-        `${lowerSeed} case study`,
-        `${lowerSeed} podcast`,
-        `${lowerSeed} webinar`,
-        `${lowerSeed} template`,
-        `${lowerSeed} checklist`,
-        `${lowerSeed} resources`,
-        `${lowerSeed} certification`,
-        `${lowerSeed} course`,
-        `${lowerSeed} roadmap`,
-        `${lowerSeed} expert`,
-        `${lowerSeed} mistakes to avoid`,
-        `${lowerSeed} online`,
-        `${lowerSeed} 2026`,
-        `${lowerSeed} for beginners`,
-        `advanced ${lowerSeed}`,
-        `complete ${lowerSeed}`,
-        `why ${lowerSeed} is important`,
-        `what is ${lowerSeed}`,
-        `${lowerSeed} youtube channel`,
-        `${lowerSeed} instagram`,
-        `${lowerSeed} tiktok`,
-        `${lowerSeed} linkedin`,
-        `${lowerSeed} twitter`,
-        `${lowerSeed} vs competitor`,
-        `${lowerSeed} community`,
-        `${lowerSeed} forum`
+    // Add the seed keyword first
+    keywordsSet.add(lowerSeed);
+    
+    // Common suffix variations
+    const suffixes = [
+        'tips', 'tutorial', 'guide', 'basics', 'strategies', 'tools', 'software',
+        'secrets', 'hacks', 'skills', 'training', 'mastery', 'success', 'review',
+        'examples', 'case study', 'podcast', 'webinar', 'template', 'checklist',
+        'resources', 'certification', 'course', 'roadmap', 'expert', 'mistakes to avoid',
+        'online', 'for beginners', 'community', 'forum', 'youtube channel', 'instagram',
+        'tiktok', 'linkedin', 'twitter', 'facebook', 'vs competitor', '2026'
     ];
     
-    // Add all variations to Set (duplicates automatically ignored)
-    variations.forEach(v => keywordsSet.add(v));
+    // Add suffix variations
+    suffixes.forEach(suffix => {
+        keywordsSet.add(`${lowerSeed} ${suffix}`);
+    });
+    
+    // Prefix variations
+    const prefixes = ['best', 'top', 'new', 'free', 'learn', 'how to', 'what is', 'why', 'advanced', 'complete'];
+    prefixes.forEach(prefix => {
+        if (prefix === 'how to') keywordsSet.add(`how to ${lowerSeed}`);
+        else if (prefix === 'what is') keywordsSet.add(`what is ${lowerSeed}`);
+        else if (prefix === 'why') keywordsSet.add(`why ${lowerSeed} is important`);
+        else if (prefix === 'how to') {} // already added
+        else keywordsSet.add(`${prefix} ${lowerSeed}`);
+    });
+    
+    // Add question-based keywords
+    keywordsSet.add(`why ${lowerSeed} matters`);
+    keywordsSet.add(`${lowerSeed} for beginners`);
+    keywordsSet.add(`${lowerSeed} online`);
     
     // Convert Set to Array
     let keywordArray = Array.from(keywordsSet);
+    
+    // Remove any remaining duplicates (extra safety)
+    let finalSet = new Set(keywordArray);
+    keywordArray = Array.from(finalSet);
     
     // Shuffle
     for (let i = keywordArray.length - 1; i > 0; i--) {
