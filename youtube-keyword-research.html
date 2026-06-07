@@ -348,75 +348,78 @@ function getBadge(rank) {
     return { text: '⭐ LOW', class: 'low' };
 }
 
-// ========== FIXED: NO DUPLICATE KEYWORDS (Using Set) ==========
+// ========== 100% DUPLICATE-FREE KEYWORD GENERATION ==========
 function researchKeywords(seed) {
     const lowerSeed = seed.toLowerCase().trim();
     
-    // Use Set - automatically removes duplicates
+    // Create Set - automatically removes duplicates
     let keywordsSet = new Set();
     
-    // Add unique variations (each added once)
-    keywordsSet.add(lowerSeed);
-    keywordsSet.add(`${lowerSeed} tips`);
-    keywordsSet.add(`best ${lowerSeed}`);
-    keywordsSet.add(`how to ${lowerSeed}`);
-    keywordsSet.add(`${lowerSeed} tutorial`);
-    keywordsSet.add(`${lowerSeed} for beginners`);
-    keywordsSet.add(`advanced ${lowerSeed}`);
-    keywordsSet.add(`${lowerSeed} 2026`);
-    keywordsSet.add(`learn ${lowerSeed}`);
-    keywordsSet.add(`${lowerSeed} course`);
-    keywordsSet.add(`${lowerSeed} guide`);
-    keywordsSet.add(`${lowerSeed} basics`);
-    keywordsSet.add(`${lowerSeed} strategies`);
-    keywordsSet.add(`${lowerSeed} tools`);
-    keywordsSet.add(`${lowerSeed} software`);
-    keywordsSet.add(`${lowerSeed} secrets`);
-    keywordsSet.add(`${lowerSeed} hacks`);
-    keywordsSet.add(`${lowerSeed} mistakes to avoid`);
-    keywordsSet.add(`${lowerSeed} success`);
-    keywordsSet.add(`top ${lowerSeed}`);
-    keywordsSet.add(`new ${lowerSeed}`);
-    keywordsSet.add(`${lowerSeed} expert`);
-    keywordsSet.add(`${lowerSeed} mastery`);
-    keywordsSet.add(`${lowerSeed} skills`);
-    keywordsSet.add(`${lowerSeed} training`);
-    keywordsSet.add(`free ${lowerSeed}`);
-    keywordsSet.add(`${lowerSeed} online`);
-    keywordsSet.add(`${lowerSeed} certification`);
-    keywordsSet.add(`${lowerSeed} roadmap`);
-    keywordsSet.add(`complete ${lowerSeed}`);
-    keywordsSet.add(`${lowerSeed} checklist`);
-    keywordsSet.add(`${lowerSeed} resources`);
-    keywordsSet.add(`${lowerSeed} community`);
-    keywordsSet.add(`${lowerSeed} forum`);
-    keywordsSet.add(`${lowerSeed} podcast`);
-    keywordsSet.add(`${lowerSeed} youtube channel`);
-    keywordsSet.add(`${lowerSeed} instagram`);
-    keywordsSet.add(`${lowerSeed} tiktok`);
-    keywordsSet.add(`${lowerSeed} linkedin`);
-    keywordsSet.add(`${lowerSeed} twitter`);
-    keywordsSet.add(`what is ${lowerSeed}`);
-    keywordsSet.add(`why ${lowerSeed} is important`);
-    keywordsSet.add(`${lowerSeed} vs competitor`);
-    keywordsSet.add(`${lowerSeed} review`);
-    keywordsSet.add(`${lowerSeed} case study`);
-    keywordsSet.add(`${lowerSeed} interview`);
-    keywordsSet.add(`${lowerSeed} webinar`);
-    keywordsSet.add(`${lowerSeed} ebook`);
-    keywordsSet.add(`${lowerSeed} template`);
-    keywordsSet.add(`${lowerSeed} examples`);
+    // Define all unique variations (NO DUPLICATES in this list)
+    const variations = [
+        lowerSeed,
+        `how to ${lowerSeed}`,
+        `best ${lowerSeed}`,
+        `top ${lowerSeed}`,
+        `new ${lowerSeed}`,
+        `free ${lowerSeed}`,
+        `learn ${lowerSeed}`,
+        `${lowerSeed} tips`,
+        `${lowerSeed} tutorial`,
+        `${lowerSeed} guide`,
+        `${lowerSeed} basics`,
+        `${lowerSeed} strategies`,
+        `${lowerSeed} tools`,
+        `${lowerSeed} software`,
+        `${lowerSeed} secrets`,
+        `${lowerSeed} hacks`,
+        `${lowerSeed} skills`,
+        `${lowerSeed} training`,
+        `${lowerSeed} mastery`,
+        `${lowerSeed} success`,
+        `${lowerSeed} review`,
+        `${lowerSeed} examples`,
+        `${lowerSeed} case study`,
+        `${lowerSeed} podcast`,
+        `${lowerSeed} webinar`,
+        `${lowerSeed} template`,
+        `${lowerSeed} checklist`,
+        `${lowerSeed} resources`,
+        `${lowerSeed} certification`,
+        `${lowerSeed} course`,
+        `${lowerSeed} roadmap`,
+        `${lowerSeed} expert`,
+        `${lowerSeed} mistakes to avoid`,
+        `${lowerSeed} online`,
+        `${lowerSeed} 2026`,
+        `${lowerSeed} for beginners`,
+        `advanced ${lowerSeed}`,
+        `complete ${lowerSeed}`,
+        `why ${lowerSeed} is important`,
+        `what is ${lowerSeed}`,
+        `${lowerSeed} youtube channel`,
+        `${lowerSeed} instagram`,
+        `${lowerSeed} tiktok`,
+        `${lowerSeed} linkedin`,
+        `${lowerSeed} twitter`,
+        `${lowerSeed} vs competitor`,
+        `${lowerSeed} community`,
+        `${lowerSeed} forum`
+    ];
+    
+    // Add all variations to Set (duplicates automatically ignored)
+    variations.forEach(v => keywordsSet.add(v));
     
     // Convert Set to Array
     let keywordArray = Array.from(keywordsSet);
     
-    // Shuffle for better variety
+    // Shuffle
     for (let i = keywordArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [keywordArray[i], keywordArray[j]] = [keywordArray[j], keywordArray[i]];
     }
     
-    // Add frequency and rank
+    // Create final list with ranks
     let keywords = keywordArray.map((word, idx) => ({ 
         word: word, 
         freq: 50 - idx, 
@@ -424,10 +427,10 @@ function researchKeywords(seed) {
     }));
     
     return { 
-        keywords: keywords.slice(0, 45), 
+        keywords: keywords, 
         totalVideos: 50, 
-        totalTitleWords: keywords.length * 2, 
-        totalTags: keywords.length 
+        totalTitleWords: keywordArray.length * 2, 
+        totalTags: keywordArray.length 
     };
 }
 
