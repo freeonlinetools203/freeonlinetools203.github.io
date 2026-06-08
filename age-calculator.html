@@ -1319,7 +1319,7 @@ body {
 }
 </style>
 <script>
-// ========== AGE CALCULATOR - WORKING SCRIPT ==========
+// ========== AGE CALCULATOR - BUTTON PRESS PAR HI RESULT ==========
 
 // Update live date and time
 function updateLiveDateTime() {
@@ -1360,6 +1360,13 @@ function calculateAge(birthDate) {
 let ageUpdateInterval = null;
 let colorInterval = null;
 
+function stopAgeUpdates() {
+    if (ageUpdateInterval) {
+        clearInterval(ageUpdateInterval);
+        ageUpdateInterval = null;
+    }
+}
+
 function updateAgeDisplay() {
     const dobStr = document.getElementById('dobDate').value;
     if (!dobStr) return;
@@ -1381,7 +1388,7 @@ function updateAgeDisplay() {
 }
 
 function startAgeUpdates() {
-    if (ageUpdateInterval) clearInterval(ageUpdateInterval);
+    stopAgeUpdates();
     updateAgeDisplay();
     ageUpdateInterval = setInterval(updateAgeDisplay, 1000);
 }
@@ -1413,6 +1420,7 @@ function showToast(message) {
     setTimeout(() => toast.remove(), 3000);
 }
 
+// SIRF BUTTON PRESS KARNE PAR YE FUNCTION CHALEGA
 function calculateAndStartAge() {
     const dobStr = document.getElementById('dobDate').value;
     if (!dobStr) {
@@ -1431,13 +1439,18 @@ function calculateAndStartAge() {
         return;
     }
     
+    // Show result box
     document.getElementById('resultBox').style.display = 'block';
+    
+    // Calculate and start live updates
     updateAgeDisplay();
     startAgeUpdates();
     startColorAnimation();
+    
     showToast('✅ Age calculated successfully!');
 }
 
+// Set default date (25 years ago) - BUT AUTO-CALCULATE NAHI KAREGA
 function setDefaultDate() {
     const today = new Date();
     const defaultDate = new Date(today.getFullYear() - 25, 0, 1);
@@ -1448,11 +1461,13 @@ function setDefaultDate() {
     if (dobInput) dobInput.value = `${year}-${month}-${day}`;
 }
 
+// Initialize - sirf time update hoga, age nahi
 document.addEventListener('DOMContentLoaded', function() {
     setDefaultDate();
     updateLiveDateTime();
     setInterval(updateLiveDateTime, 1000);
-    calculateAndStartAge();
+    // NOTE: calculateAndStartAge() YAHAN NAHI CALL HOGA
+    // Ab sirf button press karne se result show hoga
 });
 
 window.calculateAndStartAge = calculateAndStartAge;
