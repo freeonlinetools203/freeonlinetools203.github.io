@@ -1318,5 +1318,144 @@ body {
     }
 }
 </style>
+<script>
+// ========== AGE CALCULATOR - WORKING SCRIPT ==========
+
+// Update live date and time
+function updateLiveDateTime() {
+    const now = new Date();
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateElem = document.getElementById('liveDate');
+    if (dateElem) dateElem.innerText = now.toLocaleDateString(undefined, dateOptions);
+    
+    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const timeElem = document.getElementById('liveTime');
+    if (timeElem) timeElem.innerText = now.toLocaleTimeString(undefined, timeOptions);
+    
+    const tzElem = document.getElementById('liveTimezone');
+    if (tzElem) tzElem.innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+}
+
+// Calculate age from birth date
+function calculateAge(birthDate) {
+    const today = new Date();
+    
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+    
+    if (days < 0) {
+        months--;
+        const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+        days += lastMonth.getDate();
+    }
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+    
+    return { years, months, days };
+}
+
+let ageUpdateInterval = null;
+let colorInterval = null;
+
+function updateAgeDisplay() {
+    const dobStr = document.getElementById('dobDate').value;
+    if (!dobStr) return;
+    
+    const birthDate = new Date(dobStr);
+    if (isNaN(birthDate.getTime())) return;
+    if (birthDate > new Date()) return;
+    
+    const age = calculateAge(birthDate);
+    
+    document.getElementById('years').innerText = age.years;
+    document.getElementById('months').innerText = age.months;
+    document.getElementById('days').innerText = age.days;
+    
+    const now = new Date();
+    document.getElementById('hours').innerText = now.getHours().toString().padStart(2, '0');
+    document.getElementById('minutes').innerText = now.getMinutes().toString().padStart(2, '0');
+    document.getElementById('seconds').innerText = now.getSeconds().toString().padStart(2, '0');
+}
+
+function startAgeUpdates() {
+    if (ageUpdateInterval) clearInterval(ageUpdateInterval);
+    updateAgeDisplay();
+    ageUpdateInterval = setInterval(updateAgeDisplay, 1000);
+}
+
+function startColorAnimation() {
+    if (colorInterval) clearInterval(colorInterval);
+    
+    const colors = ['#10b981', '#059669', '#047857', '#065f46', '#34d399', '#6ee7b7', '#a7f3d0', '#d1fae5'];
+    let colorIndex = 0;
+    
+    colorInterval = setInterval(() => {
+        const liveBadge = document.querySelector('.live-badge');
+        if (liveBadge) {
+            liveBadge.style.transition = 'background-color 0.5s ease';
+            liveBadge.style.backgroundColor = colors[colorIndex % colors.length];
+            colorIndex++;
+        }
+    }, 1000);
+}
+
+function showToast(message) {
+    const existing = document.querySelector('.toast-notification');
+    if (existing) existing.remove();
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+function calculateAndStartAge() {
+    const dobStr = document.getElementById('dobDate').value;
+    if (!dobStr) {
+        showToast('❌ Please select your date of birth!');
+        return;
+    }
+    
+    const birthDate = new Date(dobStr);
+    if (isNaN(birthDate.getTime())) {
+        showToast('❌ Invalid date!');
+        return;
+    }
+    
+    if (birthDate > new Date()) {
+        showToast('❌ Date of birth cannot be in the future!');
+        return;
+    }
+    
+    document.getElementById('resultBox').style.display = 'block';
+    updateAgeDisplay();
+    startAgeUpdates();
+    startColorAnimation();
+    showToast('✅ Age calculated successfully!');
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultDate = new Date(today.getFullYear() - 25, 0, 1);
+    const year = defaultDate.getFullYear();
+    const month = String(defaultDate.getMonth() + 1).padStart(2, '0');
+    const day = String(defaultDate.getDate()).padStart(2, '0');
+    const dobInput = document.getElementById('dobDate');
+    if (dobInput) dobInput.value = `${year}-${month}-${day}`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveDateTime();
+    setInterval(updateLiveDateTime, 1000);
+    calculateAndStartAge();
+});
+
+window.calculateAndStartAge = calculateAndStartAge;
+</script>
 </body>
 </html>
