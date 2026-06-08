@@ -98,41 +98,49 @@ const toolsDatabase = {
     ]
   },
 
-  // 5. RANDOM & FUN TOOLS
-  catFun: {
-    name: "🎲 Random & Fun Tools",
-    tools: [
-      "Spin The Wheel",
-      "Yes/No Wheel",
-      "Decision Roulette",
-      "Random Name Picker",
-      "Random Number Generator",
-      "Prize Wheel",
-      "Task Spinner",
-      "Art Roulette",
-      "Chore Wheel",
-      "Country Picker Wheel",
-      "Decision Wheel",
-      "Dinner Spinner",
-      "Icebreaker Wheel",
-      "Random Fact Wheel",
-      "Zodiac Wheel",
-      "Twister Spinner",
-      "Truth or Dare Generator",
-      "Sketch or Dare",
-      "Hot Seat Challenge",
-      "Holiday Activity Wheel",
-      "Food Picker Wheel",
-      "Drink Picker Wheel",
-      "Exercise Wheel",
-      "Squid Game Spin Wheel",
-      "Game Character Spin Wheel",
-      "Party Games Spin Wheel",
-      "Drinking Game Spin Wheel",
-      "Board Game Spin Wheel",
-      "Carnival Game Spin Wheel"
-    ]
-  },
+ // 5. RANDOM & FUN TOOLS
+catFun: {
+  name: "🎲 Random & Fun Tools",
+  tools: [
+    "Spin The Wheel",
+    "Yes/No Wheel",
+    "Decision Roulette",
+    "Random Name Picker",
+    "Random Number Generator",
+    "Prize Wheel",
+    "Task Spinner",
+    "Art Roulette",
+    "Chore Wheel",
+    "Country Picker Wheel",
+    "Decision Wheel",
+    "Dinner Spinner",
+    "Icebreaker Wheel",
+    "Random Fact Wheel",
+    "Zodiac Wheel",
+    "Twister Spinner",
+    "Truth or Dare Generator",
+    "Sketch or Dare",
+    "Hot Seat Challenge",
+    "Holiday Activity Wheel",
+    "Food Picker Wheel",
+    "Drink Picker Wheel",
+    "Exercise Wheel",
+    "Squid Game Spin Wheel",
+    "Game Character Spin Wheel",
+    "Party Games Spin Wheel",
+    "Drinking Game Spin Wheel",
+    "Board Game Spin Wheel",
+    "Carnival Game Spin Wheel",
+    "Casino Games Wheel",
+    "Lucky Number Wheel",
+    "Lucky Prize Wheel",
+    "Movie Picker Wheel",
+    "Mystery Gift Wheel",
+    "Random Animal Wheel",
+    "Stop Right There Wheel",
+    "Color Wheel"
+  ]
+}
 
   // 6. COLOR TOOLS
   catColor: {
@@ -200,28 +208,32 @@ const toolsDatabase = {
   },
 
   // 10. DEVELOPER & SECURITY TOOLS
-  catDev: {
-    name: "🔐 Developer & Security Tools",
-    tools: [
-      "MD5 Hash Generator",
-      "SHA-256 Hash Generator",
-      "SHA-1 Hash Generator",
-      "Base64 Encoder/Decoder",
-      "URL Encoder/Decoder",
-      "HTML Encoder/Decoder"
-    ]
-  },
+catDev: {
+  name: "🔐 Developer & Security Tools",
+  tools: [
+    "MD5 Hash Generator",
+    "SHA-256 Hash Generator",
+    "SHA-1 Hash Generator",
+    "Base64 Encoder/Decoder",
+    "URL Encoder/Decoder",
+    "HTML Encoder/Decoder",
+    "Advanced QR Generator",
+    "HTML Minifier Pro",
+    "JSON Formatter & Validator"
+  ]
+}
 
-  // 11. HEALTH & FITNESS
-  catHealth: {
-    name: "🏃‍♂️ Health & Fitness",
-    tools: [
-      "BMI Calculator",
-      "BMR Calculator",
-      "Calorie Calculator",
-      "TDEE Calculator"
-    ]
-  },
+ // 11. HEALTH & FITNESS
+catHealth: {
+  name: "🏃‍♂️ Health & Fitness",
+  tools: [
+    "BMI Calculator",
+    "BMR Calculator",
+    "Calorie Calculator",
+    "TDEE Calculator",
+    "Workout Spinner"
+  ]
+}
 
   // 12. FINANCIAL TOOLS
   catFin: {
