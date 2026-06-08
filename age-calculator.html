@@ -1319,7 +1319,7 @@ body {
 }
 </style>
 <script>
-// ========== AGE CALCULATOR - BUTTON PRESS PAR HI RESULT ==========
+// ========== AGE CALCULATOR - SIRF BUTTON PRESS PAR KAAM ==========
 
 // Update live date and time
 function updateLiveDateTime() {
@@ -1450,7 +1450,7 @@ function calculateAndStartAge() {
     showToast('✅ Age calculated successfully!');
 }
 
-// Set default date (25 years ago) - BUT AUTO-CALCULATE NAHI KAREGA
+// Set default date only - NO AUTO CALCULATION
 function setDefaultDate() {
     const today = new Date();
     const defaultDate = new Date(today.getFullYear() - 25, 0, 1);
@@ -1461,13 +1461,14 @@ function setDefaultDate() {
     if (dobInput) dobInput.value = `${year}-${month}-${day}`;
 }
 
-// Initialize - sirf time update hoga, age nahi
+// Initialize - Sirf time update hoga, age AUTOMATIC nahi dikhega
 document.addEventListener('DOMContentLoaded', function() {
     setDefaultDate();
     updateLiveDateTime();
     setInterval(updateLiveDateTime, 1000);
-    // NOTE: calculateAndStartAge() YAHAN NAHI CALL HOGA
-    // Ab sirf button press karne se result show hoga
+    // IMPORTANT: Yahan calculateAndStartAge() CALL NAHI KIYA
+    // Result box initially hidden rahega
+    document.getElementById('resultBox').style.display = 'none';
 });
 
 window.calculateAndStartAge = calculateAndStartAge;
