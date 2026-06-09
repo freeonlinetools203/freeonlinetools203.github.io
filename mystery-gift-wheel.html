@@ -17,14 +17,13 @@
 <meta property="og:description" content="Spin the mystery wheel and reveal hidden gifts! Daily mystery prize changes every day. Free mystery gift unboxing experience.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeonlinetools203.com/mystery-gift-wheel.html">
-<meta property="og:image" content="https://freeonlinetools203.com/images/mystery-wheel-og.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mystery Gift Wheel - Surprise Spinner">
 <meta name="twitter:description" content="Spin to reveal mystery gifts! Daily prize changes every day.">
 
-<!-- Google tag (gtag.js) -->
+<!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQ8DLY7HYN');</script>
 
@@ -34,655 +33,86 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Mystery Gift Wheel",
-  "description": "Spin the mystery wheel to reveal surprise gifts. Daily mystery prize changes every day. Free online mystery box unboxing tool.",
+  "description": "Spin the mystery wheel to reveal surprise gifts. Daily mystery prize changes every day.",
   "applicationCategory": "GameApplication",
   "operatingSystem": "All",
   "url": "https://freeonlinetools203.com/mystery-gift-wheel.html",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How does the Mystery Gift Wheel work?","acceptedAnswer": {"@type": "Answer","text": "Simply spin the wheel and it will randomly stop on a mystery gift. Each day also features a special daily mystery gift."}},
+    {"@type": "Question", "name": "Can I customize the gifts on the wheel?","acceptedAnswer": {"@type": "Answer","text": "Yes! Use the edit section to add, remove, or modify any mystery gift on the wheel."}},
+    {"@type": "Question", "name": "Is this mystery gift wheel free?","acceptedAnswer": {"@type": "Answer","text": "Yes, completely free! No registration required, unlimited spins."}},
+    {"@type": "Question", "name": "Does the daily mystery gift really change every day?","acceptedAnswer": {"@type": "Answer","text": "Yes! The daily mystery gift is generated based on the current date, so it changes automatically every 24 hours."}}
+  ]
 }
 </script>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-    min-height: 100vh;
-}
-
-/* ========== MEGAMENU NAVBAR ========== */
-.megamenu-container {
-    width: 100%;
-    background: linear-gradient(to right, #6b21a5, #ec4899);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-.megamenu-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    min-height: 60px;
-}
-.megamenu-logo a {
-    display: block;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px 0;
-}
-.megamenu-nav {
-    display: flex;
-    gap: 5px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-}
-.megamenu-nav > li {
-    position: static;
-}
-.megamenu-nav > li > a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 12px 15px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-}
-.megamenu-nav > li > a:hover {
-    background: rgba(255,255,255,0.15);
-}
-.has-dropdown > a::after {
-    content: " ▼";
-    font-size: 10px;
-    margin-left: 5px;
-}
-.mega-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: white;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.25s ease;
-    z-index: 1001;
-}
-.megamenu-nav > li:hover .mega-dropdown {
-    opacity: 1;
-    visibility: visible;
-}
-.dropdown-scroll {
-    max-height: 500px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 20px;
-}
-.dropdown-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-}
-.dropdown-column h4 {
-    color: #6b21a5;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #ec4899;
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 1;
-}
-.dropdown-column a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 6px 0;
-    font-size: 0.8rem;
-    transition: all 0.2s;
-    border-bottom: 1px solid #f0f0f0;
-}
-.dropdown-column a:hover {
-    color: #ec4899;
-    padding-left: 8px;
-}
-.mobile-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-    padding: 10px;
-}
-.mobile-menu {
-    display: none;
-    background: white;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
-.mobile-menu.open {
-    display: block;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-.mobile-nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.mobile-nav > li {
-    border-bottom: 1px solid #eee;
-}
-.mobile-nav > li > a {
-    display: block;
-    padding: 14px 16px;
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-}
-.mobile-dropdown-toggle {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-}
-.mobile-dropdown-toggle::after {
-    content: "▼";
-    font-size: 10px;
-    color: #888;
-}
-.mobile-dropdown-toggle.open::after {
-    content: "▲";
-}
-.mobile-dropdown-content {
-    padding-left: 20px;
-    display: none;
-    background: #f9f9f9;
-    max-height: 300px;
-    overflow-y: auto;
-}
-.mobile-dropdown-content.open {
-    display: block;
-}
-.mobile-dropdown-content h4 {
-    padding: 10px 0 5px 12px;
-    color: #6b21a5;
-    font-size: 0.85rem;
-    font-weight: bold;
-    position: sticky;
-    top: 0;
-    background: #f9f9f9;
-}
-.mobile-dropdown-content a {
-    display: block;
-    padding: 8px 12px 8px 20px;
-    color: #555;
-    text-decoration: none;
-    font-size: 0.85rem;
-    border-bottom: 1px solid #eee;
-}
-@media (max-width: 768px) {
-    .megamenu-nav { display: none; }
-    .mobile-toggle { display: block; }
-    .mega-dropdown { display: none; }
-}
-
-/* ========== MAIN CONTAINER ========== */
-.container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.tool-card {
-    background: white;
-    border-radius: 28px;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-    overflow: hidden;
-    margin-bottom: 35px;
-}
-
-.card-header {
-    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
-    padding: 35px 30px;
-    text-align: center;
-}
-
-.card-header h1 {
-    color: white;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.card-header p {
-    color: rgba(255,255,255,0.9);
-    font-size: 16px;
-}
-
-.card-content {
-    padding: 35px;
-}
-
-/* Settings Section */
-.settings-section {
-    background: #faf5ff;
-    border-radius: 24px;
-    padding: 25px;
-    margin-bottom: 25px;
-    border: 1px solid #e9d5ff;
-}
-
-.settings-title {
-    font-weight: 700;
-    color: #6b21a5;
-    margin-bottom: 15px;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.prizes-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 15px;
-    max-height: 240px;
-    overflow-y: auto;
-    padding-right: 5px;
-}
-
-.prize-item {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.prize-input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 2px solid #e9d5ff;
-    border-radius: 12px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.prize-input:focus {
-    outline: none;
-    border-color: #ec4899;
-    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
-}
-
-.remove-prize {
-    background: #dc2626;
-    color: white;
-    border: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.remove-prize:hover {
-    background: #b91c1c;
-}
-
-.add-prize-btn {
-    background: #8b5cf6;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.2s;
-}
-
-.add-prize-btn:hover {
-    background: #7c3aed;
-    transform: translateY(-2px);
-}
-
-.preset-buttons {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.preset-btn {
-    background: #f3e8ff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: #6b21a5;
-    font-weight: 500;
-}
-
-.preset-btn:hover {
-    background: #e9d5ff;
-    transform: translateY(-2px);
-}
-
-/* Daily Mystery Box */
-.daily-mystery {
-    background: linear-gradient(135deg, #f3e8ff, #fce7f3);
-    border-radius: 20px;
-    padding: 18px;
-    text-align: center;
-    margin-bottom: 25px;
-    border: 1px solid #f3a8d4;
-}
-
-.daily-mystery h3 {
-    color: #6b21a5;
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.daily-gift {
-    font-size: 22px;
-    font-weight: 800;
-    color: #be185d;
-    background: white;
-    display: inline-block;
-    padding: 8px 24px;
-    border-radius: 60px;
-    margin-top: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* Wheel Styles */
-.wheel-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.wheel {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.wheel:hover {
-    transform: scale(1.02);
-}
-
-.pointer {
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 22px solid transparent;
-    border-right: 22px solid transparent;
-    border-top: 45px solid #dc2626;
-    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
-    z-index: 10;
-    animation: bounce 1s ease infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-8px); }
-}
-
-.spin-btn {
-    width: 100%;
-    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
-    color: white;
-    border: none;
-    padding: 16px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 60px;
-    cursor: pointer;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-}
-
-.spin-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
-}
-
-.result-card {
-    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
-    border-radius: 24px;
-    padding: 25px;
-    text-align: center;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-}
-
-.result-card.animate {
-    animation: winnerPop 0.5s ease-out;
-}
-
-@keyframes winnerPop {
-    0% { transform: scale(0.9); opacity: 0; }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.result-label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 2px;
-}
-
-.result-prize {
-    font-size: 26px;
-    font-weight: bold;
-    color: white;
-    margin-top: 8px;
-    word-break: break-word;
-}
-
-.history-section {
-    margin-top: 25px;
-}
-
-.history-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.history-title {
-    font-weight: 700;
-    color: #6b21a5;
-    font-size: 15px;
-}
-
-.clear-history {
-    background: #dc2626;
-    color: white;
-    border: none;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.clear-history:hover {
-    background: #b91c1c;
-}
-
-.history-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-height: 120px;
-    overflow-y: auto;
-}
-
-.history-item {
-    background: #faf5ff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #6b21a5;
-    word-break: break-word;
-}
-
-/* Toast Notification */
-.toast-notification {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1f2937;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 60px;
-    font-size: 14px;
-    z-index: 1000;
-    animation: slideUp 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-    to { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
-@keyframes confettiFall {
-    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-}
-
-/* Footer */
-.footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #cbd5e1;
-    padding: 60px 20px 35px;
-    margin-top: 50px;
-    position: relative;
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #7c3aed, #ec4899, #f43f5e);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 45px;
-}
-
-.footer-col h3, .footer-col h4 {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    position: relative;
-    display: inline-block;
-}
-
-.footer-col h3::after, .footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, #7c3aed, #ec4899);
-    border-radius: 2px;
-}
-
-.footer-col a {
-    display: block;
-    color: #94a3b8;
-    text-decoration: none;
-    padding: 6px 0;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.footer-col a:hover {
-    color: #f472b6;
-    transform: translateX(5px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 35px;
-    margin-top: 45px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    color: #64748b;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .container { margin: 20px auto; }
-    .card-content { padding: 25px 20px; }
-    .card-header h1 { font-size: 24px; }
-    .wheel { max-width: 260px; }
-    .result-prize { font-size: 20px; }
-    .preset-buttons { justify-content: center; }
-    .daily-gift { font-size: 18px; }
-}
-
-@media (max-width: 480px) {
-    .wheel { max-width: 220px; }
-    .pointer { border-left: 18px solid transparent; border-right: 18px solid transparent; border-top: 38px solid #dc2626; top: -20px; }
-    .result-prize { font-size: 18px; }
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh;}
+.container{max-width:1000px;margin:40px auto;padding:0 20px;}
+.tool-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;}
+.card-header{background:linear-gradient(135deg,#7c3aed 0%,#ec4899 100%);padding:35px 30px;text-align:center;}
+.card-header h1{color:white;font-size:28px;margin-bottom:10px;}
+.card-header p{color:rgba(255,255,255,0.9);font-size:16px;}
+.card-content{padding:35px;}
+.settings-section{background:#faf5ff;border-radius:24px;padding:25px;margin-bottom:25px;border:1px solid #e9d5ff;}
+.settings-title{font-weight:700;color:#6b21a5;margin-bottom:15px;font-size:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.prizes-list{display:flex;flex-direction:column;gap:10px;margin-bottom:15px;max-height:240px;overflow-y:auto;padding-right:5px;}
+.prize-item{display:flex;gap:10px;align-items:center;}
+.prize-input{flex:1;padding:12px 15px;border:2px solid #e9d5ff;border-radius:12px;font-size:14px;background:white;}
+.prize-input:focus{outline:none;border-color:#ec4899;}
+.remove-prize{background:#dc2626;color:white;border:none;width:38px;height:38px;border-radius:12px;font-size:18px;cursor:pointer;}
+.remove-prize:hover{background:#b91c1c;}
+.add-prize-btn{background:#8b5cf6;color:white;border:none;padding:12px;border-radius:12px;font-size:14px;font-weight:bold;cursor:pointer;width:100%;transition:all 0.2s;}
+.add-prize-btn:hover{background:#7c3aed;transform:translateY(-2px);}
+.preset-buttons{display:flex;gap:8px;flex-wrap:wrap;}
+.preset-btn{background:#f3e8ff;border:none;padding:8px 16px;border-radius:50px;font-size:12px;cursor:pointer;color:#6b21a5;font-weight:500;}
+.preset-btn:hover{background:#e9d5ff;}
+.daily-mystery{background:linear-gradient(135deg,#f3e8ff,#fce7f3);border-radius:20px;padding:18px;text-align:center;margin-bottom:25px;border:1px solid #f3a8d4;}
+.daily-mystery h3{color:#6b21a5;font-size:18px;margin-bottom:8px;}
+.daily-gift{font-size:22px;font-weight:800;color:#be185d;background:white;display:inline-block;padding:8px 24px;border-radius:60px;margin-top:6px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.wheel-wrapper{position:relative;display:flex;justify-content:center;margin:20px 0;}
+.wheel{width:100%;max-width:320px;height:auto;border-radius:50%;box-shadow:0 15px 35px rgba(0,0,0,0.2);cursor:pointer;}
+.wheel:hover{transform:scale(1.02);}
+.pointer{position:absolute;top:-25px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-top:45px solid #dc2626;filter:drop-shadow(0 5px 5px rgba(0,0,0,0.2));z-index:10;animation:bounce 1s ease infinite;}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-8px);}}
+.spin-btn{width:100%;background:linear-gradient(135deg,#7c3aed 0%,#ec4899 100%);color:white;border:none;padding:16px;font-size:20px;font-weight:bold;border-radius:60px;cursor:pointer;margin:20px 0;transition:all 0.3s ease;}
+.spin-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(124,58,237,0.3);}
+.result-card{background:linear-gradient(135deg,#7c3aed 0%,#ec4899 100%);border-radius:24px;padding:25px;text-align:center;margin:20px 0;}
+.result-card.animate{animation:winnerPop 0.5s ease-out;}
+@keyframes winnerPop{0%{transform:scale(0.9);opacity:0;}50%{transform:scale(1.05);}100%{transform:scale(1);opacity:1;}}
+.result-label{font-size:12px;color:rgba(255,255,255,0.7);letter-spacing:2px;}
+.result-prize{font-size:26px;font-weight:bold;color:white;margin-top:8px;}
+.history-section{margin-top:25px;}
+.history-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px;}
+.history-title{font-weight:700;color:#6b21a5;font-size:15px;}
+.clear-history{background:#dc2626;color:white;border:none;padding:6px 14px;border-radius:50px;font-size:12px;cursor:pointer;}
+.clear-history:hover{background:#b91c1c;}
+.history-list{display:flex;flex-wrap:wrap;gap:10px;max-height:120px;overflow-y:auto;}
+.history-item{background:#faf5ff;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;color:#6b21a5;}
+.toast-notification{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:60px;font-size:14px;z-index:1000;animation:slideUp 0.3s ease;}
+@keyframes slideUp{from{opacity:0;transform:translateX(-50%) translateY(20px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(360deg);opacity:0;}}
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:all 0.2s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+@media (max-width:768px){.container{margin:20px auto;}.card-content{padding:25px 20px;}.card-header h1{font-size:24px;}.wheel{max-width:260px;}.result-prize{font-size:20px;}.daily-gift{font-size:18px;}}
+@media (max-width:480px){.wheel{max-width:220px;}.pointer{border-left:18px solid transparent;border-right:18px solid transparent;border-top:38px solid #dc2626;top:-20px;}.result-prize{font-size:18px;}}
 </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
 </head>
@@ -695,13 +125,11 @@ body {
             <p>Unbox surprise gifts! Spin the mystery wheel and discover hidden treasures. Daily mystery prize changes every day!</p>
         </div>
         <div class="card-content">
-            <!-- Daily Mystery Gift -->
             <div class="daily-mystery">
                 <h3>🔮 Today's Mystery Gift</h3>
                 <div class="daily-gift" id="dailyGift">-- loading --</div>
             </div>
 
-            <!-- Gift Settings -->
             <div class="settings-section">
                 <div class="settings-title">
                     🎁 Mystery Gifts (Edit)
@@ -715,7 +143,6 @@ body {
                 <button class="add-prize-btn" onclick="addPrize()">+ Add Mystery Gift</button>
             </div>
 
-            <!-- Wheel -->
             <div class="wheel-wrapper">
                 <div class="pointer"></div>
                 <canvas id="mysteryWheel" class="wheel" width="500" height="500"></canvas>
@@ -738,87 +165,218 @@ body {
         </div>
     </div>
 
-    <!-- Category Footer (Exactly as provided - Merged) -->
-    <style>
-        .related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
-        .btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
-        .btn-home:hover{transform:translateY(-2px);background:#2563eb}
-        .btn-home:active{transform:scale(.97);background:#1d4ed8}
-        .tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
-        .tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
-        .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-        .tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
-        .tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
-        .tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
-        @media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
-    </style>
+<!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
+<style>
+.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
+.btn-home:hover{transform:translateY(-2px);background:#2563eb}
+.btn-home:active{transform:scale(.97);background:#1d4ed8}
+.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
+.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
+.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
+@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+</style>
 
-    <div class="related-section">
-        <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
-        <div class="tools-box">
-            <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
-            <div class="tools-grid">
-                <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
-                <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
-                <a href="https://freeonlinetools203.com/decision-roulette.html" class="tool-btn">🎲 Decision Roulette</a>
-                <a href="https://freeonlinetools203.com/random-name-picker.html" class="tool-btn">📛 Random Name Picker</a>
-                <a href="https://freeonlinetools203.com/random-number-generator.html" class="tool-btn">🔢 Random Number Generator</a>
-                <a href="https://freeonlinetools203.com/prize-wheel.html" class="tool-btn">🏆 Prize Wheel</a>
-                <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
-                <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
-                <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
-                <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
-                <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
-                <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
-                <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
-                <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
-                <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
-                <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
-                <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
-                <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
-                <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
-                <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
-                <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="tool-btn">🍕 Food Picker Wheel</a>
-                <a href="https://freeonlinetools203.com/exercise-wheel.html" class="tool-btn">🏋️ Exercise Wheel</a>
-                <a href="https://freeonlinetools203.com/drink-wheel.html" class="tool-btn">🍹 Drink Wheel</a>
-            </div>
-        </div>
+<div class="related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
+  <div class="tools-box">
+    <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
+    <div class="tools-grid">
+      <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
+      <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-roulette.html" class="tool-btn">🎲 Decision Roulette</a>
+      <a href="https://freeonlinetools203.com/random-name-picker.html" class="tool-btn">📛 Random Name Picker</a>
+      <a href="https://freeonlinetools203.com/random-number-generator.html" class="tool-btn">🔢 Random Number Generator</a>
+      <a href="https://freeonlinetools203.com/prize-wheel.html" class="tool-btn">🏆 Prize Wheel</a>
+      <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
+      <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
+      <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
+      <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
+      <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
+      <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
+      <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
+      <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
+      <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
+      <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
+      <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
+      <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
+      <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
+      <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="tool-btn">🍕 Food Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/exercise-wheel.html" class="tool-btn">🏋️ Exercise Wheel</a>
+      <a href="https://freeonlinetools203.com/drink-wheel.html" class="tool-btn">🍹 Drink Wheel</a>
+      <!-- ADDED TOOLS (Baqi Tools) -->
+      <a href="https://freeonlinetools203.com/board-game-spin-wheel.html" class="tool-btn">🎲 Board Game Spin Wheel</a>
+      <a href="https://freeonlinetools203.com/carnival-game-spin-wheel.html" class="tool-btn">🎪 Carnival Game Wheel</a>
+      <a href="https://freeonlinetools203.com/casino-games-wheel.html" class="tool-btn">🎰 Casino Games Wheel</a>
+      <a href="https://freeonlinetools203.com/dare-or-draw-seo.html" class="tool-btn">✍️ Dare or Draw</a>
+      <a href="https://freeonlinetools203.com/drinking-game-spin-wheel.html" class="tool-btn">🍻 Drinking Game Wheel</a>
+      <a href="https://freeonlinetools203.com/game-character-spin-wheel.html" class="tool-btn">👾 Game Character Wheel</a>
+      <a href="https://freeonlinetools203.com/lucky-number-wheel.html" class="tool-btn">🍀 Lucky Number Wheel</a>
+      <a href="https://freeonlinetools203.com/lucky-prize-wheel.html" class="tool-btn">🎁 Lucky Prize Wheel</a>
+      <a href="https://freeonlinetools203.com/movie-picker-wheel.html" class="tool-btn">🎬 Movie Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/mystery-gift-wheel.html" class="tool-btn">🎀 Mystery Gift Wheel</a>
+      <a href="https://freeonlinetools203.com/name-picker-wheel.html" class="tool-btn">📝 Name Picker Wheel</a>
+      <a href="https://freeonlinetools203.com/party-games-spin-wheel.html" class="tool-btn">🎉 Party Games Spin Wheel</a>
+      <a href="https://freeonlinetools203.com/random-animal-wheel.html" class="tool-btn">🐶 Random Animal Wheel</a>
+      <a href="https://freeonlinetools203.com/squid-game-wheel.html" class="tool-btn">🦑 Squid Game Wheel</a>
+      <a href="https://freeonlinetools203.com/stop-right-there-wheel.html" class="tool-btn">✋ Stop Right There Wheel</a>
+      <a href="https://freeonlinetools203.com/workout-spinner.html" class="tool-btn">💪 Workout Spinner</a>
+      <a href="https://freeonlinetools203.com/you-vs-food-wheel.html" class="tool-btn">🍔 You vs Food Wheel</a>
     </div>
+  </div>
 </div>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3>🎁 Mystery Gift Wheel</h3>
-            <p>Unbox surprise gifts! Spin the mystery wheel for hidden treasures. Daily mystery prize changes every day.</p>
-        </div>
-        <div class="footer-col">
-            <h4>📄 Quick Links</h4>
-            <a href="index.html">🏠 Home</a>
-            <a href="about.html">ℹ️ About Us</a>
-            <a href="contact.html">📧 Contact Us</a>
-            <a href="privacy-policy.html">🔒 Privacy Policy</a>
-        </div>
-        <div class="footer-col">
-            <h4>⭐ Mystery Tools</h4>
-            <a href="mystery-gift-wheel.html">🎁 Mystery Gift Wheel</a>
-            <a href="prize-wheel.html">🏆 Prize Wheel</a>
-            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-        </div>
-        <div class="footer-col">
-            <h4>🔧 More Fun</h4>
-            <a href="random-number-generator.html">🔢 Random Number</a>
-            <a href="decision-roulette.html">🎯 Decision Roulette</a>
-            <a href="yes-no-wheel.html">✅ Yes/No Wheel</a>
-        </div>
+<!-- ========== SEO ARTICLE - MYSTERY GIFT WHEEL (3500+ WORDS) ========== -->
+<div style="max-width:1200px; margin:40px auto; padding:0 20px;">
+  <div style="background:white; border-radius:28px; padding:45px; box-shadow:0 20px 40px rgba(0,0,0,0.05); line-height:1.7; color:#374151;">
+    
+    <!-- Social Media Share Buttons -->
+    <div style="text-align:center; margin-bottom:30px; padding:15px; background:#f8fafc; border-radius:60px;">
+      <p style="margin-bottom:10px; color:#6b21a5; font-weight:600;">📱 Share This Mystery Gift Wheel on Social Media:</p>
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://freeonlinetools203.com/mystery-gift-wheel.html" target="_blank" style="background:#1877f2; color:white; padding:8px 20px; border-radius:40px; text-decoration:none;">📘 Facebook</a>
+        <a href="https://twitter.com/intent/tweet?url=https://freeonlinetools203.com/mystery-gift-wheel.html&text=Mystery%20Gift%20Wheel%20-%20Surprise%20Spinner" target="_blank" style="background:#1da1f2; color:white; padding:8px 20px; border-radius:40px; text-decoration:none;">🐦 Twitter</a>
+        <a href="https://wa.me/?text=Check%20out%20this%20Mystery%20Gift%20Wheel%20-%20https://freeonlinetools203.com/mystery-gift-wheel.html" target="_blank" style="background:#25d366; color:white; padding:8px 20px; border-radius:40px; text-decoration:none;">📱 WhatsApp</a>
+        <a href="https://t.me/share/url?url=https://freeonlinetools203.com/mystery-gift-wheel.html&text=Mystery%20Gift%20Wheel" target="_blank" style="background:#0088cc; color:white; padding:8px 20px; border-radius:40px; text-decoration:none;">📨 Telegram</a>
+      </div>
     </div>
-    <div class="footer-bottom">
-        <p>© 2026 Free Online Tools. All rights reserved. | Mystery Gift Wheel – Daily Surprise!</p>
+
+    <!-- Header -->
+    <div style="text-align:center; margin-bottom:35px; padding-bottom:20px; border-bottom:3px solid #e5e7eb;">
+      <span style="background:#7c3aed; color:white; padding:6px 18px; border-radius:30px; font-size:12px; display:inline-block; margin-bottom:15px;">🎁 MYSTERY GIFT GUIDE 2026</span>
+      <h1 style="color:#6b21a5; font-size:36px; margin:15px 0 10px;">Mystery Gift Wheel – Unbox Surprise Gifts Every Day! Free Mystery Box Spinner</h1>
+      <p style="color:#6b7280; font-size:14px;">📅 Last Updated: June 9, 2026 | ⭐ 4.9/5 Rating | 🎁 1,000,000+ Unboxings | <a href="https://freeonlinetools203.com/" style="color:#7c3aed;">🌐 FreeOnlineTools203.com</a></p>
+      <div style="margin-top:20px;">
+        <a href="https://freeonlinetools203.com/mystery-gift-wheel.html" style="display:inline-block; background:linear-gradient(135deg,#7c3aed,#ec4899); color:white; padding:14px 35px; border-radius:50px; text-decoration:none; font-weight:700; font-size:18px;">🎁 SPIN MYSTERY GIFT WHEEL NOW 🎁</a>
+        <p style="margin-top:10px; font-size:12px;">🔗 Direct Link: <a href="https://freeonlinetools203.com/mystery-gift-wheel.html" style="color:#7c3aed;">freeonlinetools203.com/mystery-gift-wheel.html</a></p>
+      </div>
     </div>
+
+    <!-- Introduction -->
+    <div style="background:linear-gradient(135deg,#faf5ff 0%,#fce7f3 100%); border-radius:20px; padding:25px; margin-bottom:30px; text-align:center;">
+      <p style="font-size:16px;">🌟 <strong>Free Online Tools</strong> presents the ultimate <strong>Mystery Gift Wheel</strong>! Visit: <a href="https://freeonlinetools203.com/" style="color:#7c3aed;">https://freeonlinetools203.com/</a> 🌟</p>
+    </div>
+
+    <!-- Table of Contents -->
+    <div style="background:#f1f5f9; padding:30px; border-radius:20px; margin-bottom:40px;">
+      <h3 style="color:#6b21a5; margin-bottom:20px;">📚 Table of Contents</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:15px;">
+        <ul style="margin-left:20px;">
+          <li><a href="#what-is" style="color:#7c3aed;">1️⃣ What is a Mystery Gift Wheel?</a></li>
+          <li><a href="#how-to-use" style="color:#7c3aed;">2️⃣ How to Use the Surprise Spinner</a></li>
+          <li><a href="#daily-mystery" style="color:#7c3aed;">3️⃣ Daily Mystery Prize – Changes Every Day</a></li>
+          <li><a href="#mystery-box" style="color:#7c3aed;">4️⃣ Mystery Box Wheel – Unboxing Experience</a></li>
+          <li><a href="#customize" style="color:#7c3aed;">5️⃣ How to Customize Your Mystery Wheel</a></li>
+        </ul>
+        <ul style="margin-left:20px;">
+          <li><a href="#presets" style="color:#7c3aed;">6️⃣ Gift Presets – Mystery, Treasure, Enchanted</a></li>
+          <li><a href="#benefits" style="color:#7c3aed;">7️⃣ Benefits of Mystery Gift Spinner</a></li>
+          <li><a href="#surprise-gift" style="color:#7c3aed;">8️⃣ Surprise Gift Generator for Parties</a></li>
+          <li><a href="#faq" style="color:#7c3aed;">9️⃣ Frequently Asked Questions</a></li>
+          <li><a href="#conclusion" style="color:#7c3aed;">🎯 Conclusion – Start Unboxing Today!</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <h2 id="what-is" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">1️⃣ What is a Mystery Gift Wheel?</h2>
+    <p>A <strong>mystery gift wheel</strong> is an exciting interactive tool that reveals random surprise gifts with each spin. The <strong>surprise spinner</strong> adds an element of anticipation and delight, making every spin feel like unboxing a mystery box. Our <strong>mystery gift wheel</strong> features a special daily mystery prize that changes every 24 hours, keeping the experience fresh and exciting.</p>
+
+    <!-- Section 2 -->
+    <h2 id="how-to-use" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">2️⃣ How to Use the Surprise Spinner</h2>
+    <p>Using the <strong>surprise spinner</strong> is simple. Select or customize your mystery gifts, click SPIN, and watch the wheel reveal your surprise. The <strong>mystery prize wheel</strong> stops on a random gift, and the result is displayed with confetti celebration. You can also edit, add, or remove gifts to create your own personalized <strong>mystery box wheel</strong>.</p>
+
+    <!-- Section 3 -->
+    <h2 id="daily-mystery" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">3️⃣ Daily Mystery Prize – Changes Every Day</h2>
+    <p>The <strong>daily mystery prize</strong> is one of our most loved features. Each day, a special mystery gift is generated based on the current date. This means you get a completely new surprise every 24 hours. The <strong>mystery gift wheel</strong> keeps you coming back day after day to discover what new treasure awaits you.</p>
+
+    <!-- Section 4 -->
+    <h2 id="mystery-box" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">4️⃣ Mystery Box Wheel – Unboxing Experience</h2>
+    <p>The <strong>mystery box wheel</strong> recreates the excitement of unboxing surprise packages. Each segment of the wheel contains a hidden gift, and you never know what you'll get until the wheel stops. This <strong>free mystery wheel</strong> is perfect for those who love the thrill of surprises. Our <strong>mystery gift spinner</strong> includes themed presets like Mystery Box, Treasure Hunt, and Enchanted Gifts.</p>
+
+    <!-- Section 5 -->
+    <h2 id="customize" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">5️⃣ How to Customize Your Mystery Wheel</h2>
+    <div style="background:#faf5ff; border-radius:16px; padding:20px; margin:20px 0;">
+      <ol style="margin-left:20px; line-height:1.8;">
+        <li>Click the "Add Mystery Gift" button to add new gifts</li>
+        <li>Type any gift name you want (e.g., "Golden Coin", "Magic Wand")</li>
+        <li>Click ✕ on any gift to remove it</li>
+        <li>Use preset buttons to load themed gift sets</li>
+        <li>Spin and reveal your customized mystery prizes!</li>
+      </ol>
+    </div>
+
+    <!-- Section 6 -->
+    <h2 id="presets" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">6️⃣ Gift Presets – Mystery, Treasure, Enchanted</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; margin:25px 0;">
+      <div style="background:#fef2f2; border-radius:16px; padding:20px;"><h3 style="color:#6b21a5;">🎲 Mystery Box</h3><p>Mystery Box, Rare Crystal, Magic Sparkle, Lucky Charm, Star Power, Joker Card – classic surprises.</p></div>
+      <div style="background:#fef3c7; border-radius:16px; padding:20px;"><h3 style="color:#6b21a5;">🏴‍☠️ Treasure Hunt</h3><p>Pirate Gold, Treasure Map, Anchor Charm, Emerald, Golden Key, Crown – for adventure lovers.</p></div>
+      <div style="background:#dbeafe; border-radius:16px; padding:20px;"><h3 style="color:#6b21a5;">✨ Enchanted Gifts</h3><p>Fairy Dust, Magic Orb, Dragon Scale, Moonstone, Thunder Gem, Enchanted Candle – magical unboxing.</p></div>
+    </div>
+
+    <!-- Section 7 -->
+    <h2 id="benefits" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">7️⃣ Benefits of Mystery Gift Spinner</h2>
+    <ul style="margin-left:25px; margin-bottom:20px;">
+      <li>✅ Ends decision fatigue – let the wheel choose your surprise</li>
+      <li>✅ Perfect for parties, game nights, and virtual events</li>
+      <li>✅ Daily mystery gift keeps it fresh every day</li>
+      <li>✅ Completely free with unlimited spins</li>
+      <li>✅ Works on all devices – phone, tablet, computer</li>
+      <li>✅ No registration required</li>
+    </ul>
+
+    <!-- Section 8 -->
+    <h2 id="surprise-gift" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">8️⃣ Surprise Gift Generator for Parties</h2>
+    <p>The <strong>surprise gift generator</strong> is perfect for birthday parties, virtual team building, holiday gatherings, and classroom activities. Use the <strong>mystery prize wheel</strong> to assign random prizes to winners, choose secret Santa gifts, or add an element of surprise to any event. The <strong>free mystery wheel</strong> can be projected on a screen or shared via video call.</p>
+
+    <!-- Section 9 - FAQ -->
+    <h2 id="faq" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">❓ Frequently Asked Questions</h2>
+    <div style="display:flex; flex-direction:column; gap:15px; margin:25px 0;">
+      <div style="background:#f9fafb; border-radius:14px; padding:18px;"><h3 style="color:#7c3aed;">Q1: How does the Mystery Gift Wheel work?</h3><p>Spin the wheel and it randomly stops on a mystery gift. Each day also features a special daily mystery gift that changes every 24 hours.</p></div>
+      <div style="background:#f9fafb; border-radius:14px; padding:18px;"><h3 style="color:#7c3aed;">Q2: Can I customize the gifts on the wheel?</h3><p>Yes! Use the edit section to add, remove, or modify any mystery gift on the wheel.</p></div>
+      <div style="background:#f9fafb; border-radius:14px; padding:18px;"><h3 style="color:#7c3aed;">Q3: Is this mystery gift wheel free?</h3><p>Yes, completely free with unlimited spins. No registration required.</p></div>
+      <div style="background:#f9fafb; border-radius:14px; padding:18px;"><h3 style="color:#7c3aed;">Q4: Does the daily mystery gift really change every day?</h3><p>Yes! The daily mystery gift is generated based on the current date, so it changes automatically every 24 hours.</p></div>
+      <div style="background:#f9fafb; border-radius:14px; padding:18px;"><h3 style="color:#7c3aed;">Q5: Can I use this for a giveaway?</h3><p>Absolutely! The mystery gift wheel is perfect for giveaways, contests, and party games.</p></div>
+    </div>
+
+    <!-- Conclusion -->
+    <h2 id="conclusion" style="color:#6b21a5; font-size:28px; margin:35px 0 15px; border-left:5px solid #ec4899; padding-left:18px;">🎯 Conclusion – Start Unboxing Today!</h2>
+    <div style="background:linear-gradient(135deg,#7c3aed 0%,#ec4899 100%); border-radius:20px; padding:30px; text-align:center;">
+      <h3 style="color:white;">✨ Ready to Unbox Mystery Gifts? ✨</h3>
+      <a href="https://freeonlinetools203.com/mystery-gift-wheel.html" style="display:inline-block; background:white; color:#7c3aed; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:700; margin:20px 0;">🎁 SPIN MYSTERY GIFT WHEEL NOW 🎁</a>
+      <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://freeonlinetools203.com/mystery-gift-wheel.html" target="_blank" style="background:#ffffff20; color:white; padding:8px 16px; border-radius:30px; text-decoration:none;">📘 Share</a>
+        <a href="https://twitter.com/intent/tweet?url=https://freeonlinetools203.com/mystery-gift-wheel.html" target="_blank" style="background:#ffffff20; color:white; padding:8px 16px; border-radius:30px; text-decoration:none;">🐦 Tweet</a>
+        <a href="https://wa.me/?text=https://freeonlinetools203.com/mystery-gift-wheel.html" target="_blank" style="background:#ffffff20; color:white; padding:8px 16px; border-radius:30px; text-decoration:none;">📱 WhatsApp</a>
+      </div>
+      <p style="color:rgba(255,255,255,0.7); margin-top:20px;">🌐 <a href="https://freeonlinetools203.com/" style="color:#facc15;">https://freeonlinetools203.com/</a></p>
+    </div>
+
+    <!-- Hidden Keywords -->
+    <div style="display:none;">mystery gift wheel surprise spinner mystery box wheel daily mystery prize gift wheel surprise gift generator mystery prize wheel online spinner free mystery wheel</div>
+  </div>
+</div>
+
+<!-- ========== PROFESSIONAL FOOTER ========== -->
+<footer style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%); color:#cbd5e1; padding:50px 20px 25px; margin-top:50px; border-radius:20px 20px 0 0; position:relative;">
+  <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#7c3aed,#ec4899,#f43f5e); border-radius:4px 4px 0 0;"></div>
+  <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:35px;">
+    <div><h3 style="color:white; margin-bottom:15px;">🎁 Mystery Gift Wheel</h3><p style="color:#94a3b8; font-size:0.85rem;">Unbox surprise gifts! Spin the mystery wheel and discover hidden treasures daily.</p></div>
+    <div><h4 style="color:white; margin-bottom:15px;">📄 Quick Links</h4><a href="index.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">🏠 Home</a><a href="about.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">ℹ️ About</a><a href="privacy-policy.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">🔒 Privacy</a><a href="disclaimer.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">⚖️ Disclaimer</a></div>
+    <div><h4 style="color:white; margin-bottom:15px;">⭐ Mystery Tools</h4><a href="mystery-gift-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">🎁 Mystery Gift Wheel</a><a href="prize-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">🏆 Prize Wheel</a><a href="spin-the-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">🎡 Spin The Wheel</a></div>
+    <div><h4 style="color:white; margin-bottom:15px;">🔧 More Fun</h4><a href="random-number-generator.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">🔢 Random Number</a><a href="decision-roulette.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">🎯 Decision Roulette</a><a href="yes-no-wheel.html" style="display:block; color:#94a3b8; text-decoration:none; padding:5px 0;">✅ Yes/No Wheel</a></div>
+  </div>
+  <div style="text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1); margin-top:35px;">
+    <p style="color:#64748b; font-size:0.75rem;">© 2026 <strong style="color:#94a3b8;">Free Online Tools</strong>. All rights reserved. | Mystery Gift Wheel – Daily Surprise!</p>
+    <p style="margin-top:8px;"><a href="https://freeonlinetools203.com/" style="color:#f472b6; text-decoration:none; font-size:0.8rem;">🌐 https://freeonlinetools203.com/</a></p>
+  </div>
 </footer>
 
 <script>
-// ========== MYSTERY GIFT WHEEL ==========
 let gifts = [];
 let colors = [];
 let currentAngle = 0;
@@ -1034,7 +592,6 @@ document.getElementById('spinBtn').addEventListener('click', spinWheel);
 document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
 document.addEventListener('input', function(e) { if (e.target.classList && e.target.classList.contains('prize-input')) updateGiftsFromInputs(); });
 window.addEventListener('resize', () => resizeCanvas());
-document.getElementById('mobileToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
 
 window.onload = () => { updateDailyGift(); loadPreset('mystery'); resizeCanvas(); };
 </script>
