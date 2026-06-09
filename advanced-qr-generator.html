@@ -621,39 +621,175 @@
         <p><em>Article word count: ~2850 words. Optimized for low‑competition QR code keywords.</em></p>
     </div>
 
-    <!-- ========== SHORT & CLEAN FOOTER (Only 2 columns as requested) ========== -->
-    <div class="footer">
-        <div class="footer-inner">
-            <!-- Column 1: Most Popular Tools -->
-            <div class="footer-col">
-                <h4>⭐ Most Popular Tools</h4>
-                <ul>
-                    <li><a href="spin-the-wheel.html">🎡 Spin The Wheel</a></li>
-                    <li><a href="random-color-picker.html">🎨 Random Color Picker</a></li>
-                    <li><a href="keyword-density-checker.html">🔍 Keyword Density Checker</a></li>
-                    <li><a href="instagram-hashtag-generator.html">🏷️ Instagram Hashtag Generator</a></li>
-                    <li><a href="age-calculator.html">📅 Age Calculator</a></li>
-                </ul>
-            </div>
-            <!-- Column 2: Legal & Info (exactly these 5) -->
-            <div class="footer-col">
-                <h4>📄 Legal & Info</h4>
-                <ul>
-                    <li><a href="about.html">👥 About Us</a></li>
-                    <li><a href="contact.html">📧 Contact</a></li>
-                    <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
-                    <li><a href="terms-conditions.html">⚖️ Terms & Conditions</a></li>
-                    <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
-                </ul>
+    <!-- ========== PROFESSIONAL FOOTER WITH MOST POPULAR TOOLS ========== -->
+<footer class="professional-footer">
+    <div class="footer-container">
+        <!-- Brand Column -->
+        <div class="footer-col">
+            <h3>✨ Free Online Tools</h3>
+            <p>Free, fast & accurate online calculators. Trusted by 50,000+ users. 100% free, no signup.</p>
+            <div class="rating-badge">
+                <span>⭐ 4.9/5</span>
+                <span>📈 50K+ Users</span>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 FreeOnlineTools203 – Advanced QR Code Generator. 
-            <a href="index.html">Home</a> | <a href="advanced-qr-generator.html">QR Generator</a> | 
-            <a href="seo-tools.html">SEO Tools</a> | 100% Free & No Signup</p>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h4>📄 Quick Links</h4>
+            <a href="index.html">🏠 Home</a>
+            <a href="about.html">ℹ️ About Us</a>
+            <a href="contact.html">📧 Contact Us</a>
+            <a href="privacy-policy.html">🔒 Privacy Policy</a>
+            <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms & Conditions</a>
+            <a href="disclaimer.html">⚖️ Disclaimer</a>
+        </div>
+
+        <!-- Most Popular Tools -->
+        <div class="footer-col">
+            <h4>⭐ Popular Tools</h4>
+            <a href="age-calculator.html">📅 Age Calculator</a>
+            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+            <a href="random-color-picker.html">🎨 Random Color Picker</a>
+            <a href="keyword-density-checker.html">🔍 Keyword Density Checker</a>
+            <a href="instagram-hashtag-generator.html">#️⃣ Instagram Hashtag Generator</a>
+            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+            <a href="qr-code-generator.html">📱 QR Code Generator</a>
         </div>
     </div>
-</div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>© 2026 <strong>Free Online Tools</strong>. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+/* Compact Professional Footer */
+.professional-footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    position: relative;
+    border-radius: 20px 20px 0 0;
+}
+
+.professional-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col h3::after, .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+.footer-col p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+.rating-badge {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.rating-badge span {
+    background: rgba(37, 99, 235, 0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #60a5fa;
+}
+
+.footer-col a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 4px 0;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: #60a5fa;
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    .footer-col h3::after, .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-col a {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 4px 8px;
+    }
+    
+    .footer-col a:hover {
+        transform: translateY(-2px);
+    }
+    
+    .footer-col p {
+        text-align: center;
+    }
+    
+    .rating-badge {
+        justify-content: center;
+    }
+}
+</style>
+<!-- ========== PROFESSIONAL FOOTER WITH MOST POPULAR TOOLS END ========== -->
 
 <script>
     // Navbar placeholder fetch (optional)
