@@ -202,8 +202,7 @@ const toolsDatabase = {
       "QR Code Generator",
       "Advanced QR Generator",
       "YouTube Thumbnail Downloader",
-      "Currency Converter",
-      "Typing Test"
+      "Currency Converter"
     ]
   },
 
@@ -352,7 +351,6 @@ const toolUrlMap = {
     "Advanced QR Generator": "advanced-qr-generator.html",
     "YouTube Thumbnail Downloader": "youtube-thumbnail-downloader.html",
     "Currency Converter": "currency-converter.html",
-    "Typing Test": "typing-test.html",
     
     // Health & Fitness
     "BMI Calculator": "bmi-calculator.html",
@@ -787,7 +785,6 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="qr-code-generator.html">QR Code Generator</a>
             <a href="advanced-qr-generator.html">Advanced QR Generator</a>
             <a href="currency-converter.html">Currency Converter</a>
-            <a href="typing-test.html">Typing Test</a>
             
             <h4>🔐 Developer & Security Tools</h4>
             <a href="md5-generator.html">MD5 Hash Generator</a>
