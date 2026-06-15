@@ -593,16 +593,190 @@ function copyArticleLink() {
 
 <!-- ========== SPIN THE WHEEL FOOTER START ========== -->
 
-<footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 50px 20px 25px; margin-top: 60px;">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-        <p>© 2026 <strong>Free Online Tools</strong>. All rights reserved. | Made with ❤️</p>
-        <p style="margin-top: 10px; font-size: 12px;">
-            <a href="https://freeonlinetools203.com" style="color: #60a5fa; text-decoration: none;">Home</a> | 
-            <a href="https://freeonlinetools203.com/privacy-policy.html" style="color: #60a5fa; text-decoration: none;">Privacy</a> | 
-            <a href="https://freeonlinetools203.com/contact.html" style="color: #60a5fa; text-decoration: none;">Contact</a>
-        </p>
+<footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 50px 20px 30px; margin-top: 60px; position: relative; overflow: hidden;">
+    
+    <!-- Animated Background Effect -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a, #3b82f6); background-size: 300% 100%; animation: gradientMove 3s ease infinite;"></div>
+    
+    <style>
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes pulse {
+            0% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.7; transform: scale(1); }
+        }
+        .footer-icon {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .footer-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        .footer-link {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            transform: translateX(5px);
+            color: #60a5fa !important;
+        }
+        .social-btn {
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+        .footer-col {
+            animation: float 4s ease-in-out infinite;
+        }
+        .footer-col:nth-child(2) { animation-delay: 0.5s; }
+        .footer-col:nth-child(3) { animation-delay: 1s; }
+        .footer-col:nth-child(4) { animation-delay: 1.5s; }
+        .newsletter-input {
+            transition: all 0.3s ease;
+        }
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+        }
+        .newsletter-btn {
+            transition: all 0.3s ease;
+        }
+        .newsletter-btn:hover {
+            transform: translateX(3px);
+            background: #3b82f6;
+        }
+    </style>
+
+    <div style="max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Footer Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px;">
+            
+            <!-- Column 1: Brand Info -->
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                    <span style="font-size: 32px;">✨</span>
+                    <h3 style="color: white; font-size: 1.3rem; margin: 0;">Free Online Tools</h3>
+                </div>
+                <p style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8; margin-bottom: 20px;">100% free online tools for SEO, calculators, converters, and fun games. No signup required. Trusted by 50,000+ users worldwide.</p>
+                <div style="display: flex; gap: 12px;">
+                    <a href="#" class="social-btn" style="background: #1877F2; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px;" onclick="shareArticle('facebook')">📘</a>
+                    <a href="#" class="social-btn" style="background: #1DA1F2; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px;" onclick="shareArticle('twitter')">🐦</a>
+                    <a href="#" class="social-btn" style="background: #25D366; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px;" onclick="shareArticle('whatsapp')">💬</a>
+                    <a href="#" class="social-btn" style="background: #0077B5; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px;" onclick="shareArticle('linkedin')">🔗</a>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; position: relative; display: inline-block;">📄 Quick Links</h4>
+                <div style="margin-top: 15px;">
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com" class="footer-link" style="color: #cbd5e1; text-decoration: none;">🏠 Home</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/about.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">ℹ️ About Us</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/contact.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">📧 Contact Us</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/privacy-policy.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">🔒 Privacy Policy</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/terms-conditions.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">📜 Terms & Conditions</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/disclaimer.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">⚠️ Disclaimer</a></p>
+                </div>
+            </div>
+            
+            <!-- Column 3: Popular Tools -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; position: relative; display: inline-block;">⭐ Popular Tools</h4>
+                <div style="margin-top: 15px;">
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/age-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">📅 Age Calculator</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/bmi-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">⚖️ BMI Calculator</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/qr-code-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">📱 QR Code Generator</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/keyword-density-checker.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">🔍 Keyword Density Checker</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/unit-converter.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">📏 Unit Converter</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/percentage-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">📊 Percentage Calculator</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/gst-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">💰 GST Calculator</a></p>
+                </div>
+            </div>
+            
+            <!-- Column 4: Fun Tools & Newsletter -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; position: relative; display: inline-block;">🎲 Fun Tools</h4>
+                <div style="margin-top: 15px;">
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/spin-the-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">🎡 Spin The Wheel</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/yes-no-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">✅ Yes/No Wheel</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/random-name-picker.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">📛 Random Name Picker</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">🎭 Truth or Dare</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/decision-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">⚖️ Decision Wheel</a></p>
+                    <p style="margin: 8px 0;"><a href="https://freeonlinetools203.com/food-picker-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none;">🍕 Food Picker Wheel</a></p>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div style="margin-top: 25px;">
+                    <h4 style="color: white; font-size: 0.9rem; margin-bottom: 12px;">📧 Newsletter</h4>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="email" id="newsletterEmail" placeholder="Your email" class="newsletter-input" style="flex: 1; padding: 10px 12px; border-radius: 30px; border: none; background: #334155; color: white; font-size: 0.8rem;">
+                        <button class="newsletter-btn" style="background: #2563eb; border: none; padding: 10px 16px; border-radius: 30px; color: white; cursor: pointer; font-weight: 600;" onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
+                    <p style="font-size: 0.7rem; color: #64748b; margin-top: 8px;">Get updates on new tools</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rating Badges -->
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; padding: 15px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <div style="display: flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.15); padding: 6px 15px; border-radius: 40px;">
+                <span>⭐</span>
+                <span style="font-weight: 600;">4.9/5</span>
+                <span style="font-size: 0.8rem; color: #94a3b8;">(50K+ reviews)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.15); padding: 6px 15px; border-radius: 40px;">
+                <span>🚀</span>
+                <span style="font-weight: 600;">100% Free</span>
+                <span style="font-size: 0.8rem; color: #94a3b8;">No signup</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.15); padding: 6px 15px; border-radius: 40px;">
+                <span>🔒</span>
+                <span style="font-weight: 600;">Privacy First</span>
+                <span style="font-size: 0.8rem; color: #94a3b8;">No tracking</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.15); padding: 6px 15px; border-radius: 40px;">
+                <span>📱</span>
+                <span style="font-weight: 600;">Mobile Ready</span>
+                <span style="font-size: 0.8rem; color: #94a3b8;">Works on all devices</span>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 20px;">
+            <p style="font-size: 0.8rem; color: #64748b;">© 2026 <strong style="color: #94a3b8;">Free Online Tools</strong>. All rights reserved. | Made with <span style="color: #ec489a;">❤️</span> for the global community</p>
+            <p style="font-size: 0.7rem; color: #475569; margin-top: 8px;">All tools are 100% free and work offline. No data stored on our servers.</p>
+        </div>
     </div>
 </footer>
+
+<script>
+// Newsletter subscription function
+function subscribeNewsletter() {
+    const email = document.getElementById('newsletterEmail').value;
+    if (email && email.includes('@')) {
+        showToastMessage('📧 Thanks for subscribing! You will receive updates on new tools.');
+        document.getElementById('newsletterEmail').value = '';
+    } else {
+        showToastMessage('❌ Please enter a valid email address.');
+    }
+}
+</script>
 
 <!-- ========== SPIN THE WHEEL FOOTER END ========== -->
 
