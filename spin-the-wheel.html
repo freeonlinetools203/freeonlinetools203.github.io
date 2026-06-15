@@ -623,6 +623,7 @@ function copyArticleLink() {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
         }
         .social-btn:hover {
             transform: translateY(-3px);
@@ -641,19 +642,26 @@ function copyArticleLink() {
         <!-- Footer Grid - 4 Columns -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px;">
             
-            <!-- Column 1: Brand Info -->
+            <!-- Column 1: Brand Info with Social Media -->
             <div class="footer-col">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
                     <span style="font-size: 32px;">✨</span>
                     <h3 style="color: white; font-size: 1.3rem; margin: 0;">Free Online Tools</h3>
                 </div>
                 <p style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8; margin-bottom: 20px;">100% free online tools for SEO, calculators, converters, and fun games. No signup required. Trusted by 50,000+ users worldwide.</p>
-                <div style="display: flex; gap: 12px;">
-                    <a href="#" class="social-btn" style="background: #1877F2; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px; color: white;" onclick="shareArticle('facebook')">📘</a>
-                    <a href="#" class="social-btn" style="background: #1DA1F2; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px; color: white;" onclick="shareArticle('twitter')">🐦</a>
-                    <a href="#" class="social-btn" style="background: #25D366; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px; color: white;" onclick="shareArticle('whatsapp')">💬</a>
-                    <a href="#" class="social-btn" style="background: #0077B5; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 18px; color: white;" onclick="shareArticle('linkedin')">🔗</a>
+                
+                <!-- ========== SOCIAL MEDIA SHARE BUTTONS (ONLY HERE) ========== -->
+                <div style="margin-bottom: 20px;">
+                    <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px;">📢 Share this website:</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button onclick="shareArticle('facebook')" class="social-btn" style="background: #1877F2; width: 38px; height: 38px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: none; font-size: 18px; cursor: pointer;">📘</button>
+                        <button onclick="shareArticle('twitter')" class="social-btn" style="background: #1DA1F2; width: 38px; height: 38px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: none; font-size: 18px; cursor: pointer;">🐦</button>
+                        <button onclick="shareArticle('whatsapp')" class="social-btn" style="background: #25D366; width: 38px; height: 38px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: none; font-size: 18px; cursor: pointer;">💬</button>
+                        <button onclick="shareArticle('linkedin')" class="social-btn" style="background: #0077B5; width: 38px; height: 38px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: none; font-size: 18px; cursor: pointer;">🔗</button>
+                        <button onclick="copyArticleLink()" class="social-btn" style="background: #6b7280; width: 38px; height: 38px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: none; font-size: 16px; cursor: pointer; color: white;">📋</button>
+                    </div>
                 </div>
+                <!-- ========== SOCIAL MEDIA SHARE BUTTONS END ========== -->
             </div>
             
             <!-- Column 2: Quick Links -->
