@@ -273,68 +273,402 @@ body {
         </div>
     </div>
   
-<!-- ========== CATEGORY FOOTER ========== -->
-<!-- Category Footer - Social Media Tools (Fixed, No Conflict) -->
+<!-- ========== COMMON PAGES FOOTER START ========== -->
+
+<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
 <style>
-.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
-.btn-home:hover{transform:translateY(-2px);background:#2563eb}
-.btn-home:active{transform:scale(.97);background:#1d4ed8}
-.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
-.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
-.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
-.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
-@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+.cpf-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.cpf-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
+.cpf-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
+.cpf-tools-box{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%);border-radius:24px;padding:1.8rem;border:1px solid #94a3b8}
+.cpf-tools-title{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;border-left:5px solid #1e3a8a;padding-left:16px}
+.cpf-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+
+/* CATEGORY SECTIONS */
+.cpf-cat-section{margin-bottom:1.5rem}
+.cpf-cat-title{font-size:1rem;font-weight:700;color:#1e3a8a;margin-bottom:0.8rem;padding:6px 14px;background:#e0f2fe;border-radius:30px;display:inline-block}
+.cpf-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:1rem}
+.cpf-tool-card{background:#fff;border-radius:12px;padding:10px 14px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
+.cpf-tool-card:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,0.08);border-color:#93c5fd}
+.cpf-tool-card a{display:flex;align-items:center;gap:8px;text-decoration:none;color:#1e293b;font-size:0.85rem;font-weight:600}
+.cpf-tool-card a:hover{color:#2563eb}
+
+/* PAGES LINKS */
+.cpf-pages-bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid #e2e8f0;justify-content:center}
+.cpf-page-link{display:inline-flex;align-items:center;gap:6px;background:#1e3a8a;color:#fff;padding:8px 18px;border-radius:30px;font-size:0.82rem;font-weight:600;text-decoration:none;transition:all .2s}
+.cpf-page-link:hover{background:#2563eb;transform:translateY(-2px)}
+
+/* STATS BAR */
+.cpf-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
+.cpf-total-tools{background:#1e3a8a;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
+
+/* PAGINATION */
+.cpf-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+.cpf-page-btn{background:#fff;border:1px solid #93c5fd;padding:10px 20px;border-radius:40px;color:#1e3a8a;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.cpf-page-btn:hover{background:#2563eb;color:#fff}
+.cpf-page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.cpf-page-number{background:#fff;border:1px solid #93c5fd;padding:8px 16px;border-radius:40px;color:#1e3a8a;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
+.cpf-page-number:hover{background:#e0f2fe}
+.cpf-page-number.active{background:#1e3a8a;color:#fff;border-color:#1e3a8a}
+.cpf-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
+
+/* CATEGORY FILTER */
+.cpf-category-filter{display:flex;gap:8px;flex-wrap:wrap}
+.cpf-filter-chip{background:#fff;border:1px solid #93c5fd;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#1e3a8a}
+.cpf-filter-chip:hover,.cpf-filter-chip.active{background:#2563eb;color:#fff}
+
+@media(max-width:640px){
+  .cpf-tools-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .cpf-cat-title{font-size:0.85rem}
+}
 </style>
-<div class="related-section">
-  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
-  <div class="tools-box">
-    <div class="tools-title">🔗 Quick Links</div>
-    <div class="tools-grid">
-      <a href="https://freeonlinetools203.com/about.html" class="tool-btn">ℹ️ About</a>
-      <a href="https://freeonlinetools203.com/contact.html" class="tool-btn">📩 Contact</a>
-      <a href="https://freeonlinetools203.com/privacy-policy.html" class="tool-btn">🔒 Privacy Policy</a>
-      <a href="https://freeonlinetools203.com/terms-conditions.html" class="tool-btn">📜 Terms & Conditions</a>
-      <a href="https://freeonlinetools203.com/disclaimer.html" class="tool-btn">⚠️ Disclaimer</a>
+
+<div class="cpf-related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="cpf-btn-home">🏠 Back to Home</a>
+  <div class="cpf-tools-box">
+    <div class="cpf-tools-title">🛠️ Explore All Free Online Tools</div>
+    <div class="cpf-tools-subtitle">⚡ 170+ free tools — SEO, YouTube, PDF, Image, Calculator & more!</div>
+
+    <div class="cpf-stats-bar">
+      <div class="cpf-total-tools">🎯 170+ Free Tools</div>
+      <div class="cpf-category-filter">
+        <span class="cpf-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="cpf-filter-chip" data-filter="fun">🎲 Fun</span>
+        <span class="cpf-filter-chip" data-filter="seo">🔍 SEO</span>
+        <span class="cpf-filter-chip" data-filter="youtube">🎬 YouTube</span>
+        <span class="cpf-filter-chip" data-filter="social">📱 Social</span>
+        <span class="cpf-filter-chip" data-filter="pdf">📄 PDF</span>
+        <span class="cpf-filter-chip" data-filter="image">🖼️ Image</span>
+        <span class="cpf-filter-chip" data-filter="color">🎨 Color</span>
+        <span class="cpf-filter-chip" data-filter="calc">📊 Calculator</span>
+        <span class="cpf-filter-chip" data-filter="dev">🔐 Dev</span>
+        <span class="cpf-filter-chip" data-filter="health">🏃 Health</span>
+        <span class="cpf-filter-chip" data-filter="fin">💰 Finance</span>
+        <span class="cpf-filter-chip" data-filter="text">📝 Text</span>
+        <span class="cpf-filter-chip" data-filter="animal">🐾 Animal</span>
+      </div>
     </div>
+
+    <div id="cpfToolsGrid" class="cpf-tools-grid"></div>
+
+    <div class="cpf-pagination">
+      <button class="cpf-page-btn" id="cpfPrevBtn" onclick="cpfChangePage(-1)">◀ Prev</button>
+      <div id="cpfPageNumbers"></div>
+      <button class="cpf-page-btn" id="cpfNextBtn" onclick="cpfChangePage(1)">Next ▶</button>
+    </div>
+    <div class="cpf-page-info" id="cpfPageInfo"></div>
+
+    <!-- PAGES LINKS -->
+    <div class="cpf-pages-bar">
+      <a href="https://freeonlinetools203.com/about.html" class="cpf-page-link">ℹ️ About Us</a>
+      <a href="https://freeonlinetools203.com/contact.html" class="cpf-page-link">📧 Contact Us</a>
+      <a href="https://freeonlinetools203.com/privacy-policy.html" class="cpf-page-link">🔒 Privacy Policy</a>
+      <a href="https://freeonlinetools203.com/terms-conditions.html" class="cpf-page-link">📜 Terms & Conditions</a>
+      <a href="https://freeonlinetools203.com/disclaimer.html" class="cpf-page-link">⚠️ Disclaimer</a>
+    </div>
+
   </div>
 </div>
+</div>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3>✨ Free Online Tools</h3>
-            <p>Your one-stop destination for free, fast, and accurate online calculators and utilities.</p>
-        </div>
-        <div class="footer-col">
-            <h4>📄 Quick Links</h4>
-            <a href="index.html">🏠 Home</a>
-            <a href="about.html">ℹ️ About Us</a>
-            <a href="contact.html">📧 Contact Us</a>
-            <a href="privacy-policy.html">🔒 Privacy Policy</a>
-            <a href="terms-conditions.html">📜 Terms & Conditions</a>
-            <a href="disclaimer.html">⚠️ Disclaimer</a>
-        </div>
-        <div class="footer-col">
-            <h4>⭐ Popular Tools</h4>
-            <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
-            <a href="currency-converter.html">💱 Currency Converter</a>
-            <a href="age-calculator.html">📅 Age Calculator</a>
-            <a href="qr-code-generator.html">📱 QR Code Generator</a>
-        </div>
-        <div class="footer-col">
-            <h4>🔧 All Tools</h4>
-            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-            <a href="password-generator.html">🔐 Password Generator</a>
-            <a href="image-converter.html">🖼️ Image Converter</a>
-        </div>
+<script>
+const cpfAllTools = [
+  // 🎲 Fun & Random
+  { name: "🎡 Spin The Wheel", category: "fun", url: "https://freeonlinetools203.com/spin-the-wheel.html" },
+  { name: "✅ Yes/No Wheel", category: "fun", url: "https://freeonlinetools203.com/yes-no-wheel.html" },
+  { name: "🎲 Decision Roulette", category: "fun", url: "https://freeonlinetools203.com/decision-roulette.html" },
+  { name: "⚖️ Decision Wheel", category: "fun", url: "https://freeonlinetools203.com/decision-wheel.html" },
+  { name: "📛 Random Name Picker", category: "fun", url: "https://freeonlinetools203.com/random-name-picker.html" },
+  { name: "🏷️ Name Picker Wheel", category: "fun", url: "https://freeonlinetools203.com/name-picker-wheel.html" },
+  { name: "🔢 Random Number Generator", category: "fun", url: "https://freeonlinetools203.com/random-number-generator.html" },
+  { name: "🏆 Prize Wheel", category: "fun", url: "https://freeonlinetools203.com/prize-wheel.html" },
+  { name: "🍀 Lucky Prize Wheel", category: "fun", url: "https://freeonlinetools203.com/lucky-prize-wheel.html" },
+  { name: "🔢 Daily Lucky Number Wheel", category: "fun", url: "https://freeonlinetools203.com/daily-lucky-number-wheel.html" },
+  { name: "📋 Task Spinner", category: "fun", url: "https://freeonlinetools203.com/task-spinner.html" },
+  { name: "🎨 Art Roulette", category: "fun", url: "https://freeonlinetools203.com/art-roulette-seo.html" },
+  { name: "🧹 Chore Wheel", category: "fun", url: "https://freeonlinetools203.com/chore-wheel-seo.html" },
+  { name: "🌍 Country Picker Wheel", category: "fun", url: "https://freeonlinetools203.com/country-picker-wheel-seo.html" },
+  { name: "🍽️ Dinner Spinner", category: "fun", url: "https://freeonlinetools203.com/dinner-spinner.html" },
+  { name: "🗣️ Icebreaker Wheel", category: "fun", url: "https://freeonlinetools203.com/icebreaker-wheel-seo.html" },
+  { name: "📚 Random Fact Wheel", category: "fun", url: "https://freeonlinetools203.com/random-fact-wheel-seo.html" },
+  { name: "🐾 Random Animal Wheel", category: "fun", url: "https://freeonlinetools203.com/random-animal-wheel.html" },
+  { name: "♈ Zodiac Wheel", category: "fun", url: "https://freeonlinetools203.com/zodiac-wheel.html" },
+  { name: "🌀 Twister Spinner", category: "fun", url: "https://freeonlinetools203.com/twister-spinner-seo.html" },
+  { name: "🎭 Truth or Dare Generator", category: "fun", url: "https://freeonlinetools203.com/truth-or-dare-generator.html" },
+  { name: "✏️ Sketch or Dare", category: "fun", url: "https://freeonlinetools203.com/sketch-or-dare-seo.html" },
+  { name: "🎨 Dare or Draw", category: "fun", url: "https://freeonlinetools203.com/dare-or-draw-seo.html" },
+  { name: "🔥 Hot Seat Challenge", category: "fun", url: "https://freeonlinetools203.com/hot-seat-challenge-seo.html" },
+  { name: "🛑 Stop Right There Wheel", category: "fun", url: "https://freeonlinetools203.com/stop-right-there-wheel.html" },
+  { name: "🎄 Holiday Activity Wheel", category: "fun", url: "https://freeonlinetools203.com/holiday-wheel.html" },
+  { name: "🍕 Food Picker Wheel", category: "fun", url: "https://freeonlinetools203.com/food-picker-wheel.html" },
+  { name: "🍹 Drink Picker Wheel", category: "fun", url: "https://freeonlinetools203.com/drink-wheel.html" },
+  { name: "🏋️ Exercise Wheel", category: "fun", url: "https://freeonlinetools203.com/exercise-wheel.html" },
+  { name: "💪 Workout Spinner", category: "fun", url: "https://freeonlinetools203.com/workout-spinner.html" },
+  { name: "🎬 Movie Picker Wheel", category: "fun", url: "https://freeonlinetools203.com/movie-picker-wheel.html" },
+  { name: "🍔 You vs Food Wheel", category: "fun", url: "https://freeonlinetools203.com/you-vs-food-wheel.html" },
+  { name: "🎁 Mystery Gift Wheel", category: "fun", url: "https://freeonlinetools203.com/mystery-gift-wheel.html" },
+  { name: "🎰 Casino Games Wheel", category: "fun", url: "https://freeonlinetools203.com/casino-games-wheel.html" },
+  { name: "🎡 Color Wheel", category: "fun", url: "https://freeonlinetools203.com/color-wheel-seo.html" },
+  { name: "🦑 Squid Game Spin Wheel", category: "fun", url: "https://freeonlinetools203.com/squid-game-wheel.html" },
+  { name: "👾 Game Character Spin Wheel", category: "fun", url: "https://freeonlinetools203.com/game-character-spin-wheel.html" },
+  { name: "🎉 Party Games Spin Wheel", category: "fun", url: "https://freeonlinetools203.com/party-games-spin-wheel.html" },
+  { name: "🍻 Drinking Game Spin Wheel", category: "fun", url: "https://freeonlinetools203.com/drinking-game-spin-wheel.html" },
+  { name: "🎲 Board Game Spin Wheel", category: "fun", url: "https://freeonlinetools203.com/board-game-spin-wheel.html" },
+  { name: "🎪 Carnival Game Spin Wheel", category: "fun", url: "https://freeonlinetools203.com/carnival-game-spin-wheel.html" },
+
+  // 🔍 SEO
+  { name: "🔑 Keyword Density Checker", category: "seo", url: "https://freeonlinetools203.com/keyword-density-checker.html" },
+  { name: "🏷️ Meta Tags Generator", category: "seo", url: "https://freeonlinetools203.com/meta-tags-generator.html" },
+  { name: "🔍 Meta Tag Analyzer", category: "seo", url: "https://freeonlinetools203.com/meta-tag-analyzer.html" },
+  { name: "🔗 Broken Link Checker", category: "seo", url: "https://freeonlinetools203.com/broken-link-checker.html" },
+  { name: "🔙 Free Backlink Checker", category: "seo", url: "https://freeonlinetools203.com/free-backlink-checker.html" },
+  { name: "📌 Google Index Checker", category: "seo", url: "https://freeonlinetools203.com/google-index-checker.html" },
+  { name: "📊 SEO Analyzer", category: "seo", url: "https://freeonlinetools203.com/seo-analyzer.html" },
+  { name: "⭐ SEO Score Checker", category: "seo", url: "https://freeonlinetools203.com/seo-score-checker.html" },
+  { name: "✍️ SEO Title Generator", category: "seo", url: "https://freeonlinetools203.com/seo-title-generator.html" },
+  { name: "👁️ SERP Snippet Preview", category: "seo", url: "https://freeonlinetools203.com/serp-snippet-preview.html" },
+  { name: "📖 Readability Checker", category: "seo", url: "https://freeonlinetools203.com/readability-checker.html" },
+  { name: "🏗️ Heading Structure Checker", category: "seo", url: "https://freeonlinetools203.com/heading-structure-checker.html" },
+  { name: "🖼️ Image Alt Analyzer", category: "seo", url: "https://freeonlinetools203.com/image-alt-analyzer.html" },
+  { name: "🗺️ XML Sitemap Generator", category: "seo", url: "https://freeonlinetools203.com/xml-sitemap-generator.html" },
+
+  // 🎬 YouTube
+  { name: "📊 YouTube SEO Score Checker", category: "youtube", url: "https://freeonlinetools203.com/youtube-seo-score-checker.html" },
+  { name: "🔑 YouTube Keyword Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-keyword-generator.html" },
+  { name: "📈 YouTube Keyword Research", category: "youtube", url: "https://freeonlinetools203.com/youtube-keyword-research.html" },
+  { name: "📺 YouTube Channel Analyzer", category: "youtube", url: "https://freeonlinetools203.com/youtube-channel-analyzer.html" },
+  { name: "⚖️ YouTube Channel Comparison", category: "youtube", url: "https://freeonlinetools203.com/youtube-channel-comparison.html" },
+  { name: "🚀 YouTube Viral Video Predictor", category: "youtube", url: "https://freeonlinetools203.com/youtube-viral-video-predictor.html" },
+  { name: "✅ YouTube SEO Checklist Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-seo-checklist-generator.html" },
+  { name: "📝 YouTube Title Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-title-generator.html" },
+  { name: "📄 YouTube Description Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-description-generator.html" },
+  { name: "💡 YouTube Video Idea Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-video-idea-generator.html" },
+  { name: "📋 YouTube Video Outline Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-video-outline-generator.html" },
+  { name: "📅 YouTube Content Planner AI", category: "youtube", url: "https://freeonlinetools203.com/youtube-content-planner-ai.html" },
+  { name: "🏷️ YouTube Video Tags Extractor", category: "youtube", url: "https://freeonlinetools203.com/youtube-video-tags-extractor.html" },
+  { name: "🏷️ YouTube Video Tags Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-video-tags-generator.html" },
+  { name: "#️⃣ YouTube Hashtag Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-hashtag-generator-v2.html" },
+  { name: "🖼️ YouTube Thumbnail Downloader", category: "youtube", url: "https://freeonlinetools203.com/youtube-thumbnail-downloader.html" },
+  { name: "✍️ YouTube Thumbnail Text Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-thumbnail-text-generator.html" },
+  { name: "🎨 YouTube Thumbnail Color Palette", category: "youtube", url: "https://freeonlinetools203.com/youtube-thumbnail-color-palette-generator.html" },
+  { name: "🔄 YouTube Thumbnail Split Tester", category: "youtube", url: "https://freeonlinetools203.com/youtube-thumbnail-split-tester.html" },
+  { name: "📊 YouTube Thumbnail CTR Predictor", category: "youtube", url: "https://freeonlinetools203.com/thumbnail-ctr-predictor.html" },
+  { name: "🎯 YouTube Shorts Hook Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-shorts-hook-generator.html" },
+  { name: "🎬 YouTube Shorts Script Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-shorts-script-generator.html" },
+  { name: "📅 YouTube Shorts Idea Calendar", category: "youtube", url: "https://freeonlinetools203.com/youtube-shorts-idea-calendar-generator.html" },
+  { name: "🎬 YouTube Channel Name Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-channel-name-generator.html" },
+  { name: "💬 YouTube Community Post Generator", category: "youtube", url: "https://freeonlinetools203.com/youtube-community-post-generator.html" },
+
+  // 📱 Social Media
+  { name: "📸 Instagram Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/instagram-hashtag-generator.html" },
+  { name: "💼 LinkedIn Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/linkedin-hashtag-generator.html" },
+  { name: "📘 Facebook Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/facebook-hashtag-generator.html" },
+  { name: "📌 Pinterest Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/pinterest-hashtag-generator.html" },
+  { name: "🤖 AI Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/ai-hashtag-generator.html" },
+  { name: "🔎 SEO Hashtags Generator", category: "social", url: "https://freeonlinetools203.com/seo-hashtags-generator.html" },
+  { name: "🎲 Random Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/random-hashtag-generator.html" },
+  { name: "🎵 TikTok Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/tiktok-hashtag-generator.html" },
+  { name: "🐦 Twitter Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/twitter-hashtag-generator.html" },
+  { name: "🧵 Threads Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/threads-hashtag-generator.html" },
+  { name: "📈 Trending Hashtags Today", category: "social", url: "https://freeonlinetools203.com/trending-hashtags-today.html" },
+  { name: "⚡ Viral Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/viral-hashtag-generator.html" },
+  { name: "📺 YouTube Hashtag Generator", category: "social", url: "https://freeonlinetools203.com/youtube-hashtag-generator-v2.html" },
+  { name: "✍️ Social Media Caption Generator", category: "social", url: "https://freeonlinetools203.com/social-media-caption-generator.html" },
+
+  // 📄 PDF
+  { name: "🔗 PDF Merger", category: "pdf", url: "https://freeonlinetools203.com/pdf-merger.html" },
+  { name: "✂️ PDF Splitter", category: "pdf", url: "https://freeonlinetools203.com/pdf-splitter.html" },
+  { name: "🔄 PDF Rotator", category: "pdf", url: "https://freeonlinetools203.com/pdf-rotator.html" },
+  { name: "🖼️ PDF to Image", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-image.html" },
+  { name: "📷 PDF to JPG", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-jpg.html" },
+  { name: "🏞️ PDF to PNG", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-png.html" },
+  { name: "🖼️ PDF to BMP", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-bmp.html" },
+  { name: "🌐 PDF to WEBP", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-webp.html" },
+  { name: "📸 PDF to TIFF", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-tiff.html" },
+  { name: "📝 PDF to Word", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-word.html" },
+  { name: "📊 PDF to Excel", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-excel.html" },
+  { name: "📃 PDF to Text", category: "pdf", url: "https://freeonlinetools203.com/pdf-to-text.html" },
+
+  // 🖼️ Image
+  { name: "🔄 Image Converter", category: "image", url: "https://freeonlinetools203.com/image-converter.html" },
+  { name: "🌐 WebP Converter", category: "image", url: "https://freeonlinetools203.com/webp-converter.html" },
+  { name: "📄 Image to PDF", category: "image", url: "https://freeonlinetools203.com/image-to-pdf.html" },
+  { name: "✂️ Image Cropper", category: "image", url: "https://freeonlinetools203.com/image-cropper.html" },
+  { name: "📐 Image Resizer", category: "image", url: "https://freeonlinetools203.com/image-resizer.html" },
+  { name: "🎨 Image Color Extractor", category: "image", url: "https://freeonlinetools203.com/image-color-extractor.html" },
+  { name: "⚡ Image Compressor", category: "image", url: "https://freeonlinetools203.com/image-compressor.html" },
+  { name: "🔍 Image Upscaler", category: "image", url: "https://freeonlinetools203.com/image-upscaler.html" },
+
+  // 🎨 Color
+  { name: "🎨 Color Palette Generator", category: "color", url: "https://freeonlinetools203.com/color-palette-generator.html" },
+  { name: "🖼️ Palette Generator", category: "color", url: "https://freeonlinetools203.com/palette-generator.html" },
+  { name: "🌈 Color Shades Generator", category: "color", url: "https://freeonlinetools203.com/color-shades-generator.html" },
+  { name: "🎭 Color Gradient Maker", category: "color", url: "https://freeonlinetools203.com/color-gradient-maker.html" },
+  { name: "✅ Color Contrast Checker", category: "color", url: "https://freeonlinetools203.com/color-contrast-checker.html" },
+  { name: "🏷️ Color Name Finder", category: "color", url: "https://freeonlinetools203.com/color-name-finder.html" },
+  { name: "🎲 Random Color Picker", category: "color", url: "https://freeonlinetools203.com/random-color-picker.html" },
+  { name: "🎡 Color Wheel", category: "color", url: "https://freeonlinetools203.com/color-wheel-seo.html" },
+  { name: "🖼️ Image Color Extractor", category: "color", url: "https://freeonlinetools203.com/image-color-extractor.html" },
+
+  // 📊 Calculator
+  { name: "🔄 Unit Converter", category: "calc", url: "https://freeonlinetools203.com/unit-converter.html" },
+  { name: "📅 Age Calculator", category: "calc", url: "https://freeonlinetools203.com/age-calculator.html" },
+  { name: "👫 Age Difference Calculator", category: "calc", url: "https://freeonlinetools203.com/age-difference-calculator.html" },
+  { name: "🏷️ Discount Calculator", category: "calc", url: "https://freeonlinetools203.com/discount-calculator.html" },
+  { name: "📈 Profit & Loss Calculator", category: "calc", url: "https://freeonlinetools203.com/profit-loss-calculator.html" },
+  { name: "🎓 GPA Calculator", category: "calc", url: "https://freeonlinetools203.com/gpa-calculator.html" },
+  { name: "🧾 GST Calculator", category: "calc", url: "https://freeonlinetools203.com/gst-calculator.html" },
+  { name: "💯 Percentage Calculator", category: "calc", url: "https://freeonlinetools203.com/percentage-calculator.html" },
+  { name: "📆 Date Calculator", category: "calc", url: "https://freeonlinetools203.com/date-calculator.html" },
+  { name: "📱 QR Code Generator", category: "calc", url: "https://freeonlinetools203.com/qr-code-generator.html" },
+  { name: "⚙️ Advanced QR Generator", category: "calc", url: "https://freeonlinetools203.com/advanced-qr-generator.html" },
+  { name: "🖼️ YouTube Thumbnail Downloader", category: "calc", url: "https://freeonlinetools203.com/youtube-thumbnail-downloader.html" },
+  { name: "💱 Currency Converter", category: "calc", url: "https://freeonlinetools203.com/currency-converter.html" },
+
+  // 🔐 Developer
+  { name: "🔒 MD5 Hash Generator", category: "dev", url: "https://freeonlinetools203.com/md5-generator.html" },
+  { name: "🔐 SHA-256 Hash Generator", category: "dev", url: "https://freeonlinetools203.com/sha256-generator.html" },
+  { name: "🛡️ SHA-1 Hash Generator", category: "dev", url: "https://freeonlinetools203.com/sha1-generator.html" },
+  { name: "🔄 Base64 Encoder/Decoder", category: "dev", url: "https://freeonlinetools203.com/base64-encoder-decoder.html" },
+  { name: "🌐 URL Encoder/Decoder", category: "dev", url: "https://freeonlinetools203.com/url-encoder-decoder.html" },
+  { name: "🏷️ HTML Encoder/Decoder", category: "dev", url: "https://freeonlinetools203.com/html-encoder-decoder.html" },
+  { name: "⚡ HTML Minifier Pro", category: "dev", url: "https://freeonlinetools203.com/html-minifier-pro.html" },
+  { name: "📋 JSON Formatter & Validator", category: "dev", url: "https://freeonlinetools203.com/json-formatter-validator.html" },
+
+  // 🏃 Health
+  { name: "⚖️ BMI Calculator", category: "health", url: "https://freeonlinetools203.com/bmi-calculator.html" },
+  { name: "🔥 BMR Calculator", category: "health", url: "https://freeonlinetools203.com/bmr-calculator.html" },
+  { name: "🍎 Calorie Calculator", category: "health", url: "https://freeonlinetools203.com/calorie-calculator.html" },
+  { name: "💪 TDEE Calculator", category: "health", url: "https://freeonlinetools203.com/tdee-calculator.html" },
+
+  // 💰 Finance
+  { name: "🏠 EMI Calculator", category: "fin", url: "https://freeonlinetools203.com/emi-calculator.html" },
+  { name: "🏦 Loan Calculator", category: "fin", url: "https://freeonlinetools203.com/loan-calculator.html" },
+  { name: "☪️ Zakat Calculator", category: "fin", url: "https://freeonlinetools203.com/zakat-calculator.html" },
+  { name: "📈 SIP Calculator", category: "fin", url: "https://freeonlinetools203.com/sip-calculator.html" },
+
+  // 📝 Text
+  { name: "📊 Word Counter", category: "text", url: "https://freeonlinetools203.com/word-counter.html" },
+  { name: "🔢 Line Counter", category: "text", url: "https://freeonlinetools203.com/line-counter.html" },
+  { name: "🔄 Text Case Converter", category: "text", url: "https://freeonlinetools203.com/text-case-converter.html" },
+  { name: "🔑 Password Generator", category: "text", url: "https://freeonlinetools203.com/password-generator.html" },
+  { name: "🛡️ Password Strength Checker", category: "text", url: "https://freeonlinetools203.com/password-checker.html" },
+
+  // 🐾 Animal
+  { name: "🐶 Dog Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/dog-pregnancy-calculator.html" },
+  { name: "🐱 Cat Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/cat-pregnancy-calculator.html" },
+  { name: "🐰 Rabbit Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/rabbit-pregnancy-calculator.html" },
+  { name: "🐄 Cow Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/cow-pregnancy-calculator.html" },
+  { name: "🐐 Goat Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/goat-pregnancy-calculator.html" },
+  { name: "🐴 Horse Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/horse-pregnancy-calculator.html" },
+  { name: "🐑 Sheep Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/sheep-pregnancy-calculator.html" },
+  { name: "🐷 Pig Pregnancy Calculator", category: "animal", url: "https://freeonlinetools203.com/pig-pregnancy-calculator.html" }
+];
+
+let cpfCurrentPage = 1;
+let cpfCurrentFilter = "all";
+const cpfToolsPerPage = 12;
+
+function cpfGetFilteredTools() {
+  if (cpfCurrentFilter === "all") return cpfAllTools;
+  return cpfAllTools.filter(tool => tool.category === cpfCurrentFilter);
+}
+
+function cpfRenderTools() {
+  const filtered = cpfGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / cpfToolsPerPage);
+  const start = (cpfCurrentPage - 1) * cpfToolsPerPage;
+  const end = start + cpfToolsPerPage;
+  const pageTools = filtered.slice(start, end);
+
+  const grid = document.getElementById('cpfToolsGrid');
+  grid.innerHTML = pageTools.map(tool => `
+    <div class="cpf-tool-card">
+      <a href="${tool.url}">
+        ${tool.name}
+      </a>
     </div>
-    <div class="footer-bottom">
-        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ for the global community</p>
-    </div>
-</footer>
+  `).join('');
+
+  document.getElementById('cpfPageInfo').innerHTML = `📄 Page ${cpfCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools`;
+  cpfRenderPageNumbers();
+  cpfUpdateButtons();
+}
+
+function cpfRenderPageNumbers() {
+  const filtered = cpfGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / cpfToolsPerPage);
+  const container = document.getElementById('cpfPageNumbers');
+  if (!container) return;
+
+  let html = '';
+  let startPage = Math.max(1, cpfCurrentPage - 2);
+  let endPage = Math.min(totalPages, cpfCurrentPage + 2);
+
+  if (startPage > 1) {
+    html += `<span class="cpf-page-number" onclick="cpfGoToPage(1)">1</span>`;
+    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
+  }
+  for (let i = startPage; i <= endPage; i++) {
+    html += `<span class="cpf-page-number ${i === cpfCurrentPage ? 'active' : ''}" onclick="cpfGoToPage(${i})">${i}</span>`;
+  }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
+    html += `<span class="cpf-page-number" onclick="cpfGoToPage(${totalPages})">${totalPages}</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function cpfUpdateButtons() {
+  const filtered = cpfGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / cpfToolsPerPage);
+  const prevBtn = document.getElementById('cpfPrevBtn');
+  const nextBtn = document.getElementById('cpfNextBtn');
+  if (prevBtn) prevBtn.disabled = cpfCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = cpfCurrentPage === totalPages;
+}
+
+function cpfChangePage(direction) {
+  const filtered = cpfGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / cpfToolsPerPage);
+  const newPage = cpfCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    cpfCurrentPage = newPage;
+    cpfRenderTools();
+  }
+}
+
+function cpfGoToPage(page) {
+  const filtered = cpfGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / cpfToolsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    cpfCurrentPage = page;
+    cpfRenderTools();
+  }
+}
+
+function cpfSetFilter(filter) {
+  cpfCurrentFilter = filter;
+  cpfCurrentPage = 1;
+  cpfRenderTools();
+  document.querySelectorAll('.cpf-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+// ✅ Sirf ek baar
+document.addEventListener('DOMContentLoaded', () => {
+  cpfRenderTools();
+  document.querySelectorAll('.cpf-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      cpfSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
+</script>
+
+<!-- ========== COMMON PAGES FOOTER END ========== -->
 
 </body>
 </html>
