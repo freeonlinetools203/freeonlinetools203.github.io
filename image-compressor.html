@@ -1304,40 +1304,184 @@ document.getElementById('currentDate').innerText = new Date().toLocaleDateString
 })();
 </script>
 
-<!-- Footer -->
-<footer class="footer" style="background: #111827; color: #9ca3af; padding: 50px 20px 30px; margin-top: 40px;">
-    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
-        <div class="footer-col">
-            <h3 style="color: white; margin-bottom: 15px;">✨ Free Online Tools</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6;">Simple and free online calculators and utilities for everyday use. Fast, accurate, and 100% private.</p>
+<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
+
+<footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
+    
+    <!-- Animated Gradient Line -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a, #3b82f6); background-size: 300% 100%; animation: gradientMove 3s ease infinite;"></div>
+    
+    <style>
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .footer-link {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            transform: translateX(5px);
+            color: #60a5fa !important;
+        }
+        .social-btn {
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-size: 18px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            filter: brightness(1.1);
+        }
+        .footer-col {
+            animation: float 4s ease-in-out infinite;
+        }
+        .footer-col:nth-child(2) { animation-delay: 0.5s; }
+        .footer-col:nth-child(3) { animation-delay: 1s; }
+        .footer-col:nth-child(4) { animation-delay: 1.5s; }
+    </style>
+
+    <div style="max-width: 1100px; margin: 0 auto;">
+        
+        <!-- Footer Grid - 4 Columns -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin-bottom: 25px;">
+            
+            <!-- Column 1: Brand Info with SOCIAL MEDIA BUTTONS -->
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <span style="font-size: 22px;">✨</span>
+                    <h3 style="color: white; font-size: 1rem; margin: 0;">Free Online Tools 203</h3>
+                </div>
+                <p style="font-size: 0.7rem; line-height: 1.5; color: #94a3b8; margin-bottom: 10px;">100% free online tools for social media, SEO, calculators & fun games.</p>
+                
+                <!-- SOCIAL MEDIA SHARE BUTTONS -->
+                <div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                        <button onclick="sharePage('facebook')" class="social-btn" style="background: #1877F2; width: 32px; height: 32px; font-size: 15px;">📘</button>
+                        <button onclick="sharePage('twitter')" class="social-btn" style="background: #1DA1F2; width: 32px; height: 32px; font-size: 15px;">🐦</button>
+                        <button onclick="sharePage('whatsapp')" class="social-btn" style="background: #25D366; width: 32px; height: 32px; font-size: 15px;">💬</button>
+                        <button onclick="sharePage('linkedin')" class="social-btn" style="background: #0077B5; width: 32px; height: 32px; font-size: 15px;">🔗</button>
+                        <button onclick="copyPageLink()" class="social-btn" style="background: #6b7280; width: 32px; height: 32px; font-size: 13px;">📋</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #3b82f6; padding-left: 10px;">📄 Quick Links</h4>
+                <div>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/index.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🏠 Home</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/about.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">ℹ️ About</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/contact.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📧 Contact</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/privacy-policy.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🔒 Privacy</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/terms-conditions.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📜 Terms</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/disclaimer.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚠️ Disclaimer</a></p>
+                </div>
+            </div>
+            
+            <!-- Column 3: Social Media Tools (5 Trending) -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #8b5cf6; padding-left: 10px;">📱 Social Media</h4>
+                <div>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/instagram-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📸 Instagram Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🎵 TikTok Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/facebook-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📘 Facebook Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">💼 LinkedIn Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📌 Pinterest Hashtag Generator</a></p>
+                </div>
+            </div>
+            
+            <!-- Column 4: Popular Tools (5 Trending) -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #f59e0b; padding-left: 10px;">⭐ Trending Tools</h4>
+                <div>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/age-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📅 Age Calculator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/keyword-density-checker.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🔍 Keyword Density Checker</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/spin-the-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🎡 Spin The Wheel</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/yes-no-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">✅ Yes/No Wheel</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/bmi-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚖️ BMI Calculator</a></p>
+                </div>
+            </div>
+            
         </div>
-        <div class="footer-col">
-            <h4 style="color: white; margin-bottom: 15px;">📄 Pages</h4>
-            <a href="index.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Home</a>
-            <a href="about.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">About Us</a>
-            <a href="contact.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Contact Us</a>
-            <a href="privacy-policy.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Privacy Policy</a>
+        
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <p style="font-size: 0.7rem; color: #64748b;">© 2026 <strong style="color: #94a3b8;">Free Online Tools 203</strong>. All rights reserved. | Made with <span style="color: #ec489a;">❤️</span></p>
         </div>
-        <div class="footer-col">
-            <h4 style="color: white; margin-bottom: 15px;">⭐ Popular Tools</h4>
-            <a href="age-calculator.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Age Calculator</a>
-            <a href="bmi-calculator.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">BMI Calculator</a>
-            <a href="percentage-calculator.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Percentage Calculator</a>
-            <a href="image-compressor.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Image Compressor</a>
-        </div>
-        <div class="footer-col">
-            <h4 style="color: white; margin-bottom: 15px;">🔧 More Tools</h4>
-            <a href="emi-calculator.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">EMI Calculator</a>
-            <a href="loan-calculator.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Loan Calculator</a>
-            <a href="word-counter.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Word Counter</a>
-            <a href="password-generator.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">Password Generator</a>
-            <a href="qr-code-generator.html" style="display: block; color: #9ca3af; text-decoration: none; padding: 5px 0;">QR Code Generator</a>
-        </div>
-    </div>
-    <div class="footer-bottom" style="text-align: center; padding-top: 30px; margin-top: 30px; border-top: 1px solid #374151;">
-        <p>© 2026 Free Online Tools. All rights reserved. | Made with ❤️ for everyone</p>
     </div>
 </footer>
 
+<script>
+// ========== SHARE FUNCTIONS - CURRENT PAGE LINK ==========
+
+function sharePage(platform) {
+    let url = encodeURIComponent(window.location.href);
+    let title = encodeURIComponent(document.title || "Free Online Tools 203");
+    
+    let shareUrl = "";
+    if (platform === "whatsapp") {
+        shareUrl = "https://wa.me/?text=" + title + "%20" + url;
+    } else if (platform === "facebook") {
+        shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    } else if (platform === "twitter") {
+        shareUrl = "https://twitter.com/intent/tweet?text=" + title + "&url=" + url;
+    } else if (platform === "linkedin") {
+        shareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + title;
+    }
+    
+    if (shareUrl) {
+        window.open(shareUrl, "_blank", "width=600,height=500");
+    }
+}
+
+function copyPageLink() {
+    let url = window.location.href;
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+            showToast('✅ Link copied! Share with friends.');
+        }).catch(() => {
+            fallbackCopy(url);
+        });
+    } else {
+        fallbackCopy(url);
+    }
+}
+
+function fallbackCopy(text) {
+    let textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    showToast('✅ Link copied! Share with friends.');
+}
+
+function showToast(message) {
+    let toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:8px 18px;border-radius:50px;font-size:13px;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);animation:toastSlide 0.3s ease';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2500);
+}
+</script>
+
+<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER END ========== -->
 </body>
 </html>
