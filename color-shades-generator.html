@@ -583,38 +583,193 @@
         </div>
     </div>
 
- <!-- ========== CATEGORY FOOTER ========== -->
-<!-- Category Footer - Color Tools (Fixed, No Conflict) -->
+<!-- ========== COLOR TOOLS CATEGORY FOOTER START ========== -->
+
+<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
 <style>
-.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
-.btn-home:hover{transform:translateY(-2px);background:#2563eb}
-.btn-home:active{transform:scale(.97);background:#1d4ed8}
-.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
-.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
-.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
-.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
-@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+.clr-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.clr-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
+.clr-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
+.clr-tools-box{background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 100%);border-radius:24px;padding:1.8rem;border:1px solid #c4b5fd}
+.clr-tools-title{font-size:1.5rem;font-weight:800;color:#4c1d95;margin-bottom:0.5rem;border-left:5px solid #7c3aed;padding-left:16px}
+.clr-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+.clr-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem}
+.clr-tool-card{background:#fff;border-radius:16px;padding:14px 18px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
+.clr-tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#c4b5fd}
+.clr-tool-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
+.clr-tool-icon{font-size:1.8rem;min-width:48px;text-align:center}
+.clr-tool-info{flex:1}
+.clr-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
+.clr-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
+.clr-tool-badge{display:inline-block;background:#ede9fe;color:#5b21b6;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
+.clr-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+.clr-page-btn{background:#fff;border:1px solid #c4b5fd;padding:10px 20px;border-radius:40px;text-decoration:none;color:#4c1d95;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.clr-page-btn:hover{background:#7c3aed;color:#fff}
+.clr-page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.clr-page-number{background:#fff;border:1px solid #c4b5fd;padding:8px 16px;border-radius:40px;color:#4c1d95;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
+.clr-page-number:hover{background:#ede9fe}
+.clr-page-number.active{background:#4c1d95;color:#fff;border-color:#4c1d95}
+.clr-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
+.clr-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
+.clr-total-tools{background:#4c1d95;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
+.clr-category-filter{display:flex;gap:8px;flex-wrap:wrap}
+.clr-filter-chip{background:#fff;border:1px solid #c4b5fd;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#4c1d95}
+.clr-filter-chip:hover,.clr-filter-chip.active{background:#7c3aed;color:#fff}
 </style>
-<div class="related-section">
-  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
-  <div class="tools-box">
-    <div class="tools-title">🔗 Other Tools in 🎨 Color Tools</div>
-    <div class="tools-grid">
-      <a href="https://freeonlinetools203.com/color-palette-generator.html" class="tool-btn">🎨 Color Palette Generator</a>
-      <a href="https://freeonlinetools203.com/color-shades-generator.html" class="tool-btn">🌈 Color Shades Generator</a>
-      <a href="https://freeonlinetools203.com/color-gradient-maker.html" class="tool-btn">🖌️ Color Gradient Maker</a>
-      <a href="https://freeonlinetools203.com/color-contrast-checker.html" class="tool-btn">🔍 Color Contrast Checker</a>
-      <a href="https://freeonlinetools203.com/color-name-finder.html" class="tool-btn">🏷️ Color Name Finder</a>
-      <a href="https://freeonlinetools203.com/random-color-picker.html" class="tool-btn">🎲 Random Color Picker</a>
-      <a href="https://freeonlinetools203.com/color-wheel-seo.html" class="tool-btn">🎡 Color Wheel</a>
-      <a href="https://freeonlinetools203.com/palette-generator.html" class="tool-btn">🖼️ Palette Generator</a>
-      <a href="https://freeonlinetools203.com/image-color-extractor.html" class="tool-btn">💧 Image Color Extractor</a>
+
+<div class="clr-related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="clr-btn-home">🏠 Back to Home</a>
+  <div class="clr-tools-box">
+    <div class="clr-tools-title">🎨 Color Tools</div>
+    <div class="clr-tools-subtitle">⚡ Free color tools for designers, developers & creators!</div>
+
+    <div class="clr-stats-bar">
+      <div class="clr-total-tools">🎯 Total 9 Color Tools</div>
+      <div class="clr-category-filter">
+        <span class="clr-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="clr-filter-chip" data-filter="palette">🎨 Palette</span>
+        <span class="clr-filter-chip" data-filter="picker">🖌️ Picker</span>
+        <span class="clr-filter-chip" data-filter="checker">✅ Checker</span>
+      </div>
     </div>
+
+    <div id="clrToolsGrid" class="clr-tools-grid"></div>
+
+    <div class="clr-pagination">
+      <button class="clr-page-btn" id="clrPrevBtn" onclick="clrChangePage(-1)">◀ Prev</button>
+      <div id="clrPageNumbers"></div>
+      <button class="clr-page-btn" id="clrNextBtn" onclick="clrChangePage(1)">Next ▶</button>
+    </div>
+    <div class="clr-page-info" id="clrPageInfo"></div>
   </div>
 </div>
+</div>
+
+<script>
+const clrToolsList = [
+  { name: "🎨 Color Palette Generator", desc: "Generate beautiful color palettes instantly", category: "palette", url: "https://freeonlinetools203.com/color-palette-generator.html" },
+  { name: "🖼️ Palette Generator", desc: "Create stunning palettes for any project", category: "palette", url: "https://freeonlinetools203.com/palette-generator.html" },
+  { name: "🌈 Color Shades Generator", desc: "Generate light and dark shades of any color", category: "palette", url: "https://freeonlinetools203.com/color-shades-generator.html" },
+  { name: "🎭 Color Gradient Maker", desc: "Create smooth color gradients for design", category: "palette", url: "https://freeonlinetools203.com/color-gradient-maker.html" },
+  { name: "✅ Color Contrast Checker", desc: "Check color contrast for accessibility", category: "checker", url: "https://freeonlinetools203.com/color-contrast-checker.html" },
+  { name: "🏷️ Color Name Finder", desc: "Find the name of any color by hex code", category: "picker", url: "https://freeonlinetools203.com/color-name-finder.html" },
+  { name: "🎲 Random Color Picker", desc: "Pick random colors for your designs", category: "picker", url: "https://freeonlinetools203.com/random-color-picker.html" },
+  { name: "🎡 Color Wheel", desc: "Explore color relationships with color wheel", category: "picker", url: "https://freeonlinetools203.com/color-wheel-seo.html" },
+  { name: "🖼️ Image Color Extractor", desc: "Extract colors from any image instantly", category: "picker", url: "https://freeonlinetools203.com/image-color-extractor.html" }
+];
+
+let clrCurrentPage = 1;
+let clrCurrentFilter = "all";
+const clrToolsPerPage = 8;
+
+function clrGetFilteredTools() {
+  if (clrCurrentFilter === "all") return clrToolsList;
+  return clrToolsList.filter(tool => tool.category === clrCurrentFilter);
+}
+
+function clrRenderTools() {
+  const filtered = clrGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / clrToolsPerPage);
+  const start = (clrCurrentPage - 1) * clrToolsPerPage;
+  const end = start + clrToolsPerPage;
+  const pageTools = filtered.slice(start, end);
+
+  const grid = document.getElementById('clrToolsGrid');
+  grid.innerHTML = pageTools.map(tool => `
+    <div class="clr-tool-card">
+      <a href="${tool.url}">
+        <div class="clr-tool-icon">${tool.name.split(' ')[0]}</div>
+        <div class="clr-tool-info">
+          <div class="clr-tool-name">${tool.name}</div>
+          <div class="clr-tool-desc">${tool.desc}</div>
+          <span class="clr-tool-badge">${
+            tool.category === 'palette' ? '🎨 Palette' :
+            tool.category === 'picker'  ? '🖌️ Picker'  : '✅ Checker'
+          }</span>
+        </div>
+      </a>
+    </div>
+  `).join('');
+
+  document.getElementById('clrPageInfo').innerHTML = `📄 Page ${clrCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${clrCurrentFilter === 'all' ? 'All Tools' : clrCurrentFilter}`;
+  clrRenderPageNumbers();
+  clrUpdateButtons();
+}
+
+function clrRenderPageNumbers() {
+  const filtered = clrGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / clrToolsPerPage);
+  const container = document.getElementById('clrPageNumbers');
+  if (!container) return;
+
+  let html = '';
+  let startPage = Math.max(1, clrCurrentPage - 2);
+  let endPage = Math.min(totalPages, clrCurrentPage + 2);
+
+  if (startPage > 1) {
+    html += `<span class="clr-page-number" onclick="clrGoToPage(1)">1</span>`;
+    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
+  }
+  for (let i = startPage; i <= endPage; i++) {
+    html += `<span class="clr-page-number ${i === clrCurrentPage ? 'active' : ''}" onclick="clrGoToPage(${i})">${i}</span>`;
+  }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
+    html += `<span class="clr-page-number" onclick="clrGoToPage(${totalPages})">${totalPages}</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function clrUpdateButtons() {
+  const filtered = clrGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / clrToolsPerPage);
+  const prevBtn = document.getElementById('clrPrevBtn');
+  const nextBtn = document.getElementById('clrNextBtn');
+  if (prevBtn) prevBtn.disabled = clrCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = clrCurrentPage === totalPages;
+}
+
+function clrChangePage(direction) {
+  const filtered = clrGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / clrToolsPerPage);
+  const newPage = clrCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    clrCurrentPage = newPage;
+    clrRenderTools();
+  }
+}
+
+function clrGoToPage(page) {
+  const filtered = clrGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / clrToolsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    clrCurrentPage = page;
+    clrRenderTools();
+  }
+}
+
+function clrSetFilter(filter) {
+  clrCurrentFilter = filter;
+  clrCurrentPage = 1;
+  clrRenderTools();
+  document.querySelectorAll('.clr-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+// ✅ Sirf ek baar
+document.addEventListener('DOMContentLoaded', () => {
+  clrRenderTools();
+  document.querySelectorAll('.clr-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      clrSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
+</script>
+
+<!-- ========== COLOR TOOLS CATEGORY FOOTER END ========== -->
   
     <!-- ========== SEO ARTICLE ========== -->
     <div class="info-section">
