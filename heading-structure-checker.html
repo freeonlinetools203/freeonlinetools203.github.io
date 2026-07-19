@@ -201,28 +201,198 @@ body.dark .faq-answer{color:#9ca3af;}
 </div>
 </div>
 
-<!-- ========== INTERNAL LINKING (RELATED TOOLS) MOVED HERE - BEFORE ARTICLE ========== -->
-<div class="related-section">
-  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
-  <div class="tools-box">
-    <div class="tools-title">🔗 Other Tools in 🔍 SEO Tools</div>
-    <div class="tools-grid">
-      <a href="https://freeonlinetools203.com/free-backlink-checker.html" class="tool-btn">⭐ Free Backlink Checker</a>
-      <a href="https://freeonlinetools203.com/keyword-density-checker.html" class="tool-btn">🔍 Keyword Density Checker</a>
-      <a href="https://freeonlinetools203.com/meta-tags-generator.html" class="tool-btn">🏷️ Meta Tags Generator</a>
-      <a href="https://freeonlinetools203.com/meta-tag-analyzer.html" class="tool-btn">🔎 Meta Tag Analyzer</a>
-      <a href="https://freeonlinetools203.com/google-index-checker.html" class="tool-btn">🔎 Google Index Checker</a>
-      <a href="https://freeonlinetools203.com/seo-analyzer.html" class="tool-btn">📊 SEO Analyzer</a>
-      <a href="https://freeonlinetools203.com/seo-score-checker.html" class="tool-btn">⭐ SEO Score Checker</a>
-      <a href="https://freeonlinetools203.com/seo-title-generator.html" class="tool-btn">✍️ SEO Title Generator</a>
-      <a href="https://freeonlinetools203.com/serp-snippet-preview.html" class="tool-btn">👁️ SERP Snippet Preview</a>
-      <a href="https://freeonlinetools203.com/readability-checker.html" class="tool-btn">📖 Readability Checker</a>
-      <a href="https://freeonlinetools203.com/heading-structure-checker.html" class="tool-btn">🏗️ Heading Structure Checker</a>
-      <a href="https://freeonlinetools203.com/image-alt-analyzer.html" class="tool-btn">🖼️ Image Alt Analyzer</a>
-      <a href="https://freeonlinetools203.com/xml-sitemap-generator.html" class="tool-btn">🗺️ XML Sitemap Generator</a>
+<!-- ========== SEO TOOLS CATEGORY FOOTER START ========== -->
+
+<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
+<style>
+.seo-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.seo-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
+.seo-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
+.seo-tools-box{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border-radius:24px;padding:1.8rem;border:1px solid #fbbf24}
+.seo-tools-title{font-size:1.5rem;font-weight:800;color:#78350f;margin-bottom:0.5rem;border-left:5px solid #d97706;padding-left:16px}
+.seo-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+.seo-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem}
+.seo-tool-card{background:#fff;border-radius:16px;padding:14px 18px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
+.seo-tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#fbbf24}
+.seo-tool-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
+.seo-tool-icon{font-size:1.8rem;min-width:48px;text-align:center}
+.seo-tool-info{flex:1}
+.seo-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
+.seo-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
+.seo-tool-badge{display:inline-block;background:#fef3c7;color:#92400e;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
+.seo-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+.seo-page-btn{background:#fff;border:1px solid #fbbf24;padding:10px 20px;border-radius:40px;text-decoration:none;color:#78350f;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.seo-page-btn:hover{background:#d97706;color:#fff}
+.seo-page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.seo-page-number{background:#fff;border:1px solid #fbbf24;padding:8px 16px;border-radius:40px;color:#78350f;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
+.seo-page-number:hover{background:#fef3c7}
+.seo-page-number.active{background:#78350f;color:#fff;border-color:#78350f}
+.seo-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
+.seo-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
+.seo-total-tools{background:#78350f;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
+.seo-category-filter{display:flex;gap:8px;flex-wrap:wrap}
+.seo-filter-chip{background:#fff;border:1px solid #fbbf24;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#78350f}
+.seo-filter-chip:hover,.seo-filter-chip.active{background:#d97706;color:#fff}
+</style>
+
+<div class="seo-related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="seo-btn-home">🏠 Back to Home</a>
+  <div class="seo-tools-box">
+    <div class="seo-tools-title">🔍 SEO Tools</div>
+    <div class="seo-tools-subtitle">⚡ Boost your website ranking with these free SEO tools!</div>
+
+    <div class="seo-stats-bar">
+      <div class="seo-total-tools">🎯 Total 14 SEO Tools</div>
+      <div class="seo-category-filter">
+        <span class="seo-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="seo-filter-chip" data-filter="analysis">🔎 Analysis</span>
+        <span class="seo-filter-chip" data-filter="generator">⚙️ Generator</span>
+        <span class="seo-filter-chip" data-filter="checker">✅ Checker</span>
+      </div>
     </div>
+
+    <div id="seoToolsGrid" class="seo-tools-grid"></div>
+
+    <div class="seo-pagination">
+      <button class="seo-page-btn" id="seoPrevBtn" onclick="seoChangePage(-1)">◀ Prev</button>
+      <div id="seoPageNumbers"></div>
+      <button class="seo-page-btn" id="seoNextBtn" onclick="seoChangePage(1)">Next ▶</button>
+    </div>
+    <div class="seo-page-info" id="seoPageInfo"></div>
   </div>
 </div>
+</div>
+
+<script>
+const seoToolsList = [
+  { name: "🔑 Keyword Density Checker", desc: "Check keyword density of any webpage", category: "checker", url: "https://freeonlinetools203.com/keyword-density-checker.html" },
+  { name: "🏷️ Meta Tags Generator", desc: "Generate perfect meta tags for SEO", category: "generator", url: "https://freeonlinetools203.com/meta-tags-generator.html" },
+  { name: "🔍 Meta Tag Analyzer", desc: "Analyze meta tags of any website", category: "analysis", url: "https://freeonlinetools203.com/meta-tag-analyzer.html" },
+  { name: "🔗 Broken Link Checker", desc: "Find and fix broken links on your site", category: "checker", url: "https://freeonlinetools203.com/broken-link-checker.html" },
+  { name: "🔙 Free Backlink Checker", desc: "Check backlinks of any website", category: "checker", url: "https://freeonlinetools203.com/free-backlink-checker.html" },
+  { name: "📌 Google Index Checker", desc: "Check if your page is indexed by Google", category: "checker", url: "https://freeonlinetools203.com/google-index-checker.html" },
+  { name: "📊 SEO Analyzer", desc: "Full SEO analysis of your website", category: "analysis", url: "https://freeonlinetools203.com/seo-analyzer.html" },
+  { name: "⭐ SEO Score Checker", desc: "Get your website SEO score instantly", category: "checker", url: "https://freeonlinetools203.com/seo-score-checker.html" },
+  { name: "✍️ SEO Title Generator", desc: "Generate SEO-friendly titles for content", category: "generator", url: "https://freeonlinetools203.com/seo-title-generator.html" },
+  { name: "👁️ SERP Snippet Preview", desc: "Preview how your page looks in Google", category: "analysis", url: "https://freeonlinetools203.com/serp-snippet-preview.html" },
+  { name: "📖 Readability Checker", desc: "Check content readability score", category: "checker", url: "https://freeonlinetools203.com/readability-checker.html" },
+  { name: "🏗️ Heading Structure Checker", desc: "Analyze H1-H6 heading structure", category: "checker", url: "https://freeonlinetools203.com/heading-structure-checker.html" },
+  { name: "🖼️ Image Alt Analyzer", desc: "Check image alt tags for SEO", category: "analysis", url: "https://freeonlinetools203.com/image-alt-analyzer.html" },
+  { name: "🗺️ XML Sitemap Generator", desc: "Generate XML sitemap for your website", category: "generator", url: "https://freeonlinetools203.com/xml-sitemap-generator.html" }
+];
+
+let seoCurrentPage = 1;
+let seoCurrentFilter = "all";
+const seoToolsPerPage = 8;
+
+function seoGetFilteredTools() {
+  if (seoCurrentFilter === "all") return seoToolsList;
+  return seoToolsList.filter(tool => tool.category === seoCurrentFilter);
+}
+
+function seoRenderTools() {
+  const filtered = seoGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / seoToolsPerPage);
+  const start = (seoCurrentPage - 1) * seoToolsPerPage;
+  const end = start + seoToolsPerPage;
+  const pageTools = filtered.slice(start, end);
+
+  const grid = document.getElementById('seoToolsGrid');
+  grid.innerHTML = pageTools.map(tool => `
+    <div class="seo-tool-card">
+      <a href="${tool.url}">
+        <div class="seo-tool-icon">${tool.name.split(' ')[0]}</div>
+        <div class="seo-tool-info">
+          <div class="seo-tool-name">${tool.name}</div>
+          <div class="seo-tool-desc">${tool.desc}</div>
+          <span class="seo-tool-badge">${
+            tool.category === 'analysis'  ? '🔎 Analysis' :
+            tool.category === 'generator' ? '⚙️ Generator' : '✅ Checker'
+          }</span>
+        </div>
+      </a>
+    </div>
+  `).join('');
+
+  document.getElementById('seoPageInfo').innerHTML = `📄 Page ${seoCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${seoCurrentFilter === 'all' ? 'All Tools' : seoCurrentFilter}`;
+  seoRenderPageNumbers();
+  seoUpdateButtons();
+}
+
+function seoRenderPageNumbers() {
+  const filtered = seoGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / seoToolsPerPage);
+  const container = document.getElementById('seoPageNumbers');
+  if (!container) return;
+
+  let html = '';
+  let startPage = Math.max(1, seoCurrentPage - 2);
+  let endPage = Math.min(totalPages, seoCurrentPage + 2);
+
+  if (startPage > 1) {
+    html += `<span class="seo-page-number" onclick="seoGoToPage(1)">1</span>`;
+    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
+  }
+  for (let i = startPage; i <= endPage; i++) {
+    html += `<span class="seo-page-number ${i === seoCurrentPage ? 'active' : ''}" onclick="seoGoToPage(${i})">${i}</span>`;
+  }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
+    html += `<span class="seo-page-number" onclick="seoGoToPage(${totalPages})">${totalPages}</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function seoUpdateButtons() {
+  const filtered = seoGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / seoToolsPerPage);
+  const prevBtn = document.getElementById('seoPrevBtn');
+  const nextBtn = document.getElementById('seoNextBtn');
+  if (prevBtn) prevBtn.disabled = seoCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = seoCurrentPage === totalPages;
+}
+
+function seoChangePage(direction) {
+  const filtered = seoGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / seoToolsPerPage);
+  const newPage = seoCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    seoCurrentPage = newPage;
+    seoRenderTools();
+  }
+}
+
+function seoGoToPage(page) {
+  const filtered = seoGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / seoToolsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    seoCurrentPage = page;
+    seoRenderTools();
+  }
+}
+
+function seoSetFilter(filter) {
+  seoCurrentFilter = filter;
+  seoCurrentPage = 1;
+  seoRenderTools();
+  document.querySelectorAll('.seo-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+// ✅ Sirf ek baar
+document.addEventListener('DOMContentLoaded', () => {
+  seoRenderTools();
+  document.querySelectorAll('.seo-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      seoSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
+</script>
+
+<!-- ========== SEO TOOLS CATEGORY FOOTER END ========== -->
 
 <!-- ========== PROFESSIONAL SEO ARTICLE ========== -->
 <div class="article-section">
