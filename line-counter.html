@@ -751,70 +751,189 @@ This is a new paragraph after an empty line."></textarea>
         </div>
     </div>
 
-    <!-- Category Footer & Back to Home Button -->
-<div class="category-footer" style="max-width: 1200px; margin: 40px auto 20px; padding: 0 20px;">
-  <div style="text-align: center; margin-bottom: 30px;">
-    <a href="index.html" class="home-link" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px 28px; border-radius: 40px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">🔘 Back to Home</a>
+<!-- ========== TEXT & WRITING TOOLS CATEGORY FOOTER START ========== -->
+
+<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
+<style>
+.txt-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.txt-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
+.txt-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
+.txt-tools-box{background:linear-gradient(135deg,#f0f9ff 0%,#bae6fd 100%);border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.txt-tools-title{font-size:1.5rem;font-weight:800;color:#0c4a6e;margin-bottom:0.5rem;border-left:5px solid #0284c7;padding-left:16px}
+.txt-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+.txt-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem}
+.txt-tool-card{background:#fff;border-radius:16px;padding:14px 18px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
+.txt-tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#7dd3fc}
+.txt-tool-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
+.txt-tool-icon{font-size:1.8rem;min-width:48px;text-align:center}
+.txt-tool-info{flex:1}
+.txt-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
+.txt-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
+.txt-tool-badge{display:inline-block;background:#e0f2fe;color:#075985;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
+.txt-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+.txt-page-btn{background:#fff;border:1px solid #7dd3fc;padding:10px 20px;border-radius:40px;text-decoration:none;color:#0c4a6e;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.txt-page-btn:hover{background:#0284c7;color:#fff}
+.txt-page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.txt-page-number{background:#fff;border:1px solid #7dd3fc;padding:8px 16px;border-radius:40px;color:#0c4a6e;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
+.txt-page-number:hover{background:#e0f2fe}
+.txt-page-number.active{background:#0c4a6e;color:#fff;border-color:#0c4a6e}
+.txt-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
+.txt-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
+.txt-total-tools{background:#0c4a6e;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
+.txt-category-filter{display:flex;gap:8px;flex-wrap:wrap}
+.txt-filter-chip{background:#fff;border:1px solid #7dd3fc;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#0c4a6e}
+.txt-filter-chip:hover,.txt-filter-chip.active{background:#0284c7;color:#fff}
+</style>
+
+<div class="txt-related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="txt-btn-home">🏠 Back to Home</a>
+  <div class="txt-tools-box">
+    <div class="txt-tools-title">📝 Text & Writing Tools</div>
+    <div class="txt-tools-subtitle">⚡ Free text tools for writers, students & developers!</div>
+
+    <div class="txt-stats-bar">
+      <div class="txt-total-tools">🎯 Total 5 Text Tools</div>
+      <div class="txt-category-filter">
+        <span class="txt-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="txt-filter-chip" data-filter="counter">🔢 Counter</span>
+        <span class="txt-filter-chip" data-filter="converter">🔄 Converter</span>
+        <span class="txt-filter-chip" data-filter="security">🔒 Security</span>
+      </div>
+    </div>
+
+    <div id="txtToolsGrid" class="txt-tools-grid"></div>
+
+    <div class="txt-pagination">
+      <button class="txt-page-btn" id="txtPrevBtn" onclick="txtChangePage(-1)">◀ Prev</button>
+      <div id="txtPageNumbers"></div>
+      <button class="txt-page-btn" id="txtNextBtn" onclick="txtChangePage(1)">Next ▶</button>
+    </div>
+    <div class="txt-page-info" id="txtPageInfo"></div>
   </div>
-  <div id="dynamicCategoryFooter"></div>
+</div>
 </div>
 
 <script>
-  (function() {
-    // Automatic category detection from filename
-    function getCurrentCategory() {
-      const path = window.location.pathname;
-      console.log("Current path:", path);
-      if (path.includes('age-calculator') || path.includes('gst') || path.includes('percentage') || path.includes('sip') || path.includes('discount') || path.includes('profit-loss') || path.includes('gpa') || path.includes('date-calculator') || path.includes('qr-code') || path.includes('youtube-thumbnail') || path.includes('currency-converter') || path.includes('age-difference')) return 'popular';
-      if (path.includes('bmi') || path.includes('bmr') || path.includes('calorie') || path.includes('meal-planner')) return 'health';
-      if (path.includes('emi') || path.includes('loan') || path.includes('zakat')) return 'financial';
-      if (path.includes('word-counter') || path.includes('line-counter') || path.includes('text-case') || path.includes('password-generator')) return 'text';
-      if (path.includes('image-compressor')) return 'media';
-      if (path.includes('spin') || path.includes('yes-no') || path.includes('decision-roulette') || path.includes('random-number')) return 'fun';
-      return 'popular';
-    }
+const txtToolsList = [
+  { name: "📊 Word Counter", desc: "Count words and characters instantly", category: "counter", url: "https://freeonlinetools203.com/word-counter.html" },
+  { name: "🔢 Line Counter", desc: "Count lines in any text quickly", category: "counter", url: "https://freeonlinetools203.com/line-counter.html" },
+  { name: "🔄 Text Case Converter", desc: "Convert text to any case format", category: "converter", url: "https://freeonlinetools203.com/text-case-converter.html" },
+  { name: "🔑 Password Generator", desc: "Generate strong secure passwords", category: "security", url: "https://freeonlinetools203.com/password-generator.html" },
+  { name: "🛡️ Password Strength Checker", desc: "Check how strong your password is", category: "security", url: "https://freeonlinetools203.com/password-checker.html" }
+];
 
-    const categories = {
-      popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "Age Difference", url: "age-difference-calculator.html" }, { name: "Discount Calculator", url: "discount-calculator.html" }, { name: "Profit & Loss", url: "profit-loss-calculator.html" }, { name: "GPA Calculator", url: "gpa-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "SIP Calculator", url: "sip-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Date Calculator", url: "date-calculator.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "YouTube Thumbnail", url: "youtube-thumbnail-downloader.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
-      health: { name: "🏃‍♂️ Health & Fitness", tools: [ { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "BMR Calculator", url: "bmr-calculator.html" }, { name: "Calorie Calculator", url: "calorie-calculator.html" }, { name: "Meal Planner", url: "meal-planner.html" } ] },
-      financial: { name: "💰 Financial Tools", tools: [ { name: "EMI Calculator", url: "emi-calculator.html" }, { name: "Loan Calculator", url: "loan-calculator.html" }, { name: "Zakat Calculator", url: "zakat-calculator.html" } ] },
-      text: { name: "📝 Text & Writing", tools: [ { name: "Word Counter", url: "word-counter.html" }, { name: "Line Counter", url: "line-counter.html" }, { name: "Text Case Converter", url: "text-case-converter.html" }, { name: "Password Generator", url: "password-generator.html" } ] },
-      media: { name: "🖼️ Image & Media", tools: [ { name: "Image Compressor", url: "image-compressor.html" } ] },
-      fun: { name: "🎲 Random & Fun", tools: [ { name: "Spin The Wheel", url: "spin-the-wheel.html" }, { name: "Yes/No Wheel", url: "yes-no-wheel.html" }, { name: "Decision Roulette", url: "decision-roulette.html" }, { name: "Random Number", url: "random-number-generator.html" } ] }
-    };
+let txtCurrentPage = 1;
+let txtCurrentFilter = "all";
+const txtToolsPerPage = 8;
 
-    function renderFooter() {
-      const footerContainer = document.getElementById('dynamicCategoryFooter');
-      if (!footerContainer) {
-        console.error("Element #dynamicCategoryFooter not found");
-        return;
-      }
-      const currentCategory = getCurrentCategory();
-      console.log("Detected category:", currentCategory);
-      const cat = categories[currentCategory];
-      if (!cat) {
-        footerContainer.innerHTML = '<p style="text-align:center;">Tools loading...</p>';
-        return;
-      }
-      let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-      cat.tools.forEach(tool => {
-        html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; transition: 0.2s; display: block;">🔘 ${tool.name}</a>`;
-      });
-      html += `</div></div>`;
-      footerContainer.innerHTML = html;
-    }
+function txtGetFilteredTools() {
+  if (txtCurrentFilter === "all") return txtToolsList;
+  return txtToolsList.filter(tool => tool.category === txtCurrentFilter);
+}
 
-    // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', renderFooter);
-    } else {
-      renderFooter();
-    }
-  })();
+function txtRenderTools() {
+  const filtered = txtGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / txtToolsPerPage);
+  const start = (txtCurrentPage - 1) * txtToolsPerPage;
+  const end = start + txtToolsPerPage;
+  const pageTools = filtered.slice(start, end);
+
+  const grid = document.getElementById('txtToolsGrid');
+  grid.innerHTML = pageTools.map(tool => `
+    <div class="txt-tool-card">
+      <a href="${tool.url}">
+        <div class="txt-tool-icon">${tool.name.split(' ')[0]}</div>
+        <div class="txt-tool-info">
+          <div class="txt-tool-name">${tool.name}</div>
+          <div class="txt-tool-desc">${tool.desc}</div>
+          <span class="txt-tool-badge">${
+            tool.category === 'counter'   ? '🔢 Counter'   :
+            tool.category === 'converter' ? '🔄 Converter' : '🔒 Security'
+          }</span>
+        </div>
+      </a>
+    </div>
+  `).join('');
+
+  document.getElementById('txtPageInfo').innerHTML = `📄 Page ${txtCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${txtCurrentFilter === 'all' ? 'All Tools' : txtCurrentFilter}`;
+  txtRenderPageNumbers();
+  txtUpdateButtons();
+}
+
+function txtRenderPageNumbers() {
+  const filtered = txtGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / txtToolsPerPage);
+  const container = document.getElementById('txtPageNumbers');
+  if (!container) return;
+
+  let html = '';
+  let startPage = Math.max(1, txtCurrentPage - 2);
+  let endPage = Math.min(totalPages, txtCurrentPage + 2);
+
+  if (startPage > 1) {
+    html += `<span class="txt-page-number" onclick="txtGoToPage(1)">1</span>`;
+    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
+  }
+  for (let i = startPage; i <= endPage; i++) {
+    html += `<span class="txt-page-number ${i === txtCurrentPage ? 'active' : ''}" onclick="txtGoToPage(${i})">${i}</span>`;
+  }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
+    html += `<span class="txt-page-number" onclick="txtGoToPage(${totalPages})">${totalPages}</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function txtUpdateButtons() {
+  const filtered = txtGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / txtToolsPerPage);
+  const prevBtn = document.getElementById('txtPrevBtn');
+  const nextBtn = document.getElementById('txtNextBtn');
+  if (prevBtn) prevBtn.disabled = txtCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = txtCurrentPage === totalPages;
+}
+
+function txtChangePage(direction) {
+  const filtered = txtGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / txtToolsPerPage);
+  const newPage = txtCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    txtCurrentPage = newPage;
+    txtRenderTools();
+  }
+}
+
+function txtGoToPage(page) {
+  const filtered = txtGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / txtToolsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    txtCurrentPage = page;
+    txtRenderTools();
+  }
+}
+
+function txtSetFilter(filter) {
+  txtCurrentFilter = filter;
+  txtCurrentPage = 1;
+  txtRenderTools();
+  document.querySelectorAll('.txt-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+// ✅ Sirf ek baar
+document.addEventListener('DOMContentLoaded', () => {
+  txtRenderTools();
+  document.querySelectorAll('.txt-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      txtSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
 </script>
 
+<!-- ========== TEXT & WRITING TOOLS CATEGORY FOOTER END ========== -->
 
     <!-- ========== 2500+ WORD SEO ARTICLE ========== -->
     <div class="article-section">
