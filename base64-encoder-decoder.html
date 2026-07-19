@@ -1028,15 +1028,192 @@
         </div>
     </div>
 
-    <div class="other-tools">
-        <h3>📝 More Developer Tools</h3>
-        <div class="tools-grid">
-            <a href="base64-encoder-decoder.html" class="tool-link">📝 Base64 Encoder/Decoder</a>
-            <a href="url-encoder-decoder.html" class="tool-link">🔗 URL Encoder/Decoder</a>
-            <a href="md5-generator.html" class="tool-link">🔐 MD5 Hash Generator</a>
-        </div>
-        <div style="text-align:center;"><a href="index.html" class="home-link">← Back to Home</a></div>
+   <!-- ========== DEVELOPER & SECURITY TOOLS CATEGORY FOOTER START ========== -->
+
+<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
+<style>
+.dev-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.dev-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
+.dev-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
+.dev-tools-box{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 100%);border-radius:24px;padding:1.8rem;border:1px solid #94a3b8}
+.dev-tools-title{font-size:1.5rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;border-left:5px solid #475569;padding-left:16px}
+.dev-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+.dev-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem}
+.dev-tool-card{background:#fff;border-radius:16px;padding:14px 18px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
+.dev-tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#94a3b8}
+.dev-tool-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
+.dev-tool-icon{font-size:1.8rem;min-width:48px;text-align:center}
+.dev-tool-info{flex:1}
+.dev-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
+.dev-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
+.dev-tool-badge{display:inline-block;background:#f1f5f9;color:#334155;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
+.dev-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+.dev-page-btn{background:#fff;border:1px solid #94a3b8;padding:10px 20px;border-radius:40px;text-decoration:none;color:#0f172a;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.dev-page-btn:hover{background:#475569;color:#fff}
+.dev-page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.dev-page-number{background:#fff;border:1px solid #94a3b8;padding:8px 16px;border-radius:40px;color:#0f172a;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
+.dev-page-number:hover{background:#f1f5f9}
+.dev-page-number.active{background:#0f172a;color:#fff;border-color:#0f172a}
+.dev-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
+.dev-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
+.dev-total-tools{background:#0f172a;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
+.dev-category-filter{display:flex;gap:8px;flex-wrap:wrap}
+.dev-filter-chip{background:#fff;border:1px solid #94a3b8;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#0f172a}
+.dev-filter-chip:hover,.dev-filter-chip.active{background:#475569;color:#fff}
+</style>
+
+<div class="dev-related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="dev-btn-home">🏠 Back to Home</a>
+  <div class="dev-tools-box">
+    <div class="dev-tools-title">🔐 Developer & Security Tools</div>
+    <div class="dev-tools-subtitle">⚡ Free developer tools for encoding, hashing, formatting & more!</div>
+
+    <div class="dev-stats-bar">
+      <div class="dev-total-tools">🎯 Total 8 Developer Tools</div>
+      <div class="dev-category-filter">
+        <span class="dev-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="dev-filter-chip" data-filter="hash">🔒 Hash</span>
+        <span class="dev-filter-chip" data-filter="encoder">🔄 Encoder</span>
+        <span class="dev-filter-chip" data-filter="formatter">📋 Formatter</span>
+      </div>
     </div>
+
+    <div id="devToolsGrid" class="dev-tools-grid"></div>
+
+    <div class="dev-pagination">
+      <button class="dev-page-btn" id="devPrevBtn" onclick="devChangePage(-1)">◀ Prev</button>
+      <div id="devPageNumbers"></div>
+      <button class="dev-page-btn" id="devNextBtn" onclick="devChangePage(1)">Next ▶</button>
+    </div>
+    <div class="dev-page-info" id="devPageInfo"></div>
+  </div>
+</div>
+</div>
+
+<script>
+const devToolsList = [
+  { name: "🔒 MD5 Hash Generator", desc: "Generate MD5 hash of any text instantly", category: "hash", url: "https://freeonlinetools203.com/md5-generator.html" },
+  { name: "🔐 SHA-256 Hash Generator", desc: "Generate secure SHA-256 hash strings", category: "hash", url: "https://freeonlinetools203.com/sha256-generator.html" },
+  { name: "🛡️ SHA-1 Hash Generator", desc: "Generate SHA-1 hash for any input", category: "hash", url: "https://freeonlinetools203.com/sha1-generator.html" },
+  { name: "🔄 Base64 Encoder/Decoder", desc: "Encode and decode Base64 strings easily", category: "encoder", url: "https://freeonlinetools203.com/base64-encoder-decoder.html" },
+  { name: "🌐 URL Encoder/Decoder", desc: "Encode and decode URLs instantly", category: "encoder", url: "https://freeonlinetools203.com/url-encoder-decoder.html" },
+  { name: "🏷️ HTML Encoder/Decoder", desc: "Encode and decode HTML entities", category: "encoder", url: "https://freeonlinetools203.com/html-encoder-decoder.html" },
+  { name: "⚡ HTML Minifier Pro", desc: "Minify HTML code to reduce file size", category: "formatter", url: "https://freeonlinetools203.com/html-minifier-pro.html" },
+  { name: "📋 JSON Formatter & Validator", desc: "Format and validate JSON data instantly", category: "formatter", url: "https://freeonlinetools203.com/json-formatter-validator.html" }
+];
+
+let devCurrentPage = 1;
+let devCurrentFilter = "all";
+const devToolsPerPage = 8;
+
+function devGetFilteredTools() {
+  if (devCurrentFilter === "all") return devToolsList;
+  return devToolsList.filter(tool => tool.category === devCurrentFilter);
+}
+
+function devRenderTools() {
+  const filtered = devGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / devToolsPerPage);
+  const start = (devCurrentPage - 1) * devToolsPerPage;
+  const end = start + devToolsPerPage;
+  const pageTools = filtered.slice(start, end);
+
+  const grid = document.getElementById('devToolsGrid');
+  grid.innerHTML = pageTools.map(tool => `
+    <div class="dev-tool-card">
+      <a href="${tool.url}">
+        <div class="dev-tool-icon">${tool.name.split(' ')[0]}</div>
+        <div class="dev-tool-info">
+          <div class="dev-tool-name">${tool.name}</div>
+          <div class="dev-tool-desc">${tool.desc}</div>
+          <span class="dev-tool-badge">${
+            tool.category === 'hash'      ? '🔒 Hash' :
+            tool.category === 'encoder'   ? '🔄 Encoder' : '📋 Formatter'
+          }</span>
+        </div>
+      </a>
+    </div>
+  `).join('');
+
+  document.getElementById('devPageInfo').innerHTML = `📄 Page ${devCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${devCurrentFilter === 'all' ? 'All Tools' : devCurrentFilter}`;
+  devRenderPageNumbers();
+  devUpdateButtons();
+}
+
+function devRenderPageNumbers() {
+  const filtered = devGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / devToolsPerPage);
+  const container = document.getElementById('devPageNumbers');
+  if (!container) return;
+
+  let html = '';
+  let startPage = Math.max(1, devCurrentPage - 2);
+  let endPage = Math.min(totalPages, devCurrentPage + 2);
+
+  if (startPage > 1) {
+    html += `<span class="dev-page-number" onclick="devGoToPage(1)">1</span>`;
+    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
+  }
+  for (let i = startPage; i <= endPage; i++) {
+    html += `<span class="dev-page-number ${i === devCurrentPage ? 'active' : ''}" onclick="devGoToPage(${i})">${i}</span>`;
+  }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
+    html += `<span class="dev-page-number" onclick="devGoToPage(${totalPages})">${totalPages}</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function devUpdateButtons() {
+  const filtered = devGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / devToolsPerPage);
+  const prevBtn = document.getElementById('devPrevBtn');
+  const nextBtn = document.getElementById('devNextBtn');
+  if (prevBtn) prevBtn.disabled = devCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = devCurrentPage === totalPages;
+}
+
+function devChangePage(direction) {
+  const filtered = devGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / devToolsPerPage);
+  const newPage = devCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    devCurrentPage = newPage;
+    devRenderTools();
+  }
+}
+
+function devGoToPage(page) {
+  const filtered = devGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / devToolsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    devCurrentPage = page;
+    devRenderTools();
+  }
+}
+
+function devSetFilter(filter) {
+  devCurrentFilter = filter;
+  devCurrentPage = 1;
+  devRenderTools();
+  document.querySelectorAll('.dev-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+// ✅ Sirf ek baar
+document.addEventListener('DOMContentLoaded', () => {
+  devRenderTools();
+  document.querySelectorAll('.dev-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      devSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
+</script>
+
+<!-- ========== DEVELOPER & SECURITY TOOLS CATEGORY FOOTER END ========== -->
 
     <!-- SEO Article 2500+ words -->
     <div class="seo-section">
