@@ -150,71 +150,227 @@ body.dark .result-pop{background:#374151;color:#fca5a5;}
 <div class="color-picker-section"><h3>🎨 Wheel Color</h3><div class="color-picker-row"><input type="color" id="colorPicker" value="#dc2626"><div class="hex-field"><input type="text" id="hexValue" value="#dc2626" readonly><button class="copy-btn" id="copyHexBtn">Copy HEX</button></div></div></div>
 </div></div>
 
-  <!-- ========== CATEGORY FOOTER ========== -->
-<!-- Category Footer - Fun Tools (Fixed, No Conflict) -->
+<!-- ========== SPIN THE WHEEL CATEGORY FOOTER START (DETAILED) ========== -->
+
+<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
 <style>
-.related-section{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.btn-home{display:inline-flex;align-items:center;gap:10px;background:#1e3a8a;color:#fff;padding:12px 28px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;margin-bottom:1.5rem}
-.btn-home:hover{transform:translateY(-2px);background:#2563eb}
-.btn-home:active{transform:scale(.97);background:#1d4ed8}
-.tools-box{background:#e0f2fe;border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
-.tools-title{font-size:1.5rem;font-weight:700;color:#0f3b7a;margin-bottom:1.5rem;border-left:5px solid #2563eb;padding-left:16px}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.tool-btn{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #93c5fd;padding:10px 16px;border-radius:60px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:.92rem;transition:background .2s,color .2s,transform .15s}
-.tool-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb;transform:translateX(4px)}
-.tool-btn:active{transform:scale(.97);background:#0f2b5e;color:#fff}
-@media(max-width:640px){.tools-grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}.tool-btn{font-size:.82rem;padding:8px 12px}}
+.stw-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.stw-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
+.stw-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
+.stw-tools-box{background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%);border-radius:24px;padding:1.8rem;border:1px solid #7dd3fc}
+.stw-tools-title{font-size:1.5rem;font-weight:800;color:#0f3b7a;margin-bottom:0.5rem;border-left:5px solid #2563eb;padding-left:16px}
+.stw-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+.stw-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem}
+.stw-tool-card{background:#fff;border-radius:16px;padding:14px 18px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
+.stw-tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#93c5fd}
+.stw-tool-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
+.stw-tool-icon{font-size:1.8rem;min-width:48px;text-align:center}
+.stw-tool-info{flex:1}
+.stw-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
+.stw-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
+.stw-tool-badge{display:inline-block;background:#e0f2fe;color:#0369a1;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
+.stw-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+.stw-page-btn{background:#fff;border:1px solid #93c5fd;padding:10px 20px;border-radius:40px;text-decoration:none;color:#1e3a8a;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.stw-page-btn:hover{background:#2563eb;color:#fff}
+.stw-page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.stw-page-number{background:#fff;border:1px solid #93c5fd;padding:8px 16px;border-radius:40px;color:#1e3a8a;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
+.stw-page-number:hover{background:#e0f2fe}
+.stw-page-number.active{background:#1e3a8a;color:#fff;border-color:#1e3a8a}
+.stw-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
+.stw-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
+.stw-total-tools{background:#1e3a8a;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
+.stw-category-filter{display:flex;gap:8px;flex-wrap:wrap}
+.stw-filter-chip{background:#fff;border:1px solid #93c5fd;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#1e3a8a}
+.stw-filter-chip:hover,.stw-filter-chip.active{background:#2563eb;color:#fff}
 </style>
 
-<div class="related-section">
-  <a href="https://freeonlinetools203.com/index.html" class="btn-home">🏠 Back to Home</a>
-  <div class="tools-box">
-    <div class="tools-title">🔗 Other Tools in 🎲 Fun &amp; Random Tools</div>
-    <div class="tools-grid">
-      <a href="https://freeonlinetools203.com/spin-the-wheel.html" class="tool-btn">🎡 Spin The Wheel</a>
-      <a href="https://freeonlinetools203.com/yes-no-wheel.html" class="tool-btn">✅❌ Yes/No Wheel</a>
-      <a href="https://freeonlinetools203.com/decision-roulette.html" class="tool-btn">🎲 Decision Roulette</a>
-      <a href="https://freeonlinetools203.com/random-name-picker.html" class="tool-btn">📛 Random Name Picker</a>
-      <a href="https://freeonlinetools203.com/random-number-generator.html" class="tool-btn">🔢 Random Number Generator</a>
-      <a href="https://freeonlinetools203.com/prize-wheel.html" class="tool-btn">🏆 Prize Wheel</a>
-      <a href="https://freeonlinetools203.com/task-spinner.html" class="tool-btn">✅ Task Spinner</a>
-      <a href="https://freeonlinetools203.com/art-roulette-seo.html" class="tool-btn">🎨 Art Roulette</a>
-      <a href="https://freeonlinetools203.com/chore-wheel-seo.html" class="tool-btn">🧹 Chore Wheel</a>
-      <a href="https://freeonlinetools203.com/country-picker-wheel-seo.html" class="tool-btn">🌍 Country Picker Wheel</a>
-      <a href="https://freeonlinetools203.com/decision-wheel.html" class="tool-btn">⚖️ Decision Wheel</a>
-      <a href="https://freeonlinetools203.com/dinner-spinner.html" class="tool-btn">🍽️ Dinner Spinner</a>
-      <a href="https://freeonlinetools203.com/icebreaker-wheel-seo.html" class="tool-btn">💬 Icebreaker Wheel</a>
-      <a href="https://freeonlinetools203.com/random-fact-wheel-seo.html" class="tool-btn">📖 Random Fact Wheel</a>
-      <a href="https://freeonlinetools203.com/zodiac-wheel.html" class="tool-btn">♈ Zodiac Wheel</a>
-      <a href="https://freeonlinetools203.com/twister-spinner-seo.html" class="tool-btn">🔄 Twister Spinner</a>
-      <a href="https://freeonlinetools203.com/truth-or-dare-generator.html" class="tool-btn">🎭 Truth or Dare Generator</a>
-      <a href="https://freeonlinetools203.com/sketch-or-dare-seo.html" class="tool-btn">✏️ Sketch or Dare</a>
-      <a href="https://freeonlinetools203.com/hot-seat-challenge-seo.html" class="tool-btn">🔥 Hot Seat Challenge</a>
-      <a href="https://freeonlinetools203.com/holiday-wheel.html" class="tool-btn">🎄 Holiday Wheel</a>
-      <a href="https://freeonlinetools203.com/food-picker-wheel.html" class="tool-btn">🍕 Food Picker Wheel</a>
-      <a href="https://freeonlinetools203.com/exercise-wheel.html" class="tool-btn">🏋️ Exercise Wheel</a>
-      <a href="https://freeonlinetools203.com/drink-wheel.html" class="tool-btn">🍹 Drink Wheel</a>
-      <!-- ADDED TOOLS (Baqi Tools) -->
-      <a href="https://freeonlinetools203.com/board-game-spin-wheel.html" class="tool-btn">🎲 Board Game Spin Wheel</a>
-      <a href="https://freeonlinetools203.com/carnival-game-spin-wheel.html" class="tool-btn">🎪 Carnival Game Wheel</a>
-      <a href="https://freeonlinetools203.com/casino-games-wheel.html" class="tool-btn">🎰 Casino Games Wheel</a>
-      <a href="https://freeonlinetools203.com/dare-or-draw-seo.html" class="tool-btn">✍️ Dare or Draw</a>
-      <a href="https://freeonlinetools203.com/drinking-game-spin-wheel.html" class="tool-btn">🍻 Drinking Game Wheel</a>
-      <a href="https://freeonlinetools203.com/game-character-spin-wheel.html" class="tool-btn">👾 Game Character Wheel</a>
-      <a href="https://freeonlinetools203.com/lucky-number-wheel.html" class="tool-btn">🍀 Lucky Number Wheel</a>
-      <a href="https://freeonlinetools203.com/lucky-prize-wheel.html" class="tool-btn">🎁 Lucky Prize Wheel</a>
-      <a href="https://freeonlinetools203.com/movie-picker-wheel.html" class="tool-btn">🎬 Movie Picker Wheel</a>
-      <a href="https://freeonlinetools203.com/mystery-gift-wheel.html" class="tool-btn">🎀 Mystery Gift Wheel</a>
-      <a href="https://freeonlinetools203.com/name-picker-wheel.html" class="tool-btn">📝 Name Picker Wheel</a>
-      <a href="https://freeonlinetools203.com/party-games-spin-wheel.html" class="tool-btn">🎉 Party Games Spin Wheel</a>
-      <a href="https://freeonlinetools203.com/random-animal-wheel.html" class="tool-btn">🐶 Random Animal Wheel</a>
-      <a href="https://freeonlinetools203.com/squid-game-wheel.html" class="tool-btn">🦑 Squid Game Wheel</a>
-      <a href="https://freeonlinetools203.com/stop-right-there-wheel.html" class="tool-btn">✋ Stop Right There Wheel</a>
-      <a href="https://freeonlinetools203.com/workout-spinner.html" class="tool-btn">💪 Workout Spinner</a>
-      <a href="https://freeonlinetools203.com/you-vs-food-wheel.html" class="tool-btn">🍔 You vs Food Wheel</a>
+<div class="stw-related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="stw-btn-home">🏠 Back to Home</a>
+  <div class="stw-tools-box">
+    <div class="stw-tools-title">🎡 Spin The Wheel & Random Spinner Tools</div>
+    <div class="stw-tools-subtitle">⚡ Click any wheel tool to spin, decide, and have fun! | 41 interactive spinners</div>
+
+    <div class="stw-stats-bar">
+      <div class="stw-total-tools">🎯 Total 41 Wheel Tools</div>
+      <div class="stw-category-filter">
+        <span class="stw-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="stw-filter-chip" data-filter="decision">🤔 Decision</span>
+        <span class="stw-filter-chip" data-filter="game">🎮 Game</span>
+        <span class="stw-filter-chip" data-filter="fun">🎉 Fun</span>
+        <span class="stw-filter-chip" data-filter="food">🍕 Food/Drink</span>
+      </div>
     </div>
+
+    <div id="stwToolsGrid" class="stw-tools-grid"></div>
+
+    <div class="stw-pagination">
+      <button class="stw-page-btn" id="stwPrevBtn" onclick="stwChangePage(-1)">◀ Prev</button>
+      <div id="stwPageNumbers"></div>
+      <button class="stw-page-btn" id="stwNextBtn" onclick="stwChangePage(1)">Next ▶</button>
+    </div>
+    <div class="stw-page-info" id="stwPageInfo"></div>
   </div>
 </div>
+</div>
+
+<script>
+const stwWheelTools = [
+  { name: "🎡 Spin The Wheel", desc: "Classic spin wheel for random decisions", category: "decision", url: "https://freeonlinetools203.com/spin-the-wheel.html" },
+  { name: "✅ Yes/No Wheel", desc: "Quick yes or no answers to your questions", category: "decision", url: "https://freeonlinetools203.com/yes-no-wheel.html" },
+  { name: "🎲 Decision Roulette", desc: "Advanced roulette for tough choices", category: "decision", url: "https://freeonlinetools203.com/decision-roulette.html" },
+  { name: "⚖️ Decision Wheel", desc: "Customizable decision maker", category: "decision", url: "https://freeonlinetools203.com/decision-wheel.html" },
+  { name: "📛 Random Name Picker", desc: "Pick random names from a list", category: "decision", url: "https://freeonlinetools203.com/random-name-picker.html" },
+  { name: "🏷️ Name Picker Wheel", desc: "Alternative name selector", category: "decision", url: "https://freeonlinetools203.com/name-picker-wheel.html" },
+  { name: "🔢 Random Number Generator", desc: "Generate random numbers instantly", category: "fun", url: "https://freeonlinetools203.com/random-number-generator.html" },
+  { name: "🏆 Prize Wheel", desc: "Win exciting prizes with lucky spins", category: "game", url: "https://freeonlinetools203.com/prize-wheel.html" },
+  { name: "🍀 Lucky Prize Wheel", desc: "Test your luck with prizes", category: "game", url: "https://freeonlinetools203.com/lucky-prize-wheel.html" },
+  { name: "🔢 Daily Lucky Number Wheel", desc: "Find your lucky number today", category: "fun", url: "https://freeonlinetools203.com/daily-lucky-number-wheel.html" },
+  { name: "📋 Task Spinner", desc: "Assign random tasks to team", category: "decision", url: "https://freeonlinetools203.com/task-spinner.html" },
+  { name: "🎨 Art Roulette", desc: "Random art prompts for artists", category: "fun", url: "https://freeonlinetools203.com/art-roulette-seo.html" },
+  { name: "🧹 Chore Wheel", desc: "Fairly assign household chores", category: "decision", url: "https://freeonlinetools203.com/chore-wheel-seo.html" },
+  { name: "🌍 Country Picker Wheel", desc: "Random country selector", category: "fun", url: "https://freeonlinetools203.com/country-picker-wheel-seo.html" },
+  { name: "🍽️ Dinner Spinner", desc: "What's for dinner tonight?", category: "food", url: "https://freeonlinetools203.com/dinner-spinner.html" },
+  { name: "🗣️ Icebreaker Wheel", desc: "Fun conversation starters", category: "fun", url: "https://freeonlinetools203.com/icebreaker-wheel-seo.html" },
+  { name: "📚 Random Fact Wheel", desc: "Learn interesting facts", category: "fun", url: "https://freeonlinetools203.com/random-fact-wheel-seo.html" },
+  { name: "🐾 Random Animal Wheel", desc: "Discover random animals", category: "fun", url: "https://freeonlinetools203.com/random-animal-wheel.html" },
+  { name: "♈ Zodiac Wheel", desc: "Explore zodiac signs", category: "fun", url: "https://freeonlinetools203.com/zodiac-wheel.html" },
+  { name: "🌀 Twister Spinner", desc: "Classic twister game spinner", category: "game", url: "https://freeonlinetools203.com/twister-spinner-seo.html" },
+  { name: "🎭 Truth or Dare Generator", desc: "Classic party game with spins", category: "fun", url: "https://freeonlinetools203.com/truth-or-dare-generator.html" },
+  { name: "✏️ Sketch or Dare", desc: "Drawing challenges with dares", category: "fun", url: "https://freeonlinetools203.com/sketch-or-dare-seo.html" },
+  { name: "🎨 Dare or Draw", desc: "Art vs dare challenges", category: "fun", url: "https://freeonlinetools203.com/dare-or-draw-seo.html" },
+  { name: "🔥 Hot Seat Challenge", desc: "Party game for groups", category: "game", url: "https://freeonlinetools203.com/hot-seat-challenge-seo.html" },
+  { name: "🛑 Stop Right There Wheel", desc: "Stop and do the challenge", category: "game", url: "https://freeonlinetools203.com/stop-right-there-wheel.html" },
+  { name: "🎄 Holiday Activity Wheel", desc: "Festive holiday activities", category: "fun", url: "https://freeonlinetools203.com/holiday-wheel.html" },
+  { name: "🍕 Food Picker Wheel", desc: "Decide what to eat today", category: "food", url: "https://freeonlinetools203.com/food-picker-wheel.html" },
+  { name: "🍹 Drink Picker Wheel", desc: "Random drink selector", category: "food", url: "https://freeonlinetools203.com/drink-wheel.html" },
+  { name: "🏋️ Exercise Wheel", desc: "Random workout exercises", category: "fun", url: "https://freeonlinetools203.com/exercise-wheel.html" },
+  { name: "💪 Workout Spinner", desc: "Fitness routine randomizer", category: "fun", url: "https://freeonlinetools203.com/workout-spinner.html" },
+  { name: "🎬 Movie Picker Wheel", desc: "Choose what to watch", category: "decision", url: "https://freeonlinetools203.com/movie-picker-wheel.html" },
+  { name: "🍔 You vs Food Wheel", desc: "Food eating challenges", category: "food", url: "https://freeonlinetools203.com/you-vs-food-wheel.html" },
+  { name: "🎁 Mystery Gift Wheel", desc: "Surprise gift selector", category: "game", url: "https://freeonlinetools203.com/mystery-gift-wheel.html" },
+  { name: "🎰 Casino Games Wheel", desc: "Casino style spinning games", category: "game", url: "https://freeonlinetools203.com/casino-games-wheel.html" },
+  { name: "🎨 Color Wheel", desc: "Generate random colors for design", category: "fun", url: "https://freeonlinetools203.com/color-wheel-seo.html" },
+  { name: "🦑 Squid Game Spin Wheel", desc: "Inspired by Squid Game challenges", category: "game", url: "https://freeonlinetools203.com/squid-game-wheel.html" },
+  { name: "👾 Game Character Spin Wheel", desc: "Pick random game characters", category: "game", url: "https://freeonlinetools203.com/game-character-spin-wheel.html" },
+  { name: "🎉 Party Games Spin Wheel", desc: "Group party game spinner", category: "game", url: "https://freeonlinetools203.com/party-games-spin-wheel.html" },
+  { name: "🍻 Drinking Game Spin Wheel", desc: "Adult party drinking games", category: "game", url: "https://freeonlinetools203.com/drinking-game-spin-wheel.html" },
+  { name: "🎲 Board Game Spin Wheel", desc: "Random board game picker", category: "game", url: "https://freeonlinetools203.com/board-game-spin-wheel.html" },
+  { name: "🎪 Carnival Game Spin Wheel", desc: "Virtual carnival games", category: "game", url: "https://freeonlinetools203.com/carnival-game-spin-wheel.html" }
+];
+
+let stwCurrentPage = 1;
+let stwCurrentFilter = "all";
+const stwToolsPerPage = 8;
+
+function stwGetFilteredTools() {
+  if (stwCurrentFilter === "all") return stwWheelTools;
+  return stwWheelTools.filter(tool => tool.category === stwCurrentFilter);
+}
+
+function stwRenderTools() {
+  const filtered = stwGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / stwToolsPerPage);
+  const start = (stwCurrentPage - 1) * stwToolsPerPage;
+  const end = start + stwToolsPerPage;
+  const pageTools = filtered.slice(start, end);
+
+  const grid = document.getElementById('stwToolsGrid');
+  grid.innerHTML = pageTools.map(tool => `
+    <div class="stw-tool-card">
+      <a href="${tool.url}">
+        <div class="stw-tool-icon">${tool.name.split(' ')[0]}</div>
+        <div class="stw-tool-info">
+          <div class="stw-tool-name">${tool.name}</div>
+          <div class="stw-tool-desc">${tool.desc}</div>
+          <span class="stw-tool-badge">${
+            tool.category === 'decision' ? '🤔 Decision' :
+            tool.category === 'game'     ? '🎮 Game' :
+            tool.category === 'food'     ? '🍕 Food/Drink' : '🎉 Fun'
+          }</span>
+        </div>
+      </a>
+    </div>
+  `).join('');
+
+  document.getElementById('stwPageInfo').innerHTML = `📄 Page ${stwCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${stwCurrentFilter === 'all' ? 'All Tools' : stwCurrentFilter}`;
+  stwRenderPageNumbers();
+  stwUpdateButtons();
+}
+
+function stwRenderPageNumbers() {
+  const filtered = stwGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / stwToolsPerPage);
+  const container = document.getElementById('stwPageNumbers');
+  if (!container) return;
+
+  let html = '';
+  let startPage = Math.max(1, stwCurrentPage - 2);
+  let endPage = Math.min(totalPages, stwCurrentPage + 2);
+
+  if (startPage > 1) {
+    html += `<span class="stw-page-number" onclick="stwGoToPage(1)">1</span>`;
+    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
+  }
+  for (let i = startPage; i <= endPage; i++) {
+    html += `<span class="stw-page-number ${i === stwCurrentPage ? 'active' : ''}" onclick="stwGoToPage(${i})">${i}</span>`;
+  }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
+    html += `<span class="stw-page-number" onclick="stwGoToPage(${totalPages})">${totalPages}</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function stwUpdateButtons() {
+  const filtered = stwGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / stwToolsPerPage);
+  const prevBtn = document.getElementById('stwPrevBtn');
+  const nextBtn = document.getElementById('stwNextBtn');
+  if (prevBtn) prevBtn.disabled = stwCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = stwCurrentPage === totalPages;
+}
+
+function stwChangePage(direction) {
+  const filtered = stwGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / stwToolsPerPage);
+  const newPage = stwCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    stwCurrentPage = newPage;
+    stwRenderTools();
+  }
+}
+
+function stwGoToPage(page) {
+  const filtered = stwGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / stwToolsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    stwCurrentPage = page;
+    stwRenderTools();
+  }
+}
+
+function stwSetFilter(filter) {
+  stwCurrentFilter = filter;
+  stwCurrentPage = 1;
+  stwRenderTools();
+  document.querySelectorAll('.stw-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+// ✅ Sirf ek baar — DOMContentLoaded mein
+document.addEventListener('DOMContentLoaded', () => {
+  stwRenderTools();
+  document.querySelectorAll('.stw-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      stwSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
+</script>
+
+<!-- ========== SPIN THE WHEEL CATEGORY FOOTER END ========== -->
   
 <canvas id="confettiCanvas"></canvas>
 <script>
