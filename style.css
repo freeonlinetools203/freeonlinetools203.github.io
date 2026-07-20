@@ -413,3 +413,196 @@ body {
     margin-top: 0 !important;
     padding-top: 50px !important;
 }
+/* ============================================================
+   SEARCH BAR - ENHANCED & PROMINENT (Safe - Existing ko nahi todta)
+   ============================================================ */
+
+/* 1. Search Section ko aur prominent banayein */
+.tool-search-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%) !important;
+    border-radius: 24px !important;
+    padding: 40px 35px !important;
+    margin: -20px 20px 40px 20px !important; /* Thoda upar uth gaya */
+    box-shadow: 0 20px 60px rgba(30, 58, 138, 0.12) !important;
+    border: 1px solid rgba(30, 58, 138, 0.08) !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* 2. Heading ko aur catchy banayein */
+.tool-search-section h2 {
+    font-size: 2rem !important;
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.tool-search-section h2::after {
+    display: none !important; /* Existing underline hatayein */
+}
+
+/* 3. Search bar ko aur prominent (bigger & bolder) */
+#tsInput {
+    height: 60px !important; /* Pehle 52px tha */
+    padding: 0 160px 0 55px !important;
+    font-size: 1.05rem !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 18px !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04) !important;
+    transition: all 0.3s ease !important;
+}
+
+#tsInput:focus {
+    border-color: #7c3aed !important;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15), 0 8px 30px rgba(0,0,0,0.08) !important;
+    transform: translateY(-2px);
+}
+
+/* 4. Search button ko aur attractive */
+.ts-search-btn {
+    height: 46px !important; /* Pehle 40px */
+    padding: 0 28px !important;
+    font-size: 0.95rem !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%) !important;
+    border-radius: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.ts-search-btn:hover {
+    transform: scale(1.04) !important;
+    box-shadow: 0 6px 25px rgba(124, 58, 237, 0.4) !important;
+}
+
+/* 5. Search icon ko adjust */
+.ts-bar-wrap svg {
+    left: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
+    color: #7c3aed !important;
+}
+
+/* 6. Quick Tags ko stylish banayein */
+.ts-tag {
+    padding: 6px 18px !important;
+    font-size: 0.85rem !important;
+    background: rgba(124, 58, 237, 0.08) !important;
+    border: 1px solid rgba(124, 58, 237, 0.15) !important;
+    color: #4c1d95 !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.ts-tag:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+/* 7. Results cards ko aur premium */
+.ts-result-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%) !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.15) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.ts-result-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 35px rgba(124, 58, 237, 0.3) !important;
+}
+
+.ts-result-card a {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+}
+
+/* 8. Results label ko stylish */
+.ts-results-label {
+    font-size: 0.9rem !important;
+    color: #7c3aed !important;
+    font-weight: 700 !important;
+    margin: 15px 0 10px !important;
+}
+
+/* 9. No result message */
+.ts-no-result {
+    color: #6b7280 !important;
+    font-size: 1rem !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+    background: #f8fafc !important;
+    border-radius: 12px !important;
+    border: 1px dashed #d1d5db !important;
+}
+
+/* 10. Responsive adjustments */
+@media (max-width: 640px) {
+    .tool-search-section {
+        padding: 25px 16px !important;
+        margin: -10px 10px 30px 10px !important;
+    }
+    
+    .tool-search-section h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    #tsInput {
+        height: 52px !important;
+        padding: 0 100px 0 45px !important;
+        font-size: 0.95rem !important;
+        border-radius: 14px !important;
+    }
+    
+    .ts-search-btn {
+        height: 40px !important;
+        padding: 0 16px !important;
+        font-size: 0.85rem !important;
+        border-radius: 10px !important;
+    }
+    
+    .ts-bar-wrap svg {
+        left: 14px !important;
+        width: 18px !important;
+        height: 18px !important;
+    }
+    
+    .ts-tag {
+        padding: 4px 14px !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .ts-results-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+    }
+}
+
+/* 11. Animated border glow (extra premium effect) - OPTIONAL */
+.tool-search-section::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(45deg, #7c3aed, #2563eb, #7c3aed, #2563eb);
+    background-size: 300% 300%;
+    border-radius: 26px;
+    z-index: -1;
+    animation: borderGlow 4s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
