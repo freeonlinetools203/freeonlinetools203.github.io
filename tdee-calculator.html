@@ -829,44 +829,186 @@
         </div>
     </div>
 
-    <!-- Category Footer & Back to Home -->
-    <div class="category-footer">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <a href="index.html" class="home-link">🔘 Back to Home</a>
-        </div>
-        <div id="dynamicCategoryFooter"></div>
+<!-- ========== HEALTH & FITNESS TOOLS CATEGORY FOOTER START ========== -->
+
+<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
+<style>
+.hlt-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.hlt-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
+.hlt-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
+.hlt-tools-box{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);border-radius:24px;padding:1.8rem;border:1px solid #86efac}
+.hlt-tools-title{font-size:1.5rem;font-weight:800;color:#14532d;margin-bottom:0.5rem;border-left:5px solid #16a34a;padding-left:16px}
+.hlt-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+.hlt-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem}
+.hlt-tool-card{background:#fff;border-radius:16px;padding:14px 18px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
+.hlt-tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#86efac}
+.hlt-tool-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
+.hlt-tool-icon{font-size:1.8rem;min-width:48px;text-align:center}
+.hlt-tool-info{flex:1}
+.hlt-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
+.hlt-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
+.hlt-tool-badge{display:inline-block;background:#dcfce7;color:#166534;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
+.hlt-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+.hlt-page-btn{background:#fff;border:1px solid #86efac;padding:10px 20px;border-radius:40px;text-decoration:none;color:#14532d;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.hlt-page-btn:hover{background:#16a34a;color:#fff}
+.hlt-page-btn:disabled{opacity:0.4;cursor:not-allowed}
+.hlt-page-number{background:#fff;border:1px solid #86efac;padding:8px 16px;border-radius:40px;color:#14532d;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
+.hlt-page-number:hover{background:#dcfce7}
+.hlt-page-number.active{background:#14532d;color:#fff;border-color:#14532d}
+.hlt-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
+.hlt-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
+.hlt-total-tools{background:#14532d;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
+.hlt-category-filter{display:flex;gap:8px;flex-wrap:wrap}
+.hlt-filter-chip{background:#fff;border:1px solid #86efac;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#14532d}
+.hlt-filter-chip:hover,.hlt-filter-chip.active{background:#16a34a;color:#fff}
+</style>
+
+<div class="hlt-related-section">
+  <a href="https://freeonlinetools203.com/index.html" class="hlt-btn-home">🏠 Back to Home</a>
+  <div class="hlt-tools-box">
+    <div class="hlt-tools-title">🏃‍♂️ Health & Fitness Tools</div>
+    <div class="hlt-tools-subtitle">⚡ Free health calculators to track your fitness goals!</div>
+
+    <div class="hlt-stats-bar">
+      <div class="hlt-total-tools">🎯 Total 4 Health Tools</div>
+      <div class="hlt-category-filter">
+        <span class="hlt-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="hlt-filter-chip" data-filter="body">💪 Body</span>
+        <span class="hlt-filter-chip" data-filter="calorie">🔥 Calorie</span>
+      </div>
     </div>
 
-    <!-- Dynamic Category Footer Script -->
-    <script>
-    (function() {
-        function getCurrentCategory() {
-            const path = window.location.pathname;
-            if (path.includes('tdee') || path.includes('bmi') || path.includes('bmr') || path.includes('calorie')) return 'health';
-            return 'popular';
-        }
-        const categories = {
-            popular: { name: "📊 Popular Calculators", tools: [ { name: "Age Calculator", url: "age-calculator.html" }, { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "GST Calculator", url: "gst-calculator.html" }, { name: "Percentage Calculator", url: "percentage-calculator.html" }, { name: "Unit Converter", url: "unit-converter.html" }, { name: "QR Code Generator", url: "qr-code-generator.html" }, { name: "Currency Converter", url: "currency-converter.html" } ] },
-            health: { name: "🏃‍♂️ Health & Fitness", tools: [ { name: "BMI Calculator", url: "bmi-calculator.html" }, { name: "BMR Calculator", url: "bmr-calculator.html" }, { name: "Calorie Calculator", url: "calorie-calculator.html" }, { name: "TDEE Calculator", url: "tdee-calculator.html" } ] }
-        };
-        function renderFooter() {
-            const footerContainer = document.getElementById('dynamicCategoryFooter');
-            if (!footerContainer) return;
-            const cat = categories[getCurrentCategory()] || categories.health;
-            let html = `<div style="background: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                          <h3 style="color: #1e3a8a; margin-bottom: 20px;">🔗 Other Tools in ${cat.name}</h3>
-                          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">`;
-            cat.tools.forEach(tool => {
-                if (window.location.pathname.includes(tool.url.replace('.html', ''))) return;
-                html += `<a href="${tool.url}" style="background: linear-gradient(135deg, #2563eb, #1e3a8a); color: white; text-decoration: none; padding: 12px; border-radius: 40px; text-align: center; font-weight: 500; display: block;">🔘 ${tool.name}</a>`;
-            });
-            html += `</div></div>`;
-            footerContainer.innerHTML = html;
-        }
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFooter);
-        else renderFooter();
-    })();
-    </script>
+    <div id="hltToolsGrid" class="hlt-tools-grid"></div>
+
+    <div class="hlt-pagination">
+      <button class="hlt-page-btn" id="hltPrevBtn" onclick="hltChangePage(-1)">◀ Prev</button>
+      <div id="hltPageNumbers"></div>
+      <button class="hlt-page-btn" id="hltNextBtn" onclick="hltChangePage(1)">Next ▶</button>
+    </div>
+    <div class="hlt-page-info" id="hltPageInfo"></div>
+  </div>
+</div>
+</div>
+
+<script>
+const hltToolsList = [
+  { name: "⚖️ BMI Calculator", desc: "Calculate your Body Mass Index instantly", category: "body", url: "https://freeonlinetools203.com/bmi-calculator.html" },
+  { name: "🔥 BMR Calculator", desc: "Find your Basal Metabolic Rate easily", category: "calorie", url: "https://freeonlinetools203.com/bmr-calculator.html" },
+  { name: "🍎 Calorie Calculator", desc: "Calculate daily calorie needs accurately", category: "calorie", url: "https://freeonlinetools203.com/calorie-calculator.html" },
+  { name: "💪 TDEE Calculator", desc: "Find Total Daily Energy Expenditure", category: "calorie", url: "https://freeonlinetools203.com/tdee-calculator.html" }
+];
+
+let hltCurrentPage = 1;
+let hltCurrentFilter = "all";
+const hltToolsPerPage = 8;
+
+function hltGetFilteredTools() {
+  if (hltCurrentFilter === "all") return hltToolsList;
+  return hltToolsList.filter(tool => tool.category === hltCurrentFilter);
+}
+
+function hltRenderTools() {
+  const filtered = hltGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / hltToolsPerPage);
+  const start = (hltCurrentPage - 1) * hltToolsPerPage;
+  const end = start + hltToolsPerPage;
+  const pageTools = filtered.slice(start, end);
+
+  const grid = document.getElementById('hltToolsGrid');
+  grid.innerHTML = pageTools.map(tool => `
+    <div class="hlt-tool-card">
+      <a href="${tool.url}">
+        <div class="hlt-tool-icon">${tool.name.split(' ')[0]}</div>
+        <div class="hlt-tool-info">
+          <div class="hlt-tool-name">${tool.name}</div>
+          <div class="hlt-tool-desc">${tool.desc}</div>
+          <span class="hlt-tool-badge">${
+            tool.category === 'body' ? '💪 Body' : '🔥 Calorie'
+          }</span>
+        </div>
+      </a>
+    </div>
+  `).join('');
+
+  document.getElementById('hltPageInfo').innerHTML = `📄 Page ${hltCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${hltCurrentFilter === 'all' ? 'All Tools' : hltCurrentFilter}`;
+  hltRenderPageNumbers();
+  hltUpdateButtons();
+}
+
+function hltRenderPageNumbers() {
+  const filtered = hltGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / hltToolsPerPage);
+  const container = document.getElementById('hltPageNumbers');
+  if (!container) return;
+
+  let html = '';
+  let startPage = Math.max(1, hltCurrentPage - 2);
+  let endPage = Math.min(totalPages, hltCurrentPage + 2);
+
+  if (startPage > 1) {
+    html += `<span class="hlt-page-number" onclick="hltGoToPage(1)">1</span>`;
+    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
+  }
+  for (let i = startPage; i <= endPage; i++) {
+    html += `<span class="hlt-page-number ${i === hltCurrentPage ? 'active' : ''}" onclick="hltGoToPage(${i})">${i}</span>`;
+  }
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
+    html += `<span class="hlt-page-number" onclick="hltGoToPage(${totalPages})">${totalPages}</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function hltUpdateButtons() {
+  const filtered = hltGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / hltToolsPerPage);
+  const prevBtn = document.getElementById('hltPrevBtn');
+  const nextBtn = document.getElementById('hltNextBtn');
+  if (prevBtn) prevBtn.disabled = hltCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = hltCurrentPage === totalPages;
+}
+
+function hltChangePage(direction) {
+  const filtered = hltGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / hltToolsPerPage);
+  const newPage = hltCurrentPage + direction;
+  if (newPage >= 1 && newPage <= totalPages) {
+    hltCurrentPage = newPage;
+    hltRenderTools();
+  }
+}
+
+function hltGoToPage(page) {
+  const filtered = hltGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / hltToolsPerPage);
+  if (page >= 1 && page <= totalPages) {
+    hltCurrentPage = page;
+    hltRenderTools();
+  }
+}
+
+function hltSetFilter(filter) {
+  hltCurrentFilter = filter;
+  hltCurrentPage = 1;
+  hltRenderTools();
+  document.querySelectorAll('.hlt-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+// ✅ Sirf ek baar
+document.addEventListener('DOMContentLoaded', () => {
+  hltRenderTools();
+  document.querySelectorAll('.hlt-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      hltSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
+</script>
+
+<!-- ========== HEALTH & FITNESS TOOLS CATEGORY FOOTER END ========== -->
 
     <!-- ========== SEO ARTICLE SECTION ========== -->
     <div class="article-section">
