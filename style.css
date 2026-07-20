@@ -414,123 +414,260 @@ body {
     padding-top: 50px !important;
 }
 /* ============================================================
-   SEARCH BAR - FIXED (Header se proper spacing ke sath)
+   SEARCH BAR - PROFESSIONAL DESIGN (Final)
    ============================================================ */
 
+/* 1. Search Section - Clean White */
 .tool-search-section {
-    background: #ffffff !important;  /* White background */
+    background: #ffffff !important;
     border-radius: 24px !important;
-    padding: 35px 30px !important;
-    margin: 25px auto 40px auto !important;  /* Upar aur neeche spacing */
-    max-width: 1200px !important;  /* Center mein rakhne ke liye */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06) !important;
+    padding: 30px 30px !important;
+    margin: 20px auto 35px auto !important;
+    max-width: 1200px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
     border: 1px solid #eef2f6 !important;
     position: relative;
     z-index: 5;
 }
 
-/* Heading ko simple rakhein */
+/* 2. Heading - Simple Blue */
 .tool-search-section h2 {
     color: #1e3a8a !important;
-    font-size: 1.75rem !important;
+    font-size: 1.6rem !important;
     font-weight: 700 !important;
-    background: none !important;  /* Gradient hatayein */
+    margin-bottom: 6px !important;
+    padding-bottom: 8px !important;
+    position: relative;
+    background: none !important;
     -webkit-text-fill-color: #1e3a8a !important;
     display: block !important;
 }
 
 .tool-search-section h2::after {
-    display: block !important;  /* Underline wapas laayein */
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 60px; height: 4px;
-    background: #2563eb;
-    border-radius: 2px;
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 50px !important;
+    height: 3px !important;
+    background: #2563eb !important;
+    border-radius: 2px !important;
+    display: block !important;
 }
 
-/* Search Input - Thoda chhota */
+/* 3. Subtitle */
+.tool-search-section p {
+    color: #6b7280 !important;
+    font-size: 0.95rem !important;
+    margin: 10px 0 18px 0 !important;
+    line-height: 1.5 !important;
+}
+
+/* 4. Search Bar Wrapper */
+.ts-bar-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.ts-bar-wrap:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: #ffffff;
+}
+
+/* 5. Search Icon */
+.ts-bar-wrap svg {
+    position: absolute;
+    left: 16px;
+    color: #64748b;
+    pointer-events: none;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+/* 6. Search Input */
 #tsInput {
-    height: 56px !important;
-    padding: 0 145px 0 50px !important;
-    font-size: 1rem !important;
-    border: 2px solid #e2e8f0 !important;
-    border-radius: 16px !important;
-    background: #f8fafc !important;  /* Thoda light background */
+    width: 100%;
+    height: 50px;
+    padding: 0 120px 0 48px;
+    font-size: 0.95rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none !important;
+    border-radius: 16px;
+    background: transparent !important;
+    color: #1e293b;
+    outline: none;
     box-shadow: none !important;
 }
 
-#tsInput:focus {
-    border-color: #2563eb !important;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
-    transform: none !important;  /* Upar uthna hatayein */
+#tsInput::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
 }
 
-/* Search Button - Simple Blue */
+/* 7. Search Button */
 .ts-search-btn {
-    height: 44px !important;
-    padding: 0 24px !important;
-    font-size: 0.9rem !important;
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+    position: absolute;
+    right: 6px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 0 24px;
+    height: 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    letter-spacing: 0.3px;
 }
 
 .ts-search-btn:hover {
-    transform: none !important;  /* Hover pe scale hatayein */
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35) !important;
+    opacity: 0.9;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
 }
 
-/* Quick Tags - Simple */
+/* 8. Quick Tags */
+.ts-quick-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px !important;
+    margin-top: 8px !important;
+    margin-bottom: 4px;
+}
+
 .ts-tag {
     background: #eff6ff !important;
     border: 1px solid #bfdbfe !important;
     color: #1e40af !important;
-    padding: 5px 14px !important;
-    font-size: 0.8rem !important;
+    border-radius: 30px;
+    padding: 6px 18px !important;
+    font-size: 0.82rem !important;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.2s ease;
 }
 
 .ts-tag:hover {
     background: #1e3a8a !important;
     color: #ffffff !important;
-    transform: none !important;
+    border-color: #1e3a8a !important;
+    transform: translateY(-2px);
 }
 
-/* Results Cards - Simple */
+/* 9. Results Section */
+.ts-results-label {
+    font-size: 0.85rem;
+    color: #2563eb;
+    font-weight: 600;
+    margin: 12px 0 8px 0;
+    display: block;
+}
+
+.ts-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+}
+
 .ts-result-card {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%) !important;
-    border-radius: 12px !important;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: block;
+    border: 1px solid rgba(30, 58, 138, 0.1);
+}
+
+.ts-result-card a {
+    padding: 14px 16px;
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .ts-result-card:hover {
-    transform: translateY(-3px) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.2);
 }
 
-/* Animated border glow HATAYEIN */
+.ts-no-result {
+    color: #6b7280;
+    font-size: 0.95rem;
+    padding: 15px 0;
+    text-align: center;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px dashed #d1d5db;
+}
+
+/* 10. Animated Border - HATAYEIN */
 .tool-search-section::before {
     display: none !important;
 }
 
-/* Responsive */
+/* 11. Responsive */
 @media (max-width: 640px) {
     .tool-search-section {
-        margin: 15px 12px 25px 12px !important;
-        padding: 22px 16px !important;
+        padding: 20px 16px !important;
+        margin: 12px 12px 25px 12px !important;
+        border-radius: 16px !important;
     }
     
     .tool-search-section h2 {
-        font-size: 1.4rem !important;
+        font-size: 1.3rem !important;
+    }
+    
+    .tool-search-section p {
+        font-size: 0.85rem !important;
+    }
+    
+    .ts-bar-wrap {
+        border-radius: 14px;
     }
     
     #tsInput {
-        height: 48px !important;
-        padding: 0 100px 0 45px !important;
-        font-size: 0.9rem !important;
+        height: 44px !important;
+        padding: 0 90px 0 42px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .ts-bar-wrap svg {
+        left: 14px !important;
+        width: 16px !important;
+        height: 16px !important;
     }
     
     .ts-search-btn {
-        height: 36px !important;
+        height: 34px !important;
         padding: 0 14px !important;
-        font-size: 0.8rem !important;
+        font-size: 0.75rem !important;
+        border-radius: 10px !important;
+    }
+    
+    .ts-tag {
+        padding: 4px 14px !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .ts-results-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
     }
 }
