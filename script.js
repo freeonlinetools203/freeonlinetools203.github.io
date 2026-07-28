@@ -96,7 +96,7 @@ const toolsDatabase = {
       "Yes/No Wheel",
       "Decision Roulette",
       "Random Name Picker",
-      "Random Number Generator"
+      "Random Number Generator",
       "Prize Wheel",
       "Lucky Prize Wheel",
       "Daily Lucky Number Wheel",
