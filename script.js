@@ -3,17 +3,17 @@
 // =========================================================================
 const toolsDatabase = {
   // 1. MOST POPULAR TOOLS
-  catMostPopular: {
-    name: "✨ Most Popular Tools",
-    tools: [
-      "Spin The Wheel",
-      "Random Color Picker",
-      "Keyword Density Checker",
-      "Instagram Hashtag Generator",
-      "Age Calculator"
-    ]
-  },
-
+ catMostPopular: {
+  name: "✨ Most Popular Tools",
+  tools: [
+    "Best Lottery Number Generator",  // ← نیا ٹول شامل کیا
+    "Spin The Wheel",
+    "Random Color Picker",
+    "Keyword Density Checker",
+    "Instagram Hashtag Generator",
+    "Age Calculator"
+  ]
+},
   // 2. SOCIAL MEDIA HASHTAG TOOLS
   catHash: {
     name: "📱 Social Media Hashtag Tools",
