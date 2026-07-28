@@ -96,7 +96,7 @@ const toolsDatabase = {
       "Yes/No Wheel",
       "Decision Roulette",
       "Random Name Picker",
-      "Random Number Generator",
+      "Random Number Generator"
       "Prize Wheel",
       "Lucky Prize Wheel",
       "Daily Lucky Number Wheel",
@@ -401,7 +401,7 @@ const toolUrlMap = {
     "Decision Roulette": "decision-roulette.html",
     "Random Name Picker": "random-name-picker.html",
     "Name Picker Wheel": "name-picker-wheel.html",
-    "Random Number Generator": "random-number-generator.html",
+    "Random Number Generator": "best-lottery-number-generator.html",
     "Prize Wheel": "prize-wheel.html",
     "Lucky Prize Wheel": "lucky-prize-wheel.html",
     "Daily Lucky Number Wheel": "daily-lucky-number-wheel.html",
@@ -656,7 +656,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="decision-wheel.html">🤔 Decision Wheel</a>
             <a href="random-name-picker.html">🏷️ Random Name Picker</a>
             <a href="name-picker-wheel.html">🎯 Name Picker Wheel</a>
-            <a href="random-number-generator.html">🔢 Random Number Generator</a>
+            <a href="best-lottery-number-generator.html">🔢 Random Number Generator</a>
             <a href="prize-wheel.html">🏆 Prize Wheel</a>
             <a href="lucky-prize-wheel.html">🍀 Lucky Prize Wheel</a>
             <a href="daily-lucky-number-wheel.html">🔢 Daily Lucky Number Wheel</a>
