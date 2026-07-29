@@ -402,6 +402,7 @@ const toolUrlMap = {
     "Random Name Picker": "random-name-picker.html",
     "Name Picker Wheel": "name-picker-wheel.html",
     "Random Number Generator": "best-lottery-number-generator.html",
+    "Best Lottery Number Generator": "best-lottery-number-generator.html",
     "Prize Wheel": "prize-wheel.html",
     "Lucky Prize Wheel": "lucky-prize-wheel.html",
     "Daily Lucky Number Wheel": "daily-lucky-number-wheel.html",
