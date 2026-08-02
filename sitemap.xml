@@ -4,7 +4,7 @@
     <!-- ========== MAIN PAGES ========== -->
     <url>
         <loc>https://freeonlinetools203.com/index.html</loc>
-        <lastmod>2026-07-21</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
@@ -46,55 +46,63 @@
     </url>
 
     <!-- ========== SEO TOOLS ========== -->
-      <url>
-        <loc>https://freeonlinetools203.com/keyword-density-checker.html</loc>
-        <lastmod>2026-07-31</lastmod>
+ 
+    <url>
+        <loc>https://freeonlinetools203.com/meta-tag-analyzer.html</loc>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://freeonlinetools203.com/google-index-checker.html</loc>
+        <lastmod>2026-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
     </url>
 
     <url>
         <loc>https://freeonlinetools203.com/meta-tags-generator.html</loc>
-        <lastmod>2026-07-21</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <priority>0.90</priority>
     </url>
-<url>
-        <loc>https://freeonlinetools203.com/meta-tag-analyzer.html</loc>
-        <lastmod>2026-07-31</lastmod>
+
+    <url>
+        <loc>https://freeonlinetools203.com/keyword-density-checker.html</loc>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <priority>0.90</priority>
     </url>
+
     <url>
         <loc>https://freeonlinetools203.com/broken-link-checker.html</loc>
-        <lastmod>2026-07-21</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <priority>0.90</priority>
     </url>
+
     <url>
         <loc>https://freeonlinetools203.com/free-backlink-checker.html</loc>
-        <lastmod>2026-07-21</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <priority>0.90</priority>
     </url>
-       <url>
-        <loc>https://freeonlinetools203.com/google-index-checker.html</loc>
-        <lastmod>2026-07-31</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
+
     <url>
         <loc>https://freeonlinetools203.com/seo-analyzer.html</loc>
-        <lastmod>2026-07-21</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <priority>0.90</priority>
     </url>
+
     <url>
         <loc>https://freeonlinetools203.com/seo-score-checker.html</loc>
-        <lastmod>2026-07-21</lastmod>
+        <lastmod>2026-08-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <priority>0.90</priority>
     </url>
+
     <url>
         <loc>https://freeonlinetools203.com/seo-title-generator.html</loc>
         <lastmod>2026-07-21</lastmod>
