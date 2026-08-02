@@ -90,77 +90,41 @@
     
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh;transition:all 0.3s;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh;}
         body.dark{background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%);}
-        
         .navbar{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:15px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.15);width:100%;}
         .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;}
         .logo a{color:white;font-size:1.5rem;font-weight:700;text-decoration:none;}
         .nav-links{display:flex;gap:25px;list-style:none;align-items:center;flex-wrap:wrap;}
         .nav-links li a{color:white;text-decoration:none;font-weight:500;padding:8px 0;transition:all 0.3s ease;}
         .nav-links li a:hover{border-bottom:2px solid white;}
-        
-        .dark-toggle{background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:white;padding:8px 16px;border-radius:30px;cursor:pointer;font-weight:600;font-size:14px;transition:0.3s;display:flex;align-items:center;gap:8px;}
-        .dark-toggle:hover{background:rgba(255,255,255,0.25);transform:scale(1.05);}
-        
         .container{max-width:1200px;margin:40px auto;padding:0 20px;}
-        .glass-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;transition:transform 0.3s, background 0.3s;}
+        .glass-card{background:white;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px;transition:transform 0.3s;}
         body.dark .glass-card{background:rgba(15,25,45,0.95);}
         .glass-card:hover{transform:translateY(-3px);}
         .card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center;}
         .card-header h1{color:white;font-size:32px;margin-bottom:12px;}
         .card-header p{color:rgba(255,255,255,0.95);font-size:16px;}
         .card-content{padding:40px;}
-        
-        /* Platform Selector */
-        .platform-selector{display:flex;gap:12px;margin-bottom:25px;flex-wrap:wrap;justify-content:center;}
-        .platform-btn{background:#f1f5f9;border:2px solid #e2e8f0;padding:10px 22px;border-radius:40px;font-weight:600;color:#1e3a8a;cursor:pointer;transition:all 0.3s;font-size:14px;display:flex;align-items:center;gap:8px;}
-        body.dark .platform-btn{background:#1e293b;border-color:#334155;color:#a78bfa;}
-        .platform-btn:hover{transform:translateY(-2px);}
-        .platform-btn.active{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;border-color:#2563eb;}
-        body.dark .platform-btn.active{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);color:white;}
-        
         .btn-primary{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);border:none;padding:14px 32px;border-radius:60px;font-weight:bold;font-size:1rem;color:white;cursor:pointer;transition:all 0.3s;}
         .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.3);}
         .btn-secondary{background:#f1f5f9;border:2px solid #e2e8f0;padding:10px 20px;border-radius:40px;color:#1e3a8a;font-weight:600;cursor:pointer;transition:all 0.3s;}
         body.dark .btn-secondary{background:#1e293b;border-color:#334155;color:#a78bfa;}
         .btn-secondary:hover{transform:translateY(-2px);background:#e2e8f0;}
-        
+        .stats-container{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;margin:20px 0;}
+        .stat-card{background:#f8fafc;padding:12px 20px;border-radius:20px;text-align:center;flex:1;border:1px solid #e2e8f0;}
+        body.dark .stat-card{background:#0f172a;border-color:#334155;}
         .random-box{background:linear-gradient(135deg,#2563eb10,#1e3a8a10);border-radius:28px;padding:30px;text-align:center;margin:20px 0;border:2px dashed #2563eb;}
-        .random-hashtag{font-size:32px;font-weight:bold;font-family:monospace;word-break:break-all;color:#1e3a8a;cursor:pointer;transition:all 0.2s;}
+        .random-hashtag{font-size:32px;font-weight:bold;font-family:monospace;word-break:break-all;color:#1e3a8a;}
         body.dark .random-hashtag{color:#a78bfa;}
-        .random-hashtag:hover{transform:scale(1.05);}
-        
+        .random-box button{margin-top:20px;}
         .hashtag-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0;}
         .hashtag-item{display:inline-block;background:rgba(0,0,0,0.05);padding:10px 18px;border-radius:30px;font-size:14px;font-family:monospace;cursor:pointer;transition:all 0.2s;color:#1f2937;}
         body.dark .hashtag-item{background:rgba(255,255,255,0.08);color:#cbd5e1;}
         .hashtag-item:hover{background:#2563eb;color:white;transform:scale(1.02);}
-        
-        .stats-container{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;margin:20px 0;}
-        .stat-card{background:#f8fafc;padding:12px 20px;border-radius:20px;text-align:center;flex:1;border:1px solid #e2e8f0;}
-        body.dark .stat-card{background:#0f172a;border-color:#334155;}
-        
-        .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;padding:12px 24px;border-radius:60px;color:white;z-index:10000;opacity:0;transition:opacity 0.3s;font-size:14px;}
-        
-        /* History Section */
-        .history-section{background:#f8fafc;border-radius:20px;padding:20px;margin-top:25px;display:none;}
-        body.dark .history-section{background:#0f172a;}
-        .history-section.show{display:block;}
-        .history-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;flex-wrap:wrap;gap:10px;}
-        .history-header h3{color:#1e3a8a;}
-        body.dark .history-header h3{color:#a78bfa;}
-        .history-item{display:flex;justify-content:space-between;padding:10px 16px;background:white;border-radius:12px;margin-bottom:8px;border:1px solid #e2e8f0;transition:all 0.2s;}
-        body.dark .history-item{background:#1e293b;border-color:#334155;color:#cbd5e1;}
-        .history-item:hover{background:#f1f5f9;transform:translateX(5px);}
-        body.dark .history-item:hover{background:#334155;}
-        .history-hashtags{font-weight:600;color:#1e3a8a;font-size:14px;}
-        body.dark .history-hashtags{color:#a78bfa;}
-        .history-time{font-size:12px;color:#64748b;}
-        body.dark .history-time{color:#94a3b8;}
-        
         .home-link{display:inline-block;background:#64748b;color:white;text-decoration:none;padding:12px 28px;border-radius:40px;font-weight:600;transition:0.3s;}
         .home-link:hover{background:#475569;transform:translateY(-2px);}
-        
+        .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;padding:12px 24px;border-radius:60px;color:white;z-index:10000;opacity:0;transition:opacity 0.3s;font-size:14px;}
         .footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#cbd5e1;padding:50px 20px 25px;margin-top:40px;position:relative;}
         .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec489a);}
         .footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:35px;}
@@ -178,7 +142,7 @@
         .info-section h3{color:#2563eb;font-size:22px;margin:25px 0 15px;}
         body.dark .info-section h3{color:#a78bfa;}
         .info-section p{margin-bottom:18px;font-size:16px;}
-        .info-section ul,.info-section ol{margin:15px 0 20px 30px;}
+        .info-section ul, .info-section ol{margin:15px 0 20px 30px;}
         .info-section li{margin-bottom:8px;}
         .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin:25px 0;}
         .stat-card-article{background:#f8fafc;padding:20px;border-radius:16px;text-align:center;border:1px solid #e2e8f0;}
@@ -197,27 +161,12 @@
         body.dark .faq-answer{color:#cbd5e1;}
         .related-searches{background:#f8fafc;border-radius:20px;padding:25px;margin:30px 0;text-align:center;}
         body.dark .related-searches{background:#0f172a;}
-        
-        @media(max-width:768px){.navbar{padding:12px 20px;}.nav-container{flex-direction:column;text-align:center;}.card-content{padding:25px 20px;}.random-hashtag{font-size:24px;}.stats-container{flex-direction:column;}.info-section{padding:25px 20px;}.info-section h2{font-size:24px;}.footer-container{text-align:center;}.footer-col h3::after,.footer-col h4::after{left:50%;transform:translateX(-50%);}.platform-selector{gap:8px;}.platform-btn{padding:8px 14px;font-size:12px;}}
+        @media(max-width:768px){.navbar{padding:12px 20px;}.nav-container{flex-direction:column;text-align:center;}.card-content{padding:25px 20px;}.random-hashtag{font-size:24px;}.stats-container{flex-direction:column;}.info-section{padding:25px 20px;}.info-section h2{font-size:24px;}.footer-container{text-align:center;}.footer-col h3::after,.footer-col h4::after{left:50%;transform:translateX(-50%);}}
     </style>
     <script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<div class="navbar">
-    <div class="nav-container">
-        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools</a></div>
-        <ul class="nav-links">
-            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
-            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
-            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
-            <li><button class="dark-toggle" id="darkToggle">🌙 Dark Mode</button></li>
-        </ul>
-    </div>
-</div>
-
-<!-- ===== MAIN TOOL ===== -->
 <div class="container">
     <div class="glass-card">
         <div class="card-header">
@@ -225,63 +174,26 @@
             <p>Generate random viral hashtags for TikTok, Instagram, YouTube & Facebook - Discover new audiences instantly</p>
         </div>
         <div class="card-content">
-            
-            <!-- Platform Selector -->
-            <div class="platform-selector">
-                <button class="platform-btn active" data-platform="all">🌐 All Platforms</button>
-                <button class="platform-btn" data-platform="tiktok">🎵 TikTok</button>
-                <button class="platform-btn" data-platform="instagram">📸 Instagram</button>
-                <button class="platform-btn" data-platform="youtube">🎬 YouTube</button>
-                <button class="platform-btn" data-platform="facebook">📘 Facebook</button>
-                <button class="platform-btn" data-platform="twitter">🐦 Twitter</button>
-            </div>
-            
-            <!-- Count Selector -->
-            <div style="display:flex;gap:15px;margin:15px 0;flex-wrap:wrap;justify-content:center;align-items:center;">
-                <label style="font-weight:600;color:#1e3a8a;">📊 Number of Hashtags:</label>
-                <select id="countSelect" style="padding:10px 20px;border:2px solid #e2e8f0;border-radius:40px;font-weight:600;background:white;cursor:pointer;">
-                    <option value="3">3</option>
-                    <option value="5" selected>5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                </select>
-            </div>
-            
             <div class="random-box">
                 <div class="random-hashtag" id="randomHashtag">#viral</div>
                 <button class="btn-primary" id="randomBtn">🎲 Generate Random Hashtag</button>
             </div>
-            
             <div style="display:flex;gap:15px;margin:20px 0;flex-wrap:wrap;justify-content:center;">
-                <button class="btn-secondary" id="generateBtn">📋 Generate Hashtags</button>
-                <button class="btn-secondary" id="copyAllBtn">📋 Copy All</button>
+                <button class="btn-secondary" id="generate5Btn">📋 Generate 5 Random</button>
+                <button class="btn-secondary" id="copyAllBtn">📋 Copy All Hashtags</button>
                 <button class="btn-secondary" id="refreshBtn">🔄 Refresh Set</button>
-                <button class="btn-secondary" id="historyToggleBtn">📜 History</button>
             </div>
-            
             <div class="stats-container">
-                <div class="stat-card">🎲 Total Hashtags: <span id="totalCount">0</span></div>
+                <div class="stat-card">🎲 Random Hashtags: <span id="totalCount">0</span></div>
                 <div class="stat-card">💡 Click any hashtag to copy</div>
                 <div class="stat-card">✅ Use 3-5 hashtags per post</div>
             </div>
-            
             <div id="randomList" class="hashtag-list"></div>
-            
-            <!-- History Section -->
-            <div id="historySection" class="history-section">
-                <div class="history-header">
-                    <h3>📜 Generated History</h3>
-                    <button class="btn-secondary" id="clearHistoryBtn" style="padding:6px 16px;font-size:12px;">🗑️ Clear</button>
-                </div>
-                <div id="historyList"></div>
-            </div>
-            
         </div>
     </div>
-</div>
 
-<!-- ========== SOCIAL MEDIA TOOLS FOOTER ========== -->
+<!-- ========== SOCIAL MEDIA HASHTAG TOOLS CATEGORY FOOTER START ========== -->
+
 <div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
 <style>
 .smh-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
@@ -472,437 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <!-- ========== SOCIAL MEDIA HASHTAG TOOLS CATEGORY FOOTER END ========== -->
-
-<!-- ========== 2500+ WORDS SEO ARTICLE ========== -->
-<div class="info-section">
-    <h1 style="font-size:32px;margin-bottom:20px;border-bottom:none;color:#1e3a8a;">🎲 Complete Guide to Random Hashtag Generator 2026</h1>
-    <p style="color:#6b7280;margin-bottom:30px;">Last Updated: August 3, 2026 | 18 min read | By Social Media Growth Experts | ⭐ 4.8/5 Rating</p>
-    
-    <div class="stats-grid">
-        <div class="stat-card-article"><strong style="font-size:24px;color:#1e3a8a;">80K+</strong><br>Daily Users</div>
-        <div class="stat-card-article"><strong style="font-size:24px;color:#1e3a8a;">4.8/5</strong><br>User Rating</div>
-        <div class="stat-card-article"><strong style="font-size:24px;color:#1e3a8a;">100%</strong><br>Free Tool</div>
-        <div class="stat-card-article"><strong style="font-size:24px;color:#1e3a8a;">500+</strong><br>Hashtags Database</div>
-    </div>
-
-    <div class="keyword-cloud">
-        <span>Random Hashtag Generator</span><span>Random Hashtags</span><span>Hashtag Generator</span>
-        <span>Viral Hashtags</span><span>Social Media Tags</span><span>TikTok Hashtags</span>
-        <span>Instagram Hashtags</span><span>YouTube Tags</span><span>Content Discovery</span>
-        <span>Random Tag Generator</span><span>Unique Hashtags</span><span>Fresh Hashtags</span>
-    </div>
-
-    <h2>🎯 What is a Random Hashtag Generator?</h2>
-    <p>A <strong>Random Hashtag Generator</strong> is a creative tool that produces unexpected, diverse hashtags to help you discover new audiences and content niches. Unlike niche-specific hashtag generators that only suggest tags related to your keyword, a random hashtag generator introduces you to tags you might never have considered – opening doors to entirely new communities and potential followers.</p>
-    <p>Sometimes, the best content discoveries happen by accident. Our <strong>random hashtag generator</strong> taps into a database of over 500 proven hashtags across all categories and presents you with fresh, unexpected combinations that can help your content reach audiences beyond your usual niche.</p>
-
-    <div class="tip-box">
-        <p><strong>💡 Why Use Random Hashtags?</strong> Random hashtags expose your content to new audiences you might never reach with your regular niche hashtags. They're perfect for content creators looking to break out of their algorithm bubble and discover new communities.</p>
-    </div>
-
-    <h2>📊 How Our Random Hashtag Generator Works</h2>
-    <p>Our <strong>random hashtag generator</strong> uses a simple but powerful approach:</p>
-    <ol style="margin-left:25px;margin-bottom:20px;">
-        <li><strong>Vast Hashtag Database:</strong> We maintain a database of over 500 proven, effective hashtags across all popular categories</li>
-        <li><strong>True Randomization:</strong> Our algorithm selects hashtags completely at random, ensuring unique combinations every time</li>
-        <li><strong>Quality Filtering:</strong> We only include hashtags that are proven to work – no banned or shadowbanned tags</li>
-        <li><strong>Category Balance:</strong> Generated sets include a mix of viral, trending, niche, and general tags</li>
-        <li><strong>Instant Generation:</strong> Get 5 random hashtags with one click – refresh for a completely new set</li>
-    </ol>
-    <p>You can generate 1 random hashtag or multiple random hashtags at a time. Each generation produces a completely unique set, so you can keep generating until you find tags that resonate with your content.</p>
-
-    <h2>🔥 Popular Random Hashtags That Work</h2>
-    <p>Our random hashtag database includes these proven effective tags:</p>
-    <ul style="margin-left:25px;margin-bottom:20px;">
-        <li><strong>#viral</strong> - Universal viral tag (works on all platforms)</li>
-        <li><strong>#trending</strong> - Current trend catcher</li>
-        <li><strong>#fyp</strong> - TikTok's For You Page tag</li>
-        <li><strong>#foryou</strong> - Alternative FYP tag</li>
-        <li><strong>#explorepage</strong> - Instagram discovery tag</li>
-        <li><strong>#reels</strong> - Instagram Reels optimization</li>
-        <li><strong>#shorts</strong> - YouTube Shorts tag</li>
-        <li><strong>#love</strong> - Universal positive engagement tag</li>
-        <li><strong>#instagood</strong> - Instagram community tag</li>
-        <li><strong>#photooftheday</strong> - Daily photo challenge tag</li>
-        <li><strong>#beautiful</strong> - Aesthetic content tag</li>
-        <li><strong>#happy</strong> - Positive emotion tag</li>
-        <li><strong>#cute</strong> - Family-friendly content tag</li>
-        <li><strong>#tbt</strong> - Throwback Thursday tag</li>
-        <li><strong>#followme</strong> - Follower growth tag</li>
-        <li><strong>#likeforlike</strong> - Engagement exchange tag</li>
-    </ul>
-
-    <h2>📈 Why Use a Random Hashtag Generator?</h2>
-    <ul style="margin-left:25px;margin-bottom:20px;">
-        <li><strong>✅ Discover New Audiences:</strong> Random hashtags expose your content to people outside your usual niche</li>
-        <li><strong>✅ Break Algorithm Ruts:</strong> If your engagement has plateaued, random hashtags can reset your algorithm reach</li>
-        <li><strong>✅ Creative Inspiration:</strong> Random tags might inspire new content ideas</li>
-        <li><strong>✅ A/B Testing:</strong> Test random hashtag combinations to see what works best</li>
-        <li><strong>✅ Save Time:</strong> No need to research hashtags – let our tool do the work</li>
-        <li><strong>✅ Fresh Combinations:</strong> Get unique hashtag sets every single time</li>
-        <li><strong>✅ Cross-Platform Growth:</strong> Random hashtags work across TikTok, Instagram, and YouTube</li>
-    </ul>
-
-    <h2>🎯 How to Use Random Hashtags Effectively</h2>
-    
-    <h3>1. Mix Random with Niche Hashtags</h3>
-    <p>Don't use only random hashtags. Combine 2-3 random tags with 2-3 niche-specific tags for the best results. This strategy helps you reach both broad and targeted audiences simultaneously.</p>
-    
-    <h3>2. Test Different Combinations</h3>
-    <p>Generate multiple random hashtag sets and test them on similar content. Track which combinations generate the highest engagement. Our tool makes it easy to generate fresh sets instantly.</p>
-    
-    <h3>3. Use Random Hashtags for Evergreen Content</h3>
-    <p>Random hashtags work especially well for evergreen content that doesn't fit neatly into one category. They help your content get discovered by diverse audiences over time.</p>
-    
-    <h3>4. Combine with Trending Tags</h3>
-    <p>For maximum reach, mix 2 random hashtags + 2 trending hashtags + 2 niche hashtags. This combination covers all bases and maximizes discoverability.</p>
-
-    <h2>📱 Platform-Specific Random Hashtag Tips</h2>
-    
-    <h3>TikTok Random Hashtags</h3>
-    <p>Use 3-5 random hashtags including #fyp, #foryou, #viral combined with platform-specific tags. TikTok's algorithm heavily weights hashtags for discovery.</p>
-    
-    <h3>Instagram Random Hashtags</h3>
-    <p>Use 3-5 random hashtags total. Place 1-2 in caption and the rest in first comment. Mix broad tags like #explorepage with niche ones.</p>
-    
-    <h3>YouTube Random Hashtags</h3>
-    <p>Use 3-5 random hashtags in video description. Include #shorts for Shorts content and #viral for discoverability.</p>
-    
-    <h3>Facebook Random Hashtags</h3>
-    <p>Use 2-3 random hashtags maximum. Facebook hashtags work best when they're highly relevant to your content.</p>
-
-    <h2>🎲 Random Hashtag Strategy for Viral Growth</h2>
-    <p>To maximize your chances of going viral with random hashtags, follow this proven strategy:</p>
-    <ul style="margin-left:25px;margin-bottom:20px;">
-        <li><strong>Generate Fresh Sets Daily:</strong> Each generation produces unique hashtags - use a new set for every post</li>
-        <li><strong>Save What Works:</strong> Track which random hashtags perform best and create a "power list"</li>
-        <li><strong>Combine with Timing:</strong> Post when your audience is most active (7-9 PM for most platforms)</li>
-        <li><strong>Engage with Comments:</strong> Respond to comments within first hour to boost algorithm signals</li>
-        <li><strong>Monitor Performance:</strong> Use analytics to see which hashtags drive the most engagement</li>
-    </ul>
-
-    <h2>❓ Frequently Asked Questions About Random Hashtags</h2>
-    
-    <div class="faq-section">
-        <div class="faq-item">
-            <div class="faq-question">📌 What is a random hashtag generator?</div>
-            <div class="faq-answer">A random hashtag generator is a tool that produces unexpected, diverse hashtags from a large database. It helps content creators discover new audiences and break out of algorithm ruts.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">📌 Are random hashtags effective?</div>
-            <div class="faq-answer">Yes! Random hashtags expose your content to new audiences you might never reach with niche tags. They're especially effective when your engagement has plateaued.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">📌 Is this random hashtag generator free?</div>
-            <div class="faq-answer">Yes, completely free with unlimited uses! Generate as many random hashtag sets as you want, no registration required.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">📌 How many random hashtags should I use?</div>
-            <div class="faq-answer">Use 2-3 random hashtags per post, combined with 2-3 niche tags and 2-3 trending tags for optimal results.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">📌 Can I use random hashtags on any platform?</div>
-            <div class="faq-answer">Yes, random hashtags work on TikTok, Instagram, YouTube, Facebook, and Twitter. Our database includes platform-agnostic tags that work everywhere.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">📌 How often should I generate new random hashtags?</div>
-            <div class="faq-answer">Generate new random hashtags for each post. Each generation produces a completely unique set, keeping your hashtag strategy fresh.</div>
-        </div>
-    </div>
-
-    <div class="related-searches">
-        <h4 style="color:#1e3a8a;margin-bottom:15px;">🔍 People Also Search For</h4>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-            <span style="background:white;border-radius:30px;padding:6px 14px;font-size:13px;color:#2563eb;">random hashtag generator free</span>
-            <span style="background:white;border-radius:30px;padding:6px 14px;font-size:13px;color:#2563eb;">random hashtags for instagram</span>
-            <span style="background:white;border-radius:30px;padding:6px 14px;font-size:13px;color:#2563eb;">random hashtag generator for tiktok</span>
-            <span style="background:white;border-radius:30px;padding:6px 14px;font-size:13px;color:#2563eb;">unique hashtags generator</span>
-            <span style="background:white;border-radius:30px;padding:6px 14px;font-size:13px;color:#2563eb;">random tag generator</span>
-            <span style="background:white;border-radius:30px;padding:6px 14px;font-size:13px;color:#2563eb;">random viral hashtags</span>
-            <span style="background:white;border-radius:30px;padding:6px 14px;font-size:13px;color:#2563eb;">fresh hashtags daily</span>
-        </div>
-    </div>
-
-    <div class="tip-box">
-        <p><strong>📌 Final Thought:</strong> Don't get stuck in a hashtag rut. Our Random Hashtag Generator helps you discover new audiences, break out of algorithm bubbles, and keep your content fresh. Whether you're a content creator looking to grow your following or a marketer testing new strategies, random hashtags offer a creative, effective approach to social media growth. Generate your random hashtags now and watch your content reach audiences you never knew existed!</p>
-    </div>
-
-    <p style="margin-top:30px;text-align:center;padding-top:20px;border-top:1px solid #e5e7eb;color:#6b7280;"><strong>Free Online Tools</strong> | Random Hashtag Generator | Get Fresh Viral Hashtags | 100% Free | No Registration</p>
-</div>
-
-<!-- ===== FOOTER ===== -->
-<footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a, #3b82f6); background-size: 300% 100%; animation: gradientMove 3s ease infinite;"></div>
-    <style>
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-    </style>
-    <div style="max-width: 1100px; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin-bottom: 25px;">
-            <div>
-                <h3 style="color: white; font-size: 1rem; margin: 0;">✨ Free Online Tools 203</h3>
-                <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 10px;">100% free online tools for social media, SEO, calculators & fun games.</p>
-            </div>
-            <div>
-                <h4 style="color: white; font-size: 0.85rem;">📄 Quick Links</h4>
-                <a href="https://freeonlinetools203.com/index.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">🏠 Home</a>
-                <a href="https://freeonlinetools203.com/about.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">ℹ️ About</a>
-                <a href="https://freeonlinetools203.com/contact.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">📧 Contact</a>
-                <a href="https://freeonlinetools203.com/privacy-policy.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">🔒 Privacy</a>
-            </div>
-            <div>
-                <h4 style="color: white; font-size: 0.85rem;">📱 Social Media</h4>
-                <a href="https://freeonlinetools203.com/instagram-hashtag-generator.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">📸 Instagram Hashtag Generator</a>
-                <a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">🎵 TikTok Hashtag Generator</a>
-                <a href="https://freeonlinetools203.com/facebook-hashtag-generator.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">📘 Facebook Hashtag Generator</a>
-            </div>
-            <div>
-                <h4 style="color: white; font-size: 0.85rem;">⭐ Trending Tools</h4>
-                <a href="https://freeonlinetools203.com/age-calculator.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">📅 Age Calculator</a>
-                <a href="https://freeonlinetools203.com/keyword-density-checker.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">🔍 Keyword Density Checker</a>
-                <a href="https://freeonlinetools203.com/spin-the-wheel.html" style="color:#94a3b8;display:block;padding:4px 0;text-decoration:none;">🎡 Spin The Wheel</a>
-            </div>
-        </div>
-        <div style="text-align:center;padding-top:15px;border-top:1px solid rgba(255,255,255,0.06);">
-            <p style="font-size:0.7rem;color:#64748b;">© 2026 <strong style="color:#94a3b8;">Free Online Tools 203</strong>. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-<div id="toastMsg" class="toast">Copied!</div>
-
-<script>
-// ============================================================
-// 🔧 DARK MODE
-// ============================================================
-const darkToggle = document.getElementById('darkToggle');
-let isDark = localStorage.getItem('darkMode') === 'true';
-if(isDark){ document.body.classList.add('dark'); darkToggle.textContent = '☀️ Light Mode'; }
-darkToggle.addEventListener('click', function(){
-    isDark = !isDark;
-    document.body.classList.toggle('dark');
-    this.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    localStorage.setItem('darkMode', isDark);
-});
-
-// ============================================================
-// 📚 MEGA HASHTAG DATABASE - Platform Specific
-// ============================================================
-const hashtagDB = {
-    all: [
-        '#viral', '#trending', '#fyp', '#foryou', '#foryoupage', '#explorepage', '#explore', 
-        '#reels', '#shorts', '#viralvideo', '#tiktok', '#instagram', '#youtube', '#love', 
-        '#instagood', '#photooftheday', '#beautiful', '#happy', '#cute', '#follow', '#like', 
-        '#fashion', '#music', '#art', '#funny', '#memes', '#tbt', '#followme', '#repost', 
-        '#likeforlike', '#ootd', '#picoftheday', '#nature', '#life', '#style', '#beauty', 
-        '#food', '#travel', '#motivation', '#fitness', '#workout', '#gym', '#health', 
-        '#mindset', '#success', '#goals', '#inspiration', '#positivevibes', '#selflove', 
-        '#grateful', '#blessed', '#trendingnow', '#mustshare', '#fypage', '#viralpost'
-    ],
-    tiktok: [
-        '#fyp', '#foryou', '#foryoupage', '#tiktok', '#viral', '#trending', '#tiktoktrends',
-        '#tiktokviral', '#fyps', '#fypage', '#tiktokusa', '#tiktokindia', '#tiktokuk',
-        '#trendingaudio', '#viralvideo', '#tiktokdance', '#tiktokchallenge', '#tiktokcomedy',
-        '#tiktokmusic', '#tiktokfood', '#tiktokfashion', '#tiktokfitness', '#tiktoktravel',
-        '#tiktoklove', '#tiktoklife', '#tiktokfun', '#tiktokcute', '#tiktokbeauty',
-        '#tiktokgaming', '#tiktokmemes', '#tiktoktrends2026', '#foryoupageofficial',
-        '#tiktokers', '#tiktokcommunity', '#tiktokcontent', '#tiktokcreators', '#tiktokstars',
-        '#viralclips', '#trendingvideo', '#tiktokhacks', '#tiktoktips'
-    ],
-    instagram: [
-        '#instagram', '#instagood', '#photooftheday', '#viral', '#trending', '#explorepage',
-        '#reels', '#explore', '#love', '#fashion', '#style', '#beauty', '#food', '#travel',
-        '#fitness', '#motivation', '#inspiration', '#life', '#nature', '#art', '#music',
-        '#funny', '#memes', '#ootd', '#picoftheday', '#instareels', '#instadaily',
-        '#instafashion', '#instatravel', '#instafood', '#instafit', '#instabeauty',
-        '#instalike', '#instafollow', '#instagramreels', '#instagramtrends', '#explorepage✨',
-        '#instagrammers', '#instagramcommunity', '#instagramgrowth', '#instagramtips',
-        '#instagramhacks', '#reelsinstagram', '#trendingreels', '#viralreels'
-    ],
-    youtube: [
-        '#youtube', '#youtuber', '#youtubeviral', '#viral', '#trending', '#shorts',
-        '#youtubeshorts', '#subscribe', '#like', '#comment', '#share', '#youtubecommunity',
-        '#youtubegrowth', '#youtubecreator', '#youtubetips', '#youtubehacks', '#viralvideo',
-        '#trendingvideo', '#youtubemusic', '#youtubegaming', '#youtubefood', '#youtubefitness',
-        '#youtubetravel', '#youtubevlog', '#youtubetutorial', '#youtubereview', '#youtubeunboxing',
-        '#youtubepodcast', '#youtubelifestyle', '#youtubefashion', '#youtubebeauty',
-        '#youtubecomedy', '#youtubestreamer', '#youtubecontent', '#youtubecreatorcommunity',
-        '#youtubealgorithms', '#youtubeviews', '#youtubesubscribers', '#youtubegamingcommunity'
-    ],
-    facebook: [
-        '#facebook', '#fb', '#facebookpage', '#facebookcommunity', '#viral', '#trending',
-        '#facebookpost', '#facebooklive', '#facebookvideo', '#facebookreels', '#facebookstory',
-        '#facebookmarketing', '#facebookgrowth', '#facebooktips', '#facebookhacks',
-        '#facebookfashion', '#facebookfood', '#facebooktravel', '#facebookfitness',
-        '#facebookbeauty', '#facebookmotivation', '#facebooklife', '#facebookfun',
-        '#facebooklove', '#facebookfamily', '#facebookfriends', '#facebookmemes',
-        '#facebooktrends', '#facebookviral', '#facebookengagement', '#facebookreach'
-    ],
-    twitter: [
-        '#twitter', '#tweet', '#twittercommunity', '#viral', '#trending', '#twittertrends',
-        '#tweetthread', '#twitterthread', '#twitterverse', '#tweettips', '#twitterhacks',
-        '#twitterfashion', '#twitterfood', '#twittertravel', '#twitterfitness', '#twitterbeauty',
-        '#twittermotivation', '#twitterlife', '#twitterfun', '#twitterlove', '#twitternews',
-        '#twittermemes', '#twittertrending', '#twitterviral', '#twitterengagement', '#twitterreach'
-    ]
-};
-
-// ============================================================
-// 🎮 MAIN APP
-// ============================================================
-let currentPlatform = 'all';
-let currentHashtags = [];
-let history = JSON.parse(localStorage.getItem('hashtagHistory')) || [];
-
-function getHashtags(count, platform) {
-    const db = hashtagDB[platform] || hashtagDB.all;
-    const shuffled = [...db];
-    for(let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled.slice(0, count);
-}
-
-function renderHashtags(list) {
-    const container = document.getElementById('randomList');
-    container.innerHTML = list.map(tag => 
-        `<div class="hashtag-item" data-hashtag="${tag}">${tag}</div>`
-    ).join('');
-    document.getElementById('totalCount').innerText = list.length;
-    
-    document.querySelectorAll('.hashtag-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const tag = this.getAttribute('data-hashtag');
-            if(copyToClipboard(tag)) showToast(`✅ Copied: ${tag}`);
-        });
-    });
-}
-
-function generateHashtags() {
-    const count = parseInt(document.getElementById('countSelect').value) || 5;
-    const tags = getHashtags(count, currentPlatform);
-    currentHashtags = tags;
-    renderHashtags(tags);
-    addToHistory(tags);
-    showToast(`✨ ${tags.length} hashtags generated!`);
-}
-
-function addToHistory(tags) {
-    const entry = {
-        hashtags: tags,
-        time: new Date().toLocaleString(),
-        platform: currentPlatform
-    };
-    history.unshift(entry);
-    if(history.length > 20) history.pop();
-    localStorage.setItem('hashtagHistory', JSON.stringify(history));
-    renderHistory();
-}
-
-function renderHistory() {
-    const container = document.getElementById('historyList');
-    const section = document.getElementById('historySection');
-    if(history.length === 0) {
-        section.classList.remove('show');
-        return;
-    }
-    section.classList.add('show');
-    container.innerHTML = history.map((entry, index) => `
-        <div class="history-item" onclick="loadHistory(${index})">
-            <span class="history-hashtags">${entry.hashtags.slice(0,3).join(' ')} ${entry.hashtags.length > 3 ? '...' : ''}</span>
-            <span class="history-time">${entry.time}</span>
-        </div>
-    `).join('');
-}
-
-function loadHistory(index) {
-    const entry = history[index];
-    if(entry) {
-        currentHashtags = entry.hashtags;
-        renderHashtags(entry.hashtags);
-        showToast(`📜 Loaded from history`);
-    }
-}
-
-function copyAll() {
-    if(currentHashtags.length === 0) { 
-        showToast('❌ Generate hashtags first!');
-        return;
-    }
-    const text = currentHashtags.join(' ');
-    if(copyToClipboard(text)) showToast(`📋 ${currentHashtags.length} hashtags copied!`);
-}
-
-function copyToClipboard(text) {
-    try {
-        navigator.clipboard.writeText(text);
-        return true;
-    } catch(e) {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.style.position = 'fixed';
-        textarea.style.top = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        try { document.execCommand('copy'); return true; } 
-        catch(err) { return false; }
-        finally { document.body.removeChild(textarea); }
-    }
-}
-
-function showToast(msg) {
-    const toast = document.getElementById('toastMsg');
-    toast.textContent = msg;
-    toast.style.opacity = '1';
-    clearTimeout(toast._timeout);
-    toast._timeout = setTimeout(() => { toast.style.opacity = '0'; }, 2500);
-}
-
-// ============================================================
-// 🎯 EVENT LISTENERS
-// ============================================================
-document.querySelectorAll('.platform-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        currentPlatform = this.dataset.platform;
-        generateHashtags();
-    });
-});
-
-document.getElementById('randomBtn').addEventListener('click', function() {
-    const tag = getHashtags(1, currentPlatform)[0];
-    document.getElementById('randomHashtag').innerHTML = tag;
-    document.getElementById('randomHashtag').setAttribute('data-hashtag', tag);
-    showToast(`🎲 ${tag}`);
-});
-
-document.getElementById('randomHashtag').addEventListener('click', function() {
-    const tag = this.innerHTML;
-    if(copyToClipboard(tag)) showToast(`✅ Copied: ${tag}`);
-});
-
-document.getElementById('generateBtn').addEventListener('click', generateHashtags);
-document.getElementById('copyAllBtn').addEventListener('click', copyAll);
-document.getElementById('refreshBtn').addEventListener('click', generateHashtags);
-document.getElementById('clearHistoryBtn').addEventListener('click', function() {
-    history = [];
-    localStorage.removeItem('hashtagHistory');
-    renderHistory();
-    showToast('🗑️ History cleared!');
-});
-
-document.getElementById('historyToggleBtn').addEventListener('click', function() {
-    const section = documen<!-- ========== SEO ARTICLE START ========== -->
+   <!-- ========== SEO ARTICLE START ========== -->
 
 <div class="article-container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
     <div style="background: #ffffff; border-radius: 24px; padding: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
@@ -1288,17 +770,300 @@ document.getElementById('historyToggleBtn').addEventListener('click', function()
 </div>
 
 <!-- ========== SEO ARTICLE END ========== -->
-    t.getElementById('historySection');
-    section.classList.toggle('show');
-});
+<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
 
-document.getElementById('countSelect').addEventListener('change', generateHashtags);
+<footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
+    
+    <!-- Animated Gradient Line -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a, #3b82f6); background-size: 300% 100%; animation: gradientMove 3s ease infinite;"></div>
+    
+    <style>
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .footer-link {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            transform: translateX(5px);
+            color: #60a5fa !important;
+        }
+        .social-btn {
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            color: white;
+            font-size: 18px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            filter: brightness(1.1);
+        }
+        .footer-col {
+            animation: float 4s ease-in-out infinite;
+        }
+        .footer-col:nth-child(2) { animation-delay: 0.5s; }
+        .footer-col:nth-child(3) { animation-delay: 1s; }
+        .footer-col:nth-child(4) { animation-delay: 1.5s; }
+    </style>
 
-// ============================================================
-// 🚀 LOAD ON START
-// ============================================================
-generateHashtags();
-renderHistory();
+    <div style="max-width: 1100px; margin: 0 auto;">
+        
+        <!-- Footer Grid - 4 Columns -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin-bottom: 25px;">
+            
+            <!-- Column 1: Brand Info with SOCIAL MEDIA BUTTONS -->
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <span style="font-size: 22px;">✨</span>
+                    <h3 style="color: white; font-size: 1rem; margin: 0;">Free Online Tools 203</h3>
+                </div>
+                <p style="font-size: 0.7rem; line-height: 1.5; color: #94a3b8; margin-bottom: 10px;">100% free online tools for social media, SEO, calculators & fun games.</p>
+                
+                <!-- SOCIAL MEDIA SHARE BUTTONS -->
+                <div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                        <button onclick="sharePage('facebook')" class="social-btn" style="background: #1877F2; width: 32px; height: 32px; font-size: 15px;">📘</button>
+                        <button onclick="sharePage('twitter')" class="social-btn" style="background: #1DA1F2; width: 32px; height: 32px; font-size: 15px;">🐦</button>
+                        <button onclick="sharePage('whatsapp')" class="social-btn" style="background: #25D366; width: 32px; height: 32px; font-size: 15px;">💬</button>
+                        <button onclick="sharePage('linkedin')" class="social-btn" style="background: #0077B5; width: 32px; height: 32px; font-size: 15px;">🔗</button>
+                        <button onclick="copyPageLink()" class="social-btn" style="background: #6b7280; width: 32px; height: 32px; font-size: 13px;">📋</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #3b82f6; padding-left: 10px;">📄 Quick Links</h4>
+                <div>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/index.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🏠 Home</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/about.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">ℹ️ About</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/contact.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📧 Contact</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/privacy-policy.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🔒 Privacy</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/terms-conditions.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📜 Terms</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/disclaimer.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚠️ Disclaimer</a></p>
+                </div>
+            </div>
+            
+            <!-- Column 3: Social Media Tools (5 Trending) -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #8b5cf6; padding-left: 10px;">📱 Social Media</h4>
+                <div>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/instagram-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📸 Instagram Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🎵 TikTok Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/facebook-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📘 Facebook Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">💼 LinkedIn Hashtag Generator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📌 Pinterest Hashtag Generator</a></p>
+                </div>
+            </div>
+            
+            <!-- Column 4: Popular Tools (5 Trending) -->
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #f59e0b; padding-left: 10px;">⭐ Trending Tools</h4>
+                <div>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/age-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📅 Age Calculator</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/keyword-density-checker.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🔍 Keyword Density Checker</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/spin-the-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🎡 Spin The Wheel</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/yes-no-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">✅ Yes/No Wheel</a></p>
+                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/bmi-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚖️ BMI Calculator</a></p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <p style="font-size: 0.7rem; color: #64748b;">© 2026 <strong style="color: #94a3b8;">Free Online Tools 203</strong>. All rights reserved. | Made with <span style="color: #ec489a;">❤️</span></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ========== SHARE FUNCTIONS - CURRENT PAGE LINK ==========
+
+function sharePage(platform) {
+    let url = encodeURIComponent(window.location.href);
+    let title = encodeURIComponent(document.title || "Free Online Tools 203");
+    
+    let shareUrl = "";
+    if (platform === "whatsapp") {
+        shareUrl = "https://wa.me/?text=" + title + "%20" + url;
+    } else if (platform === "facebook") {
+        shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    } else if (platform === "twitter") {
+        shareUrl = "https://twitter.com/intent/tweet?text=" + title + "&url=" + url;
+    } else if (platform === "linkedin") {
+        shareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + title;
+    }
+    
+    if (shareUrl) {
+        window.open(shareUrl, "_blank", "width=600,height=500");
+    }
+}
+
+function copyPageLink() {
+    let url = window.location.href;
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+            showToast('✅ Link copied! Share with friends.');
+        }).catch(() => {
+            fallbackCopy(url);
+        });
+    } else {
+        fallbackCopy(url);
+    }
+}
+
+function fallbackCopy(text) {
+    let textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    showToast('✅ Link copied! Share with friends.');
+}
+
+function showToast(message) {
+    let toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:8px 18px;border-radius:50px;font-size:13px;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);animation:toastSlide 0.3s ease';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2500);
+}
+</script>
+
+<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER END ========== -->
+
+<div id="toastMsg" class="toast">Copied!</div>
+
+<script>
+    function showToast(msg) {
+        const toast = document.getElementById('toastMsg');
+        toast.textContent = msg;
+        toast.style.opacity = '1';
+        setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+    }
+
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.top = '-9999px';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        textarea.setSelectionRange(0, textarea.value.length);
+        
+        try {
+            const successful = document.execCommand('copy');
+            if(successful) return true;
+        } catch(err) {
+            console.log('Copy failed:', err);
+        }
+        
+        try {
+            navigator.clipboard.writeText(text);
+            return true;
+        } catch(err) {
+            return false;
+        } finally {
+            document.body.removeChild(textarea);
+        }
+    }
+
+    const allHashtags = [
+        '#viral', '#trending', '#fyp', '#foryou', '#foryoupage', '#explorepage', '#explore', '#reels', '#shorts', '#viralvideo',
+        '#tiktok', '#instagram', '#youtube', '#love', '#instagood', '#photooftheday', '#beautiful', '#happy', '#cute', '#follow',
+        '#like', '#fashion', '#music', '#art', '#funny', '#memes', '#tbt', '#followme', '#repost', '#likeforlike', '#ootd',
+        '#picoftheday', '#nature', '#life', '#style', '#beauty', '#food', '#travel', '#motivation', '#fitness', '#workout',
+        '#gym', '#health', '#mindset', '#success', '#goals', '#inspiration', '#positivevibes', '#selflove', '#grateful', '#blessed'
+    ];
+
+    function getRandomHashtag() {
+        return allHashtags[Math.floor(Math.random() * allHashtags.length)];
+    }
+
+    function getRandomHashtags(count) {
+        const shuffled = [...allHashtags];
+        for(let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled.slice(0, count);
+    }
+
+    let currentRandomList = [];
+
+    function renderRandomList(list) {
+        const container = document.getElementById('randomList');
+        container.innerHTML = list.map(tag => `<div class="hashtag-item" data-hashtag="${tag}">${tag}</div>`).join('');
+        document.getElementById('totalCount').innerText = list.length;
+        
+        document.querySelectorAll('.hashtag-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const tag = item.getAttribute('data-hashtag');
+                if(copyToClipboard(tag)) showToast(`✅ Copied: ${tag}`);
+            });
+        });
+    }
+
+    function updateRandomHashtag() {
+        const tag = getRandomHashtag();
+        document.getElementById('randomHashtag').innerHTML = tag;
+        document.getElementById('randomHashtag').setAttribute('data-hashtag', tag);
+    }
+
+    function generate5() {
+        const tags = getRandomHashtags(5);
+        currentRandomList = tags;
+        renderRandomList(tags);
+        showToast('✨ 5 random hashtags generated!');
+    }
+
+    function copyAll() {
+        if(currentRandomList.length === 0) {
+            generate5();
+            setTimeout(() => {
+                const text = currentRandomList.join(' ');
+                if(copyToClipboard(text)) showToast('📋 All hashtags copied!');
+            }, 100);
+        } else {
+            const text = currentRandomList.join(' ');
+            if(copyToClipboard(text)) showToast('📋 All hashtags copied!');
+        }
+    }
+
+    document.getElementById('randomBtn').addEventListener('click', () => {
+        updateRandomHashtag();
+        showToast('🎲 New random hashtag generated!');
+    });
+    
+    document.getElementById('generate5Btn').addEventListener('click', generate5);
+    document.getElementById('copyAllBtn').addEventListener('click', copyAll);
+    document.getElementById('refreshBtn').addEventListener('click', () => { generate5(); });
+    
+    document.getElementById('randomHashtag').addEventListener('click', () => {
+        const tag = document.getElementById('randomHashtag').innerHTML;
+        if(copyToClipboard(tag)) showToast(`✅ Copied: ${tag}`);
+    });
+    
+    generate5();
 </script>
 </body>
 </html>
