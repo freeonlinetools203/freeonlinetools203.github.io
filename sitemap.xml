@@ -705,80 +705,91 @@
         <priority>0.80</priority>
     </url>
 
-    <!-- ========== PDF TOOLS ========== -->
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-merger.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-splitter.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-image.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-jpg.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-png.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-bmp.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-webp.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-tiff.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-word.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-excel.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-to-text.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/pdf-rotator.html</loc>
-        <lastmod>2026-08-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
+    <!-- ========== PDF TOOLS (12 TOTAL) ========== -->
 
+<url>
+    <loc>https://freeonlinetools203.com/pdf-merger.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-splitter.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-rotator.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-image.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-jpg.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-png.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-bmp.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-webp.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-tiff.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-word.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-excel.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
+
+<url>
+    <loc>https://freeonlinetools203.com/pdf-to-text.html</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+</url>
     <!-- ========== IMAGE TOOLS ========== -->
     <url>
         <loc>https://freeonlinetools203.com/image-converter.html</loc>
