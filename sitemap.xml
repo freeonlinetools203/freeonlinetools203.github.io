@@ -639,31 +639,36 @@
         <priority>0.85</priority>
     </url>
 
-    <!-- ========== HEALTH & FITNESS ========== -->
-    <url>
-        <loc>https://freeonlinetools203.com/bmi-calculator.html</loc>
-        <lastmod>2026-08-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/bmr-calculator.html</loc>
-        <lastmod>2026-08-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/calorie-calculator.html</loc>
-        <lastmod>2026-08-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/tdee-calculator.html</loc>
-        <lastmod>2026-08-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
+ <!-- ========== HEALTH & FITNESS ========== -->
+  
+  <url>
+    <loc>https://freeonlinetools203.com/bmi-calculator.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeonlinetools203.com/bmr-calculator.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeonlinetools203.com/calorie-calculator.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeonlinetools203.com/tdee-calculator.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
 
     <!-- ========== FINANCIAL TOOLS ========== -->
     <url>
@@ -824,18 +829,19 @@
     </url>
 
     <!-- ========== SPIN WHEEL & FUN TOOLS ========== -->
-    <url>
-        <loc>https://freeonlinetools203.com/spin-the-wheel.html</loc>
-        <lastmod>2026-08-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://freeonlinetools203.com/yes-no-wheel.html</loc>
-        <lastmod>2026-08-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
+  <url>
+    <loc>https://freeonlinetools203.com/spin-the-wheel.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeonlinetools203.com/yes-no-wheel.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
     <url>
         <loc>https://freeonlinetools203.com/decision-roulette.html</loc>
         <lastmod>2026-08-15</lastmod>
