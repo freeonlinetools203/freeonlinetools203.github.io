@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔢 Free Random Number Generator - Instant &amp; Unique Numbers 2026</title>
+<meta name="description" content="Free online random number generator. Pick a min and max value, choose how many numbers you need, avoid repeats, and generate instantly. No signup required.">
+<meta name="keywords" content="random number generator, number generator, random number picker, free random number generator, pick random number">
+<link rel="canonical" href="https://freeonlinetools203.com/random-number-generator.html">
+
+<!-- ============================================================ -->
+<!-- TODO: Paste your site's shared navbar/footer script include  -->
+<!-- here — the same <script src="..."></script> tag used on all -->
+<!-- your other tool pages (e.g. bmi-calculator.html) so the      -->
+<!-- header, mega-menu, and Spin-The-Wheel footer widget render   -->
+<!-- consistently on this page too.                                -->
+<!-- Example: <script src="tools-database.js" defer></script>     -->
+<!-- ============================================================ -->
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #f4f6fb;
+    color: #1e293b;
+  }
+  .rng-wrap {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .rng-card {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(30,58,138,0.10);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+  .rng-header {
+    background: linear-gradient(to right, #881e8a, #2563eb);
+    color: #fff;
+    padding: 28px 30px;
+  }
+  .rng-header h1 {
+    margin: 0 0 6px 0;
+    font-size: 1.6rem;
+  }
+  .rng-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
+  .rng-body {
+    padding: 26px 30px 30px;
+  }
+  .rng-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .rng-preset-btn {
+    background: #eef2ff;
+    color: #3730a3;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .rng-preset-btn:hover { background: #c7d2fe; }
+  .rng-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .rng-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+  }
+  .rng-field input[type="number"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border .2s;
+  }
+  .rng-field input[type="number"]:focus {
+    border-color: #2563eb;
+  }
+  .rng-toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 24px;
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+  .rng-toggle-row input { width: 18px; height: 18px; }
+  .rng-toggle-row label { font-size: 0.9rem; color: #334155; cursor: pointer; }
+  .rng-generate-btn {
+    width: 100%;
+    background: linear-gradient(to right, #881e8a, #2563eb);
+    color: #fff;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .rng-generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37,99,235,0.25);
+  }
+  .rng-generate-btn:active { transform: translateY(0); }
+  .rng-results {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 40px;
+  }
+  .rng-ball {
+    background: linear-gradient(135deg, #2563eb, #881e8a);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rng-pop .35s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  @keyframes rng-pop {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .rng-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .rng-actions button {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .rng-actions button:hover { background: #e2e8f0; }
+  .rng-error {
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    display: none;
+  }
+  .rng-history {
+    margin-top: 22px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 16px;
+  }
+  .rng-history h3 {
+    font-size: 0.95rem;
+    color: #475569;
+    margin: 0 0 10px;
+  }
+  .rng-history-item {
+    font-size: 0.85rem;
+    color: #64748b;
+    padding: 6px 0;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+  .rng-back {
+    display: inline-block;
+    margin: 20px 0 0;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="rng-wrap">
+  <div class="rng-card">
+    <div class="rng-header">
+      <h1>🔢 Random Number Generator</h1>
+      <p>Pick a range, choose how many numbers you need, and generate instantly — free, no signup.</p>
+    </div>
+    <div class="rng-body">
+
+      <div class="rng-presets">
+        <button class="rng-preset-btn" onclick="rngPreset(1,10)">1–10</button>
+        <button class="rng-preset-btn" onclick="rngPreset(1,100)">1–100</button>
+        <button class="rng-preset-btn" onclick="rngPreset(1,50)">1–50</button>
+        <button class="rng-preset-btn" onclick="rngPreset(1,1000)">1–1000</button>
+        <button class="rng-preset-btn" onclick="rngPreset(0,1)">Coin Flip (0–1)</button>
+      </div>
+
+      <div class="rng-row">
+        <div class="rng-field">
+          <label for="rngMin">📉 Minimum Value</label>
+          <input type="number" id="rngMin" value="1">
+        </div>
+        <div class="rng-field">
+          <label for="rngMax">📈 Maximum Value</label>
+          <input type="number" id="rngMax" value="100">
+        </div>
+      </div>
+
+      <div class="rng-field">
+        <label for="rngCount">🔢 How many numbers? (max 50)</label>
+        <input type="number" id="rngCount" value="1" min="1" max="50">
+      </div>
+
+      <div class="rng-toggle-row">
+        <input type="checkbox" id="rngUnique" checked>
+        <label for="rngUnique">🚫 No Repeats (Unique Numbers)</label>
+      </div>
+
+      <div class="rng-error" id="rngError"></div>
+
+      <button class="rng-generate-btn" onclick="rngGenerate()">🎲 GENERATE NUMBERS</button>
+
+      <div class="rng-results" id="rngResults"></div>
+
+      <div class="rng-actions">
+        <button onclick="rngCopy()">📋 Copy Result</button>
+        <button onclick="rngClear()">🗑️ Clear</button>
+      </div>
+
+      <div class="rng-history" id="rngHistoryWrap" style="display:none">
+        <h3>📜 History (Last 10)</h3>
+        <div id="rngHistoryList"></div>
+      </div>
+
+      <a href="https://freeonlinetools203.com/index.html" class="rng-back">🏠 Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const rngHistory = [];
+
+  function rngPreset(min, max) {
+    document.getElementById('rngMin').value = min;
+    document.getElementById('rngMax').value = max;
+  }
+
+  function rngShowError(msg) {
+    const el = document.getElementById('rngError');
+    el.textContent = msg;
+    el.style.display = msg ? 'block' : 'none';
+  }
+
+  function rngGenerate() {
+    const min = parseInt(document.getElementById('rngMin').value, 10);
+    const max = parseInt(document.getElementById('rngMax').value, 10);
+    const count = parseInt(document.getElementById('rngCount').value, 10);
+    const unique = document.getElementById('rngUnique').checked;
+
+    rngShowError('');
+
+    if (isNaN(min) || isNaN(max) || isNaN(count)) {
+      rngShowError('Please enter valid numbers.');
+      return;
+    }
+    if (min >= max) {
+      rngShowError('Minimum value must be less than maximum value.');
+      return;
+    }
+    if (count < 1 || count > 50) {
+      rngShowError('Number count must be between 1 and 50.');
+      return;
+    }
+    const rangeSize = max - min + 1;
+    if (unique && count > rangeSize) {
+      rngShowError('Not enough unique numbers in this range for the requested count.');
+      return;
+    }
+
+    let numbers = [];
+    if (unique) {
+      const pool = [];
+      for (let i = min; i <= max; i++) pool.push(i);
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+      numbers = pool.slice(0, count);
+    } else {
+      for (let i = 0; i < count; i++) {
+        numbers.push(Math.floor(Math.random() * rangeSize) + min);
+      }
+    }
+
+    const resultsEl = document.getElementById('rngResults');
+    resultsEl.innerHTML = '';
+    numbers.forEach((n, idx) => {
+      const ball = document.createElement('div');
+      ball.className = 'rng-ball';
+      ball.textContent = n;
+      ball.style.animationDelay = (idx * 0.05) + 's';
+      resultsEl.appendChild(ball);
+    });
+
+    rngHistory.unshift({ numbers, time: new Date().toLocaleTimeString() });
+    if (rngHistory.length > 10) rngHistory.pop();
+    rngRenderHistory();
+  }
+
+  function rngRenderHistory() {
+    const wrap = document.getElementById('rngHistoryWrap');
+    const list = document.getElementById('rngHistoryList');
+    if (rngHistory.length === 0) {
+      wrap.style.display = 'none';
+      return;
+    }
+    wrap.style.display = 'block';
+    list.innerHTML = rngHistory.map(h =>
+      `<div class="rng-history-item">${h.time} — ${h.numbers.join(', ')}</div>`
+    ).join('');
+  }
+
+  function rngCopy() {
+    const balls = Array.from(document.querySelectorAll('.rng-ball')).map(b => b.textContent);
+    if (balls.length === 0) return;
+    const text = balls.join(', ');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+    }
+  }
+
+  function rngClear() {
+    document.getElementById('rngResults').innerHTML = '';
+    rngShowError('');
+  }
+</script>
+
+</body>
+</html>
