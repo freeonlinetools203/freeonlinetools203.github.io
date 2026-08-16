@@ -90,6 +90,9 @@ body.dark-mode .lottery-btn { background: #1e3a8a; color: white; }
 body.dark-mode .lottery-btn:hover { background: #2563eb; }
 body.dark-mode .stat-card { background: #1e293b; border-color: #334155; }
 body.dark-mode .stat-number { color: #60a5fa; }
+body.dark-mode .history-last-generated { border-top-color: #334155; }
+body.dark-mode .history-last-generated strong { color: #60a5fa; }
+
 .navbar { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); padding: 8px 16px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .logo a { color: white; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
@@ -98,18 +101,16 @@ body.dark-mode .stat-number { color: #60a5fa; }
 .nav-links li a:hover { border-bottom: 2px solid white; }
 .dark-toggle { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 4px 12px; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 12px; transition: 0.3s; display: flex; align-items: center; gap: 4px; }
 .dark-toggle:hover { background: rgba(255,255,255,0.25); transform: scale(1.05); }
+
 .container { max-width: 1000px; margin: 12px auto; padding: 0 12px; }
 .tool-card { background: white; border-radius: 18px; box-shadow: 0 8px 20px -8px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: 12px; transition: background 0.3s; }
-.card-header { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); padding: 12px 16px; text-align: center; transition: background 0.3s; }
-.card-header h1 { color: white; font-size: 20px; margin-bottom: 2px; }
+
+.card-header { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); padding: 14px 16px; text-align: center; transition: background 0.3s; }
+.card-header h1 { color: white; font-size: 22px; margin-bottom: 2px; }
 .card-header p { color: rgba(255,255,255,0.9); font-size: 13px; margin: 0; }
+
 .card-content { padding: 12px 14px; }
-.range-section { background: #f8fafc; border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; transition: background 0.3s; }
-.range-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
-.range-box { flex: 1; min-width: 80px; }
-.range-label { font-weight: 700; color: #1e3a8a; margin-bottom: 2px; display: block; font-size: 11px; }
-.range-input { width: 100%; padding: 6px 8px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 13px; text-align: center; transition: 0.3s; background: white; }
-.range-input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
 .lottery-presets { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }
 .lottery-btn { background: #1e3a8a; color: white; border: none; padding: 6px 12px; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 11px; transition: 0.3s; }
 .lottery-btn:hover { background: #2563eb; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(37,99,235,0.2); }
@@ -121,6 +122,14 @@ body.dark-mode .stat-number { color: #60a5fa; }
 .lottery-btn.uklotto:hover { background: #3b82f6; }
 .lottery-btn.euromillions { background: #7c3aed; }
 .lottery-btn.euromillions:hover { background: #8b5cf6; }
+
+.range-section { background: #f8fafc; border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; transition: background 0.3s; }
+.range-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.range-box { flex: 1; min-width: 80px; }
+.range-label { font-weight: 700; color: #1e3a8a; margin-bottom: 2px; display: block; font-size: 11px; }
+.range-input { width: 100%; padding: 6px 8px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 13px; text-align: center; transition: 0.3s; background: white; }
+.range-input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
 .checkbox-group { display: flex; align-items: center; gap: 8px; margin: 6px 0; padding: 6px 10px; background: #f1f5f9; border-radius: 8px; transition: background 0.3s; }
 body.dark-mode .checkbox-group { background: #1e293b; }
 .checkbox-group input[type="checkbox"] { width: 16px; height: 16px; accent-color: #2563eb; cursor: pointer; }
@@ -128,25 +137,58 @@ body.dark-mode .checkbox-group { background: #1e293b; }
 body.dark-mode .checkbox-group label { color: #e2e8f0; }
 .checkbox-group span { color: #6b7280; font-size: 11px; }
 body.dark-mode .checkbox-group span { color: #94a3b8; }
-.generate-btn { width: 100%; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white; border: none; padding: 10px; font-size: 16px; font-weight: bold; border-radius: 50px; cursor: pointer; margin: 6px 0; transition: 0.3s; }
-.generate-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,99,235,0.25); }
-.result-card { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border-radius: 14px; padding: 14px; text-align: center; margin: 6px 0; transition: 0.3s; }
+
+/* ===== STATS GRID - NECHE AAYEGA ===== */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 6px 0 8px 0; }
+.stat-card { background: #f1f5f9; padding: 8px; border-radius: 10px; text-align: center; border: 1px solid #e5e7eb; transition: background 0.3s, border-color 0.3s; }
+.stat-number { font-size: 18px; font-weight: 800; color: #1e3a8a; }
+.stat-label { font-size: 10px; color: #6b7280; margin-top: 1px; }
+body.dark-mode .stat-label { color: #94a3b8; }
+@media (max-width: 500px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ===== RESULT CARD - UPAR (COLORFUL NUMBERS) ===== */
+.result-card { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border-radius: 14px; padding: 16px; text-align: center; margin: 6px 0; transition: 0.3s; }
 .result-card.animate { animation: pop 0.4s ease-out; }
 @keyframes pop { 0% { transform: scale(0.9); opacity: 0; } 50% { transform: scale(1.03); } 100% { transform: scale(1); opacity: 1; } }
-.result-number { font-size: 36px; font-weight: 800; color: white; word-break: break-word; }
-.multiple-results { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 8px 0; }
-.multiple-number { background: rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 10px; font-size: 14px; font-weight: bold; color: white; backdrop-filter: blur(5px); }
+.result-title { color: rgba(255,255,255,0.85); font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; }
+
+.multiple-results { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 0; }
+.multiple-number { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    user-select: none;
+}
+.multiple-number:hover { transform: scale(1.08); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+body.dark-mode .multiple-number { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+@media (max-width: 600px) { .multiple-number { width: 56px; height: 56px; font-size: 22px; border-radius: 12px; } }
+@media (max-width: 400px) { .multiple-number { width: 46px; height: 46px; font-size: 18px; border-radius: 10px; } }
+
+.generate-btn { width: 100%; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white; border: none; padding: 10px; font-size: 16px; font-weight: bold; border-radius: 50px; cursor: pointer; margin: 6px 0; transition: 0.3s; }
+.generate-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,99,235,0.25); }
+
 .action-buttons { display: flex; gap: 8px; margin: 6px 0; flex-wrap: wrap; }
 .action-btn { flex: 1; background: #f1f5f9; border: none; padding: 8px; border-radius: 40px; font-size: 11px; font-weight: 600; color: #1e3a8a; cursor: pointer; transition: 0.3s; min-width: 60px; }
 .action-btn:hover { background: #e5e7eb; transform: translateY(-1px); }
 .action-btn.export-btn { background: #16a34a; color: white; }
 .action-btn.export-btn:hover { background: #22c55e; }
+
 .history-panel { margin-top: 8px; padding: 10px 12px; background: #f8fafc; border-radius: 12px; border: 2px solid #e5e7eb; transition: background 0.3s, border-color 0.3s; }
 .history-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px; }
 .history-header h3 { color: #1e3a8a; font-size: 14px; }
 body.dark-mode .history-header h3 { color: #e2e8f0; }
 .clear-history-btn { background: #ef4444; color: white; border: none; padding: 3px 10px; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 10px; transition: 0.3s; }
 .clear-history-btn:hover { background: #dc2626; }
+
 .history-list { display: flex; flex-direction: column; gap: 4px; max-height: 120px; overflow-y: auto; }
 .history-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; background: white; border-radius: 6px; border: 1px solid #e5e7eb; transition: 0.3s; font-size: 12px; }
 .history-item:hover { background: #f1f5f9; }
@@ -158,43 +200,66 @@ body.dark-mode .history-numbers { color: #60a5fa; }
 body.dark-mode .history-time { color: #94a3b8; }
 .history-empty { text-align: center; color: #6b7280; padding: 8px 0; font-size: 12px; }
 body.dark-mode .history-empty { color: #94a3b8; }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 6px; margin: 6px 0; }
-.stat-card { background: #f1f5f9; padding: 8px; border-radius: 10px; text-align: center; border: 1px solid #e5e7eb; transition: background 0.3s, border-color 0.3s; }
-.stat-number { font-size: 18px; font-weight: 800; color: #1e3a8a; }
-.stat-label { font-size: 10px; color: #6b7280; margin-top: 1px; }
-body.dark-mode .stat-label { color: #94a3b8; }
+
+.history-last-generated {
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+    padding: 6px 0 2px 0;
+    border-top: 1px dashed #e5e7eb;
+    margin-top: 6px;
+}
+body.dark-mode .history-last-generated { color: #94a3b8; border-top-color: #334155; }
+.history-last-generated strong { color: #1e3a8a; }
+body.dark-mode .history-last-generated strong { color: #60a5fa; }
+
 .toast-notification { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #1f2937; color: white; padding: 8px 18px; border-radius: 50px; z-index: 1000; animation: slideUp 0.3s ease; font-weight: 500; font-size: 13px; }
 @keyframes slideUp { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
 @media (max-width: 768px) {
     .card-content { padding: 10px; }
-    .result-number { font-size: 28px; }
     .lottery-btn { font-size: 10px; padding: 5px 10px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .action-btn { font-size: 10px; padding: 6px; }
     .history-item { font-size: 11px; flex-wrap: wrap; gap: 2px; }
     .range-box { min-width: 60px; }
+    .card-header h1 { font-size: 18px; }
 }
 @media (max-width: 480px) {
-    .result-number { font-size: 22px; }
     .range-row { flex-direction: column; gap: 4px; }
     .lottery-presets { justify-content: center; }
     .card-header h1 { font-size: 16px; }
+    .result-title { font-size: 14px; }
 }
 </style>
-<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
 
-<!-- MAIN TOOL -->
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">🎰 Free Tools</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">Home</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">Contact</a></li>
+            <li><button class="dark-toggle" id="darkToggleBtn" onclick="toggleDarkMode()">🌙 Dark Mode</button></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== MAIN TOOL ===== -->
 <div class="container">
     <div class="tool-card">
+
+        <!-- ===== HEADER ===== -->
         <div class="card-header">
             <h1>🎰 Best Lottery Number Generator</h1>
-            <p>Powerball, Mega Millions & more • 100% free • No signup</p>
+            <p>Powerball, Mega Millions &amp; more • 100% free • No signup</p>
         </div>
+
         <div class="card-content">
 
-            <!-- Presets -->
+            <!-- ===== PRESET BUTTONS ===== -->
             <div class="lottery-presets">
                 <button class="lottery-btn powerball" onclick="setLottery(1,69,5)">🎯 Powerball</button>
                 <button class="lottery-btn megamillions" onclick="setLottery(1,70,5)">🎯 Mega Millions</button>
@@ -205,7 +270,7 @@ body.dark-mode .stat-label { color: #94a3b8; }
                 <button class="lottery-btn" onclick="setLottery(1,100,1)" style="background:#ec489a;">🎯 1-100</button>
             </div>
 
-            <!-- Range -->
+            <!-- ===== RANGE INPUTS ===== -->
             <div class="range-section">
                 <div class="range-row">
                     <div class="range-box">
@@ -223,38 +288,52 @@ body.dark-mode .stat-label { color: #94a3b8; }
                 </div>
             </div>
 
-            <!-- No Repeats -->
+            <!-- ===== NO REPEATS ===== -->
             <div class="checkbox-group">
                 <input type="checkbox" id="noRepeats" checked>
                 <label for="noRepeats">🚫 No Repeats (Unique)</label>
                 <span>— All numbers different</span>
             </div>
 
-            <!-- Stats -->
-            <div class="stats-grid" id="statsGrid">
-                <div class="stat-card"><div class="stat-number" id="totalGenerations">0</div><div class="stat-label">Generations</div></div>
-                <div class="stat-card"><div class="stat-number" id="totalNumbers">0</div><div class="stat-label">Total Numbers</div></div>
-                <div class="stat-card"><div class="stat-number" id="mostFrequent">—</div><div class="stat-label">Most Frequent</div></div>
-                <div class="stat-card"><div class="stat-number" id="lastGenerated">—</div><div class="stat-label">Last Generated</div></div>
-            </div>
-
-            <!-- Result -->
+            <!-- ===== RESULT CARD - UPAR (SIRF COLORFUL NUMBERS) ===== -->
             <div class="result-card" id="resultCard">
-                <div class="result-number" id="result">—</div>
+                <div class="result-title">✨ Lucky Numbers</div>
+                <div id="multipleResults" class="multiple-results">
+                    <div style="color:rgba(255,255,255,0.5);font-size:14px;padding:10px;">Generate numbers to see your lucky picks!</div>
+                </div>
             </div>
-            <div id="multipleResults" class="multiple-results"></div>
 
-            <!-- Generate Button -->
+            <!-- ===== GENERATE BUTTON ===== -->
             <button class="generate-btn" id="generateBtn">🎰 GENERATE NUMBERS</button>
 
-            <!-- Action Buttons -->
+            <!-- ===== STATS GRID - GENERATE BUTTON KE NECHE ===== -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalGenerations">0</div>
+                    <div class="stat-label">Generations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalNumbers">0</div>
+                    <div class="stat-label">Total Numbers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="mostFrequent">—</div>
+                    <div class="stat-label">Most Frequent</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="lastGeneratedStat">—</div>
+                    <div class="stat-label">Last Generated</div>
+                </div>
+            </div>
+
+            <!-- ===== ACTION BUTTONS ===== -->
             <div class="action-buttons">
                 <button class="action-btn" id="copyBtn">📋 Copy</button>
                 <button class="action-btn" id="clearBtn">🗑️ Clear</button>
                 <button class="action-btn export-btn" id="exportBtn">📷 Export Image</button>
             </div>
 
-            <!-- History -->
+            <!-- ===== HISTORY PANEL ===== -->
             <div class="history-panel">
                 <div class="history-header">
                     <h3>📜 History (Last 20)</h3>
@@ -262,6 +341,9 @@ body.dark-mode .stat-label { color: #94a3b8; }
                 </div>
                 <div class="history-list" id="historyList">
                     <div class="history-empty">No history yet. Generate some numbers!</div>
+                </div>
+                <div class="history-last-generated" id="lastGeneratedText">
+                    <strong>Last Generated:</strong> <span id="lastGeneratedValue">—</span>
                 </div>
             </div>
 
@@ -289,7 +371,6 @@ let totalNumbers = parseInt(localStorage.getItem('totalNumbers')) || 0;
 let numberFrequency = JSON.parse(localStorage.getItem('numberFrequency')) || {};
 
 // ===== DOM REFS =====
-const resultEl = document.getElementById('result');
 const multipleResultsEl = document.getElementById('multipleResults');
 const resultCard = document.getElementById('resultCard');
 const historyList = document.getElementById('historyList');
@@ -297,6 +378,20 @@ const minInput = document.getElementById('minValue');
 const maxInput = document.getElementById('maxValue');
 const countInput = document.getElementById('countValue');
 const noRepeatsCheck = document.getElementById('noRepeats');
+const lastGeneratedValue = document.getElementById('lastGeneratedValue');
+
+// ===== COLOR PALETTE =====
+const colorPalette = [
+    '#ef4444', '#f59e0b', '#eab308', '#22c55e', '#10b981', 
+    '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6', '#ec489a',
+    '#f472b6', '#fb923c', '#a3e635', '#2dd4bf', '#60a5fa',
+    '#c084fc', '#f87171', '#34d399', '#fbbf24', '#a78bfa',
+    '#fca5a5', '#6ee7b7', '#93c5fd', '#d8b4fe', '#fdba74'
+];
+
+function getRandomColor() {
+    return colorPalette[Math.floor(Math.random() * colorPalette.length)];
+}
 
 // ===== CORE FUNCTIONS =====
 function generateNumbers() {
@@ -347,13 +442,11 @@ function generateNumbers() {
     void resultCard.offsetWidth;
     resultCard.classList.add('animate');
 
-    if (count === 1) {
-        resultEl.textContent = numbers[0];
-        multipleResultsEl.innerHTML = '';
-    } else {
-        resultEl.textContent = '🎲 Multiple Numbers';
-        multipleResultsEl.innerHTML = numbers.map(n => `<div class="multiple-number">${n}</div>`).join('');
-    }
+    // SIRF COLORFUL NUMBER BOXES
+    multipleResultsEl.innerHTML = numbers.map(n => {
+        const color = getRandomColor();
+        return `<div class="multiple-number" style="background: ${color};">${n}</div>`;
+    }).join('');
 
     addToHistory(numbers, min, max);
     updateStats();
@@ -396,23 +489,27 @@ function clearHistory() {
     history = [];
     localStorage.setItem('numberHistory', JSON.stringify(history));
     renderHistory();
+    updateStats();
     showToast('🗑️ History cleared!');
 }
 
 function updateStats() {
     document.getElementById('totalGenerations').textContent = totalGenerations;
     document.getElementById('totalNumbers').textContent = totalNumbers;
+    
     let mostFreq = '—';
     let maxCount = 0;
     for (const [num, count] of Object.entries(numberFrequency)) {
         if (count > maxCount) { maxCount = count; mostFreq = num; }
     }
     document.getElementById('mostFrequent').textContent = mostFreq !== '—' ? mostFreq + ` (${maxCount}x)` : '—';
-    document.getElementById('lastGenerated').textContent = history.length > 0 ? history[0].numbers.join(', ') : '—';
+    
+    const lastGen = history.length > 0 ? history[0].numbers.join(', ') : '—';
+    lastGeneratedValue.textContent = lastGen;
+    document.getElementById('lastGeneratedStat').textContent = lastGen;
 }
 
 function exportAsImage() {
-    const resultText = document.getElementById('result').textContent;
     const multipleNumbers = document.querySelectorAll('.multiple-number');
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -429,7 +526,6 @@ function exportAsImage() {
     ctx.textAlign = 'center';
     ctx.fillText('🎰 Best Lottery Number Generator', canvas.width/2, 40);
     ctx.fillStyle = 'white';
-    ctx.font = 'bold 42px "Segoe UI", Arial, sans-serif';
     if (multipleNumbers.length > 0) {
         let xPos = 50;
         ctx.font = 'bold 28px "Segoe UI", Arial, sans-serif';
@@ -441,7 +537,8 @@ function exportAsImage() {
             if (xPos > 550) { xPos = 50; }
         });
     } else {
-        ctx.fillText(resultText, canvas.width/2, 150);
+        ctx.font = 'bold 30px "Segoe UI", Arial, sans-serif';
+        ctx.fillText('Generate numbers first!', canvas.width/2, 150);
     }
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.font = '12px "Segoe UI", Arial, sans-serif';
@@ -468,8 +565,9 @@ function copyResult() {
 
 function clearResult() {
     currentResult = '';
-    resultEl.textContent = '—';
-    multipleResultsEl.innerHTML = '';
+    multipleResultsEl.innerHTML = `<div style="color:rgba(255,255,255,0.5);font-size:14px;padding:10px;">Generate numbers to see your lucky picks!</div>`;
+    lastGeneratedValue.textContent = '—';
+    document.getElementById('lastGeneratedStat').textContent = '—';
     showToast('🗑️ Cleared!');
 }
 
@@ -497,7 +595,15 @@ document.getElementById('clearHistoryBtn').addEventListener('click', clearHistor
 window.addEventListener('DOMContentLoaded', () => {
     renderHistory();
     updateStats();
-    setTimeout(generateNumbers, 100);
+    if (history.length > 0) {
+        multipleResultsEl.innerHTML = history[0].numbers.map(n => {
+            const color = getRandomColor();
+            return `<div class="multiple-number" style="background: ${color};">${n}</div>`;
+        }).join('');
+        currentResult = history[0].numbers.join(', ');
+    } else {
+        setTimeout(generateNumbers, 100);
+    }
 });
 
 document.addEventListener('keydown', (e) => {
@@ -505,7 +611,7 @@ document.addEventListener('keydown', (e) => {
 });
 </script>
 
-<!-- ===== SPIN THE WHEEL FOOTER (Compact) ===== -->
+<!-- ===== SPIN THE WHEEL FOOTER ===== -->
 <div class="container" style="max-width:1200px;margin:12px auto;padding:0 12px">
 <style>
 .stw-related-section{max-width:1200px;margin:1rem auto;padding:0 0.5rem}
@@ -644,7 +750,7 @@ function stwSetFilter(f) { stwCurrentFilter = f; stwCurrentPage = 1; stwRenderTo
 document.addEventListener('DOMContentLoaded', () => { stwRenderTools(); document.querySelectorAll('.stw-filter-chip').forEach(c => c.addEventListener('click', () => stwSetFilter(c.getAttribute('data-filter')))); });
 </script>
 
-<!-- ===== SEO ARTICLE (Compact) ===== -->
+<!-- ===== SEO ARTICLE ===== -->
 <div style="max-width:1200px;margin:20px auto;padding:0 12px">
 <div style="background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,0.05)">
 <h1 style="color:#1a1a2e;font-size:22px;border-left:5px solid #e94560;padding-left:14px;margin-bottom:6px;">🎰 Best Lottery Number Generator: Free Random Number Picker 2026</h1>
