@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Calculate Age from Date of Birth in Excel - Complete DOB Guide</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Learn how to calculate age from date of birth in Excel with step-by-step instructions. Perfect for HR, payroll, and personal use. Free online age calculator included.">
+<meta name="keywords" content="calculate age from date of birth in excel, age from date of birth in excel, excel calculate age from date of birth, age calculation from date of birth in excel, excel formula to calculate age from date of birth">
+<link rel="canonical" href="https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Calculate Age from Date of Birth in Excel - Complete DOB Guide">
+<meta property="og:description" content="Step-by-step guide to calculate age from date of birth in Excel. Free online age calculator included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculate Age from Date of Birth in Excel",
+  "description": "Complete guide to calculating age from DOB in Excel with step-by-step examples.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #faf5ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.logo a span { color: #c4b5fd; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: white; border-bottom: 2px solid white; }
+.nav-links li a.active { border-bottom: 2px solid white; }
+
+/* CONTAINER */
+.container { max-width: 950px; margin: 40px auto 0; padding: 0 20px; }
+
+/* HERO */
+.hero-section {
+    background: linear-gradient(135deg, #5b21b6, #7c3aed);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hero-section h1 { color: white; font-size: 30px; margin-bottom: 10px; }
+.hero-section h1 span { color: #c4b5fd; }
+.hero-section p { color: rgba(255,255,255,0.9); font-size: 16px; max-width: 650px; margin: 0 auto; }
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    color: #c4b5fd;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* MAIN CARD */
+.main-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(124, 58, 237, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-content { padding: 35px; }
+
+/* LIVE TIME */
+.live-datetime {
+    background: #faf5ff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #c4b5fd;
+}
+.live-datetime-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; font-weight: 600; margin-bottom: 8px; }
+.live-date { font-size: 16px; font-weight: 600; color: #5b21b6; }
+.live-time { font-size: 28px; font-weight: 800; color: #7c3aed; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+/* INPUT */
+.input-group { margin-bottom: 28px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #5b21b6;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+.date-input-wrapper input {
+    width: 100%; padding: 16px 20px; font-size: 16px;
+    border: 2px solid #c4b5fd; border-radius: 16px;
+    transition: all 0.3s ease; font-family: inherit;
+    background: #ffffff;
+}
+.date-input-wrapper input:focus { outline: none; border-color: #7c3aed; box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12); }
+.date-input-wrapper input::-webkit-calendar-picker-indicator { cursor: pointer; }
+
+/* BUTTON */
+.calc-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    color: white; border: none; border-radius: 16px;
+    font-size: 18px; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(124, 58, 237, 0.35); }
+
+/* RESULT */
+.result-box {
+    background: #faf5ff;
+    border-radius: 16px;
+    padding: 30px;
+    border: 2px solid #c4b5fd;
+    margin-top: 25px;
+    display: none;
+    text-align: center;
+}
+.result-badge {
+    display: inline-block;
+    background: #7c3aed;
+    color: white;
+    font-size: 12px;
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.result-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.result-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #6b7280;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.result-value {
+    font-size: 28px;
+    font-weight: 800;
+}
+.years-value { color: #5b21b6; }
+.months-value { color: #059669; }
+.days-value { color: #d97706; }
+
+/* EXCEL GUIDE SECTION */
+.excel-section {
+    background: #faf5ff;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 20px 0;
+    border: 1px solid #c4b5fd;
+}
+.excel-section h3 { color: #5b21b6; margin-bottom: 15px; }
+
+.formula-box {
+    background: #5b21b6;
+    color: #c4b5fd;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    margin: 10px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.formula-box .comment { color: #94a3b8; }
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+.example-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #c4b5fd;
+}
+.example-box .title { font-weight: 700; color: #5b21b6; margin-bottom: 5px; }
+.example-box .formula { font-family: 'Courier New', monospace; color: #7c3aed; background: #faf5ff; padding: 8px 12px; border-radius: 8px; margin: 5px 0; }
+.example-box .result { color: #64748b; font-size: 14px; }
+
+/* RELATED TOOLS */
+.related-tools {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.related-tools h3 { color: #5b21b6; margin-bottom: 20px; font-size: 20px; }
+.related-tools h3 span { color: #7c3aed; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.tool-link {
+    display: block; padding: 12px 18px;
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    color: white; text-decoration: none; border-radius: 12px;
+    text-align: center; font-size: 14px; font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tool-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4); }
+
+/* FAQ */
+.faq-section { background: #f8fafc; border-radius: 16px; padding: 20px 25px; margin: 15px 0; }
+.faq-item { border-bottom: 1px solid #e5e7eb; padding: 12px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { font-weight: 700; color: #5b21b6; font-size: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { color: #374151; padding-top: 8px; font-size: 14px; display: none; line-height: 1.6; }
+.faq-answer.show { display: block; }
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #5b21b6 0%, #0f172a 100%);
+    color: #94a3b8;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a { color: #c4b5fd; text-decoration: none; margin: 0 10px; font-size: 14px; }
+.footer-links a:hover { color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .hero-section h1 { font-size: 24px; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .result-value { font-size: 24px; }
+    .live-time { font-size: 24px; }
+    .examples-grid { grid-template-columns: 1fr; }
+    .formula-box { font-size: 13px; white-space: normal; }
+}
+@media (max-width: 480px) {
+    .result-value { font-size: 20px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+    .live-time { font-size: 22px; }
+}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
+</head>
+<body>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero-section">
+        <h1>📘 <span>Calculate Age</span> from Date of Birth in Excel</h1>
+        <p>Complete guide to calculating age from DOB in Excel. Perfect for HR, payroll, and personal use.</p>
+        <div class="hero-badge">📊 DOB Based | Step-by-Step | Free Examples</div>
+    </div>
+
+    <!-- MAIN CARD - Online Age Calculator -->
+    <div class="main-card">
+        <div class="card-content">
+
+            <h2 style="color:#5b21b6;font-size:22px;margin-bottom:5px;">🔢 Free Online Age Calculator</h2>
+            <p style="color:#64748b;margin-bottom:20px;">Test your age first before learning Excel!</p>
+
+            <!-- Live Time -->
+            <div class="live-datetime">
+                <div class="live-datetime-label">🟣 LIVE CURRENT TIME</div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <!-- Input -->
+            <div class="input-group">
+                <label>🎂 Select Your Date of Birth</label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">📘 Calculate My Age 📘</button>
+
+            <!-- Result -->
+            <div class="result-box" id="resultBox">
+                <span class="result-badge">📘 AGE CALCULATOR</span>
+                <div class="result-grid">
+                    <div class="result-item"><div class="result-label">YEARS</div><div class="result-value years-value"><span id="years">0</span></div></div>
+                    <div class="result-item"><div class="result-label">MONTHS</div><div class="result-value months-value"><span id="months">0</span></div></div>
+                    <div class="result-item"><div class="result-label">DAYS</div><div class="result-value days-value"><span id="days">0</span></div></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- EXCEL GUIDE -->
+    <div style="background:#ffffff;border-radius:24px;padding:35px;box-shadow:0 10px 25px rgba(0,0,0,0.05);margin-bottom:30px;">
+        <h2 style="color:#5b21b6;font-size:26px;margin-bottom:10px;">📘 How to Calculate Age from Date of Birth in Excel</h2>
+        <p style="color:#64748b;margin-bottom:25px;">Follow these simple steps to calculate age from DOB in Excel.</p>
+
+        <!-- Method 1 -->
+        <div class="excel-section">
+            <h3>📌 Method 1: DATEDIF Function (Most Accurate)</h3>
+            <p style="color:#475569;margin-bottom:10px;">The DATEDIF function calculates the difference between two dates in years, months, or days.</p>
+            <div class="formula-box">
+                =DATEDIF(A1, TODAY(), "Y") & " Years, " & DATEDIF(A1, TODAY(), "YM") & " Months, " & DATEDIF(A1, TODAY(), "MD") & " Days"
+            </div>
+            <p style="color:#475569;margin-top:10px;font-size:14px;">Where <strong>A1</strong> is the cell containing the date of birth.</p>
+
+            <div class="examples-grid">
+                <div class="example-box">
+                    <div class="title">📅 Years Only</div>
+                    <div class="formula">=DATEDIF(A1, TODAY(), "Y")</div>
+                    <div class="result">Result: 25 (years)</div>
+                </div>
+                <div class="example-box">
+                    <div class="title">📅 Months Only</div>
+                    <div class="formula">=DATEDIF(A1, TODAY(), "YM")</div>
+                    <div class="result">Result: 6 (months)</div>
+                </div>
+                <div class="example-box">
+                    <div class="title">📅 Days Only</div>
+                    <div class="formula">=DATEDIF(A1, TODAY(), "MD")</div>
+                    <div class="result">Result: 15 (days)</div>
+                </div>
+                <div class="example-box">
+                    <div class="title">📅 Full Age</div>
+                    <div class="formula">=DATEDIF(A1, TODAY(), "Y") & "Y " & DATEDIF(A1, TODAY(), "YM") & "M " & DATEDIF(A1, TODAY(), "MD") & "D"</div>
+                    <div class="result">Result: 25Y 6M 15D</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Method 2 -->
+        <div class="excel-section">
+            <h3>📌 Method 2: YEARFRAC Function</h3>
+            <p style="color:#475569;margin-bottom:10px;">Returns the age as a decimal number (e.g., 25.5 years).</p>
+            <div class="formula-box">
+                =INT(YEARFRAC(A1, TODAY()))
+            </div>
+            <p style="color:#475569;margin-top:10px;font-size:14px;">This returns the age in whole years.</p>
+        </div>
+
+        <!-- Method 3 -->
+        <div class="excel-section">
+            <h3>📌 Method 3: Simple Formula (Quick Estimate)</h3>
+            <p style="color:#475569;margin-bottom:10px;">Divide total days by 365.25 to account for leap years.</p>
+            <div class="formula-box">
+                =(TODAY() - A1) / 365.25
+            </div>
+            <p style="color:#475569;margin-top:10px;font-size:14px;">This is less accurate than DATEDIF but works for quick estimates.</p>
+        </div>
+
+        <!-- Quick Reference -->
+        <div style="overflow-x:auto;margin-top:20px;">
+            <h3 style="color:#5b21b6;margin-bottom:15px;">📊 Quick Reference - Excel Age Formulas</h3>
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+                <thead>
+                    <tr style="background:#5b21b6;color:white;">
+                        <th style="padding:12px 16px;text-align:left;">What You Want</th>
+                        <th style="padding:12px 16px;text-align:left;">Formula</th>
+                        <th style="padding:12px 16px;text-align:left;">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:10px 16px;">Years only</td>
+                        <td style="padding:10px 16px;"><code style="background:#faf5ff;padding:2px 8px;border-radius:4px;">=DATEDIF(A1,TODAY(),"Y")</code></td>
+                        <td style="padding:10px 16px;">25</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:10px 16px;">Months only</td>
+                        <td style="padding:10px 16px;"><code style="background:#faf5ff;padding:2px 8px;border-radius:4px;">=DATEDIF(A1,TODAY(),"YM")</code></td>
+                        <td style="padding:10px 16px;">6</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:10px 16px;">Days only</td>
+                        <td style="padding:10px 16px;"><code style="background:#faf5ff;padding:2px 8px;border-radius:4px;">=DATEDIF(A1,TODAY(),"MD")</code></td>
+                        <td style="padding:10px 16px;">15</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:10px 16px;">Whole years</td>
+                        <td style="padding:10px 16px;"><code style="background:#faf5ff;padding:2px 8px;border-radius:4px;">=INT(YEARFRAC(A1,TODAY()))</code></td>
+                        <td style="padding:10px 16px;">25</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px 16px;">Decimal years</td>
+                        <td style="padding:10px 16px;"><code style="background:#faf5ff;padding:2px 8px;border-radius:4px;">=(TODAY()-A1)/365.25</code></td>
+                        <td style="padding:10px 16px;">25.5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- RELATED TOOLS -->
+    <div class="related-tools">
+        <h3>🔗 <span>Related</span> Age Calculators</h3>
+        <div class="tools-grid">
+            <a href="chronological-age-calculator.html" class="tool-link">📅 Chronological Age</a>
+            <a href="calculate-age-in-excel.html" class="tool-link">📊 Excel Age Guide</a>
+            <a href="excel-formula-to-calculate-age.html" class="tool-link">📘 Excel Formula Guide</a>
+            <a href="online-chronological-age-calculator.html" class="tool-link">🌐 Online Age</a>
+            <a href="biological-age-calculator.html" class="tool-link">🧬 Biological Age</a>
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div style="background:#ffffff;border-radius:24px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);margin-bottom:30px;">
+        <h2 style="color:#5b21b6;font-size:22px;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 How do I calculate age from date of birth in Excel? <span>+</span></div>
+                <div class="faq-answer">Use the DATEDIF function: =DATEDIF(A1, TODAY(), "Y") for years, "YM" for months, and "MD" for days.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 What is the formula to calculate age from DOB in Excel? <span>+</span></div>
+                <div class="faq-answer">The most accurate formula is: =DATEDIF(A1, TODAY(), "Y") & "Y " & DATEDIF(A1, TODAY(), "YM") & "M " & DATEDIF(A1, TODAY(), "MD") & "D"</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Does Excel calculate age from date of birth automatically? <span>+</span></div>
+                <div class="faq-answer">Yes, with the DATEDIF function and TODAY() for current date.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Can I calculate age on a specific date? <span>+</span></div>
+                <div class="faq-answer">Yes! Replace TODAY() with a specific date like DATE(2026,12,31).</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is this guide free? <span>+</span></div>
+                <div class="faq-answer">Yes! Our Excel DOB guide and age calculator are 100% free.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">ℹ️ About</a>
+        <a href="contact.html">📧 Contact</a>
+        <a href="privacy-policy.html">🔒 Privacy</a>
+        <a href="terms-conditions.html">📜 Terms</a>
+    </div>
+    <p style="text-align:center;font-size:0.75rem;color:#64748b;margin-top:15px;">© 2026 Free Online Tools 203 | Calculate Age from Date of Birth in Excel - Free Guide</p>
+</footer>
+
+<script>
+// ========== AGE CALCULATOR ==========
+let activeInterval = null;
+let currentBirthDate = null;
+
+function computeAge(birthDate, currentDate) {
+    let years = currentDate.getFullYear() - birthDate.getFullYear();
+    let months = currentDate.getMonth() - birthDate.getMonth();
+    let days = currentDate.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+        months--;
+        let lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+        days += lastMonth.getDate();
+    }
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+    return { years, months, days };
+}
+
+function updateLiveTime() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('liveDate').innerText = now.toLocaleDateString(undefined, dateOpt);
+    document.getElementById('liveTime').innerText = now.toLocaleTimeString(undefined, { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12: true });
+    document.getElementById('liveTimezone').innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+}
+
+function updateAgeUI() {
+    if (!currentBirthDate) return;
+    const now = new Date();
+    const age = computeAge(currentBirthDate, now);
+    document.getElementById('years').innerText = age.years;
+    document.getElementById('months').innerText = age.months;
+    document.getElementById('days').innerText = age.days;
+}
+
+function calculateAge() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+    const birthDateObj = new Date(dobInput);
+    if (isNaN(birthDateObj.getTime())) { alert('❌ Invalid date!'); return; }
+    if (birthDateObj > new Date()) { alert('❌ Date cannot be in the future!'); return; }
+
+    currentBirthDate = birthDateObj;
+    document.getElementById('resultBox').style.display = 'block';
+    updateAgeUI();
+
+    if (activeInterval) clearInterval(activeInterval);
+    activeInterval = setInterval(updateAgeUI, 1000);
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+    document.getElementById('resultBox').style.display = 'none';
+    document.getElementById('calculateBtn').addEventListener('click', calculateAge);
+});
+</script>
+</body>
+</html>
