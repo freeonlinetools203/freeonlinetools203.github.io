@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Free Biological Age Calculator - Estimate Your Biological Age vs Chronological Age</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Free biological age calculator - Estimate your biological age based on lifestyle factors. Compare biological age vs chronological age. Free online biological age test.">
+<meta name="keywords" content="free biological age calculator, biological age calculator free, biological age test calculator, free biological age test, biological age vs chronological age, estimate biological age">
+<link rel="canonical" href="https://freeonlinetools203.com/free-biological-age-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Biological Age Calculator - Estimate Your Biological Age">
+<meta property="og:description" content="Estimate your biological age based on lifestyle factors. Free online biological age calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/free-biological-age-calculator.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Biological Age Calculator",
+  "description": "Estimate your biological age based on lifestyle factors and compare with chronological age.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/free-biological-age-calculator.html",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ecfdf5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.logo a span { color: #6ee7b7; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: white; border-bottom: 2px solid white; }
+.nav-links li a.active { border-bottom: 2px solid white; }
+
+/* CONTAINER */
+.container { max-width: 950px; margin: 40px auto 0; padding: 0 20px; }
+
+/* HERO */
+.hero-section {
+    background: linear-gradient(135deg, #065f46, #10b981);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hero-section h1 { color: white; font-size: 30px; margin-bottom: 10px; }
+.hero-section h1 span { color: #6ee7b7; }
+.hero-section p { color: rgba(255,255,255,0.9); font-size: 16px; max-width: 650px; margin: 0 auto; }
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    color: #6ee7b7;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* MAIN CARD */
+.main-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-content { padding: 35px; }
+
+/* LIVE TIME */
+.live-datetime {
+    background: #ecfdf5;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #6ee7b7;
+}
+.live-datetime-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #10b981; font-weight: 600; margin-bottom: 8px; }
+.live-date { font-size: 16px; font-weight: 600; color: #065f46; }
+.live-time { font-size: 28px; font-weight: 800; color: #10b981; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+/* INPUT */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #065f46;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.input-group .info-text { font-size: 12px; color: #64748b; margin-bottom: 8px; }
+
+/* RADIO & SELECT STYLING */
+.option-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+.option-item {
+    background: #f0fdf4;
+    border-radius: 10px;
+    padding: 10px 12px;
+    border: 2px solid #d1fae5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.option-item:hover { border-color: #6ee7b7; }
+.option-item.selected { border-color: #10b981; background: #d1fae5; }
+.option-item input[type="radio"] { display: none; }
+.option-item .label { font-weight: 600; color: #065f46; font-size: 13px; }
+.option-item .sub-label { font-size: 11px; color: #64748b; }
+
+/* BUTTON */
+.calc-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #10b981 0%, #065f46 100%);
+    color: white; border: none; border-radius: 16px;
+    font-size: 18px; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease; margin-top: 10px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(16, 185, 129, 0.35); }
+
+/* RESULT */
+.result-box {
+    background: #ecfdf5;
+    border-radius: 16px;
+    padding: 30px;
+    border: 2px solid #6ee7b7;
+    margin-top: 25px;
+    display: none;
+    text-align: center;
+}
+.result-badge {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    font-size: 12px;
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.result-item {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #d1fae5;
+}
+.result-item .label {
+    font-size: 12px; text-transform: uppercase; color: #6b7280;
+    font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+.result-item .value {
+    font-size: 36px; font-weight: 900; color: #065f46;
+}
+.result-item .value span { color: #10b981; }
+.result-item .sub-label {
+    font-size: 14px; color: #64748b; margin-top: 4px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 15px;
+}
+.status-badge.good { background: #d1fae5; color: #065f46; }
+.status-badge.caution { background: #fef3c7; color: #b45309; }
+.status-badge.bad { background: #fee2e2; color: #dc2626; }
+
+/* RELATED TOOLS */
+.related-tools {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.related-tools h3 { color: #065f46; margin-bottom: 20px; font-size: 20px; }
+.related-tools h3 span { color: #10b981; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.tool-link {
+    display: block; padding: 12px 18px;
+    background: linear-gradient(135deg, #10b981, #065f46);
+    color: white; text-decoration: none; border-radius: 12px;
+    text-align: center; font-size: 14px; font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tool-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4); }
+
+/* FAQ */
+.faq-section { background: #f8fafc; border-radius: 16px; padding: 20px 25px; margin: 15px 0; }
+.faq-item { border-bottom: 1px solid #e5e7eb; padding: 12px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { font-weight: 700; color: #065f46; font-size: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { color: #374151; padding-top: 8px; font-size: 14px; display: none; line-height: 1.6; }
+.faq-answer.show { display: block; }
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #065f46 0%, #0f172a 100%);
+    color: #94a3b8;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a { color: #6ee7b7; text-decoration: none; margin: 0 10px; font-size: 14px; }
+.footer-links a:hover { color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .hero-section h1 { font-size: 24px; }
+    .result-grid { grid-template-columns: 1fr; }
+    .result-item .value { font-size: 30px; }
+    .option-group { grid-template-columns: 1fr; }
+    .live-time { font-size: 24px; }
+}
+@media (max-width: 480px) {
+    .calc-btn { font-size: 16px; padding: 14px; }
+    .live-time { font-size: 22px; }
+    .result-item .value { font-size: 26px; }
+}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
+</head>
+<body>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero-section">
+        <h1>🧬 <span>Free Biological Age</span> Calculator</h1>
+        <p>Estimate your biological age based on lifestyle factors. Compare with your chronological age.</p>
+        <div class="hero-badge">💚 Free Health Assessment | Wellness Tool</div>
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="main-card">
+        <div class="card-content">
+
+            <!-- Live Time -->
+            <div class="live-datetime">
+                <div class="live-datetime-label">🟢 LIVE CURRENT TIME</div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <!-- Chronological Age Input -->
+            <div class="input-group">
+                <label>📅 Your Chronological Age (in years)</label>
+                <div class="date-input-wrapper">
+                    <input type="number" id="chronologicalAge" placeholder="e.g., 30" min="1" max="120" style="width:100%;padding:14px 18px;font-size:15px;border:2px solid #d1fae5;border-radius:12px;font-family:inherit;">
+                </div>
+            </div>
+
+            <!-- Lifestyle Questions -->
+            <div class="input-group">
+                <label>🏃 How often do you exercise?</label>
+                <div class="option-group" id="exerciseGroup">
+                    <div class="option-item" data-value="5" onclick="selectOption(this, 'exercise')">
+                        <div class="label">🏋️ Regular</div>
+                        <div class="sub-label">3-5 times/week</div>
+                    </div>
+                    <div class="option-item selected" data-value="0" onclick="selectOption(this, 'exercise')">
+                        <div class="label">🚶 Moderate</div>
+                        <div class="sub-label">1-2 times/week</div>
+                    </div>
+                    <div class="option-item" data-value="-5" onclick="selectOption(this, 'exercise')">
+                        <div class="label">🛋️ Sedentary</div>
+                        <div class="sub-label">Rarely</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>🥗 How is your diet?</label>
+                <div class="option-group" id="dietGroup">
+                    <div class="option-item" data-value="5" onclick="selectOption(this, 'diet')">
+                        <div class="label">🥦 Excellent</div>
+                        <div class="sub-label">Balanced & healthy</div>
+                    </div>
+                    <div class="option-item selected" data-value="0" onclick="selectOption(this, 'diet')">
+                        <div class="label">🍔 Average</div>
+                        <div class="sub-label">Mixed diet</div>
+                    </div>
+                    <div class="option-item" data-value="-5" onclick="selectOption(this, 'diet')">
+                        <div class="label">🍕 Poor</div>
+                        <div class="sub-label">Processed food</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>😴 How is your sleep quality?</label>
+                <div class="option-group" id="sleepGroup">
+                    <div class="option-item" data-value="3" onclick="selectOption(this, 'sleep')">
+                        <div class="label">😌 Excellent</div>
+                        <div class="sub-label">7-9 hours</div>
+                    </div>
+                    <div class="option-item selected" data-value="0" onclick="selectOption(this, 'sleep')">
+                        <div class="label">😐 Average</div>
+                        <div class="sub-label">6-7 hours</div>
+                    </div>
+                    <div class="option-item" data-value="-3" onclick="selectOption(this, 'sleep')">
+                        <div class="label">😫 Poor</div>
+                        <div class="sub-label">Less than 6 hours</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>🚬 Do you smoke?</label>
+                <div class="option-group" id="smokeGroup">
+                    <div class="option-item" data-value="0" onclick="selectOption(this, 'smoke')">
+                        <div class="label">🚭 Never</div>
+                        <div class="sub-label">Non-smoker</div>
+                    </div>
+                    <div class="option-item selected" data-value="-2" onclick="selectOption(this, 'smoke')">
+                        <div class="label">🔄 Quit</div>
+                        <div class="sub-label">Former smoker</div>
+                    </div>
+                    <div class="option-item" data-value="-8" onclick="selectOption(this, 'smoke')">
+                        <div class="label">🚬 Smoker</div>
+                        <div class="sub-label">Regular smoker</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>🍷 How often do you drink alcohol?</label>
+                <div class="option-group" id="alcoholGroup">
+                    <div class="option-item" data-value="2" onclick="selectOption(this, 'alcohol')">
+                        <div class="label">🚱 Rarely</div>
+                        <div class="sub-label">Once a month</div>
+                    </div>
+                    <div class="option-item selected" data-value="0" onclick="selectOption(this, 'alcohol')">
+                        <div class="label">🍷 Moderate</div>
+                        <div class="sub-label">Weekly</div>
+                    </div>
+                    <div class="option-item" data-value="-6" onclick="selectOption(this, 'alcohol')">
+                        <div class="label">🍺 Heavy</div>
+                        <div class="sub-label">Daily</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🧬 Estimate Biological Age ✨</button>
+
+            <!-- Result -->
+            <div class="result-box" id="resultBox">
+                <span class="result-badge">🧬 BIOLOGICAL AGE ESTIMATE</span>
+
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="label">Chronological Age</div>
+                        <div class="value" id="chronoAgeDisplay">0 <span>years</span></div>
+                        <div class="sub-label">Based on date of birth</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Estimated Biological Age</div>
+                        <div class="value" id="bioAgeDisplay">0 <span>years</span></div>
+                        <div class="sub-label">Based on lifestyle factors</div>
+                    </div>
+                </div>
+
+                <div id="statusDisplay"></div>
+
+                <div style="margin-top:15px;font-size:13px;color:#64748b;">
+                    💡 This is a general estimation. Consult a healthcare professional for accurate assessment.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SEO ARTICLE -->
+    <div style="background:#ffffff;border-radius:24px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);margin-bottom:30px;">
+        <h2 style="color:#065f46;font-size:24px;margin-bottom:15px;">What is Biological Age?</h2>
+        <p style="color:#374151;line-height:1.8;margin-bottom:15px;"><strong>Biological age</strong> is a measure of how old your body seems based on various health and lifestyle factors. Unlike chronological age (the number of years you've been alive), biological age can be higher or lower depending on your habits.</p>
+        <p style="color:#374151;line-height:1.8;margin-bottom:15px;">Healthy lifestyle choices like regular exercise, good diet, quality sleep, and avoiding smoking can lower your biological age. Our <strong>free biological age calculator</strong> helps you estimate your biological age based on these factors.</p>
+        <p style="color:#374151;line-height:1.8;">This is a fun way to understand how your habits affect your overall health and aging. Remember, this is just an estimate - for accurate assessment, consult a healthcare professional.</p>
+    </div>
+
+    <!-- RELATED TOOLS -->
+    <div class="related-tools">
+        <h3>🔗 <span>Related</span> Age Calculators</h3>
+        <div class="tools-grid">
+            <a href="chronological-age-calculator.html" class="tool-link">📅 Chronological Age</a>
+            <a href="biological-age-calculator.html" class="tool-link">🧬 Bio Age Test</a>
+            <a href="online-chronological-age-calculator.html" class="tool-link">🌐 Online Age</a>
+            <a href="age-calculator-by-photo.html" class="tool-link">📸 Age by Photo</a>
+            <a href="adjusted-age-calculator.html" class="tool-link">🩺 Adjusted Age</a>
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div style="background:#ffffff;border-radius:24px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);margin-bottom:30px;">
+        <h2 style="color:#065f46;font-size:22px;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 What is biological age? <span>+</span></div>
+                <div class="faq-answer">Biological age is a measure of how old your body seems based on health and lifestyle factors. It can differ from your chronological age.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 How is biological age different from chronological age? <span>+</span></div>
+                <div class="faq-answer">Chronological age is time since birth. Biological age depends on health, lifestyle, and genetic factors.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 How can I lower my biological age? <span>+</span></div>
+                <div class="faq-answer">Regular exercise, healthy diet, quality sleep, stress management, and avoiding smoking/alcohol can lower biological age.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is this biological age calculator free? <span>+</span></div>
+                <div class="faq-answer">Yes! Our biological age test calculator is 100% free to use.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is the biological age estimate accurate? <span>+</span></div>
+                <div class="faq-answer">This is a general estimation based on lifestyle factors. For accurate assessment, consult a healthcare professional.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">ℹ️ About</a>
+        <a href="contact.html">📧 Contact</a>
+        <a href="privacy-policy.html">🔒 Privacy</a>
+        <a href="terms-conditions.html">📜 Terms</a>
+    </div>
+    <p style="text-align:center;font-size:0.75rem;color:#64748b;margin-top:15px;">© 2026 Free Online Tools 203 | Free Biological Age Calculator - Health Tool</p>
+</footer>
+
+<script>
+// ========== BIOLOGICAL AGE CALCULATOR ==========
+
+let selectedOptions = {
+    exercise: 0,
+    diet: 0,
+    sleep: 0,
+    smoke: -2,
+    alcohol: 0
+};
+
+function selectOption(element, group) {
+    const parent = element.closest('.option-group');
+    parent.querySelectorAll('.option-item').forEach(item => {
+        item.classList.remove('selected');
+    });
+    element.classList.add('selected');
+    const value = parseInt(element.dataset.value);
+    selectedOptions[group] = value;
+}
+
+function updateLiveTime() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('liveDate').innerText = now.toLocaleDateString(undefined, dateOpt);
+    document.getElementById('liveTime').innerText = now.toLocaleTimeString(undefined, { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12: true });
+    document.getElementById('liveTimezone').innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+}
+
+function calculateBiologicalAge() {
+    const chronoAge = parseInt(document.getElementById('chronologicalAge').value);
+
+    if (!chronoAge || chronoAge < 1) {
+        alert('❌ Please enter a valid chronological age!');
+        return;
+    }
+
+    const totalScore = selectedOptions.exercise + selectedOptions.diet + selectedOptions.sleep + selectedOptions.smoke + selectedOptions.alcohol;
+
+    let bioAge = chronoAge;
+    const normalizedScore = Math.min(Math.max(totalScore, -27), 15);
+    const adjustment = Math.round(normalizedScore * 0.6);
+    bioAge = chronoAge - adjustment;
+    bioAge = Math.min(Math.max(bioAge, 1), 120);
+
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('chronoAgeDisplay').innerHTML = `${chronoAge} <span>years</span>`;
+    document.getElementById('bioAgeDisplay').innerHTML = `${bioAge} <span>years</span>`;
+
+    const statusDiv = document.getElementById('statusDisplay');
+    const diff = chronoAge - bioAge;
+
+    if (diff > 5) {
+        statusDiv.innerHTML = `<div class="status-badge good">💚 Your biological age is ${diff} years younger than your chronological age! Keep it up!</div>`;
+    } else if (diff > 0) {
+        statusDiv.innerHTML = `<div class="status-badge good">💚 Your biological age is ${diff} years younger. Good work!</div>`;
+    } else if (diff === 0) {
+        statusDiv.innerHTML = `<div class="status-badge caution">🟡 Your biological age matches your chronological age. Room for improvement!</div>`;
+    } else if (diff > -5) {
+        statusDiv.innerHTML = `<div class="status-badge caution">🟡 Your biological age is ${Math.abs(diff)} years older. Consider lifestyle changes!</div>`;
+    } else {
+        statusDiv.innerHTML = `<div class="status-badge bad">🔴 Your biological age is ${Math.abs(diff)} years older. Focus on improving your lifestyle!</div>`;
+    }
+}
+
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+    document.getElementById('resultBox').style.display = 'none';
+    document.getElementById('calculateBtn').addEventListener('click', calculateBiologicalAge);
+});
+</script>
+</body>
+</html>
