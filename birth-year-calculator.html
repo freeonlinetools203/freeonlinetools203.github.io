@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Birth Year Calculator - Find Your Birth Year by Age</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Calculate your birth year based on your age. Enter your age and find out which year you were born. Free Birth Year Calculator tool.">
+<meta name="keywords" content="birth year calculator, find birth year, calculate birth year, what year was I born, birth year by age, free birth year tool">
+<link rel="canonical" href="https://freeonlinetools203.com/birth-year-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Birth Year Calculator - Find Your Birth Year by Age">
+<meta property="og:description" content="Enter your age and find out which year you were born. Free and accurate.">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fffbeb;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: white; border-bottom: 2px solid white; }
+
+.container { max-width: 900px; margin: 40px auto 0; padding: 0 20px; }
+
+.age-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(245, 158, 11, 0.2);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+    padding: 30px 25px;
+    text-align: center;
+}
+.card-header h1 { color: white; font-size: 28px; margin-bottom: 10px; font-weight: 700; }
+.card-header h1 span { color: #fde68a; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+.live-datetime {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #fcd34d;
+}
+.live-datetime-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #b45309; font-weight: 600; margin-bottom: 10px; }
+.live-date { font-size: 18px; font-weight: 600; color: #b45309; }
+.live-time { font-size: 32px; font-weight: 800; color: #f59e0b; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 6px; }
+
+.input-group { margin-bottom: 28px; }
+.input-group label { display: block; font-weight: 600; color: #b45309; margin-bottom: 12px; font-size: 16px; }
+.date-input-wrapper input {
+    width: 100%; padding: 16px 20px; font-size: 16px;
+    border: 2px solid #fcd34d; border-radius: 16px;
+    transition: all 0.3s ease; font-family: inherit; background: #ffffff;
+}
+.date-input-wrapper input:focus { outline: none; border-color: #f59e0b; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15); }
+
+.calc-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+    color: white; border: none; border-radius: 16px;
+    font-size: 18px; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease; margin-bottom: 30px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(245, 158, 11, 0.35); }
+
+.result-box {
+    background: #fffbeb;
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid #fcd34d;
+    text-align: center;
+}
+.live-badge { display: inline-block; background: #f59e0b; color: white; font-size: 12px; padding: 5px 16px; border-radius: 30px; margin-bottom: 20px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+
+.main-age-display { font-size: 72px; font-weight: 900; color: #b45309; line-height: 1.2; margin: 10px 0; }
+.main-age-display span { color: #f59e0b; }
+.main-age-label { font-size: 18px; color: #64748b; font-weight: 600; }
+
+.professional-footer { background: linear-gradient(135deg, #b45309 0%, #0f172a 100%); color: #cbd5e1; padding: 35px 20px 20px; margin-top: 40px; border-radius: 20px 20px 0 0; }
+
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .main-age-display { font-size: 48px; }
+    .live-time { font-size: 26px; }
+}
+@media (max-width: 480px) {
+    .main-age-display { font-size: 36px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="age-card">
+        <div class="card-header">
+            <h1>🎂 <span>Birth Year</span> Calculator</h1>
+            <p>Enter your current age and find out exactly which year you were born!</p>
+        </div>
+        <div class="card-content">
+            <div class="live-datetime">
+                <div class="live-datetime-label">🟠 LIVE CURRENT TIME</div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <div class="input-group">
+                <label>🎂 Enter Your Current Age</label>
+                <div class="date-input-wrapper">
+                    <input type="number" id="ageInput" placeholder="e.g., 25" min="1" max="150" style="width:100%;padding:16px 20px;font-size:16px;border:2px solid #fcd34d;border-radius:16px;font-family:inherit;">
+                </div>
+            </div>
+
+            <button class="calc-btn" id="calculateBtn">✨ Find My Birth Year ✨</button>
+
+            <div class="result-box" id="resultBox" style="display: none;">
+                <span class="live-badge">🎉 YOUR BIRTH YEAR</span>
+                <div class="main-age-label">You Were Born In</div>
+                <div class="main-age-display"><span id="birthYear">0</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="professional-footer">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 0.9rem; color: #94a3b8;">
+            <a href="age-calculator.html" style="color: #fcd34d; text-decoration: none;">📅 Age Calculator</a> |
+            <a href="age-in-days-calculator.html" style="color: #fcd34d; text-decoration: none;">📆 Age in Days</a> |
+            <a href="age-in-months-calculator.html" style="color: #fcd34d; text-decoration: none;">📊 Age in Months</a> |
+            <a href="index.html" style="color: #fcd34d; text-decoration: none;">🏠 Home</a>
+        </p>
+        <p style="font-size: 0.75rem; color: #64748b; margin-top: 10px;">© 2026 Free Online Tools 203 | 100% Free Birth Year Calculator</p>
+    </div>
+</footer>
+
+<script>
+function updateLiveTime() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('liveDate').innerText = now.toLocaleDateString(undefined, dateOpt);
+    document.getElementById('liveTime').innerText = now.toLocaleTimeString(undefined, { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12: true });
+    document.getElementById('liveTimezone').innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+}
+
+function calculateBirthYear() {
+    const age = parseInt(document.getElementById('ageInput').value);
+    if (!age || age < 1) { alert('❌ Please enter a valid age!'); return; }
+    if (age > 150) { alert('❌ Please enter a realistic age!'); return; }
+    const currentYear = new Date().getFullYear();
+    const birthYear = currentYear - age;
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('birthYear').innerText = birthYear;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+    document.getElementById('resultBox').style.display = 'none';
+    document.getElementById('calculateBtn').addEventListener('click', calculateBirthYear);
+});
+</script>
+</body>
+</html>
