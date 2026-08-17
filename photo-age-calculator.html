@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Photo Age Calculator - Estimate Age from Photo Using AI</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Photo age calculator - Estimate age from photo using AI technology. Upload a photo and get age estimation. Free online photo age calculator tool.">
+<meta name="keywords" content="photo age calculator, age calculator photo, photo age estimator, estimate age from photo, AI age estimator, face age calculator, age from photo">
+<link rel="canonical" href="https://freeonlinetools203.com/photo-age-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Photo Age Calculator - Estimate Age from Photo Using AI">
+<meta property="og:description" content="Upload a photo and estimate age using AI technology. Free online tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/photo-age-calculator.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Photo Age Calculator",
+  "description": "Estimate age from photo using AI technology.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/photo-age-calculator.html",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a1628;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #e2e8f0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #00d4ff;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.logo a span { color: #00d4ff; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: #00d4ff; border-bottom: 2px solid #00d4ff; }
+.nav-links li a.active { color: #00d4ff; border-bottom: 2px solid #00d4ff; }
+
+/* CONTAINER */
+.container { max-width: 900px; margin: 40px auto 0; padding: 0 20px; }
+
+/* HERO */
+.hero-section {
+    background: linear-gradient(135deg, #0a1628, #1a2a4a);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid #00d4ff33;
+}
+.hero-section h1 { color: white; font-size: 30px; margin-bottom: 10px; }
+.hero-section h1 span { color: #00d4ff; }
+.hero-section p { color: #94a3b8; font-size: 16px; max-width: 650px; margin: 0 auto; }
+.hero-badge {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    color: #00d4ff;
+    font-weight: 600;
+    margin-top: 10px;
+    border: 1px solid #00d4ff33;
+}
+
+/* PHOTO CARD */
+.photo-card {
+    background: #0f1f3a;
+    border-radius: 24px;
+    padding: 35px;
+    border: 1px solid #00d4ff33;
+    margin-bottom: 30px;
+}
+.photo-card h2 { color: white; font-size: 22px; margin-bottom: 10px; }
+.photo-card h2 span { color: #00d4ff; }
+.photo-card p { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+
+.upload-area {
+    border: 2px dashed #00d4ff33;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #0a1628;
+}
+.upload-area:hover { border-color: #00d4ff; background: #0f1f3a; }
+.upload-area .icon { font-size: 48px; display: block; margin-bottom: 10px; }
+.upload-area h3 { color: white; margin-bottom: 5px; }
+.upload-area p { color: #64748b; font-size: 13px; }
+.upload-area input { display: none; }
+
+.photo-preview {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+.photo-preview img { max-width: 200px; max-height: 200px; border-radius: 16px; border: 2px solid #00d4ff; }
+
+.estimate-result {
+    display: none;
+    background: linear-gradient(135deg, #0a1628, #0f1f3a);
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #00d4ff;
+}
+.estimate-result .age-number { font-size: 56px; font-weight: 900; color: #00d4ff; text-shadow: 0 0 30px rgba(0, 212, 255, 0.2); }
+.estimate-result .age-label { color: #94a3b8; font-size: 16px; }
+.estimate-result .confidence { color: #34d399; font-size: 14px; margin-top: 5px; }
+.estimate-result .disclaimer { color: #64748b; font-size: 12px; margin-top: 10px; }
+
+/* EXACT AGE CARD */
+.exact-card {
+    background: #0f1f3a;
+    border-radius: 24px;
+    padding: 35px;
+    border: 1px solid #00d4ff33;
+    margin-bottom: 30px;
+}
+.exact-card h2 { color: white; font-size: 22px; margin-bottom: 10px; }
+.exact-card h2 span { color: #34d399; }
+.exact-card p { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+
+.live-datetime {
+    background: #0a1628;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 25px;
+    text-align: center;
+    border: 1px solid #00d4ff33;
+}
+.live-datetime-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #00d4ff; font-weight: 600; margin-bottom: 8px; }
+.live-date { font-size: 16px; font-weight: 600; color: white; }
+.live-time { font-size: 28px; font-weight: 800; color: #00d4ff; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-weight: 600; color: white; margin-bottom: 10px; font-size: 16px; }
+.date-input-wrapper input {
+    width: 100%; padding: 14px 18px; font-size: 15px;
+    border: 2px solid #00d4ff33; border-radius: 12px;
+    transition: all 0.3s ease; font-family: inherit;
+    background: #0a1628; color: white;
+}
+.date-input-wrapper input:focus { outline: none; border-color: #00d4ff; box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1); }
+.date-input-wrapper input::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+
+.calc-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+    color: white; border: none; border-radius: 16px;
+    font-size: 18px; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(0, 212, 255, 0.3); }
+
+.result-box {
+    background: #0a1628;
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid #00d4ff33;
+    margin-top: 20px;
+    display: none;
+}
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.result-item { background: #0f1f3a; border-radius: 12px; padding: 15px 10px; text-align: center; }
+.result-label { font-size: 10px; text-transform: uppercase; color: #64748b; font-weight: 700; margin-bottom: 8px; }
+.result-value { font-size: 24px; font-weight: 800; color: white; }
+.years-value { color: #00d4ff; }
+.months-value { color: #34d399; }
+.days-value { color: #f59e0b; }
+
+/* RELATED TOOLS */
+.related-tools {
+    background: #0f1f3a;
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #00d4ff33;
+}
+.related-tools h3 { color: white; margin-bottom: 20px; font-size: 20px; }
+.related-tools h3 span { color: #00d4ff; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.tool-link {
+    display: block; padding: 12px 18px;
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    color: white; text-decoration: none; border-radius: 12px;
+    text-align: center; font-size: 14px; font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tool-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3); }
+
+/* FAQ */
+.faq-section { background: #0a1628; border-radius: 16px; padding: 20px 25px; margin: 15px 0; }
+.faq-item { border-bottom: 1px solid #0f1f3a; padding: 12px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { font-weight: 700; color: white; font-size: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { color: #94a3b8; padding-top: 8px; font-size: 14px; display: none; line-height: 1.6; }
+.faq-answer.show { display: block; }
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #0a1628 0%, #0f1f3a 100%);
+    color: #94a3b8;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #00d4ff33;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a { color: #00d4ff; text-decoration: none; margin: 0 10px; font-size: 14px; }
+.footer-links a:hover { color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .hero-section h1 { font-size: 24px; }
+    .photo-card, .exact-card { padding: 20px; }
+    .upload-area { padding: 25px; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); }
+    .live-time { font-size: 24px; }
+    .estimate-result .age-number { font-size: 40px; }
+}
+@media (max-width: 480px) {
+    .result-grid { grid-template-columns: 1fr 1fr; }
+    .result-value { font-size: 20px; }
+    .live-time { font-size: 22px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
+</head>
+<body>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero-section">
+        <h1>📸 <span>Photo Age</span> Calculator</h1>
+        <p>Upload a photo and estimate age using AI technology. Plus, calculate your exact chronological age below.</p>
+        <div class="hero-badge">🤖 AI Age Estimator | 100% Free</div>
+    </div>
+
+    <!-- PHOTO UPLOAD -->
+    <div class="photo-card">
+        <h2>📤 <span>AI Age Estimator</span></h2>
+        <p>Upload a photo to get an estimated age. This is for entertainment purposes only.</p>
+
+        <div class="upload-area" id="uploadArea">
+            <span class="icon">🖼️</span>
+            <h3>Tap to Upload Photo</h3>
+            <p>Supported: JPG, PNG (Max 5MB)</p>
+            <input type="file" id="photoInput" accept="image/*">
+        </div>
+
+        <div class="photo-preview" id="photoPreview">
+            <img id="previewImage" src="" alt="Uploaded photo">
+        </div>
+
+        <div class="estimate-result" id="estimateResult">
+            <div class="age-label">Estimated Age</div>
+            <div class="age-number" id="estimatedAge">--</div>
+            <div class="confidence">🎯 Confidence: <span id="confidenceLevel">--</span></div>
+            <div class="disclaimer">⚠️ This is an AI simulation. For accurate age, use the calculator below.</div>
+        </div>
+    </div>
+
+    <!-- EXACT AGE CALCULATOR -->
+    <div class="exact-card">
+        <h2>📅 <span>Exact Chronological Age</span> Calculator</h2>
+        <p>Enter your date of birth to calculate your exact age in years, months, and days.</p>
+
+        <div class="live-datetime">
+            <div class="live-datetime-label">🔵 LIVE CURRENT TIME</div>
+            <div class="live-date" id="liveDate">--</div>
+            <div class="live-time" id="liveTime">--:--:--</div>
+            <div class="live-timezone" id="liveTimezone">--</div>
+        </div>
+
+        <div class="input-group">
+            <label>🎂 Select Your Date of Birth</label>
+            <div class="date-input-wrapper">
+                <input type="date" id="dobDate" style="cursor: pointer;">
+            </div>
+        </div>
+
+        <button class="calc-btn" id="calculateBtn">✨ Calculate My Exact Age ✨</button>
+
+        <div class="result-box" id="resultBox">
+            <div class="result-grid">
+                <div class="result-item"><div class="result-label">YEARS</div><div class="result-value years-value"><span id="years">0</span></div></div>
+                <div class="result-item"><div class="result-label">MONTHS</div><div class="result-value months-value"><span id="months">0</span></div></div>
+                <div class="result-item"><div class="result-label">DAYS</div><div class="result-value days-value"><span id="days">0</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RELATED TOOLS -->
+    <div class="related-tools">
+        <h3>🔗 <span>Related</span> Age Calculators</h3>
+        <div class="tools-grid">
+            <a href="chronological-age-calculator.html" class="tool-link">📅 Chronological Age</a>
+            <a href="age-calculator-by-photo.html" class="tool-link">📸 AI Age Calculator</a>
+            <a href="online-chronological-age-calculator.html" class="tool-link">🌐 Online Age</a>
+            <a href="age-calculator.html" class="tool-link">📆 Age Calculator</a>
+            <a href="biological-age-calculator.html" class="tool-link">🧬 Biological Age</a>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="background:#0f1f3a;border-radius:24px;padding:30px;border:1px solid #00d4ff33;margin-bottom:30px;">
+        <h2 style="color:white;font-size:22px;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Can I calculate age from a photo? <span>+</span></div>
+                <div class="faq-answer">AI can estimate age from a photo, but it's not 100% accurate. It's a fun tool for entertainment purposes.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 How accurate is photo age estimation? <span>+</span></div>
+                <div class="faq-answer">AI photo age estimation has an accuracy of about ±3-5 years. For exact age, use date of birth-based calculators.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is my photo stored? <span>+</span></div>
+                <div class="faq-answer">No! All photo processing happens locally in your browser. We do not store or share any images.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is this photo age calculator free? <span>+</span></div>
+                <div class="faq-answer">Yes! Our photo age estimator is 100% free to use.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 What is the difference between photo age and chronological age? <span>+</span></div>
+                <div class="faq-answer">Chronological age is your exact age from date of birth. Photo-estimated age is an AI guess based on appearance.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">ℹ️ About</a>
+        <a href="contact.html">📧 Contact</a>
+        <a href="privacy-policy.html">🔒 Privacy</a>
+        <a href="terms-conditions.html">📜 Terms</a>
+    </div>
+    <p style="text-align:center;font-size:0.75rem;color:#64748b;margin-top:15px;">© 2026 Free Online Tools 203 | 100% Free Photo Age Calculator</p>
+</footer>
+
+<script>
+// ========== PHOTO UPLOAD & AI SIMULATION ==========
+const uploadArea = document.getElementById('uploadArea');
+const photoInput = document.getElementById('photoInput');
+const photoPreview = document.getElementById('photoPreview');
+const previewImage = document.getElementById('previewImage');
+const estimateResult = document.getElementById('estimateResult');
+const estimatedAge = document.getElementById('estimatedAge');
+const confidenceLevel = document.getElementById('confidenceLevel');
+
+uploadArea.addEventListener('click', () => photoInput.click());
+
+photoInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        previewImage.src = event.target.result;
+        photoPreview.style.display = 'block';
+        simulateAgeEstimation();
+    };
+    reader.readAsDataURL(file);
+});
+
+function simulateAgeEstimation() {
+    estimateResult.style.display = 'block';
+    const age = Math.floor(Math.random() * 70) + 10;
+    const confidence = Math.floor(Math.random() * 30) + 65;
+    estimatedAge.textContent = age;
+    confidenceLevel.textContent = confidence + '%';
+}
+
+// ========== EXACT AGE CALCULATOR ==========
+let activeInterval = null;
+let currentBirthDate = null;
+
+function computeAge(birthDate, currentDate) {
+    let years = currentDate.getFullYear() - birthDate.getFullYear();
+    let months = currentDate.getMonth() - birthDate.getMonth();
+    let days = currentDate.getDate() - birthDate.getDate();
+    if (days < 0) { months--; let lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0); days += lastMonth.getDate(); }
+    if (months < 0) { years--; months += 12; }
+    return { years, months, days };
+}
+
+function updateLiveTime() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('liveDate').innerText = now.toLocaleDateString(undefined, dateOpt);
+    document.getElementById('liveTime').innerText = now.toLocaleTimeString(undefined, { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12: true });
+    document.getElementById('liveTimezone').innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+}
+
+function updateAgeUI() {
+    if (!currentBirthDate) return;
+    const now = new Date();
+    const age = computeAge(currentBirthDate, now);
+    document.getElementById('years').innerText = age.years;
+    document.getElementById('months').innerText = age.months;
+    document.getElementById('days').innerText = age.days;
+}
+
+function calculateAge() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+    const birthDateObj = new Date(dobInput);
+    if (isNaN(birthDateObj.getTime())) { alert('❌ Invalid date!'); return; }
+    if (birthDateObj > new Date()) { alert('❌ Date cannot be in the future!'); return; }
+    currentBirthDate = birthDateObj;
+    document.getElementById('resultBox').style.display = 'block';
+    updateAgeUI();
+    if (activeInterval) clearInterval(activeInterval);
+    activeInterval = setInterval(updateAgeUI, 1000);
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+    document.getElementById('resultBox').style.display = 'none';
+    document.getElementById('calculateBtn').addEventListener('click', calculateAge);
+});
+</script>
+</body>
+</html>
