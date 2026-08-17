@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Age Calculator Geekzilla - Calculate Your Exact Age Instantly</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Age calculator geekzilla style - Calculate your exact age in years, months, days, hours, minutes & seconds. Free online age calculator with live counter.">
+<meta name="keywords" content="age calculator geekzilla, geekzilla.io age calculator, age calculator like geekzilla, exact age calculator, live age counter, free online age calculator">
+<link rel="canonical" href="https://freeonlinetools203.com/age-calculator-geekzilla.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Age Calculator Geekzilla - Calculate Your Exact Age Instantly">
+<meta property="og:description" content="Calculate your exact age with live counter. Geekzilla style age calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/age-calculator-geekzilla.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Age Calculator Geekzilla",
+  "description": "Calculate your exact age in years, months, days, hours, minutes and seconds with live counter.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/age-calculator-geekzilla.html",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a1a;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #e2e8f0;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #0d0d2b 0%, #1a1a3e 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #00d4ff;
+    box-shadow: 0 4px 30px rgba(0, 212, 255, 0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.logo a span { color: #00d4ff; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: #00d4ff; border-bottom: 2px solid #00d4ff; }
+.nav-links li a.active { color: #00d4ff; border-bottom: 2px solid #00d4ff; }
+
+/* CONTAINER */
+.container { max-width: 900px; margin: 40px auto 0; padding: 0 20px; }
+
+/* HERO */
+.hero-section {
+    background: linear-gradient(135deg, #0d0d2b, #1a1a3e);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid #00d4ff33;
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.05);
+}
+.hero-section h1 { color: white; font-size: 30px; margin-bottom: 10px; }
+.hero-section h1 span { color: #00d4ff; }
+.hero-section p { color: #94a3b8; font-size: 16px; max-width: 650px; margin: 0 auto; }
+.hero-badge {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    color: #00d4ff;
+    font-weight: 600;
+    margin-top: 10px;
+    border: 1px solid #00d4ff33;
+}
+
+/* MAIN CARD */
+.main-card {
+    background: linear-gradient(135deg, #0d0d2b, #1a1a3e);
+    border-radius: 24px;
+    border: 1px solid #00d4ff33;
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.05);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-content { padding: 35px; }
+
+/* LIVE TIME */
+.live-datetime {
+    background: #0a0a1a;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #00d4ff33;
+}
+.live-datetime-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00d4ff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.live-datetime-label::before { content: "⚡ "; }
+.live-date { font-size: 16px; font-weight: 600; color: #e2e8f0; }
+.live-time {
+    font-size: 32px;
+    font-weight: 800;
+    color: #00d4ff;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+/* INPUT */
+.input-group { margin-bottom: 28px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+.input-group label span { color: #00d4ff; }
+.date-input-wrapper input {
+    width: 100%; padding: 16px 20px; font-size: 16px;
+    border: 2px solid #00d4ff33;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #0a0a1a;
+    color: white;
+}
+.date-input-wrapper input:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+}
+.date-input-wrapper input::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+
+/* BUTTON */
+.calc-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.calc-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.3);
+}
+
+/* RESULT */
+.result-box {
+    background: #0a0a1a;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid #00d4ff33;
+    margin-top: 25px;
+    display: none;
+    text-align: center;
+}
+.result-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    color: white;
+    font-size: 12px;
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.result-item {
+    background: #0d0d2b;
+    border-radius: 12px;
+    padding: 15px 10px;
+    border: 1px solid #00d4ff22;
+    transition: all 0.3s ease;
+}
+.result-item:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
+}
+.result-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.result-value {
+    font-size: 28px;
+    font-weight: 800;
+}
+.years-value { color: #00d4ff; }
+.months-value { color: #34d399; }
+.days-value { color: #f59e0b; }
+.hours-value { color: #8b5cf6; }
+.minutes-value { color: #ec489a; }
+.seconds-value {
+    color: #00d4ff;
+    font-size: 32px;
+    animation: glow 1s infinite;
+}
+@keyframes glow {
+    0%,100% { text-shadow: 0 0 10px rgba(0, 212, 255, 0.3); }
+    50% { text-shadow: 0 0 30px rgba(0, 212, 255, 0.6); }
+}
+
+/* RELATED TOOLS */
+.related-tools {
+    background: linear-gradient(135deg, #0d0d2b, #1a1a3e);
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #00d4ff33;
+}
+.related-tools h3 { color: #e2e8f0; margin-bottom: 20px; font-size: 20px; }
+.related-tools h3 span { color: #00d4ff; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.tool-link {
+    display: block; padding: 12px 18px;
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    color: white; text-decoration: none; border-radius: 12px;
+    text-align: center; font-size: 14px; font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tool-link:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); }
+
+/* FAQ */
+.faq-section { background: #0a0a1a; border-radius: 16px; padding: 20px 25px; margin: 15px 0; }
+.faq-item { border-bottom: 1px solid #1a1a3e; padding: 12px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+    font-weight: 700;
+    color: #e2e8f0;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-question span { color: #00d4ff; }
+.faq-answer { color: #94a3b8; padding-top: 8px; font-size: 14px; display: none; line-height: 1.6; }
+.faq-answer.show { display: block; }
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #0a0a1a 0%, #0d0d2b 100%);
+    color: #94a3b8;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #00d4ff33;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a { color: #00d4ff; text-decoration: none; margin: 0 10px; font-size: 14px; }
+.footer-links a:hover { color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .hero-section h1 { font-size: 24px; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .result-value { font-size: 24px; }
+    .seconds-value { font-size: 28px; }
+    .live-time { font-size: 26px; }
+}
+@media (max-width: 480px) {
+    .result-value { font-size: 20px; }
+    .seconds-value { font-size: 24px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+    .live-time { font-size: 22px; }
+}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
+</head>
+<body>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero-section">
+        <h1>⚡ <span>Geekzilla</span> Age Calculator</h1>
+        <p>Calculate your exact age in years, months, days, hours, minutes & seconds with live counter.</p>
+        <div class="hero-badge">⚡ Live Counter | Instant Results</div>
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="main-card">
+        <div class="card-content">
+
+            <!-- Live Time -->
+            <div class="live-datetime">
+                <div class="live-datetime-label">⚡ LIVE CURRENT TIME</div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <!-- Input -->
+            <div class="input-group">
+                <label>🎂 Select Your <span>Date of Birth</span></label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">⚡ Calculate My Age ⚡</button>
+
+            <!-- Result -->
+            <div class="result-box" id="resultBox">
+                <span class="result-badge">⚡ LIVE AGE UPDATES</span>
+                <div class="result-grid">
+                    <div class="result-item"><div class="result-label">YEARS</div><div class="result-value years-value"><span id="years">0</span></div></div>
+                    <div class="result-item"><div class="result-label">MONTHS</div><div class="result-value months-value"><span id="months">0</span></div></div>
+                    <div class="result-item"><div class="result-label">DAYS</div><div class="result-value days-value"><span id="days">0</span></div></div>
+                    <div class="result-item"><div class="result-label">HOURS</div><div class="result-value hours-value"><span id="hours">00</span></div></div>
+                    <div class="result-item"><div class="result-label">MINUTES</div><div class="result-value minutes-value"><span id="minutes">00</span></div></div>
+                    <div class="result-item"><div class="result-label">SECONDS</div><div class="result-value seconds-value"><span id="seconds">00</span></div></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SEO ARTICLE -->
+    <div style="background:linear-gradient(135deg,#0d0d2b,#1a1a3e);border-radius:24px;padding:30px;border:1px solid #00d4ff33;margin-bottom:30px;">
+        <h2 style="color:#e2e8f0;font-size:24px;margin-bottom:15px;">What is a <span style="color:#00d4ff;">Geekzilla</span> Style Age Calculator?</h2>
+        <p style="color:#94a3b8;line-height:1.8;margin-bottom:15px;">A <strong style="color:#e2e8f0;">Geekzilla style age calculator</strong> is a modern, tech-inspired age calculation tool that provides exact age in years, months, days, hours, minutes, and seconds with a live counter.</p>
+        <p style="color:#94a3b8;line-height:1.8;margin-bottom:15px;">The <strong style="color:#e2e8f0;">live age counter</strong> updates every second, making it engaging and fun to watch your age increase in real-time. This style is popular on platforms like geekzilla.io.</p>
+        <p style="color:#94a3b8;line-height:1.8;">Our <strong style="color:#e2e8f0;">free age calculator</strong> brings the same experience with a sleek dark theme, neon accents, and instant results.</p>
+    </div>
+
+    <!-- RELATED TOOLS -->
+    <div class="related-tools">
+        <h3>🔗 <span>Related</span> Age Calculators</h3>
+        <div class="tools-grid">
+            <a href="chronological-age-calculator.html" class="tool-link">📅 Chronological Age</a>
+            <a href="online-chronological-age-calculator.html" class="tool-link">🌐 Online Age</a>
+            <a href="age-calculator-by-photo.html" class="tool-link">📸 Age by Photo</a>
+            <a href="age-calculator.html" class="tool-link">📆 Age Calculator</a>
+            <a href="biological-age-calculator.html" class="tool-link">🧬 Biological Age</a>
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div style="background:linear-gradient(135deg,#0d0d2b,#1a1a3e);border-radius:24px;padding:30px;border:1px solid #00d4ff33;margin-bottom:30px;">
+        <h2 style="color:#e2e8f0;font-size:22px;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 What is a Geekzilla age calculator? <span>+</span></div>
+                <div class="faq-answer">A Geekzilla style age calculator is a tech-inspired tool that shows your exact age with a live counter in years, months, days, hours, minutes, and seconds.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 How does the live age counter work? <span>+</span></div>
+                <div class="faq-answer">The live counter updates every second, calculating your exact age based on your date of birth and current time.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is this age calculator free? <span>+</span></div>
+                <div class="faq-answer">Yes! Our Geekzilla style age calculator is 100% free to use with no limits.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Does it work on mobile? <span>+</span></div>
+                <div class="faq-answer">Yes, the tool is fully responsive and works on all devices.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is my date of birth stored? <span>+</span></div>
+                <div class="faq-answer">No! All calculations happen locally in your browser. Your data is never stored.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">ℹ️ About</a>
+        <a href="contact.html">📧 Contact</a>
+        <a href="privacy-policy.html">🔒 Privacy</a>
+        <a href="terms-conditions.html">📜 Terms</a>
+    </div>
+    <p style="text-align:center;font-size:0.75rem;color:#64748b;margin-top:15px;">© 2026 Free Online Tools 203 | 100% Free Geekzilla Style Age Calculator</p>
+</footer>
+
+<script>
+// ========== GEEKZILLA AGE CALCULATOR ==========
+let activeInterval = null;
+let currentBirthDate = null;
+
+function computeAge(birthDate, currentDate) {
+    let years = currentDate.getFullYear() - birthDate.getFullYear();
+    let months = currentDate.getMonth() - birthDate.getMonth();
+    let days = currentDate.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+        months--;
+        let lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+        days += lastMonth.getDate();
+    }
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+
+    return { years, months, days, hours, minutes, seconds };
+}
+
+function updateLiveTime() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('liveDate').innerText = now.toLocaleDateString(undefined, dateOpt);
+    document.getElementById('liveTime').innerText = now.toLocaleTimeString(undefined, { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12: true });
+    document.getElementById('liveTimezone').innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+}
+
+function updateAgeUI() {
+    if (!currentBirthDate) return;
+    const now = new Date();
+    const age = computeAge(currentBirthDate, now);
+    document.getElementById('years').innerText = age.years;
+    document.getElementById('months').innerText = age.months;
+    document.getElementById('days').innerText = age.days;
+    document.getElementById('hours').innerText = String(age.hours).padStart(2, '0');
+    document.getElementById('minutes').innerText = String(age.minutes).padStart(2, '0');
+    document.getElementById('seconds').innerText = String(age.seconds).padStart(2, '0');
+}
+
+function calculateAge() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+    const birthDateObj = new Date(dobInput);
+    if (isNaN(birthDateObj.getTime())) { alert('❌ Invalid date!'); return; }
+    if (birthDateObj > new Date()) { alert('❌ Date cannot be in the future!'); return; }
+
+    currentBirthDate = birthDateObj;
+    document.getElementById('resultBox').style.display = 'block';
+    updateAgeUI();
+
+    if (activeInterval) clearInterval(activeInterval);
+    activeInterval = setInterval(updateAgeUI, 1000);
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+    document.getElementById('resultBox').style.display = 'none';
+    document.getElementById('calculateBtn').addEventListener('click', calculateAge);
+});
+</script>
+</body>
+</html>
