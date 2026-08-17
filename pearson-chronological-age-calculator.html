@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Pearson Chronological Age Calculator - For Pearson Assessments & Tests</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Pearson chronological age calculator - Calculate chronological age for Pearson assessments and tests. Enter date of birth and get exact age in years, months, and days. Free tool.">
+<meta name="keywords" content="pearson chronological age calculator, pearson age calculator, chronological age calculator pearson, pearson's chronological age calculator, pearson assessment age calculator, chronological age for pearson assessments">
+<link rel="canonical" href="https://freeonlinetools203.com/pearson-chronological-age-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Pearson Chronological Age Calculator - For Pearson Assessments">
+<meta property="og:description" content="Calculate chronological age for Pearson assessments and tests. Free online tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/pearson-chronological-age-calculator.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pearson Chronological Age Calculator",
+  "description": "Calculate chronological age for Pearson assessments and tests.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/pearson-chronological-age-calculator.html",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eef2ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.logo a span { color: #a5b4fc; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: white; border-bottom: 2px solid white; }
+.nav-links li a.active { border-bottom: 2px solid white; }
+
+/* CONTAINER */
+.container { max-width: 950px; margin: 40px auto 0; padding: 0 20px; }
+
+/* HERO */
+.hero-section {
+    background: linear-gradient(135deg, #312e81, #4f46e5);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hero-section h1 { color: white; font-size: 30px; margin-bottom: 10px; }
+.hero-section h1 span { color: #a5b4fc; }
+.hero-section p { color: rgba(255,255,255,0.9); font-size: 16px; max-width: 650px; margin: 0 auto; }
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    color: #a5b4fc;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* MAIN CARD */
+.main-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(79, 70, 229, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-content { padding: 35px; }
+
+/* LIVE TIME */
+.live-datetime {
+    background: #eef2ff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #a5b4fc;
+}
+.live-datetime-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #4f46e5; font-weight: 600; margin-bottom: 8px; }
+.live-date { font-size: 16px; font-weight: 600; color: #312e81; }
+.live-time { font-size: 28px; font-weight: 800; color: #4f46e5; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+/* INPUT */
+.input-group { margin-bottom: 28px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #312e81;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+.date-input-wrapper input {
+    width: 100%; padding: 16px 20px; font-size: 16px;
+    border: 2px solid #a5b4fc; border-radius: 16px;
+    transition: all 0.3s ease; font-family: inherit;
+    background: #ffffff;
+}
+.date-input-wrapper input:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12); }
+.date-input-wrapper input::-webkit-calendar-picker-indicator { cursor: pointer; }
+
+/* BUTTON */
+.calc-btn {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
+    color: white; border: none; border-radius: 16px;
+    font-size: 18px; font-weight: 600; cursor: pointer;
+    transition: all 0.3s ease;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(79, 70, 229, 0.35); }
+
+/* RESULT */
+.result-box {
+    background: #eef2ff;
+    border-radius: 16px;
+    padding: 30px;
+    border: 2px solid #a5b4fc;
+    margin-top: 25px;
+    display: none;
+    text-align: center;
+}
+.result-badge {
+    display: inline-block;
+    background: #4f46e5;
+    color: white;
+    font-size: 12px;
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+
+.result-main {
+    font-size: 42px;
+    font-weight: 900;
+    color: #312e81;
+    margin: 10px 0;
+}
+.result-main span { color: #4f46e5; }
+.result-sub { color: #64748b; font-size: 16px; }
+
+.result-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+.detail-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.detail-label { font-size: 10px; text-transform: uppercase; color: #6b7280; font-weight: 700; margin-bottom: 6px; }
+.detail-value { font-size: 28px; font-weight: 800; color: #312e81; }
+
+/* RELATED TOOLS */
+.related-tools {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.related-tools h3 { color: #312e81; margin-bottom: 20px; font-size: 20px; }
+.related-tools h3 span { color: #4f46e5; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.tool-link {
+    display: block; padding: 12px 18px;
+    background: linear-gradient(135deg, #4f46e5, #312e81);
+    color: white; text-decoration: none; border-radius: 12px;
+    text-align: center; font-size: 14px; font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tool-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4); }
+
+/* FAQ */
+.faq-section { background: #f8fafc; border-radius: 16px; padding: 20px 25px; margin: 15px 0; }
+.faq-item { border-bottom: 1px solid #e5e7eb; padding: 12px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { font-weight: 700; color: #312e81; font-size: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { color: #374151; padding-top: 8px; font-size: 14px; display: none; line-height: 1.6; }
+.faq-answer.show { display: block; }
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #312e81 0%, #0f172a 100%);
+    color: #94a3b8;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a { color: #a5b4fc; text-decoration: none; margin: 0 10px; font-size: 14px; }
+.footer-links a:hover { color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .hero-section h1 { font-size: 24px; }
+    .result-main { font-size: 32px; }
+    .result-details { grid-template-columns: repeat(3, 1fr); }
+    .live-time { font-size: 24px; }
+}
+@media (max-width: 480px) {
+    .result-main { font-size: 28px; }
+    .result-details { grid-template-columns: 1fr 1fr; }
+    .detail-value { font-size: 22px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+    .live-time { font-size: 22px; }
+}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
+</head>
+<body>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero-section">
+        <h1>📘 <span>Pearson Chronological Age</span> Calculator</h1>
+        <p>Calculate chronological age for Pearson assessments and tests. Enter date of birth and get exact age in years, months, and days.</p>
+        <div class="hero-badge">📊 Pearson Assessment Compatible | Free Tool</div>
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="main-card">
+        <div class="card-content">
+
+            <!-- Live Time -->
+            <div class="live-datetime">
+                <div class="live-datetime-label">🔵 LIVE CURRENT TIME</div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <!-- Input -->
+            <div class="input-group">
+                <label>🎂 Select Date of Birth</label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">📘 Calculate Pearson Age ✨</button>
+
+            <!-- Result -->
+            <div class="result-box" id="resultBox">
+                <span class="result-badge">📘 PEARSON CHRONOLOGICAL AGE</span>
+                <div class="result-main"><span id="years">0</span> Years, <span id="months">0</span> Months, <span id="days">0</span> Days</div>
+                <div class="result-sub">Chronological age for Pearson assessments</div>
+
+                <div class="result-details">
+                    <div class="detail-item"><div class="detail-label">YEARS</div><div class="detail-value" id="detailYears">0</div></div>
+                    <div class="detail-item"><div class="detail-label">MONTHS</div><div class="detail-value" id="detailMonths">0</div></div>
+                    <div class="detail-item"><div class="detail-label">DAYS</div><div class="detail-value" id="detailDays">0</div></div>
+                </div>
+
+                <div style="margin-top:15px;font-size:13px;color:#64748b;">
+                    ✅ Use this age for Pearson assessment scoring.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SEO ARTICLE -->
+    <div style="background:#ffffff;border-radius:24px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);margin-bottom:30px;">
+        <h2 style="color:#312e81;font-size:24px;margin-bottom:15px;">What is a Pearson Chronological Age Calculator?</h2>
+        <p style="color:#374151;line-height:1.8;margin-bottom:15px;">A <strong>Pearson chronological age calculator</strong> is a tool used to calculate chronological age for Pearson assessments and educational tests. Pearson assessments often require exact chronological age to determine appropriate test versions and score interpretations.</p>
+        <p style="color:#374151;line-height:1.8;margin-bottom:15px;">The <strong>Pearson chronological age calculator</strong> computes age in years, months, and days from the date of birth to the testing date. This is essential for accurate assessment scoring.</p>
+        <p style="color:#374151;line-height:1.8;">Our free online <strong>Pearson chronological age calculator</strong> is designed to be simple and accurate, helping educators, psychologists, and test administrators calculate chronological age quickly and easily.</p>
+    </div>
+
+    <!-- RELATED TOOLS -->
+    <div class="related-tools">
+        <h3>🔗 <span>Related</span> Age Calculators</h3>
+        <div class="tools-grid">
+            <a href="chronological-age-calculator.html" class="tool-link">📅 Chronological Age</a>
+            <a href="pearson-age-calculator.html" class="tool-link">📘 Pearson Age Calculator</a>
+            <a href="online-chronological-age-calculator.html" class="tool-link">🌐 Online Age</a>
+            <a href="age-calculator-by-photo.html" class="tool-link">📸 Age by Photo</a>
+            <a href="biological-age-calculator.html" class="tool-link">🧬 Biological Age</a>
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div style="background:#ffffff;border-radius:24px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);margin-bottom:30px;">
+        <h2 style="color:#312e81;font-size:22px;margin-bottom:20px;">❓ Frequently Asked Questions</h2>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 What is a Pearson chronological age calculator? <span>+</span></div>
+                <div class="faq-answer">A Pearson chronological age calculator computes age in years, months, and days for Pearson assessments and educational tests.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Why is chronological age important for Pearson assessments? <span>+</span></div>
+                <div class="faq-answer">Pearson assessments require exact chronological age to determine appropriate test versions and score interpretations.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Is this Pearson age calculator free? <span>+</span></div>
+                <div class="faq-answer">Yes! Our Pearson chronological age calculator is 100% free to use for all assessment purposes.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 How accurate is the Pearson chronological age calculator? <span>+</span></div>
+                <div class="faq-answer">The calculator is highly accurate and automatically handles leap years and varying month lengths.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">🔹 Can I use this for Pearson test scoring? <span>+</span></div>
+                <div class="faq-answer">Yes, this tool helps you calculate chronological age for Pearson assessments. Always verify with official guidelines.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">ℹ️ About</a>
+        <a href="contact.html">📧 Contact</a>
+        <a href="privacy-policy.html">🔒 Privacy</a>
+        <a href="terms-conditions.html">📜 Terms</a>
+    </div>
+    <p style="text-align:center;font-size:0.75rem;color:#64748b;margin-top:15px;">© 2026 Free Online Tools 203 | Pearson Chronological Age Calculator - Free Tool</p>
+</footer>
+
+<script>
+// ========== PEARSON CHRONOLOGICAL AGE CALCULATOR ==========
+let activeInterval = null;
+let currentBirthDate = null;
+
+function computeAge(birthDate, currentDate) {
+    let years = currentDate.getFullYear() - birthDate.getFullYear();
+    let months = currentDate.getMonth() - birthDate.getMonth();
+    let days = currentDate.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+        months--;
+        let lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+        days += lastMonth.getDate();
+    }
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    return { years, months, days };
+}
+
+function updateLiveTime() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('liveDate').innerText = now.toLocaleDateString(undefined, dateOpt);
+    document.getElementById('liveTime').innerText = now.toLocaleTimeString(undefined, { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12: true });
+    document.getElementById('liveTimezone').innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+}
+
+function updateAgeUI() {
+    if (!currentBirthDate) return;
+    const now = new Date();
+    const age = computeAge(currentBirthDate, now);
+    document.getElementById('years').innerText = age.years;
+    document.getElementById('months').innerText = age.months;
+    document.getElementById('days').innerText = age.days;
+    document.getElementById('detailYears').innerText = age.years;
+    document.getElementById('detailMonths').innerText = age.months;
+    document.getElementById('detailDays').innerText = age.days;
+}
+
+function calculateAge() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+    const birthDateObj = new Date(dobInput);
+    if (isNaN(birthDateObj.getTime())) { alert('❌ Invalid date!'); return; }
+    if (birthDateObj > new Date()) { alert('❌ Date cannot be in the future!'); return; }
+
+    currentBirthDate = birthDateObj;
+    document.getElementById('resultBox').style.display = 'block';
+    updateAgeUI();
+
+    if (activeInterval) clearInterval(activeInterval);
+    activeInterval = setInterval(updateAgeUI, 1000);
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+    document.getElementById('resultBox').style.display = 'none';
+    document.getElementById('calculateBtn').addEventListener('click', calculateAge);
+});
+</script>
+</body>
+</html>
