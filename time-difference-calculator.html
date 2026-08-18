@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وقت کا فرق - Time Difference Calculator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f3f4f6; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { max-width: 500px; width: 100%; background: white; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #0d9488, #14b8a6); padding: 30px 25px; text-align: center; }
+        .header h1 { color: white; font-size: 24px; margin-bottom: 8px; }
+        .header p { color: rgba(255,255,255,0.9); font-size: 14px; }
+        .body { padding: 30px 25px; }
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; font-weight: 600; color: #1f2937; margin-bottom: 8px; font-size: 14px; }
+        .input-group input { width: 100%; padding: 14px 18px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 16px; transition: all 0.3s; }
+        .input-group input:focus { outline: none; border-color: #14b8a6; box-shadow: 0 0 0 4px rgba(20,184,166,0.1); }
+        .calc-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #0d9488, #14b8a6); color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.3s; margin-top: 10px; }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(20,184,166,0.3); }
+        .result { margin-top: 25px; padding: 25px; background: #f9fafb; border-radius: 16px; border: 1px solid #e5e7eb; display: none; text-align: center; }
+        .time-diff-big { font-size: 36px; font-weight: 800; color: #0d9488; }
+        .time-diff-min { font-size: 18px; color: #6b7280; margin-top: 8px; }
+        .time-diff-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .time-diff-detail div { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .time-diff-detail .num { font-size: 24px; font-weight: 700; color: #1f2937; }
+        .time-diff-detail .lbl { font-size: 11px; color: #6b7280; font-weight: 700; text-transform: uppercase; }
+        .time-note { font-size: 12px; color: #6b7280; margin-top: 10px; font-style: italic; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⏰ وقت کا فرق معلوم کریں</h1>
+        <p>دو اوقات کے درمیان فرق جانیں</p>
+    </div>
+    <div class="body">
+        <div class="input-group">
+            <label>🕐 پہلا وقت</label>
+            <input type="time" id="time1">
+            <div style="font-size:12px;color:#6b7280;margin-top:4px;">مثال: صبح 11:35 کے لیے 11:35، دوپہر 1:00 کے لیے 13:00</div>
+        </div>
+        <div class="input-group">
+            <label>🕑 دوسرا وقت</label>
+            <input type="time" id="time2">
+            <div style="font-size:12px;color:#6b7280;margin-top:4px;">مثال: صبح 11:35 کے لیے 11:35، دوپہر 1:00 کے لیے 13:00</div>
+        </div>
+        <button class="calc-btn" onclick="timeDifference()">⏳ فرق معلوم کریں</button>
+        <div class="result" id="result">
+            <div class="time-diff-big" id="timeDiffDisplay">0 گھنٹے 0 منٹ</div>
+            <div class="time-diff-min" id="timeDiffMin">⏳ کل 0 منٹ کا فرق</div>
+            <div class="time-diff-detail">
+                <div><div class="num" id="tdHours">0</div><div class="lbl">گھنٹے</div></div>
+                <div><div class="num" id="tdMinutes">0</div><div class="lbl">منٹ</div></div>
+            </div>
+            <div class="time-note">💡 نوٹ: 24-hour format استعمال کریں (مثال: 1:00 PM = 13:00)</div>
+        </div>
+    </div>
+</div>
+<script>
+function timeDifference() {
+    const t1 = document.getElementById('time1').value;
+    const t2 = document.getElementById('time2').value;
+    if (!t1 || !t2) { alert('براہ کرم دونوں اوقات منتخب کریں!'); return; }
+    const [h1, m1] = t1.split(':').map(Number);
+    const [h2, m2] = t2.split(':').map(Number);
+    let diff = (h2 * 60 + m2) - (h1 * 60 + m1);
+    if (diff < 0) diff += 1440;
+    const hours = Math.floor(diff / 60);
+    const minutes = diff % 60;
+    document.getElementById('timeDiffDisplay').textContent = `${hours} گھنٹے ${minutes} منٹ`;
+    document.getElementById('timeDiffMin').textContent = `⏳ کل ${diff} منٹ کا فرق`;
+    document.getElementById('tdHours').textContent = hours;
+    document.getElementById('tdMinutes').textContent = minutes;
+    document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
