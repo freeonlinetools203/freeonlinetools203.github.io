@@ -14,6 +14,42 @@ const toolsDatabase = {
     "Age Calculator"
   ]
 },
+ catAge: {
+  name: "📅 Age Calculator Tools",
+  tools: [
+    "Age Calculator",
+    "Chronological Age Calculator",
+    "Online Chronological Age Calculator",
+    "Age Difference Calculator",
+    "Age Calculator Difference",
+    "Calculate Age Difference",
+    "Age Gap Calculator",
+    "Age Gap Dating Calculator",
+    "Dating Age Difference Calculator",
+    "Biological Age Calculator",
+    "Free Biological Age Calculator",
+    "Adjusted Age Calculator",
+    "Preemie Adjusted Age Calculator",
+    "Pearson Age Calculator",
+    "Pearson Chronological Age Calculator",
+    "Age Calculator By Photo",
+    "Photo Age Calculator",
+    "Geekzilla Age Calculator",
+    "Age In Days Calculator",
+    "Age In Months Calculator",
+    "Birth Year Calculator"
+  ]
+},
+  
+catAgeExcel: {
+  name: "📗 Age Calculation in Excel (Guides)",
+  tools: [
+    "Excel Formula To Calculate Age",
+    "How To Calculate Age In Excel",
+    "Calculate Age From DOB In Excel"
+  ]
+},  
+  
   // 2. SOCIAL MEDIA HASHTAG TOOLS
   catHash: {
     name: "📱 Social Media Hashtag Tools",
@@ -275,6 +311,30 @@ const toolsDatabase = {
 // TOOL URL MAPPING (COMPLETE - ALL TOOLS)
 // =========================================================================
 const toolUrlMap = {
+      // Age Calculator Tools
+    "Chronological Age Calculator": "chronological-age-calculator.html",
+    "Online Chronological Age Calculator": "online-chronological-age-calculator.html",
+    "Age Calculator Difference": "age-calculator-difference.html",
+    "Calculate Age Difference": "calculate-age-difference.html",
+    "Age Gap Calculator": "age-gap-calculator.html",
+    "Age Gap Dating Calculator": "age-gap-dating-calculator.html",
+    "Dating Age Difference Calculator": "dating-age-difference-calculator.html",
+    "Biological Age Calculator": "biological-age-calculator.html",
+    "Free Biological Age Calculator": "free-biological-age-calculator.html",
+    "Adjusted Age Calculator": "adjusted-age-calculator.html",
+    "Preemie Adjusted Age Calculator": "preemie-adjusted-age-calculator.html",
+    "Pearson Age Calculator": "pearson-age-calculator.html",
+    "Pearson Chronological Age Calculator": "pearson-chronological-age-calculator.html",
+    "Age Calculator By Photo": "age-calculator-by-photo.html",
+    "Photo Age Calculator": "photo-age-calculator.html",
+    "Geekzilla Age Calculator": "age-calculator-geekzilla.html",
+    "Age In Days Calculator": "age-in-days-calculator.html",
+    "Age In Months Calculator": "age-in-months-calculator.html",
+    "Birth Year Calculator": "birth-year-calculator.html",
+    "Excel Formula To Calculate Age": "excel-formula-to-calculate-age.html",
+    "How To Calculate Age In Excel": "how-to-calculate-age-in-excel.html",
+    "Calculate Age From DOB In Excel": "calculate-age-from-dob-in-excel.html",
+  
     // SEO Tools
     "Keyword Density Checker": "keyword-density-checker.html",
     "Meta Tags Generator": "meta-tags-generator.html",
@@ -480,21 +540,23 @@ function renderDashboard() {
     if (!container) return;
     
     const orderedCategoryKeys = [
-        "catMostPopular", 
-        "catHash", 
-        "catSeo", 
-        "catYoutube",
-        "catFun", 
-        "catColor",
-        "catPdf", 
-        "catImage", 
-        "catPop", 
-        "catDev", 
-        "catHealth",
-        "catFin", 
-        "catText", 
-        "catPreg"
-    ];
+    "catMostPopular",
+    "catAge",          // ← yahan add karein
+    "catAgeExcel",     // ← iske turant baad
+    "catHash", 
+    "catSeo", 
+    "catYoutube",
+    "catFun", 
+    "catColor",
+    "catPdf", 
+    "catImage", 
+    "catPop", 
+    "catDev", 
+    "catHealth",
+    "catFin", 
+    "catText", 
+    "catPreg"
+];
     
     let html = '';
     for (const key of orderedCategoryKeys) {
@@ -568,7 +630,7 @@ const navbarCSS = `<style>
 .dropdown-scroll::-webkit-scrollbar{width:8px}
 .dropdown-scroll::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px}
 .dropdown-scroll::-webkit-scrollbar-thumb{background:#881e8a;border-radius:10px}
-.dropdown-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.dropdown-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:20px}
 .dropdown-column h4{color:#881e8a;font-size:0.9rem;margin-bottom:10px;padding-bottom:5px;border-bottom:2px solid #2563eb;position:sticky;top:0;background:white;z-index:1}
 .dropdown-column a{display:block;color:#333;text-decoration:none;padding:6px 0;font-size:0.8rem;transition:all 0.2s;border-bottom:1px solid #f0f0f0}
 .dropdown-column a:hover{color:#2563eb;padding-left:8px}
@@ -590,7 +652,7 @@ const navbarCSS = `<style>
 </style>`;
 
 // =========================================================================
-// NAVBAR HTML (6 COLUMNS - ALL TOOLS INCLUDED)
+// NAVBAR HTML (7 COLUMNS - ALL TOOLS INCLUDED)
 // =========================================================================
 const navbarHTML = `<div class="megamenu-container">
   <div class="megamenu-wrapper">
@@ -830,6 +892,37 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="pig-pregnancy-calculator.html">Pig Pregnancy Calculator</a>
           </div>
           
+          <!-- COLUMN 7: Age Calculator Tools -->
+          <div class="dropdown-column">
+            <h4>📅 Age Calculator Tools</h4>
+            <a href="age-calculator.html">📅 Age Calculator</a>
+            <a href="chronological-age-calculator.html">🕐 Chronological Age Calculator</a>
+            <a href="online-chronological-age-calculator.html">🕐 Online Chronological Age Calculator</a>
+            <a href="age-difference-calculator.html">➗ Age Difference Calculator</a>
+            <a href="age-calculator-difference.html">➗ Age Calculator Difference</a>
+            <a href="calculate-age-difference.html">➗ Calculate Age Difference</a>
+            <a href="age-gap-calculator.html">💑 Age Gap Calculator</a>
+            <a href="age-gap-dating-calculator.html">💕 Age Gap Dating Calculator</a>
+            <a href="dating-age-difference-calculator.html">💕 Dating Age Difference Calculator</a>
+            <a href="biological-age-calculator.html">🧬 Biological Age Calculator</a>
+            <a href="free-biological-age-calculator.html">🧬 Free Biological Age Calculator</a>
+            <a href="adjusted-age-calculator.html">👶 Adjusted Age Calculator</a>
+            <a href="preemie-adjusted-age-calculator.html">👶 Preemie Adjusted Age Calculator</a>
+            <a href="pearson-age-calculator.html">📐 Pearson Age Calculator</a>
+            <a href="pearson-chronological-age-calculator.html">📐 Pearson Chronological Age Calculator</a>
+            <a href="age-calculator-by-photo.html">📸 Age Calculator By Photo</a>
+            <a href="photo-age-calculator.html">📸 Photo Age Calculator</a>
+            <a href="age-calculator-geekzilla.html">🧟 Geekzilla Age Calculator</a>
+            <a href="age-in-days-calculator.html">📆 Age In Days Calculator</a>
+            <a href="age-in-months-calculator.html">📆 Age In Months Calculator</a>
+            <a href="birth-year-calculator.html">🎂 Birth Year Calculator</a>
+
+            <h4>📗 Age in Excel (Guides)</h4>
+            <a href="excel-formula-to-calculate-age.html">📗 Excel Formula To Calculate Age</a>
+            <a href="how-to-calculate-age-in-excel.html">📗 How To Calculate Age In Excel</a>
+            <a href="calculate-age-from-dob-in-excel.html">📗 Calculate Age From DOB In Excel</a>
+          </div>
+          
         </div></div></div>
       </li>
       <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
@@ -842,7 +935,6 @@ const navbarHTML = `<div class="megamenu-container">
   </div>
   <div class="mobile-menu" id="mobileMenu"></div>
 </div>`;
-
 // =========================================================================
 // PAGE ONLOAD
 // =========================================================================
