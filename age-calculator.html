@@ -49,6 +49,96 @@
 }
 </script>
 
+<!-- ✅ FAQ Schema - 10 سوالات (HEAD اور ARTICLE برابر) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a chronological age calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A chronological age calculator is a tool that calculates the exact time elapsed since a person's birth date, down to years, months, days, hours, minutes, and seconds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate age from date of birth manually?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtract birth year from current year, then adjust for months and days by borrowing when needed. Use the formula: Current Date – Birth Date = Age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate age from date of birth in Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use =DATEDIF(A1,TODAY(),\"Y\") for years, =DATEDIF(A1,TODAY(),\"YM\") for months, and =DATEDIF(A1,TODAY(),\"MD\") for days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this chronological age calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 100% free. No registration, no payment, unlimited uses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it store my date of birth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, never. All calculations happen locally in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the age in seconds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's synchronized with your device's system clock – accurate to the second."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between chronological and biological age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chronological age is time since birth. Biological age depends on health and lifestyle factors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I was born on a leap day (Feb 29)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool correctly handles Feb 29 birthdays, counting years properly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does the age update?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every second – you'll see the seconds number increase live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, after the page loads, it works offline without internet."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
 * {
     margin: 0;
