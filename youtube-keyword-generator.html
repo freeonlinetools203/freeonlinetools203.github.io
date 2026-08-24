@@ -371,36 +371,82 @@ body.dark .theme-toggle{background:#475569;}
 </div>
 <!-- ========== SEO ARTICLE END ========== -->
 
-<!-- ========== FOOTER START ========== -->
-<footer class="footer">
-<div class="footer-container">
-<div class="footer-col">
-<h3>✨ Free Online Tools 203</h3>
-<p style="font-size:0.7rem;line-height:1.5;color:#94a3b8;">100% free online tools for social media, SEO, calculators & fun games.</p>
+<!-- ========== SOCIAL MEDIA FOOTER START ========== -->
+<footer style="background:linear-gradient(135deg,#0f172a,#1e293b);color:#cbd5e1;padding:40px 20px 25px;margin-top:50px;position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec489a,#3b82f6);background-size:300% 100%;animation:gm 3s ease infinite;"></div>
+<style>
+@keyframes gm{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fl{0%{transform:translateY(0)}50%{transform:translateY(-5px)}100%{transform:translateY(0)}}
+.fl{animation:fl 4s ease-in-out infinite}.fl:nth-child(2){animation-delay:.5s}.fl:nth-child(3){animation-delay:1s}.fl:nth-child(4){animation-delay:1.5s}
+.fl a,.fl .social-btn{transition:all .3s ease}.fl a{display:inline-block;text-decoration:none}
+.fl a:hover{transform:translateX(5px);color:#60a5fa!important}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#fff;font-size:18px;width:38px;height:38px;border-radius:50%;transition:all .3s ease}
+.social-btn:hover{transform:translateY(-3px) scale(1.1);filter:brightness(1.1)}
+.footer-link{color:#cbd5e1;text-decoration:none;display:block;padding:5px 0;font-size:0.9rem;transition:all .3s ease}
+.footer-link:hover{color:#60a5fa!important;transform:translateX(5px)}
+.footer-title{color:#fff;font-size:1rem;margin-bottom:14px;font-weight:600}
+.footer-brand{font-size:1.2rem;color:#fff;font-weight:700;margin:0}
+.footer-desc{font-size:0.85rem;line-height:1.6;color:#94a3b8;margin-bottom:12px}
+.footer-heading{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.footer-copy{text-align:center;padding-top:18px;margin-top:30px;border-top:1px solid rgba(255,255,255,0.06);font-size:0.85rem;color:#64748b}
+.footer-copy strong{color:#94a3b8}
+</style>
+<div style="max-width:1100px;margin:0 auto;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:30px;margin-bottom:25px;">
+
+<!-- Col 1: Brand + Social Buttons -->
+<div class="fl">
+<div class="footer-heading"><span style="font-size:24px;">✨</span><h3 class="footer-brand">Free Online Tools 203</h3></div>
+<p class="footer-desc">100% free online tools for social media, SEO, calculators & fun games.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;">
+<button onclick="sharePage('facebook')" class="social-btn" style="background:#1877F2;">📘</button>
+<button onclick="sharePage('twitter')" class="social-btn" style="background:#1DA1F2;">🐦</button>
+<button onclick="sharePage('whatsapp')" class="social-btn" style="background:#25D366;">💬</button>
+<button onclick="sharePage('linkedin')" class="social-btn" style="background:#0077B5;">🔗</button>
+<button onclick="copyPageLink()" class="social-btn" style="background:#6b7280;">📋</button>
 </div>
-<div class="footer-col">
-<h4>📄 Quick Links</h4>
-<a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
-<a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
-<a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
-<a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
 </div>
-<div class="footer-col">
-<h4>📱 Social Media</h4>
-<a href="https://freeonlinetools203.com/instagram-hashtag-generator.html">📸 Instagram Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html">🎵 TikTok Hashtag Generator</a>
-<a href="https://freeonlinetools203.com/facebook-hashtag-generator.html">📘 Facebook Hashtag Generator</a>
+
+<!-- Col 2: Quick Links -->
+<div class="fl"><h4 class="footer-title" style="border-left:3px solid #3b82f6;padding-left:12px;">📄 Quick Links</h4>
+<a href="https://freeonlinetools203.com/index.html" class="footer-link">🏠 Home</a>
+<a href="https://freeonlinetools203.com/about.html" class="footer-link">ℹ️ About</a>
+<a href="https://freeonlinetools203.com/contact.html" class="footer-link">📧 Contact</a>
+<a href="https://freeonlinetools203.com/privacy-policy.html" class="footer-link">🔒 Privacy</a>
+<a href="https://freeonlinetools203.com/terms-conditions.html" class="footer-link">📜 Terms</a>
+<a href="https://freeonlinetools203.com/disclaimer.html" class="footer-link">⚠️ Disclaimer</a>
 </div>
-<div class="footer-col">
-<h4>⭐ Trending Tools</h4>
-<a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a>
-<a href="https://freeonlinetools203.com/keyword-density-checker.html">🔍 Keyword Density Checker</a>
-<a href="https://freeonlinetools203.com/spin-the-wheel.html">🎡 Spin The Wheel</a>
+
+<!-- Col 3: Social Media Tools -->
+<div class="fl"><h4 class="footer-title" style="border-left:3px solid #8b5cf6;padding-left:12px;">📱 Social Media</h4>
+<a href="https://freeonlinetools203.com/instagram-hashtag-generator.html" class="footer-link">📸 Instagram Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html" class="footer-link">🎵 TikTok Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/facebook-hashtag-generator.html" class="footer-link">📘 Facebook Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html" class="footer-link">💼 LinkedIn Hashtag Generator</a>
+<a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html" class="footer-link">📌 Pinterest Hashtag Generator</a>
 </div>
+
+<!-- Col 4: Trending Tools -->
+<div class="fl"><h4 class="footer-title" style="border-left:3px solid #f59e0b;padding-left:12px;">⭐ Trending Tools</h4>
+<a href="https://freeonlinetools203.com/age-calculator.html" class="footer-link">📅 Age Calculator</a>
+<a href="https://freeonlinetools203.com/keyword-density-checker.html" class="footer-link">🔍 Keyword Density Checker</a>
+<a href="https://freeonlinetools203.com/spin-the-wheel.html" class="footer-link">🎡 Spin The Wheel</a>
+<a href="https://freeonlinetools203.com/yes-no-wheel.html" class="footer-link">✅ Yes/No Wheel</a>
+<a href="https://freeonlinetools203.com/bmi-calculator.html" class="footer-link">⚖️ BMI Calculator</a>
 </div>
-<div class="footer-bottom">© 2026 <strong>Free Online Tools 203</strong>. All rights reserved. | Made with ❤️</div>
+
+</div>
+<div class="footer-copy">© 2026 <strong>Free Online Tools 203</strong>. All rights reserved. | Made with <span style="color:#ec489a;">❤️</span></div>
+</div>
 </footer>
-<!-- ========== FOOTER END ========== -->
+
+<script>
+function sharePage(p){let u=encodeURIComponent(window.location.href),t=encodeURIComponent(document.title||"Free Online Tools 203");let s="";p==="whatsapp"?s="https://wa.me/?text="+t+"%20"+u:p==="facebook"?s="https://www.facebook.com/sharer/sharer.php?u="+u:p==="twitter"?s="https://twitter.com/intent/tweet?text="+t+"&url="+u:p==="linkedin"?s="https://www.linkedin.com/shareArticle?mini=true&url="+u+"&title="+t:null;if(s)window.open(s,"_blank","width=600,height=500")}
+function copyPageLink(){let u=window.location.href;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(()=>{showToast("✅ Link copied! Share with friends.")}).catch(()=>{fallbackCopy(u)})}else{fallbackCopy(u)}}
+function fallbackCopy(t){let a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");document.body.removeChild(a);showToast("✅ Link copied! Share with friends.")}
+function showToast(m){let t=document.createElement("div");t.style.cssText="position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:10px 24px;border-radius:50px;font-size:14px;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2500)}
+</script>
+<!-- ========== SOCIAL MEDIA FOOTER END ========== -->
 
 <!-- ========== TOAST ========== -->
 <div id="toastMsg" class="toast">Copied!</div>
