@@ -1,0 +1,49 @@
+# ============================================================
+# ROBOTS.TXT - Free Online Tools 203
+# ============================================================
+
+User-agent: *
+Allow: /
+
+# ============================================================
+# DISALLOW - Ye Pages Index Na Hon (Admin / Private)
+# ============================================================
+
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /config/
+
+# ============================================================
+# SITEMAP LOCATION
+# ============================================================
+
+Sitemap: https://freeonlinetools203.com/sitemap.xml
+
+# ============================================================
+# CRAWL DELAY - Google Ko Slow Crawl Karne Ke Liye
+# ============================================================
+
+Crawl-delay: 2
+
+# ============================================================
+# Googlebot Specific Instructions
+# ============================================================
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /backup/
+Disallow: /config/
+
+# ============================================================
+# Bingbot Specific Instructions
+# ============================================================
+
+User-agent: bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /backup/
