@@ -4,43 +4,63 @@
     <!-- ========== MAIN PAGES ========== -->
     <url>
         <loc>https://freeonlinetools203.com/index.html</loc>
-        <lastmod>2026-08-23</lastmod>
+        <lastmod>2026-08-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/about.html</loc>
-        <lastmod>2026-08-23</lastmod>
+        <lastmod>2026-08-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.70</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/contact.html</loc>
-        <lastmod>2026-08-23</lastmod>
+        <lastmod>2026-08-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/privacy-policy.html</loc>
-        <lastmod>2026-08-23</lastmod>
+        <lastmod>2026-08-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.50</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/terms-conditions.html</loc>
-        <lastmod>2026-08-23</lastmod>
+        <lastmod>2026-08-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.50</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/disclaimer.html</loc>
-        <lastmod>2026-08-23</lastmod>
+        <lastmod>2026-08-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.50</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/googled2e48a2f6ec00f89.html</loc>
-        <lastmod>2026-08-23</lastmod>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.10</priority>
+    </url>
+
+    <!-- ========== NEW PAGES (Added) ========== -->
+    <url>
+        <loc>https://freeonlinetools203.com/404.html</loc>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.30</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/sitemap.html</loc>
+        <lastmod>2026-08-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.50</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/robots.txt</loc>
+        <lastmod>2026-08-26</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.10</priority>
     </url>
