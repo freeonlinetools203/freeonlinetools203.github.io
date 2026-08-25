@@ -839,7 +839,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="webp-converter.html">WebP Converter</a>
           </div>
           
-          // ... (rest of navbarHTML same as your original) ...
+   // ... (rest of navbarHTML same as your original) ...
           
         </div></div></div>
       </li>
@@ -848,12 +848,12 @@ const navbarHTML = `<div class="megamenu-container">
       <li><a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a></li>
       <li><a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a></li>
       <li><a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a></li>
+      <li><a href="https://freeonlinetools203.com/sitemap.html">🗺️ Sitemap</a></li>   ← ✅ YEH LINE ADD KAREIN
     </ul>
     <button class="mobile-toggle" id="mobileToggle">☰</button>
   </div>
   <div class="mobile-menu" id="mobileMenu"></div>
 </div>`;
-
 // =========================================================================
 // 9. PAGE ONLOAD
 // =========================================================================
