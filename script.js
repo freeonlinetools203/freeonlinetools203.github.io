@@ -838,9 +838,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="image-compressor.html">Image Compressor</a>
             <a href="webp-converter.html">WebP Converter</a>
           </div>
-          
-   // ... (rest of navbarHTML same as your original) ...
-          
+           
         </div></div></div>
       </li>
       <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
