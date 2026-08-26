@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Free Life Expectancy Calculator - Predict Your Life Expectancy 2026</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Calculate your life expectancy based on age, gender, lifestyle, and health habits. Free online life expectancy calculator. How long will I live?">
+<meta name="keywords" content="life expectancy calculator, how long will i live, life expectancy prediction, average life expectancy, life span calculator, longevity calculator, health life expectancy">
+<link rel="canonical" href="https://freeonlinetools203.com/life-expectancy-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Life Expectancy Calculator - Predict Your Life Expectancy 2026">
+<meta property="og:description" content="Calculate your life expectancy based on age, gender, lifestyle, and health habits. Free online tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/life-expectancy-calculator.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Life Expectancy Calculator",
+  "description": "Calculate your life expectancy based on age, gender, lifestyle, and health habits.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/life-expectancy-calculator.html"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is life expectancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Life expectancy is the average number of years a person is expected to live based on their age, gender, lifestyle, and health conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the life expectancy calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The calculator uses your age, gender, lifestyle habits, and health conditions to estimate your average remaining life expectancy based on statistical data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What factors affect life expectancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Factors include age, gender, smoking, alcohol consumption, exercise, diet, BMI, and existing health conditions like diabetes or heart disease."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this life expectancy calculator accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is an educational and entertainment tool. It provides estimates based on general statistical data. For accurate medical advice, consult a healthcare professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this life expectancy calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #2d6b4f 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: #60a5fa; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: #60a5fa; border-bottom: 2px solid #60a5fa; }
+
+/* CONTAINER */
+.container { max-width: 800px; margin: 40px auto 0; padding: 0 20px; }
+
+/* MAIN CARD */
+.life-card {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #2d6b4f 100%);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: "🕊️";
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+    opacity: 0.15;
+}
+.card-header h1 { color: white; font-size: 30px; margin-bottom: 8px; font-weight: 800; }
+.card-header h1 span { color: #60a5fa; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+/* INPUT */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid #60a5fa;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #1a3a5c;
+    box-shadow: 0 0 0 4px rgba(26, 58, 92, 0.15);
+}
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.input-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+/* BUTTON */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d6b4f 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(26, 58, 92, 0.4); }
+
+/* RESULT BOX */
+.result-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 24px;
+    padding: 30px;
+    border: 2px solid #60a5fa;
+    text-align: center;
+    display: none;
+}
+.result-box .icon-big { font-size: 56px; display: block; margin-bottom: 5px; }
+.result-box .life-age {
+    font-size: 52px;
+    font-weight: 800;
+    color: #1a3a5c;
+}
+.result-box .life-label {
+    font-size: 18px;
+    color: #4a6a6a;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+.result-item {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(26, 58, 92, 0.08);
+}
+.result-item .r-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b8a8a;
+    font-weight: 700;
+}
+.result-item .r-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-top: 4px;
+}
+
+/* MESSAGE */
+.message-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #c8e6c9;
+}
+.message-box p { color: #4a6a6a; font-size: 14px; margin: 3px 0; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .input-row, .input-row-3 { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .result-box .life-age { font-size: 38px; }
+}
+@media (max-width: 480px) {
+    .result-box .life-age { font-size: 30px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+
+/* ===== ARTICLE ===== */
+.article-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.article-main {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.article-main h1 {
+    color: #1a1a2e;
+    font-size: 34px;
+    margin-bottom: 10px;
+    border-left: 5px solid #1a3a5c;
+    padding-left: 20px;
+}
+.article-main h2 {
+    color: #1a1a2e;
+    font-size: 27px;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+.article-main h3 { color: #1a3a5c; font-size: 20px; margin: 25px 0 12px; }
+.article-main p { line-height: 1.8; font-size: 16px; color: #1f2937; margin-bottom: 15px; }
+.article-main ul, .article-main ol { padding-left: 25px; line-height: 2; margin-bottom: 15px; }
+.article-main li { margin-bottom: 5px; }
+
+/* TOC */
+.toc-box {
+    background: #e8f5e9;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    border: 1px solid #60a5fa;
+}
+.toc-box h3 { color: #1a1a2e; margin-top: 0; font-size: 22px; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+.toc-grid a { color: #1a3a5c; text-decoration: none; display: block; padding: 4px 0; }
+.toc-grid a:hover { text-decoration: underline; }
+
+/* INFO BOX */
+.info-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.info-box p { margin: 0; font-size: 18px; line-height: 1.8; }
+
+/* TIP BOX */
+.tip-box {
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid #1a3a5c;
+    background: #e8f5e9;
+}
+.tip-box.green { border-left-color: #10b981; background: #ecfdf5; }
+
+/* TABLE */
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+.table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.table-wrap th { background: #1a3a5c; color: white; padding: 12px; text-align: left; }
+.table-wrap td { padding: 10px; border-bottom: 1px solid #e5e7eb; }
+.table-wrap tr:nth-child(even) { background: #e8f5e9; }
+
+/* FAQ */
+.faq-section-article {
+    background: #e8f5e9;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 20px 0;
+}
+.faq-item-article {
+    border-bottom: 1px solid #60a5fa;
+    padding: 14px 0;
+}
+.faq-item-article:last-child { border-bottom: none; }
+.faq-q {
+    font-weight: 700;
+    color: #1a3a5c;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-q:hover { color: #2d6b4f; }
+.faq-a {
+    color: #374151;
+    padding-top: 8px;
+    font-size: 15px;
+    display: none;
+    line-height: 1.7;
+}
+.faq-a.show { display: block; }
+
+/* KEYWORD TAGS */
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+.keyword-tag {
+    background: #e8f5e9;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #60a5fa;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a3a5c;
+}
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a {
+    color: #60a5fa;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+
+@media (max-width: 768px) {
+    .article-main { padding: 25px 20px; }
+    .article-main h1 { font-size: 26px; }
+    .article-main h2 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools 203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/chronological-age-calculator.html">🕐 Chronological Age</a></li>
+            <li><a href="https://freeonlinetools203.com/korean-age-calculator.html">🇰🇷 Korean Age</a></li>
+            <li><a href="https://freeonlinetools203.com/future-age-predictor.html">🔮 Future Age</a></li>
+            <li><a href="https://freeonlinetools203.com/ai-age-guesser.html">🤖 AI Age Guesser</a></li>
+            <li><a href="https://freeonlinetools203.com/life-expectancy-calculator.html">🕊️ Life Expectancy</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MAIN CALCULATOR -->
+<div class="container">
+    <div class="life-card">
+        <div class="card-header">
+            <h1>🕊️ <span>Life Expectancy</span> Calculator</h1>
+            <p>How long will you live? Predict your life expectancy based on your lifestyle.</p>
+        </div>
+        <div class="card-content">
+
+            <!-- Date of Birth -->
+            <div class="input-group">
+                <label>🎂 Date of Birth</label>
+                <input type="date" id="dobDate">
+            </div>
+
+            <!-- Gender & Country -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label>⚧️ Gender</label>
+                    <select id="userGender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>🌍 Country</label>
+                    <select id="userCountry">
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ca">Canada</option>
+                        <option value="au">Australia</option>
+                        <option value="in">India</option>
+                        <option value="pk">Pakistan</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Lifestyle - Row 1 -->
+            <div class="input-row-3">
+                <div class="input-group">
+                    <label>🚬 Smoking</label>
+                    <select id="smoking">
+                        <option value="never">Never</option>
+                        <option value="former">Former</option>
+                        <option value="current">Current</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>🍺 Alcohol</label>
+                    <select id="alcohol">
+                        <option value="none">None</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="heavy">Heavy</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>🏃 Exercise</label>
+                    <select id="exercise">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="rarely">Rarely</option>
+                        <option value="never">Never</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Lifestyle - Row 2 -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label>🥗 Diet</label>
+                    <select id="diet">
+                        <option value="healthy">Healthy</option>
+                        <option value="average">Average</option>
+                        <option value="unhealthy">Unhealthy</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>📊 BMI</label>
+                    <select id="bmi">
+                        <option value="normal">Normal (18.5-24.9)</option>
+                        <option value="overweight">Overweight (25-29.9)</option>
+                        <option value="obese">Obese (30+)</option>
+                        <option value="underweight">Underweight (&lt;18.5)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Health Conditions -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label>💊 Diabetes</label>
+                    <select id="diabetes">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>❤️ Heart Disease</label>
+                    <select id="heartDisease">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🕊️ Calculate Life Expectancy</button>
+
+            <!-- Result Box -->
+            <div class="result-box" id="resultBox">
+                <span class="icon-big" id="resultIcon">🕊️</span>
+                <div class="life-age" id="lifeAge">82</div>
+                <div class="life-label">Years</div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="r-label">📅 Current Age</div>
+                        <div class="r-value" id="currentAge">-</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">📆 Years Left</div>
+                        <div class="r-value" id="yearsLeft">-</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">🕊️ Life Expectancy</div>
+                        <div class="r-value" id="lifeExpectancy">-</div>
+                    </div>
+                </div>
+                <div class="message-box">
+                    <p id="lifeMessage">💡 Based on your lifestyle, you have a good chance of living a long life!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SEO ARTICLE - SHORT VERSION -->
+<div class="article-container">
+    <div class="article-main">
+
+        <h1>🕊️ Life Expectancy Calculator: How Long Will I Live? 2026</h1>
+        <p style="color: #6b7280; margin-bottom: 25px; padding-left: 25px;">📅 Updated: August 26, 2026 | 👁️ 8 min read</p>
+
+        <div class="info-box">
+            <p><strong>🕊️ What is a Life Expectancy Calculator?</strong> A <strong>life expectancy calculator</strong> is a tool that estimates how many more years you are likely to live based on your age, gender, lifestyle, and health conditions. Also known as a <strong>longevity calculator</strong> or <strong>life span calculator</strong>, this tool helps you understand <strong>how long will I live</strong> and what factors affect your longevity.</p>
+        </div>
+
+        <div class="toc-box">
+            <h3>📚 Table of Contents</h3>
+            <div class="toc-grid">
+                <div>
+                    <a href="#sec1">1. What is Life Expectancy Calculator?</a>
+                    <a href="#sec2">2. How to Use This Life Expectancy Calculator</a>
+                    <a href="#sec3">3. Factors That Affect Life Expectancy</a>
+                </div>
+                <div>
+                    <a href="#sec4">4. How to Increase Life Expectancy</a>
+                    <a href="#sec5">5. Frequently Asked Questions</a>
+                    <a href="#sec6">6. Conclusion</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="sec1">🕊️ 1. What is Life Expectancy Calculator?</h2>
+        <p>A <strong>life expectancy calculator</strong> (also called a <strong>longevity calculator</strong>) estimates your remaining years based on statistical data and lifestyle factors. It considers:</p>
+        <ul>
+            <li><strong>Age & Gender:</strong> Women generally live longer than men</li>
+            <li><strong>Lifestyle:</strong> Smoking, alcohol, exercise, and diet</li>
+            <li><strong>Health:</strong> Diabetes, heart disease, and BMI</li>
+            <li><strong>Location:</strong> Country-specific life expectancy averages</li>
+        </ul>
+
+        <h2 id="sec2">📐 2. How to Use This Life Expectancy Calculator</h2>
+        <ol>
+            <li><strong>Step 1:</strong> Enter your date of birth</li>
+            <li><strong>Step 2:</strong> Select your gender and country</li>
+            <li><strong>Step 3:</strong> Choose your lifestyle habits (smoking, alcohol, exercise, diet)</li>
+            <li><strong>Step 4:</strong> Select your BMI and any health conditions</li>
+            <li><strong>Step 5:</strong> Click "Calculate Life Expectancy"</li>
+        </ol>
+
+        <h2 id="sec3">📊 3. Factors That Affect Life Expectancy</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Factor</th><th>Impact</th><th>How to Improve</th></tr>
+                <tr><td>Smoking</td><td>-10 to -15 years</td><td>Quit smoking</td></tr>
+                <tr><td>Heavy Alcohol</td><td>-5 to -10 years</td><td>Limit alcohol intake</td></tr>
+                <tr><td>Obesity (BMI 30+)</td><td>-5 to -10 years</td><td>Maintain healthy weight</td></tr>
+                <tr><td>Diabetes</td><td>-5 to -10 years</td><td>Manage blood sugar</td></tr>
+                <tr><td>Heart Disease</td><td>-10 to -15 years</td><td>Healthy diet & exercise</td></tr>
+                <tr><td>Daily Exercise</td><td>+3 to +5 years</td><td>Exercise regularly</td></tr>
+            </table>
+        </div>
+
+        <h2 id="sec4">💪 4. How to Increase Life Expectancy</h2>
+        <ul>
+            <li><strong>Quit Smoking:</strong> Adds up to 10 years to your life</li>
+            <li><strong>Exercise Daily:</strong> 30 minutes of exercise adds 3-5 years</li>
+            <li><strong>Healthy Diet:</strong> Fruits, vegetables, and whole grains</li>
+            <li><strong>Maintain Healthy Weight:</strong> BMI between 18.5-24.9</li>
+            <li><strong>Limit Alcohol:</strong> Moderation is key</li>
+            <li><strong>Manage Stress:</strong> Meditation and relaxation</li>
+            <li><strong>Regular Checkups:</strong> Early detection saves lives</li>
+        </ul>
+
+        <h2 id="sec5">❓ 5. Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-section-article">
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is life expectancy? <span>+</span></div>
+                <div class="faq-a">Life expectancy is the average number of years a person is expected to live based on their age, gender, lifestyle, and health conditions.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ How does the life expectancy calculator work? <span>+</span></div>
+                <div class="faq-a">The calculator uses your age, gender, lifestyle habits, and health conditions to estimate your average remaining life expectancy based on statistical data.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What factors affect life expectancy? <span>+</span></div>
+                <div class="faq-a">Factors include age, gender, smoking, alcohol consumption, exercise, diet, BMI, and existing health conditions like diabetes or heart disease.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this life expectancy calculator accurate? <span>+</span></div>
+                <div class="faq-a">This is an educational and entertainment tool. It provides estimates based on general statistical data. For accurate medical advice, consult a healthcare professional.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this life expectancy calculator free? <span>+</span></div>
+                <div class="faq-a">Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times.</div>
+            </div>
+
+        </div>
+
+        <h2 id="sec6">🎯 6. Conclusion</h2>
+        <p>Our <strong>life expectancy calculator</strong> is an educational tool to help you understand how your lifestyle choices affect your longevity. While it's not a medical diagnosis, it can motivate you to make healthier choices for a longer, better life.</p>
+
+        <div style="background: #e8f5e9; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #60a5fa;">
+            <p style="margin: 0; font-size: 1rem;">
+                🔗 <a href="https://freeonlinetools203.com/age-calculator.html" style="color: #1a3a5c; font-weight: bold; text-decoration: underline;">📅 Age Calculator</a> &nbsp;|&nbsp;
+                🔗 <a href="https://freeonlinetools203.com/bmi-calculator.html" style="color: #1a3a5c; font-weight: bold; text-decoration: underline;">⚖️ BMI Calculator</a> &nbsp;|&nbsp;
+                🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #1a3a5c; font-weight: bold; text-decoration: underline;">Home</a>
+            </p>
+        </div>
+
+        <div class="keyword-tags">
+            <span class="keyword-tag">life expectancy calculator</span>
+            <span class="keyword-tag">how long will i live</span>
+            <span class="keyword-tag">life expectancy prediction</span>
+            <span class="keyword-tag">average life expectancy</span>
+            <span class="keyword-tag">longevity calculator</span>
+            <span class="keyword-tag">life span calculator</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
+        <a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
+        <a href="https://freeonlinetools203.com/contact.html">📧 Contact</a>
+        <a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
+        <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
+        <a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a>
+    </div>
+    <p style="text-align: center; font-size: 14px; color: #94a3b8;">© 2026 Free Online Tools 203. All rights reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function calculateLifeExpectancy() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+
+    const dob = new Date(dobInput);
+    if (isNaN(dob.getTime())) { alert('❌ Invalid date!'); return; }
+
+    const now = new Date();
+    let currentAge = now.getFullYear() - dob.getFullYear();
+    const birthThisYear = new Date(now.getFullYear(), dob.getMonth(), dob.getDate());
+    if (now < birthThisYear) currentAge--;
+
+    if (currentAge < 0) { alert('❌ Invalid date of birth!'); return; }
+
+    const gender = document.getElementById('userGender').value;
+    const country = document.getElementById('userCountry').value;
+    const smoking = document.getElementById('smoking').value;
+    const alcohol = document.getElementById('alcohol').value;
+    const exercise = document.getElementById('exercise').value;
+    const diet = document.getElementById('diet').value;
+    const bmi = document.getElementById('bmi').value;
+    const diabetes = document.getElementById('diabetes').value;
+    const heartDisease = document.getElementById('heartDisease').value;
+
+    // Base life expectancy by country
+    let baseExpectancy = 80;
+    const countryMap = {
+        'us': 79, 'uk': 81, 'ca': 82, 'au': 83, 'in': 70, 'pk': 67, 'other': 75
+    };
+    baseExpectancy = countryMap[country] || 80;
+
+    // Gender adjustment
+    if (gender === 'female') baseExpectancy += 3;
+    else if (gender === 'male') baseExpectancy -= 0;
+
+    // Age adjustment - younger people have higher expected years
+    let ageFactor = 0;
+    if (currentAge < 20) ageFactor = 5;
+    else if (currentAge < 30) ageFactor = 4;
+    else if (currentAge < 40) ageFactor = 3;
+    else if (currentAge < 50) ageFactor = 2;
+    else if (currentAge < 60) ageFactor = 1;
+    else if (currentAge < 70) ageFactor = 0;
+    else if (currentAge < 80) ageFactor = -1;
+    else ageFactor = -2;
+
+    // Lifestyle adjustments
+    let lifestyleScore = 0;
+
+    // Smoking
+    if (smoking === 'current') lifestyleScore -= 10;
+    else if (smoking === 'former') lifestyleScore -= 2;
+
+    // Alcohol
+    if (alcohol === 'heavy') lifestyleScore -= 5;
+    else if (alcohol === 'moderate') lifestyleScore -= 1;
+
+    // Exercise
+    if (exercise === 'daily') lifestyleScore += 4;
+    else if (exercise === 'weekly') lifestyleScore += 2;
+    else if (exercise === 'rarely') lifestyleScore -= 1;
+    else if (exercise === 'never') lifestyleScore -= 3;
+
+    // Diet
+    if (diet === 'healthy') lifestyleScore += 3;
+    else if (diet === 'average') lifestyleScore += 0;
+    else if (diet === 'unhealthy') lifestyleScore -= 3;
+
+    // BMI
+    if (bmi === 'normal') lifestyleScore += 2;
+    else if (bmi === 'overweight') lifestyleScore -= 1;
+    else if (bmi === 'obese') lifestyleScore -= 5;
+    else if (bmi === 'underweight') lifestyleScore -= 2;
+
+    // Health conditions
+    if (diabetes === 'yes') lifestyleScore -= 5;
+    if (heartDisease === 'yes') lifestyleScore -= 8;
+
+    // Calculate final life expectancy
+    let lifeExpectancy = baseExpectancy + ageFactor + lifestyleScore;
+    lifeExpectancy = Math.max(50, Math.min(100, Math.round(lifeExpectancy)));
+
+    // Years left
+    let yearsLeft = Math.max(0, lifeExpectancy - currentAge);
+
+    // Message
+    let message = '';
+    let icon = '🕊️';
+    if (yearsLeft > 40) {
+        message = '🌟 Excellent! Your lifestyle choices suggest a very long and healthy life!';
+        icon = '🌟';
+    } else if (yearsLeft > 30) {
+        message = '💪 Great! You have a good chance of living a long, healthy life. Keep it up!';
+        icon = '💪';
+    } else if (yearsLeft > 20) {
+        message = '👍 You have a decent life expectancy. Consider making healthier choices to add more years!';
+        icon = '👍';
+    } else if (yearsLeft > 10) {
+        message = '⚠️ Your life expectancy is below average. Small changes in lifestyle can make a big difference!';
+        icon = '⚠️';
+    } else {
+        message = '💔 Please consult a healthcare professional for personalized health advice.';
+        icon = '💔';
+    }
+
+    // Update UI
+    document.getElementById('currentAge').innerText = currentAge + ' years';
+    document.getElementById('yearsLeft').innerText = yearsLeft + ' years';
+    document.getElementById('lifeExpectancy').innerText = lifeExpectancy + ' years';
+    document.getElementById('lifeAge').innerText = lifeExpectancy;
+    document.getElementById('lifeMessage').innerHTML = message;
+    document.getElementById('resultIcon').innerText = icon;
+
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 30, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+// ========== FAQ TOGGLE ==========
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    document.getElementById('calculateBtn').addEventListener('click', calculateLifeExpectancy);
+    document.getElementById('resultBox').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
