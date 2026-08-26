@@ -160,58 +160,12 @@ body {
 .card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
 .card-content { padding: 35px; }
 
-/* RESULT BOX */
-.result-box {
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-    border-radius: 24px;
-    padding: 30px;
-    margin-bottom: 25px;
-    border: 2px solid #81c784;
-    text-align: center;
-}
-.result-box .flag {
-    font-size: 40px;
-    display: block;
-    margin-bottom: 5px;
-}
-.result-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 15px;
-}
-.result-item {
-    background: white;
-    border-radius: 16px;
-    padding: 18px 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(27, 94, 32, 0.1);
-    transition: all 0.3s ease;
-}
-.result-item:hover { transform: translateY(-3px); }
-.result-label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #6b7280;
-    font-weight: 700;
-}
-.result-value {
-    font-size: 32px;
-    font-weight: 800;
-    color: #1b5e20;
-    margin-top: 5px;
-}
-.result-value.korean { color: #1b5e20; }
-.result-value.international { color: #2e7d32; }
-.result-value.birth-year { color: #43a047; }
-
 /* EXPLANATION BOX */
 .explain-box {
     background: #f1f8f1;
     border-radius: 16px;
     padding: 20px;
-    margin: 15px 0;
+    margin-bottom: 25px;
     border-left: 4px solid #2e7d32;
 }
 .explain-box h3 { color: #1b5e20; font-size: 16px; margin-bottom: 8px; }
@@ -254,8 +208,54 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 25px;
 }
 .calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(27, 94, 32, 0.35); }
+
+/* RESULT BOX - NICHEY SHOW HOGA */
+.result-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 24px;
+    padding: 30px;
+    border: 2px solid #81c784;
+    text-align: center;
+}
+.result-box .flag {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 5px;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+.result-item {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(27, 94, 32, 0.1);
+    transition: all 0.3s ease;
+}
+.result-item:hover { transform: translateY(-3px); }
+.result-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b7280;
+    font-weight: 700;
+}
+.result-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1b5e20;
+    margin-top: 5px;
+}
+.result-value.korean { color: #1b5e20; }
+.result-value.international { color: #2e7d32; }
+.result-value.birth-year { color: #43a047; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -448,7 +448,24 @@ body {
         </div>
         <div class="card-content">
 
-            <!-- Result Box -->
+            <!-- Explanation -->
+            <div class="explain-box">
+                <h3>📌 What is Korean Age?</h3>
+                <p>In Korea, a person is considered <strong>1 year old at birth</strong>, and everyone's age increases by <strong>1 on New Year's Day</strong> (January 1). This means your Korean age is usually 1-2 years older than your international age.</p>
+            </div>
+
+            <!-- Input -->
+            <div class="input-group">
+                <label>🎂 Select Your Date of Birth</label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🇰🇷 Calculate Korean Age</button>
+
+            <!-- RESULT BOX - NICHEY (CARD CONTENT KE END MEIN) -->
             <div class="result-box" id="resultBox" style="display:none;">
                 <span class="flag">🇰🇷</span>
                 <div class="result-grid">
@@ -466,23 +483,6 @@ body {
                     </div>
                 </div>
             </div>
-
-            <!-- Explanation -->
-            <div class="explain-box">
-                <h3>📌 What is Korean Age?</h3>
-                <p>In Korea, a person is considered <strong>1 year old at birth</strong>, and everyone's age increases by <strong>1 on New Year's Day</strong> (January 1). This means your Korean age is usually 1-2 years older than your international age.</p>
-            </div>
-
-            <!-- Input -->
-            <div class="input-group">
-                <label>🎂 Select Your Date of Birth</label>
-                <div class="date-input-wrapper">
-                    <input type="date" id="dobDate" style="cursor: pointer;">
-                </div>
-            </div>
-
-            <!-- Button -->
-            <button class="calc-btn" id="calculateBtn">🇰🇷 Calculate Korean Age</button>
 
         </div>
     </div>
