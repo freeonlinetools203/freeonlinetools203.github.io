@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Free Zodiac Sign Finder - Find Your Zodiac Sign by Date of Birth 2026</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Find your zodiac sign by date of birth. Free online zodiac sign finder. Discover your sun sign, element, quality, ruling planet, and lucky number.">
+<meta name="keywords" content="zodiac sign finder, find my zodiac sign, zodiac sign by date of birth, what is my zodiac sign, zodiac calculator, sun sign finder, astrology sign finder">
+<link rel="canonical" href="https://freeonlinetools203.com/zodiac-sign-finder.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Zodiac Sign Finder - Find Your Zodiac Sign by Date of Birth 2026">
+<meta property="og:description" content="Find your zodiac sign instantly. Free online zodiac sign finder with element, quality, ruling planet & lucky number.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/zodiac-sign-finder.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Zodiac Sign Finder",
+  "description": "Find your zodiac sign by date of birth. Discover sun sign, element, quality, ruling planet, and lucky number.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/zodiac-sign-finder.html"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is my zodiac sign?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your zodiac sign is determined by your date of birth. There are 12 zodiac signs: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the zodiac sign finder work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The zodiac sign finder uses your date of birth to determine which zodiac sign you belong to based on the traditional zodiac date ranges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 12 zodiac signs in order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 12 zodiac signs in order are: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is my sun sign?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your sun sign is the zodiac sign that the Sun was in at the time of your birth. It represents your core personality, ego, and identity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this zodiac sign finder free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the zodiac sign elements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 4 zodiac elements are: Fire (Aries, Leo, Sagittarius), Earth (Taurus, Virgo, Capricorn), Air (Gemini, Libra, Aquarius), and Water (Cancer, Scorpio, Pisces)."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #4a2c8a 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #0d0221 0%, #1a0533 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: #c8b6ff; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: #c8b6ff; border-bottom: 2px solid #c8b6ff; }
+
+/* CONTAINER */
+.container { max-width: 800px; margin: 40px auto 0; padding: 0 20px; }
+
+/* MAIN CARD */
+.zodiac-card {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #0d0221 0%, #2d1b69 50%, #4a2c8a 100%);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: "🔮";
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+    opacity: 0.15;
+}
+.card-header h1 { color: white; font-size: 30px; margin-bottom: 8px; font-weight: 800; }
+.card-header h1 span { color: #c8b6ff; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+/* INPUT */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #2d1b69;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.date-input-wrapper input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 2px solid #c8b6ff;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.date-input-wrapper input:focus {
+    outline: none;
+    border-color: #2d1b69;
+    box-shadow: 0 0 0 4px rgba(45, 27, 105, 0.15);
+}
+
+/* BUTTON */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #2d1b69 0%, #4a2c8a 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(45, 27, 105, 0.4); }
+
+/* RESULT BOX */
+.result-box {
+    background: linear-gradient(135deg, #f8f4ff 0%, #ede7f6 100%);
+    border-radius: 24px;
+    padding: 30px;
+    border: 2px solid #c8b6ff;
+    text-align: center;
+    display: none;
+}
+.result-box .emoji-big { font-size: 60px; display: block; margin-bottom: 5px; }
+.result-box .sign-name {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2d1b69;
+    margin: 5px 0;
+}
+.result-box .sign-date {
+    font-size: 16px;
+    color: #6b5b8a;
+    margin-bottom: 15px;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+.result-item {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(45, 27, 105, 0.08);
+}
+.result-item .r-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9e8bb8;
+    font-weight: 700;
+}
+.result-item .r-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d1b69;
+    margin-top: 4px;
+}
+
+/* ZODIAC INFO */
+.zodiac-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #ede7f6;
+}
+.zodiac-info h3 {
+    color: #2d1b69;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.zodiac-info p {
+    color: #4a3a5a;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .result-box .sign-name { font-size: 28px; }
+}
+@media (max-width: 480px) {
+    .result-box .sign-name { font-size: 24px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+    .result-item .r-value { font-size: 15px; }
+}
+
+/* ===== ARTICLE ===== */
+.article-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.article-main {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.article-main h1 {
+    color: #1a1a2e;
+    font-size: 34px;
+    margin-bottom: 10px;
+    border-left: 5px solid #2d1b69;
+    padding-left: 20px;
+}
+.article-main h2 {
+    color: #1a1a2e;
+    font-size: 27px;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+.article-main h3 { color: #2d1b69; font-size: 20px; margin: 25px 0 12px; }
+.article-main p { line-height: 1.8; font-size: 16px; color: #1f2937; margin-bottom: 15px; }
+.article-main ul, .article-main ol { padding-left: 25px; line-height: 2; margin-bottom: 15px; }
+.article-main li { margin-bottom: 5px; }
+
+/* TOC */
+.toc-box {
+    background: #f8f4ff;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    border: 1px solid #c8b6ff;
+}
+.toc-box h3 { color: #1a1a2e; margin-top: 0; font-size: 22px; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+.toc-grid a { color: #2d1b69; text-decoration: none; display: block; padding: 4px 0; }
+.toc-grid a:hover { text-decoration: underline; }
+
+/* INFO BOX */
+.info-box {
+    background: linear-gradient(135deg, #f8f4ff 0%, #ede7f6 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.info-box p { margin: 0; font-size: 18px; line-height: 1.8; }
+
+/* TIP BOX */
+.tip-box {
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid #2d1b69;
+    background: #f8f4ff;
+}
+.tip-box.green { border-left-color: #10b981; background: #ecfdf5; }
+
+/* TABLE */
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+.table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.table-wrap th { background: #2d1b69; color: white; padding: 12px; text-align: left; }
+.table-wrap td { padding: 10px; border-bottom: 1px solid #e5e7eb; }
+.table-wrap tr:nth-child(even) { background: #f8f4ff; }
+
+/* FAQ */
+.faq-section-article {
+    background: #f8f4ff;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 20px 0;
+}
+.faq-item-article {
+    border-bottom: 1px solid #c8b6ff;
+    padding: 14px 0;
+}
+.faq-item-article:last-child { border-bottom: none; }
+.faq-q {
+    font-weight: 700;
+    color: #2d1b69;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-q:hover { color: #4a2c8a; }
+.faq-a {
+    color: #374151;
+    padding-top: 8px;
+    font-size: 15px;
+    display: none;
+    line-height: 1.7;
+}
+.faq-a.show { display: block; }
+
+/* KEYWORD TAGS */
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+.keyword-tag {
+    background: #f8f4ff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #c8b6ff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d1b69;
+}
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #0d0221 0%, #1a0533 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a {
+    color: #c8b6ff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+
+@media (max-width: 768px) {
+    .article-main { padding: 25px 20px; }
+    .article-main h1 { font-size: 26px; }
+    .article-main h2 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools 203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/chronological-age-calculator.html">🕐 Chronological Age</a></li>
+            <li><a href="https://freeonlinetools203.com/korean-age-calculator.html">🇰🇷 Korean Age</a></li>
+            <li><a href="https://freeonlinetools203.com/zodiac-sign-finder.html">🔮 Zodiac Sign</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MAIN CALCULATOR -->
+<div class="container">
+    <div class="zodiac-card">
+        <div class="card-header">
+            <h1>🔮 <span>Zodiac Sign</span> Finder</h1>
+            <p>Find your zodiac sign by date of birth. Discover your sun sign & astrology details.</p>
+        </div>
+        <div class="card-content">
+
+            <!-- Input -->
+            <div class="input-group">
+                <label>🎂 Select Your Date of Birth</label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🔮 Find My Zodiac Sign</button>
+
+            <!-- Result Box -->
+            <div class="result-box" id="resultBox">
+                <span class="emoji-big" id="zodiacEmoji">♈</span>
+                <div class="sign-name" id="zodiacName">Aries</div>
+                <div class="sign-date" id="zodiacDate">March 21 - April 19</div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="r-label">🔥 Element</div>
+                        <div class="r-value" id="zodiacElement">Fire</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">⚡ Quality</div>
+                        <div class="r-value" id="zodiacQuality">Cardinal</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">🪐 Ruling Planet</div>
+                        <div class="r-value" id="zodiacPlanet">Mars</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">🍀 Lucky Number</div>
+                        <div class="r-value" id="zodiacLucky">9</div>
+                    </div>
+                </div>
+                <div class="zodiac-info">
+                    <h3>📖 About <span id="aboutName">Aries</span></h3>
+                    <p id="zodiacDescription">Aries is the first sign of the zodiac. People born under this sign are known for their courage, determination, and leadership qualities. They are natural pioneers and love to take initiative.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SEO ARTICLE -->
+<div class="article-container">
+    <div class="article-main">
+
+        <h1>🔮 Zodiac Sign Finder: Free Online Zodiac Sign Calculator 2026</h1>
+        <p style="color: #6b7280; margin-bottom: 25px; padding-left: 25px;">📅 Updated: August 26, 2026 | 👁️ 10 min read</p>
+
+        <!-- Introduction -->
+        <div class="info-box">
+            <p><strong>🔮 What is a Zodiac Sign Finder?</strong> A <strong>zodiac sign finder</strong> is a free online tool that helps you discover your <strong>zodiac sign</strong> based on your date of birth. Also known as a <strong>sun sign finder</strong> or <strong>astrology sign finder</strong>, this tool tells you your <strong>zodiac sign</strong>, <strong>element</strong>, <strong>quality</strong>, <strong>ruling planet</strong>, and <strong>lucky number</strong>. Whether you're curious about astrology, want to know <strong>what is my zodiac sign</strong>, or need a <strong>zodiac calculator</strong>, our tool is completely free and accurate.</p>
+        </div>
+
+        <!-- TOC -->
+        <div class="toc-box">
+            <h3>📚 Table of Contents</h3>
+            <div class="toc-grid">
+                <div>
+                    <a href="#sec1">1. What is a Zodiac Sign Finder?</a>
+                    <a href="#sec2">2. How to Use This Zodiac Sign Finder</a>
+                    <a href="#sec3">3. The 12 Zodiac Signs</a>
+                    <a href="#sec4">4. Zodiac Sign Elements</a>
+                </div>
+                <div>
+                    <a href="#sec5">5. Zodiac Sign Qualities</a>
+                    <a href="#sec6">6. Sun Sign vs Moon Sign</a>
+                    <a href="#sec7">7. Frequently Asked Questions</a>
+                    <a href="#sec8">8. Conclusion</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <h2 id="sec1">🔮 1. What is a Zodiac Sign Finder?</h2>
+        <p>A <strong>zodiac sign finder</strong> (also called a <strong>zodiac calculator</strong> or <strong>sun sign finder</strong>) is a tool that determines your astrological sign based on your date of birth. There are <strong>12 zodiac signs</strong>, each associated with specific personality traits, elements, and planetary rulers.</p>
+        <p>Our <strong>zodiac sign finder</strong> uses the traditional Western astrology system to determine your sign. Simply enter your date of birth and discover your zodiac sign instantly!</p>
+        <div class="tip-box"><p><strong>🔮 Did You Know?</strong> The word "zodiac" comes from the Greek word "zōdiakos kyklos" meaning "circle of animals."</p></div>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec2">📐 2. How to Use This Zodiac Sign Finder</h2>
+        <ol>
+            <li><strong>Step 1:</strong> Click on the date input field</li>
+            <li><strong>Step 2:</strong> Select your date of birth from the calendar</li>
+            <li><strong>Step 3:</strong> Click "Find My Zodiac Sign"</li>
+            <li><strong>Step 4:</strong> View your zodiac sign, element, quality, ruling planet, and lucky number</li>
+        </ol>
+        <div class="tip-box green"><p><strong>💡 Pro Tip:</strong> Share your zodiac sign with friends and compare compatibility!</p></div>
+
+        <!-- SECTION 3 -->
+        <h2 id="sec3">♈ 3. The 12 Zodiac Signs</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Sign</th><th>Dates</th><th>Symbol</th><th>Element</th></tr>
+                <tr><td>♈ Aries</td><td>Mar 21 - Apr 19</td><td>Ram</td><td>Fire</td></tr>
+                <tr><td>♉ Taurus</td><td>Apr 20 - May 20</td><td>Bull</td><td>Earth</td></tr>
+                <tr><td>♊ Gemini</td><td>May 21 - Jun 20</td><td>Twins</td><td>Air</td></tr>
+                <tr><td>♋ Cancer</td><td>Jun 21 - Jul 22</td><td>Crab</td><td>Water</td></tr>
+                <tr><td>♌ Leo</td><td>Jul 23 - Aug 22</td><td>Lion</td><td>Fire</td></tr>
+                <tr><td>♍ Virgo</td><td>Aug 23 - Sep 22</td><td>Virgin</td><td>Earth</td></tr>
+                <tr><td>♎ Libra</td><td>Sep 23 - Oct 22</td><td>Scales</td><td>Air</td></tr>
+                <tr><td>♏ Scorpio</td><td>Oct 23 - Nov 21</td><td>Scorpion</td><td>Water</td></tr>
+                <tr><td>♐ Sagittarius</td><td>Nov 22 - Dec 21</td><td>Archer</td><td>Fire</td></tr>
+                <tr><td>♑ Capricorn</td><td>Dec 22 - Jan 19</td><td>Goat</td><td>Earth</td></tr>
+                <tr><td>♒ Aquarius</td><td>Jan 20 - Feb 18</td><td>Water Bearer</td><td>Air</td></tr>
+                <tr><td>♓ Pisces</td><td>Feb 19 - Mar 20</td><td>Fish</td><td>Water</td></tr>
+            </table>
+        </div>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec4">🔥 4. Zodiac Sign Elements</h2>
+        <p>The 12 zodiac signs are divided into <strong>4 elements</strong>:</p>
+        <ul>
+            <li><strong>🔥 Fire:</strong> Aries, Leo, Sagittarius - Passionate, energetic, enthusiastic</li>
+            <li><strong>🌍 Earth:</strong> Taurus, Virgo, Capricorn - Practical, grounded, reliable</li>
+            <li><strong>💨 Air:</strong> Gemini, Libra, Aquarius - Intellectual, communicative, social</li>
+            <li><strong>💧 Water:</strong> Cancer, Scorpio, Pisces - Emotional, intuitive, nurturing</li>
+        </ul>
+
+        <!-- SECTION 5 -->
+        <h2 id="sec5">⚡ 5. Zodiac Sign Qualities</h2>
+        <p>Each zodiac sign also has a <strong>quality</strong> that describes its energy:</p>
+        <ul>
+            <li><strong>Cardinal:</strong> Aries, Cancer, Libra, Capricorn - Initiators, leaders, pioneers</li>
+            <li><strong>Fixed:</strong> Taurus, Leo, Scorpio, Aquarius - Stable, determined, consistent</li>
+            <li><strong>Mutable:</strong> Gemini, Virgo, Sagittarius, Pisces - Adaptable, flexible, versatile</li>
+        </ul>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec6">🌙 6. Sun Sign vs Moon Sign</h2>
+        <p><strong>Sun Sign:</strong> Your main zodiac sign based on your date of birth. It represents your core personality, ego, and identity.</p>
+        <p><strong>Moon Sign:</strong> Based on the position of the Moon at your time of birth. It represents your emotions, intuition, and inner self.</p>
+        <p>Our <strong>zodiac sign finder</strong> gives you your <strong>sun sign</strong>. For a complete astrological profile, you would need your exact birth time and location.</p>
+
+        <!-- SECTION 7 - FAQ -->
+        <h2 id="sec7">❓ 7. Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-section-article">
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is my zodiac sign? <span>+</span></div>
+                <div class="faq-a">Your zodiac sign is determined by your date of birth. There are 12 zodiac signs: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ How does the zodiac sign finder work? <span>+</span></div>
+                <div class="faq-a">The zodiac sign finder uses your date of birth to determine which zodiac sign you belong to based on the traditional zodiac date ranges.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What are the 12 zodiac signs in order? <span>+</span></div>
+                <div class="faq-a">The 12 zodiac signs in order are: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is my sun sign? <span>+</span></div>
+                <div class="faq-a">Your sun sign is the zodiac sign that the Sun was in at the time of your birth. It represents your core personality, ego, and identity.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this zodiac sign finder free? <span>+</span></div>
+                <div class="faq-a">Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What are the zodiac sign elements? <span>+</span></div>
+                <div class="faq-a">The 4 zodiac elements are: Fire (Aries, Leo, Sagittarius), Earth (Taurus, Virgo, Capricorn), Air (Gemini, Libra, Aquarius), and Water (Cancer, Scorpio, Pisces).</div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 8 -->
+        <h2 id="sec8">🎯 8. Conclusion</h2>
+        <p>Our <strong>zodiac sign finder</strong> is the ultimate tool for discovering your astrological sign. Whether you want to <strong>find my zodiac sign</strong>, learn about <strong>zodiac sign elements</strong>, or just explore astrology, we've got you covered.</p>
+        <p><strong>Key takeaways:</strong></p>
+        <ul>
+            <li>✅ Find your zodiac sign instantly by date of birth</li>
+            <li>✅ Learn your element, quality, ruling planet, and lucky number</li>
+            <li>✅ Discover the 12 zodiac signs and their characteristics</li>
+            <li>✅ 100% free, no registration, unlimited usage</li>
+        </ul>
+        <p>Start using our <strong>zodiac sign finder</strong> today and discover your astrological identity!</p>
+
+        <!-- Internal Links -->
+        <div style="background: #f8f4ff; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #c8b6ff;">
+            <p style="margin: 0; font-size: 1rem;">
+                🔗 <a href="https://freeonlinetools203.com/age-calculator.html" style="color: #2d1b69; font-weight: bold; text-decoration: underline;">📅 Age Calculator</a> &nbsp;|&nbsp;
+                🔗 <a href="https://freeonlinetools203.com/korean-age-calculator.html" style="color: #2d1b69; font-weight: bold; text-decoration: underline;">🇰🇷 Korean Age</a> &nbsp;|&nbsp;
+                🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #2d1b69; font-weight: bold; text-decoration: underline;">Home</a>
+            </p>
+        </div>
+
+        <!-- Keyword Tags -->
+        <div class="keyword-tags">
+            <span class="keyword-tag">zodiac sign finder</span>
+            <span class="keyword-tag">find my zodiac sign</span>
+            <span class="keyword-tag">zodiac sign by date of birth</span>
+            <span class="keyword-tag">what is my zodiac sign</span>
+            <span class="keyword-tag">zodiac calculator</span>
+            <span class="keyword-tag">sun sign finder</span>
+            <span class="keyword-tag">astrology sign finder</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
+        <a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
+        <a href="https://freeonlinetools203.com/contact.html">📧 Contact</a>
+        <a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
+        <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
+        <a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a>
+    </div>
+    <p style="text-align: center; font-size: 14px; color: #94a3b8;">© 2026 Free Online Tools 203. All rights reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+const zodiacData = {
+    aries: {
+        name: 'Aries',
+        emoji: '♈',
+        start: { month: 3, day: 21 },
+        end: { month: 4, day: 19 },
+        element: 'Fire',
+        quality: 'Cardinal',
+        planet: 'Mars',
+        lucky: 9,
+        description: 'Aries is the first sign of the zodiac. People born under this sign are known for their courage, determination, and leadership qualities. They are natural pioneers and love to take initiative.'
+    },
+    taurus: {
+        name: 'Taurus',
+        emoji: '♉',
+        start: { month: 4, day: 20 },
+        end: { month: 5, day: 20 },
+        element: 'Earth',
+        quality: 'Fixed',
+        planet: 'Venus',
+        lucky: 6,
+        description: 'Taurus is an earth sign. People born under this sign are known for their reliability, patience, and love for beauty and comfort. They are practical and persistent.'
+    },
+    gemini: {
+        name: 'Gemini',
+        emoji: '♊',
+        start: { month: 5, day: 21 },
+        end: { month: 6, day: 20 },
+        element: 'Air',
+        quality: 'Mutable',
+        planet: 'Mercury',
+        lucky: 5,
+        description: 'Gemini is an air sign. People born under this sign are known for their curiosity, adaptability, and excellent communication skills. They are intellectual and social.'
+    },
+    cancer: {
+        name: 'Cancer',
+        emoji: '♋',
+        start: { month: 6, day: 21 },
+        end: { month: 7, day: 22 },
+        element: 'Water',
+        quality: 'Cardinal',
+        planet: 'Moon',
+        lucky: 2,
+        description: 'Cancer is a water sign. People born under this sign are known for their emotional depth, intuition, and nurturing nature. They are caring and protective.'
+    },
+    leo: {
+        name: 'Leo',
+        emoji: '♌',
+        start: { month: 7, day: 23 },
+        end: { month: 8, day: 22 },
+        element: 'Fire',
+        quality: 'Fixed',
+        planet: 'Sun',
+        lucky: 1,
+        description: 'Leo is a fire sign. People born under this sign are known for their confidence, creativity, and charisma. They are natural leaders and love to shine.'
+    },
+    virgo: {
+        name: 'Virgo',
+        emoji: '♍',
+        start: { month: 8, day: 23 },
+        end: { month: 9, day: 22 },
+        element: 'Earth',
+        quality: 'Mutable',
+        planet: 'Mercury',
+        lucky: 4,
+        description: 'Virgo is an earth sign. People born under this sign are known for their analytical mind, attention to detail, and practical nature. They are helpful and hardworking.'
+    },
+    libra: {
+        name: 'Libra',
+        emoji: '♎',
+        start: { month: 9, day: 23 },
+        end: { month: 10, day: 22 },
+        element: 'Air',
+        quality: 'Cardinal',
+        planet: 'Venus',
+        lucky: 6,
+        description: 'Libra is an air sign. People born under this sign are known for their diplomacy, charm, and love for balance and harmony. They are social and fair-minded.'
+    },
+    scorpio: {
+        name: 'Scorpio',
+        emoji: '♏',
+        start: { month: 10, day: 23 },
+        end: { month: 11, day: 21 },
+        element: 'Water',
+        quality: 'Fixed',
+        planet: 'Pluto',
+        lucky: 8,
+        description: 'Scorpio is a water sign. People born under this sign are known for their intensity, passion, and determination. They are mysterious and powerful.'
+    },
+    sagittarius: {
+        name: 'Sagittarius',
+        emoji: '♐',
+        start: { month: 11, day: 22 },
+        end: { month: 12, day: 21 },
+        element: 'Fire',
+        quality: 'Mutable',
+        planet: 'Jupiter',
+        lucky: 3,
+        description: 'Sagittarius is a fire sign. People born under this sign are known for their optimism, adventure-seeking nature, and philosophical mind. They are free-spirited and honest.'
+    },
+    capricorn: {
+        name: 'Capricorn',
+        emoji: '♑',
+        start: { month: 12, day: 22 },
+        end: { month: 1, day: 19 },
+        element: 'Earth',
+        quality: 'Cardinal',
+        planet: 'Saturn',
+        lucky: 8,
+        description: 'Capricorn is an earth sign. People born under this sign are known for their discipline, ambition, and practical approach to life. They are responsible and hardworking.'
+    },
+    aquarius: {
+        name: 'Aquarius',
+        emoji: '♒',
+        start: { month: 1, day: 20 },
+        end: { month: 2, day: 18 },
+        element: 'Air',
+        quality: 'Fixed',
+        planet: 'Uranus',
+        lucky: 4,
+        description: 'Aquarius is an air sign. People born under this sign are known for their originality, intellectual nature, and humanitarian spirit. They are progressive and independent.'
+    },
+    pisces: {
+        name: 'Pisces',
+        emoji: '♓',
+        start: { month: 2, day: 19 },
+        end: { month: 3, day: 20 },
+        element: 'Water',
+        quality: 'Mutable',
+        planet: 'Neptune',
+        lucky: 7,
+        description: 'Pisces is a water sign. People born under this sign are known for their compassion, artistic nature, and intuitive abilities. They are dreamy and empathetic.'
+    }
+};
+
+const zodiacKeys = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
+
+function getZodiac(month, day) {
+    for (const key of zodiacKeys) {
+        const sign = zodiacData[key];
+        const start = sign.start;
+        const end = sign.end;
+
+        // Handle Capricorn (crosses year boundary)
+        if (key === 'capricorn') {
+            if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+                return key;
+            }
+            continue;
+        }
+
+        if ((month === start.month && day >= start.day) || (month === end.month && day <= end.day)) {
+            if (month >= start.month && month <= end.month) {
+                return key;
+            }
+        }
+        // Handle signs that start and end in same month
+        if (start.month === end.month && month === start.month && day >= start.day && day <= end.day) {
+            return key;
+        }
+    }
+    return 'aries'; // fallback
+}
+
+function findZodiac() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+
+    const dob = new Date(dobInput);
+    if (isNaN(dob.getTime())) { alert('❌ Invalid date!'); return; }
+
+    const month = dob.getMonth() + 1;
+    const day = dob.getDate();
+
+    const signKey = getZodiac(month, day);
+    const sign = zodiacData[signKey];
+
+    // Update UI
+    document.getElementById('zodiacEmoji').innerText = sign.emoji;
+    document.getElementById('zodiacName').innerText = sign.name;
+    document.getElementById('zodiacDate').innerText = `${monthName(sign.start.month)} ${sign.start.day} - ${monthName(sign.end.month)} ${sign.end.day}`;
+    document.getElementById('zodiacElement').innerText = sign.element;
+    document.getElementById('zodiacQuality').innerText = sign.quality;
+    document.getElementById('zodiacPlanet').innerText = sign.planet;
+    document.getElementById('zodiacLucky').innerText = sign.lucky;
+    document.getElementById('aboutName').innerText = sign.name;
+    document.getElementById('zodiacDescription').innerText = sign.description;
+
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function monthName(m) {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months[m - 1];
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+// ========== FAQ TOGGLE ==========
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    document.getElementById('calculateBtn').addEventListener('click', findZodiac);
+    document.getElementById('resultBox').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
