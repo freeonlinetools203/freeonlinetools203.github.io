@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>AI Age Guesser - Guess My Age Online Free 2026</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="AI Age Guesser - Guess your age based on your name and style. Free online age guesser. How old do I look? AI age prediction tool.">
+<meta name="keywords" content="ai age guesser, guess my age, how old do i look, age guesser, age predictor ai, ai age prediction, guess age online">
+<link rel="canonical" href="https://freeonlinetools203.com/ai-age-guesser.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AI Age Guesser - Guess My Age Online Free 2026">
+<meta property="og:description" content="AI Age Guesser - Guess your age based on your name and style. Free online age prediction tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/ai-age-guesser.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI Age Guesser",
+  "description": "Guess your age based on your name and style. Free online AI age prediction tool.",
+  "applicationCategory": "EntertainmentApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/ai-age-guesser.html"
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: #60a5fa; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: #60a5fa; border-bottom: 2px solid #60a5fa; }
+
+/* CONTAINER */
+.container { max-width: 800px; margin: 40px auto 0; padding: 0 20px; }
+
+/* MAIN CARD */
+.guesser-card {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: "🤖";
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+    opacity: 0.15;
+}
+.card-header h1 { color: white; font-size: 30px; margin-bottom: 8px; font-weight: 800; }
+.card-header h1 span { color: #60a5fa; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+/* INPUT */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #1a1a3e;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 2px solid #60a5fa;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #1a1a3e;
+    box-shadow: 0 0 0 4px rgba(26, 26, 62, 0.15);
+}
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* BUTTON */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(26, 26, 62, 0.4); }
+
+/* RESULT BOX */
+.result-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-radius: 24px;
+    padding: 30px;
+    border: 2px solid #60a5fa;
+    text-align: center;
+    display: none;
+}
+.result-box .robot-emoji { font-size: 64px; display: block; margin-bottom: 5px; }
+.result-box .guess-age {
+    font-size: 56px;
+    font-weight: 800;
+    color: #1a1a3e;
+}
+.result-box .guess-label {
+    font-size: 18px;
+    color: #4a4a6a;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+.result-item {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(26, 26, 62, 0.08);
+}
+.result-item .r-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b6b8a;
+    font-weight: 700;
+}
+.result-item .r-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a3e;
+    margin-top: 4px;
+}
+
+/* FUN FACTS */
+.fun-facts {
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #dbeafe;
+}
+.fun-facts p { color: #4a4a6a; font-size: 14px; margin: 3px 0; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .input-row { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .result-box .guess-age { font-size: 40px; }
+}
+@media (max-width: 480px) {
+    .result-box .guess-age { font-size: 32px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+
+/* ===== ARTICLE ===== */
+.article-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.article-main {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.article-main h1 {
+    color: #1a1a2e;
+    font-size: 34px;
+    margin-bottom: 10px;
+    border-left: 5px solid #1a1a3e;
+    padding-left: 20px;
+}
+.article-main h2 {
+    color: #1a1a2e;
+    font-size: 27px;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+.article-main h3 { color: #1a1a3e; font-size: 20px; margin: 25px 0 12px; }
+.article-main p { line-height: 1.8; font-size: 16px; color: #1f2937; margin-bottom: 15px; }
+.article-main ul, .article-main ol { padding-left: 25px; line-height: 2; margin-bottom: 15px; }
+.article-main li { margin-bottom: 5px; }
+
+/* TOC */
+.toc-box {
+    background: #eff6ff;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    border: 1px solid #60a5fa;
+}
+.toc-box h3 { color: #1a1a2e; margin-top: 0; font-size: 22px; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+.toc-grid a { color: #1a1a3e; text-decoration: none; display: block; padding: 4px 0; }
+.toc-grid a:hover { text-decoration: underline; }
+
+/* INFO BOX */
+.info-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.info-box p { margin: 0; font-size: 18px; line-height: 1.8; }
+
+/* TIP BOX */
+.tip-box {
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid #1a1a3e;
+    background: #eff6ff;
+}
+.tip-box.green { border-left-color: #10b981; background: #ecfdf5; }
+
+/* FAQ */
+.faq-section-article {
+    background: #eff6ff;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 20px 0;
+}
+.faq-item-article {
+    border-bottom: 1px solid #60a5fa;
+    padding: 14px 0;
+}
+.faq-item-article:last-child { border-bottom: none; }
+.faq-q {
+    font-weight: 700;
+    color: #1a1a3e;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-q:hover { color: #2d1b69; }
+.faq-a {
+    color: #374151;
+    padding-top: 8px;
+    font-size: 15px;
+    display: none;
+    line-height: 1.7;
+}
+.faq-a.show { display: block; }
+
+/* KEYWORD TAGS */
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+.keyword-tag {
+    background: #eff6ff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #60a5fa;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a3e;
+}
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a {
+    color: #60a5fa;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+
+@media (max-width: 768px) {
+    .article-main { padding: 25px 20px; }
+    .article-main h1 { font-size: 26px; }
+    .article-main h2 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools 203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/chronological-age-calculator.html">🕐 Chronological Age</a></li>
+            <li><a href="https://freeonlinetools203.com/korean-age-calculator.html">🇰🇷 Korean Age</a></li>
+            <li><a href="https://freeonlinetools203.com/future-age-predictor.html">🔮 Future Age</a></li>
+            <li><a href="https://freeonlinetools203.com/ai-age-guesser.html">🤖 AI Age Guesser</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MAIN CALCULATOR -->
+<div class="container">
+    <div class="guesser-card">
+        <div class="card-header">
+            <h1>🤖 <span>AI Age</span> Guesser</h1>
+            <p>Let AI guess your age based on your name and style!</p>
+        </div>
+        <div class="card-content">
+
+            <!-- Input Row -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label>👤 Your Name</label>
+                    <input type="text" id="userName" placeholder="Enter your name..." value="Zain">
+                </div>
+                <div class="input-group">
+                    <label>👕 Your Style</label>
+                    <select id="userStyle">
+                        <option value="classic">Classic / Formal</option>
+                        <option value="trendy" selected>Trendy / Fashionable</option>
+                        <option value="casual">Casual / Relaxed</option>
+                        <option value="edgy">Edgy / Alternative</option>
+                        <option value="sporty">Sporty / Athletic</option>
+                        <option value="boho">Bohemian / Artistic</option>
+                        <option value="minimalist">Minimalist / Clean</option>
+                        <option value="vintage">Vintage / Retro</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Gender & Mood -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label>⚧️ Gender</label>
+                    <select id="userGender">
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>😊 Your Mood</label>
+                    <select id="userMood">
+                        <option value="happy" selected>Happy / Energetic</option>
+                        <option value="calm">Calm / Relaxed</option>
+                        <option value="mysterious">Mysterious / Quiet</option>
+                        <option value="confident">Confident / Bold</option>
+                        <option value="funny">Funny / Playful</option>
+                        <option value="serious">Serious / Focused</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🤖 Guess My Age</button>
+
+            <!-- Result Box -->
+            <div class="result-box" id="resultBox">
+                <span class="robot-emoji" id="resultEmoji">🤖</span>
+                <div class="guess-age" id="guessAge">25</div>
+                <div class="guess-label">AI Thinks You Look Like This Age!</div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="r-label">🎯 Confidence Level</div>
+                        <div class="r-value" id="confidenceLevel">85%</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">📊 Age Range</div>
+                        <div class="r-value" id="ageRange">23-27</div>
+                    </div>
+                </div>
+                <div class="fun-facts">
+                    <p id="funFact">💡 Based on your style & name, AI thinks you're in your mid-20s!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SEO ARTICLE - SHORT VERSION -->
+<div class="article-container">
+    <div class="article-main">
+
+        <h1>🤖 AI Age Guesser: Free Online Age Prediction Tool 2026</h1>
+        <p style="color: #6b7280; margin-bottom: 25px; padding-left: 25px;">📅 Updated: August 26, 2026 | 👁️ 8 min read</p>
+
+        <!-- Introduction -->
+        <div class="info-box">
+            <p><strong>🤖 What is an AI Age Guesser?</strong> An <strong>AI age guesser</strong> is a fun tool that uses artificial intelligence to predict your age based on your name, style, and personality traits. Also known as a <strong>age predictor AI</strong> or <strong>how old do I look</strong> tool, this is a completely <strong>free age guesser</strong> that provides entertaining age predictions. Try our <strong>guess my age</strong> tool and see how old AI thinks you are!</p>
+        </div>
+
+        <!-- TOC -->
+        <div class="toc-box">
+            <h3>📚 Table of Contents</h3>
+            <div class="toc-grid">
+                <div>
+                    <a href="#sec1">1. What is AI Age Guesser?</a>
+                    <a href="#sec2">2. How to Use This AI Age Guesser</a>
+                    <a href="#sec3">3. How AI Age Prediction Works</a>
+                </div>
+                <div>
+                    <a href="#sec4">4. Why Use an AI Age Guesser?</a>
+                    <a href="#sec5">5. Frequently Asked Questions</a>
+                    <a href="#sec6">6. Conclusion</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <h2 id="sec1">🤖 1. What is AI Age Guesser?</h2>
+        <p>An <strong>AI age guesser</strong> is an entertaining online tool that uses AI algorithms to predict your age based on various factors like your name, style, and personality traits. While not scientifically accurate, it's a fun way to see <strong>how old do I look</strong> according to AI!</p>
+        <div class="tip-box"><p><strong>🤖 Did You Know?</strong> The first AI age guesser was inspired by how humans guess age based on appearance and style!</p></div>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec2">📐 2. How to Use This AI Age Guesser</h2>
+        <ol>
+            <li><strong>Step 1:</strong> Enter your name</li>
+            <li><strong>Step 2:</strong> Select your style (Classic, Trendy, Casual, etc.)</li>
+            <li><strong>Step 3:</strong> Select your gender</li>
+            <li><strong>Step 4:</strong> Select your mood</li>
+            <li><strong>Step 5:</strong> Click "Guess My Age" and see the prediction!</li>
+        </ol>
+        <div class="tip-box green"><p><strong>💡 Pro Tip:</strong> Try different combinations of style and mood to see how AI's age prediction changes!</p></div>
+
+        <!-- SECTION 3 -->
+        <h2 id="sec3">🧠 3. How AI Age Prediction Works</h2>
+        <p>Our <strong>age predictor AI</strong> uses a combination of factors to guess your age:</p>
+        <ul>
+            <li><strong>Name Analysis:</strong> Some names are associated with certain generations</li>
+            <li><strong>Style & Fashion:</strong> Trends are often linked to age groups</li>
+            <li><strong>Mood & Personality:</strong> Different age groups may have different energy levels</li>
+            <li><strong>Gender:</strong> Age perception can vary by gender</li>
+        </ul>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec4">🎯 4. Why Use an AI Age Guesser?</h2>
+        <ul>
+            <li><strong>Fun & Entertainment:</strong> A playful way to see how others might perceive you</li>
+            <li><strong>Social Media Content:</strong> Share your AI age guess with friends</li>
+            <li><strong>Self-Reflection:</strong> How does your style reflect your age?</li>
+            <li><strong>Ice Breaker:</strong> Great conversation starter with friends</li>
+        </ul>
+
+        <!-- SECTION 5 - FAQ -->
+        <h2 id="sec5">❓ 5. Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-section-article">
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is AI age guesser? <span>+</span></div>
+                <div class="faq-a">AI age guesser is a fun tool that uses artificial intelligence to predict your age based on your name, style, and personality traits.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this AI age guesser accurate? <span>+</span></div>
+                <div class="faq-a">This is an entertainment tool, not scientifically accurate. It's designed for fun and playful age predictions.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this AI age guesser free? <span>+</span></div>
+                <div class="faq-a">Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What factors affect the AI age guess? <span>+</span></div>
+                <div class="faq-a">The AI considers your name, style, gender, and mood to make a fun age prediction.</div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec6">🎯 6. Conclusion</h2>
+        <p>Our <strong>AI age guesser</strong> is a fun, entertaining tool for anyone curious about <strong>how old do I look</strong> according to AI. While it's not scientifically accurate, it's a great way to have fun and share laughs with friends.</p>
+
+        <!-- Internal Links -->
+        <div style="background: #eff6ff; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #60a5fa;">
+            <p style="margin: 0; font-size: 1rem;">
+                🔗 <a href="https://freeonlinetools203.com/age-calculator.html" style="color: #1a1a3e; font-weight: bold; text-decoration: underline;">📅 Age Calculator</a> &nbsp;|&nbsp;
+                🔗 <a href="https://freeonlinetools203.com/future-age-predictor.html" style="color: #1a1a3e; font-weight: bold; text-decoration: underline;">🔮 Future Age</a> &nbsp;|&nbsp;
+                🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #1a1a3e; font-weight: bold; text-decoration: underline;">Home</a>
+            </p>
+        </div>
+
+        <!-- Keyword Tags -->
+        <div class="keyword-tags">
+            <span class="keyword-tag">ai age guesser</span>
+            <span class="keyword-tag">guess my age</span>
+            <span class="keyword-tag">how old do i look</span>
+            <span class="keyword-tag">age guesser</span>
+            <span class="keyword-tag">age predictor ai</span>
+            <span class="keyword-tag">ai age prediction</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
+        <a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
+        <a href="https://freeonlinetools203.com/contact.html">📧 Contact</a>
+        <a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
+        <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
+        <a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a>
+    </div>
+    <p style="text-align: center; font-size: 14px; color: #94a3b8;">© 2026 Free Online Tools 203. All rights reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function guessAge() {
+    const name = document.getElementById('userName').value.trim() || 'Anonymous';
+    const style = document.getElementById('userStyle').value;
+    const gender = document.getElementById('userGender').value;
+    const mood = document.getElementById('userMood').value;
+
+    // AI Logic - Fun age prediction based on inputs
+    let baseAge = 25;
+    let range = 5;
+
+    // Style affects age
+    if (style === 'classic') baseAge += 8;
+    else if (style === 'trendy') baseAge -= 3;
+    else if (style === 'casual') baseAge += 0;
+    else if (style === 'edgy') baseAge -= 5;
+    else if (style === 'sporty') baseAge -= 2;
+    else if (style === 'boho') baseAge += 2;
+    else if (style === 'minimalist') baseAge += 4;
+    else if (style === 'vintage') baseAge += 10;
+
+    // Mood affects age
+    if (mood === 'happy') baseAge -= 2;
+    else if (mood === 'calm') baseAge += 3;
+    else if (mood === 'mysterious') baseAge -= 1;
+    else if (mood === 'confident') baseAge += 5;
+    else if (mood === 'funny') baseAge -= 3;
+    else if (mood === 'serious') baseAge += 6;
+
+    // Gender affects age
+    if (gender === 'female') baseAge -= 1;
+    else if (gender === 'male') baseAge += 0;
+
+    // Name length effect (fun)
+    if (name.length < 4) baseAge += 2;
+    else if (name.length > 7) baseAge -= 2;
+
+    // Ensure age is within reasonable range
+    let age = Math.max(10, Math.min(80, Math.round(baseAge + (Math.random() - 0.5) * 4)));
+    
+    // Confidence level
+    let confidence = Math.round(70 + Math.random() * 25);
+    
+    // Age range
+    let low = Math.max(10, age - Math.round(range / 2) + Math.floor(Math.random() * 3));
+    let high = Math.min(80, age + Math.round(range / 2) - Math.floor(Math.random() * 3));
+    if (low > high) [low, high] = [high, low];
+    if (low === high) high = Math.min(80, high + 1);
+
+    // Fun facts based on age
+    let funFacts = [
+        '💡 Based on your style & personality, AI thinks you are in your prime!',
+        '🎯 Your style suggests a mature and confident personality!',
+        '🌟 AI sees you as someone with a trendy and youthful vibe!',
+        '💫 Your energy suggests you have a timeless appeal!',
+        '✨ AI thinks you have a classic style that never goes out of fashion!',
+        '🔥 Your style says bold and confident to AI!',
+        '🎨 AI thinks your artistic side makes you seem younger!',
+        '🌈 Your playful mood makes you seem more youthful to AI!'
+    ];
+    let funFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+
+    // Age description
+    let emoji = '🤖';
+    if (age <= 20) emoji = '🧒';
+    else if (age <= 30) emoji = '🧑';
+    else if (age <= 40) emoji = '👨';
+    else if (age <= 50) emoji = '👴';
+    else emoji = '👵';
+
+    // Update UI
+    document.getElementById('guessAge').innerText = age;
+    document.getElementById('confidenceLevel').innerText = confidence + '%';
+    document.getElementById('ageRange').innerText = low + ' - ' + high;
+    document.getElementById('resultEmoji').innerText = emoji;
+    document.getElementById('funFact').innerHTML = funFact;
+
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ========== FAQ TOGGLE ==========
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+// ========== ONLOAD - FIXED ==========
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('calculateBtn').addEventListener('click', guessAge);
+    document.getElementById('resultBox').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
