@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Free Chinese Zodiac Finder - Find Your Chinese Zodiac Sign 2026</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Find your Chinese zodiac sign by date of birth. Free online Chinese zodiac finder. Discover your animal sign, element, and personality traits.">
+<meta name="keywords" content="chinese zodiac finder, chinese zodiac sign, find my chinese zodiac, chinese zodiac calculator, chinese animal sign, chinese zodiac by year, what is my chinese zodiac">
+<link rel="canonical" href="https://freeonlinetools203.com/chinese-zodiac-finder.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Chinese Zodiac Finder - Find Your Chinese Zodiac Sign 2026">
+<meta property="og:description" content="Find your Chinese zodiac sign instantly. Free online Chinese zodiac finder with animal sign, element & personality traits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/chinese-zodiac-finder.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Chinese Zodiac Finder",
+  "description": "Find your Chinese zodiac sign by date of birth. Discover animal sign, element, and personality traits.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/chinese-zodiac-finder.html"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Chinese zodiac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Chinese zodiac is a 12-year cycle where each year is represented by an animal. The 12 animals are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Chinese zodiac finder work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Chinese zodiac finder uses your date of birth to determine which animal sign you belong to based on the Chinese lunar calendar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 12 Chinese zodiac animals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 12 Chinese zodiac animals in order are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Chinese zodiac finder free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is my Chinese zodiac element?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each Chinese zodiac year is associated with one of 5 elements: Wood, Fire, Earth, Metal, and Water. The element changes every 2 years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Chinese and Western zodiac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Western zodiac is based on months (12 signs per year) while Chinese zodiac is based on years (12 animals in a 12-year cycle)."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a0a0a 0%, #5c1a1a 50%, #8b1a1a 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #1a0505 0%, #3d0a0a 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: #f4c430; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: #f4c430; border-bottom: 2px solid #f4c430; }
+
+/* CONTAINER */
+.container { max-width: 800px; margin: 40px auto 0; padding: 0 20px; }
+
+/* MAIN CARD */
+.zodiac-card {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #1a0505 0%, #5c1a1a 50%, #8b1a1a 100%);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: "🐉";
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+    opacity: 0.15;
+}
+.card-header h1 { color: white; font-size: 30px; margin-bottom: 8px; font-weight: 800; }
+.card-header h1 span { color: #f4c430; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+/* INPUT */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #5c1a1a;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.date-input-wrapper input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 2px solid #f4c430;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.date-input-wrapper input:focus {
+    outline: none;
+    border-color: #8b1a1a;
+    box-shadow: 0 0 0 4px rgba(139, 26, 26, 0.15);
+}
+
+/* BUTTON */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #8b1a1a 0%, #5c1a1a 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(139, 26, 26, 0.4); }
+
+/* RESULT BOX */
+.result-box {
+    background: linear-gradient(135deg, #fff8f0 0%, #fef3e8 100%);
+    border-radius: 24px;
+    padding: 30px;
+    border: 2px solid #f4c430;
+    text-align: center;
+    display: none;
+}
+.result-box .animal-emoji { font-size: 64px; display: block; margin-bottom: 5px; }
+.result-box .animal-name {
+    font-size: 36px;
+    font-weight: 800;
+    color: #5c1a1a;
+    margin: 5px 0;
+}
+.result-box .animal-year {
+    font-size: 16px;
+    color: #8b6b6b;
+    margin-bottom: 15px;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+.result-item {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(139, 26, 26, 0.08);
+}
+.result-item .r-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9e7a7a;
+    font-weight: 700;
+}
+.result-item .r-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5c1a1a;
+    margin-top: 4px;
+}
+
+/* ZODIAC INFO */
+.zodiac-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #fef3e8;
+}
+.zodiac-info h3 {
+    color: #5c1a1a;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.zodiac-info p {
+    color: #4a3a3a;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .result-box .animal-name { font-size: 28px; }
+}
+@media (max-width: 480px) {
+    .result-box .animal-name { font-size: 24px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+    .result-item .r-value { font-size: 15px; }
+}
+
+/* ===== ARTICLE ===== */
+.article-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.article-main {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.article-main h1 {
+    color: #1a1a2e;
+    font-size: 34px;
+    margin-bottom: 10px;
+    border-left: 5px solid #8b1a1a;
+    padding-left: 20px;
+}
+.article-main h2 {
+    color: #1a1a2e;
+    font-size: 27px;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+.article-main h3 { color: #8b1a1a; font-size: 20px; margin: 25px 0 12px; }
+.article-main p { line-height: 1.8; font-size: 16px; color: #1f2937; margin-bottom: 15px; }
+.article-main ul, .article-main ol { padding-left: 25px; line-height: 2; margin-bottom: 15px; }
+.article-main li { margin-bottom: 5px; }
+
+/* TOC */
+.toc-box {
+    background: #fff8f0;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    border: 1px solid #f4c430;
+}
+.toc-box h3 { color: #1a1a2e; margin-top: 0; font-size: 22px; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+.toc-grid a { color: #8b1a1a; text-decoration: none; display: block; padding: 4px 0; }
+.toc-grid a:hover { text-decoration: underline; }
+
+/* INFO BOX */
+.info-box {
+    background: linear-gradient(135deg, #fff8f0 0%, #fef3e8 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.info-box p { margin: 0; font-size: 18px; line-height: 1.8; }
+
+/* TIP BOX */
+.tip-box {
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid #8b1a1a;
+    background: #fff8f0;
+}
+.tip-box.green { border-left-color: #10b981; background: #ecfdf5; }
+
+/* TABLE */
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+.table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.table-wrap th { background: #5c1a1a; color: white; padding: 12px; text-align: left; }
+.table-wrap td { padding: 10px; border-bottom: 1px solid #e5e7eb; }
+.table-wrap tr:nth-child(even) { background: #fff8f0; }
+
+/* FAQ */
+.faq-section-article {
+    background: #fff8f0;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 20px 0;
+}
+.faq-item-article {
+    border-bottom: 1px solid #f4c430;
+    padding: 14px 0;
+}
+.faq-item-article:last-child { border-bottom: none; }
+.faq-q {
+    font-weight: 700;
+    color: #5c1a1a;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-q:hover { color: #8b1a1a; }
+.faq-a {
+    color: #374151;
+    padding-top: 8px;
+    font-size: 15px;
+    display: none;
+    line-height: 1.7;
+}
+.faq-a.show { display: block; }
+
+/* KEYWORD TAGS */
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+.keyword-tag {
+    background: #fff8f0;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #f4c430;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5c1a1a;
+}
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #1a0505 0%, #0d0202 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a {
+    color: #f4c430;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+
+@media (max-width: 768px) {
+    .article-main { padding: 25px 20px; }
+    .article-main h1 { font-size: 26px; }
+    .article-main h2 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools 203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/chronological-age-calculator.html">🕐 Chronological Age</a></li>
+            <li><a href="https://freeonlinetools203.com/korean-age-calculator.html">🇰🇷 Korean Age</a></li>
+            <li><a href="https://freeonlinetools203.com/zodiac-sign-finder.html">🔮 Zodiac Sign</a></li>
+            <li><a href="https://freeonlinetools203.com/chinese-zodiac-finder.html">🐉 Chinese Zodiac</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MAIN CALCULATOR -->
+<div class="container">
+    <div class="zodiac-card">
+        <div class="card-header">
+            <h1>🐉 <span>Chinese Zodiac</span> Finder</h1>
+            <p>Find your Chinese zodiac sign by date of birth. Discover your animal sign & traits.</p>
+        </div>
+        <div class="card-content">
+
+            <!-- Input -->
+            <div class="input-group">
+                <label>🎂 Select Your Date of Birth</label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🐉 Find My Chinese Zodiac</button>
+
+            <!-- Result Box -->
+            <div class="result-box" id="resultBox">
+                <span class="animal-emoji" id="animalEmoji">🐉</span>
+                <div class="animal-name" id="animalName">Dragon</div>
+                <div class="animal-year" id="animalYear">Years: 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024</div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="r-label">🌿 Element</div>
+                        <div class="r-value" id="animalElement">Metal</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">🧲 Fixed Element</div>
+                        <div class="r-value" id="animalFixed">Yang</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">🍀 Lucky Number</div>
+                        <div class="r-value" id="animalLucky">1, 6, 7</div>
+                    </div>
+                </div>
+                <div class="zodiac-info">
+                    <h3>📖 About <span id="aboutName">Dragon</span></h3>
+                    <p id="animalDescription">The Dragon is the fifth sign in the Chinese zodiac. People born under the Dragon are known for their confidence, intelligence, and enthusiasm. They are natural leaders and are destined for greatness.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SEO ARTICLE -->
+<div class="article-container">
+    <div class="article-main">
+
+        <h1>🐉 Chinese Zodiac Finder: Free Online Chinese Zodiac Calculator 2026</h1>
+        <p style="color: #6b7280; margin-bottom: 25px; padding-left: 25px;">📅 Updated: August 26, 2026 | 👁️ 10 min read</p>
+
+        <!-- Introduction -->
+        <div class="info-box">
+            <p><strong>🐉 What is a Chinese Zodiac Finder?</strong> A <strong>Chinese zodiac finder</strong> is a free online tool that helps you discover your <strong>Chinese zodiac sign</strong> based on your date of birth. Also known as a <strong>Chinese zodiac calculator</strong> or <strong>Chinese animal sign finder</strong>, this tool tells you your <strong>animal sign</strong>, <strong>element</strong>, and <strong>personality traits</strong>. Whether you're curious about astrology, want to know <strong>what is my Chinese zodiac</strong>, or need a <strong>Chinese zodiac sign finder</strong>, our tool is completely free and accurate.</p>
+        </div>
+
+        <!-- TOC -->
+        <div class="toc-box">
+            <h3>📚 Table of Contents</h3>
+            <div class="toc-grid">
+                <div>
+                    <a href="#sec1">1. What is Chinese Zodiac?</a>
+                    <a href="#sec2">2. How to Use This Chinese Zodiac Finder</a>
+                    <a href="#sec3">3. The 12 Chinese Zodiac Animals</a>
+                    <a href="#sec4">4. Chinese Zodiac Elements</a>
+                </div>
+                <div>
+                    <a href="#sec5">5. Yin & Yang in Chinese Zodiac</a>
+                    <a href="#sec6">6. Chinese vs Western Zodiac</a>
+                    <a href="#sec7">7. Frequently Asked Questions</a>
+                    <a href="#sec8">8. Conclusion</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <h2 id="sec1">🐉 1. What is Chinese Zodiac?</h2>
+        <p>The <strong>Chinese zodiac</strong> is a 12-year cycle where each year is represented by an animal. The 12 animals are: <strong>Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig</strong>.</p>
+        <p>Each animal has its own unique personality traits, and the year you were born determines your Chinese zodiac sign. Our <strong>Chinese zodiac finder</strong> uses the traditional Chinese lunar calendar to determine your sign.</p>
+        <div class="tip-box"><p><strong>🐉 Did You Know?</strong> The Chinese zodiac is based on a legend where the Jade Emperor invited all animals to a race. The 12 animals that finished first became the zodiac signs.</p></div>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec2">📐 2. How to Use This Chinese Zodiac Finder</h2>
+        <ol>
+            <li><strong>Step 1:</strong> Click on the date input field</li>
+            <li><strong>Step 2:</strong> Select your date of birth from the calendar</li>
+            <li><strong>Step 3:</strong> Click "Find My Chinese Zodiac"</li>
+            <li><strong>Step 4:</strong> View your animal sign, element, fixed element, lucky numbers, and personality traits</li>
+        </ol>
+        <div class="tip-box green"><p><strong>💡 Pro Tip:</strong> Share your Chinese zodiac with friends and compare compatibility!</p></div>
+
+        <!-- SECTION 3 -->
+        <h2 id="sec3">🐭 3. The 12 Chinese Zodiac Animals</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Animal</th><th>Years</th><th>Fixed Element</th><th>Lucky Numbers</th></tr>
+                <tr><td>🐭 Rat</td><td>1948, 1960, 1972, 1984, 1996, 2008, 2020</td><td>Yang</td><td>2, 3</td></tr>
+                <tr><td>🐮 Ox</td><td>1949, 1961, 1973, 1985, 1997, 2009, 2021</td><td>Yin</td><td>1, 4</td></tr>
+                <tr><td>🐯 Tiger</td><td>1950, 1962, 1974, 1986, 1998, 2010, 2022</td><td>Yang</td><td>1, 3, 4</td></tr>
+                <tr><td>🐰 Rabbit</td><td>1951, 1963, 1975, 1987, 1999, 2011, 2023</td><td>Yin</td><td>3, 4, 6</td></tr>
+                <tr><td>🐉 Dragon</td><td>1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024</td><td>Yang</td><td>1, 6, 7</td></tr>
+                <tr><td>🐍 Snake</td><td>1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025</td><td>Yin</td><td>2, 8, 9</td></tr>
+                <tr><td>🐴 Horse</td><td>1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026</td><td>Yang</td><td>2, 3, 7</td></tr>
+                <tr><td>🐐 Goat</td><td>1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027</td><td>Yin</td><td>2, 7</td></tr>
+                <tr><td>🐒 Monkey</td><td>1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028</td><td>Yang</td><td>1, 7, 8</td></tr>
+                <tr><td>🐔 Rooster</td><td>1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029</td><td>Yin</td><td>5, 7, 8</td></tr>
+                <tr><td>🐶 Dog</td><td>1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030</td><td>Yang</td><td>3, 4, 9</td></tr>
+                <tr><td>🐷 Pig</td><td>1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031</td><td>Yin</td><td>2, 5, 8</td></tr>
+            </table>
+        </div>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec4">🌿 4. Chinese Zodiac Elements</h2>
+        <p>The Chinese zodiac also includes <strong>5 elements</strong> that cycle every 2 years:</p>
+        <ul>
+            <li><strong>🌿 Wood:</strong> 1954, 1955, 1964, 1965, 1974, 1975, 1984, 1985, 1994, 1995, 2004, 2005, 2014, 2015</li>
+            <li><strong>🔥 Fire:</strong> 1956, 1957, 1966, 1967, 1976, 1977, 1986, 1987, 1996, 1997, 2006, 2007, 2016, 2017</li>
+            <li><strong>🌍 Earth:</strong> 1958, 1959, 1968, 1969, 1978, 1979, 1988, 1989, 1998, 1999, 2008, 2009, 2018, 2019</li>
+            <li><strong>🪙 Metal:</strong> 1960, 1961, 1970, 1971, 1980, 1981, 1990, 1991, 2000, 2001, 2010, 2011, 2020, 2021</li>
+            <li><strong>💧 Water:</strong> 1962, 1963, 1972, 1973, 1982, 1983, 1992, 1993, 2002, 2003, 2012, 2013, 2022, 2023</li>
+        </ul>
+
+        <!-- SECTION 5 -->
+        <h2 id="sec5">🧲 5. Yin & Yang in Chinese Zodiac</h2>
+        <p>Each Chinese zodiac animal is associated with either <strong>Yin</strong> or <strong>Yang</strong>:</p>
+        <ul>
+            <li><strong>Yang (Odd years):</strong> Rat, Tiger, Dragon, Horse, Monkey, Dog</li>
+            <li><strong>Yin (Even years):</strong> Ox, Rabbit, Snake, Goat, Rooster, Pig</li>
+        </ul>
+        <p>Yang is associated with masculinity, activity, and positive energy. Yin is associated with femininity, passivity, and negative energy.</p>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec6">🌍 6. Chinese Zodiac vs Western Zodiac</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Feature</th><th>Chinese Zodiac</th><th>Western Zodiac</th></tr>
+                <tr><td>Base</td><td>12-year cycle (years)</td><td>12-month cycle (months)</td></tr>
+                <tr><td>Signs</td><td>12 animals</td><td>12 constellations</td></tr>
+                <tr><td>Updates</td><td>Every year (Chinese New Year)</td><td>Every month (around 20th)</td></tr>
+                <tr><td>Elements</td><td>5 (Wood, Fire, Earth, Metal, Water)</td><td>4 (Fire, Earth, Air, Water)</td></tr>
+            </table>
+        </div>
+
+        <!-- SECTION 7 - FAQ -->
+        <h2 id="sec7">❓ 7. Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-section-article">
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is Chinese zodiac? <span>+</span></div>
+                <div class="faq-a">The Chinese zodiac is a 12-year cycle where each year is represented by an animal. The 12 animals are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ How does the Chinese zodiac finder work? <span>+</span></div>
+                <div class="faq-a">The Chinese zodiac finder uses your date of birth to determine which animal sign you belong to based on the Chinese lunar calendar.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What are the 12 Chinese zodiac animals? <span>+</span></div>
+                <div class="faq-a">The 12 Chinese zodiac animals in order are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this Chinese zodiac finder free? <span>+</span></div>
+                <div class="faq-a">Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is my Chinese zodiac element? <span>+</span></div>
+                <div class="faq-a">Each Chinese zodiac year is associated with one of 5 elements: Wood, Fire, Earth, Metal, and Water. The element changes every 2 years.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is the difference between Chinese and Western zodiac? <span>+</span></div>
+                <div class="faq-a">Western zodiac is based on months (12 signs per year) while Chinese zodiac is based on years (12 animals in a 12-year cycle).</div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 8 -->
+        <h2 id="sec8">🎯 8. Conclusion</h2>
+        <p>Our <strong>Chinese zodiac finder</strong> is the ultimate tool for discovering your astrological sign. Whether you want to <strong>find my Chinese zodiac</strong>, learn about <strong>Chinese zodiac animals</strong>, or just explore astrology, we've got you covered.</p>
+        <p><strong>Key takeaways:</strong></p>
+        <ul>
+            <li>✅ Find your Chinese zodiac sign instantly by date of birth</li>
+            <li>✅ Learn your animal sign, element, and personality traits</li>
+            <li>✅ Discover the 12 Chinese zodiac animals and their characteristics</li>
+            <li>✅ 100% free, no registration, unlimited usage</li>
+        </ul>
+        <p>Start using our <strong>Chinese zodiac finder</strong> today and discover your astrological identity!</p>
+
+        <!-- Internal Links -->
+        <div style="background: #fff8f0; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #f4c430;">
+            <p style="margin: 0; font-size: 1rem;">
+                🔗 <a href="https://freeonlinetools203.com/zodiac-sign-finder.html" style="color: #8b1a1a; font-weight: bold; text-decoration: underline;">🔮 Zodiac Sign Finder</a> &nbsp;|&nbsp;
+                🔗 <a href="https://freeonlinetools203.com/age-calculator.html" style="color: #8b1a1a; font-weight: bold; text-decoration: underline;">📅 Age Calculator</a> &nbsp;|&nbsp;
+                🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #8b1a1a; font-weight: bold; text-decoration: underline;">Home</a>
+            </p>
+        </div>
+
+        <!-- Keyword Tags -->
+        <div class="keyword-tags">
+            <span class="keyword-tag">chinese zodiac finder</span>
+            <span class="keyword-tag">chinese zodiac sign</span>
+            <span class="keyword-tag">find my chinese zodiac</span>
+            <span class="keyword-tag">chinese zodiac calculator</span>
+            <span class="keyword-tag">chinese animal sign</span>
+            <span class="keyword-tag">what is my chinese zodiac</span>
+            <span class="keyword-tag">chinese zodiac by year</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
+        <a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
+        <a href="https://freeonlinetools203.com/contact.html">📧 Contact</a>
+        <a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
+        <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
+        <a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a>
+    </div>
+    <p style="text-align: center; font-size: 14px; color: #94a3b8;">© 2026 Free Online Tools 203. All rights reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+const chineseZodiacData = {
+    rat: {
+        name: 'Rat',
+        emoji: '🐭',
+        years: '1948, 1960, 1972, 1984, 1996, 2008, 2020',
+        element: 'Wood',
+        fixed: 'Yang',
+        lucky: '2, 3',
+        description: 'The Rat is the first sign in the Chinese zodiac. People born under the Rat are known for their intelligence, adaptability, and charm. They are quick-witted and resourceful.'
+    },
+    ox: {
+        name: 'Ox',
+        emoji: '🐮',
+        years: '1949, 1961, 1973, 1985, 1997, 2009, 2021',
+        element: 'Earth',
+        fixed: 'Yin',
+        lucky: '1, 4',
+        description: 'The Ox is the second sign in the Chinese zodiac. People born under the Ox are known for their strength, reliability, and hard work. They are patient and trustworthy.'
+    },
+    tiger: {
+        name: 'Tiger',
+        emoji: '🐯',
+        years: '1950, 1962, 1974, 1986, 1998, 2010, 2022',
+        element: 'Water',
+        fixed: 'Yang',
+        lucky: '1, 3, 4',
+        description: 'The Tiger is the third sign in the Chinese zodiac. People born under the Tiger are known for their courage, competitiveness, and enthusiasm. They are brave and confident.'
+    },
+    rabbit: {
+        name: 'Rabbit',
+        emoji: '🐰',
+        years: '1951, 1963, 1975, 1987, 1999, 2011, 2023',
+        element: 'Wood',
+        fixed: 'Yin',
+        lucky: '3, 4, 6',
+        description: 'The Rabbit is the fourth sign in the Chinese zodiac. People born under the Rabbit are known for their kindness, gentleness, and sensitivity. They are peaceful and artistic.'
+    },
+    dragon: {
+        name: 'Dragon',
+        emoji: '🐉',
+        years: '1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024',
+        element: 'Metal',
+        fixed: 'Yang',
+        lucky: '1, 6, 7',
+        description: 'The Dragon is the fifth sign in the Chinese zodiac. People born under the Dragon are known for their confidence, intelligence, and enthusiasm. They are natural leaders and destined for greatness.'
+    },
+    snake: {
+        name: 'Snake',
+        emoji: '🐍',
+        years: '1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025',
+        element: 'Fire',
+        fixed: 'Yin',
+        lucky: '2, 8, 9',
+        description: 'The Snake is the sixth sign in the Chinese zodiac. People born under the Snake are known for their wisdom, intuition, and elegance. They are deep thinkers and mysterious.'
+    },
+    horse: {
+        name: 'Horse',
+        emoji: '🐴',
+        years: '1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026',
+        element: 'Fire',
+        fixed: 'Yang',
+        lucky: '2, 3, 7',
+        description: 'The Horse is the seventh sign in the Chinese zodiac. People born under the Horse are known for their energy, independence, and passion. They are free-spirited and adventurous.'
+    },
+    goat: {
+        name: 'Goat',
+        emoji: '🐐',
+        years: '1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027',
+        element: 'Earth',
+        fixed: 'Yin',
+        lucky: '2, 7',
+        description: 'The Goat is the eighth sign in the Chinese zodiac. People born under the Goat are known for their creativity, kindness, and calmness. They are artistic and gentle.'
+    },
+    monkey: {
+        name: 'Monkey',
+        emoji: '🐒',
+        years: '1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028',
+        element: 'Metal',
+        fixed: 'Yang',
+        lucky: '1, 7, 8',
+        description: 'The Monkey is the ninth sign in the Chinese zodiac. People born under the Monkey are known for their intelligence, wit, and curiosity. They are clever and innovative.'
+    },
+    rooster: {
+        name: 'Rooster',
+        emoji: '🐔',
+        years: '1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029',
+        element: 'Water',
+        fixed: 'Yin',
+        lucky: '5, 7, 8',
+        description: 'The Rooster is the tenth sign in the Chinese zodiac. People born under the Rooster are known for their confidence, honesty, and hard work. They are observant and practical.'
+    },
+    dog: {
+        name: 'Dog',
+        emoji: '🐶',
+        years: '1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030',
+        element: 'Earth',
+        fixed: 'Yang',
+        lucky: '3, 4, 9',
+        description: 'The Dog is the eleventh sign in the Chinese zodiac. People born under the Dog are known for their loyalty, honesty, and kindness. They are faithful and protective.'
+    },
+    pig: {
+        name: 'Pig',
+        emoji: '🐷',
+        years: '1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031',
+        element: 'Water',
+        fixed: 'Yin',
+        lucky: '2, 5, 8',
+        description: 'The Pig is the twelfth sign in the Chinese zodiac. People born under the Pig are known for their generosity, kindness, and honesty. They are sincere and compassionate.'
+    }
+};
+
+const zodiacKeys = ['rat', 'ox', 'tiger', 'rabbit', 'dragon', 'snake', 'horse', 'goat', 'monkey', 'rooster', 'dog', 'pig'];
+
+function getChineseZodiac(year) {
+    // Chinese New Year usually falls between Jan 21 and Feb 20
+    // For simplicity, we use the year directly with a baseline
+    // 2024 is the Year of the Dragon
+    const baseYear = 2024;
+    const baseIndex = 4; // Dragon is index 4 (0=rat, 1=ox, 2=tiger, 3=rabbit, 4=dragon)
+    
+    // Calculate the index
+    let diff = (year - baseYear) % 12;
+    let index = (baseIndex + diff) % 12;
+    if (index < 0) index += 12;
+    
+    return zodiacKeys[index];
+}
+
+// For more accurate lunar calendar, but for simplicity we use year
+// Note: For dates before Chinese New Year, the sign might be different
+// This is a simplified version
+
+function findChineseZodiac() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+
+    const dob = new Date(dobInput);
+    if (isNaN(dob.getTime())) { alert('❌ Invalid date!'); return; }
+
+    const year = dob.getFullYear();
+    const month = dob.getMonth() + 1;
+    const day = dob.getDate();
+
+    // Simple version: get zodiac by year
+    // For more accuracy, we would need Chinese New Year dates
+    let zodiacKey = getChineseZodiac(year);
+
+    // If birth date is before Chinese New Year (approx Jan 20 - Feb 20),
+    // the zodiac sign might be from the previous year
+    // For simplicity, we use the year-based calculation
+
+    const animal = chineseZodiacData[zodiacKey];
+
+    // Update UI
+    document.getElementById('animalEmoji').innerText = animal.emoji;
+    document.getElementById('animalName').innerText = animal.name;
+    document.getElementById('animalYear').innerText = 'Years: ' + animal.years;
+    document.getElementById('animalElement').innerText = animal.element;
+    document.getElementById('animalFixed').innerText = animal.fixed;
+    document.getElementById('animalLucky').innerText = animal.lucky;
+    document.getElementById('aboutName').innerText = animal.name;
+    document.getElementById('animalDescription').innerText = animal.description;
+
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+// ========== FAQ TOGGLE ==========
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    document.getElementById('calculateBtn').addEventListener('click', findChineseZodiac);
+    document.getElementById('resultBox').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
