@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Happy Birthday Tool - Birthday Wishes & Countdown 2026</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Happy birthday wishes generator + birthday countdown. Send beautiful birthday wishes to friends & family. Free online birthday tool.">
+<meta name="keywords" content="happy birthday, birthday wishes, birthday countdown, happy birthday wishes, birthday message generator, free birthday tool">
+<link rel="canonical" href="https://freeonlinetools203.com/happy-birthday-tool.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Happy Birthday Tool - Wishes & Countdown 2026">
+<meta property="og:description" content="Generate beautiful birthday wishes and countdown to your next birthday. Free online tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/happy-birthday-tool.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Happy Birthday Tool",
+  "description": "Generate birthday wishes and countdown to birthday.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/happy-birthday-tool.html"
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: white; border-bottom: 2px solid white; }
+
+/* CONTAINER */
+.container { max-width: 900px; margin: 40px auto 0; padding: 0 20px; }
+
+/* MAIN CARD */
+.birthday-card {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(136, 14, 79, 0.3);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #880e4f 0%, #c2185b 50%, #e91e63 100%);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: "🎉";
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+    opacity: 0.15;
+}
+.card-header h1 { color: white; font-size: 30px; margin-bottom: 8px; font-weight: 800; }
+.card-header h1 span { color: #ffcdd2; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+/* TABS */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.tab-btn {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #f48fb1;
+    background: white;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #880e4f;
+    text-align: center;
+}
+.tab-btn:hover { background: #fce4ec; }
+.tab-btn.active {
+    background: linear-gradient(135deg, #880e4f, #c2185b);
+    color: white;
+    border-color: #c2185b;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ===== COUNTDOWN TAB ===== */
+.countdown-box {
+    background: linear-gradient(135deg, #fce4ec 0%, #fff 100%);
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 2px solid #f48fb1;
+}
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+.countdown-item {
+    background: white;
+    border-radius: 20px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(136, 14, 79, 0.1);
+}
+.countdown-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: #880e4f;
+    font-family: 'Courier New', monospace;
+}
+.countdown-number.days { color: #c2185b; }
+.countdown-number.hours { color: #e91e63; }
+.countdown-number.minutes { color: #f06292; }
+.countdown-number.seconds { color: #d81b60; animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+.countdown-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #9e9e9e;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+/* ===== WISHES TAB ===== */
+.wish-box {
+    background: linear-gradient(135deg, #fce4ec 0%, #fff 100%);
+    border-radius: 24px;
+    padding: 30px;
+    border: 2px solid #f48fb1;
+    margin-bottom: 20px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.wish-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: #880e4f;
+    line-height: 1.6;
+}
+.wish-text .emoji { font-size: 28px; }
+
+.wish-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+.wish-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+.wish-btn:hover { transform: translateY(-2px); }
+.wish-btn.pink { background: linear-gradient(135deg, #e91e63, #c2185b); }
+.wish-btn.purple { background: linear-gradient(135deg, #9c27b0, #7b1fa2); }
+.wish-btn.blue { background: linear-gradient(135deg, #2196f3, #1976d2); }
+.wish-btn.green { background: linear-gradient(135deg, #4caf50, #388e3c); }
+.wish-btn.gold { background: linear-gradient(135deg, #ff9800, #f57c00); }
+
+/* INPUT GROUP */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #880e4f;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid #f48fb1;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: #c2185b;
+    box-shadow: 0 0 0 4px rgba(194, 24, 91, 0.15);
+}
+.input-group textarea { min-height: 80px; resize: vertical; }
+
+/* ACTION BUTTONS */
+.action-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    margin-top: 10px;
+}
+.action-btn:hover { transform: translateY(-3px); }
+.action-btn.pink { background: linear-gradient(135deg, #e91e63, #c2185b); }
+.action-btn.pink:hover { box-shadow: 0 12px 30px rgba(233, 30, 99, 0.35); }
+.action-btn.purple { background: linear-gradient(135deg, #9c27b0, #7b1fa2); }
+.action-btn.purple:hover { box-shadow: 0 12px 30px rgba(156, 39, 176, 0.35); }
+
+/* SHARE BUTTONS */
+.share-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.share-btn {
+    flex: 1;
+    min-width: 70px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    text-align: center;
+}
+.share-btn:hover { transform: translateY(-2px); }
+.share-btn.whatsapp { background: #25D366; }
+.share-btn.facebook { background: #1877F2; }
+.share-btn.twitter { background: #1DA1F2; }
+.share-btn.copy { background: #6b7280; }
+
+/* CELEBRATION */
+.celebration {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #f48fb1;
+    display: none;
+}
+.celebration .emoji-big { font-size: 60px; display: block; margin-bottom: 10px; }
+.celebration h2 { color: #880e4f; font-size: 28px; }
+.celebration p { color: #6b1d3a; font-size: 16px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .countdown-number { font-size: 36px; }
+    .wish-text { font-size: 18px; }
+    .tabs { flex-direction: column; }
+}
+@media (max-width: 480px) {
+    .countdown-number { font-size: 28px; }
+    .wish-text { font-size: 16px; }
+    .share-section { flex-direction: column; }
+    .share-btn { min-width: 100%; }
+}
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #1a0a0f 0%, #2d1b24 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a {
+    color: #f48fb1;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools 203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/chronological-age-calculator.html">🕐 Chronological Age</a></li>
+            <li><a href="https://freeonlinetools203.com/birthday-countdown.html">🎂 Birthday Countdown</a></li>
+            <li><a href="https://freeonlinetools203.com/happy-birthday-tool.html">🎉 Happy Birthday</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MAIN -->
+<div class="container">
+    <div class="birthday-card">
+        <div class="card-header">
+            <h1>🎉 <span>Happy Birthday</span> Tool</h1>
+            <p>Birthday Countdown + Wishes Generator — All in One!</p>
+        </div>
+        <div class="card-content">
+
+            <!-- TABS -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('countdown')">🎂 Countdown</button>
+                <button class="tab-btn" onclick="switchTab('wishes')">🎉 Wishes</button>
+            </div>
+
+            <!-- ===== TAB 1: COUNTDOWN ===== -->
+            <div class="tab-content active" id="tab-countdown">
+
+                <div class="celebration" id="celebrationBox">
+                    <span class="emoji-big">🎉</span>
+                    <h2>🎂 Happy Birthday! 🎂</h2>
+                    <p>Today is your special day! Wishing you a wonderful birthday! 🥳</p>
+                </div>
+
+                <div class="countdown-box" id="countdownBox">
+                    <div class="countdown-grid">
+                        <div class="countdown-item">
+                            <div class="countdown-number days" id="days">00</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number hours" id="hours">00</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number minutes" id="minutes">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number seconds" id="seconds">00</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>🎂 Select Your Date of Birth</label>
+                    <input type="date" id="dobDate">
+                </div>
+
+                <button class="action-btn pink" id="startBtn">🎉 Start Birthday Countdown 🎉</button>
+            </div>
+
+            <!-- ===== TAB 2: WISHES ===== -->
+            <div class="tab-content" id="tab-wishes">
+
+                <div class="wish-box" id="wishBox">
+                    <div class="wish-text" id="wishText">
+                        <span class="emoji">🎉</span><br>
+                        Click a button below to generate a birthday wish!
+                    </div>
+                </div>
+
+                <div class="wish-buttons">
+                    <button class="wish-btn pink" onclick="generateWish('friend')">👫 Friend</button>
+                    <button class="wish-btn purple" onclick="generateWish('family')">👨‍👩‍👦 Family</button>
+                    <button class="wish-btn blue" onclick="generateWish('romantic')">❤️ Romantic</button>
+                    <button class="wish-btn green" onclick="generateWish('funny')">😂 Funny</button>
+                    <button class="wish-btn gold" onclick="generateWish('inspirational')">🌟 Inspirational</button>
+                </div>
+
+                <div class="input-group">
+                    <label>✏️ Or Write Your Own Wish</label>
+                    <textarea id="customWish" placeholder="Type your personalized birthday wish here..."></textarea>
+                </div>
+
+                <button class="action-btn purple" onclick="useCustomWish()">📝 Use Custom Wish</button>
+
+                <div class="share-section" style="margin-top:15px;">
+                    <button class="share-btn whatsapp" onclick="shareWish('whatsapp')">💬 WhatsApp</button>
+                    <button class="share-btn facebook" onclick="shareWish('facebook')">📘 Facebook</button>
+                    <button class="share-btn twitter" onclick="shareWish('twitter')">🐦 Twitter</button>
+                    <button class="share-btn copy" onclick="copyWish()">📋 Copy Wish</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
+        <a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
+        <a href="https://freeonlinetools203.com/contact.html">📧 Contact</a>
+        <a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
+        <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
+        <a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a>
+    </div>
+    <p style="text-align: center; font-size: 14px; color: #94a3b8;">© 2026 Free Online Tools 203. All rights reserved.</p>
+</footer>
+
+<script>
+// ========== COUNTDOWN ==========
+let countdownInterval = null;
+let nextBirthday = null;
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = nextBirthday - now;
+
+    if (diff <= 0) {
+        document.getElementById('celebrationBox').style.display = 'block';
+        document.getElementById('countdownBox').style.display = 'none';
+        if (countdownInterval) { clearInterval(countdownInterval); countdownInterval = null; }
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerText = String(days).padStart(2, '0');
+    document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+    document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+}
+
+function startCountdown() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+
+    const dob = new Date(dobInput);
+    if (isNaN(dob.getTime())) { alert('❌ Invalid date!'); return; }
+
+    const now = new Date();
+    let year = now.getFullYear();
+    let birthdayThisYear = new Date(year, dob.getMonth(), dob.getDate());
+
+    if (birthdayThisYear < now) {
+        birthdayThisYear = new Date(year + 1, dob.getMonth(), dob.getDate());
+    }
+
+    nextBirthday = birthdayThisYear;
+    document.getElementById('celebrationBox').style.display = 'none';
+    document.getElementById('countdownBox').style.display = 'block';
+
+    if (countdownInterval) clearInterval(countdownInterval);
+    updateCountdown();
+    countdownInterval = setInterval(updateCountdown, 1000);
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+// ========== WISHES ==========
+const wishes = {
+    friend: [
+        "🎉 Happy Birthday, my dear friend! May your day be as amazing as you are! 🎂",
+        "🥳 Wishing you a birthday full of joy, laughter, and unforgettable memories! 🎈",
+        "🎂 Happy Birthday to my favorite person! So grateful to have you in my life! ❤️",
+        "🌟 May your birthday be the start of a year filled with happiness and success! 🎉"
+    ],
+    family: [
+        "👨‍👩‍👦 Happy Birthday to the best [family member] ever! Love you so much! 🎂",
+        "🏠 Wishing you a birthday as warm and wonderful as your heart! Love you! ❤️",
+        "🎉 Happy Birthday! You're the heart of our family and we celebrate you today! 🎂",
+        "🌟 May God bless you with happiness, health, and love on your birthday! 🙏"
+    ],
+    romantic: [
+        "❤️ Happy Birthday my love! Every day with you is a gift, but today is extra special! 🎂",
+        "🌹 To the love of my life — Happy Birthday! I fall in love with you more every day! 💕",
+        "💑 Happy Birthday to my soulmate! You make my world beautiful every single day! 🎉",
+        "💖 You are my everything. Happy Birthday, my darling! 🥂"
+    ],
+    funny: [
+        "😂 Happy Birthday! You're not old, you're just... vintage! 🎂",
+        "🎉 Happy Birthday! Congratulations on surviving another year of my jokes! 🤣",
+        "🥳 You're not getting older, you're just increasing in value! Happy Birthday! 💰",
+        "🎂 Happy Birthday! Age is just a number, but in your case, it's a big one! 🤪"
+    ],
+    inspirational: [
+        "🌟 Happy Birthday! Your journey is inspiring, and your future is bright! 🎉",
+        "💪 May this year bring you strength, courage, and everything you've been dreaming of! 🎂",
+        "🌈 Wishing you a year of growth, joy, and incredible achievements! Happy Birthday! 🎉",
+        "⭐ Your light shines so bright! Keep shining and inspiring the world! Happy Birthday! 🎂"
+    ]
+};
+
+let currentWish = "";
+
+function generateWish(type) {
+    const list = wishes[type] || wishes.friend;
+    const wish = list[Math.floor(Math.random() * list.length)];
+    currentWish = wish;
+    document.getElementById('wishText').innerHTML = wish.replace(/\n/g, '<br>');
+}
+
+function useCustomWish() {
+    const custom = document.getElementById('customWish').value.trim();
+    if (!custom) { alert('❌ Please write a wish first!'); return; }
+    currentWish = custom;
+    document.getElementById('wishText').innerHTML = custom.replace(/\n/g, '<br>');
+}
+
+// ========== SHARE ==========
+function shareWish(platform) {
+    if (!currentWish) { alert('❌ Generate a wish first!'); return; }
+    const url = encodeURIComponent('https://freeonlinetools203.com/happy-birthday-tool.html');
+    const text = encodeURIComponent(currentWish + ' 🎉🎂');
+    let shareUrl = '';
+    switch(platform) {
+        case 'whatsapp': shareUrl = `https://wa.me/?text=${text}%20${url}`; break;
+        case 'facebook': shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`; break;
+        case 'twitter': shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`; break;
+    }
+    if (shareUrl) window.open(shareUrl, '_blank');
+}
+
+function copyWish() {
+    if (!currentWish) { alert('❌ Generate a wish first!'); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(currentWish).then(() => {
+            alert('✅ Wish copied to clipboard! Share with anyone!');
+        });
+    } else {
+        prompt('Copy this wish:', currentWish);
+    }
+}
+
+// ========== TABS ==========
+function switchTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.querySelector(`.tab-btn[onclick="switchTab('${tab}')"]`).classList.add('active');
+}
+
+// ========== ONLOAD ==========
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    document.getElementById('startBtn').addEventListener('click', startCountdown);
+    document.getElementById('countdownBox').style.display = 'none';
+});
+</script>
+</body>
+</html>
