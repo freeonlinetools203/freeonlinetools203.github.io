@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Free Korean Age Calculator - Calculate Your Korean Age 2026</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Calculate your Korean age instantly. Learn your Korean age, international age, and birth year. Free online Korean age calculator 2026.">
+<meta name="keywords" content="korean age calculator, korean age, calculate korean age, korean age vs international age, korean birthday, korean age system, how old am i in korea">
+<link rel="canonical" href="https://freeonlinetools203.com/korean-age-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Korean Age Calculator - Calculate Your Korean Age 2026">
+<meta property="og:description" content="Calculate your Korean age instantly. Free online Korean age calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/korean-age-calculator.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Korean Age Calculator",
+  "description": "Calculate your Korean age, international age, and birth year.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/korean-age-calculator.html"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Korean age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Korean age is a unique age system where a person is considered 1 year old at birth, and everyone's age increases by 1 on New Year's Day (January 1)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate Korean age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Korean Age = Current Year - Birth Year + 1. For example, if born in 1990 and current year is 2026: 2026 - 1990 + 1 = 37 Korean age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Korean age and international age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "International age counts from your actual birth date and increases on your birthday. Korean age counts from birth as 1 and increases on New Year's Day for everyone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Korea use this age system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Korean age system is based on traditional East Asian culture where the time spent in the womb is counted as 1 year. It is still commonly used in social and cultural contexts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Did Korea change their age system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In June 2023, South Korea officially adopted the international age system for legal and official documents. However, many Koreans still use Korean age informally in daily life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Korean age calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: white; border-bottom: 2px solid white; }
+
+/* CONTAINER */
+.container { max-width: 800px; margin: 40px auto 0; padding: 0 20px; }
+
+/* MAIN CARD */
+.korean-card {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(27, 94, 32, 0.3);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: "🇰🇷";
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+    opacity: 0.15;
+}
+.card-header h1 { color: white; font-size: 30px; margin-bottom: 8px; font-weight: 800; }
+.card-header h1 span { color: #a5d6a7; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+/* RESULT BOX */
+.result-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 2px solid #81c784;
+    text-align: center;
+}
+.result-box .flag {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 5px;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+.result-item {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(27, 94, 32, 0.1);
+    transition: all 0.3s ease;
+}
+.result-item:hover { transform: translateY(-3px); }
+.result-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b7280;
+    font-weight: 700;
+}
+.result-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1b5e20;
+    margin-top: 5px;
+}
+.result-value.korean { color: #1b5e20; }
+.result-value.international { color: #2e7d32; }
+.result-value.birth-year { color: #43a047; }
+
+/* EXPLANATION BOX */
+.explain-box {
+    background: #f1f8f1;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 4px solid #2e7d32;
+}
+.explain-box h3 { color: #1b5e20; font-size: 16px; margin-bottom: 8px; }
+.explain-box p { color: #374151; font-size: 14px; line-height: 1.6; }
+
+/* INPUT */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.date-input-wrapper input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 2px solid #81c784;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.date-input-wrapper input:focus {
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.15);
+}
+
+/* BUTTON */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(27, 94, 32, 0.35); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .result-value { font-size: 26px; }
+}
+@media (max-width: 480px) {
+    .result-value { font-size: 22px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+
+/* ===== ARTICLE ===== */
+.article-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.article-main {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.article-main h1 {
+    color: #1a1a2e;
+    font-size: 34px;
+    margin-bottom: 10px;
+    border-left: 5px solid #2e7d32;
+    padding-left: 20px;
+}
+.article-main h2 {
+    color: #1a1a2e;
+    font-size: 27px;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+.article-main h3 { color: #2e7d32; font-size: 20px; margin: 25px 0 12px; }
+.article-main p { line-height: 1.8; font-size: 16px; color: #1f2937; margin-bottom: 15px; }
+.article-main ul, .article-main ol { padding-left: 25px; line-height: 2; margin-bottom: 15px; }
+.article-main li { margin-bottom: 5px; }
+
+/* TOC */
+.toc-box {
+    background: #e8f5e9;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    border: 1px solid #81c784;
+}
+.toc-box h3 { color: #1a1a2e; margin-top: 0; font-size: 22px; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+.toc-grid a { color: #2e7d32; text-decoration: none; display: block; padding: 4px 0; }
+.toc-grid a:hover { text-decoration: underline; }
+
+/* INFO BOX */
+.info-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.info-box p { margin: 0; font-size: 18px; line-height: 1.8; }
+
+/* TIP BOX */
+.tip-box {
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid #2e7d32;
+    background: #e8f5e9;
+}
+.tip-box.green { border-left-color: #10b981; background: #ecfdf5; }
+
+/* TABLE */
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+.table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.table-wrap th { background: #1b5e20; color: white; padding: 12px; text-align: left; }
+.table-wrap td { padding: 10px; border-bottom: 1px solid #e5e7eb; }
+.table-wrap tr:nth-child(even) { background: #e8f5e9; }
+
+/* FAQ */
+.faq-section-article {
+    background: #e8f5e9;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 20px 0;
+}
+.faq-item-article {
+    border-bottom: 1px solid #81c784;
+    padding: 14px 0;
+}
+.faq-item-article:last-child { border-bottom: none; }
+.faq-q {
+    font-weight: 700;
+    color: #1b5e20;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-q:hover { color: #2e7d32; }
+.faq-a {
+    color: #374151;
+    padding-top: 8px;
+    font-size: 15px;
+    display: none;
+    line-height: 1.7;
+}
+.faq-a.show { display: block; }
+
+/* KEYWORD TAGS */
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+.keyword-tag {
+    background: #e8f5e9;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #81c784;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1b5e20;
+}
+
+/* FOOTER */
+.professional-footer {
+    background: linear-gradient(135deg, #0f1a0f 0%, #1a2d1a 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a {
+    color: #81c784;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+
+@media (max-width: 768px) {
+    .article-main { padding: 25px 20px; }
+    .article-main h1 { font-size: 26px; }
+    .article-main h2 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools 203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/chronological-age-calculator.html">🕐 Chronological Age</a></li>
+            <li><a href="https://freeonlinetools203.com/korean-age-calculator.html">🇰🇷 Korean Age</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MAIN CALCULATOR -->
+<div class="container">
+    <div class="korean-card">
+        <div class="card-header">
+            <h1>🇰🇷 <span>Korean Age</span> Calculator</h1>
+            <p>Calculate your Korean age, international age, and birth year instantly.</p>
+        </div>
+        <div class="card-content">
+
+            <!-- Result Box -->
+            <div class="result-box" id="resultBox" style="display:none;">
+                <span class="flag">🇰🇷</span>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-label">🇰🇷 Korean Age</div>
+                        <div class="result-value korean" id="koreanAge">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">🌍 International Age</div>
+                        <div class="result-value international" id="internationalAge">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">📅 Birth Year</div>
+                        <div class="result-value birth-year" id="birthYear">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explanation -->
+            <div class="explain-box">
+                <h3>📌 What is Korean Age?</h3>
+                <p>In Korea, a person is considered <strong>1 year old at birth</strong>, and everyone's age increases by <strong>1 on New Year's Day</strong> (January 1). This means your Korean age is usually 1-2 years older than your international age.</p>
+            </div>
+
+            <!-- Input -->
+            <div class="input-group">
+                <label>🎂 Select Your Date of Birth</label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🇰🇷 Calculate Korean Age</button>
+
+        </div>
+    </div>
+</div>
+
+<!-- SEO ARTICLE -->
+<div class="article-container">
+    <div class="article-main">
+
+        <h1>🇰🇷 Korean Age Calculator: Free Online Korean Age Calculator 2026</h1>
+        <p style="color: #6b7280; margin-bottom: 25px; padding-left: 25px;">📅 Updated: August 26, 2026 | 👁️ 10 min read</p>
+
+        <!-- Introduction -->
+        <div class="info-box">
+            <p><strong>🇰🇷 What is a Korean Age Calculator?</strong> A <strong>Korean age calculator</strong> is a free online tool that calculates your age according to the traditional Korean age system. This <strong>Korean age calculator</strong> shows you your <strong>Korean age</strong>, <strong>international age</strong>, and <strong>birth year</strong>. Whether you're planning a trip to Korea, curious about K-pop idols' ages, or just want to know <strong>how old am I in Korea</strong>, our tool provides instant results.</p>
+        </div>
+
+        <!-- TOC -->
+        <div class="toc-box">
+            <h3>📚 Table of Contents</h3>
+            <div class="toc-grid">
+                <div>
+                    <a href="#sec1">1. What is Korean Age?</a>
+                    <a href="#sec2">2. How to Calculate Korean Age</a>
+                    <a href="#sec3">3. Korean Age Formula</a>
+                    <a href="#sec4">4. How to Use This Tool</a>
+                </div>
+                <div>
+                    <a href="#sec5">5. Korean Age vs International Age</a>
+                    <a href="#sec6">6. Why Does Korea Use This System?</a>
+                    <a href="#sec7">7. Did Korea Change Their Age System?</a>
+                    <a href="#sec8">8. Frequently Asked Questions</a>
+                </div>
+                <div>
+                    <a href="#sec9">9. Comparison Table</a>
+                    <a href="#sec10">10. Conclusion</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <h2 id="sec1">🇰🇷 1. What is Korean Age?</h2>
+        <p><strong>Korean age</strong> (also called "Korean age system" or "East Asian age reckoning") is a unique age calculation method used in South Korea. In this system:</p>
+        <ul>
+            <li><strong>At birth:</strong> A person is considered 1 year old</li>
+            <li><strong>On New Year's Day (January 1):</strong> Everyone's age increases by 1</li>
+            <li>This means Koreans are usually 1-2 years older than their international age</li>
+        </ul>
+        <div class="tip-box"><p><strong>🇰🇷 Did You Know?</strong> The Korean age system is based on traditional East Asian culture where the time spent in the womb is counted as 1 year.</p></div>
+
+        <!-- SECTION 2 -->
+        <h2 id="sec2">📐 2. How to Calculate Korean Age</h2>
+        <p>The formula for calculating <strong>Korean age</strong> is simple:</p>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 16px; margin: 20px 0; border: 1px solid #e2e8f0; text-align: center; font-size: 18px; font-weight: 600; color: #1a1a2e;">
+            Korean Age = Current Year – Birth Year + 1
+        </div>
+        <p><strong>Example:</strong></p>
+        <ul>
+            <li>Birth Year: 1990</li>
+            <li>Current Year: 2026</li>
+            <li><strong>Korean Age = 2026 - 1990 + 1 = 37</strong></li>
+            <li>International Age = 2026 - 1990 = 36 (or less depending on birthday)</li>
+        </ul>
+
+        <!-- SECTION 3 -->
+        <h2 id="sec3">📊 3. Korean Age Formula</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Component</th><th>Formula</th><th>Example</th></tr>
+                <tr><td>Korean Age</td><td>Current Year - Birth Year + 1</td><td>2026 - 1990 + 1 = 37</td></tr>
+                <tr><td>International Age</td><td>Current Date - Birth Date</td><td>36 years (or 35 if birthday hasn't passed)</td></tr>
+                <tr><td>Birth Year</td><td>Year of birth</td><td>1990</td></tr>
+            </table>
+        </div>
+
+        <!-- SECTION 4 -->
+        <h2 id="sec4">🛠️ 4. How to Use This Korean Age Calculator</h2>
+        <ol>
+            <li><strong>Step 1:</strong> Click on the date input field</li>
+            <li><strong>Step 2:</strong> Select your date of birth from the calendar</li>
+            <li><strong>Step 3:</strong> Click "Calculate Korean Age"</li>
+            <li><strong>Step 4:</strong> View your Korean age, international age, and birth year</li>
+        </ol>
+        <div class="tip-box green"><p><strong>💡 Pro Tip:</strong> Use this tool to find out how old you are in Korea before visiting or applying for anything in Korea!</p></div>
+
+        <!-- SECTION 5 -->
+        <h2 id="sec5">🔬 5. Korean Age vs International Age</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Feature</th><th>Korean Age 🇰🇷</th><th>International Age 🌍</th></tr>
+                <tr><td>At Birth</td><td>1 year old</td><td>0 years old</td></tr>
+                <tr><td>When Age Increases</td><td>New Year's Day (Jan 1)</td><td>Birthday</td></tr>
+                <tr><td>Everyone Same Age?</td><td>Yes, everyone born in same year</td><td>No, depends on exact birth date</td></tr>
+                <tr><td>Used For</td><td>Social, cultural</td><td>Legal, official documents</td></tr>
+            </table>
+        </div>
+
+        <!-- SECTION 6 -->
+        <h2 id="sec6">📚 6. Why Does Korea Use This System?</h2>
+        <p>The Korean age system has its roots in traditional East Asian culture. The concept is that a baby's life begins in the womb, so they are already 1 year old at birth. Additionally, everyone ages together on New Year's Day, emphasizing collective aging rather than individual birthdays.</p>
+        <p>This system is still widely used in:</p>
+        <ul>
+            <li>Social interactions (determining who is older/younger)</li>
+            <li>Cultural traditions and events</li>
+            <li>School entrance age calculations</li>
+            <li>Military service eligibility</li>
+        </ul>
+
+        <!-- SECTION 7 -->
+        <h2 id="sec7">📝 7. Did Korea Change Their Age System?</h2>
+        <p>Yes! In <strong>June 2023</strong>, South Korea officially adopted the <strong>international age system</strong> for legal and official documents. This means that for:</p>
+        <ul>
+            <li>Legal documents and contracts</li>
+            <li>Official government records</li>
+            <li>Medical and legal purposes</li>
+            <li>International age is now the official standard</li>
+        </ul>
+        <p>However, many Koreans still use <strong>Korean age informally</strong> in daily life, social situations, and cultural contexts.</p>
+
+        <!-- SECTION 8 - FAQ -->
+        <h2 id="sec8">❓ 8. Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-section-article">
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is Korean age? <span>+</span></div>
+                <div class="faq-a">Korean age is a unique age system where a person is considered 1 year old at birth, and everyone's age increases by 1 on New Year's Day (January 1).</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ How do you calculate Korean age? <span>+</span></div>
+                <div class="faq-a">Korean Age = Current Year - Birth Year + 1. For example, if born in 1990 and current year is 2026: 2026 - 1990 + 1 = 37 Korean age.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is the difference between Korean age and international age? <span>+</span></div>
+                <div class="faq-a">International age counts from your actual birth date and increases on your birthday. Korean age counts from birth as 1 and increases on New Year's Day for everyone.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Why does Korea use this age system? <span>+</span></div>
+                <div class="faq-a">The Korean age system is based on traditional East Asian culture where the time spent in the womb is counted as 1 year. It is still commonly used in social and cultural contexts.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Did Korea change their age system? <span>+</span></div>
+                <div class="faq-a">In June 2023, South Korea officially adopted the international age system for legal and official documents. However, many Koreans still use Korean age informally in daily life.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this Korean age calculator free? <span>+</span></div>
+                <div class="faq-a">Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times.</div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 9 -->
+        <h2 id="sec9">📊 9. Comparison Table</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Feature</th><th>Our Tool ✅</th><th>Competitor A</th><th>Competitor B</th></tr>
+                <tr><td>100% Free</td><td>✅</td><td>❌</td><td>✅</td></tr>
+                <tr><td>No Signup</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                <tr><td>Shows Korean Age</td><td>✅</td><td>✅</td><td>❌</td></tr>
+                <tr><td>Shows International Age</td><td>✅</td><td>❌</td><td>✅</td></tr>
+                <tr><td>Shows Birth Year</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                <tr><td>Mobile Responsive</td><td>✅</td><td>✅</td><td>❌</td></tr>
+                <tr><td>Explanation Included</td><td>✅</td><td>❌</td><td>❌</td></tr>
+            </table>
+        </div>
+
+        <!-- SECTION 10 -->
+        <h2 id="sec10">🎯 10. Conclusion</h2>
+        <p>Our <strong>Korean age calculator</strong> is the ultimate tool for understanding the Korean age system. Whether you need to <strong>calculate Korean age</strong>, compare <strong>Korean age vs international age</strong>, or just want to know <strong>how old am I in Korea</strong>, we've got you covered.</p>
+        <p><strong>Key takeaways:</strong></p>
+        <ul>
+            <li>✅ Korean Age = Current Year - Birth Year + 1</li>
+            <li>✅ International Age = Based on actual birth date</li>
+            <li>✅ Korea adopted international age for legal use in 2023</li>
+            <li>✅ Korean age is still used socially and culturally</li>
+            <li>✅ 100% free, no registration, unlimited usage</li>
+        </ul>
+        <p>Start using our <strong>Korean age calculator</strong> today and find out your Korean age!</p>
+
+        <!-- Internal Links -->
+        <div style="background: #e8f5e9; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #81c784;">
+            <p style="margin: 0; font-size: 1rem;">
+                🔗 <a href="https://freeonlinetools203.com/age-calculator.html" style="color: #1b5e20; font-weight: bold; text-decoration: underline;">📅 Age Calculator</a> &nbsp;|&nbsp;
+                🔗 <a href="https://freeonlinetools203.com/chronological-age-calculator.html" style="color: #1b5e20; font-weight: bold; text-decoration: underline;">🕐 Chronological Age</a> &nbsp;|&nbsp;
+                🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #1b5e20; font-weight: bold; text-decoration: underline;">Home</a>
+            </p>
+        </div>
+
+        <!-- Keyword Tags -->
+        <div class="keyword-tags">
+            <span class="keyword-tag">korean age calculator</span>
+            <span class="keyword-tag">korean age</span>
+            <span class="keyword-tag">calculate korean age</span>
+            <span class="keyword-tag">korean age vs international age</span>
+            <span class="keyword-tag">how old am i in korea</span>
+            <span class="keyword-tag">korean age system</span>
+            <span class="keyword-tag">korean birthday</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
+        <a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
+        <a href="https://freeonlinetools203.com/contact.html">📧 Contact</a>
+        <a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
+        <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
+        <a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a>
+    </div>
+    <p style="text-align: center; font-size: 14px; color: #94a3b8;">© 2026 Free Online Tools 203. All rights reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function calculateKoreanAge() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) { alert('❌ Please select your date of birth!'); return; }
+
+    const dob = new Date(dobInput);
+    if (isNaN(dob.getTime())) { alert('❌ Invalid date!'); return; }
+
+    const now = new Date();
+    const birthYear = dob.getFullYear();
+    const currentYear = now.getFullYear();
+
+    // Korean Age = Current Year - Birth Year + 1
+    const koreanAge = currentYear - birthYear + 1;
+
+    // International Age
+    let internationalAge = currentYear - birthYear;
+    const birthThisYear = new Date(currentYear, dob.getMonth(), dob.getDate());
+    if (now < birthThisYear) {
+        internationalAge--;
+    }
+
+    // Show results
+    document.getElementById('koreanAge').innerText = koreanAge;
+    document.getElementById('internationalAge').innerText = internationalAge;
+    document.getElementById('birthYear').innerText = birthYear;
+    document.getElementById('resultBox').style.display = 'block';
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    document.getElementById('dobDate').value = defaultBirth.toISOString().split('T')[0];
+}
+
+// ========== FAQ TOGGLE ==========
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    document.getElementById('calculateBtn').addEventListener('click', calculateKoreanAge);
+    document.getElementById('resultBox').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
