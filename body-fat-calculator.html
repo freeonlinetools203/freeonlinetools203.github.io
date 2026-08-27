@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Free Body Fat Calculator - Calculate Your Body Fat Percentage 2026</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Calculate your body fat percentage online free. Enter your height, weight, waist, hip, neck measurements to get body fat %.">
+<meta name="keywords" content="body fat calculator, body fat percentage, calculate body fat, body fat measurement, body fat calculator online, body composition, fat percentage calculator">
+<link rel="canonical" href="https://freeonlinetools203.com/body-fat-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Body Fat Calculator - Calculate Your Body Fat Percentage 2026">
+<meta property="og:description" content="Calculate your body fat percentage online free. Accurate body fat calculator based on height, weight, waist, hip, neck measurements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/body-fat-calculator.html">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Body Fat Calculator",
+  "description": "Calculate your body fat percentage online free.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/body-fat-calculator.html"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is body fat percentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Body fat percentage is the total mass of fat divided by total body mass. It shows how much of your body is made up of fat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the body fat calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The body fat calculator uses the US Navy method which takes height, weight, waist, hip, and neck measurements to estimate body fat percentage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a healthy body fat percentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For men, healthy body fat is 10-20%. For women, healthy body fat is 18-28%. These ranges vary by age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this body fat calculator accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The US Navy method is 95-98% accurate compared to hydrostatic weighing. For most people, it provides a reliable estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this body fat calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f1729 0%, #1a3a5c 50%, #1a5c3a 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(135deg, #0f1729 0%, #1a3a5c 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: #60a5fa; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+.nav-links li a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 8px 0; }
+.nav-links li a:hover { color: #60a5fa; border-bottom: 2px solid #60a5fa; }
+
+/* CONTAINER */
+.container { max-width: 800px; margin: 40px auto 0; padding: 0 20px; }
+
+/* MAIN CARD */
+.fat-card {
+    background: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-header {
+    background: linear-gradient(135deg, #0f1729 0%, #1a3a5c 50%, #1a5c3a 100%);
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: "🏋️";
+    position: absolute;
+    font-size: 80px;
+    right: -10px;
+    bottom: -20px;
+    opacity: 0.15;
+}
+.card-header h1 { color: white; font-size: 30px; margin-bottom: 8px; font-weight: 800; }
+.card-header h1 span { color: #60a5fa; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+/* INPUT */
+.input-group { margin-bottom: 18px; }
+.input-group label {
+    display: block;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid #60a5fa;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #1a3a5c;
+    box-shadow: 0 0 0 4px rgba(26, 58, 92, 0.15);
+}
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.input-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+/* BUTTON */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1a3a5c 0%, #1a5c3a 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(26, 58, 92, 0.4); }
+
+/* RESULT BOX */
+.result-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 24px;
+    padding: 30px;
+    border: 2px solid #60a5fa;
+    text-align: center;
+    display: none;
+    margin-top: 25px;
+}
+.result-box .icon-big { font-size: 56px; display: block; margin-bottom: 5px; }
+.result-box .fat-percent {
+    font-size: 52px;
+    font-weight: 800;
+    color: #1a3a5c;
+}
+.result-box .fat-label {
+    font-size: 18px;
+    color: #4a6a6a;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+.result-item {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(26, 58, 92, 0.08);
+}
+.result-item .r-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b8a8a;
+    font-weight: 700;
+}
+.result-item .r-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-top: 4px;
+}
+.status-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.status-badge.green { background: #2e7d32; color: white; }
+.status-badge.yellow { background: #f9a825; color: white; }
+.status-badge.orange { background: #e65100; color: white; }
+.status-badge.red { background: #c62828; color: white; }
+
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .input-row, .input-row-3 { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .result-box .fat-percent { font-size: 38px; }
+}
+@media (max-width: 480px) {
+    .result-box .fat-percent { font-size: 30px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+
+/* ===== ARTICLE ===== */
+.article-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.article-main {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.article-main h1 {
+    color: #1a1a2e;
+    font-size: 34px;
+    margin-bottom: 10px;
+    border-left: 5px solid #1a5c3a;
+    padding-left: 20px;
+}
+.article-main h2 {
+    color: #1a1a2e;
+    font-size: 27px;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+.article-main h3 { color: #1a5c3a; font-size: 20px; margin: 25px 0 12px; }
+.article-main p { line-height: 1.8; font-size: 16px; color: #1f2937; margin-bottom: 15px; }
+.article-main ul, .article-main ol { padding-left: 25px; line-height: 2; margin-bottom: 15px; }
+.article-main li { margin-bottom: 5px; }
+
+.toc-box {
+    background: #e8f5e9;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    border: 1px solid #60a5fa;
+}
+.toc-box h3 { color: #1a1a2e; margin-top: 0; font-size: 22px; }
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+}
+.toc-grid a { color: #1a5c3a; text-decoration: none; display: block; padding: 4px 0; }
+.toc-grid a:hover { text-decoration: underline; }
+
+.info-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.info-box p { margin: 0; font-size: 18px; line-height: 1.8; }
+
+.tip-box {
+    padding: 18px 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid #1a5c3a;
+    background: #e8f5e9;
+}
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+.table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.table-wrap th { background: #1a3a5c; color: white; padding: 12px; text-align: left; }
+.table-wrap td { padding: 10px; border-bottom: 1px solid #e5e7eb; }
+.table-wrap tr:nth-child(even) { background: #e8f5e9; }
+
+.faq-section-article {
+    background: #e8f5e9;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 20px 0;
+}
+.faq-item-article {
+    border-bottom: 1px solid #60a5fa;
+    padding: 14px 0;
+}
+.faq-item-article:last-child { border-bottom: none; }
+.faq-q {
+    font-weight: 700;
+    color: #1a3a5c;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-q:hover { color: #1a5c3a; }
+.faq-a {
+    color: #374151;
+    padding-top: 8px;
+    font-size: 15px;
+    display: none;
+    line-height: 1.7;
+}
+.faq-a.show { display: block; }
+
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+.keyword-tag {
+    background: #e8f5e9;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid #60a5fa;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a5c3a;
+}
+
+.professional-footer {
+    background: linear-gradient(135deg, #0f1729 0%, #1a3a5c 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+.footer-links { text-align: center; margin-bottom: 15px; }
+.footer-links a {
+    color: #60a5fa;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+
+@media (max-width: 768px) {
+    .article-main { padding: 25px 20px; }
+    .article-main h1 { font-size: 26px; }
+    .article-main h2 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">✨ Free Online Tools 203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/bmi-calculator.html">⚖️ BMI</a></li>
+            <li><a href="https://freeonlinetools203.com/body-fat-calculator.html">🏋️ Body Fat</a></li>
+            <li><a href="https://freeonlinetools203.com/life-expectancy-calculator.html">🕊️ Life Expectancy</a></li>
+            <li><a href="https://freeonlinetools203.com/about.html">ℹ️ About</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MAIN CALCULATOR -->
+<div class="container">
+    <div class="fat-card">
+        <div class="card-header">
+            <h1>🏋️ <span>Body Fat</span> Calculator</h1>
+            <p>Calculate your body fat percentage using the US Navy Method</p>
+        </div>
+        <div class="card-content">
+
+            <!-- Gender & Age -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label>⚧️ Gender</label>
+                    <select id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>📅 Age (Years)</label>
+                    <input type="number" id="age" value="30" min="10" max="100">
+                </div>
+            </div>
+
+            <!-- Height & Weight -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label>📏 Height (cm)</label>
+                    <input type="number" id="height" value="175" min="100" max="250" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label>⚖️ Weight (kg)</label>
+                    <input type="number" id="weight" value="75" min="30" max="300" step="0.5">
+                </div>
+            </div>
+
+            <!-- Measurements -->
+            <div class="input-row-3">
+                <div class="input-group">
+                    <label>📏 Waist (cm)</label>
+                    <input type="number" id="waist" value="85" min="50" max="200" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label>📏 Hip (cm) - Female</label>
+                    <input type="number" id="hip" value="95" min="50" max="200" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label>📏 Neck (cm)</label>
+                    <input type="number" id="neck" value="38" min="20" max="70" step="0.5">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="calc-btn" id="calculateBtn">🏋️ Calculate Body Fat</button>
+
+            <!-- Result Box -->
+            <div class="result-box" id="resultBox">
+                <span class="icon-big" id="resultIcon">🏋️</span>
+                <div class="fat-percent" id="fatPercent">15</div>
+                <div class="fat-label">Body Fat Percentage</div>
+                <div class="status-badge green" id="statusBadge">Athletic</div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="r-label">📊 Fat Mass</div>
+                        <div class="r-value" id="fatMass">-</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">💪 Lean Mass</div>
+                        <div class="r-value" id="leanMass">-</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="r-label">📊 Category</div>
+                        <div class="r-value" id="fatCategory">-</div>
+                    </div>
+                </div>
+                <div style="margin-top:15px;padding:15px;background:white;border-radius:12px;border:1px solid #c8e6c9;">
+                    <p id="fatMessage">💪 You have an athletic body fat percentage. Keep up the good work!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SEO ARTICLE - SHORT VERSION -->
+<div class="article-container">
+    <div class="article-main">
+
+        <h1>🏋️ Body Fat Calculator: Free Online Body Fat Percentage Calculator 2026</h1>
+        <p style="color: #6b7280; margin-bottom: 25px; padding-left: 25px;">📅 Updated: August 26, 2026 | 👁️ 8 min read</p>
+
+        <div class="info-box">
+            <p><strong>🏋️ What is a Body Fat Calculator?</strong> A <strong>body fat calculator</strong> is a free online tool that estimates your <strong>body fat percentage</strong> using your height, weight, waist, hip, and neck measurements. Also known as a <strong>body fat percentage calculator</strong> or <strong>fat percentage calculator</strong>, this tool uses the <strong>US Navy Method</strong> which is 95-98% accurate compared to hydrostatic weighing.</p>
+        </div>
+
+        <div class="toc-box">
+            <h3>📚 Table of Contents</h3>
+            <div class="toc-grid">
+                <div>
+                    <a href="#sec1">1. What is Body Fat Percentage?</a>
+                    <a href="#sec2">2. How to Use This Body Fat Calculator</a>
+                    <a href="#sec3">3. Healthy Body Fat Ranges</a>
+                </div>
+                <div>
+                    <a href="#sec4">4. How to Reduce Body Fat</a>
+                    <a href="#sec5">5. Frequently Asked Questions</a>
+                    <a href="#sec6">6. Conclusion</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="sec1">🏋️ 1. What is Body Fat Percentage?</h2>
+        <p><strong>Body fat percentage</strong> is the total mass of fat divided by total body mass. It's a better indicator of health than BMI because it distinguishes between fat and muscle.</p>
+        <ul>
+            <li><strong>Essential Fat:</strong> 3-5% for men, 10-13% for women (necessary for survival)</li>
+            <li><strong>Healthy Range:</strong> 10-20% for men, 18-28% for women</li>
+            <li><strong>Obese Range:</strong> 25%+ for men, 32%+ for women</li>
+        </ul>
+
+        <h2 id="sec2">📐 2. How to Use This Body Fat Calculator</h2>
+        <ol>
+            <li><strong>Step 1:</strong> Select your gender</li>
+            <li><strong>Step 2:</strong> Enter your age and height</li>
+            <li><strong>Step 3:</strong> Enter your weight, waist, hip, and neck measurements</li>
+            <li><strong>Step 4:</strong> Click "Calculate Body Fat"</li>
+            <li><strong>Step 5:</strong> View your body fat percentage and category</li>
+        </ol>
+
+        <h2 id="sec3">📊 3. Healthy Body Fat Ranges</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>Category</th><th>Male (%)</th><th>Female (%)</th></tr>
+                <tr><td>Athletic</td><td>6-13%</td><td>14-20%</td></tr>
+                <tr><td>Fit</td><td>14-17%</td><td>21-24%</td></tr>
+                <tr><td>Average</td><td>18-24%</td><td>25-31%</td></tr>
+                <tr><td>Overweight</td><td>25-29%</td><td>32-38%</td></tr>
+                <tr><td>Obese</td><td>30%+</td><td>39%+</td></tr>
+            </table>
+        </div>
+
+        <h2 id="sec4">💪 4. How to Reduce Body Fat</h2>
+        <ul>
+            <li><strong>Calorie Deficit:</strong> Eat 300-500 calories less than maintenance</li>
+            <li><strong>Strength Training:</strong> Build muscle to increase metabolism</li>
+            <li><strong>Cardio:</strong> 150 minutes of moderate cardio per week</li>
+            <li><strong>Protein:</strong> 1.6-2.2g per kg of body weight</li>
+            <li><strong>Sleep:</strong> 7-9 hours of quality sleep</li>
+            <li><strong>Water:</strong> Drink 2-3 liters of water daily</li>
+        </ul>
+
+        <h2 id="sec5">❓ 5. Frequently Asked Questions (FAQs)</h2>
+
+        <div class="faq-section-article">
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is body fat percentage? <span>+</span></div>
+                <div class="faq-a">Body fat percentage is the total mass of fat divided by total body mass. It shows how much of your body is made up of fat.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ How does the body fat calculator work? <span>+</span></div>
+                <div class="faq-a">The body fat calculator uses the US Navy method which takes height, weight, waist, hip, and neck measurements to estimate body fat percentage.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ What is a healthy body fat percentage? <span>+</span></div>
+                <div class="faq-a">For men, healthy body fat is 10-20%. For women, healthy body fat is 18-28%. These ranges vary by age.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this body fat calculator accurate? <span>+</span></div>
+                <div class="faq-a">The US Navy method is 95-98% accurate compared to hydrostatic weighing. For most people, it provides a reliable estimate.</div>
+            </div>
+
+            <div class="faq-item-article">
+                <div class="faq-q" onclick="toggleFAQ(this)">❓ Is this body fat calculator free? <span>+</span></div>
+                <div class="faq-a">Yes! 100% free with no registration, no limits, and no hidden charges. Use it unlimited times.</div>
+            </div>
+
+        </div>
+
+        <h2 id="sec6">🎯 6. Conclusion</h2>
+        <p>Our <strong>body fat calculator</strong> is the ultimate tool for tracking your fitness progress. Whether you want to <strong>calculate body fat percentage</strong>, monitor your <strong>body composition</strong>, or just stay healthy, we've got you covered.</p>
+
+        <div style="background: #e8f5e9; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #60a5fa;">
+            <p style="margin: 0; font-size: 1rem;">
+                🔗 <a href="https://freeonlinetools203.com/bmi-calculator.html" style="color: #1a5c3a; font-weight: bold; text-decoration: underline;">⚖️ BMI Calculator</a> &nbsp;|&nbsp;
+                🔗 <a href="https://freeonlinetools203.com/age-calculator.html" style="color: #1a5c3a; font-weight: bold; text-decoration: underline;">📅 Age Calculator</a> &nbsp;|&nbsp;
+                🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #1a5c3a; font-weight: bold; text-decoration: underline;">Home</a>
+            </p>
+        </div>
+
+        <div class="keyword-tags">
+            <span class="keyword-tag">body fat calculator</span>
+            <span class="keyword-tag">body fat percentage</span>
+            <span class="keyword-tag">calculate body fat</span>
+            <span class="keyword-tag">fat percentage calculator</span>
+            <span class="keyword-tag">body composition</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="professional-footer">
+    <div class="footer-links">
+        <a href="https://freeonlinetools203.com/index.html">🏠 Home</a>
+        <a href="https://freeonlinetools203.com/about.html">ℹ️ About</a>
+        <a href="https://freeonlinetools203.com/contact.html">📧 Contact</a>
+        <a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a>
+        <a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a>
+        <a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a>
+    </div>
+    <p style="text-align: center; font-size: 14px; color: #94a3b8;">© 2026 Free Online Tools 203. All rights reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function calculateBodyFat() {
+    const gender = document.getElementById('gender').value;
+    const age = parseFloat(document.getElementById('age').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    const waist = parseFloat(document.getElementById('waist').value);
+    const hip = parseFloat(document.getElementById('hip').value);
+    const neck = parseFloat(document.getElementById('neck').value);
+
+    // Validation
+    if (!height || !weight || !waist || !neck) {
+        alert('❌ Please fill in all required fields (height, weight, waist, neck)');
+        return;
+    }
+    if (gender === 'female' && !hip) {
+        alert('❌ For females, hip measurement is required');
+        return;
+    }
+    if (height < 50 || height > 300 || weight < 10 || weight > 500) {
+        alert('❌ Please enter valid height (50-300 cm) and weight (10-500 kg)');
+        return;
+    }
+
+    // US Navy Method Formula
+    let bodyFat = 0;
+    const heightM = height / 100;
+
+    if (gender === 'male') {
+        bodyFat = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(height) + 36.76;
+    } else {
+        bodyFat = 163.205 * Math.log10(waist + hip - neck) - 97.684 * Math.log10(height) - 78.387;
+    }
+
+    bodyFat = Math.round(bodyFat * 10) / 10;
+    if (bodyFat < 3) bodyFat = 3;
+    if (bodyFat > 60) bodyFat = 60;
+
+    const fatMass = (bodyFat / 100) * weight;
+    const leanMass = weight - fatMass;
+
+    let category = '';
+    let statusClass = '';
+    let statusText = '';
+    let message = '';
+    let icon = '🏋️';
+
+    if (gender === 'male') {
+        if (bodyFat <= 6) {
+            category = 'Essential Fat';
+            statusClass = 'green';
+            statusText = 'Essential';
+            message = '⚠️ You are at essential fat levels. This is the minimum for survival.';
+            icon = '⚠️';
+        } else if (bodyFat <= 13) {
+            category = 'Athletic';
+            statusClass = 'green';
+            statusText = 'Excellent! 🏆';
+            message = '💪 You have an athletic body fat percentage. Great work!';
+            icon = '🏆';
+        } else if (bodyFat <= 17) {
+            category = 'Fit';
+            statusClass = 'green';
+            statusText = 'Great! 💪';
+            message = '🌟 You are in the fit range. Keep up your healthy lifestyle!';
+            icon = '🌟';
+        } else if (bodyFat <= 24) {
+            category = 'Average';
+            statusClass = 'yellow';
+            statusText = 'Good ✅';
+            message = '👍 You are in the average range. Some improvement could be beneficial.';
+            icon = '👍';
+        } else if (bodyFat <= 29) {
+            category = 'Overweight';
+            statusClass = 'orange';
+            statusText = '⚠️ Needs Improvement';
+            message = '⚠️ You are in the overweight range. Consider diet and exercise changes.';
+            icon = '⚠️';
+        } else {
+            category = 'Obese';
+            statusClass = 'red';
+            statusText = '⚠️ High Risk';
+            message = '❤️ You are in the obese range. Please consult a healthcare professional.';
+            icon = '❤️';
+        }
+    } else {
+        if (bodyFat <= 13) {
+            category = 'Essential Fat';
+            statusClass = 'green';
+            statusText = 'Essential';
+            message = '⚠️ You are at essential fat levels. This is the minimum for survival.';
+            icon = '⚠️';
+        } else if (bodyFat <= 20) {
+            category = 'Athletic';
+            statusClass = 'green';
+            statusText = 'Excellent! 🏆';
+            message = '💪 You have an athletic body fat percentage. Great work!';
+            icon = '🏆';
+        } else if (bodyFat <= 24) {
+            category = 'Fit';
+            statusClass = 'green';
+            statusText = 'Great! 💪';
+            message = '🌟 You are in the fit range. Keep up your healthy lifestyle!';
+            icon = '🌟';
+        } else if (bodyFat <= 31) {
+            category = 'Average';
+            statusClass = 'yellow';
+            statusText = 'Good ✅';
+            message = '👍 You are in the average range. Some improvement could be beneficial.';
+            icon = '👍';
+        } else if (bodyFat <= 38) {
+            category = 'Overweight';
+            statusClass = 'orange';
+            statusText = '⚠️ Needs Improvement';
+            message = '⚠️ You are in the overweight range. Consider diet and exercise changes.';
+            icon = '⚠️';
+        } else {
+            category = 'Obese';
+            statusClass = 'red';
+            statusText = '⚠️ High Risk';
+            message = '❤️ You are in the obese range. Please consult a healthcare professional.';
+            icon = '❤️';
+        }
+    }
+
+    document.getElementById('fatPercent').innerText = bodyFat;
+    document.getElementById('fatMass').innerText = fatMass.toFixed(1) + ' kg';
+    document.getElementById('leanMass').innerText = leanMass.toFixed(1) + ' kg';
+    document.getElementById('fatCategory').innerText = category;
+    document.getElementById('statusBadge').className = 'status-badge ' + statusClass;
+    document.getElementById('statusBadge').innerText = statusText;
+    document.getElementById('fatMessage').innerHTML = message;
+    document.getElementById('resultIcon').innerText = icon;
+
+    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ========== FAQ TOGGLE ==========
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('span');
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        icon.textContent = '+';
+    } else {
+        answer.classList.add('show');
+        icon.textContent = '−';
+    }
+}
+
+// ========== ONLOAD - FIXED ==========
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('calculateBtn').addEventListener('click', calculateBodyFat);
+    document.getElementById('resultBox').style.display = 'none';
+});
+</script>
+
+</body>
+</html>
