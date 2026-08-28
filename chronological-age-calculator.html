@@ -1039,18 +1039,41 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
 
-        <!-- ===== INTERNAL LINKS ===== -->
-        <div style="background: #f0f9ff; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #bae6fd;">
-            <p style="margin: 0; font-size: 1rem;">
-                📤 <a href="#" onclick="alert('Share this page!'); return false;" style="color: #1a1a2e; font-weight: bold; text-decoration: underline;">Share Chronological Age Calculator</a> 
-                | 
-                🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #1a1a2e; font-weight: bold; text-decoration: underline;">Home Page</a>
-            </p>
-            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #6b7280;">
-                🔗 <span>https://freeonlinetools203.com/chronological-age-calculator.html</span>
-            </p>
-        </div>
+        <!-- ===== INTERNAL LINKS - FIXED ===== -->
+<div style="background: #f0f9ff; padding: 20px 25px; border-radius: 20px; text-align: center; margin: 30px 0; border: 2px solid #3b82f6; box-shadow: 0 4px 15px rgba(59,130,246,0.15);">
+    <p style="margin: 0 0 8px 0; font-size: 1.1rem;">
+        📤 <a href="#" onclick="sharePage(); return false;" style="color: #1e3a8a; font-weight: 700; text-decoration: underline; font-size: 1.1rem;">Share Chronological Age Calculator</a> 
+        <span style="color: #94a3b8; margin: 0 8px;">|</span>
+        🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline; font-size: 1.1rem;">Home Page</a>
+    </p>
+    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #64748b; background: #ffffff; padding: 8px 15px; border-radius: 30px; display: inline-block; border: 1px solid #93c5fd;">
+        🔗 https://freeonlinetools203.com/chronological-age-calculator.html
+    </p>
+</div>
 
+<script>
+function sharePage() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Chronological Age Calculator',
+            text: 'Calculate your exact chronological age in years, months, days, hours, minutes & seconds - completely free!',
+            url: window.location.href
+        }).catch(() => {});
+    } else {
+        // Fallback
+        const url = window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('✅ Link copied! Share with your friends.');
+            }).catch(() => {
+                prompt('Copy this link:', url);
+            });
+        } else {
+            prompt('Copy this link:', url);
+        }
+    }
+}
+</script>
         <!-- ===== COMPARISON TABLE ===== -->
         <h2 style="color: #1a1a2e; font-size: 27px; margin: 40px 0 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
             📊 Chronological Age Calculator Comparison
