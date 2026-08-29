@@ -104,7 +104,7 @@
                 "name": "What categories of tools are available?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We have 14 categories: Age Calculators, Social Media Tools, SEO Tools, YouTube Tools, Fun Games, PDF Tools, Image Tools, Color Tools, Financial Tools, Health Tools, Developer Tools, and more."
+                    "text": "We have 16 categories: Age Calculators, Social Media Tools, SEO Tools, YouTube Tools, Fun Games, PDF Tools, Image Tools, Color Tools, Financial Tools, Health Tools, Developer Tools, Zodiac Tools, and more."
                 }
             },
             {
@@ -132,16 +132,16 @@
 </head>
 <body>
 
-   <!-- ========== STATS SECTION START ========== -->
-<div class="stats-section">
-    <div class="stats-container">
-        <div class="stat-item"><div class="stat-number">230+</div><div class="stat-label">Free Tools</div></div>
-        <div class="stat-item"><div class="stat-number">1M+</div><div class="stat-label">Monthly Users</div></div>
-        <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Free Forever</div></div>
-        <div class="stat-item"><div class="stat-number">4.9</div><div class="stat-label">User Rating</div></div>
+    <!-- ========== STATS SECTION START ========== -->
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item"><div class="stat-number">230+</div><div class="stat-label">Free Tools</div></div>
+            <div class="stat-item"><div class="stat-number">1M+</div><div class="stat-label">Monthly Users</div></div>
+            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Free Forever</div></div>
+            <div class="stat-item"><div class="stat-number">4.9</div><div class="stat-label">User Rating</div></div>
+        </div>
     </div>
-</div>
-<!-- ========== STATS SECTION END ========== -->
+    <!-- ========== STATS SECTION END ========== -->
 
     <!-- ========== HEADER START ========== -->
     <header class="header">
@@ -580,11 +580,60 @@
             .rev-form .rf-row input,
             .rev-form .rf-row textarea { min-width: auto; }
         }
+
+        /* ===== PROFESSIONAL REVIEW CTA ===== */
+        .review-cta-box {
+            text-align: center;
+            margin: 30px 0 20px;
+            padding: 28px 30px;
+            background: linear-gradient(135deg, #f8fafc, #eff6ff);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+        .review-cta-box .cta-icon {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .review-cta-box .cta-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 0 0 6px 0;
+        }
+        .review-cta-box .cta-desc {
+            font-size: 0.92rem;
+            color: #6b7280;
+            margin: 0 0 16px 0;
+            line-height: 1.6;
+        }
+        .review-cta-box .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #ffffff;
+            padding: 11px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .review-cta-box .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+        @media (max-width: 600px) {
+            .review-cta-box { padding: 20px 16px; }
+            .review-cta-box .cta-title { font-size: 1rem; }
+            .review-cta-box .cta-btn { padding: 10px 22px; font-size: 0.85rem; }
+        }
     </style>
 
     <section class="reviews-section" id="reviewsSection">
         <div class="rev-header">
-            <h2>⭐ User Reviews</h2>
+            <h2>⭐ What Our Users Say</h2>
             <div class="rev-summary" id="revSummary">
                 <span class="rs-big" id="avgRating">0</span>
                 <div>
@@ -594,9 +643,17 @@
             </div>
         </div>
 
-        <!-- Review Form -->
-        <div class="rev-form">
-            <h4>💬 Share Your Experience</h4>
+        <!-- ===== PROFESSIONAL REVIEW CTA ===== -->
+        <div class="review-cta-box" id="reviewCtaBox">
+            <span class="cta-icon">💬</span>
+            <p class="cta-title" id="reviewCtaTitle">Share Your Experience</p>
+            <p class="cta-desc">Your feedback helps fellow users discover the best tools for their needs.</p>
+            <a href="#" class="cta-btn" id="reviewCtaBtn">Write a Review</a>
+        </div>
+
+        <!-- Review Form (Hidden by default) -->
+        <div class="rev-form" id="reviewForm" style="display:none;">
+            <h4>✍️ Write Your Review</h4>
             <div class="rf-row">
                 <input type="text" id="revName" placeholder="Your Name (optional)" maxlength="50">
                 <input type="text" id="revTool" placeholder="Which tool did you use? (optional)" maxlength="60">
@@ -609,14 +666,14 @@
                 <button data-star="5">☆</button>
             </div>
             <div class="rf-row">
-                <textarea id="revComment" placeholder="Write your review... (min 5 characters)" maxlength="500"></textarea>
+                <textarea id="revComment" placeholder="What did you like about the tool? Your feedback helps others..." maxlength="500"></textarea>
             </div>
-            <button class="rf-submit" onclick="submitReview()">⭐ Submit Review</button>
+            <button class="rf-submit" onclick="submitReview()">Submit Your Review</button>
         </div>
 
         <!-- Reviews List -->
         <div class="rev-list" id="revList">
-            <div class="rev-empty">⭐ Be the first to leave a review!</div>
+            <div class="rev-empty">⭐ Be the first to share your experience!</div>
         </div>
     </section>
     <!-- ========== USER REVIEWS SECTION END ========== -->
@@ -1076,7 +1133,7 @@
             </div>
             <div class="art-faq-item">
                 <strong>❓ How many tools do you have?</strong>
-                <p>Currently <strong>230+ free tools</strong> across 14 categories.</p>
+                <p>Currently <strong>230+ free tools</strong> across 16 categories.</p>
             </div>
             <div class="art-faq-item">
                 <strong>❓ What are the best free SEO tools?</strong>
@@ -1705,11 +1762,26 @@
     }
 
     // =========================================================================
-    // 6. PAGE ONLOAD - RENDER DASHBOARD
+    // 6. PAGE ONLOAD
     // =========================================================================
     document.addEventListener('DOMContentLoaded', function() {
         renderDashboard();
         loadReviews();
+        
+        // Review CTA Button - Show/Hide Form
+        const ctaBtn = document.getElementById('reviewCtaBtn');
+        const reviewForm = document.getElementById('reviewForm');
+        const ctaBox = document.getElementById('reviewCtaBox');
+        
+        if (ctaBtn && reviewForm && ctaBox) {
+            ctaBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                reviewForm.style.display = reviewForm.style.display === 'none' ? 'block' : 'none';
+                ctaBox.style.display = 'none';
+                // Scroll to form
+                reviewForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
     });
 
     // =========================================================================
@@ -1749,7 +1821,7 @@
         if (!list) return;
 
         if (reviews.length === 0) {
-            list.innerHTML = '<div class="rev-empty">⭐ Be the first to leave a review!</div>';
+            list.innerHTML = '<div class="rev-empty">⭐ Be the first to share your experience!</div>';
             if (avgEl) avgEl.textContent = '0';
             if (starsEl) starsEl.textContent = '☆☆☆☆☆';
             if (countEl) countEl.textContent = '0 reviews';
@@ -1832,7 +1904,11 @@
         selectedStar = 0;
         updateStars();
 
-        showToast('✅ Thank you! Your review has been submitted.');
+        // Hide form, show CTA
+        document.getElementById('reviewForm').style.display = 'none';
+        document.getElementById('reviewCtaBox').style.display = 'block';
+
+        showToast('✅ Thank you! Your feedback helps others.');
     }
 
     // Star selector
