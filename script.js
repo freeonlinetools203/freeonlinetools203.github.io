@@ -1,5 +1,5 @@
 // =========================================================================
-// 1. CENTRALIZED TOOLS DATABASE (COMPLETE - 200+ TOOLS)
+// 1. CENTRALIZED TOOLS DATABASE (COMPLETE - 230+ TOOLS)
 // =========================================================================
 const toolsDatabase = {
   // 1. MOST POPULAR TOOLS
@@ -39,7 +39,13 @@ const toolsDatabase = {
       "Geekzilla Age Calculator",
       "Age In Days Calculator",
       "Age In Months Calculator",
-      "Birth Year Calculator"
+      "Birth Year Calculator",
+      "AI Age Guesser",
+      "Future Age Predictor",
+      "Korean Age Calculator",
+      "Birthday Countdown",
+      "Happy Birthday Tool",
+      "Life Expectancy Calculator"
     ]
   },
   
@@ -95,7 +101,7 @@ const toolsDatabase = {
     ]
   },
 
-  // 6. YOUTUBE TOOLS (24 TOOLS)
+  // 6. YOUTUBE TOOLS (25 TOOLS)
   catYoutube: {
     name: "🎬 YouTube Tools",
     tools: [
@@ -267,7 +273,13 @@ const toolsDatabase = {
       "BMI Calculator",
       "BMR Calculator",
       "Calorie Calculator",
-      "TDEE Calculator"
+      "TDEE Calculator",
+      "Body Fat Calculator",
+      "Ideal Weight Calculator",
+      "Lean Body Mass Calculator",
+      "Macro Calculator",
+      "Protein Calculator",
+      "Waist to Hip Calculator"
     ]
   },
 
@@ -307,14 +319,36 @@ const toolsDatabase = {
       "Sheep Pregnancy Calculator",
       "Pig Pregnancy Calculator"
     ]
+  },
+
+  // 17. ZODIAC & BIRTHDAY TOOLS (NEW)
+  catZodiac: {
+    name: "♈ Zodiac & Birthday Tools",
+    tools: [
+      "Zodiac Sign Finder",
+      "Chinese Zodiac Finder",
+      "Birthday Countdown",
+      "Happy Birthday Tool"
+    ]
+  },
+
+  // 18. TIME CALCULATORS (NEW)
+  catTime: {
+    name: "⏰ Time Calculators",
+    tools: [
+      "Time Difference Calculator",
+      "Date Calculator",
+      "Age Calculator"
+    ]
   }
 };
 
 // =========================================================================
-// 2. TOOL URL MAPPING (COMPLETE - ALL TOOLS)
+// 2. TOOL URL MAPPING (COMPLETE - ALL 230+ TOOLS)
 // =========================================================================
 const toolUrlMap = {
   // Age Calculator Tools
+  "Age Calculator": "age-calculator.html",
   "Chronological Age Calculator": "chronological-age-calculator.html",
   "Online Chronological Age Calculator": "online-chronological-age-calculator.html",
   "Age Calculator Difference": "age-calculator-difference.html",
@@ -337,6 +371,12 @@ const toolUrlMap = {
   "Excel Formula To Calculate Age": "excel-formula-to-calculate-age.html",
   "How To Calculate Age In Excel": "how-to-calculate-age-in-excel.html",
   "Calculate Age From DOB In Excel": "calculate-age-from-dob-in-excel.html",
+  "AI Age Guesser": "ai-age-guesser.html",
+  "Future Age Predictor": "future-age-predictor.html",
+  "Korean Age Calculator": "korean-age-calculator.html",
+  "Birthday Countdown": "birthday-countdown.html",
+  "Happy Birthday Tool": "happy-birthday-tool.html",
+  "Life Expectancy Calculator": "life-expectancy-calculator.html",
 
   // SEO Tools
   "Keyword Density Checker": "keyword-density-checker.html",
@@ -399,10 +439,10 @@ const toolUrlMap = {
   "Color Name Finder": "color-name-finder.html",
   "Random Color Picker": "random-color-picker.html",
   "Color Wheel": "color-wheel-seo.html",
+  "Image Color Extractor": "image-color-extractor.html",
   
   // Popular Calculators
   "Unit Converter": "unit-converter.html",
-  "Age Calculator": "age-calculator.html",
   "Age Difference Calculator": "age-difference-calculator.html",
   "Discount Calculator": "discount-calculator.html",
   "Profit & Loss Calculator": "profit-loss-calculator.html",
@@ -420,6 +460,12 @@ const toolUrlMap = {
   "BMR Calculator": "bmr-calculator.html",
   "Calorie Calculator": "calorie-calculator.html",
   "TDEE Calculator": "tdee-calculator.html",
+  "Body Fat Calculator": "body-fat-calculator.html",
+  "Ideal Weight Calculator": "ideal-weight-calculator.html",
+  "Lean Body Mass Calculator": "lean-body-mass-calculator.html",
+  "Macro Calculator": "macro-calculator.html",
+  "Protein Calculator": "protein-calculator.html",
+  "Waist to Hip Calculator": "waist-to-hip-calculator.html",
   
   // Financial Tools
   "EMI Calculator": "emi-calculator.html",
@@ -449,7 +495,6 @@ const toolUrlMap = {
   "PDF Rotator": "pdf-rotator.html",
   
   // Image Tools
-  "Image Color Extractor": "image-color-extractor.html",
   "Image Converter": "image-converter.html",
   "Image Cropper": "image-cropper.html",
   "Image Resizer": "image-resizer.html",
@@ -457,6 +502,13 @@ const toolUrlMap = {
   "Image Upscaler": "image-upscaler.html",
   "Image Compressor": "image-compressor.html",
   "WebP Converter": "webp-converter.html",
+  
+  // Zodiac & Birthday Tools
+  "Zodiac Sign Finder": "zodiac-sign-finder.html",
+  "Chinese Zodiac Finder": "chinese-zodiac-finder.html",
+  
+  // Time Calculators
+  "Time Difference Calculator": "time-difference-calculator.html",
   
   // Wheel & Fun Tools
   "Spin The Wheel": "spin-the-wheel.html",
@@ -494,7 +546,6 @@ const toolUrlMap = {
   "You vs Food Wheel": "you-vs-food-wheel.html",
   "Mystery Gift Wheel": "mystery-gift-wheel.html",
   "Casino Games Wheel": "casino-games-wheel.html",
-  "Color Wheel": "color-wheel-seo.html",
   "Squid Game Spin Wheel": "squid-game-wheel.html",
   "Game Character Spin Wheel": "game-character-spin-wheel.html",
   "Party Games Spin Wheel": "party-games-spin-wheel.html",
@@ -549,6 +600,8 @@ function renderDashboard() {
         "catMostPopular",
         "catAge",
         "catAgeExcel",
+        "catZodiac",
+        "catTime",
         "catHash", 
         "catSeo", 
         "catYoutube",
@@ -674,7 +727,7 @@ const navbarHTML = `<div class="megamenu-container">
         <a href="#">🛠️ All Tools</a>
         <div class="mega-dropdown"><div class="dropdown-scroll"><div class="dropdown-grid">
           
-          <!-- COLUMN 1: Most Popular + Social Media Hashtag Tools -->
+          <!-- COLUMN 1: Most Popular + Age Calculator Tools -->
           <div class="dropdown-column">
             <h4>✨ Most Popular Tools</h4>
             <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
@@ -683,6 +736,35 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="instagram-hashtag-generator.html">📱 Instagram Hashtag Generator</a>
             <a href="age-calculator.html">📅 Age Calculator</a>
             
+            <h4>📅 Age Calculator Tools</h4>
+            <a href="age-calculator.html">Age Calculator</a>
+            <a href="chronological-age-calculator.html">Chronological Age Calculator</a>
+            <a href="online-chronological-age-calculator.html">Online Chronological Age Calculator</a>
+            <a href="age-difference-calculator.html">Age Difference Calculator</a>
+            <a href="age-gap-calculator.html">Age Gap Calculator</a>
+            <a href="biological-age-calculator.html">Biological Age Calculator</a>
+            <a href="adjusted-age-calculator.html">Adjusted Age Calculator</a>
+            <a href="pearson-age-calculator.html">Pearson Age Calculator</a>
+            <a href="age-calculator-by-photo.html">Age Calculator By Photo</a>
+            <a href="age-calculator-geekzilla.html">Geekzilla Age Calculator</a>
+            <a href="age-in-days-calculator.html">Age In Days Calculator</a>
+            <a href="age-in-months-calculator.html">Age In Months Calculator</a>
+            <a href="birth-year-calculator.html">Birth Year Calculator</a>
+            <a href="ai-age-guesser.html">🤖 AI Age Guesser</a>
+            <a href="future-age-predictor.html">🔮 Future Age Predictor</a>
+            <a href="korean-age-calculator.html">🇰🇷 Korean Age Calculator</a>
+            <a href="birthday-countdown.html">🎂 Birthday Countdown</a>
+            <a href="happy-birthday-tool.html">🎉 Happy Birthday Tool</a>
+            <a href="life-expectancy-calculator.html">⏳ Life Expectancy Calculator</a>
+            
+            <h4>📗 Age Calculation in Excel</h4>
+            <a href="excel-formula-to-calculate-age.html">Excel Formula To Calculate Age</a>
+            <a href="how-to-calculate-age-in-excel.html">How To Calculate Age In Excel</a>
+            <a href="calculate-age-from-dob-in-excel.html">Calculate Age From DOB In Excel</a>
+          </div>
+          
+          <!-- COLUMN 2: Social Media Hashtag + SEO Tools -->
+          <div class="dropdown-column">
             <h4>📱 Social Media Hashtag Tools</h4>
             <a href="instagram-hashtag-generator.html">📸 Instagram Hashtag Generator</a>
             <a href="linkedin-hashtag-generator.html">💼 LinkedIn Hashtag Generator</a>
@@ -698,10 +780,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="viral-hashtag-generator.html">⚡ Viral Hashtag Generator</a>
             <a href="youtube-hashtag-generator-v2.html">📺 YouTube Hashtag Generator</a>
             <a href="social-media-caption-generator.html">✍️ Social Media Caption Generator</a>
-          </div>
-          
-          <!-- COLUMN 2: SEO Tools + Random & Fun Tools -->
-          <div class="dropdown-column">
+            
             <h4>🔍 SEO Tools</h4>
             <a href="keyword-density-checker.html">Keyword Density Checker</a>
             <a href="meta-tags-generator.html">Meta Tags Generator</a>
@@ -717,7 +796,49 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="heading-structure-checker.html">Heading Structure Checker</a>
             <a href="image-alt-analyzer.html">Image Alt Analyzer</a>
             <a href="xml-sitemap-generator.html">XML Sitemap Generator</a>
+          </div>
+          
+          <!-- COLUMN 3: YouTube Tools (ALL 25) -->
+          <div class="dropdown-column">
+            <h4>🎬 YouTube SEO & Analytics</h4>
+            <a href="youtube-seo-score-checker.html">📊 YouTube SEO Score Checker</a>
+            <a href="youtube-keyword-generator.html">🔑 YouTube Keyword Generator</a>
+            <a href="youtube-keyword-research.html">📈 YouTube Keyword Research</a>
+            <a href="youtube-channel-analyzer.html">📺 YouTube Channel Analyzer</a>
+            <a href="youtube-channel-comparison.html">⚖️ YouTube Channel Comparison</a>
+            <a href="youtube-viral-video-predictor.html">🚀 YouTube Viral Video Predictor</a>
+            <a href="youtube-seo-checklist-generator.html">✅ YouTube SEO Checklist Generator</a>
             
+            <h4>📝 YouTube Content Creation</h4>
+            <a href="youtube-title-generator.html">📝 YouTube Title Generator</a>
+            <a href="youtube-description-generator.html">📄 YouTube Description Generator</a>
+            <a href="youtube-video-idea-generator.html">💡 YouTube Video Idea Generator</a>
+            <a href="youtube-video-outline-generator.html">📋 YouTube Video Outline Generator</a>
+            <a href="youtube-content-planner-ai.html">📅 YouTube Content Planner AI</a>
+            
+            <h4>🏷️ YouTube Tags & Hashtags</h4>
+            <a href="youtube-video-tags-extractor.html">🏷️ YouTube Video Tags Extractor</a>
+            <a href="youtube-video-tags-generator.html">🏷️ YouTube Video Tags Generator</a>
+            
+            <h4>🎨 YouTube Thumbnail Tools</h4>
+            <a href="youtube-thumbnail-downloader.html">🖼️ YouTube Thumbnail Downloader</a>
+            <a href="youtube-thumbnail-text-generator.html">✍️ YouTube Thumbnail Text Generator</a>
+            <a href="youtube-thumbnail-color-palette-generator.html">🎨 YouTube Thumbnail Color Palette</a>
+            <a href="youtube-thumbnail-split-tester.html">🔄 YouTube Thumbnail Split Tester</a>
+            <a href="thumbnail-ctr-predictor.html">📊 YouTube Thumbnail CTR Predictor</a>
+            
+            <h4>📱 YouTube Shorts Tools</h4>
+            <a href="youtube-shorts-hook-generator.html">🎯 YouTube Shorts Hook Generator</a>
+            <a href="youtube-shorts-script-generator.html">🎬 YouTube Shorts Script Generator</a>
+            <a href="youtube-shorts-idea-calendar-generator.html">📅 YouTube Shorts Idea Calendar</a>
+            
+            <h4>🎬 YouTube Branding & Community</h4>
+            <a href="youtube-channel-name-generator.html">🎬 YouTube Channel Name Generator</a>
+            <a href="youtube-community-post-generator.html">💬 YouTube Community Post Generator</a>
+          </div>
+          
+          <!-- COLUMN 4: Random & Fun Tools -->
+          <div class="dropdown-column">
             <h4>🎲 Random & Fun Tools</h4>
             <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
             <a href="yes-no-wheel.html">✅ Yes/No Wheel</a>
@@ -762,47 +883,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="carnival-game-spin-wheel.html">🎪 Carnival Game Spin Wheel</a>
           </div>
           
-          <!-- COLUMN 3: YouTube Tools (ALL 25) -->
-          <div class="dropdown-column">
-            <h4>🎬 YouTube SEO & Analytics</h4>
-            <a href="youtube-seo-score-checker.html">📊 YouTube SEO Score Checker</a>
-            <a href="youtube-keyword-generator.html">🔑 YouTube Keyword Generator</a>
-            <a href="youtube-keyword-research.html">📈 YouTube Keyword Research</a>
-            <a href="youtube-channel-analyzer.html">📺 YouTube Channel Analyzer</a>
-            <a href="youtube-channel-comparison.html">⚖️ YouTube Channel Comparison</a>
-            <a href="youtube-viral-video-predictor.html">🚀 YouTube Viral Video Predictor</a>
-            <a href="youtube-seo-checklist-generator.html">✅ YouTube SEO Checklist Generator</a>
-            
-            <h4>📝 YouTube Content Creation</h4>
-            <a href="youtube-title-generator.html">📝 YouTube Title Generator</a>
-            <a href="youtube-description-generator.html">📄 YouTube Description Generator</a>
-            <a href="youtube-video-idea-generator.html">💡 YouTube Video Idea Generator</a>
-            <a href="youtube-video-outline-generator.html">📋 YouTube Video Outline Generator</a>
-            <a href="youtube-content-planner-ai.html">📅 YouTube Content Planner AI</a>
-            
-            <h4>🏷️ YouTube Tags & Hashtags</h4>
-            <a href="youtube-video-tags-extractor.html">🏷️ YouTube Video Tags Extractor</a>
-            <a href="youtube-video-tags-generator.html">🏷️ YouTube Video Tags Generator</a>
-            <a href="youtube-hashtag-generator-v2.html">#️⃣ YouTube Hashtag Generator</a>
-            
-            <h4>🎨 YouTube Thumbnail Tools</h4>
-            <a href="youtube-thumbnail-downloader.html">🖼️ YouTube Thumbnail Downloader</a>
-            <a href="youtube-thumbnail-text-generator.html">✍️ YouTube Thumbnail Text Generator</a>
-            <a href="youtube-thumbnail-color-palette-generator.html">🎨 YouTube Thumbnail Color Palette</a>
-            <a href="youtube-thumbnail-split-tester.html">🔄 YouTube Thumbnail Split Tester</a>
-            <a href="thumbnail-ctr-predictor.html">📊 YouTube Thumbnail CTR Predictor</a>
-            
-            <h4>📱 YouTube Shorts Tools</h4>
-            <a href="youtube-shorts-hook-generator.html">🎯 YouTube Shorts Hook Generator</a>
-            <a href="youtube-shorts-script-generator.html">🎬 YouTube Shorts Script Generator</a>
-            <a href="youtube-shorts-idea-calendar-generator.html">📅 YouTube Shorts Idea Calendar</a>
-            
-            <h4>🎬 YouTube Branding & Community</h4>
-            <a href="youtube-channel-name-generator.html">🎬 YouTube Channel Name Generator</a>
-            <a href="youtube-community-post-generator.html">💬 YouTube Community Post Generator</a>
-          </div>
-          
-          <!-- COLUMN 4: Color + PDF + Image Tools -->
+          <!-- COLUMN 5: Color + PDF + Image Tools -->
           <div class="dropdown-column">
             <h4>🎨 Color Tools</h4>
             <a href="color-palette-generator.html">Color Palette Generator</a>
@@ -812,7 +893,6 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="color-contrast-checker.html">Color Contrast Checker</a>
             <a href="color-name-finder.html">Color Name Finder</a>
             <a href="random-color-picker.html">Random Color Picker</a>
-            <a href="color-wheel-seo.html">Color Wheel</a>
             <a href="image-color-extractor.html">Image Color Extractor</a>
             
             <h4>📄 PDF Tools</h4>
@@ -838,6 +918,76 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="image-compressor.html">Image Compressor</a>
             <a href="webp-converter.html">WebP Converter</a>
           </div>
+          
+          <!-- COLUMN 6: Popular Calculators + Developer Tools -->
+          <div class="dropdown-column">
+            <h4>📊 Popular Calculators</h4>
+            <a href="unit-converter.html">Unit Converter</a>
+            <a href="discount-calculator.html">Discount Calculator</a>
+            <a href="profit-loss-calculator.html">Profit & Loss Calculator</a>
+            <a href="gpa-calculator.html">GPA Calculator</a>
+            <a href="gst-calculator.html">GST Calculator</a>
+            <a href="percentage-calculator.html">Percentage Calculator</a>
+            <a href="date-calculator.html">Date Calculator</a>
+            <a href="qr-code-generator.html">QR Code Generator</a>
+            <a href="advanced-qr-generator.html">Advanced QR Generator</a>
+            <a href="currency-converter.html">Currency Converter</a>
+            
+            <h4>🔐 Developer & Security Tools</h4>
+            <a href="md5-generator.html">MD5 Hash Generator</a>
+            <a href="sha256-generator.html">SHA-256 Hash Generator</a>
+            <a href="sha1-generator.html">SHA-1 Hash Generator</a>
+            <a href="base64-encoder-decoder.html">Base64 Encoder/Decoder</a>
+            <a href="url-encoder-decoder.html">URL Encoder/Decoder</a>
+            <a href="html-encoder-decoder.html">HTML Encoder/Decoder</a>
+            <a href="html-minifier-pro.html">HTML Minifier Pro</a>
+            <a href="json-formatter-validator.html">JSON Formatter & Validator</a>
+          </div>
+          
+          <!-- COLUMN 7: Health + Finance + Text + Animal Pregnancy -->
+          <div class="dropdown-column">
+            <h4>🏃‍♂️ Health & Fitness</h4>
+            <a href="bmi-calculator.html">BMI Calculator</a>
+            <a href="bmr-calculator.html">BMR Calculator</a>
+            <a href="calorie-calculator.html">Calorie Calculator</a>
+            <a href="tdee-calculator.html">TDEE Calculator</a>
+            <a href="body-fat-calculator.html">Body Fat Calculator</a>
+            <a href="ideal-weight-calculator.html">Ideal Weight Calculator</a>
+            <a href="lean-body-mass-calculator.html">Lean Body Mass Calculator</a>
+            <a href="macro-calculator.html">Macro Calculator</a>
+            <a href="protein-calculator.html">Protein Calculator</a>
+            <a href="waist-to-hip-calculator.html">Waist to Hip Calculator</a>
+            
+            <h4>💰 Financial Tools</h4>
+            <a href="emi-calculator.html">EMI Calculator</a>
+            <a href="loan-calculator.html">Loan Calculator</a>
+            <a href="zakat-calculator.html">Zakat Calculator</a>
+            <a href="sip-calculator.html">SIP Calculator</a>
+            
+            <h4>📝 Text & Writing Tools</h4>
+            <a href="word-counter.html">Word Counter</a>
+            <a href="line-counter.html">Line Counter</a>
+            <a href="text-case-converter.html">Text Case Converter</a>
+            <a href="password-generator.html">Password Generator</a>
+            <a href="password-checker.html">Password Strength Checker</a>
+            
+            <h4>🐾 Animal Pregnancy Tools</h4>
+            <a href="dog-pregnancy-calculator.html">Dog Pregnancy Calculator</a>
+            <a href="cat-pregnancy-calculator.html">Cat Pregnancy Calculator</a>
+            <a href="cow-pregnancy-calculator.html">Cow Pregnancy Calculator</a>
+            <a href="rabbit-pregnancy-calculator.html">Rabbit Pregnancy Calculator</a>
+            <a href="goat-pregnancy-calculator.html">Goat Pregnancy Calculator</a>
+            <a href="horse-pregnancy-calculator.html">Horse Pregnancy Calculator</a>
+            <a href="sheep-pregnancy-calculator.html">Sheep Pregnancy Calculator</a>
+            <a href="pig-pregnancy-calculator.html">Pig Pregnancy Calculator</a>
+            
+            <h4>♈ Zodiac & Birthday Tools</h4>
+            <a href="zodiac-sign-finder.html">♈ Zodiac Sign Finder</a>
+            <a href="chinese-zodiac-finder.html">🐉 Chinese Zodiac Finder</a>
+            
+            <h4>⏰ Time Calculators</h4>
+            <a href="time-difference-calculator.html">⏰ Time Difference Calculator</a>
+          </div>
            
         </div></div></div>
       </li>
@@ -852,6 +1002,7 @@ const navbarHTML = `<div class="megamenu-container">
   </div>
   <div class="mobile-menu" id="mobileMenu"></div>
 </div>`;
+
 // =========================================================================
 // 9. PAGE ONLOAD
 // =========================================================================
