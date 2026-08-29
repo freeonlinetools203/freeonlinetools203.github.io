@@ -1098,16 +1098,11 @@ document.addEventListener('DOMContentLoaded', () => {
     As you can see, our <strong>chronological age calculator</strong> offers the most comprehensive features, including a <strong>live seconds counter</strong>, <strong>leap year support</strong>, and <strong>no usage limits</strong> – all completely free with no registration required!
 </p>
 
-<!-- ===== INTERNAL LINKS - WORKING SHARE ===== -->
-<div style="background: #f0f9ff; padding: 20px 25px; border-radius: 20px; text-align: center; margin: 30px 0; border: 2px solid #3b82f6; box-shadow: 0 4px 15px rgba(59,130,246,0.15);">
-    <p style="margin: 0 0 8px 0; font-size: 1.1rem;">
-        📤 <a href="javascript:void(0)" onclick="sharePageFunction(); return false;" style="color: #1e3a8a; font-weight: 700; text-decoration: underline; font-size: 1.1rem; cursor: pointer;">Share Chronological Age Calculator</a> 
-        <span style="color: #94a3b8; margin: 0 8px;">|</span>
-        🏠 <a href="https://freeonlinetools203.com/index.html" style="color: #1e3a8a; font-weight: 700; text-decoration: underline; font-size: 1.1rem;">Home Page</a>
-    </p>
-    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #64748b; background: #ffffff; padding: 8px 15px; border-radius: 30px; display: inline-block; border: 1px solid #93c5fd;">
-        🔗 https://freeonlinetools203.com/chronological-age-calculator.html
-    </p>
+<!-- ===== SHARE BUTTON ===== -->
+<div style="text-align: center; margin: 30px 0 20px;">
+    <button onclick="openShareModal()" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border: none; color: white; padding: 14px 40px; border-radius: 50px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35); display: inline-flex; align-items: center; gap: 12px;">
+        📤 Share This Tool
+    </button>
 </div>
 
 <!-- ========================================================== -->
@@ -1137,6 +1132,81 @@ document.addEventListener('DOMContentLoaded', () => {
         <br>
         <span style="font-size: 13px; color: #6b7280;">(affiliate links – we may earn a commission at no extra cost to you)</span>
     </p>
+</div>
+
+<!-- ========================================================== -->
+<!-- ===== SHARE MODAL ======================================== -->
+<!-- ========================================================== -->
+<div id="shareModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 99999; justify-content: center; align-items: center; backdrop-filter: blur(4px);">
+    <div style="background: #ffffff; border-radius: 28px; padding: 35px; max-width: 480px; width: 92%; text-align: center; box-shadow: 0 25px 80px rgba(0,0,0,0.4); animation: modalFadeIn 0.3s ease; position: relative;">
+
+        <!-- Close Button -->
+        <button onclick="closeShareModal()" style="position: absolute; top: 12px; right: 18px; background: none; border: none; font-size: 28px; color: #94a3b8; cursor: pointer; transition: 0.3s;">✕</button>
+
+        <!-- Modal Header -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 8px;">
+            <span style="font-size: 32px;">📤</span>
+            <h3 style="color: #1a1a2e; margin: 0; font-size: 24px; font-weight: 800;">Share This Tool</h3>
+        </div>
+        <p style="color: #6b7280; margin-bottom: 20px; font-size: 15px;">Share the Chronological Age Calculator with your friends!</p>
+
+        <!-- Link Display Box -->
+        <div style="background: #f1f5f9; padding: 14px 18px; border-radius: 14px; margin-bottom: 22px; border: 1px solid #e2e8f0; word-break: break-all;">
+            <span style="font-size: 0.9rem; color: #1a1a2e; font-weight: 500;">https://freeonlinetools203.com/chronological-age-calculator.html</span>
+        </div>
+
+        <!-- Social Share Buttons Grid -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;">
+            
+            <!-- WhatsApp -->
+            <button onclick="shareOn('whatsapp')" style="background: #25D366; border: none; color: white; padding: 14px 8px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 14px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+                <span style="font-size: 28px;">📱</span>
+                WhatsApp
+            </button>
+
+            <!-- Facebook -->
+            <button onclick="shareOn('facebook')" style="background: #1877F2; border: none; color: white; padding: 14px 8px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 14px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);">
+                <span style="font-size: 28px;">📘</span>
+                Facebook
+            </button>
+
+            <!-- Twitter/X -->
+            <button onclick="shareOn('twitter')" style="background: #1DA1F2; border: none; color: white; padding: 14px 8px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 14px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);">
+                <span style="font-size: 28px;">🐦</span>
+                Twitter
+            </button>
+
+            <!-- LinkedIn -->
+            <button onclick="shareOn('linkedin')" style="background: #0077B5; border: none; color: white; padding: 14px 8px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 14px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);">
+                <span style="font-size: 28px;">🔗</span>
+                LinkedIn
+            </button>
+
+            <!-- TikTok -->
+            <button onclick="shareOn('tiktok')" style="background: #000000; border: none; color: white; padding: 14px 8px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 14px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+                <span style="font-size: 28px;">🎵</span>
+                TikTok
+            </button>
+
+            <!-- Telegram -->
+            <button onclick="shareOn('telegram')" style="background: #0088cc; border: none; color: white; padding: 14px 8px; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 14px; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);">
+                <span style="font-size: 28px;">✈️</span>
+                Telegram
+            </button>
+
+        </div>
+
+        <!-- Copy Link & Close Buttons -->
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="copyLink()" style="background: #1a1a2e; border: none; color: white; padding: 12px 32px; border-radius: 50px; cursor: pointer; font-weight: 700; font-size: 15px; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3);">
+                📋 Copy Link
+            </button>
+            <button onclick="closeShareModal()" style="background: #e5e7eb; border: none; color: #374151; padding: 12px 32px; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 15px; transition: 0.3s;">
+                Close
+            </button>
+        </div>
+
+    </div>
 </div>
 
     </div>
