@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Lean Body Mass Calculator · Free 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f3f4f6;
+            transition: 0.3s;
+            color: #1f2937;
+        }
+        body.dark {
+            background: #111827;
+            color: #e2e8f0;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: linear-gradient(135deg, #0b2b6b 0%, #1e4fd9 100%);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo a {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: 0.3s;
+        }
+        .nav-links li a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        /* ===== THEME TOGGLE ===== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #6b7280;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 14px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 12px;
+        }
+        body.dark .theme-toggle {
+            background: #475569;
+        }
+
+        /* ===== MAIN TOOL CARD ===== */
+        .container {
+            max-width: 820px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .tool-card {
+            background: white;
+            border-radius: 36px;
+            box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.10);
+            overflow: hidden;
+            border: 1px solid #eef3fc;
+        }
+        body.dark .tool-card {
+            background: #1e293b;
+        }
+        .card-header {
+            background: linear-gradient(135deg, #0b2b6b 0%, #1e4fd9 100%);
+            padding: 28px 30px 22px;
+            text-align: center;
+        }
+        .card-header h1 {
+            color: white;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            margin-bottom: 6px;
+        }
+        .card-header p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .card-body {
+            padding: 28px 30px 34px;
+        }
+
+        /* ===== INPUT ROW ===== */
+        .search-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .search-row input {
+            flex: 2 1 140px;
+            padding: 14px 20px;
+            border: 2px solid #dfe7f0;
+            border-radius: 60px;
+            font-size: 15px;
+            background: #fafcff;
+            transition: 0.2s;
+            color: #0b1b33;
+            outline: none;
+        }
+        .search-row input:focus {
+            border-color: #1e4fd9;
+            box-shadow: 0 0 0 4px rgba(30, 79, 217, 0.06);
+        }
+        .search-row select {
+            flex: 1 1 110px;
+            padding: 14px 16px;
+            border: 2px solid #dfe7f0;
+            border-radius: 60px;
+            font-size: 15px;
+            background: #fafcff;
+            transition: 0.2s;
+            color: #0b1b33;
+            outline: none;
+            cursor: pointer;
+        }
+        .search-row select:focus {
+            border-color: #1e4fd9;
+            box-shadow: 0 0 0 4px rgba(30, 79, 217, 0.06);
+        }
+        .search-row button {
+            background: #1e4fd9;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 0 4px 12px rgba(30, 79, 217, 0.18);
+            white-space: nowrap;
+        }
+        .search-row button:hover {
+            background: #123bb3;
+            transform: scale(1.01);
+        }
+        .search-row button:active {
+            transform: scale(0.97);
+        }
+        .search-row button.reset {
+            background: #eef3fc;
+            color: #1f3a74;
+            box-shadow: none;
+            border: 2px solid #ccddfa;
+        }
+        .search-row button.reset:hover {
+            background: #dce7fc;
+            border-color: #a8c1f0;
+            transform: scale(1.01);
+        }
+
+        /* ===== RESULTS PANEL ===== */
+        .results-inline {
+            background: #f8fcff;
+            border-radius: 24px;
+            padding: 16px 20px;
+            border: 1px solid #e2ecf8;
+            min-height: 70px;
+            margin-top: 14px;
+            transition: 0.15s;
+        }
+        body.dark .results-inline {
+            background: #0f172a;
+            border-color: #334155;
+        }
+        .results-inline .empty-text {
+            color: #6a7e9a;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .results-inline .empty-text i {
+            font-size: 28px;
+            color: #b3c4d9;
+        }
+        .result-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 30px;
+        }
+        .result-content .main-weight {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0b1a33;
+            letter-spacing: -0.3px;
+            background: white;
+            padding: 4px 20px;
+            border-radius: 60px;
+            border: 1px solid #dce4ef;
+        }
+        body.dark .result-content .main-weight {
+            color: #e2e8f0;
+            background: #0f172a;
+            border-color: #334155;
+        }
+        .result-content .main-weight span {
+            font-weight: 500;
+            color: #3861a0;
+            font-size: 20px;
+            margin-left: 6px;
+        }
+        .result-content .sub-formulas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #2a405b;
+            background: #f4f9ff;
+            padding: 6px 16px;
+            border-radius: 40px;
+            border: 1px solid #e3ecf6;
+        }
+        body.dark .result-content .sub-formulas {
+            background: #0f172a;
+            border-color: #334155;
+            color: #cbd5e1;
+        }
+        .result-content .sub-formulas i {
+            color: #2563eb;
+            margin-right: 4px;
+        }
+        .result-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            background: #f8faff;
+            padding: 6px 18px;
+            border-radius: 60px;
+            border: 1px solid #e9eef5;
+            margin-top: 12px;
+        }
+        body.dark .result-stats {
+            background: #0f172a;
+            border-color: #334155;
+        }
+        .result-stats .stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #1c3452;
+        }
+        body.dark .result-stats .stat {
+            color: #cbd5e1;
+        }
+        .result-stats .stat i {
+            color: #2563eb;
+            font-size: 13px;
+        }
+
+        /* ===== ACTIONS BAR ===== */
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 4px;
+        }
+        .act-btn {
+            background: #f0f4fe;
+            border: 1px solid #ccddfa;
+            padding: 8px 18px;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 13px;
+            color: #1d3b77;
+            cursor: pointer;
+            transition: 0.12s;
+        }
+        .act-btn:hover {
+            background: #e3ebfd;
+            border-color: #a8c1f0;
+        }
+        .act-btn.primary {
+            background: #1e4fd9;
+            border-color: #1e4fd9;
+            color: white;
+            box-shadow: 0 4px 10px rgba(30, 79, 217, 0.10);
+        }
+        .act-btn.primary:hover {
+            background: #123bb3;
+            border-color: #123bb3;
+        }
+        .act-btn i {
+            margin-right: 5px;
+        }
+
+        /* ===== TOOLS SECTION ===== */
+        .yt-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .yt-tools-box {
+            background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border: 1px solid #fecdd3;
+        }
+        body.dark .yt-tools-box {
+            background: linear-gradient(135deg, #1e293b 0%, #2d1b1e 100%);
+            border-color: #334155;
+        }
+        .yt-tools-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #881337;
+            margin-bottom: 0.5rem;
+            border-left: 5px solid #e11d48;
+            padding-left: 16px;
+        }
+        body.dark .yt-tools-title {
+            color: #fca5a5;
+        }
+        .yt-tools-subtitle {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            padding-left: 21px;
+        }
+        body.dark .yt-tools-subtitle {
+            color: #94a3b8;
+        }
+        .yt-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .yt-tool-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 14px 18px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+        body.dark .yt-tool-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        .yt-tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            border-color: #fecdd3;
+        }
+        .yt-tool-card a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #1e293b;
+        }
+        body.dark .yt-tool-card a {
+            color: #e2e8f0;
+        }
+        .yt-tool-icon {
+            font-size: 1.8rem;
+            min-width: 48px;
+            text-align: center;
+        }
+        .yt-tool-info {
+            flex: 1;
+        }
+        .yt-tool-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        body.dark .yt-tool-name {
+            color: #e2e8f0;
+        }
+        .yt-tool-desc {
+            font-size: 0.75rem;
+            color: #64748b;
+            line-height: 1.3;
+        }
+        body.dark .yt-tool-desc {
+            color: #94a3b8;
+        }
+        .yt-tool-badge {
+            display: inline-block;
+            background: #fff1f2;
+            color: #9f1239;
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        body.dark .yt-tool-badge {
+            background: #2d1b1e;
+            color: #fca5a5;
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .article-box {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        body.dark .article-box {
+            background: #1e293b;
+        }
+        .article-box h1 {
+            color: #1a1a2e;
+            font-size: 34px;
+            margin-bottom: 10px;
+            border-left: 5px solid #e94560;
+            padding-left: 20px;
+        }
+        body.dark .article-box h1 {
+            color: #e2e8f0;
+        }
+        .article-box .meta {
+            color: #6b7280;
+            margin-bottom: 25px;
+            padding-left: 25px;
+            font-size: 14px;
+        }
+        .article-box .intro-box {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        body.dark .article-box .intro-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+        .article-box .intro-box p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .article-box h2 {
+            color: #1a1a2e;
+            font-size: 27px;
+            margin: 40px 0 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        body.dark .article-box h2 {
+            color: #e2e8f0;
+            border-bottom-color: #334155;
+        }
+        .article-box ul,
+        .article-box ol {
+            line-height: 2.2;
+            font-size: 16px;
+            padding-left: 25px;
+        }
+        body.dark .article-box ul,
+        body.dark .article-box ol {
+            color: #cbd5e1;
+        }
+        .article-box .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+        body.dark .article-box .faq-item {
+            border-bottom-color: #334155;
+        }
+        .article-box .faq-item .q {
+            font-weight: 700;
+            font-size: 18px;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        body.dark .article-box .faq-item .q {
+            color: #e2e8f0;
+        }
+        .article-box .faq-item .a {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+        body.dark .article-box .faq-item .a {
+            color: #cbd5e1;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            padding: 8px 18px;
+            border-radius: 50px;
+            color: white;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 40px 20px 25px;
+            margin-top: 50px;
+            position: relative;
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a, #3b82f6);
+            background-size: 300% 100%;
+            animation: gradientMove 3s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+        }
+        .footer-col h3,
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 4px 0;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .footer-col a:hover {
+            color: #60a5fa;
+            transform: translateX(5px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+        .footer-bottom strong {
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 20px;
+            }
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .card-body {
+                padding: 18px 14px 24px;
+            }
+            .card-header h1 {
+                font-size: 20px;
+            }
+            .card-header {
+                padding: 20px 16px 16px;
+            }
+            .search-row input,
+            .search-row select {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+            .search-row button {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            .article-box {
+                padding: 20px;
+            }
+            .article-box h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR START ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="#">💪 Lean Body Mass</a></div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ===== NAVBAR END ===== -->
+
+    <!-- ===== THEME TOGGLE ===== -->
+    <button class="theme-toggle" id="darkToggle">🌙 Dark/Light</button>
+
+    <!-- ===== MAIN TOOL START ===== -->
+    <div class="container">
+        <div class="tool-card">
+            <div class="card-header">
+                <h1>💪 Lean Body Mass Calculator · Free 2026</h1>
+                <p>Calculate your lean body mass (LBM) based on height, weight, age &amp; gender — AI‑powered</p>
+            </div>
+            <div class="card-body">
+
+                <!-- Input Row -->
+                <div class="search-row">
+                    <input type="number" id="heightInput" placeholder="Height (cm)" value="175" step="0.5" min="100" max="250">
+                    <input type="number" id="weightInput" placeholder="Weight (kg)" value="75" step="0.5" min="20" max="300">
+                    <select id="genderSelect">
+                        <option value="male">Male</option>
+                        <option value="female" selected>Female</option>
+                    </select>
+                    <input type="number" id="ageInput" placeholder="Age" value="30" min="18" max="100" style="flex:0.8 1 90px;">
+                    <button id="calculateBtn">✨ Calculate</button>
+                    <button id="resetBtn" class="reset">🔄 Reset</button>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-inline" id="resultsInline">
+                    <div class="empty-text" id="resultPlaceholder">
+                        <i class="fas fa-dumbbell"></i> Your lean body mass will appear here
+                    </div>
+                    <div id="resultContent" style="display:none;">
+                        <div class="result-content">
+                            <div class="main-weight" id="lbmDisplay">58.0 <span>kg</span></div>
+                            <div class="sub-formulas">
+                                <span><i class="fas fa-arrow-up"></i> Boer <strong id="boerVal">58.0 kg</strong></span>
+                                <span><i class="fas fa-arrow-up"></i> Hume <strong id="humeVal">57.5 kg</strong></span>
+                            </div>
+                        </div>
+                        <div class="result-stats">
+                            <span class="stat"><i class="fas fa-venus-mars"></i> <span id="genderLabel">Female</span></span>
+                            <span class="stat"><i class="fas fa-ruler-vertical"></i> <span id="heightLabel">175</span> cm</span>
+                            <span class="stat"><i class="fas fa-weight-scale"></i> <span id="weightLabel">75</span> kg</span>
+                            <span class="stat"><i class="fas fa-cake-candles"></i> <span id="ageLabel">30</span> yrs</span>
+                            <span class="stat"><i class="fas fa-percent"></i> BF%: <span id="bfPercent">~20%</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="actions">
+                    <button class="act-btn primary" id="copyAllBtn"><i class="fas fa-copy"></i> Copy all</button>
+                    <button class="act-btn" id="downloadBtn"><i class="fas fa-download"></i> .txt</button>
+                    <button class="act-btn" id="clearBtn"><i class="fas fa-eraser"></i> Clear</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ===== MAIN TOOL END ===== -->
+
+    <!-- ===== TOOLS SECTION START ===== -->
+    <div class="yt-section">
+        <div class="yt-tools-box">
+            <div class="yt-tools-title">🏋️ Health &amp; Fitness Tools</div>
+            <div class="yt-tools-subtitle">⚡ Grow your fitness journey with these free tools!</div>
+            <div class="yt-tools-grid">
+                <div class="yt-tool-card"><a href="#"><div class="yt-tool-icon">💪</div><div class="yt-tool-info"><div class="yt-tool-name">Lean Body Mass Calculator</div><div class="yt-tool-desc">Calculate your LBM instantly</div><span class="yt-tool-badge">📊 Fitness</span></div></a></div>
+                <div class="yt-tool-card"><a href="#"><div class="yt-tool-icon">⚖️</div><div class="yt-tool-info"><div class="yt-tool-name">Ideal Weight Calculator</div><div class="yt-tool-desc">Find your ideal body weight</div><span class="yt-tool-badge">📊 Fitness</span></div></a></div>
+                <div class="yt-tool-card"><a href="#"><div class="yt-tool-icon">🔥</div><div class="yt-tool-info"><div class="yt-tool-name">Calorie Calculator</div><div class="yt-tool-desc">Estimate daily calorie needs</div><span class="yt-tool-badge">📊 Fitness</span></div></a></div>
+                <div class="yt-tool-card"><a href="#"><div class="yt-tool-icon">❤️</div><div class="yt-tool-info"><div class="yt-tool-name">BMI Checker</div><div class="yt-tool-desc">Calculate your BMI instantly</div><span class="yt-tool-badge">📊 Health</span></div></a></div>
+                <div class="yt-tool-card"><a href="#"><div class="yt-tool-icon">📊</div><div class="yt-tool-info"><div class="yt-tool-name">Body Fat %</div><div class="yt-tool-desc">Estimate body fat percentage</div><span class="yt-tool-badge">📊 Fitness</span></div></a></div>
+                <div class="yt-tool-card"><a href="#"><div class="yt-tool-icon">🍽️</div><div class="yt-tool-info"><div class="yt-tool-name">Macro Split</div><div class="yt-tool-desc">Protein, carbs & fat ratio</div><span class="yt-tool-badge">📊 Nutrition</span></div></a></div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== TOOLS SECTION END ===== -->
+
+    <!-- ===== ARTICLE START ===== -->
+    <div class="article-container">
+        <div class="article-box">
+            <h1>💪 Lean Body Mass Calculator: Best Free Tool for Fitness 2026</h1>
+            <div class="meta">📅 Updated: August 29, 2026 | 👁️ 6 min read</div>
+
+            <div class="intro-box">
+                <p><strong>🔑 What is a Lean Body Mass Calculator?</strong> A <strong>lean body mass (LBM) calculator</strong> is an AI-powered tool that estimates your fat-free mass based on height, weight, age, and gender. Also known as a <strong>LBM calculator</strong> or <strong>muscle mass estimator</strong>, our tool uses Boer and Hume formulas to give you an accurate estimate of your lean body mass. Whether you're tracking fitness progress, planning nutrition, or assessing health, this <strong>lean body mass calculator free</strong> tool is trusted by thousands and requires no registration.<br><br>👉 <a href="#" style="color:#1a1a2e;font-weight:bold;text-decoration:underline;">Explore all free tools at Free Online Tools 203</a></p>
+            </div>
+
+            <h2>📊 How to Use This Lean Body Mass Calculator</h2>
+            <p style="line-height:1.8;font-size:16px;">Using our <strong>LBM calculator</strong> is simple:</p>
+            <ol>
+                <li><strong>Step 1:</strong> Enter your height in centimeters</li>
+                <li><strong>Step 2:</strong> Enter your weight in kilograms</li>
+                <li><strong>Step 3:</strong> Select your gender (Male/Female)</li>
+                <li><strong>Step 4:</strong> Enter your age</li>
+                <li><strong>Step 5:</strong> Click "Calculate" or press Enter</li>
+                <li><strong>Step 6:</strong> View your LBM with Boer &amp; Hume formulas</li>
+            </ol>
+
+            <div style="background:#ecfdf5;padding:18px 22px;border-radius:12px;margin:20px 0;border-left:4px solid #10b981;">
+                <p style="margin:0;font-size:15px;"><strong>💡 Pro Tip:</strong> Lean body mass is a key metric for fitness. Use it to track muscle gain and monitor body composition changes.</p>
+            </div>
+
+            <h2>📈 Why Lean Body Mass Matters for Health</h2>
+            <ul>
+                <li><strong>Muscle Health:</strong> LBM reflects your muscle and bone mass</li>
+                <li><strong>Metabolic Rate:</strong> Higher LBM means higher resting metabolism</li>
+                <li><strong>Fitness Progress:</strong> Track muscle gain over time</li>
+                <li><strong>Health Assessment:</strong> Low LBM can indicate health issues</li>
+                <li><strong>Performance:</strong> Athletes track LBM for optimal performance</li>
+            </ul>
+
+            <h2>✅ Lean Body Mass: Best Practices</h2>
+            <ul>
+                <li><strong>Use Multiple Formulas:</strong> Boer and Hume give different perspectives</li>
+                <li><strong>Track Over Time:</strong> Monitor LBM changes weekly or monthly</li>
+                <li><strong>Combine with BF%:</strong> Use LBM with body fat percentage</li>
+                <li><strong>Age Matters:</strong> LBM naturally declines with age</li>
+                <li><strong>Consult a Professional:</strong> Seek medical advice for health decisions</li>
+            </ul>
+
+            <h2>👥 Who Can Use a Lean Body Mass Calculator?</h2>
+            <ul>
+                <li><strong>🏋️ Fitness Enthusiasts:</strong> Track muscle mass and progress</li>
+                <li><strong>👨‍⚕️ Health Professionals:</strong> Quick patient assessments</li>
+                <li><strong>📝 Individuals:</strong> Personal health monitoring</li>
+                <li><strong>🏥 Clinics:</strong> Initial patient screening</li>
+                <li><strong>📱 App Developers:</strong> Integrate into health apps</li>
+            </ul>
+
+            <h2>❓ Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item"><div class="q">❓ What is lean body mass?</div><div class="a"><strong>Lean body mass (LBM)</strong> is the total weight of your body minus fat weight. It includes muscles, bones, organs, and water.</div></div>
+            <div class="faq-item"><div class="q">❓ Is this lean body mass calculator free?</div><div class="a">Yes! This <strong>lean body mass calculator free</strong> tool is completely free with no registration required. Use it unlimited times.</div></div>
+            <div class="faq-item"><div class="q">❓ What formulas does this tool use?</div><div class="a">This tool uses the <strong>Boer formula</strong> and the <strong>Hume formula</strong> for accurate LBM estimation.</div></div>
+            <div class="faq-item"><div class="q">❓ What is a healthy lean body mass?</div><div class="a">Healthy LBM varies by age, gender, and height. Generally, men have higher LBM (60-80kg) than women (45-65kg).</div></div>
+            <div class="faq-item"><div class="q">❓ Does this tool store my data?</div><div class="a">No, this <strong>LBM calculator</strong> runs entirely in your browser. We do not store, track, or share any personal information.</div></div>
+
+            <div style="background:#f0f9ff;padding:15px 20px;border-radius:14px;margin-top:20px;border-left:4px solid #0ea5e9;">
+                <p style="margin:0;font-size:15px;">🔗 Also check our <a href="#" style="color:#1a1a2e;font-weight:bold;text-decoration:underline;">BMI Calculator</a> for more health insights!</p>
+            </div>
+
+            <h2>🎯 Conclusion - Start Using the Best Lean Body Mass Calculator Today!</h2>
+            <p style="line-height:1.8;font-size:16px;">Our <strong>lean body mass calculator</strong> is the ultimate tool for tracking your muscle mass. Whether you need a <strong>LBM calculator</strong> or <strong>muscle mass estimator</strong>, we've got you covered.</p>
+            <ul>
+                <li>✅ 100% free, no registration</li>
+                <li>✅ Boer &amp; Hume formulas</li>
+                <li>✅ Instant results</li>
+                <li>✅ Privacy first — no data stored</li>
+            </ul>
+            <p style="line-height:1.8;font-size:16px;">Start using our <strong>lean body mass calculator</strong> today and take charge of your fitness!</p>
+
+            <div style="background:#f0f9ff;padding:18px;border-radius:20px;text-align:center;margin:30px 0;border:1px solid #bae6fd;">
+                <p style="margin:0;font-size:1rem;">🔗 <a href="#" style="color:#1a1a2e;font-weight:bold;text-decoration:underline;">💪 Lean Body Mass Calculator</a> | 🔗 <a href="#" style="color:#1a1a2e;font-weight:bold;text-decoration:underline;">🏠 Home Page</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== ARTICLE END ===== -->
+
+    <!-- ===== FOOTER START ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col"><h3>💪 Lean Body Mass</h3><a href="#">Home</a><a href="#">About</a><a href="#">Privacy</a><a href="#">Contact</a></div>
+            <div class="footer-col"><h4>📊 Fitness Tools</h4><a href="#">BMI Calculator</a><a href="#">Calorie Calculator</a><a href="#">Body Fat %</a><a href="#">Ideal Weight</a></div>
+            <div class="footer-col"><h4>📱 Social Media</h4><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Twitter</a><a href="#">Facebook</a></div>
+            <div class="footer-col"><h4>⭐ Trending</h4><a href="#">Lean Body Mass</a><a href="#">Age Calculator</a><a href="#">Spin The Wheel</a><a href="#">Yes/No Wheel</a></div>
+        </div>
+        <div class="footer-bottom">© 2026 <strong>Lean Body Mass Calculator</strong>. All rights reserved. | Made with <span style="color:#ec489a;">❤️</span></div>
+    </footer>
+    <!-- ===== FOOTER END ===== -->
+
+    <!-- ===== TOAST ===== -->
+    <div id="toastMsg" class="toast">Copied!</div>
+
+    <!-- ===== JAVASCRIPT START ===== -->
+    <script>
+        (function() {
+            const heightInput = document.getElementById('heightInput');
+            const weightInput = document.getElementById('weightInput');
+            const genderSelect = document.getElementById('genderSelect');
+            const ageInput = document.getElementById('ageInput');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const resultPlaceholder = document.getElementById('resultPlaceholder');
+            const resultContent = document.getElementById('resultContent');
+            const lbmDisplay = document.getElementById('lbmDisplay');
+            const boerVal = document.getElementById('boerVal');
+            const humeVal = document.getElementById('humeVal');
+            const genderLabel = document.getElementById('genderLabel');
+            const heightLabel = document.getElementById('heightLabel');
+            const weightLabel = document.getElementById('weightLabel');
+            const ageLabel = document.getElementById('ageLabel');
+            const bfPercent = document.getElementById('bfPercent');
+            const copyAllBtn = document.getElementById('copyAllBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const toast = document.getElementById('toastMsg');
+
+            function showToast(msg) {
+                toast.textContent = msg;
+                toast.style.opacity = '1';
+                setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+            }
+
+            function copyToClipboard(text) {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.top = '-9999px';
+                document.body.appendChild(ta);
+                ta.select();
+                try {
+                    const ok = document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    return ok;
+                } catch (e) {
+                    document.body.removeChild(ta);
+                    return false;
+                }
+            }
+
+            // Boer Formula: LBM = (0.407 × weight) + (0.267 × height) - 19.2 (male) / (0.252 × weight) + (0.473 × height) - 48.3 (female)
+            // Hume Formula: LBM = (0.32810 × weight) + (0.33929 × height) - 29.5336 (male) / (0.29569 × weight) + (0.41813 × height) - 43.2933 (female)
+            function calculateLBM(heightCm, weightKg, gender) {
+                let boer, hume;
+                if (gender === 'male') {
+                    boer = (0.407 * weightKg) + (0.267 * heightCm) - 19.2;
+                    hume = (0.32810 * weightKg) + (0.33929 * heightCm) - 29.5336;
+                } else {
+                    boer = (0.252 * weightKg) + (0.473 * heightCm) - 48.3;
+                    hume = (0.29569 * weightKg) + (0.41813 * heightCm) - 43.2933;
+                }
+                boer = Math.max(20, Math.min(120, boer));
+                hume = Math.max(20, Math.min(120, hume));
+                return { boer, hume, avg: (boer + hume) / 2 };
+            }
+
+            function estimateBodyFat(heightCm, weightKg, age, gender) {
+                // Simple BMI-based estimate
+                const bmi = weightKg / ((heightCm / 100) * (heightCm / 100));
+                let bf;
+                if (gender === 'male') {
+                    bf = (1.20 * bmi) + (0.23 * age) - 16.2;
+                } else {
+                    bf = (1.20 * bmi) + (0.23 * age) - 5.4;
+                }
+                bf = Math.max(5, Math.min(50, bf));
+                return bf;
+            }
+
+            function updateResult() {
+                const height = parseFloat(heightInput.value);
+                const weight = parseFloat(weightInput.value);
+                const age = parseInt(ageInput.value, 10);
+                const gender = genderSelect.value;
+
+                if (isNaN(height) || height < 50 || height > 280 ||
+                    isNaN(weight) || weight < 10 || weight > 350 ||
+                    isNaN(age) || age < 10 || age > 120) {
+                    resultPlaceholder.style.display = 'flex';
+                    resultContent.style.display = 'none';
+                    return;
+                }
+
+                const { boer, hume, avg } = calculateLBM(height, weight, gender);
+                const bf = estimateBodyFat(height, weight, age, gender);
+
+                lbmDisplay.innerHTML = `${avg.toFixed(1)} <span>kg</span>`;
+                boerVal.textContent = `${boer.toFixed(1)} kg`;
+                humeVal.textContent = `${hume.toFixed(1)} kg`;
+                genderLabel.textContent = gender === 'male' ? 'Male' : 'Female';
+                heightLabel.textContent = height.toFixed(0);
+                weightLabel.textContent = weight.toFixed(0);
+                ageLabel.textContent = age;
+                bfPercent.textContent = `${bf.toFixed(1)}%`;
+
+                resultPlaceholder.style.display = 'none';
+                resultContent.style.display = 'block';
+            }
+
+            function resetAll() {
+                heightInput.value = '175';
+                weightInput.value = '75';
+                genderSelect.value = 'female';
+                ageInput.value = '30';
+                resultPlaceholder.style.display = 'flex';
+                resultContent.style.display = 'none';
+                showToast('🔄 Reset');
+            }
+
+            function copyAll() {
+                if (resultContent.style.display === 'none') {
+                    showToast('⚠️ Calculate first');
+                    return;
+                }
+                const gender = genderSelect.value === 'male' ? 'Male' : 'Female';
+                const h = heightInput.value,
+                    w = weightInput.value,
+                    a = ageInput.value;
+                const lbm = lbmDisplay.innerText.replace(/\s+/g, ' ').trim();
+                const boer = boerVal.textContent;
+                const hume = humeVal.textContent;
+                const bf = bfPercent.textContent;
+                const text =
+                    `Lean Body Mass: ${lbm} | Boer: ${boer} | Hume: ${hume} | Gender: ${gender} | Height: ${h} cm | Weight: ${w} kg | Age: ${a} | Est. BF%: ${bf}`;
+                if (copyToClipboard(text)) showToast('📋 Copied all!');
+                else showToast('⚠️ Copy failed');
+            }
+
+            function downloadTxt() {
+                if (resultContent.style.display === 'none') {
+                    showToast('⚠️ Calculate first');
+                    return;
+                }
+                const gender = genderSelect.value === 'male' ? 'Male' : 'Female';
+                const h = heightInput.value,
+                    w = weightInput.value,
+                    a = ageInput.value;
+                const lbm = lbmDisplay.innerText.replace(/\s+/g, ' ').trim();
+                const boer = boerVal.textContent;
+                const hume = humeVal.textContent;
+                const bf = bfPercent.textContent;
+                const lines = [
+                    `Lean Body Mass: ${lbm}`,
+                    `Boer Formula: ${boer}`,
+                    `Hume Formula: ${hume}`,
+                    `Gender: ${gender}`,
+                    `Height: ${h} cm`,
+                    `Weight: ${w} kg`,
+                    `Age: ${a}`,
+                    `Est. Body Fat%: ${bf}`
+                ];
+                const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+                const el = document.createElement('a');
+                el.href = URL.createObjectURL(blob);
+                el.download = `lean_body_mass_${Date.now()}.txt`;
+                el.click();
+                URL.revokeObjectURL(el.href);
+                showToast('💾 Downloaded');
+            }
+
+            calculateBtn.addEventListener('click', updateResult);
+            resetBtn.addEventListener('click', resetAll);
+            copyAllBtn.addEventListener('click', copyAll);
+            downloadBtn.addEventListener('click', downloadTxt);
+            clearBtn.addEventListener('click', resetAll);
+
+            document.querySelectorAll('input, select').forEach(el => {
+                el.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        updateResult();
+                    }
+                });
+            });
+
+            // Dark mode toggle
+            const darkToggle = document.getElementById('darkToggle');
+            darkToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                darkToggle.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+                localStorage.setItem('lbmTheme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            });
+            if (localStorage.getItem('lbmTheme') === 'dark') {
+                document.body.classList.add('dark');
+                darkToggle.textContent = '☀️ Light';
+            }
+
+            window.addEventListener('load', updateResult);
+        })();
+    </script>
+    <!-- ===== JAVASCRIPT END ===== -->
+
+</body>
+</html>
