@@ -381,6 +381,32 @@ body {
 .faq-answer { color: #374151; padding-top: 8px; font-size: 15px; display: none; }
 .faq-answer.show { display: block; }
 
+/* ===== SHARE MODAL CSS ===== */
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.92) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+#shareModal {
+    animation: modalFadeIn 0.25s ease;
+}
+.share-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2937;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    z-index: 999999;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 90%;
+    animation: modalFadeIn 0.3s ease;
+}
+
 /* FOOTER */
 .professional-footer {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -1475,6 +1501,123 @@ function toggleFAQ(element) {
         icon.textContent = '−';
     }
 }
+
+// ========== SHARE FUNCTIONS ==========
+
+function openShareModal() {
+    const modal = document.getElementById('shareModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeShareModal() {
+    const modal = document.getElementById('shareModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function shareOn(platform) {
+    const url = encodeURIComponent('https://freeonlinetools203.com/chronological-age-calculator.html');
+    const text = encodeURIComponent('📅 Check out this amazing Chronological Age Calculator tool! Calculate your exact age in years, months, days, hours, minutes, and seconds - completely free!');
+
+    let shareUrl = '';
+    switch(platform) {
+        case 'whatsapp':
+            shareUrl = `https://wa.me/?text=${text}%20${url}`;
+            break;
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            break;
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+            break;
+        case 'linkedin':
+            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            break;
+        case 'tiktok':
+            shareUrl = `https://www.tiktok.com/share?url=${url}`;
+            break;
+        case 'telegram':
+            shareUrl = `https://t.me/share/url?url=${url}&text=${text}`;
+            break;
+        default:
+            return;
+    }
+
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=650,height=550,resizable=yes');
+    }
+}
+
+function copyLink() {
+    const link = 'https://freeonlinetools203.com/chronological-age-calculator.html';
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link)
+            .then(() => {
+                showToast('✅ Link copied to clipboard!');
+            })
+            .catch(() => {
+                fallbackCopyLink(link);
+            });
+    } else {
+        fallbackCopyLink(link);
+    }
+}
+
+function fallbackCopyLink(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-9999px';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+        document.execCommand('copy');
+        showToast('✅ Link copied to clipboard!');
+    } catch(err) {
+        prompt('Copy this link:', text);
+    }
+
+    document.body.removeChild(textarea);
+}
+
+function showToast(msg) {
+    const existingToast = document.querySelector('.share-toast');
+    if (existingToast) existingToast.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'share-toast';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s';
+        setTimeout(() => toast.remove(), 500);
+    }, 2800);
+}
+
+// Close modal on outside click
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('shareModal');
+    if (modal && e.target === modal) {
+        closeShareModal();
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeShareModal();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     setDefaultDate();
