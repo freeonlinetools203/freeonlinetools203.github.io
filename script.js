@@ -637,6 +637,7 @@ function renderDashboard() {
 function generateMobileMenu() {
     let html = `<ul class="mobile-nav">
       <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+      <li><a href="https://freeonlinetools203.com/age-calculator.html" style="background:#eff6ff;font-weight:700;color:#1e3a8a;">📅 Age Calculator</a></li>
       <li>
         <a href="#" class="mobile-dropdown-toggle" id="mobileToolsToggle">🛠️ All Tools</a>
         <div class="mobile-dropdown-content" id="mobileToolsContent">`;
@@ -674,6 +675,7 @@ function populateFooter() {
     
     footerCol.innerHTML = html;
 }
+
 // =========================================================================
 // 7. NAVBAR CSS
 // =========================================================================
@@ -736,7 +738,7 @@ const navbarHTML = `<div class="megamenu-container">
         <a href="#">🛠️ All Tools</a>
         <div class="mega-dropdown"><div class="dropdown-scroll"><div class="dropdown-grid">
           
-          <!-- COLUMN 1: Most Popular + Age Calculator Tools -->`
+          <!-- COLUMN 1: Most Popular + Age Calculator Tools -->
           <div class="dropdown-column">
             <h4>✨ Most Popular Tools</h4>
             <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
@@ -1005,6 +1007,7 @@ const navbarHTML = `<div class="megamenu-container">
       <li><a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a></li>
       <li><a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a></li>
       <li><a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a></li>
+      <!-- Sitemap REMOVED from top menu - moved to footer -->
     </ul>
     <button class="mobile-toggle" id="mobileToggle">☰</button>
   </div>
