@@ -723,11 +723,16 @@ const navbarHTML = `<div class="megamenu-container">
     </div>
     <ul class="megamenu-nav">
       <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+      
+      <!-- ===== AGE CALCULATOR - HOME KE BAAD ===== -->
+      <li><a href="https://freeonlinetools203.com/age-calculator.html" style="background:rgba(255,255,255,0.15);border-radius:8px;font-weight:700;">📅 Age Calculator</a></li>
+      <!-- ========================================= -->
+      
       <li class="has-dropdown">
         <a href="#">🛠️ All Tools</a>
         <div class="mega-dropdown"><div class="dropdown-scroll"><div class="dropdown-grid">
           
-          <!-- COLUMN 1: Most Popular + Age Calculator Tools -->
+          <!-- COLUMN 1: Most Popular + Age Calculator Tools -->`
           <div class="dropdown-column">
             <h4>✨ Most Popular Tools</h4>
             <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
