@@ -667,9 +667,13 @@ function populateFooter() {
     const popularTools = toolsDatabase.catPop.tools.slice(0, 6);
     let html = '<h4>Popular Tools</h4>';
     popularTools.forEach(tool => { html += `<a href="${getUrl(tool)}">${tool}</a>`; });
+    
+    // ===== SITEMAP LINK ADD KAREIN =====
+    html += `<a href="https://freeonlinetools203.com/sitemap.html" style="margin-top:10px;display:block;font-weight:600;">🗺️ Sitemap</a>`;
+    // ====================================
+    
     footerCol.innerHTML = html;
 }
-
 // =========================================================================
 // 7. NAVBAR CSS
 // =========================================================================
@@ -1001,7 +1005,6 @@ const navbarHTML = `<div class="megamenu-container">
       <li><a href="https://freeonlinetools203.com/privacy-policy.html">🔒 Privacy</a></li>
       <li><a href="https://freeonlinetools203.com/terms-conditions.html">📜 Terms</a></li>
       <li><a href="https://freeonlinetools203.com/disclaimer.html">⚠️ Disclaimer</a></li>
-      <li><a href="https://freeonlinetools203.com/sitemap.html">🗺️ Sitemap</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle">☰</button>
   </div>
