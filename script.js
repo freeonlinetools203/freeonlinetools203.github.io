@@ -1015,7 +1015,7 @@ const navbarHTML = `<div class="megamenu-container">
 </div>`;
 
 // =========================================================================
-// 9. PAGE ONLOAD
+// 9. PAGE ONLOAD START
 // =========================================================================
 document.addEventListener('DOMContentLoaded', () => {
     document.head.insertAdjacentHTML('beforeend', navbarCSS);
@@ -1028,6 +1028,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     renderDashboard();
     populateFooter();
+    
+    // ===== YEH LINE ADD KI GAYI HAI =====
+    loadReviews();  // <-- Reviews load karega
+    // ====================================
     
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -1049,9 +1053,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
 // =========================================================================
-// 10. SEARCH BAR FUNCTIONALITY
+// 9. PAGE ONLOAD END
+// =========================================================================
+// =========================================================================
+// 10. SEARCH BAR FUNCTIONALITY START
 // =========================================================================
 (function() {
     function waitForDashboard() {
@@ -1147,3 +1153,204 @@ document.addEventListener('DOMContentLoaded', () => {
     
     waitForDashboard();
 })();
+// =========================================================================
+// 10. SEARCH BAR FUNCTIONALITY END
+// =========================================================================
+// =========================================================================
+// 11. USER REVIEWS SYSTEM START
+// =========================================================================
+let selectedStar = 0;
+let reviews = [];
+
+// Load reviews from localStorage
+function loadReviews() {
+    try {
+        const stored = localStorage.getItem('toolReviews');
+        if (stored) {
+            reviews = JSON.parse(stored);
+        } else {
+            // ===== SAMPLE REVIEWS (Pehle se show honge) =====
+            reviews = [
+                {
+                    name: "Michael R.",
+                    tool: "Age Calculator",
+                    rating: 5,
+                    comment: "Best age calculator I've ever used! Simple and accurate.",
+                    date: new Date(Date.now() - 86400000 * 2).toISOString()
+                },
+                {
+                    name: "Sarah K.",
+                    tool: "BMI Calculator",
+                    rating: 4,
+                    comment: "Very helpful tool! Helped me track my health journey.",
+                    date: new Date(Date.now() - 86400000 * 5).toISOString()
+                },
+                {
+                    name: "David M.",
+                    tool: "Keyword Density Checker",
+                    rating: 5,
+                    comment: "Perfect for SEO work. Saves me hours of manual checking.",
+                    date: new Date(Date.now() - 86400000 * 10).toISOString()
+                }
+            ];
+            localStorage.setItem('toolReviews', JSON.stringify(reviews));
+        }
+    } catch(e) {
+        reviews = [];
+    }
+    renderReviews();
+}
+
+// Save reviews to localStorage
+function saveReviews() {
+    try {
+        localStorage.setItem('toolReviews', JSON.stringify(reviews));
+    } catch(e) {}
+    renderReviews();
+}
+
+// Render reviews
+function renderReviews() {
+    const list = document.getElementById('revList');
+    const avgEl = document.getElementById('avgRating');
+    const starsEl = document.getElementById('avgStars');
+    const countEl = document.getElementById('totalReviews');
+
+    if (!list) return;
+
+    if (reviews.length === 0) {
+        list.innerHTML = '<div class="rev-empty">⭐ Be the first to share your experience!</div>';
+        if (avgEl) avgEl.textContent = '0';
+        if (starsEl) starsEl.textContent = '☆☆☆☆☆';
+        if (countEl) countEl.textContent = '0 reviews';
+        return;
+    }
+
+    // Calculate average
+    let total = 0;
+    reviews.forEach(r => total += r.rating);
+    const avg = (total / reviews.length).toFixed(1);
+    const starStr = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
+
+    if (avgEl) avgEl.textContent = avg;
+    if (starsEl) starsEl.textContent = starStr;
+    if (countEl) countEl.textContent = reviews.length + ' reviews';
+
+    // Sort by date (newest first)
+    const sorted = [...reviews].reverse();
+
+    let html = '';
+    sorted.forEach(r => {
+        const date = new Date(r.date);
+        const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+        html += `
+            <div class="rev-item">
+                <div class="ri-head">
+                    <span class="ri-name">${escapeHtml(r.name || 'Anonymous')}</span>
+                    <span class="ri-stars">${stars}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px;">
+                    ${r.tool ? `<span style="font-size:0.75rem;color:#6b7280;">🛠️ ${escapeHtml(r.tool)}</span>` : ''}
+                    <span class="ri-date">${dateStr}</span>
+                </div>
+                <p class="ri-text">${escapeHtml(r.comment)}</p>
+            </div>
+        `;
+    });
+    list.innerHTML = html;
+}
+
+// Escape HTML
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Submit review
+function submitReview() {
+    const name = document.getElementById('revName');
+    const tool = document.getElementById('revTool');
+    const comment = document.getElementById('revComment');
+
+    if (!comment || comment.value.trim().length < 5) {
+        showToast('⚠️ Please write at least 5 characters for your review.');
+        return;
+    }
+
+    if (selectedStar === 0) {
+        showToast('⭐ Please select a star rating.');
+        return;
+    }
+
+    const review = {
+        name: name ? name.value.trim() || 'Anonymous' : 'Anonymous',
+        tool: tool ? tool.value.trim() || '' : '',
+        rating: selectedStar,
+        comment: comment.value.trim(),
+        date: new Date().toISOString()
+    };
+
+    reviews.push(review);
+    saveReviews();
+
+    // Reset form
+    if (name) name.value = '';
+    if (tool) tool.value = '';
+    if (comment) comment.value = '';
+    selectedStar = 0;
+    updateStars();
+
+    // Hide form, show CTA
+    document.getElementById('reviewForm').style.display = 'none';
+    document.getElementById('reviewCtaBox').style.display = 'block';
+
+    showToast('✅ Thank you! Your feedback helps others.');
+}
+
+// Star selector
+document.addEventListener('DOMContentLoaded', function() {
+    const starBtns = document.querySelectorAll('#starSelector button');
+    starBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            selectedStar = parseInt(this.dataset.star);
+            updateStars();
+        });
+    });
+
+    // Enter key submit
+    const commentField = document.getElementById('revComment');
+    if (commentField) {
+        commentField.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.shiftKey) {
+                e.preventDefault();
+                submitReview();
+            }
+        });
+    }
+});
+
+function updateStars() {
+    const btns = document.querySelectorAll('#starSelector button');
+    btns.forEach((btn, i) => {
+        if (i < selectedStar) {
+            btn.textContent = '★';
+            btn.classList.add('active');
+        } else {
+            btn.textContent = '☆';
+            btn.classList.remove('active');
+        }
+    });
+}
+
+function showToast(message) {
+    let toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:10px 24px;border-radius:50px;font-size:0.9rem;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);animation:toastSlide 0.3s ease';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+// =========================================================================
+// 11. USER REVIEWS SYSTEM END
+// =========================================================================
