@@ -398,300 +398,300 @@
     </main>
     <!-- ========== TOOLS DASHBOARD END ========== -->
 
-    <!-- ========== USER REVIEWS SECTION START ========== -->
-    <style>
-        .reviews-section {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin: 0 auto 40px;
-            max-width: 1200px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            border: 1px solid rgba(229,231,235,0.5);
-        }
-        .reviews-section .rev-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .reviews-section .rev-header h2 {
-            color: #1e3a8a;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .reviews-section .rev-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 50px; height: 4px;
-            background: #2563eb;
-            border-radius: 2px;
-        }
-        .rev-summary {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: #f8fafc;
-            padding: 12px 24px;
-            border-radius: 12px;
-        }
-        .rev-summary .rs-big {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #1e3a8a;
-            line-height: 1;
-        }
-        .rev-summary .rs-stars {
-            color: #f59e0b;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-        }
-        .rev-summary .rs-count {
-            color: #6b7280;
-            font-size: 0.85rem;
-        }
-        .rev-form {
-            background: #f8fafc;
-            border-radius: 16px;
-            padding: 25px;
-            margin: 20px 0 30px;
-            border: 1px solid #e2e8f0;
-        }
-        .rev-form h4 {
-            color: #1e3a8a;
-            margin: 0 0 15px 0;
-            font-size: 1.05rem;
-        }
-        .rev-form .rf-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 12px;
-        }
+<!-- ========== USER REVIEWS SECTION START ========== -->
+<style>
+    .reviews-section {
+        background: white;
+        border-radius: 20px;
+        padding: 35px;
+        margin: 0 auto 40px;
+        max-width: 1200px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        border: 1px solid rgba(229,231,235,0.5);
+    }
+    .reviews-section .rev-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .reviews-section .rev-header h2 {
+        color: #1e3a8a;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .reviews-section .rev-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 50px; height: 4px;
+        background: #2563eb;
+        border-radius: 2px;
+    }
+    .rev-summary {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: #f8fafc;
+        padding: 12px 24px;
+        border-radius: 12px;
+    }
+    .rev-summary .rs-big {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #1e3a8a;
+        line-height: 1;
+    }
+    .rev-summary .rs-stars {
+        color: #f59e0b;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+    .rev-summary .rs-count {
+        color: #6b7280;
+        font-size: 0.85rem;
+    }
+    .rev-form {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 25px;
+        margin: 20px 0 30px;
+        border: 1px solid #e2e8f0;
+    }
+    .rev-form h4 {
+        color: #1e3a8a;
+        margin: 0 0 15px 0;
+        font-size: 1.05rem;
+    }
+    .rev-form .rf-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 12px;
+    }
+    .rev-form .rf-row input,
+    .rev-form .rf-row textarea {
+        flex: 1;
+        min-width: 200px;
+        padding: 10px 14px;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 0.9rem;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    .rev-form .rf-row input:focus,
+    .rev-form .rf-row textarea:focus {
+        border-color: #2563eb;
+    }
+    .rev-form .rf-row textarea {
+        min-height: 70px;
+        resize: vertical;
+    }
+    .rev-form .rf-stars {
+        display: flex;
+        gap: 8px;
+        margin: 5px 0 12px;
+    }
+    .rev-form .rf-stars button {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #d1d5db;
+        transition: color 0.15s;
+        padding: 0 2px;
+    }
+    .rev-form .rf-stars button.active,
+    .rev-form .rf-stars button:hover {
+        color: #f59e0b;
+    }
+    .rev-form .rf-submit {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+    .rev-form .rf-submit:hover { opacity: 0.9; }
+    .rev-list {
+        display: grid;
+        gap: 15px;
+    }
+    .rev-item {
+        background: #f8fafc;
+        border-radius: 14px;
+        padding: 18px 22px;
+        border: 1px solid #f1f5f9;
+        transition: transform 0.2s;
+    }
+    .rev-item:hover { transform: translateY(-2px); }
+    .rev-item .ri-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 6px;
+    }
+    .rev-item .ri-name {
+        font-weight: 700;
+        color: #1e3a8a;
+    }
+    .rev-item .ri-stars {
+        color: #f59e0b;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+    .rev-item .ri-date {
+        color: #94a3b8;
+        font-size: 0.75rem;
+    }
+    .rev-item .ri-text {
+        color: #4b5563;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin: 6px 0 0;
+    }
+    .rev-empty {
+        text-align: center;
+        color: #94a3b8;
+        padding: 30px 0;
+        font-size: 0.95rem;
+    }
+    .rev-toast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1f2937;
+        color: white;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        z-index: 10000;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        animation: toastSlide 0.3s ease;
+    }
+    @keyframes toastSlide {
+        from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+        to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+    @media (max-width: 600px) {
+        .reviews-section { padding: 22px 16px; }
+        .rev-summary { padding: 10px 16px; flex-wrap: wrap; gap: 8px; }
+        .rev-summary .rs-big { font-size: 1.6rem; }
+        .rev-form .rf-row { flex-direction: column; }
         .rev-form .rf-row input,
-        .rev-form .rf-row textarea {
-            flex: 1;
-            min-width: 200px;
-            padding: 10px 14px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .rev-form .rf-row input:focus,
-        .rev-form .rf-row textarea:focus {
-            border-color: #2563eb;
-        }
-        .rev-form .rf-row textarea {
-            min-height: 70px;
-            resize: vertical;
-        }
-        .rev-form .rf-stars {
-            display: flex;
-            gap: 8px;
-            margin: 5px 0 12px;
-        }
-        .rev-form .rf-stars button {
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #d1d5db;
-            transition: color 0.15s;
-            padding: 0 2px;
-        }
-        .rev-form .rf-stars button.active,
-        .rev-form .rf-stars button:hover {
-            color: #f59e0b;
-        }
-        .rev-form .rf-submit {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: white;
-            border: none;
-            padding: 10px 30px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .rev-form .rf-submit:hover { opacity: 0.9; }
-        .rev-list {
-            display: grid;
-            gap: 15px;
-        }
-        .rev-item {
-            background: #f8fafc;
-            border-radius: 14px;
-            padding: 18px 22px;
-            border: 1px solid #f1f5f9;
-            transition: transform 0.2s;
-        }
-        .rev-item:hover { transform: translateY(-2px); }
-        .rev-item .ri-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-        .rev-item .ri-name {
-            font-weight: 700;
-            color: #1e3a8a;
-        }
-        .rev-item .ri-stars {
-            color: #f59e0b;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
-        .rev-item .ri-date {
-            color: #94a3b8;
-            font-size: 0.75rem;
-        }
-        .rev-item .ri-text {
-            color: #4b5563;
-            font-size: 0.92rem;
-            line-height: 1.6;
-            margin: 6px 0 0;
-        }
-        .rev-empty {
-            text-align: center;
-            color: #94a3b8;
-            padding: 30px 0;
-            font-size: 0.95rem;
-        }
-        .rev-toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1f2937;
-            color: white;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            z-index: 10000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            animation: toastSlide 0.3s ease;
-        }
-        @keyframes toastSlide {
-            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            to { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-        @media (max-width: 600px) {
-            .reviews-section { padding: 22px 16px; }
-            .rev-summary { padding: 10px 16px; flex-wrap: wrap; gap: 8px; }
-            .rev-summary .rs-big { font-size: 1.6rem; }
-            .rev-form .rf-row { flex-direction: column; }
-            .rev-form .rf-row input,
-            .rev-form .rf-row textarea { min-width: auto; }
-        }
+        .rev-form .rf-row textarea { min-width: auto; }
+    }
 
-        /* ===== PROFESSIONAL REVIEW CTA ===== */
-        .review-cta-box {
-            text-align: center;
-            margin: 30px 0 20px;
-            padding: 28px 30px;
-            background: linear-gradient(135deg, #f8fafc, #eff6ff);
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-        }
-        .review-cta-box .cta-icon {
-            font-size: 2.2rem;
-            display: block;
-            margin-bottom: 6px;
-        }
-        .review-cta-box .cta-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin: 0 0 6px 0;
-        }
-        .review-cta-box .cta-desc {
-            font-size: 0.92rem;
-            color: #6b7280;
-            margin: 0 0 16px 0;
-            line-height: 1.6;
-        }
-        .review-cta-box .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: #ffffff;
-            padding: 11px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .review-cta-box .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-        }
-        @media (max-width: 600px) {
-            .review-cta-box { padding: 20px 16px; }
-            .review-cta-box .cta-title { font-size: 1rem; }
-            .review-cta-box .cta-btn { padding: 10px 22px; font-size: 0.85rem; }
-        }
-    </style>
+    /* ===== PROFESSIONAL REVIEW CTA ===== */
+    .review-cta-box {
+        text-align: center;
+        margin: 30px 0 20px;
+        padding: 28px 30px;
+        background: linear-gradient(135deg, #f8fafc, #eff6ff);
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+    }
+    .review-cta-box .cta-icon {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 6px;
+    }
+    .review-cta-box .cta-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin: 0 0 6px 0;
+    }
+    .review-cta-box .cta-desc {
+        font-size: 0.92rem;
+        color: #6b7280;
+        margin: 0 0 16px 0;
+        line-height: 1.6;
+    }
+    .review-cta-box .cta-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: #ffffff;
+        padding: 11px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    .review-cta-box .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    }
+    @media (max-width: 600px) {
+        .review-cta-box { padding: 20px 16px; }
+        .review-cta-box .cta-title { font-size: 1rem; }
+        .review-cta-box .cta-btn { padding: 10px 22px; font-size: 0.85rem; }
+    }
+</style>
 
-    <section class="reviews-section" id="reviewsSection">
-        <div class="rev-header">
-            <h2>⭐ What Our Users Say</h2>
-            <div class="rev-summary" id="revSummary">
-                <span class="rs-big" id="avgRating">0</span>
-                <div>
-                    <div class="rs-stars" id="avgStars">☆☆☆☆☆</div>
-                    <div class="rs-count" id="totalReviews">0 reviews</div>
-                </div>
+<section class="reviews-section" id="reviewsSection">
+    <div class="rev-header">
+        <h2>⭐ What Our Users Say</h2>
+        <div class="rev-summary" id="revSummary">
+            <span class="rs-big" id="avgRating">0</span>
+            <div>
+                <div class="rs-stars" id="avgStars">☆☆☆☆☆</div>
+                <div class="rs-count" id="totalReviews">0 reviews</div>
             </div>
         </div>
+    </div>
 
-        <!-- ===== PROFESSIONAL REVIEW CTA ===== -->
-        <div class="review-cta-box" id="reviewCtaBox">
-            <span class="cta-icon">💬</span>
-            <p class="cta-title" id="reviewCtaTitle">Share Your Experience</p>
-            <p class="cta-desc">Your feedback helps fellow users discover the best tools for their needs.</p>
-            <a href="#" class="cta-btn" id="reviewCtaBtn">Write a Review</a>
-        </div>
+    <!-- ===== PROFESSIONAL REVIEW CTA ===== -->
+    <div class="review-cta-box" id="reviewCtaBox">
+        <span class="cta-icon">💬</span>
+        <p class="cta-title" id="reviewCtaTitle">Share Your Experience</p>
+        <p class="cta-desc">Your feedback helps fellow users discover the best tools for their needs.</p>
+        <a href="#" class="cta-btn" id="reviewCtaBtn">Write a Review</a>
+    </div>
 
-        <!-- Review Form (Hidden by default) -->
-        <div class="rev-form" id="reviewForm" style="display:none;">
-            <h4>✍️ Write Your Review</h4>
-            <div class="rf-row">
-                <input type="text" id="revName" placeholder="Your Name (optional)" maxlength="50">
-                <input type="text" id="revTool" placeholder="Which tool did you use? (optional)" maxlength="60">
-            </div>
-            <div class="rf-stars" id="starSelector">
-                <button data-star="1">☆</button>
-                <button data-star="2">☆</button>
-                <button data-star="3">☆</button>
-                <button data-star="4">☆</button>
-                <button data-star="5">☆</button>
-            </div>
-            <div class="rf-row">
-                <textarea id="revComment" placeholder="What did you like about the tool? Your feedback helps others..." maxlength="500"></textarea>
-            </div>
-            <button class="rf-submit" onclick="submitReview()">Submit Your Review</button>
+    <!-- Review Form (Hidden by default) -->
+    <div class="rev-form" id="reviewForm" style="display:none;">
+        <h4>✍️ Write Your Review</h4>
+        <div class="rf-row">
+            <input type="text" id="revName" placeholder="Your Name (optional)" maxlength="50">
+            <input type="text" id="revTool" placeholder="Which tool did you use? (optional)" maxlength="60">
         </div>
+        <div class="rf-stars" id="starSelector">
+            <button data-star="1">☆</button>
+            <button data-star="2">☆</button>
+            <button data-star="3">☆</button>
+            <button data-star="4">☆</button>
+            <button data-star="5">☆</button>
+        </div>
+        <div class="rf-row">
+            <textarea id="revComment" placeholder="What did you like about the tool? Your feedback helps others..." maxlength="500"></textarea>
+        </div>
+        <button class="rf-submit" onclick="submitReview()">Submit Your Review</button>
+    </div>
 
-        <!-- Reviews List -->
-        <div class="rev-list" id="revList">
-            <div class="rev-empty">⭐ Be the first to share your experience!</div>
-        </div>
-    </section>
-    <!-- ========== USER REVIEWS SECTION END ========== -->
+    <!-- Reviews List -->
+    <div class="rev-list" id="revList">
+        <div class="rev-empty">⭐ Be the first to share your experience!</div>
+    </div>
+</section>
+<!-- ========== USER REVIEWS SECTION END ========== -->
 
     <!-- ========== SEO ARTICLE START ========== -->
     <style>
