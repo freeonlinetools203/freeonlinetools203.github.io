@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Date Calculator - Calculate Days Between Dates</title>
+<meta name="description" content="Free online date calculator. Calculate days between two dates, add or subtract days from a date. Find day of week for any date.">
+<meta name="keywords" content="date calculator, days between dates, add days to date, subtract days from date, day of week calculator">
+<link rel="canonical" href="https://freeonlinetools203.com/date-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Online Date Calculator">
+<meta property="og:description" content="Calculate days between dates, add/subtract days. Free online date calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/date-calculator.html">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Online Date Calculator",
+  "description": "Calculate days between dates, add/subtract days. Free online date calculator.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/date-calculator.html"
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.navbar {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.logo a span { color: #86efac; }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+.nav-links li a:hover { color: #86efac; border-bottom: 2px solid #86efac; }
+.nav-links li a.active { border-bottom: 2px solid #86efac; }
+
+.container { max-width: 750px; margin: 40px auto 0; padding: 0 20px; }
+.age-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(5, 150, 105, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #86efac;
+}
+.card-header {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    padding: 30px 25px;
+    text-align: center;
+}
+.card-header h1 { color: white; font-size: 28px; margin-bottom: 10px; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+.card-content { padding: 35px; }
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+.tab-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #86efac;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: #4b5563;
+    min-width: 100px;
+}
+.tab-btn:hover { background: #ecfdf5; border-color: #059669; }
+.tab-btn.active { background: #059669; color: white; border-color: #059669; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.input-group { margin-bottom: 18px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #86efac;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+.input-group input:focus {
+    outline: none;
+    border-color: #059669;
+    box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
+}
+
+.calc-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+.calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(5, 150, 105, 0.35); }
+
+.result-box {
+    background: #ecfdf5;
+    border-radius: 20px;
+    padding: 25px;
+    border: 2px solid #86efac;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+.result-badge {
+    display: inline-block;
+    background: #059669;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+.result-value {
+    font-size: 42px;
+    font-weight: 800;
+    color: #047857;
+}
+.result-label {
+    font-size: 16px;
+    color: #6b7280;
+    margin-top: 5px;
+}
+.result-detail {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+@media (max-width: 768px) {
+    .result-value { font-size: 32px; }
+    .tabs { flex-direction: column; }
+    .tab-btn { min-width: auto; }
+}
+@media (max-width: 480px) {
+    .result-value { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="https://freeonlinetools203.com/index.html">Free<span>Tools</span>203</a></div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/date-calculator.html" class="active">📅 Date Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/time-calculator.html">⏱️ Time Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="age-card">
+        <div class="card-header">
+            <h1>📅 Date Calculator</h1>
+            <p>Calculate days between dates, add or subtract days, find day of week!</p>
+        </div>
+        <div class="card-content">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tab-diff">📊 Days Between</button>
+                <button class="tab-btn" data-tab="tab-add">➕ Add Days</button>
+                <button class="tab-btn" data-tab="tab-subtract">➖ Subtract Days</button>
+            </div>
+
+            <!-- Tab 1: Days Between -->
+            <div class="tab-content active" id="tab-diff">
+                <div class="input-group">
+                    <label>📅 Start Date</label>
+                    <input type="date" id="diffStart">
+                </div>
+                <div class="input-group">
+                    <label>📅 End Date</label>
+                    <input type="date" id="diffEnd">
+                </div>
+                <button class="calc-btn" onclick="calculateDaysBetween()">📊 Calculate Days</button>
+            </div>
+
+            <!-- Tab 2: Add Days -->
+            <div class="tab-content" id="tab-add">
+                <div class="input-group">
+                    <label>📅 Start Date</label>
+                    <input type="date" id="addDate">
+                </div>
+                <div class="input-group">
+                    <label>➕ Number of Days to Add</label>
+                    <input type="number" id="addDays" value="7" min="1">
+                </div>
+                <button class="calc-btn" onclick="calculateAddDays()">➕ Add Days</button>
+            </div>
+
+            <!-- Tab 3: Subtract Days -->
+            <div class="tab-content" id="tab-subtract">
+                <div class="input-group">
+                    <label>📅 Start Date</label>
+                    <input type="date" id="subDate">
+                </div>
+                <div class="input-group">
+                    <label>➖ Number of Days to Subtract</label>
+                    <input type="number" id="subDays" value="7" min="1">
+                </div>
+                <button class="calc-btn" onclick="calculateSubtractDays()">➖ Subtract Days</button>
+            </div>
+
+            <!-- Result Box -->
+            <div class="result-box" id="dateResult">
+                <div><span class="result-badge">📊 RESULT</span></div>
+                <div class="result-value" id="dateResultValue">--</div>
+                <div class="result-label" id="dateResultLabel">Result</div>
+                <div class="result-detail" id="dateResultDetail"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 35px 20px 20px; margin-top: 40px; border-radius: 20px 20px 0 0; text-align: center;">
+        <p style="font-size: 0.75rem; color: #64748b;">© 2026 Free Online Tools 203 | Date Calculator</p>
+        <p style="font-size: 0.7rem; color: #64748b; margin-top:5px;">
+            <a href="https://freeonlinetools203.com/index.html" style="color:#94a3b8; text-decoration:none;">Home</a> |
+            <a href="https://freeonlinetools203.com/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy</a> |
+            <a href="https://freeonlinetools203.com/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+        </p>
+    </footer>
+</div>
+
+<script>
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.getElementById(this.dataset.tab).classList.add('active');
+        document.getElementById('dateResult').style.display = 'none';
+    });
+});
+
+// Set default dates
+function setDefaultDates() {
+    const today = new Date();
+    const start = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+    const end = new Date(today);
+    
+    document.getElementById('diffStart').value = start.toISOString().split('T')[0];
+    document.getElementById('diffEnd').value = end.toISOString().split('T')[0];
+    document.getElementById('addDate').value = start.toISOString().split('T')[0];
+    document.getElementById('subDate').value = end.toISOString().split('T')[0];
+}
+
+function showDateResult(value, label, detail) {
+    const result = document.getElementById('dateResult');
+    result.style.display = 'block';
+    document.getElementById('dateResultValue').innerText = value;
+    document.getElementById('dateResultLabel').innerText = label;
+    document.getElementById('dateResultDetail').innerText = detail || '';
+}
+
+function getDayName(date) {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[date.getDay()];
+}
+
+function calculateDaysBetween() {
+    const start = new Date(document.getElementById('diffStart').value);
+    const end = new Date(document.getElementById('diffEnd').value);
+    if (isNaN(start) || isNaN(end)) {
+        showDateResult('❌', 'Please select valid dates');
+        return;
+    }
+    const diffTime = Math.abs(end - start);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    showDateResult(
+        diffDays + ' days',
+        'Days between dates',
+        `Start: ${getDayName(start)}, ${start.toLocaleDateString()} | End: ${getDayName(end)}, ${end.toLocaleDateString()}`
+    );
+}
+
+function calculateAddDays() {
+    const start = new Date(document.getElementById('addDate').value);
+    const days = parseInt(document.getElementById('addDays').value) || 0;
+    if (isNaN(start)) {
+        showDateResult('❌', 'Please select a valid date');
+        return;
+    }
+    const result = new Date(start);
+    result.setDate(result.getDate() + days);
+    showDateResult(
+        result.toLocaleDateString(),
+        `+${days} days from ${start.toLocaleDateString()}`,
+        `${getDayName(result)}, ${result.toLocaleDateString()}`
+    );
+}
+
+function calculateSubtractDays() {
+    const start = new Date(document.getElementById('subDate').value);
+    const days = parseInt(document.getElementById('subDays').value) || 0;
+    if (isNaN(start)) {
+        showDateResult('❌', 'Please select a valid date');
+        return;
+    }
+    const result = new Date(start);
+    result.setDate(result.getDate() - days);
+    showDateResult(
+        result.toLocaleDateString(),
+        `-${days} days from ${start.toLocaleDateString()}`,
+        `${getDayName(result)}, ${result.toLocaleDateString()}`
+    );
+}
+
+setDefaultDates();
+document.getElementById('dateResult').style.display = 'none';
+</script>
+</body>
+</html>
