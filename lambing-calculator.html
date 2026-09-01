@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Lambing Calculator - Sheep Gestation Calculator | Free Online Tool</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Lambing calculator - Calculate your sheep's lambing date based on breeding date. Free online sheep gestation calculator for farmers and shepherds.">
+<meta name="keywords" content="lambing calculator, sheep gestation calculator, lambing date calculator, sheep breeding calculator, due date for sheep, lamb gestation period">
+<link rel="canonical" href="https://freeonlinetools203.com/lambing-calculator.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Lambing Calculator - Sheep Gestation Calculator">
+<meta property="og:description" content="Calculate your sheep's lambing date instantly. Free online sheep gestation calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/lambing-calculator.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lambing Calculator - Sheep Gestation">
+<meta name="twitter:description" content="Calculate lambing date for your sheep. Free online tool.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lambing Calculator",
+  "description": "Calculate sheep lambing date based on breeding date. Free online sheep gestation calculator.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/lambing-calculator.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.logo a span { color: #86efac; }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+.nav-links li a:hover {
+    color: #86efac;
+    border-bottom: 2px solid #86efac;
+}
+.nav-links li a.active {
+    border-bottom: 2px solid #86efac;
+}
+
+/* === MAIN CONTAINER === */
+.container {
+    max-width: 850px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* === CARD === */
+.age-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(22, 163, 74, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #86efac;
+}
+.card-header {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    padding: 30px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: '🐑';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    opacity: 0.15;
+}
+.card-header h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.card-header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+.card-content {
+    padding: 35px;
+}
+
+/* === LIVE DATETIME === */
+.live-datetime {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #86efac;
+}
+.live-datetime-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #16a34a;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.live-datetime-label::before {
+    content: "🔴";
+    font-size: 10px;
+    animation: blink 1s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+.live-date { font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+.live-time { font-size: 32px; font-weight: 800; color: #15803d; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 6px; }
+
+/* === INFO BOX === */
+.info-box {
+    background: #f0fdf4;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid #16a34a;
+}
+.info-box p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+}
+.info-box strong {
+    color: #15803d;
+}
+
+/* === INPUT SECTION === */
+.input-group { margin-bottom: 22px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid #86efac;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.1);
+}
+
+.breed-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.breed-option {
+    padding: 12px;
+    border: 2px solid #86efac;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+.breed-option:hover {
+    border-color: #16a34a;
+    background: #f0fdf4;
+}
+.breed-option.active {
+    border-color: #16a34a;
+    background: #dcfce7;
+}
+.breed-option .icon { font-size: 24px; display: block; }
+.breed-option .name { font-weight: 600; font-size: 14px; margin-top: 4px; }
+.breed-option .days { font-size: 12px; color: #6b7280; }
+
+/* === CALCULATE BUTTON === */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.calc-btn::after {
+    content: '🐑';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+.calc-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(22, 163, 74, 0.35);
+}
+
+/* === RESULT BOX === */
+.result-box {
+    background: #f0fdf4;
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid #86efac;
+    text-align: center;
+    display: none;
+}
+.result-badge {
+    display: inline-block;
+    background: #16a34a;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+.result-item {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 12px;
+    border: 1px solid #86efac;
+}
+.result-item .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    font-weight: 600;
+}
+.result-item .value {
+    font-size: 22px;
+    font-weight: 800;
+    color: #15803d;
+    margin-top: 5px;
+}
+.result-item .sub {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 3px;
+}
+.countdown-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #86efac;
+}
+.countdown-box .days-left {
+    font-size: 36px;
+    font-weight: 800;
+    color: #16a34a;
+}
+.countdown-box .label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* === SEO ARTICLE === */
+.seo-article {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 30px auto 0;
+    max-width: 850px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.seo-article h2 {
+    color: #15803d;
+    font-size: 26px;
+    margin: 35px 0 15px;
+    border-left: 5px solid #16a34a;
+    padding-left: 15px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .live-time { font-size: 26px; }
+    .result-grid { grid-template-columns: 1fr 1fr; }
+    .result-item .value { font-size: 20px; }
+    .seo-article { padding: 25px 20px; margin: 20px 16px 0; width: auto; }
+    .breed-selector { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+    .live-time { font-size: 22px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+    .result-grid { grid-template-columns: 1fr; }
+    .breed-selector { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="https://freeonlinetools203.com/index.html">Free<span>Tools</span>203</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/lambing-calculator.html" class="active">🐑 Lambing</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<div class="container">
+    <div class="age-card">
+        <div class="card-header">
+            <h1>🐑 Lambing Calculator — Sheep Gestation</h1>
+            <p>Calculate your sheep's <strong>lambing date</strong> based on breeding date. Accurate and easy to use!</p>
+        </div>
+        <div class="card-content">
+
+            <!-- LIVE DATETIME -->
+            <div class="live-datetime">
+                <div class="live-datetime-label"><span>🔴 LIVE CURRENT TIME</span></div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <!-- INFO BOX -->
+            <div class="info-box">
+                <p>🐑 <strong>Sheep Gestation Period:</strong> Usually <strong>142-152 days</strong> (average 147 days). This calculator uses <strong>147 days</strong> as default.</p>
+            </div>
+
+            <!-- BREED SELECTOR -->
+            <div class="input-group">
+                <label>🐏 Select Sheep Breed (Optional)</label>
+                <div class="breed-selector">
+                    <div class="breed-option active" data-days="147">
+                        <span class="icon">🐑</span>
+                        <div class="name">Average Sheep</div>
+                        <div class="days">147 days</div>
+                    </div>
+                    <div class="breed-option" data-days="145">
+                        <span class="icon">🐏</span>
+                        <div class="name">Meat Breeds</div>
+                        <div class="days">145 days</div>
+                    </div>
+                    <div class="breed-option" data-days="149">
+                        <span class="icon">🐑</span>
+                        <div class="name">Wool Breeds</div>
+                        <div class="days">149 days</div>
+                    </div>
+                    <div class="breed-option" data-days="150">
+                        <span class="icon">🐏</span>
+                        <div class="name">Dairy Breeds</div>
+                        <div class="days">150 days</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATE INPUT -->
+            <div class="input-group">
+                <label>📅 Breeding / Mating Date</label>
+                <input type="date" id="breedingDate" style="cursor: pointer;">
+            </div>
+
+            <!-- CALCULATE BUTTON -->
+            <button class="calc-btn" id="calculateBtn">🐑 Calculate Lambing Date</button>
+
+            <!-- RESULT BOX -->
+            <div class="result-box" id="resultBox">
+                <div>
+                    <span class="result-badge">🐑 LAMBING DATE</span>
+                </div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="label">📅 Lambing Date</div>
+                        <div class="value" id="lambingDate">--</div>
+                        <div class="sub" id="lambingDay">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">📊 Gestation Period</div>
+                        <div class="value" id="gestationDays">--</div>
+                        <div class="sub">Days</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">📆 Breeding Date</div>
+                        <div class="value" id="breedingDisplay">--</div>
+                        <div class="sub">Start date</div>
+                    </div>
+                </div>
+                <div class="countdown-box">
+                    <div class="label">⏳ Days until lambing</div>
+                    <div class="days-left" id="daysLeft">--</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 5px;" id="weeksLeft">--</div>
+                </div>
+                <div style="margin-top: 15px; font-size: 13px; color: #6b7280;">
+                    ⚡ Based on <span id="selectedBreedName">Average Sheep</span> gestation period
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== SEO ARTICLE ========== -->
+    <div class="seo-article">
+        <h1 style="color: #15803d; font-size: 32px; margin-bottom: 10px;">🐑 Lambing Calculator — Sheep Gestation Date Calculator</h1>
+        <p style="font-size:1.05rem; line-height:1.8; margin-bottom:20px;">
+            A <strong>lambing calculator</strong> (also called <strong>sheep gestation calculator</strong>) helps sheep farmers and shepherds calculate the expected <strong>lambing date</strong> based on the breeding or mating date. Knowing the due date helps in proper planning, nutrition, and care for pregnant ewes.
+        </p>
+
+        <h2>🐑 What is a Lambing Calculator?</h2>
+        <p>
+            A <strong>lambing calculator</strong> is a tool that calculates the expected <strong>lambing date</strong> for sheep based on the <strong>breeding date</strong>. The average sheep gestation period is <strong>147 days</strong> (ranging from 142-152 days). This tool uses that information to give you an accurate due date.
+        </p>
+
+        <h2>⚙️ How to Use This Lambing Calculator</h2>
+        <ol style="margin-bottom:20px; padding-left:20px; line-height:1.8;">
+            <li><strong>Select breed</strong> — choose your sheep breed or keep default</li>
+            <li><strong>Enter breeding date</strong> — select the mating date</li>
+            <li><strong>Click "Calculate Lambing Date"</strong> — see the due date instantly!</li>
+        </ol>
+
+        <h2>✅ Why Use This Lambing Calculator?</h2>
+        <ul style="margin-bottom:20px; padding-left:20px; line-height:1.8;">
+            <li><strong>Accurate due dates</strong> — plan for lambing season</li>
+            <li><strong>Multiple breeds</strong> — different gestation periods</li>
+            <li><strong>Days countdown</strong> — see how many days left</li>
+            <li><strong>Free to use</strong> — no registration required</li>
+            <li><strong>Privacy first</strong> — all calculations in your browser</li>
+        </ul>
+
+        <h2>📊 Sheep Gestation Period by Breed</h2>
+        <table style="width:100%; border-collapse:collapse; margin:15px 0;">
+            <tr style="background:#f0fdf4;">
+                <th style="padding:12px; border:1px solid #86efac; text-align:left;">Breed Type</th>
+                <th style="padding:12px; border:1px solid #86efac; text-align:left;">Gestation Period</th>
+            </tr>
+            <tr>
+                <td style="padding:12px; border:1px solid #86efac;">Average Sheep</td>
+                <td style="padding:12px; border:1px solid #86efac;">147 days</td>
+            </tr>
+            <tr style="background:#f0fdf4;">
+                <td style="padding:12px; border:1px solid #86efac;">Meat Breeds (Suffolk, Dorset)</td>
+                <td style="padding:12px; border:1px solid #86efac;">145 days</td>
+            </tr>
+            <tr>
+                <td style="padding:12px; border:1px solid #86efac;">Wool Breeds (Merino, Rambouillet)</td>
+                <td style="padding:12px; border:1px solid #86efac;">149 days</td>
+            </tr>
+            <tr style="background:#f0fdf4;">
+                <td style="padding:12px; border:1px solid #86efac;">Dairy Breeds (East Friesian)</td>
+                <td style="padding:12px; border:1px solid #86efac;">150 days</td>
+            </tr>
+        </table>
+
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#15803d;">❓ What is a lambing calculator?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">A lambing calculator estimates the expected lambing (delivery) date for sheep based on the breeding date.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#15803d;">❓ How long is sheep gestation?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">The average sheep gestation period is 147 days, ranging from 142 to 152 days.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#15803d;">❓ Is this lambing calculator free?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Yes, 100% free. No registration, no payment, unlimited uses.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#15803d;">❓ Can I use this on mobile?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Yes! It's fully responsive and works on all devices.</div>
+        </div>
+
+        <!-- CTA -->
+        <div style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; padding: 30px; border-radius: 20px; margin-top: 25px; text-align: center;">
+            <h3 style="color: white; margin-top: 0;">🐑 Calculate Lambing Date Now!</h3>
+            <p style="margin: 15px 0;">Enter breeding date above and get your sheep's lambing date instantly.</p>
+            <p style="font-size: 14px; opacity: 0.8;">📢 Share this lambing calculator with other farmers!</p>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 35px 20px 20px; margin-top: 40px; border-radius: 20px 20px 0 0; text-align: center;">
+        <p style="font-size: 0.75rem; color: #64748b;">© 2026 Free Online Tools 203 | Lambing Calculator</p>
+        <p style="font-size: 0.7rem; color: #64748b; margin-top:5px;">
+            <a href="https://freeonlinetools203.com/index.html" style="color:#94a3b8; text-decoration:none;">Home</a> |
+            <a href="https://freeonlinetools203.com/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy</a> |
+            <a href="https://freeonlinetools203.com/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+        </p>
+    </footer>
+</div>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+let selectedBreedDays = 147;
+let selectedBreedName = 'Average Sheep';
+
+// === BREED SELECTION ===
+document.querySelectorAll('.breed-option').forEach(opt => {
+    opt.addEventListener('click', function() {
+        document.querySelectorAll('.breed-option').forEach(o => o.classList.remove('active'));
+        this.classList.add('active');
+        selectedBreedDays = parseInt(this.dataset.days);
+        selectedBreedName = this.querySelector('.name').innerText;
+    });
+});
+
+// === FUNCTIONS ===
+function showToastMsg(msg) {
+    let toast = document.querySelector('.toast-notification');
+    if (toast) toast.remove();
+    toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:50px;font-size:14px;z-index:1000;animation:slideUp 0.3s ease;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+function calculateLambing() {
+    const breedingInput = document.getElementById('breedingDate').value;
+    if (!breedingInput) {
+        showToastMsg('❌ Please select the breeding date!');
+        return;
+    }
+
+    const breedingDate = new Date(breedingInput);
+    if (isNaN(breedingDate.getTime())) {
+        showToastMsg('❌ Invalid date format!');
+        return;
+    }
+
+    const today = new Date();
+    if (breedingDate > today) {
+        showToastMsg('❌ Breeding date cannot be in the future!');
+        return;
+    }
+
+    // Calculate lambing date
+    const lambingDate = new Date(breedingDate);
+    lambingDate.setDate(lambingDate.getDate() + selectedBreedDays);
+
+    // Display result
+    const resultBox = document.getElementById('resultBox');
+    resultBox.style.display = 'block';
+
+    // Format dates
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('lambingDate').innerText = lambingDate.toLocaleDateString(undefined, dateOpt);
+    document.getElementById('lambingDay').innerText = lambingDate.toLocaleDateString(undefined, { weekday: 'long' }) + ', Week ' + getWeekOfMonth(lambingDate);
+
+    document.getElementById('gestationDays').innerText = selectedBreedDays;
+    document.getElementById('breedingDisplay').innerText = breedingDate.toLocaleDateString(undefined, dateOpt);
+
+    // Days left
+    const diffTime = lambingDate - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById('daysLeft').innerText = diffDays > 0 ? diffDays + ' days' : (diffDays === 0 ? 'Today! 🎉' : 'Passed');
+    document.getElementById('weeksLeft').innerText = diffDays > 0 ? Math.floor(diffDays / 7) + ' weeks, ' + (diffDays % 7) + ' days' : '';
+
+    document.getElementById('selectedBreedName').innerText = selectedBreedName;
+
+    showToastMsg('🐑 Lambing date calculated!');
+}
+
+function getWeekOfMonth(date) {
+    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+    const diff = (date - firstDay) / (1000 * 60 * 60 * 24);
+    return Math.floor(diff / 7) + 1;
+}
+
+function updateLiveDateTimeAlways() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateElem = document.getElementById('liveDate');
+    if (dateElem) dateElem.innerText = now.toLocaleDateString(undefined, dateOpt);
+    const timeElem = document.getElementById('liveTime');
+    if (timeElem) timeElem.innerText = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+    const tzElem = document.getElementById('liveTimezone');
+    if (tzElem) tzElem.innerText = 'Timezone: ' + Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBreeding = new Date(today.getFullYear() - 1, 8, 1); // Sept 1 last year
+    const year = defaultBreeding.getFullYear();
+    const month = String(defaultBreeding.getMonth() + 1).padStart(2, '0');
+    const day = String(defaultBreeding.getDate()).padStart(2, '0');
+    const field = document.getElementById('breedingDate');
+    if (field) field.value = year + '-' + month + '-' + day;
+}
+
+// === INIT ===
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveDateTimeAlways();
+    setInterval(updateLiveDateTimeAlways, 1000);
+
+    const resultBox = document.getElementById('resultBox');
+    if (resultBox) resultBox.style.display = 'none';
+
+    const btn = document.getElementById('calculateBtn');
+    if (btn) {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        newBtn.addEventListener('click', calculateLambing);
+    }
+
+    // Enter key support
+    document.getElementById('breedingDate').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateLambing();
+    });
+
+    // Add CSS animation
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+});
+</script>
+</body>
+</html>
