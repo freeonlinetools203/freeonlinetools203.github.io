@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Date of Birth Calculator Year - Find Your Age in Years Instantly</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Date of birth calculator year - Enter your birth year and find your exact age in years. Free online age calculator by year only. Quick and accurate.">
+<meta name="keywords" content="date of birth calculator year, age calculator by year, birth year calculator, find my age in years, how old am I in years, year calculator">
+<link rel="canonical" href="https://freeonlinetools203.com/date-of-birth-calculator-year.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Date of Birth Calculator Year - Age in Years Only">
+<meta property="og:description" content="Enter your date of birth and find your exact age in years. Quick, free and accurate.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/date-of-birth-calculator-year.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Date of Birth Calculator Year - Age in Years">
+<meta name="twitter:description" content="Calculate your age in years only. Free online date of birth year calculator.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Date of Birth Calculator Year",
+  "description": "Calculate your exact age in years from your date of birth. Simple and accurate year calculator.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/date-of-birth-calculator-year.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.logo a span { color: #93c5fd; }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+.nav-links li a:hover {
+    color: #93c5fd;
+    border-bottom: 2px solid #93c5fd;
+}
+.nav-links li a.active {
+    border-bottom: 2px solid #93c5fd;
+}
+
+/* === MAIN CONTAINER === */
+.container {
+    max-width: 850px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* === AGE CARD === */
+.age-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #bfdbfe;
+}
+.card-header {
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    padding: 30px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: '📅';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    opacity: 0.15;
+}
+.card-header h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.card-header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+.card-content {
+    padding: 35px;
+}
+
+/* === LIVE DATETIME === */
+.live-datetime {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #bfdbfe;
+}
+.live-datetime-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.live-datetime-label::before {
+    content: "🔴";
+    font-size: 10px;
+    animation: blink 1s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+.live-date { font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+.live-time { font-size: 32px; font-weight: 800; color: #1e3a8a; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 6px; }
+
+/* === INPUT === */
+.input-group { margin-bottom: 28px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+.date-input-wrapper input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 2px solid #bfdbfe;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.date-input-wrapper input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* === CALCULATE BUTTON === */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.calc-btn::after {
+    content: '📅';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+.calc-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* === RESULT BOX === */
+.result-box {
+    background: #eff6ff;
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid #bfdbfe;
+    text-align: center;
+}
+.result-badge {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.years-display {
+    font-size: 72px;
+    font-weight: 900;
+    color: #1e3a8a;
+    line-height: 1;
+    margin: 15px 0 5px;
+}
+.years-label {
+    font-size: 18px;
+    color: #4b5563;
+    font-weight: 600;
+}
+.years-sub {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+/* === YEAR ONLY BADGE === */
+.year-badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e3a8a;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* === SEO ARTICLE === */
+.seo-article {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 30px auto 0;
+    max-width: 850px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.seo-article h2 {
+    color: #1e3a8a;
+    font-size: 26px;
+    margin: 35px 0 15px;
+    border-left: 5px solid #2563eb;
+    padding-left: 15px;
+}
+.seo-article h3 {
+    color: #1e3a8a;
+    font-size: 20px;
+    margin: 25px 0 10px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .live-time { font-size: 26px; }
+    .years-display { font-size: 52px; }
+    .seo-article { padding: 25px 20px; margin: 20px 16px 0; width: auto; }
+}
+@media (max-width: 480px) {
+    .live-time { font-size: 22px; }
+    .years-display { font-size: 42px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="https://freeonlinetools203.com/index.html">Free<span>Tools</span>203</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/date-of-birth-calculator-year.html" class="active">📆 Year Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<div class="container">
+    <div class="age-card">
+        <div class="card-header">
+            <h1>📆 Date of Birth Calculator — Age in Years Only</h1>
+            <p>Enter your date of birth and find your exact age in <strong>years</strong>. Quick, simple and accurate!</p>
+        </div>
+        <div class="card-content">
+
+            <!-- LIVE DATETIME -->
+            <div class="live-datetime">
+                <div class="live-datetime-label"><span>🔴 LIVE CURRENT TIME</span></div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <!-- DATE PICKER -->
+            <div class="input-group">
+                <label>🎂 Select Your Date of Birth</label>
+                <div class="date-input-wrapper">
+                    <input type="date" id="dobDate" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- CALCULATE BUTTON -->
+            <button class="calc-btn" id="calculateBtn">📆 Calculate My Age in Years</button>
+
+            <!-- RESULT BOX -->
+            <div class="result-box" id="resultBox" style="display: none;">
+                <div>
+                    <span class="result-badge">📆 AGE IN YEARS ONLY</span>
+                </div>
+                <div class="years-display" id="yearsDisplay">0</div>
+                <div class="years-label">Years Old</div>
+                <div class="years-sub" id="birthYearDisplay">Born in: 2000</div>
+                <div>
+                    <span class="year-badge">✅ Exact year calculation</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== SEO ARTICLE ========== -->
+    <div class="seo-article">
+        <h1 style="color: #1e3a8a; font-size: 32px; margin-bottom: 10px;">📆 Date of Birth Calculator Year — Find Your Age in Years</h1>
+        <p style="font-size:1.05rem; line-height:1.8; margin-bottom:20px;">
+            A <strong>date of birth calculator year</strong> is a simple tool that tells you exactly how many <strong>years old</strong> you are. It uses your date of birth and the current date to calculate your age in <strong>years only</strong> — no months, no days, just your exact age in years. This is the most straightforward and commonly used age calculation method.
+        </p>
+
+        <h2>📆 What is a Date of Birth Calculator Year?</h2>
+        <p>
+            A <strong>date of birth calculator year</strong> (also called a <strong>birth year calculator</strong> or <strong>age in years calculator</strong>) is a tool that calculates your age in <strong>full years</strong> from your date of birth. It answers the simple question: <strong>"How old am I in years?"</strong>
+        </p>
+        <p>
+            Unlike other age calculators that show months, days, hours, and seconds, this tool focuses <strong>only on years</strong>. It's perfect for quick age verification, filling out forms, or just satisfying your curiosity about your age in years.
+        </p>
+
+        <h2>⚙️ How to Use This Year Calculator</h2>
+        <ol style="margin-bottom:20px; padding-left:20px; line-height:1.8;">
+            <li><strong>Select your date of birth</strong> using the date picker above.</li>
+            <li><strong>Click "Calculate My Age in Years"</strong> to see your age.</li>
+            <li><strong>View your age in years</strong> — simple and instant!</li>
+        </ol>
+
+        <h2>✅ Why Use This Year-Only Age Calculator?</h2>
+        <ul style="margin-bottom:20px; padding-left:20px; line-height:1.8;">
+            <li><strong>Simple and clear</strong> — shows only years, no confusion</li>
+            <li><strong>100% accurate</strong> — handles leap years automatically</li>
+            <li><strong>Free to use</strong> — no registration or payment required</li>
+            <li><strong>Privacy first</strong> — all calculations in your browser</li>
+            <li><strong>Perfect for forms</strong> — quick age verification</li>
+        </ul>
+
+        <h2>📊 Age in Years vs Full Age</h2>
+        <table style="width:100%; border-collapse:collapse; margin:15px 0;">
+            <tr style="background:#eff6ff;">
+                <th style="padding:12px; border:1px solid #bfdbfe; text-align:left;">Feature</th>
+                <th style="padding:12px; border:1px solid #bfdbfe; text-align:left;">Year-Only Calculator</th>
+                <th style="padding:12px; border:1px solid #bfdbfe; text-align:left;">Full Age Calculator</th>
+            </tr>
+            <tr>
+                <td style="padding:12px; border:1px solid #bfdbfe;">Shows</td>
+                <td style="padding:12px; border:1px solid #bfdbfe; font-weight:bold; color:#1e3a8a;">Years only</td>
+                <td style="padding:12px; border:1px solid #bfdbfe;">Years + Months + Days</td>
+            </tr>
+            <tr style="background:#eff6ff;">
+                <td style="padding:12px; border:1px solid #bfdbfe;">Complexity</td>
+                <td style="padding:12px; border:1px solid #bfdbfe; font-weight:bold; color:#1e3a8a;">Simple ⭐</td>
+                <td style="padding:12px; border:1px solid #bfdbfe;">Detailed ⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td style="padding:12px; border:1px solid #bfdbfe;">Best for</td>
+                <td style="padding:12px; border:1px solid #bfdbfe; font-weight:bold; color:#1e3a8a;">Forms, quick checks</td>
+                <td style="padding:12px; border:1px solid #bfdbfe;">Birthdays, detailed age</td>
+            </tr>
+        </table>
+
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#1e3a8a;">❓ What is a date of birth calculator year?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">It's a tool that calculates your age in years only from your date of birth. It shows your exact age in full years.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#1e3a8a;">❓ How do you calculate age in years?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Subtract your birth year from the current year. If your birthday hasn't passed yet this year, subtract one more year.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#1e3a8a;">❓ Is this year calculator free?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Yes, 100% free. No registration, no payment, unlimited uses.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#1e3a8a;">❓ Why use a year-only calculator?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">It's simpler, faster, and perfect for forms, applications, and quick age checks where only years matter.</div>
+        </div>
+
+        <!-- CTA -->
+        <div style="background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%); color: white; padding: 30px; border-radius: 20px; margin-top: 25px; text-align: center;">
+            <h3 style="color: white; margin-top: 0;">📆 Calculate Your Age in Years Now!</h3>
+            <p style="margin: 15px 0;">Enter your date of birth above and get your exact age in years instantly.</p>
+            <p style="font-size: 14px; opacity: 0.8;">📢 Share this date of birth year calculator with your friends!</p>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 35px 20px 20px; margin-top: 40px; border-radius: 20px 20px 0 0; text-align: center;">
+        <p style="font-size: 0.75rem; color: #64748b;">© 2026 Free Online Tools 203 | Date of Birth Calculator Year</p>
+        <p style="font-size: 0.7rem; color: #64748b; margin-top:5px;">
+            <a href="https://freeonlinetools203.com/index.html" style="color:#94a3b8; text-decoration:none;">Home</a> |
+            <a href="https://freeonlinetools203.com/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy</a> |
+            <a href="https://freeonlinetools203.com/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+        </p>
+    </footer>
+</div>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+// === VARIABLES ===
+let currentBirthDate = null;
+
+// === FUNCTIONS ===
+function showToastMsg(msg) {
+    let toast = document.querySelector('.toast-notification');
+    if (toast) toast.remove();
+    toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:50px;font-size:14px;z-index:1000;animation:slideUp 0.3s ease;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+function calculateAgeInYears() {
+    const dobInput = document.getElementById('dobDate').value;
+    if (!dobInput) {
+        showToastMsg('❌ Please select your date of birth!');
+        return;
+    }
+    const birthDate = new Date(dobInput);
+    if (isNaN(birthDate.getTime())) {
+        showToastMsg('❌ Invalid date format!');
+        return;
+    }
+    const today = new Date();
+    if (birthDate > today) {
+        showToastMsg('❌ Date of birth cannot be in the future!');
+        return;
+    }
+
+    // Calculate age in years
+    let years = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    const dayDiff = today.getDate() - birthDate.getDate();
+
+    // Adjust if birthday hasn't passed yet this year
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        years--;
+    }
+
+    // Display result
+    const resultBox = document.getElementById('resultBox');
+    resultBox.style.display = 'block';
+    document.getElementById('yearsDisplay').innerText = years;
+    document.getElementById('birthYearDisplay').innerText = 'Born in: ' + birthDate.getFullYear();
+
+    showToastMsg('✅ Your age in years: ' + years);
+}
+
+function updateLiveDateTimeAlways() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateElem = document.getElementById('liveDate');
+    if (dateElem) dateElem.innerText = now.toLocaleDateString(undefined, dateOpt);
+    const timeElem = document.getElementById('liveTime');
+    if (timeElem) timeElem.innerText = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+    const tzElem = document.getElementById('liveTimezone');
+    if (tzElem) tzElem.innerText = 'Timezone: ' + Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    const year = defaultBirth.getFullYear();
+    const month = String(defaultBirth.getMonth() + 1).padStart(2, '0');
+    const day = String(defaultBirth.getDate()).padStart(2, '0');
+    const dobField = document.getElementById('dobDate');
+    if (dobField) dobField.value = year + '-' + month + '-' + day;
+}
+
+// === INIT ===
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveDateTimeAlways();
+    setInterval(updateLiveDateTimeAlways, 1000);
+
+    const resultBox = document.getElementById('resultBox');
+    if (resultBox) resultBox.style.display = 'none';
+
+    const btn = document.getElementById('calculateBtn');
+    if (btn) {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        newBtn.addEventListener('click', calculateAgeInYears);
+    }
+
+    // Add CSS animation keyframes
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+});
+</script>
+</body>
+</html>
