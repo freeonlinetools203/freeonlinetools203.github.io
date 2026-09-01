@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>World Clock - Live Time in Multiple Cities</title>
+<meta name="description" content="Free online world clock with live updates. Check current time in multiple cities worldwide. Live time every second.">
+<meta name="keywords" content="world clock, live world clock, multiple time zones, international time, city time, global clock live">
+<link rel="canonical" href="https://freeonlinetools203.com/world-clock.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Live World Clock - Check Time in Multiple Cities">
+<meta property="og:description" content="Live world clock with current time in multiple cities worldwide. Updates every second.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/world-clock.html">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.logo a span { color: #99f6e4; }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+.nav-links li a:hover { color: #99f6e4; border-bottom: 2px solid #99f6e4; }
+.nav-links li a.active { border-bottom: 2px solid #99f6e4; }
+
+/* Main Container */
+.container { max-width: 950px; margin: 40px auto 0; padding: 0 20px; }
+
+/* Card */
+.age-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(15, 118, 110, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #99f6e4;
+}
+.card-header {
+    background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+    padding: 30px 25px;
+    text-align: center;
+}
+.card-header h1 { color: white; font-size: 28px; margin-bottom: 10px; }
+.card-header p { color: rgba(255,255,255,0.9); font-size: 16px; }
+
+.card-content { padding: 35px; }
+
+/* Live Badge */
+.live-badge {
+    display: inline-block;
+    background: #dc2626;
+    color: white;
+    font-size: 12px;
+    padding: 4px 16px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.controls select {
+    padding: 10px 16px;
+    font-size: 15px;
+    border: 2px solid #99f6e4;
+    border-radius: 12px;
+    background: white;
+    flex: 1;
+    min-width: 150px;
+}
+.controls select:focus {
+    outline: none;
+    border-color: #0f766e;
+}
+.controls .toggle-btns {
+    display: flex;
+    gap: 5px;
+}
+.controls .toggle-btn {
+    padding: 8px 18px;
+    border: 2px solid #99f6e4;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    color: #4b5563;
+}
+.controls .toggle-btn:hover { background: #ecfdf5; border-color: #0f766e; }
+.controls .toggle-btn.active { background: #0f766e; color: white; border-color: #0f766e; }
+
+/* City Grid */
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+.city-card {
+    background: #ecfdf5;
+    border-radius: 16px;
+    padding: 18px 16px;
+    border: 1px solid #99f6e4;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.city-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15, 118, 110, 0.1); }
+.city-card .flag { font-size: 32px; }
+.city-card .name { font-weight: 700; color: #1f2937; font-size: 16px; margin: 6px 0; }
+.city-card .time {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f766e;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+.city-card .date { font-size: 12px; color: #6b7280; margin-top: 4px; }
+.city-card .timezone { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+.city-card .remove-btn {
+    margin-top: 10px;
+    padding: 4px 14px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+.city-card .remove-btn:hover { background: #dc2626; }
+
+/* Add City */
+.add-city {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.add-city select {
+    flex: 1;
+    padding: 10px 16px;
+    border: 2px solid #99f6e4;
+    border-radius: 12px;
+    min-width: 150px;
+    background: white;
+}
+.add-city select:focus {
+    outline: none;
+    border-color: #0f766e;
+}
+.add-city button {
+    padding: 10px 24px;
+    background: #0f766e;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.add-city button:hover { background: #0d9488; transform: translateY(-2px); }
+
+/* SEO Article */
+.seo-article {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 30px auto 0;
+    max-width: 950px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #99f6e4;
+}
+.seo-article h2 {
+    color: #0f766e;
+    font-size: 26px;
+    margin: 35px 0 15px;
+    border-left: 5px solid #0f766e;
+    padding-left: 15px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    padding: 35px 20px 20px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+footer p { font-size: 0.75rem; color: #64748b; }
+footer a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+footer a:hover { color: #99f6e4; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .city-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .city-card .time { font-size: 22px; }
+    .controls { flex-direction: column; align-items: stretch; }
+}
+@media (max-width: 480px) {
+    .city-grid { grid-template-columns: 1fr 1fr; }
+    .city-card .time { font-size: 18px; }
+    .city-card .name { font-size: 14px; }
+    .city-card .flag { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="https://freeonlinetools203.com/index.html">Free<span>Tools</span>203</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/world-clock.html" class="active">🌍 World Clock</a></li>
+            <li><a href="https://freeonlinetools203.com/time-calculator.html">⏱️ Time Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main -->
+<div class="container">
+    <div class="age-card">
+        <div class="card-header">
+            <h1>🌍 Live World Clock</h1>
+            <p>Check <strong>live time</strong> in multiple cities worldwide — <strong>updates every second!</strong></p>
+        </div>
+        <div class="card-content">
+
+            <!-- Live Badge -->
+            <div style="text-align: center;">
+                <span class="live-badge">🔴 LIVE — UPDATES EVERY SECOND</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <select id="formatSelect">
+                    <option value="12">🕐 12-Hour (AM/PM)</option>
+                    <option value="24" selected>🕐 24-Hour</option>
+                </select>
+                <div class="toggle-btns">
+                    <button class="toggle-btn active" onclick="toggleView('grid')">📊 Grid</button>
+                    <button class="toggle-btn" onclick="toggleView('list')">📋 List</button>
+                </div>
+            </div>
+
+            <!-- City Grid -->
+            <div class="city-grid" id="cityGrid"></div>
+
+            <!-- Add City -->
+            <div class="add-city">
+                <select id="addCitySelect">
+                    <option value="">➕ Add a city...</option>
+                    <option value="Asia/Karachi|🇵🇰|Karachi, Pakistan">🇵🇰 Karachi, Pakistan</option>
+                    <option value="America/New_York|🇺🇸|New York, USA">🇺🇸 New York, USA</option>
+                    <option value="Europe/London|🇬🇧|London, UK">🇬🇧 London, UK</option>
+                    <option value="Asia/Dubai|🇦🇪|Dubai, UAE">🇦🇪 Dubai, UAE</option>
+                    <option value="Asia/Kolkata|🇮🇳|Mumbai, India">🇮🇳 Mumbai, India</option>
+                    <option value="Australia/Sydney|🇦🇺|Sydney, Australia">🇦🇺 Sydney, Australia</option>
+                    <option value="America/Toronto|🇨🇦|Toronto, Canada">🇨🇦 Toronto, Canada</option>
+                    <option value="Europe/Berlin|🇩🇪|Berlin, Germany">🇩🇪 Berlin, Germany</option>
+                    <option value="Europe/Paris|🇫🇷|Paris, France">🇫🇷 Paris, France</option>
+                    <option value="Asia/Tokyo|🇯🇵|Tokyo, Japan">🇯🇵 Tokyo, Japan</option>
+                    <option value="Asia/Shanghai|🇨🇳|Shanghai, China">🇨🇳 Shanghai, China</option>
+                    <option value="America/Sao_Paulo|🇧🇷|São Paulo, Brazil">🇧🇷 São Paulo, Brazil</option>
+                    <option value="Africa/Johannesburg|🇿🇦|Johannesburg, South Africa">🇿🇦 Johannesburg, South Africa</option>
+                    <option value="Africa/Cairo|🇪🇬|Cairo, Egypt">🇪🇬 Cairo, Egypt</option>
+                    <option value="Asia/Riyadh|🇸🇦|Riyadh, Saudi Arabia">🇸🇦 Riyadh, Saudi Arabia</option>
+                    <option value="Asia/Kuala_Lumpur|🇲🇾|Kuala Lumpur, Malaysia">🇲🇾 Kuala Lumpur, Malaysia</option>
+                    <option value="Asia/Singapore|🇸🇬|Singapore">🇸🇬 Singapore</option>
+                    <option value="Pacific/Auckland|🇳🇿|Auckland, New Zealand">🇳🇿 Auckland, New Zealand</option>
+                    <option value="Europe/Moscow|🇷🇺|Moscow, Russia">🇷🇺 Moscow, Russia</option>
+                    <option value="Europe/Istanbul|🇹🇷|Istanbul, Turkey">🇹🇷 Istanbul, Turkey</option>
+                    <option value="Asia/Jakarta|🇮🇩|Jakarta, Indonesia">🇮🇩 Jakarta, Indonesia</option>
+                    <option value="Asia/Bangkok|🇹🇭|Bangkok, Thailand">🇹🇭 Bangkok, Thailand</option>
+                    <option value="Asia/Manila|🇵🇭|Manila, Philippines">🇵🇭 Manila, Philippines</option>
+                    <option value="Asia/Seoul|🇰🇷|Seoul, South Korea">🇰🇷 Seoul, South Korea</option>
+                    <option value="America/Mexico_City|🇲🇽|Mexico City, Mexico">🇲🇽 Mexico City, Mexico</option>
+                    <option value="America/Buenos_Aires|🇦🇷|Buenos Aires, Argentina">🇦🇷 Buenos Aires, Argentina</option>
+                    <option value="Asia/Tehran|🇮🇷|Tehran, Iran">🇮🇷 Tehran, Iran</option>
+                    <option value="Asia/Baghdad|🇮🇶|Baghdad, Iraq">🇮🇶 Baghdad, Iraq</option>
+                    <option value="Africa/Lagos|🇳🇬|Lagos, Nigeria">🇳🇬 Lagos, Nigeria</option>
+                    <option value="Africa/Nairobi|🇰🇪|Nairobi, Kenya">🇰🇪 Nairobi, Kenya</option>
+                </select>
+                <button onclick="addCity()">➕ Add</button>
+            </div>
+
+            <!-- City Count -->
+            <div style="text-align: center; margin-top: 15px; font-size: 13px; color: #6b7280;">
+                🌍 <span id="cityCount">6</span> cities showing — updates every second
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SEO Article -->
+    <div class="seo-article">
+        <h1 style="color: #0f766e; font-size: 32px; margin-bottom: 10px;">🌍 Live World Clock — Real-Time City Times</h1>
+        <p style="font-size:1.05rem; line-height:1.8; margin-bottom:20px;">
+            A <strong>live world clock</strong> shows you the <strong>current time</strong> in multiple cities around the world — with <strong>updates every second</strong>. Perfect for international business, travel planning, or staying connected with friends and family across time zones.
+        </p>
+
+        <h2>🌍 How It Works</h2>
+        <ul style="margin-bottom:20px; padding-left:20px; line-height:1.8;">
+            <li>Select your preferred <strong>time format</strong> (12-hour or 24-hour)</li>
+            <li>View <strong>live time</strong> in multiple cities simultaneously</li>
+            <li><strong>Add or remove</strong> cities as you like</li>
+            <li>Time updates <strong>every second</strong> automatically</li>
+        </ul>
+
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #99f6e4; padding-bottom:12px;">
+            <div style="font-weight:700; color:#0f766e;">❓ What is a live world clock?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">A live world clock shows current time in multiple cities with updates every second.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #99f6e4; padding-bottom:12px;">
+            <div style="font-weight:700; color:#0f766e;">❓ How often does the time update?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Every second! You'll see the seconds change in real-time.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #99f6e4; padding-bottom:12px;">
+            <div style="font-weight:700; color:#0f766e;">❓ Is this world clock free?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Yes, 100% free. No registration, no payment, unlimited use.</div>
+        </div>
+
+        <!-- CTA -->
+        <div style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: white; padding: 30px; border-radius: 20px; margin-top: 25px; text-align: center;">
+            <h3 style="color: white; margin-top: 0;">🌍 Check Live Time Worldwide!</h3>
+            <p style="margin: 15px 0;">Add your favorite cities and see live time updates every second.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Free Online Tools 203 | Live World Clock</p>
+        <p style="margin-top:5px;">
+            <a href="https://freeonlinetools203.com/index.html">Home</a> |
+            <a href="https://freeonlinetools203.com/privacy-policy.html">Privacy</a> |
+            <a href="https://freeonlinetools203.com/contact.html">Contact</a>
+        </p>
+    </footer>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// ===== Default Cities =====
+const defaultCities = [
+    { timezone: 'Asia/Karachi', flag: '🇵🇰', name: 'Karachi, Pakistan' },
+    { timezone: 'America/New_York', flag: '🇺🇸', name: 'New York, USA' },
+    { timezone: 'Europe/London', flag: '🇬🇧', name: 'London, UK' },
+    { timezone: 'Asia/Dubai', flag: '🇦🇪', name: 'Dubai, UAE' },
+    { timezone: 'Asia/Kolkata', flag: '🇮🇳', name: 'Mumbai, India' },
+    { timezone: 'Australia/Sydney', flag: '🇦🇺', name: 'Sydney, Australia' }
+];
+
+// ===== Load Cities from LocalStorage =====
+let cities = [];
+try {
+    const saved = localStorage.getItem('worldCities');
+    cities = saved ? JSON.parse(saved) : defaultCities;
+} catch (e) {
+    cities = defaultCities;
+}
+
+let viewMode = 'grid';
+
+// ===== Get Time in Timezone =====
+function getTimeInTimezone(timezone) {
+    const now = new Date();
+    const format = document.getElementById('formatSelect').value;
+    const options = {
+        timeZone: timezone,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: format === '12'
+    };
+    const timeStr = now.toLocaleTimeString('en-US', options);
+    const dateStr = now.toLocaleDateString('en-US', {
+        timeZone: timezone,
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    });
+    return { time: timeStr, date: dateStr };
+}
+
+// ===== Render Cities =====
+function renderCities() {
+    const grid = document.getElementById('cityGrid');
+    if (!grid) return;
+
+    if (cities.length === 0) {
+        grid.innerHTML = `
+            <div style="grid-column:1/-1; text-align:center; padding:40px; color:#6b7280;">
+                🌍 No cities added. Use the dropdown above to add cities!
+            </div>
+        `;
+        document.getElementById('cityCount').innerText = '0';
+        return;
+    }
+
+    const format = document.getElementById('formatSelect').value;
+
+    grid.innerHTML = cities.map(city => {
+        const { time, date } = getTimeInTimezone(city.timezone);
+        return `
+            <div class="city-card">
+                <div class="flag">${city.flag}</div>
+                <div class="name">${city.name}</div>
+                <div class="time">${time}</div>
+                <div class="date">${date}</div>
+                <div class="timezone">${city.timezone}</div>
+                <button class="remove-btn" onclick="removeCity('${city.timezone}')">✕ Remove</button>
+            </div>
+        `;
+    }).join('');
+
+    document.getElementById('cityCount').innerText = cities.length;
+}
+
+// ===== Add City =====
+function addCity() {
+    const select = document.getElementById('addCitySelect');
+    const value = select.value;
+    if (!value) return;
+
+    const parts = value.split('|');
+    const timezone = parts[0];
+    const flag = parts[1] || '🌍';
+    const name = parts[2] || timezone.split('/').pop();
+
+    if (cities.some(c => c.timezone === timezone)) {
+        alert('⚠️ This city is already added!');
+        return;
+    }
+
+    cities.push({ timezone, flag, name });
+    localStorage.setItem('worldCities', JSON.stringify(cities));
+    renderCities();
+    select.value = '';
+    showToast('✅ ' + name + ' added successfully!');
+}
+
+// ===== Remove City =====
+function removeCity(timezone) {
+    const city = cities.find(c => c.timezone === timezone);
+    cities = cities.filter(c => c.timezone !== timezone);
+    localStorage.setItem('worldCities', JSON.stringify(cities));
+    renderCities();
+    if (city) showToast('🗑️ ' + city.name + ' removed');
+}
+
+// ===== Toggle View =====
+function toggleView(mode) {
+    viewMode = mode;
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(mode));
+    });
+    // View change logic (grid/list)
+    const grid = document.getElementById('cityGrid');
+    if (mode === 'list') {
+        grid.style.display = 'flex';
+        grid.style.flexDirection = 'column';
+        grid.querySelectorAll('.city-card').forEach(card => {
+            card.style.display = 'flex';
+            card.style.alignItems = 'center';
+            card.style.justifyContent = 'space-between';
+            card.style.padding = '12px 18px';
+        });
+    } else {
+        grid.style.display = 'grid';
+        grid.style.flexDirection = 'unset';
+        grid.querySelectorAll('.city-card').forEach(card => {
+            card.style.display = 'block';
+            card.style.padding = '18px 16px';
+        });
+    }
+}
+
+// ===== Toast Message =====
+function showToast(msg) {
+    let toast = document.querySelector('.toast-notification');
+    if (toast) toast.remove();
+    toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.style.cssText = `
+        position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
+        background:#1f2937; color:white; padding:12px 24px;
+        border-radius:50px; font-size:14px; z-index:9999;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        animation: slideUp 0.3s ease;
+    `;
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial render
+    renderCities();
+
+    // Update every second — LIVE!
+    setInterval(renderCities, 1000);
+
+    // Format change
+    document.getElementById('formatSelect').addEventListener('change', renderCities);
+
+    // Enter key support
+    document.getElementById('addCitySelect').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') addCity();
+    });
+
+    // CSS animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+});
+</script>
+</body>
+</html>
