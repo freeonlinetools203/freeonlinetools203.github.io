@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>My Birth Year Calculator - Find Your Birth Year & Age</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="My birth year calculator - Enter your age or date of birth to find your birth year. Free online birth year finder tool.">
+<meta name="keywords" content="my birth year, birth year calculator, find my birth year, birth year finder, what is my birth year, age to birth year">
+<link rel="canonical" href="https://freeonlinetools203.com/my-birth-year.html">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="My Birth Year Calculator - Find Your Birth Year">
+<meta property="og:description" content="Enter your date of birth or age to find your birth year instantly. Free online birth year calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeonlinetools203.com/my-birth-year.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My Birth Year Calculator">
+<meta name="twitter:description" content="Find your birth year and age instantly. Free online tool.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "My Birth Year Calculator",
+  "description": "Find your birth year and age instantly by entering your date of birth or age.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/my-birth-year.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.logo a span { color: #c4b5fd; }
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+.nav-links li a:hover {
+    color: #c4b5fd;
+    border-bottom: 2px solid #c4b5fd;
+}
+.nav-links li a.active {
+    border-bottom: 2px solid #c4b5fd;
+}
+
+/* === MAIN CONTAINER === */
+.container {
+    max-width: 850px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+/* === CARD === */
+.age-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(124, 58, 237, 0.15);
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #ddd6fe;
+}
+.card-header {
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    padding: 30px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.card-header::before {
+    content: '🎂';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    opacity: 0.15;
+}
+.card-header h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.card-header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+.card-content {
+    padding: 35px;
+}
+
+/* === LIVE DATETIME === */
+.live-datetime {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #ddd6fe;
+}
+.live-datetime-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7c3aed;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.live-datetime-label::before {
+    content: "🔴";
+    font-size: 10px;
+    animation: blink 1s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+.live-date { font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+.live-time { font-size: 32px; font-weight: 800; color: #5b21b6; font-family: monospace; letter-spacing: 2px; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 6px; }
+
+/* === INPUT SECTION === */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+.tab-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #ddd6fe;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: #4b5563;
+    min-width: 120px;
+}
+.tab-btn:hover {
+    background: #f5f3ff;
+    border-color: #7c3aed;
+}
+.tab-btn.active {
+    background: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid #ddd6fe;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #ffffff;
+}
+.input-group input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+}
+
+/* === CALCULATE BUTTON === */
+.calc-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.calc-btn::after {
+    content: '🎂';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+.calc-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(124, 58, 237, 0.35);
+}
+
+/* === RESULT BOX === */
+.result-box {
+    background: #f5f3ff;
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid #ddd6fe;
+    text-align: center;
+    display: none;
+}
+.result-badge {
+    display: inline-block;
+    background: #7c3aed;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+.result-item {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 15px;
+    border: 1px solid #ddd6fe;
+}
+.result-item .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    font-weight: 600;
+}
+.result-item .value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #5b21b6;
+    margin-top: 5px;
+}
+.result-item .sub {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* === SEO ARTICLE === */
+.seo-article {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 30px auto 0;
+    max-width: 850px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.seo-article h2 {
+    color: #5b21b6;
+    font-size: 26px;
+    margin: 35px 0 15px;
+    border-left: 5px solid #7c3aed;
+    padding-left: 15px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .container { margin-top: 20px; padding: 0 16px; }
+    .card-content { padding: 25px 20px; }
+    .card-header h1 { font-size: 24px; }
+    .live-time { font-size: 26px; }
+    .result-grid { grid-template-columns: 1fr; }
+    .result-item .value { font-size: 28px; }
+    .seo-article { padding: 25px 20px; margin: 20px 16px 0; width: auto; }
+    .tabs { flex-direction: column; }
+    .tab-btn { min-width: auto; }
+}
+@media (max-width: 480px) {
+    .live-time { font-size: 22px; }
+    .calc-btn { font-size: 16px; padding: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="https://freeonlinetools203.com/index.html">Free<span>Tools</span>203</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://freeonlinetools203.com/index.html">🏠 Home</a></li>
+            <li><a href="https://freeonlinetools203.com/age-calculator.html">📅 Age Calculator</a></li>
+            <li><a href="https://freeonlinetools203.com/my-birth-year.html" class="active">🎂 My Birth Year</a></li>
+            <li><a href="https://freeonlinetools203.com/contact.html">📧 Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<div class="container">
+    <div class="age-card">
+        <div class="card-header">
+            <h1>🎂 My Birth Year Calculator</h1>
+            <p>Find your <strong>birth year</strong> and <strong>age</strong> instantly — enter your date of birth or just your age!</p>
+        </div>
+        <div class="card-content">
+
+            <!-- LIVE DATETIME -->
+            <div class="live-datetime">
+                <div class="live-datetime-label"><span>🔴 LIVE CURRENT TIME</span></div>
+                <div class="live-date" id="liveDate">--</div>
+                <div class="live-time" id="liveTime">--:--:--</div>
+                <div class="live-timezone" id="liveTimezone">--</div>
+            </div>
+
+            <!-- TABS -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tab-dob">📅 Date of Birth</button>
+                <button class="tab-btn" data-tab="tab-age">🎂 Your Age</button>
+            </div>
+
+            <!-- TAB 1: Date of Birth -->
+            <div class="tab-content active" id="tab-dob">
+                <div class="input-group">
+                    <label>📅 Select Your Date of Birth</label>
+                    <input type="date" id="dobInput" style="cursor: pointer;">
+                </div>
+            </div>
+
+            <!-- TAB 2: Age -->
+            <div class="tab-content" id="tab-age">
+                <div class="input-group">
+                    <label>🎂 Enter Your Age (in years)</label>
+                    <input type="number" id="ageInput" placeholder="e.g., 25" min="1" max="120" style="cursor: pointer;">
+                </div>
+                <div style="font-size: 13px; color: #6b7280; margin-top: -10px; margin-bottom: 15px;">
+                    💡 Enter your age and we'll find your birth year!
+                </div>
+            </div>
+
+            <!-- CALCULATE BUTTON -->
+            <button class="calc-btn" id="calculateBtn">🎂 Find My Birth Year</button>
+
+            <!-- RESULT BOX -->
+            <div class="result-box" id="resultBox">
+                <div>
+                    <span class="result-badge">🎂 YOUR BIRTH YEAR</span>
+                </div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="label">📅 Birth Year</div>
+                        <div class="value" id="birthYearDisplay">--</div>
+                        <div class="sub">Your birth year</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">🎂 Your Age</div>
+                        <div class="value" id="ageDisplay">--</div>
+                        <div class="sub" id="birthdayStatus">Years old</div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; font-size: 14px; color: #6b7280;">
+                    📅 Born in: <span id="fullBirthDate" style="font-weight: 600; color: #5b21b6;">--</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== SEO ARTICLE ========== -->
+    <div class="seo-article">
+        <h1 style="color: #5b21b6; font-size: 32px; margin-bottom: 10px;">🎂 My Birth Year Calculator — Find Your Birth Year & Age</h1>
+        <p style="font-size:1.05rem; line-height:1.8; margin-bottom:20px;">
+            A <strong>birth year calculator</strong> (also called <strong>"my birth year"</strong> tool) helps you find your exact <strong>birth year</strong> and <strong>current age</strong>. Whether you know your date of birth or just your age, this tool will tell you <strong>what year you were born</strong> in seconds!
+        </p>
+
+        <h2>🎂 What is a Birth Year Calculator?</h2>
+        <p>
+            A <strong>birth year calculator</strong> is a simple tool that calculates your <strong>birth year</strong> based on your <strong>date of birth</strong> or your <strong>current age</strong>. It answers the common question: <strong>"What is my birth year?"</strong> or <strong>"What year was I born?"</strong>
+        </p>
+        <p>
+            This tool is perfect for:
+            <ul style="margin:10px 0 20px 20px; line-height:1.8;">
+                <li>🔍 Finding your birth year if you only know your age</li>
+                <li>📝 Filling out forms that ask for your birth year</li>
+                <li>🎂 Double-checking your age and birth year</li>
+                <li>🧮 Quick mental math verification</li>
+            </ul>
+        </p>
+
+        <h2>⚙️ How to Use This Birth Year Calculator</h2>
+        <ol style="margin-bottom:20px; padding-left:20px; line-height:1.8;">
+            <li><strong>Choose a method</strong> — Date of Birth OR Age</li>
+            <li><strong>Enter your information</strong> — select DOB or type your age</li>
+            <li><strong>Click "Find My Birth Year"</strong> — see your birth year and age instantly!</li>
+        </ol>
+
+        <h2>✅ Why Use This Birth Year Calculator?</h2>
+        <ul style="margin-bottom:20px; padding-left:20px; line-height:1.8;">
+            <li><strong>Two methods</strong> — enter DOB or just your age</li>
+            <li><strong>100% accurate</strong> — handles leap years automatically</li>
+            <li><strong>Free to use</strong> — no registration or payment required</li>
+            <li><strong>Privacy first</strong> — all calculations in your browser</li>
+            <li><strong>Mobile friendly</strong> — works on all devices</li>
+        </ul>
+
+        <h2>📊 Birth Year Calculation Examples</h2>
+        <table style="width:100%; border-collapse:collapse; margin:15px 0;">
+            <tr style="background:#f5f3ff;">
+                <th style="padding:12px; border:1px solid #ddd6fe; text-align:left;">Current Year</th>
+                <th style="padding:12px; border:1px solid #ddd6fe; text-align:left;">Your Age</th>
+                <th style="padding:12px; border:1px solid #ddd6fe; text-align:left;">Birth Year</th>
+            </tr>
+            <tr>
+                <td style="padding:12px; border:1px solid #ddd6fe;">2026</td>
+                <td style="padding:12px; border:1px solid #ddd6fe;">25</td>
+                <td style="padding:12px; border:1px solid #ddd6fe; font-weight:bold; color:#5b21b6;">2001</td>
+            </tr>
+            <tr style="background:#f5f3ff;">
+                <td style="padding:12px; border:1px solid #ddd6fe;">2026</td>
+                <td style="padding:12px; border:1px solid #ddd6fe;">40</td>
+                <td style="padding:12px; border:1px solid #ddd6fe; font-weight:bold; color:#5b21b6;">1986</td>
+            </tr>
+            <tr>
+                <td style="padding:12px; border:1px solid #ddd6fe;">2026</td>
+                <td style="padding:12px; border:1px solid #ddd6fe;">18</td>
+                <td style="padding:12px; border:1px solid #ddd6fe; font-weight:bold; color:#5b21b6;">2008</td>
+            </tr>
+            <tr style="background:#f5f3ff;">
+                <td style="padding:12px; border:1px solid #ddd6fe;">2026</td>
+                <td style="padding:12px; border:1px solid #ddd6fe;">65</td>
+                <td style="padding:12px; border:1px solid #ddd6fe; font-weight:bold; color:#5b21b6;">1961</td>
+            </tr>
+        </table>
+
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#5b21b6;">❓ What is "my birth year" calculator?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">It's a tool that finds your birth year based on your date of birth or your current age.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#5b21b6;">❓ How do I find my birth year if I know my age?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Subtract your age from the current year. If your birthday hasn't passed yet this year, subtract one more year.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#5b21b6;">❓ Is this birth year calculator free?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Yes, 100% free. No registration, no payment, unlimited uses.</div>
+        </div>
+
+        <div style="margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:12px;">
+            <div style="font-weight:700; color:#5b21b6;">❓ Can I use this on mobile?</div>
+            <div style="font-size:15px; line-height:1.8; color:#374151;">Yes! It's fully responsive and works on all devices.</div>
+        </div>
+
+        <!-- CTA -->
+        <div style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); color: white; padding: 30px; border-radius: 20px; margin-top: 25px; text-align: center;">
+            <h3 style="color: white; margin-top: 0;">🎂 Find Your Birth Year Now!</h3>
+            <p style="margin: 15px 0;">Enter your date of birth or age above and get your birth year instantly.</p>
+            <p style="font-size: 14px; opacity: 0.8;">📢 Share this birth year calculator with your friends!</p>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 35px 20px 20px; margin-top: 40px; border-radius: 20px 20px 0 0; text-align: center;">
+        <p style="font-size: 0.75rem; color: #64748b;">© 2026 Free Online Tools 203 | My Birth Year Calculator</p>
+        <p style="font-size: 0.7rem; color: #64748b; margin-top:5px;">
+            <a href="https://freeonlinetools203.com/index.html" style="color:#94a3b8; text-decoration:none;">Home</a> |
+            <a href="https://freeonlinetools203.com/privacy-policy.html" style="color:#94a3b8; text-decoration:none;">Privacy</a> |
+            <a href="https://freeonlinetools203.com/contact.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+        </p>
+    </footer>
+</div>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+// === TABS ===
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.getElementById(this.dataset.tab).classList.add('active');
+    });
+});
+
+// === FUNCTIONS ===
+function showToastMsg(msg) {
+    let toast = document.querySelector('.toast-notification');
+    if (toast) toast.remove();
+    toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:12px 24px;border-radius:50px;font-size:14px;z-index:1000;animation:slideUp 0.3s ease;box-shadow:0 10px 25px rgba(0,0,0,0.2);';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+function calculateBirthYear() {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth();
+    const currentDay = today.getDate();
+
+    let birthYear = null;
+    let age = null;
+    let fullDate = null;
+
+    // Check which tab is active
+    const activeTab = document.querySelector('.tab-content.active');
+    const tabId = activeTab ? activeTab.id : 'tab-dob';
+
+    if (tabId === 'tab-dob') {
+        // Method 1: Date of Birth
+        const dobInput = document.getElementById('dobInput').value;
+        if (!dobInput) {
+            showToastMsg('❌ Please select your date of birth!');
+            return;
+        }
+        const birthDate = new Date(dobInput);
+        if (isNaN(birthDate.getTime())) {
+            showToastMsg('❌ Invalid date format!');
+            return;
+        }
+        if (birthDate > today) {
+            showToastMsg('❌ Date of birth cannot be in the future!');
+            return;
+        }
+
+        birthYear = birthDate.getFullYear();
+        fullDate = birthDate.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+        // Calculate age
+        age = currentYear - birthYear;
+        const monthDiff = currentMonth - birthDate.getMonth();
+        const dayDiff = currentDay - birthDate.getDate();
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+            age--;
+        }
+
+    } else {
+        // Method 2: Age
+        const ageInput = document.getElementById('ageInput').value;
+        if (!ageInput) {
+            showToastMsg('❌ Please enter your age!');
+            return;
+        }
+        age = parseInt(ageInput);
+        if (isNaN(age) || age < 1 || age > 120) {
+            showToastMsg('❌ Please enter a valid age (1-120)!');
+            return;
+        }
+
+        // Calculate birth year
+        birthYear = currentYear - age;
+        // Check if birthday has passed this year
+        // If not, birth year is one less
+        // We'll use a reasonable estimate
+        const estimatedBirthDate = new Date(birthYear, 6, 1); // July 1st
+        let ageCheck = currentYear - estimatedBirthDate.getFullYear();
+        const mDiff = currentMonth - estimatedBirthDate.getMonth();
+        const dDiff = currentDay - estimatedBirthDate.getDate();
+        if (mDiff < 0 || (mDiff === 0 && dDiff < 0)) {
+            ageCheck--;
+        }
+        if (ageCheck < age) {
+            birthYear--;
+        }
+
+        fullDate = 'Year: ' + birthYear + ' (estimated)';
+    }
+
+    // Display result
+    const resultBox = document.getElementById('resultBox');
+    resultBox.style.display = 'block';
+    document.getElementById('birthYearDisplay').innerText = birthYear;
+    document.getElementById('ageDisplay').innerText = age;
+    document.getElementById('fullBirthDate').innerText = fullDate;
+
+    // Birthday status
+    const statusElem = document.getElementById('birthdayStatus');
+    if (tabId === 'tab-dob') {
+        const birthDate = new Date(document.getElementById('dobInput').value);
+        const isBirthday = (birthDate.getMonth() === currentMonth && birthDate.getDate() === currentDay);
+        if (isBirthday) {
+            statusElem.innerText = '🎉 Happy Birthday!';
+            statusElem.style.color = '#7c3aed';
+            statusElem.style.fontWeight = 'bold';
+        } else {
+            statusElem.innerText = 'Years old';
+            statusElem.style.color = '#6b7280';
+            statusElem.style.fontWeight = 'normal';
+        }
+    } else {
+        statusElem.innerText = 'Years old';
+        statusElem.style.color = '#6b7280';
+        statusElem.style.fontWeight = 'normal';
+    }
+
+    showToastMsg('🎂 Your birth year: ' + birthYear + ' | Age: ' + age);
+}
+
+function updateLiveDateTimeAlways() {
+    const now = new Date();
+    const dateOpt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateElem = document.getElementById('liveDate');
+    if (dateElem) dateElem.innerText = now.toLocaleDateString(undefined, dateOpt);
+    const timeElem = document.getElementById('liveTime');
+    if (timeElem) timeElem.innerText = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+    const tzElem = document.getElementById('liveTimezone');
+    if (tzElem) tzElem.innerText = 'Timezone: ' + Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+function setDefaultDate() {
+    const today = new Date();
+    const defaultBirth = new Date(today.getFullYear() - 25, 0, 1);
+    const year = defaultBirth.getFullYear();
+    const month = String(defaultBirth.getMonth() + 1).padStart(2, '0');
+    const day = String(defaultBirth.getDate()).padStart(2, '0');
+    const dobField = document.getElementById('dobInput');
+    if (dobField) dobField.value = year + '-' + month + '-' + day;
+}
+
+// === INIT ===
+document.addEventListener('DOMContentLoaded', function() {
+    setDefaultDate();
+    updateLiveDateTimeAlways();
+    setInterval(updateLiveDateTimeAlways, 1000);
+
+    const resultBox = document.getElementById('resultBox');
+    if (resultBox) resultBox.style.display = 'none';
+
+    const btn = document.getElementById('calculateBtn');
+    if (btn) {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        newBtn.addEventListener('click', calculateBirthYear);
+    }
+
+    // Enter key support
+    document.getElementById('ageInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateBirthYear();
+    });
+    document.getElementById('dobInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateBirthYear();
+    });
+
+    // Add CSS animation
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+});
+</script>
+</body>
+</html>
