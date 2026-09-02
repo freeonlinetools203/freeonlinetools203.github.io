@@ -49,12 +49,36 @@
 }
 </script>
 
-<!-- ✅ FAQ Schema - 10 سوالات (HEAD اور ARTICLE برابر) -->
+<!-- ✅ FAQ Schema - EXACT MATCH from Google Search Images -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does an age calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool takes your date of birth and subtracts it from the current date (or a specified end date). It automatically accounts for varying month lengths and leap years to give an exact breakdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate age manually?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtract your birth year from the current year. Adjust if your birthday has not occurred yet this calendar year. Count the remaining whole months and leftover days since your last birthday."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate age in Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the formula =DATEDIF(A1, TODAY(), \"Y\") in a cell where A1 contains your birth date in MM/DD/YYYY format to get the age in years."
+      }
+    },
     {
       "@type": "Question",
       "name": "What is a chronological age calculator?",
@@ -65,80 +89,57 @@
     },
     {
       "@type": "Question",
-      "name": "How do I calculate age from date of birth manually?",
+      "name": "What is a free age calculator tool for FAQ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Subtract birth year from current year, then adjust for months and days by borrowing when needed. Use the formula: Current Date – Birth Date = Age."
+        "text": "A free age calculator tool for FAQ is a web-based tool that computes age in terms of years, months, weeks, days, hours, minutes, and seconds, given a date of birth."
       }
     },
     {
       "@type": "Question",
-      "name": "How to calculate age from date of birth in Excel?",
+      "name": "How to calculate age by date of birth?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use =DATEDIF(A1,TODAY(),\"Y\") for years, =DATEDIF(A1,TODAY(),\"YM\") for months, and =DATEDIF(A1,TODAY(),\"MD\") for days."
+        "text": "To calculate age by date of birth, subtract the birth date from the current date. Our free age calculator does this automatically for you."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this chronological age calculator free?",
+      "name": "What is the date of birth calculator year?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, 100% free. No registration, no payment, unlimited uses."
+        "text": "A date of birth calculator year shows your age in years only. It calculates how many full years have passed since your birth date."
       }
     },
     {
       "@type": "Question",
-      "name": "Does it store my date of birth?",
+      "name": "Is this age calculator free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, never. All calculations happen locally in your browser."
+        "text": "Yes! Our age calculator is 100% free to use with no registration required. Calculate your chronological age anytime."
       }
     },
     {
       "@type": "Question",
-      "name": "How accurate is the age in seconds?",
+      "name": "How accurate is the age calculator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It's synchronized with your device's system clock – accurate to the second."
+        "text": "Our age calculator is highly accurate and automatically handles leap years and different month lengths for precise results."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the difference between chronological and biological age?",
+      "name": "Does this age calculator store my data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chronological age is time since birth. Biological age depends on health and lifestyle factors."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if I was born on a leap day (Feb 29)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The tool correctly handles Feb 29 birthdays, counting years properly."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often does the age update?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every second – you'll see the seconds number increase live."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use this offline?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, after the page loads, it works offline without internet."
+        "text": "No! Your date of birth never leaves your device. All calculations happen locally in your browser. Your privacy is 100% protected."
       }
     }
   ]
 }
 </script>
 
+<!-- ========== SCHEMA MARKUP END ========== -->
 <style>
 * {
     margin: 0;
@@ -478,9 +479,10 @@ body {
 <div class="container">
     <div class="age-card">
         <div class="card-header">
-            <h1>Free Age Calculator - Calculate Your Exact Age by Date of Birth Instantly</h1>
-            <p>Enter your date of birth and get your exact age instantly. Live updates in Years, Months, Days, Hours, Minutes & Seconds.</p>
+            <h1>📘 Age Calculator - Calculate Your Exact Age by Date of Birth Instantly</h1>
+            <p>Free age calculator - Calculate your chronological age by date of birth in years, months, days, hours, minutes & seconds. Running age calculator for personal and professional use.</p>
         </div>
+      
         <div class="card-content">
             <div class="live-datetime">
                 <div class="live-datetime-label"><span>LIVE CURRENT TIME</span></div>
