@@ -228,7 +228,55 @@
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
-
+    <!-- ========== NEW TOOLS ADDED (2026) ========== -->
+    <url>
+        <loc>https://freeonlinetools203.com/running-age-calculator.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/running-age-calculator-by-date-of-birth.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/date-of-birth-calculator-year.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/gradient-maker.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/my-birth-year.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/lambing-calculator.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/horse-gestation-calculator.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/time-calculator.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
     <!-- ========== ZODIAC & BIRTHDAY TOOLS (4) ========== -->
     <url>
         <loc>https://freeonlinetools203.com/zodiac-sign-finder.html</loc>
