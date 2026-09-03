@@ -1,5 +1,5 @@
 // =========================================================================
-// 1. CENTRALIZED TOOLS DATABASE (COMPLETE - 230+ TOOLS)
+// 1. CENTRALIZED TOOLS DATABASE (COMPLETE - 240+ TOOLS)
 // =========================================================================
 const toolsDatabase = {
   // 1. MOST POPULAR TOOLS
@@ -45,7 +45,10 @@ const toolsDatabase = {
       "Korean Age Calculator",
       "Birthday Countdown",
       "Happy Birthday Tool",
-      "Life Expectancy Calculator"
+      "Life Expectancy Calculator",
+      "Running Age Calculator",                    // ✅ ADDED
+      "Running Age Calculator by Date of Birth",  // ✅ ADDED
+      "Date of Birth Calculator Year"             // ✅ ADDED
     ]
   },
   
@@ -193,7 +196,8 @@ const toolsDatabase = {
       "Color Name Finder",
       "Random Color Picker",
       "Color Wheel",
-      "Image Color Extractor"
+      "Image Color Extractor",
+      "Gradient Maker"        // ✅ ADDED
     ]
   },
 
@@ -247,7 +251,8 @@ const toolsDatabase = {
       "QR Code Generator",
       "Advanced QR Generator",
       "YouTube Thumbnail Downloader",
-      "Currency Converter"
+      "Currency Converter",
+      "My Birth Year"          // ✅ ADDED
     ]
   },
 
@@ -317,7 +322,9 @@ const toolsDatabase = {
       "Goat Pregnancy Calculator",
       "Horse Pregnancy Calculator",
       "Sheep Pregnancy Calculator",
-      "Pig Pregnancy Calculator"
+      "Pig Pregnancy Calculator",
+      "Lambing Calculator",           // ✅ ADDED
+      "Horse Gestation Calculator"    // ✅ ADDED
     ]
   },
 
@@ -336,6 +343,7 @@ const toolsDatabase = {
   catTime: {
     name: "⏰ Time Calculators",
     tools: [
+      "Time Calculator",              // ✅ ADDED
       "Time Difference Calculator",
       "Date Calculator",
       "Age Calculator"
@@ -344,7 +352,7 @@ const toolsDatabase = {
 };
 
 // =========================================================================
-// 2. TOOL URL MAPPING (COMPLETE - ALL 230+ TOOLS)
+// 2. TOOL URL MAPPING (COMPLETE - ALL 240+ TOOLS)
 // =========================================================================
 const toolUrlMap = {
   // Age Calculator Tools
@@ -377,6 +385,11 @@ const toolUrlMap = {
   "Birthday Countdown": "birthday-countdown.html",
   "Happy Birthday Tool": "happy-birthday-tool.html",
   "Life Expectancy Calculator": "life-expectancy-calculator.html",
+
+  // ===== NEW AGE TOOLS ADDED =====
+  "Running Age Calculator": "running-age-calculator.html",
+  "Running Age Calculator by Date of Birth": "running-age-calculator-by-date-of-birth.html",
+  "Date of Birth Calculator Year": "date-of-birth-calculator-year.html",
 
   // SEO Tools
   "Keyword Density Checker": "keyword-density-checker.html",
@@ -419,6 +432,10 @@ const toolUrlMap = {
   "Horse Pregnancy Calculator": "horse-pregnancy-calculator.html",
   "Sheep Pregnancy Calculator": "sheep-pregnancy-calculator.html",
   "Pig Pregnancy Calculator": "pig-pregnancy-calculator.html",
+
+  // ===== NEW ANIMAL TOOLS ADDED =====
+  "Lambing Calculator": "lambing-calculator.html",
+  "Horse Gestation Calculator": "horse-gestation-calculator.html",
   
   // Developer & Security Tools
   "MD5 Hash Generator": "md5-generator.html",
@@ -440,6 +457,9 @@ const toolUrlMap = {
   "Random Color Picker": "random-color-picker.html",
   "Color Wheel": "color-wheel-seo.html",
   "Image Color Extractor": "image-color-extractor.html",
+
+  // ===== NEW COLOR TOOL ADDED =====
+  "Gradient Maker": "gradient-maker.html",
   
   // Popular Calculators
   "Unit Converter": "unit-converter.html",
@@ -454,6 +474,9 @@ const toolUrlMap = {
   "Advanced QR Generator": "advanced-qr-generator.html",
   "YouTube Thumbnail Downloader": "youtube-thumbnail-downloader.html",
   "Currency Converter": "currency-converter.html",
+
+  // ===== NEW CALCULATOR TOOL ADDED =====
+  "My Birth Year": "my-birth-year.html",
   
   // Health & Fitness
   "BMI Calculator": "bmi-calculator.html",
@@ -509,6 +532,9 @@ const toolUrlMap = {
   
   // Time Calculators
   "Time Difference Calculator": "time-difference-calculator.html",
+
+  // ===== NEW TIME TOOL ADDED =====
+  "Time Calculator": "time-calculator.html",
   
   // Wheel & Fun Tools
   "Spin The Wheel": "spin-the-wheel.html",
@@ -578,7 +604,6 @@ const toolUrlMap = {
   "YouTube Channel Name Generator": "youtube-channel-name-generator.html",
   "YouTube Community Post Generator": "youtube-community-post-generator.html"
 };
-
 // =========================================================================
 // 3. HELPER FUNCTION - GET URL
 // =========================================================================
@@ -1013,7 +1038,6 @@ const navbarHTML = `<div class="megamenu-container">
   </div>
   <div class="mobile-menu" id="mobileMenu"></div>
 </div>`;
-
 // =========================================================================
 // 9. PAGE ONLOAD START
 // =========================================================================
