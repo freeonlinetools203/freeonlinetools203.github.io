@@ -1342,6 +1342,124 @@ function showToast(message) {
 </script>
 
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER END ========== -->
-  
+
+<!-- ========== CALCULATOR JAVASCRIPT ========== -->
+<script>
+    // DOM elements
+    const breedingDate = document.getElementById('breedingDate');
+    const gestationDays = document.getElementById('gestationDays');
+    const calculateBtn = document.getElementById('calculateBtn');
+    const resultContainer = document.getElementById('resultContainer');
+    const dueDateDisplay = document.getElementById('dueDateDisplay');
+    const gestationInfo = document.getElementById('gestationInfo');
+    const monthTracker = document.getElementById('monthTracker');
+    const currentMonthInfo = document.getElementById('currentMonthInfo');
+
+    // Month names
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    function calculate() {
+        const dateValue = breedingDate.value;
+        if (!dateValue) {
+            alert('Please select a breeding date!');
+            return;
+        }
+
+        const breeding = new Date(dateValue + 'T00:00:00');
+        if (isNaN(breeding.getTime())) {
+            alert('Invalid date!');
+            return;
+        }
+
+        const gestation = parseInt(gestationDays.value);
+        const dueDate = new Date(breeding);
+        dueDate.setDate(dueDate.getDate() + gestation);
+
+        // Format due date
+        const day = String(dueDate.getDate()).padStart(2, '0');
+        const month = String(dueDate.getMonth() + 1).padStart(2, '0');
+        const year = dueDate.getFullYear();
+        const formattedDate = `${day}/${month}/${year}`;
+
+        // Show result
+        dueDateDisplay.textContent = formattedDate;
+        gestationInfo.textContent = `📊 Gestation Period: ${gestation} days | 📅 Breeding Date: ${formatDate(breeding)}`;
+
+        // Build month tracker
+        buildMonthTracker(breeding, dueDate);
+
+        // Show result container
+        resultContainer.style.display = 'block';
+    }
+
+    function formatDate(date) {
+        const d = String(date.getDate()).padStart(2, '0');
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const y = date.getFullYear();
+        return `${d}/${m}/${y}`;
+    }
+
+    function buildMonthTracker(startDate, endDate) {
+        let html = '';
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+
+        let current = new Date(start);
+        let monthCount = 0;
+        const maxMonths = 13;
+
+        while (current <= end && monthCount < maxMonths) {
+            const monthName = monthNames[current.getMonth()];
+            const yearShort = String(current.getFullYear()).slice(-2);
+            const label = `${monthName} ${yearShort}`;
+
+            const isCurrent = (current.getMonth() === today.getMonth() && 
+                              current.getFullYear() === today.getFullYear());
+
+            let className = 'month-badge';
+            if (isCurrent) className += ' current';
+
+            html += `<span class="${className}">${label}</span>`;
+
+            current.setMonth(current.getMonth() + 1);
+            monthCount++;
+        }
+
+        monthTracker.innerHTML = html;
+
+        const todayMonth = monthNames[today.getMonth()];
+        const todayYear = today.getFullYear();
+        currentMonthInfo.textContent = `📍 Current: ${todayMonth} ${todayYear} | Breeding: ${formatDate(startDate)} | Expected: ${formatDate(endDate)}`;
+    }
+
+    // ======== EVENTS ========
+    calculateBtn.addEventListener('click', calculate);
+
+    // Auto-calculate on dropdown change
+    gestationDays.addEventListener('change', () => {
+        if (breedingDate.value) calculate();
+    });
+
+    // Auto-calculate on date change
+    breedingDate.addEventListener('change', () => {
+        if (breedingDate.value) calculate();
+    });
+
+    // Enter key
+    breedingDate.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') calculate();
+    });
+
+    // Page load par auto-calculate
+    window.addEventListener('load', () => {
+        if (breedingDate.value) {
+            calculate();
+        }
+    });
+</script>
+ 
 </body>
 </html>
