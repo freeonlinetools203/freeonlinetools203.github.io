@@ -285,7 +285,7 @@
     <div class="apt-tools-subtitle">⚡ Free animal pregnancy calculators for pet & farm owners!</div>
 
     <div class="apt-stats-bar">
-      <div class="apt-total-tools">🎯 Total 8 Animal Pregnancy Tools</div>
+      <div class="apt-total-tools">🎯 Total 9 Animal Pregnancy Tools</div>
       <div class="apt-category-filter">
         <span class="apt-filter-chip active" data-filter="all">🔘 All</span>
         <span class="apt-filter-chip" data-filter="pet">🐶 Pet</span>
@@ -298,7 +298,7 @@
     <div class="apt-pagination">
       <button class="apt-page-btn" id="aptPrevBtn" onclick="aptChangePage(-1)">◀ Prev</button>
       <div id="aptPageNumbers"></div>
-      class="apt-page-btn" id="aptNextBtn" onclick="aptChangePage(1)">Next ▶</button>
+      <button class="apt-page-btn" id="aptNextBtn" onclick="aptChangePage(1)">Next ▶</button>
     </div>
     <div class="apt-page-info" id="aptPageInfo"></div>
   </div>
@@ -314,12 +314,13 @@ const aptToolsList = [
   { name: "🐐 Goat Pregnancy Calculator", desc: "Calculate goat pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/goat-pregnancy-calculator.html" },
   { name: "🐴 Horse Pregnancy Calculator", desc: "Calculate horse pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/horse-pregnancy-calculator.html" },
   { name: "🐑 Sheep Pregnancy Calculator", desc: "Calculate sheep pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/sheep-pregnancy-calculator.html" },
-  { name: "🐷 Pig Pregnancy Calculator", desc: "Calculate pig pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/pig-pregnancy-calculator.html" }
+  { name: "🐷 Pig Pregnancy Calculator", desc: "Calculate pig pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/pig-pregnancy-calculator.html" },
+  { name: "🐑 Lambing Calculator", desc: "Calculate sheep lambing date easily", category: "farm", url: "https://freeonlinetools203.com/lambing-calculator.html" }
 ];
 
 let aptCurrentPage = 1;
 let aptCurrentFilter = "all";
-const aptToolsPerPage = 8;
+const aptToolsPerPage = 9;
 
 function aptGetFilteredTools() {
   if (aptCurrentFilter === "all") return aptToolsList;
@@ -416,7 +417,6 @@ function aptSetFilter(filter) {
   });
 }
 
-// ✅ Sirf ek baar
 document.addEventListener('DOMContentLoaded', () => {
   aptRenderTools();
   document.querySelectorAll('.apt-filter-chip').forEach(chip => {
