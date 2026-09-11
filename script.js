@@ -1378,3 +1378,52 @@ function showToast(message) {
 // =========================================================================
 // 11. USER REVIEWS SYSTEM END
 // =========================================================================
+
+// =========================================================================
+// SHARE FUNCTIONS
+// =========================================================================
+function sharePage(platform) {
+    let url = encodeURIComponent(window.location.href);
+    let title = encodeURIComponent(document.title || "Free Online Tools 203");
+    let shareUrl = "";
+    if (platform === "whatsapp") shareUrl = "https://wa.me/?text=" + title + "%20" + url;
+    else if (platform === "facebook") shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    else if (platform === "twitter") shareUrl = "https://twitter.com/intent/tweet?text=" + title + "&url=" + url;
+    else if (platform === "linkedin") shareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + title;
+    if (shareUrl) window.open(shareUrl, "_blank", "width=600,height=500");
+}
+
+function copyPageLink() {
+    let url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => { showToast('✅ Link copied! Share with friends.'); });
+    } else {
+        let textarea = document.createElement('textarea');
+        textarea.value = url;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('✅ Link copied! Share with friends.');
+    }
+}
+
+// =========================================================================
+// WRITE A REVIEW BUTTON - FORM OPEN
+// =========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaBtn = document.getElementById('reviewCtaBtn');
+    const reviewForm = document.getElementById('reviewForm');
+    const ctaBox = document.getElementById('reviewCtaBox');
+
+    if (ctaBtn && reviewForm && ctaBox) {
+        ctaBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            reviewForm.style.display = 'block';
+            ctaBox.style.display = 'none';
+            reviewForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            selectedStar = 5;
+            updateStars();
+        });
+    }
+});
