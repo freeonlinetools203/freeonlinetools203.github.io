@@ -521,24 +521,23 @@
         font-weight: 600;
         cursor: pointer;
         transition: opacity 0.2s;
-       }
+          }
     .rev-form .rf-submit:hover { opacity: 0.9; }
     .rev-list {
         display: flex;
         flex-direction: column;
         gap: 15px;
         max-height: 500px;
-        overflow: hidden;
+        overflow-y: auto;
         position: relative;
-        animation: scrollReviews 60s linear infinite;
+        scroll-behavior: smooth;
     }
-    @keyframes scrollReviews {
-        0% {
-            transform: translateY(0);
-        }
-        100% {
-            transform: translateY(-50%);
-        }
+    .rev-list::-webkit-scrollbar {
+        display: none;
+    }
+    .rev-list {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
     .rev-item {
         background: #f8fafc;
