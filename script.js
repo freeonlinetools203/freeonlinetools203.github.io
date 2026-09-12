@@ -1283,12 +1283,33 @@ function renderReviews() {
                `;
     });
     
-   // ===== ANIMATION KE LIYE REVIEWS KO DOUBLE KAREIN =====
-html = html + html;
-    
-    list.innerHTML = html;
-}
-// Escape HTML
+        // ===== ANIMATION KE LIYE REVIEWS KO DOUBLE KAREIN =====
+        html = html + html;
+        
+        list.innerHTML = html;
+        
+        // ===== AUTO SCROLL ANIMATION (Continuous, Never Stops) =====
+        if (list) {
+            let scrollPos = 0;
+            const scrollSpeed = 0.3; // Pixels per frame (kam = slow, zyada = fast)
+            
+            function autoScroll() {
+                scrollPos += scrollSpeed;
+                
+                // Jab aadha scroll ho jaye, to reset karein (seamless loop)
+                if (scrollPos >= list.scrollHeight / 2) {
+                    scrollPos = 0;
+                }
+                
+                list.scrollTop = scrollPos;
+                requestAnimationFrame(autoScroll);
+            }
+            
+            // Scroll shuru karein
+            autoScroll();
+        }
+    }
+    // Escape HTML
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
