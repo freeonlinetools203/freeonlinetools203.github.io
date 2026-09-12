@@ -1283,8 +1283,8 @@ function renderReviews() {
                `;
     });
     
-    // ===== ANIMATION KE LIYE REVIEWS KO DOUBLE KAREIN =====
-    html = html + html;
+    // ===== ANIMATION KE LIYE REVIEWS KO TEEN BAAR KAREIN =====
+html = html + html + html;
     
     list.innerHTML = html;
 }
