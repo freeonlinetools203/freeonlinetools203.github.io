@@ -1280,11 +1280,14 @@ function renderReviews() {
                 </div>
                 <p class="ri-text">${escapeHtml(r.comment)}</p>
             </div>
-        `;
+               `;
     });
+    
+    // ===== ANIMATION KE LIYE REVIEWS KO DOUBLE KAREIN =====
+    html = html + html;
+    
     list.innerHTML = html;
 }
-
 // Escape HTML
 function escapeHtml(text) {
     const div = document.createElement('div');
