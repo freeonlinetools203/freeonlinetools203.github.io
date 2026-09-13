@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- ========== MAIN PAGES ========== -->
-    <url>
-        <loc>https://freeonlinetools203.com/index.html</loc>
-        <lastmod>2026-08-31</lastmod>
+     <url>
+        <loc>https://freeonlinetools203.com/</loc>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>daily</changefreq>
-        <priority>1.00</priority>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/about.html</loc>
@@ -48,9 +48,9 @@
     <!-- ========== AGE CALCULATOR TOOLS (27) ========== -->
     <url>
         <loc>https://freeonlinetools203.com/age-calculator.html</loc>
-        <lastmod>2026-08-30</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/chronological-age-calculator.html</loc>
@@ -228,85 +228,97 @@
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
-    <!-- ========== NEW TOOLS ADDED (2026) ========== -->
+<!-- ========== NEW TOOLS ADDED (2026) ========== -->
     <url>
         <loc>https://freeonlinetools203.com/running-age-calculator.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/running-age-calculator-by-date-of-birth.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/date-of-birth-calculator-year.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/gradient-maker.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/my-birth-year.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/lambing-calculator.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/horse-gestation-calculator.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/time-calculator.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <!-- ========== ZODIAC & BIRTHDAY TOOLS (4) ========== -->
     <url>
         <loc>https://freeonlinetools203.com/zodiac-sign-finder.html</loc>
-        <lastmod>2026-08-30</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/chinese-zodiac-finder.html</loc>
-        <lastmod>2026-08-30</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/birthday-countdown.html</loc>
-        <lastmod>2026-08-30</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/happy-birthday-tool.html</loc>
-        <lastmod>2026-08-30</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <!-- ========== TIME CALCULATORS (3) ========== -->
     <url>
+        <loc>https://freeonlinetools203.com/countdown-timer.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://freeonlinetools203.com/world-clock.html</loc>
+        <lastmod>2026-09-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
         <loc>https://freeonlinetools203.com/time-difference-calculator.html</loc>
-        <lastmod>2026-08-30</lastmod>
+        <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
