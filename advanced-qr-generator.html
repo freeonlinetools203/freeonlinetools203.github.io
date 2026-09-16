@@ -33,91 +33,160 @@
         gtag('config', 'G-EQ8DLY7HYN');
     </script>
 
-    <!-- Schema Markup for WebApplication -->
-    <script type="application/ld+json">
+    <!-- SCHEMA MARKUP START -->
+
+<!-- 1. SoftwareApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Advanced QR Code Generator",
+  "description": "Create trackable, editable, and branded QR codes for vCards, Google Maps, and transparent PNGs for free.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "url": "https://freeonlinetools203.com/advanced-qr-code-generator.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- 2. HowTo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Generate an Advanced QR Code",
+  "description": "Learn how to create advanced QR codes with custom colors, logos, and transparent backgrounds for free.",
+  "step": [
     {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": "HowToStep",
+      "name": "Enter Data",
+      "text": "Input the URL, vCard, or text data you want to encode into the QR code generator."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize Design",
+      "text": "Customize the QR code with colors, your logo, and a transparent background to match your brand."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Download QR Code",
+      "text": "Generate and download your advanced QR code in high-resolution PNG, SVG, or PDF format."
+    }
+  ]
+}
+</script>
+
+<!-- 3. BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://freeonlinetools203.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
       "name": "Advanced QR Code Generator",
-      "description": "Create custom QR codes for vCard contacts, Google Maps locations, URLs, Google Forms. Transparent background, color customization. Download PNG, JPG, PDF.",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "All",
-      "url": "https://freeonlinetools203.com/advanced-qr-generator.html",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "Free Online Tools"
-      },
-      "featureList": [
-        "vCard contact QR codes",
-        "Google Maps location QR codes",
-        "Google Form/Sheets QR codes",
-        "Transparent background option",
-        "Color customization",
-        "PNG, JPG, PDF download"
-      ]
+      "item": "https://freeonlinetools203.com/advanced-qr-code-generator.html"
     }
-    </script>
+  ]
+}
+</script>
 
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
+<!-- 4. FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://freeonlinetools203.com/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Advanced QR Code Generator",
-          "item": "https://freeonlinetools203.com/advanced-qr-generator.html"
-        }
-      ]
+      "@type": "Question",
+      "name": "What is an advanced QR code generator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Advanced QR code generators let you create trackable, editable, and branded codes that link directly to digital FAQ landing pages, knowledge bases, or support documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a Static and Dynamic QR code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Static QR codes embed the information directly into the pattern. They never expire and are completely free, making them perfect for fixed data like a Google Maps location or a vCard. They cannot be edited after printing. Dynamic QR codes point to a redirect link. This allows you to change the destination URL later and track scan data, but they usually require a paid subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I ensure my QR code has a transparent background?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When customizing your code in tools like QR Code Monkey, look for the background color setting. Set the opacity slider to 0% or select the 'Transparent' checkbox before downloading the image."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to generate a vCard QR code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To generate a vCard QR code, select the vCard option in an advanced QR code generator, enter your contact details (name, phone, email, website), customize the design, and download the QR code for your business card."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which are the top advanced QR code generator tools for FAQs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Top advanced QR code tools for FAQs include Beaconstac, QR Code Generator by Bitly, QRCode Monkey, QR Tiger, and QRStuff."
+      }
     }
-    </script>
+  ]
+}
+</script>
 
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is a vCard QR code?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A vCard QR code encodes contact information (name, phone, email, website) that can be directly saved to a smartphone's address book when scanned."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I make the QR code background transparent?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, our tool has a 'Transparent background' checkbox. When enabled (and downloaded as PNG), the white background is removed, perfect for logos and branding."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What formats can I download the QR code in?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can download as PNG (supports transparency), JPG (small file size), or PDF (ready for printing on A4/Letter paper)."
-          }
-        }
-      ]
-    }
-    </script>
+<!-- 5. WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Free Online Tools 203",
+  "url": "https://freeonlinetools203.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://freeonlinetools203.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 6. ImageObject Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://freeonlinetools203.com/images/advanced-qr-code-generator.jpg",
+  "name": "Advanced QR Code Generator Tool",
+  "description": "Screenshot of the Advanced QR Code Generator interface showing options for vCard, Google Maps, and transparent background PNG downloads.",
+  "width": {
+    "@type": "QuantitativeValue",
+    "value": 1200
+  },
+  "height": {
+    "@type": "QuantitativeValue",
+    "value": 630
+  }
+}
+</script>
+
+<!-- SCHEMA MARKUP END -->
 
     <style>
         * {
