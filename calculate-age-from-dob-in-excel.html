@@ -16,6 +16,15 @@
 <meta property="og:description" content="Step-by-step guide to calculate age from date of birth in Excel. Free online age calculator included.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html">
+<meta property="og:image" content="https://freeonlinetools203.com/calculate-age-from-dob-in-excel-og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculate Age from Date of Birth in Excel - Complete DOB Guide">
+<meta name="twitter:description" content="Step-by-step guide to calculate age from date of birth in Excel. Free online age calculator included.">
+<meta name="twitter:image" content="https://freeonlinetools203.com/calculate-age-from-dob-in-excel-og-image.jpg">
 
 <!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
@@ -26,19 +35,138 @@
   gtag('config', 'G-EQ8DLY7HYN');
 </script>
 
-<!-- Schema -->
+<!-- ============================================================ -->
+<!-- ===== CALCULATE AGE FROM DOB IN EXCEL - SCHEMA START ======= -->
+<!-- ============================================================ -->
+
+<!-- 1. SoftwareApplication Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   "name": "Calculate Age from Date of Birth in Excel",
-  "description": "Complete guide to calculating age from DOB in Excel with step-by-step examples.",
+  "description": "Step-by-step guide to calculate age from date of birth in Excel using DATEDIF, YEARFRAC, and TODAY functions.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
+  "browserRequirements": "Requires modern browser with JavaScript enabled",
   "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": "DATEDIF formula, YEARFRAC formula, Age in years months days, Age from text DOB, DOB from age, 100% free no registration required"
 }
 </script>
+
+<!-- 2. HowTo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Age from Date of Birth in Excel",
+  "description": "Learn to calculate age from date of birth in Excel using DATEDIF and TODAY functions in 3 easy steps",
+  "totalTime": "PT3M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Enter Date of Birth",
+      "text": "Enter the date of birth in cell A2. Format it as a valid date (e.g., 15/01/1990 or 01/15/1990)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Use DATEDIF Formula",
+      "text": "Type =DATEDIF(A2, TODAY(), \"Y\") to get age in complete years. Use \"YM\" for months and \"MD\" for days."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Get Full Age Breakdown",
+      "text": "Combine formulas: =DATEDIF(A2,TODAY(),\"Y\") & \" Years, \" & DATEDIF(A2,TODAY(),\"YM\") & \" Months, \" & DATEDIF(A2,TODAY(),\"MD\") & \" Days\"."
+    }
+  ]
+}
+</script>
+
+<!-- 3. BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://freeonlinetools203.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Age Calculator Tools",
+      "item": "https://freeonlinetools203.com/age-calculator.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Calculate Age from DOB in Excel",
+      "item": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html"
+    }
+  ]
+}
+</script>
+
+<!-- 4. FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "What is the formula to calculate age from date of birth in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use =DATEDIF(A2, TODAY(), 'Y') where A2 contains the date of birth. This returns age in complete years."}},
+    {"@type": "Question","name": "How do I calculate age in Excel in years, months, and days?","acceptedAnswer": {"@type": "Answer","text": "Use the combined formula: =DATEDIF(A2,TODAY(),'Y') & ' Years, ' & DATEDIF(A2,TODAY(),'YM') & ' Months, ' & DATEDIF(A2,TODAY(),'MD') & ' Days'."}},
+    {"@type": "Question","name": "Why is DATEDIF not showing in Excel's formula list?","acceptedAnswer": {"@type": "Answer","text": "DATEDIF is a hidden function in Excel. You can still use it by typing the formula manually. It works in all versions."}},
+    {"@type": "Question","name": "Can I calculate age in Google Sheets?","acceptedAnswer": {"@type": "Answer","text": "Yes! Google Sheets supports the same DATEDIF and TODAY functions. The formula is identical to Excel."}},
+    {"@type": "Question","name": "How do I calculate age from date of birth in Excel without TODAY()?","acceptedAnswer": {"@type": "Answer","text": "Replace TODAY() with a fixed date: =DATEDIF(A2, DATE(2026,1,1), 'Y') to calculate age as of January 1, 2026."}},
+    {"@type": "Question","name": "What if my Excel shows a #NUM! error with DATEDIF?","acceptedAnswer": {"@type": "Answer","text": "This happens when the start date is greater than the end date. Ensure your date of birth is earlier than TODAY()."}},
+    {"@type": "Question","name": "Can I calculate age in decimal years for statistical analysis?","acceptedAnswer": {"@type": "Answer","text": "Yes, use =YEARFRAC(A2, TODAY()) to get age in decimal years (e.g., 35.42)."}},
+    {"@type": "Question","name": "How do I calculate date of birth from age in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use =TODAY() - (A2 * 365.25) where A2 is the age in years."}}
+  ]
+}
+</script>
+
+<!-- 5. WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Free Online Tools 203",
+  "url": "https://freeonlinetools203.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://freeonlinetools203.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 6. ImageObject Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel-og-image.jpg",
+  "description": "Calculate Age from Date of Birth in Excel - Complete DOB Guide",
+  "name": "Calculate Age from Date of Birth in Excel",
+  "width": "1200",
+  "height": "630"
+}
+</script>
+
+<!-- ============================================================ -->
+<!-- ===== CALCULATE AGE FROM DOB IN EXCEL - SCHEMA END ========= -->
+<!-- ============================================================ -->
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
