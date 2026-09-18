@@ -26,19 +26,195 @@
   gtag('config', 'G-EQ8DLY7HYN');
 </script>
 
-<!-- Schema -->
+<!-- ============================================================ -->
+<!-- ========== EXCEL FORMULA - SCHEMA MARKUP START ============== -->
+<!-- ============================================================ -->
+
+<!-- 1. SoftwareApplication Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   "name": "Excel Formula to Calculate Age",
-  "description": "Complete guide to Excel formulas for calculating age from date of birth.",
+  "description": "Complete guide to Excel formulas for calculating age from date of birth. Learn DATEDIF, YEARFRAC, and DATEVALUE with real examples.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
+  "browserRequirements": "Requires modern browser with JavaScript enabled",
   "url": "https://freeonlinetools203.com/excel-formula-to-calculate-age.html",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": "DATEDIF formula, YEARFRAC formula, Age on specific date, Age from text DOB, Age from split cells, Age in years months days, Google Sheets compatible, 100% free no registration required",
+  "screenshot": "https://freeonlinetools203.com/images/excel-formula-to-calculate-age-screenshot.jpg"
 }
 </script>
+
+<!-- 2. HowTo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Age in Excel from Date of Birth",
+  "description": "Learn to calculate age in Excel using DATEDIF and YEARFRAC formulas in 3 easy steps",
+  "totalTime": "PT3M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Enter Date of Birth",
+      "text": "Enter the date of birth in cell A2. Make sure it is formatted as a valid date (e.g., 15-Jan-1990)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Use DATEDIF Formula",
+      "text": "Type =DATEDIF(A2, TODAY(), \"Y\") to get age in complete years. Use \"YM\" for months and \"MD\" for days."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Get Full Age Breakdown",
+      "text": "Combine formulas: =DATEDIF(A2,TODAY(),\"Y\") & \" Years, \" & DATEDIF(A2,TODAY(),\"YM\") & \" Months, \" & DATEDIF(A2,TODAY(),\"MD\") & \" Days\"."
+    }
+  ]
+}
+</script>
+
+<!-- 3. BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://freeonlinetools203.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Age Calculator Tools",
+      "item": "https://freeonlinetools203.com/age-calculator.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Excel Formula to Calculate Age",
+      "item": "https://freeonlinetools203.com/excel-formula-to-calculate-age.html"
+    }
+  ]
+}
+</script>
+
+<!-- 4. FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best Excel formula to calculate age from date of birth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use =DATEDIF(A2, TODAY(), \"Y\") for years, or the combined formula for years, months, and days. DATEDIF is the most accurate as it handles leap years automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate age on a specific date in Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Replace TODAY() with a specific date: =DATEDIF(A2, DATE(2026,1,1), \"Y\") for age as of January 1, 2026. Useful for school admissions or insurance cutoff dates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate age based on date of birth if DOB is text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use =DATEDIF(DATEVALUE(A2), TODAY(), \"Y\") to convert text DOB into a real date first. This works for dates stored as text like '15-Jan-1990'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is DATEDIF not showing in Excel's formula list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DATEDIF is a hidden function — you must type it manually. It works in all Excel versions and Google Sheets too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between DATEDIF and YEARFRAC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DATEDIF returns whole numbers (years, months, days). YEARFRAC returns a decimal (e.g., 36.42 years). Use DATEDIF for precise age, YEARFRAC for statistical analysis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate age in Google Sheets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Google Sheets supports the same DATEDIF, TODAY, and YEARFRAC functions. Formulas are identical to Excel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate date of birth from age in Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use =TODAY() - (A2 * 365.25) where A2 is the age in years. This gives an approximate birth date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Excel formula guide free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! This complete guide is 100% free with no registration required. Includes all formulas, examples, and a free online age calculator tool."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 5. WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Free Online Tools 203",
+  "url": "https://freeonlinetools203.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://freeonlinetools203.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 6. ImageObject Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://freeonlinetools203.com/images/excel-formula-to-calculate-age-og-image.jpg",
+  "description": "Excel Formula to Calculate Age - Complete Guide with Examples",
+  "name": "Excel Formula to Calculate Age",
+  "width": "1200",
+  "height": "630"
+}
+</script>
+
+<!-- ============================================================ -->
+<!-- ========== EXCEL FORMULA - SCHEMA MARKUP END ================ -->
+<!-- ============================================================ -->
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
