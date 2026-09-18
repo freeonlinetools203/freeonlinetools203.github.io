@@ -1062,12 +1062,77 @@ document.addEventListener('DOMContentLoaded', () => {
             <strong>👉 <a href="https://freeonlinetools203.com/advanced-qr-generator.html" style="display: inline-block; background: linear-gradient(135deg, #1a3a5c, #2d6b4f); color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 700; text-decoration: none;">Start Generating Free QR Codes Now</a></strong>
         </p>
 
-<!-- SHARE THIS TOOL SECTION -->
-<div style="background: #e8f5e9; padding: 30px; border-radius: 20px; margin: 35px 0; text-align: center; border: 1px solid #60a5fa;">
-    <h3 style="color: #1a1a2e; margin-top: 0;">🔗 Share This Tool</h3>
-    <p style="color: #4b5563; margin-bottom: 16px;">Share the <strong>Advanced QR Code Generator</strong> with your friends and family!</p>
-    <button onclick="openShareModal()" style="background: linear-gradient(135deg, #1a3a5c 0%, #2d6b4f 100%); border: none; color: white; padding: 16px 48px; border-radius: 60px; font-size: 18px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 30px rgba(26, 58, 92, 0.35);">🔗 Share This Tool</button>
+<!-- ========== SHARE THIS TOOL SECTION START ========== -->
+<div style="background:#eff6ff;border:2px solid #2563eb;border-radius:16px;padding:28px 22px;text-align:center;margin:28px 0;">
+    <h3 style="color:#1e3a8a;margin-top:0;font-size:1.2rem;">🔗 Share This Tool</h3>
+    <p style="color:#4b5563;margin-bottom:16px;">Share the <strong>Age Calculator</strong> with your friends and family!</p>
+    <button onclick="openArticleShareModal()" style="background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;border:none;padding:13px 34px;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 15px rgba(30,58,138,0.35);">🔗 Share This Tool</button>
 </div>
+
+<!-- SHARE MODAL -->
+<div id="articleShareModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:9999;justify-content:center;align-items:center;padding:20px;">
+    <div style="background:white;border-radius:24px;padding:30px;max-width:480px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+        <h3 style="color:#1e3a8a;margin-top:0;">🔗 Share This Tool</h3>
+        <p style="color:#6b7280;margin-bottom:18px;">Share the <strong>Age Calculator</strong> with your friends and family!</p>
+        
+        <div style="background:#f3f4f6;padding:10px 15px;border-radius:8px;margin-bottom:18px;word-break:break-all;font-size:0.8rem;color:#4b5563;">
+            https://freeonlinetools203.com/age-calculator.html
+        </div>
+        
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:20px;">
+            <a href="https://wa.me/?text=Check%20out%20this%20free%20Age%20Calculator%20-%20https://freeonlinetools203.com/age-calculator.html" target="_blank" rel="noopener" style="background:#25D366;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">📱 WhatsApp</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://freeonlinetools203.com/age-calculator.html" target="_blank" rel="noopener" style="background:#1877F2;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">📘 Facebook</a>
+            <a href="https://twitter.com/intent/tweet?text=Free%20Age%20Calculator&url=https://freeonlinetools203.com/age-calculator.html" target="_blank" rel="noopener" style="background:#1DA1F2;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">🐦 Twitter</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://freeonlinetools203.com/age-calculator.html" target="_blank" rel="noopener" style="background:#0A66C2;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">💼 LinkedIn</a>
+            <a href="https://www.tiktok.com/@freeonlinetools203" target="_blank" rel="noopener" style="background:#000000;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">🎵 TikTok</a>
+            <a href="javascript:void(0)" onclick="copyArticleShareLink()" style="background:#6b7280;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">📋 Copy Link</a>
+        </div>
+        
+        <button onclick="closeArticleShareModal()" style="background:#e5e7eb;border:none;color:#374151;padding:10px 30px;border-radius:40px;cursor:pointer;font-weight:600;font-size:0.88rem;">Close</button>
+    </div>
+</div>
+
+<!-- SHARE MODAL SCRIPT -->
+<script>
+function openArticleShareModal() {
+    document.getElementById('articleShareModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function closeArticleShareModal() {
+    document.getElementById('articleShareModal').style.display = 'none';
+    document.body.style.overflow = '';
+}
+function copyArticleShareLink() {
+    const url = 'https://freeonlinetools203.com/age-calculator.html';
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+            alert('✅ Link copied! Share with friends.');
+        }).catch(() => {
+            fallbackArticleCopy(url);
+        });
+    } else {
+        fallbackArticleCopy(url);
+    }
+}
+function fallbackArticleCopy(url) {
+    const ta = document.createElement('textarea');
+    ta.value = url;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('✅ Link copied! Share with friends.');
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeArticleShareModal();
+});
+document.addEventListener('click', function(e) {
+    var modal = document.getElementById('articleShareModal');
+    if (e.target === modal) closeArticleShareModal();
+});
+</script>
+<!-- ========== SHARE THIS TOOL SECTION END ========== -->
+        
         <!-- AUTHOR BIO -->
         <div style="background: #f8fafc; border-radius: 14px; padding: 24px; margin: 35px 0 20px; display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; border: 1px solid #e2e8f0;">
             <img src="https://freeonlinetools203.com/zain-uddin.jpg.png" alt="Zain Uddin - Founder of FreeOnlineTools203.com" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 3px solid #1a3a5c; flex-shrink: 0;">
