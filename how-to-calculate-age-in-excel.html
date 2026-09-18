@@ -16,6 +16,15 @@
 <meta property="og:description" content="Easy step-by-step tutorial on how to calculate age in Excel. Perfect for beginners.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeonlinetools203.com/how-to-calculate-age-in-excel.html">
+<meta property="og:image" content="https://freeonlinetools203.com/how-to-calculate-age-in-excel-og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Calculate Age in Excel - Step-by-Step Tutorial">
+<meta name="twitter:description" content="Easy step-by-step tutorial on how to calculate age in Excel. Perfect for beginners.">
+<meta name="twitter:image" content="https://freeonlinetools203.com/how-to-calculate-age-in-excel-og-image.jpg">
 
 <!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
@@ -26,19 +35,135 @@
   gtag('config', 'G-EQ8DLY7HYN');
 </script>
 
-<!-- Schema -->
+<!-- ============================================================ -->
+<!-- ========== HOW TO CALCULATE AGE IN EXCEL - SCHEMA START ===== -->
+<!-- ============================================================ -->
+
+<!-- 1. SoftwareApplication Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "How to Calculate Age in Excel Tutorial",
-  "description": "Step-by-step tutorial on how to calculate age in Excel for beginners.",
+  "@type": "SoftwareApplication",
+  "name": "How to Calculate Age in Excel",
+  "description": "Step-by-step tutorial on how to calculate age in Excel using date of birth. Learn DATEDIF, YEARFRAC, and TODAY functions with examples.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
+  "browserRequirements": "Requires modern browser with JavaScript enabled",
   "url": "https://freeonlinetools203.com/how-to-calculate-age-in-excel.html",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": "DATEDIF formula, YEARFRAC formula, Age in DD/MM/YYYY format, Age between two dates, Age from text DOB, Date of birth from age, 100% free no registration required"
 }
 </script>
+
+<!-- 2. HowTo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Age in Excel Using Date of Birth",
+  "description": "Learn to calculate age in Excel using DATEDIF and TODAY functions in 3 easy steps",
+  "totalTime": "PT3M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Enter Date of Birth",
+      "text": "Enter the date of birth in cell A2. Format it as a valid date (e.g., 15/01/1990 or 01/15/1990)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Use DATEDIF Formula",
+      "text": "Type =DATEDIF(A2, TODAY(), \"Y\") to get age in complete years. Use \"YM\" for months and \"MD\" for days."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Get Full Age Breakdown",
+      "text": "Combine formulas: =DATEDIF(A2,TODAY(),\"Y\") & \" Years, \" & DATEDIF(A2,TODAY(),\"YM\") & \" Months, \" & DATEDIF(A2,TODAY(),\"MD\") & \" Days\"."
+    }
+  ]
+}
+</script>
+
+<!-- 3. BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://freeonlinetools203.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Age Calculator Tools",
+      "item": "https://freeonlinetools203.com/age-calculator.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Calculate Age in Excel",
+      "item": "https://freeonlinetools203.com/how-to-calculate-age-in-excel.html"
+    }
+  ]
+}
+</script>
+
+<!-- 4. FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "How do I calculate age in Excel using date of birth?","acceptedAnswer": {"@type": "Answer","text": "Use =DATEDIF(A2, TODAY(), 'Y') where A2 contains the DOB. This returns age in complete years."}},
+    {"@type": "Question","name": "How do I calculate age in Excel in dd/mm/yyyy format?","acceptedAnswer": {"@type": "Answer","text": "Same DATEDIF formula works. Just ensure the cell is formatted as DD/MM/YYYY in Format Cells → Date."}},
+    {"@type": "Question","name": "How do I calculate age between two dates in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use =DATEDIF(A2, B2, 'Y') where A2 is start date and B2 is end date."}},
+    {"@type": "Question","name": "How do I calculate age from DOB in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use DATEDIF with the DOB cell. If DOB is text, wrap it: =DATEDIF(DATEVALUE(A2), TODAY(), 'Y')."}},
+    {"@type": "Question","name": "How do I calculate date of birth from age in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use =TODAY() - (A2 * 365.25) where A2 is the age in years."}}
+  ]
+}
+</script>
+
+<!-- 5. WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Free Online Tools 203",
+  "url": "https://freeonlinetools203.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://freeonlinetools203.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 6. ImageObject Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://freeonlinetools203.com/how-to-calculate-age-in-excel-og-image.jpg",
+  "description": "How to Calculate Age in Excel - Step-by-Step Tutorial",
+  "name": "How to Calculate Age in Excel",
+  "width": "1200",
+  "height": "630"
+}
+</script>
+
+<!-- ============================================================ -->
+<!-- ========== HOW TO CALCULATE AGE IN EXCEL - SCHEMA END ======= -->
+<!-- ============================================================ -->
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
