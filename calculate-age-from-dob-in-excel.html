@@ -65,26 +65,53 @@
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Calculate Age from Date of Birth in Excel",
-  "description": "Learn to calculate age from date of birth in Excel using DATEDIF and TODAY functions in 3 easy steps",
-  "totalTime": "PT3M",
+  "description": "Learn to calculate age from date of birth in Excel using DATEDIF and TODAY functions in 5 easy steps",
+  "totalTime": "PT5M",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel-og-image.jpg",
+    "width": 1200,
+    "height": 630
+  },
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Enter Date of Birth",
-      "text": "Enter the date of birth in cell A2. Format it as a valid date (e.g., 15/01/1990 or 01/15/1990)."
+      "name": "Prepare Your Data",
+      "text": "Open Excel and enter the date of birth in cell A2. Use a proper date format like 01/15/1990 or 15-Jan-1990.",
+      "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html#steps",
+      "image": "https://freeonlinetools203.com/excel-age-step1.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Use DATEDIF Formula",
-      "text": "Type =DATEDIF(A2, TODAY(), \"Y\") to get age in complete years. Use \"YM\" for months and \"MD\" for days."
+      "name": "Use the DATEDIF Formula",
+      "text": "In cell B2, type =DATEDIF(A2, TODAY(), \"Y\") to get the age in complete years.",
+      "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html#steps",
+      "image": "https://freeonlinetools203.com/excel-age-step2.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Get Full Age Breakdown",
-      "text": "Combine formulas: =DATEDIF(A2,TODAY(),\"Y\") & \" Years, \" & DATEDIF(A2,TODAY(),\"YM\") & \" Months, \" & DATEDIF(A2,TODAY(),\"MD\") & \" Days\"."
+      "name": "Get Age in Months and Days",
+      "text": "For months use =DATEDIF(A2, TODAY(), \"YM\") and for days use =DATEDIF(A2, TODAY(), \"MD\").",
+      "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html#steps"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Combine for Full Age",
+      "text": "Use =DATEDIF(A2,TODAY(),\"Y\") & \" Years, \" & DATEDIF(A2,TODAY(),\"YM\") & \" Months, \" & DATEDIF(A2,TODAY(),\"MD\") & \" Days\" to show complete age breakdown.",
+      "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html#steps",
+      "image": "https://freeonlinetools203.com/excel-age-step3.jpg"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Copy Formula Down",
+      "text": "Drag the fill handle to apply the formula to all rows. Your Excel age calculation is complete.",
+      "url": "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html#steps",
+      "image": "https://freeonlinetools203.com/excel-age-step4.jpg"
     }
   ]
 }
