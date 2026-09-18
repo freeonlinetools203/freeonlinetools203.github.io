@@ -1087,21 +1087,6 @@ document.addEventListener('click', function(e) {
     if (e.target === modal) closeArticleShareModal();
 });
 </script>
-
-<!-- FAQ SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question","name": "What is the best Excel formula to calculate age from date of birth?","acceptedAnswer": {"@type": "Answer","text": "Use =DATEDIF(A2, TODAY(), 'Y') for years, or the combined formula for years, months, and days."}},
-    {"@type": "Question","name": "How do I calculate age on a specific date in Excel?","acceptedAnswer": {"@type": "Answer","text": "Replace TODAY() with a specific date: =DATEDIF(A2, DATE(2026,1,1), 'Y') for age as of January 1, 2026."}},
-    {"@type": "Question","name": "How do I calculate age based on date of birth if DOB is text?","acceptedAnswer": {"@type": "Answer","text": "Use =DATEDIF(DATEVALUE(A2), TODAY(), 'Y') to convert text DOB into a real date first."}},
-    {"@type": "Question","name": "Why is DATEDIF not showing in Excel's formula list?","acceptedAnswer": {"@type": "Answer","text": "DATEDIF is a hidden function — you must type it manually. It works in all Excel versions."}},
-    {"@type": "Question","name": "What is the difference between DATEDIF and YEARFRAC?","acceptedAnswer": {"@type": "Answer","text": "DATEDIF returns whole numbers (years, months, days). YEARFRAC returns a decimal (e.g., 36.42 years)."}}
-  ]
-}
-</script>
 <!-- ========== Seo Article End ========== -->
   
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
