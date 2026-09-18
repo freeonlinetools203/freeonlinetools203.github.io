@@ -1032,21 +1032,6 @@ document.addEventListener('click', function(e) {
     if (e.target === modal) closeArticleShareModal();
 });
 </script>
-
-<!-- FAQ SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question","name": "How do I calculate age in Excel using date of birth?","acceptedAnswer": {"@type": "Answer","text": "Use =DATEDIF(A2, TODAY(), 'Y') where A2 contains the DOB. This returns age in complete years."}},
-    {"@type": "Question","name": "How do I calculate age in Excel in dd/mm/yyyy format?","acceptedAnswer": {"@type": "Answer","text": "Same DATEDIF formula works. Just ensure the cell is formatted as DD/MM/YYYY in Format Cells → Date."}},
-    {"@type": "Question","name": "How do I calculate age between two dates in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use =DATEDIF(A2, B2, 'Y') where A2 is start date and B2 is end date."}},
-    {"@type": "Question","name": "How do I calculate age from DOB in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use DATEDIF with the DOB cell. If DOB is text, wrap it: =DATEDIF(DATEVALUE(A2), TODAY(), 'Y')."}},
-    {"@type": "Question","name": "How do I calculate date of birth from age in Excel?","acceptedAnswer": {"@type": "Answer","text": "Use =TODAY() - (A2 * 365.25) where A2 is the age in years."}}
-  ]
-}
-</script>
 <!-- ========== Seo Article End ========== -->
 
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
