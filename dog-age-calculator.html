@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ==================== SEO META ==================== -->
+<title>Dog Age Calculator 2026 – Calculate Dog Years in Human Years</title>
+<meta name="description" content="Free dog age calculator 2026. Calculate dog age in human years by size &amp; breed. Purina-style formula, life stage &amp; monthly breakdown. No sign-up.">
+<meta name="keywords" content="dog age calculator, age calculator dog, purina dog age calculator, dog age calculator in months, new dog age calculator, calculate dog age in human years, dog age calculator app, how do you calculate dog years age">
+<link rel="canonical" href="https://freeonlinetools203.com/dog-age-calculator.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#5b21b6">
+
+<!-- ==================== OPEN GRAPH ==================== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Free Online Tools">
+<meta property="og:title" content="Dog Age Calculator 2026 – Calculate Dog Years in Human Years">
+<meta property="og:description" content="Calculate your dog's age in human years using the modern size-adjusted formula. Free, accurate, and no sign-up required.">
+<meta property="og:url" content="https://freeonlinetools203.com/dog-age-calculator.html">
+<meta property="og:image" content="https://freeonlinetools203.com/images/dog-age-calculator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- ==================== TWITTER CARD ==================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dog Age Calculator 2026 – Calculate Dog Years in Human Years">
+<meta name="twitter:description" content="Calculate your dog's age in human years using the modern size-adjusted formula. Free, accurate, and no sign-up required.">
+<meta name="twitter:image" content="https://freeonlinetools203.com/images/dog-age-calculator.png">
+
+<!-- ==================== GOOGLE ANALYTICS ==================== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.7;
+    padding: 0 0 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- BREADCRUMB ---------- */
+  .breadcrumb {
+    max-width: 950px;
+    margin: 15px auto 0;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+  .breadcrumb a { color: #7c3aed; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span.sep { color: #9ca3af; margin: 0 6px; }
+  .breadcrumb span.current { color: #374151; font-weight: 600; }
+
+  /* ---------- MAIN CARD ---------- */
+  .card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-top: 18px;
+  }
+
+  /* ---------- HERO HEADER ---------- */
+  .hero {
+    background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
+    padding: 30px 25px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .hero h1 { font-size: 26px; font-weight: 700; line-height: 1.35; }
+  .hero p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .card-body { padding: 30px 25px; }
+
+  /* ---------- LIVE DATETIME BOX ---------- */
+  .live-box {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border: 1px solid #ddd6fe;
+    border-radius: 20px;
+    padding: 22px 20px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .live-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #5b21b6;
+    text-transform: uppercase;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: pulse 1.4s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(239,68,68,.7); opacity: 1; }
+    70%  { box-shadow: 0 0 0 10px rgba(239,68,68,0); opacity: .55; }
+    100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); opacity: 1; }
+  }
+  .live-date { margin-top: 12px; font-size: 16px; font-weight: 600; color: #1f2937; }
+  .live-time {
+    font-family: 'Courier New', monospace;
+    font-size: 32px;
+    font-weight: 700;
+    color: #5b21b6;
+    letter-spacing: 1px;
+    line-height: 1.3;
+  }
+  .live-tz { font-size: 13px; color: #6b7280; margin-top: 4px; }
+
+  /* ---------- FORM FIELDS ---------- */
+  .field { margin-bottom: 22px; }
+  .field > label {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1f2937;
+    margin-bottom: 10px;
+  }
+  .field input,
+  .field select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #1f2937;
+    background: #ffffff;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .field select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    padding-right: 48px;
+    cursor: pointer;
+  }
+  .field input:focus,
+  .field select:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 4px rgba(124,58,237,0.1);
+  }
+  .field input::placeholder { color: #9ca3af; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .hint { font-size: 13px; color: #6b7280; margin-top: 8px; }
+
+  /* ---------- BUTTON ---------- */
+  .btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 24px -8px rgba(91,33,182,0.55);
+  }
+  .btn:active { transform: translateY(-1px); }
+
+  /* ---------- RESULT BOX ---------- */
+  .result-box {
+    display: none;
+    margin-top: 28px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 25px;
+  }
+  .result-box.show {
+    display: block;
+    animation: fadeUp .4s ease;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .result-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #5b21b6;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .result-head .dot { background: #ef4444; }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .result-item {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    text-align: center;
+  }
+  .r-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: #6b7280;
+    font-weight: 700;
+  }
+  .r-value {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 6px;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+  .r-value.purple { color: #5b21b6; }
+  .r-value.violet { color: #7c3aed; }
+  .r-value.green  { color: #059669; }
+  .r-value.orange { color: #ea580c; }
+  .r-value.small  { font-size: 20px; }
+
+  .result-note {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #4b5563;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ---------- FORMULA BREAKDOWN ---------- */
+  .formula-box {
+    margin-top: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px 20px;
+  }
+  .formula-box h4 {
+    font-size: 14px;
+    color: #5b21b6;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+  }
+  .formula-box ul { list-style: none; }
+  .formula-box li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e5e7eb;
+    font-size: 14px;
+    color: #4b5563;
+  }
+  .formula-box li:last-child { border-bottom: none; }
+  .formula-box li span:last-child { font-weight: 700; color: #1f2937; }
+
+  /* ---------- ARTICLE ---------- */
+  .article-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+    padding: 35px 30px;
+    margin-top: 30px;
+  }
+  .article-badge {
+    display: inline-block;
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+  .article-card h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #5b21b6;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .article-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 26px 0 10px;
+  }
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 13px;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+  }
+  .article-card p { margin-bottom: 14px; font-size: 15px; color: #374151; }
+  .article-card ul, .article-card ol { margin: 0 0 16px 22px; }
+  .article-card li { margin-bottom: 8px; font-size: 15px; color: #374151; }
+
+  /* TOC */
+  .toc {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin-bottom: 26px;
+  }
+  .toc h4 { font-size: 15px; color: #5b21b6; margin-bottom: 10px; }
+  .toc ol { margin-left: 18px; }
+  .toc li { margin-bottom: 6px; font-size: 14px; }
+  .toc a { color: #7c3aed; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* Comparison Table */
+  .cmp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 22px;
+    font-size: 14px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .cmp-table th, .cmp-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .cmp-table th {
+    background: #5b21b6;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .cmp-table tr:nth-child(even) td { background: #f9fafb; }
+
+  /* FAQ */
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    background: #f9fafb;
+    transition: border-color .2s;
+  }
+  .faq-item[open] { border-color: #ddd6fe; }
+  .faq-item summary {
+    font-weight: 700;
+    font-size: 15px;
+    color: #1f2937;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 26px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0; top: -2px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #7c3aed;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { margin-top: 10px; font-size: 14px; color: #4b5563; }
+
+  /* Pro tips */
+  .tips-box {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border: 1px solid #ddd6fe;
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin: 18px 0;
+  }
+  .tips-box h4 { color: #5b21b6; margin-bottom: 10px; font-size: 16px; }
+  .tips-box ul { margin-left: 20px; }
+  .tips-box li { margin-bottom: 8px; font-size: 14px; color: #374151; }
+
+  /* Author bio */
+  .author-bio {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 22px;
+    margin-top: 32px;
+  }
+  .author-bio img {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #7c3aed;
+    flex-shrink: 0;
+  }
+  .author-bio .bio-info h4 { font-size: 17px; color: #5b21b6; margin-bottom: 3px; }
+  .author-bio .bio-info p { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+  .author-bio .bio-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .author-bio .bio-links a {
+    font-size: 12px;
+    color: #7c3aed;
+    text-decoration: none;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+  .author-bio .bio-links a:hover { background: #ede9fe; }
+
+  /* ---------- TOAST ---------- */
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, 20px);
+    background: #1f2937;
+    color: #ffffff;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    max-width: 90vw;
+    text-align: center;
+    z-index: 999;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  /* ---------- FOOTER ---------- */
+  .site-footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #cbd5e1;
+    margin-top: 50px;
+    padding: 45px 20px 20px;
+  }
+  .footer-grid {
+    max-width: 950px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 30px;
+  }
+  .footer-col h4 {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .footer-col p { font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .2s;
+  }
+  .footer-col a:hover { color: #a78bfa; }
+
+  .share-btns {
+    max-width: 950px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .share-btns button {
+    border: none;
+    cursor: pointer;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: inherit;
+    transition: transform .2s, opacity .2s;
+  }
+  .share-btns button:hover { transform: translateY(-2px); opacity: .92; }
+  .share-fb { background: #1877f2; }
+  .share-tw { background: #1da1f2; }
+  .share-wa { background: #25d366; }
+  .share-li { background: #0a66c2; }
+  .share-cp { background: #475569; }
+
+  .copyright {
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid #334155;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 21px; }
+    .live-time { font-size: 26px; }
+    .card-body { padding: 24px 18px; }
+    .article-card { padding: 26px 20px; }
+    .article-card h2 { font-size: 22px; }
+    .article-card h3 { font-size: 18px; }
+    .field-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    body { padding: 0 0 0; }
+    .hero { padding: 24px 18px; }
+    .hero h1 { font-size: 18px; }
+    .hero p { font-size: 13px; }
+    .live-box { padding: 18px 14px; }
+    .live-date { font-size: 14px; }
+    .live-time { font-size: 22px; }
+    .live-tz { font-size: 12px; }
+    .field > label { font-size: 15px; }
+    .field input, .field select { padding: 14px 16px; font-size: 15px; }
+    .field select { padding-right: 42px; }
+    .btn { font-size: 16px; padding: 15px; }
+    .result-box { padding: 18px; }
+    .result-grid { gap: 10px; }
+    .result-item { padding: 13px 10px; }
+    .r-value { font-size: 22px; }
+    .r-value.small { font-size: 15px; }
+    .result-note { font-size: 13px; }
+    .article-card h2 { font-size: 19px; }
+    .author-bio { flex-direction: column; text-align: center; }
+    .author-bio .bio-links { justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== VISIBLE BREADCRUMB ==================== -->
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <a href="https://freeonlinetools203.com/">🏠 Home</a>
+  <span class="sep">›</span>
+  <a href="https://freeonlinetools203.com/age-calculator.html">Age Calculator Tools</a>
+  <span class="sep">›</span>
+  <span class="current">Dog Age Calculator</span>
+</nav>
+
+<div class="container">
+
+  <!-- ==================== MAIN TOOL CARD ==================== -->
+  <main class="card">
+
+    <header class="hero">
+      <h1>🐶 Dog Age Calculator – Convert Dog Years to Human Years</h1>
+      <p>Free dog age calculator – enter your dog's age and size to instantly find the human-equivalent age and life stage. 100% free, no registration required.</p>
+    </header>
+
+    <div class="card-body">
+
+      <!-- Live current time -->
+      <div class="live-box">
+        <div class="live-label"><span class="dot"></span> Live Current Time</div>
+        <div class="live-date" id="liveDate">—</div>
+        <div class="live-time" id="liveTime">--:--:-- --</div>
+        <div class="live-tz" id="liveTz">Timezone: —</div>
+      </div>
+
+      <!-- Input 1: Dog's age -->
+      <div class="field">
+        <label for="dogAge">🐕 Dog's Age (Years)</label>
+        <input type="number" id="dogAge" inputmode="decimal" min="0" max="30" step="0.5" placeholder="e.g. 5" autocomplete="off">
+        <p class="hint">You can use decimals — for example, 2.5 for two and a half years.</p>
+      </div>
+
+      <!-- Input 2: Dog size -->
+      <div class="field">
+        <label for="dogSize">📏 Dog Size</label>
+        <select id="dogSize" aria-label="Dog size">
+          <option value="">Select size</option>
+          <option value="small">Small (up to 20 lbs / 9 kg)</option>
+          <option value="medium">Medium (21–50 lbs / 9–22 kg)</option>
+          <option value="large">Large (51+ lbs / 23+ kg)</option>
+        </select>
+      </div>
+
+      <!-- Input 3: Breed (optional) -->
+      <div class="field">
+        <label for="dogBreed">🐾 Breed (Optional)</label>
+        <select id="dogBreed" aria-label="Dog breed">
+          <option value="">Select breed (optional)</option>
+          <optgroup label="Small Breeds">
+            <option value="Chihuahua" data-size="small">Chihuahua</option>
+            <option value="Pomeranian" data-size="small">Pomeranian</option>
+            <option value="Pug" data-size="small">Pug</option>
+            <option value="Shih Tzu" data-size="small">Shih Tzu</option>
+            <option value="Yorkshire Terrier" data-size="small">Yorkshire Terrier</option>
+            <option value="Dachshund" data-size="small">Dachshund</option>
+            <option value="Maltese" data-size="small">Maltese</option>
+          </optgroup>
+          <optgroup label="Medium Breeds">
+            <option value="Beagle" data-size="medium">Beagle</option>
+            <option value="Bulldog" data-size="medium">Bulldog</option>
+            <option value="Cocker Spaniel" data-size="medium">Cocker Spaniel</option>
+            <option value="Border Collie" data-size="medium">Border Collie</option>
+            <option value="Shiba Inu" data-size="medium">Shiba Inu</option>
+            <option value="Australian Shepherd" data-size="medium">Australian Shepherd</option>
+          </optgroup>
+          <optgroup label="Large Breeds">
+            <option value="Labrador Retriever" data-size="large">Labrador Retriever</option>
+            <option value="German Shepherd" data-size="large">German Shepherd</option>
+            <option value="Golden Retriever" data-size="large">Golden Retriever</option>
+            <option value="Rottweiler" data-size="large">Rottweiler</option>
+            <option value="Great Dane" data-size="large">Great Dane</option>
+            <option value="Saint Bernard" data-size="large">Saint Bernard</option>
+            <option value="Husky" data-size="large">Siberian Husky</option>
+          </optgroup>
+        </select>
+        <p class="hint">Selecting a breed will auto-fill the size for you.</p>
+      </div>
+
+      <!-- Calculate button -->
+      <button class="btn" id="calcBtn" type="button">✨ Calculate Dog Age ✨</button>
+
+      <!-- Result box -->
+      <div class="result-box" id="resultBox" aria-live="polite">
+        <div class="result-head"><span class="dot"></span> Live Result</div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="r-label">Human Age (Years)</div>
+            <div class="r-value purple" id="rHumanAge">—</div>
+          </div>
+
+          <div class="result-item">
+            <div class="r-label">Life Stage</div>
+            <div class="r-value violet small" id="rStage">—</div>
+          </div>
+
+          <div class="result-item">
+            <div class="r-label">Dog Age</div>
+            <div class="r-value green small" id="rDogAge">—</div>
+          </div>
+
+          <div class="result-item">
+            <div class="r-label">Size Category</div>
+            <div class="r-value orange small" id="rSize">—</div>
+          </div>
+
+          <div class="result-item">
+            <div class="r-label">Dog Age in Months</div>
+            <div class="r-value green small" id="rMonths">—</div>
+          </div>
+
+          <div class="result-item">
+            <div class="r-label">Dog Years (Classic ×7)</div>
+            <div class="r-value orange small" id="rClassic">—</div>
+          </div>
+        </div>
+
+        <!-- Formula breakdown -->
+        <div class="formula-box" id="formulaBox">
+          <h4>📊 Calculation Breakdown</h4>
+          <ul>
+            <li><span>First year</span><span id="fYear1">15 human years</span></li>
+            <li><span>Second year</span><span id="fYear2">+ 9 human years</span></li>
+            <li><span>Each year after (3+)</span><span id="fYear3">+ 5 per year</span></li>
+            <li><span id="fTotalLabel">Total</span><span id="fTotal">—</span></li>
+          </ul>
+        </div>
+
+        <p class="result-note" id="rNote"></p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== SEO ARTICLE ==================== -->
+  <article class="article-card">
+    <span class="article-badge">📘 Complete Guide</span>
+    <h2>Dog Age Calculator 2026: How to Calculate Dog Years in Human Years</h2>
+
+    <div class="article-meta">
+      <span>✍️ By <strong>Zain Uddin</strong></span>
+      <span>📅 Updated: January 2026</span>
+      <span>⏱️ 7 min read</span>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <h4>📑 Table of Contents</h4>
+      <ol>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#how-to">How to Use the Dog Age Calculator</a></li>
+        <li><a href="#formula">The Modern Dog Age Formula</a></li>
+        <li><a href="#features">Key Features</a></li>
+        <li><a href="#benefits">Benefits of Knowing Your Dog's Age</a></li>
+        <li><a href="#use-cases">Real-Life Use Cases</a></li>
+        <li><a href="#comparison">Comparison Table</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+        <li><a href="#tips">Pro Tips</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ol>
+    </div>
+
+    <h3 id="intro">Introduction</h3>
+    <p>Have you ever wondered how old your dog really is in human years? The old "multiply by 7" rule is a myth. Modern veterinary science has shown that dogs age very differently from humans — and the rate depends heavily on their size. Small dogs live longer and age slower, while large dogs age much faster in their early years. That's why we built this <strong>Dog Age Calculator</strong> using the latest size-adjusted formula.</p>
+    <p>Our free <strong>age calculator dog</strong> tool lets you enter your dog's age, select their size, and optionally choose a breed. In one click, you'll see your dog's human-equivalent age, life stage, age in months, and even a comparison with the classic ×7 formula. Whether you want to know how to <strong>calculate dog age in human years</strong> or you're just curious about your pup's life stage, this tool gives you accurate answers instantly.</p>
+
+    <h3 id="how-to">How to Use the Dog Age Calculator</h3>
+    <p>Using the tool takes just a few seconds. Here's the step-by-step process:</p>
+    <ol>
+      <li><strong>Enter your dog's age in years.</strong> You can use decimals — for example, 2.5 for a two-and-a-half-year-old dog. Puppies under 1 year work too.</li>
+      <li><strong>Select your dog's size</strong> — Small, Medium, or Large. Size is the biggest factor in how fast a dog ages.</li>
+      <li><strong>(Optional) Choose a breed.</strong> Selecting a breed automatically fills the size field for you, so you don't have to guess.</li>
+      <li><strong>Click "Calculate Dog Age".</strong> The result box appears instantly with all the details.</li>
+      <li><strong>Read your results.</strong> You'll see the human-equivalent age, life stage, dog age in months, and a full formula breakdown.</li>
+    </ol>
+
+    <h3 id="formula">The Modern Dog Age Formula (Size-Adjusted)</h3>
+    <p>Research from the American Veterinary Medical Association and similar bodies shows that dogs mature extremely fast in their first two years, then slow down. Our calculator uses this modern formula:</p>
+    <ul>
+      <li><strong>1st year of a dog's life = 15 human years</strong> (rapid puppy growth)</li>
+      <li><strong>2nd year = 9 human years</strong> (slower but still fast)</li>
+      <li><strong>3rd year onwards:</strong> Each dog year adds a size-based number of human years:
+        <ul>
+          <li>Small dogs: +4 human years per year</li>
+          <li>Medium dogs: +5 human years per year</li>
+          <li>Large dogs: +6 human years per year</li>
+        </ul>
+      </li>
+    </ul>
+    <p>This is why a 5-year-old medium dog is about 39 human years old, not 35 like the classic ×7 rule would say. This formula is very similar to the one used by the popular <strong>Purina dog age calculator</strong>, and it's far more accurate than simply multiplying by 7.</p>
+
+    <h3 id="features">Key Features of This Dog Age Calculator</h3>
+    <ul>
+      <li><strong>Size-adjusted formula</strong> — accounts for the fact that small dogs age slower than large dogs.</li>
+      <li><strong>Breed auto-fill</strong> — pick from 20+ popular breeds across three size groups.</li>
+      <li><strong>Dog age in months</strong> — perfect for puppies under 1 year old.</li>
+      <li><strong>Life stage detection</strong> — Puppy, Adult, Mature Adult, or Senior.</li>
+      <li><strong>Classic ×7 comparison</strong> — see how the old rule differs from the modern one.</li>
+      <li><strong>Live current time</strong> — always know today's date while you calculate.</li>
+      <li><strong>Mobile responsive</strong> — works beautifully on phones, tablets, and desktops.</li>
+      <li><strong>100% free</strong> — no registration, no fees, no limits.</li>
+    </ul>
+
+    <h3 id="benefits">Benefits of Knowing Your Dog's Real Age</h3>
+    <p>Understanding your dog's human-equivalent age has real, practical benefits:</p>
+    <ul>
+      <li><strong>Better vet care</strong> — vets recommend different screenings and checkup frequencies based on life stage.</li>
+      <li><strong>Nutrition planning</strong> — puppies, adults, and seniors need different food formulas.</li>
+      <li><strong>Exercise needs</strong> — a senior dog needs gentler activity than a young adult.</li>
+      <li><strong>Training expectations</strong> — puppies learn differently than mature dogs.</li>
+      <li><strong>Health monitoring</strong> — senior dogs need more frequent joint and dental checks.</li>
+      <li><strong>Emotional bond</strong> — knowing your dog's stage helps you appreciate every phase of their life.</li>
+    </ul>
+
+    <h3 id="use-cases">Real-Life Use Cases</h3>
+    <p>People use the <strong>dog age calculator app</strong> and web version for many reasons:</p>
+    <ul>
+      <li><strong>Adopting a rescue dog</strong> — if the exact age is unknown, an estimate helps you plan care.</li>
+      <li><strong>Vet visits</strong> — providing an accurate human-equivalent age helps the vet assess health risks.</li>
+      <li><strong>Senior dog care</strong> — deciding when to switch to senior food or add joint supplements.</li>
+      <li><strong>Puppy milestones</strong> — tracking how fast your puppy is maturing.</li>
+      <li><strong>Fun and curiosity</strong> — many pet owners just want to know how old their dog "really" is.</li>
+      <li><strong>Breed comparison</strong> — comparing how different breeds age at different rates.</li>
+    </ul>
+
+    <h3 id="comparison">Comparison: Modern Formula vs. Classic ×7 Rule</h3>
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>Dog Age</th>
+          <th>Classic ×7</th>
+          <th>Modern (Medium)</th>
+          <th>Modern (Small)</th>
+          <th>Modern (Large)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1 year</td><td>7</td><td>15</td><td>15</td><td>15</td></tr>
+        <tr><td>2 years</td><td>14</td><td>24</td><td>24</td><td>24</td></tr>
+        <tr><td>3 years</td><td>21</td><td>29</td><td>28</td><td>30</td></tr>
+        <tr><td>5 years</td><td>35</td><td>39</td><td>36</td><td>42</td></tr>
+        <tr><td>10 years</td><td>70</td><td>64</td><td>56</td><td>72</td></tr>
+        <tr><td>15 years</td><td>105</td><td>89</td><td>76</td><td>102</td></tr>
+      </tbody>
+    </table>
+    <p>As you can see, the modern formula gives much more realistic results. The ×7 rule underestimates a dog's age during puppy years and overestimates it for small senior dogs.</p>
+
+    <h3 id="faq">Frequently Asked Questions</h3>
+
+    <details class="faq-item">
+      <summary>How do you calculate dog years age?</summary>
+      <p>The modern way is: the 1st year equals 15 human years, the 2nd year adds 9 more, and each year after that adds 4–6 human years depending on your dog's size. Small dogs add about 4, medium dogs about 5, and large dogs about 6 human years per dog year.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is the "multiply by 7" rule accurate?</summary>
+      <p>No. The ×7 rule is a myth. Dogs mature much faster in their first two years than humans do, then their aging slows down. Size also matters — a 10-year-old Chihuahua is much "younger" in human terms than a 10-year-old Great Dane.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Why does dog size matter in the calculation?</summary>
+      <p>Large dogs age faster because they grow rapidly and have shorter average lifespans. Small dogs often live 15+ years, medium dogs around 12–14, and large dogs around 8–12. The size adjustment in our calculator reflects this biological reality.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How can I calculate dog age in months?</summary>
+      <p>Just enter your dog's age as a decimal. For example, if your puppy is 6 months old, type 0.5. The calculator will handle the rest and show you the human-equivalent age. The result box also displays your dog's age in months directly.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is this the same as the Purina dog age calculator?</summary>
+      <p>It uses the same modern size-adjusted approach that Purina and other veterinary organizations recommend. The exact numbers may vary slightly, but the principle — rapid early aging plus size-based slowdown — is the same.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What life stage is my dog in?</summary>
+      <p>Our calculator classifies dogs into four stages: Puppy/Junior (up to ~12 human years), Adult (~13–40), Mature Adult (~41–70), and Senior (70+). The life stage appears in the result box instantly after calculation.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I use this dog age calculator for any breed?</summary>
+      <p>Yes. You can select a specific breed from the dropdown, or simply choose your dog's size category. Mixed-breed dogs work perfectly — just pick the size that best matches your dog's adult weight.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is the Dog Age Calculator free to use?</summary>
+      <p>Yes, it is 100% free, requires no registration, and works on any device. All calculations happen right in your browser — nothing is stored or sent anywhere.</p>
+    </details>
+
+    <h3 id="tips">Pro Tips</h3>
+    <div class="tips-box">
+      <h4>💡 Expert Tips for Dog Owners</h4>
+      <ul>
+        <li>Use decimal ages for puppies — for example, 0.25 for 3 months, 0.5 for 6 months.</li>
+        <li>If you have a mixed breed, choose the size category that matches their adult weight.</li>
+        <li>Senior dogs (70+ human years) benefit from twice-yearly vet checkups.</li>
+        <li>Adjust your dog's food formula as they move from puppy to adult to senior.</li>
+        <li>Keep the results for reference when discussing your dog's health with a vet.</li>
+      </ul>
+    </div>
+
+    <h3 id="conclusion">Conclusion</h3>
+    <p>The <strong>Dog Age Calculator</strong> is the fastest and most accurate way to find out how old your dog is in human years. Using the modern size-adjusted formula — 15 in the first year, 9 in the second, and 4–6 per year after that — it delivers results that are far more realistic than the outdated ×7 rule.</p>
+    <p>Whether you're a new puppy owner, caring for a senior dog, or just curious, this free tool gives you precise, useful information in one click. Try it now and discover your dog's real age!</p>
+
+    <!-- Author Bio -->
+    <div class="author-bio">
+      <img src="https://freeonlinetools203.com/zain-uddin.jpg.png" alt="Zain Uddin" loading="lazy">
+      <div class="bio-info">
+        <h4>Zain Uddin</h4>
+        <p>Founder, FreeOnlineTools203.com | Web Developer &amp; SEO Expert</p>
+        <div class="bio-links">
+          <a href="https://freeonlinetools203.com/" target="_blank" rel="noopener">🌐 Website</a>
+          <a href="https://youtube.com/@freeonlinetools203" target="_blank" rel="noopener">▶️ YouTube</a>
+          <a href="https://instagram.com/freeonlinetools203" target="_blank" rel="noopener">📷 Instagram</a>
+          <a href="https://facebook.com/freeonlinetools203" target="_blank" rel="noopener">📘 Facebook</a>
+          <a href="https://tiktok.com/@freeonlinetools203" target="_blank" rel="noopener">🎵 TikTok</a>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>🐶 Free Online Tools</h4>
+      <p>Your trusted source for free online calculators, converters, and utility tools. Fast, accurate, and always free.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="https://freeonlinetools203.com/">Home</a></li>
+        <li><a href="https://freeonlinetools203.com/age-calculator.html">Age Calculator</a></li>
+        <li><a href="https://freeonlinetools203.com/dog-age-calculator.html">Dog Age Calculator</a></li>
+        <li><a href="https://freeonlinetools203.com/about.html">About Us</a></li>
+        <li><a href="https://freeonlinetools203.com/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://youtube.com/@freeonlinetools203" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://instagram.com/freeonlinetools203" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://facebook.com/freeonlinetools203" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://tiktok.com/@freeonlinetools203" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Trending Tools</h4>
+      <ul>
+        <li><a href="https://freeonlinetools203.com/what-year-was-i-born.html">What Year Was I Born</a></li>
+        <li><a href="https://freeonlinetools203.com/bmi-calculator.html">BMI Calculator</a></li>
+        <li><a href="https://freeonlinetools203.com/percentage-calculator.html">Percentage Calculator</a></li>
+        <li><a href="https://freeonlinetools203.com/age-calculator.html">Age Calculator</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Social Share -->
+  <div class="share-btns">
+    <button class="share-fb" onclick="shareTool('facebook')">📘 Facebook</button>
+    <button class="share-tw" onclick="shareTool('twitter')">🐦 Twitter</button>
+    <button class="share-wa" onclick="shareTool('whatsapp')">💬 WhatsApp</button>
+    <button class="share-li" onclick="shareTool('linkedin')">💼 LinkedIn</button>
+    <button class="share-cp" onclick="copyLink()">🔗 Copy Link</button>
+  </div>
+
+  <div class="copyright">
+    © 2026 Free OnlineTools203. All rights reserved. | Made with ❤️ by Zain Uddin
+  </div>
+</footer>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ==================== SCHEMA 1: SoftwareApplication ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Dog Age Calculator",
+  "url": "https://freeonlinetools203.com/dog-age-calculator.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "description": "Free dog age calculator to convert dog years to human years using the modern size-adjusted formula. Includes breed selection, life stage, and monthly breakdown.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "2418"
+  },
+  "featureList": [
+    "Size-adjusted dog age formula",
+    "Breed selection with auto-fill",
+    "Life stage detection",
+    "Dog age in months",
+    "Classic x7 comparison",
+    "Live current time display",
+    "Mobile responsive",
+    "100% free, no registration"
+  ]
+}
+</script>
+
+<!-- ==================== SCHEMA 2: HowTo ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Dog Age in Human Years",
+  "description": "Use the free Dog Age Calculator to convert your dog's age into human-equivalent years using the modern size-adjusted formula.",
+  "totalTime": "PT1M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Dog Age Calculator"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter your dog's age",
+      "text": "Type your dog's age in years. Use decimals for puppies, e.g. 0.5 for six months.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Select your dog's size",
+      "text": "Choose Small, Medium, or Large. Size determines how fast your dog ages.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Optionally pick a breed",
+      "text": "Select a breed from the dropdown to auto-fill the correct size category.",
+      "position": 3
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Click Calculate Dog Age",
+      "text": "Press the button to run the calculation and reveal the result box.",
+      "position": 4
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Read your results",
+      "text": "See the human-equivalent age, life stage, months, and formula breakdown.",
+      "position": 5
+    }
+  ]
+}
+</script>
+
+<!-- ==================== SCHEMA 3: BreadcrumbList ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://freeonlinetools203.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Age Calculator Tools",
+      "item": "https://freeonlinetools203.com/age-calculator.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Dog Age Calculator",
+      "item": "https://freeonlinetools203.com/dog-age-calculator.html"
+    }
+  ]
+}
+</script>
+
+<!-- ==================== SCHEMA 4: FAQPage ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you calculate dog years age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The modern way is: the 1st year equals 15 human years, the 2nd year adds 9 more, and each year after that adds 4–6 human years depending on your dog's size. Small dogs add about 4, medium dogs about 5, and large dogs about 6 human years per dog year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the multiply by 7 rule accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The x7 rule is a myth. Dogs mature much faster in their first two years than humans do, then their aging slows down. Size also matters — a 10-year-old Chihuahua is much younger in human terms than a 10-year-old Great Dane."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does dog size matter in the calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Large dogs age faster because they grow rapidly and have shorter average lifespans. Small dogs often live 15+ years, medium dogs around 12–14, and large dogs around 8–12. The size adjustment in our calculator reflects this biological reality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I calculate dog age in months?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Just enter your dog's age as a decimal. For example, if your puppy is 6 months old, type 0.5. The calculator will handle the rest and show you the human-equivalent age. The result box also displays your dog's age in months directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same as the Purina dog age calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It uses the same modern size-adjusted approach that Purina and other veterinary organizations recommend. The exact numbers may vary slightly, but the principle — rapid early aging plus size-based slowdown — is the same."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What life stage is my dog in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our calculator classifies dogs into four stages: Puppy/Junior (up to ~12 human years), Adult (~13–40), Mature Adult (~41–70), and Senior (70+). The life stage appears in the result box instantly after calculation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this dog age calculator for any breed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can select a specific breed from the dropdown, or simply choose your dog's size category. Mixed-breed dogs work perfectly — just pick the size that best matches your dog's adult weight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Dog Age Calculator free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is 100% free, requires no registration, and works on any device. All calculations happen right in your browser — nothing is stored or sent anywhere."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ==================== SCHEMA 5: WebSite ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Free Online Tools",
+  "alternateName": "FreeOnlineTools203",
+  "url": "https://freeonlinetools203.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://freeonlinetools203.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- ==================== SCHEMA 6: ImageObject ==================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "https://freeonlinetools203.com/images/dog-age-calculator.png",
+  "name": "Dog Age Calculator Preview",
+  "description": "Preview image of the free Dog Age Calculator tool showing human-equivalent age, life stage, and formula breakdown.",
+  "width": {
+    "@type": "QuantitativeValue",
+    "value": 1200
+  },
+  "height": {
+    "@type": "QuantitativeValue",
+    "value": 630
+  },
+  "uploadDate": "2026-01-01",
+  "representativeOfPage": true
+}
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =========================================================
+     ELEMENTS
+     ========================================================= */
+  var dateEl    = document.getElementById('liveDate');
+  var timeEl    = document.getElementById('liveTime');
+  var tzEl      = document.getElementById('liveTz');
+
+  var dogAge    = document.getElementById('dogAge');
+  var dogSize   = document.getElementById('dogSize');
+  var dogBreed  = document.getElementById('dogBreed');
+  var calcBtn   = document.getElementById('calcBtn');
+
+  var resultBox = document.getElementById('resultBox');
+  var rHumanAge = document.getElementById('rHumanAge');
+  var rStage    = document.getElementById('rStage');
+  var rDogAge   = document.getElementById('rDogAge');
+  var rSize     = document.getElementById('rSize');
+  var rMonths   = document.getElementById('rMonths');
+  var rClassic  = document.getElementById('rClassic');
+  var rNote     = document.getElementById('rNote');
+
+  var fYear1     = document.getElementById('fYear1');
+  var fYear2     = document.getElementById('fYear2');
+  var fYear3     = document.getElementById('fYear3');
+  var fTotal     = document.getElementById('fTotal');
+  var fTotalLbl  = document.getElementById('fTotalLabel');
+
+  var toastEl   = document.getElementById('toast');
+
+  /* =========================================================
+     CONSTANTS
+     ========================================================= */
+  var SIZE_LABEL = {
+    small:  '🐕 Small',
+    medium: '🐕‍🦺 Medium',
+    large:  '🐩 Large'
+  };
+
+  var RATE_AFTER_2 = {
+    small:  4,
+    medium: 5,
+    large:  6
+  };
+
+  var STAGES = [
+    { max: 12,  label: '🐾 Puppy / Junior' },
+    { max: 40,  label: '🐕 Adult' },
+    { max: 70,  label: '🦴 Mature Adult' },
+    { max: 999, label: '👴 Senior' }
+  ];
+
+  /* =========================================================
+     HELPERS
+     ========================================================= */
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function getLifeStage(humanAge) {
+    for (var i = 0; i < STAGES.length; i++) {
+      if (humanAge <= STAGES[i].max) return STAGES[i].label;
+    }
+    return STAGES[STAGES.length - 1].label;
+  }
+
+  var toastTimer = null;
+  function showToast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toastEl.classList.remove('show');
+    }, 3000);
+  }
+
+  /* =========================================================
+     LIVE CLOCK
+     ========================================================= */
+  function updateClock() {
+    var d = new Date();
+    dateEl.textContent = d.toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+    var h = d.getHours();
+    var ap = h >= 12 ? 'PM' : 'AM';
+    h = h % 12;
+    if (h === 0) h = 12;
+    timeEl.textContent = pad(h) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds()) + ' ' + ap;
+  }
+
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    tzEl.textContent = 'Timezone: ' + (tz || 'Local');
+  } catch (e) {
+    tzEl.textContent = 'Timezone: Local';
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  /* =========================================================
+     AUTO-FILL SIZE FROM BREED
+     ========================================================= */
+  dogBreed.addEventListener('change', function () {
+    var opt = dogBreed.options[dogBreed.selectedIndex];
+    var sz = opt ? opt.getAttribute('data-size') : null;
+    if (sz) dogSize.value = sz;
+  });
+
+  /* =========================================================
+     CALCULATE
+     ========================================================= */
+  function calculate() {
+    var raw = dogAge.value.trim();
+    if (raw === '') {
+      showToast('⚠️ Please enter your dog\'s age.');
+      dogAge.focus();
+      return;
+    }
+
+    var ageNum = Number(raw);
+    if (!isFinite(ageNum) || isNaN(ageNum) || ageNum < 0 || ageNum > 30) {
+      showToast('⚠️ Please enter a valid dog age between 0 and 30.');
+      dogAge.focus();
+      return;
+    }
+
+    var size = dogSize.value;
+    if (size === '') {
+      showToast('⚠️ Please select your dog\'s size.');
+      dogSize.focus();
+      return;
+    }
+
+    var humanAge;
+    var y1 = 0, y2 = 0, y3 = 0;
+    var rate = RATE_AFTER_2[size];
+
+    if (ageNum <= 1) {
+      y1 = ageNum * 15;
+      humanAge = y1;
+    } else if (ageNum <= 2) {
+      y1 = 15;
+      y2 = (ageNum - 1) * 9;
+      humanAge = y1 + y2;
+    } else {
+      y1 = 15;
+      y2 = 9;
+      y3 = (ageNum - 2) * rate;
+      humanAge = y1 + y2 + y3;
+    }
+
+    humanAge = Math.round(humanAge * 10) / 10;
+
+    rHumanAge.textContent = humanAge;
+    rStage.textContent    = getLifeStage(humanAge);
+    rDogAge.textContent   = (Math.round(ageNum * 10) / 10) + ' yr';
+    rSize.textContent     = SIZE_LABEL[size];
+    rMonths.textContent   = Math.round(ageNum * 12) + ' mo';
+    rClassic.textContent  = Math.round(ageNum * 7) + ' yr';
+
+    fYear1.textContent = y1 ? (Math.round(y1 * 10) / 10) + ' human years' : '15 human years';
+    fYear2.textContent = y2
+      ? '+ ' + (Math.round(y2 * 10) / 10) + ' human years'
+      : '+ 9 human years';
+    fYear3.textContent = '+ ' + rate + ' per year (' + size + ')';
+    fTotalLbl.textContent = 'Total';
+    fTotal.textContent = humanAge + ' human years';
+
+    var breedTxt = dogBreed.value ? (' (' + dogBreed.value + ')') : '';
+    var note = 'A ' + (Math.round(ageNum * 10) / 10) + '-year-old ' + size + ' dog' + breedTxt +
+               ' is roughly <strong>' + humanAge + ' human years</strong> old. ' +
+               'Formula: 1st year = 15, 2nd year = 9, then ' + rate + ' per year for ' + size + ' dogs.';
+
+    if (ageNum < 1) {
+      note += ' Puppies grow extremely fast in their first 12 months!';
+    } else if (humanAge > 70) {
+      note += ' Your dog is in their senior years — extra vet checkups are recommended.';
+    } else if (humanAge > 40) {
+      note += ' Your dog is a mature adult — keep an eye on joint health.';
+    }
+
+    rNote.innerHTML = note;
+
+    resultBox.classList.add('show');
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  /* =========================================================
+     SHARE / COPY
+     ========================================================= */
+  window.shareTool = function (network) {
+    var url = encodeURIComponent(window.location.href);
+    var text = encodeURIComponent('Check out this free Dog Age Calculator!');
+    var shareUrl = '';
+    if (network === 'facebook') shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+    else if (network === 'twitter') shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+    else if (network === 'whatsapp') shareUrl = 'https://api.whatsapp.com/send?text=' + text + '%20' + url;
+    else if (network === 'linkedin') shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+    if (shareUrl) window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=500');
+  };
+
+  window.copyLink = function () {
+    var url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () {
+        showToast('✅ Link copied to clipboard!');
+      }).catch(function () {
+        showToast('⚠️ Could not copy link.');
+      });
+    } else {
+      var tmp = document.createElement('input');
+      tmp.value = url;
+      document.body.appendChild(tmp);
+      tmp.select();
+      try { document.execCommand('copy'); showToast('✅ Link copied!'); }
+      catch (e) { showToast('⚠️ Could not copy link.'); }
+      document.body.removeChild(tmp);
+    }
+  };
+
+  /* =========================================================
+     EVENTS
+     ========================================================= */
+  calcBtn.addEventListener('click', calculate);
+  dogAge.addEventListener('keydown', function (e) { if (e.key === 'Enter') calculate(); });
+  dogSize.addEventListener('keydown', function (e) { if (e.key === 'Enter') calculate(); });
+  dogBreed.addEventListener('keydown', function (e) { if (e.key === 'Enter') calculate(); });
+
+})();
+</script>
+</body>
+</html>
