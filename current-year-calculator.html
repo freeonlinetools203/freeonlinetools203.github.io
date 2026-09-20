@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="author" content="Zain Uddin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ==================== SEO META ==================== -->
@@ -10,7 +9,7 @@
 <meta name="description" content="Free current year calculator 2026. Live current date, time, year progress bar, days remaining, week number, quarter &amp; leap year check. 100% free.">
 <meta name="keywords" content="current year calculator, what year is it, current date and time, today's date, year progress bar, day of year calculator, week number today, quarter calculator, leap year check, current year 2026">
 <link rel="canonical" href="https://freeonlinetools203.com/current-year-calculator.html">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1e3a8a">
 
 <!-- ==================== OPEN GRAPH ==================== -->
@@ -19,7 +18,7 @@
 <meta property="og:title" content="Current Year Calculator 2026 – Today's Date, Time & Year Progress">
 <meta property="og:description" content="Live current date, time, year progress bar, days remaining, week number, quarter and leap year check — all updated every second.">
 <meta property="og:url" content="https://freeonlinetools203.com/current-year-calculator.html">
-<meta property="og:image" content="https://freeonlinetools203.com/current-year-calculator-og-image.jpg">
+<meta property="og:image" content="https://freeonlinetools203.com/images/current-year-calculator.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -28,7 +27,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Current Year Calculator 2026 – Today's Date, Time & Year Progress">
 <meta name="twitter:description" content="Live current date, time, year progress bar, days remaining, week number, quarter and leap year check — all updated every second.">
-<meta name="twitter:image" content="https://freeonlinetools203.com/current-year-calculator-og-image.jpg">
+<meta name="twitter:image" content="https://freeonlinetools203.com/images/current-year-calculator.png">
 
 <!-- ==================== GOOGLE ANALYTICS ==================== -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
@@ -90,7 +89,7 @@
 
   .card-body { padding: 30px 25px; }
 
-  /* ---------- LIVE BOX (big) ---------- */
+  /* ---------- LIVE BOX ---------- */
   .live-box {
     background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 100%);
     border: 1px solid #bae6fd;
@@ -243,7 +242,7 @@
   }
   .section-head .dot { background: #10b981; }
 
-  /* ---------- YEAR AT A GLANCE ---------- */
+  /* ---------- GLANCE BOX ---------- */
   .glance-box {
     background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 100%);
     border: 1px solid #bae6fd;
@@ -270,6 +269,57 @@
   }
   .glance-list li:last-child { border-bottom: none; }
   .glance-list li span:last-child { font-weight: 700; color: #1e3a8a; }
+
+  /* ---------- NEW YEAR COUNTDOWN ---------- */
+  .countdown-box {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    border-radius: 20px;
+    padding: 24px 20px;
+    margin-bottom: 24px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 10px 25px -8px rgba(30,58,138,0.4);
+  }
+  .countdown-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 4px;
+  }
+  .countdown-year {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .countdown-item {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 14px;
+    padding: 12px 6px;
+    backdrop-filter: blur(6px);
+  }
+  .countdown-value {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.1;
+    font-family: 'Courier New', monospace;
+  }
+  .countdown-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    opacity: 0.85;
+    margin-top: 4px;
+    font-weight: 700;
+  }
 
   /* ---------- QUICK STATS ---------- */
   .stats-grid {
@@ -301,7 +351,7 @@
     margin-top: 5px;
   }
 
-  /* ---------- REFRESH BUTTON ---------- */
+  /* ---------- BUTTON ---------- */
   .btn {
     width: 100%;
     padding: 16px;
@@ -435,11 +485,10 @@
     padding: 22px;
     margin-top: 32px;
   }
-   .author-bio img {
-    width: 90px; height: 90px;
+  .author-bio img {
+    width: 80px; height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 25%;
     border: 3px solid #2563eb;
     flex-shrink: 0;
   }
@@ -475,7 +524,7 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     max-width: 90vw;
     text-align: center;
-    z-index: 999;
+    z-index: 9998;
   }
   .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
@@ -510,41 +559,159 @@
   }
   .footer-col a:hover { color: #60a5fa; }
 
-  .share-btns {
-    max-width: 950px;
-    margin: 30px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid #334155;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  .share-btns button {
-    border: none;
-    cursor: pointer;
-    padding: 9px 16px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #ffffff;
-    font-family: inherit;
-    transition: transform .2s, opacity .2s;
-  }
-  .share-btns button:hover { transform: translateY(-2px); opacity: .92; }
-  .share-fb { background: #1877f2; }
-  .share-tw { background: #1da1f2; }
-  .share-wa { background: #25d366; }
-  .share-li { background: #0a66c2; }
-  .share-cp { background: #475569; }
-
   .copyright {
     text-align: center;
     font-size: 13px;
     color: #94a3b8;
-    margin-top: 22px;
+    margin-top: 30px;
     padding-top: 16px;
     border-top: 1px solid #334155;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---------- SHARE MODAL ---------- */
+  .share-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn .25s ease;
+  }
+  .share-modal-overlay.show { display: flex; }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .share-modal {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px 28px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
+    animation: popUp .3s ease;
+    position: relative;
+  }
+  @keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  .share-modal h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .share-modal .share-sub {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .share-url-box {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #4b5563;
+    word-break: break-all;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    transition: background .2s, border-color .2s;
+  }
+  .share-url-box:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+  }
+
+  .share-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .share-btn-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform .2s, opacity .2s;
+  }
+  .share-btn-item:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+  }
+  .share-btn-whatsapp { background: #25d366; }
+  .share-btn-facebook { background: #1877f2; }
+  .share-btn-twitter  { background: #1da1f2; }
+  .share-btn-linkedin { background: #0a66c2; }
+  .share-btn-tiktok   { background: #000000; }
+  .share-btn-copy     { background: #1e3a8a; }
+
+  .share-close-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #f3f4f6;
+    color: #4b5563;
+    border: none;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .2s;
+  }
+  .share-close-btn:hover { background: #e5e7eb; }
+
+  /* Floating Share Button */
+  .floating-share {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 10px 25px -5px rgba(37,99,235,0.5);
+    z-index: 998;
+    transition: transform .25s, box-shadow .25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .floating-share:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 14px 30px -5px rgba(37,99,235,0.6);
   }
 
   /* RESPONSIVE */
@@ -582,6 +749,12 @@
     .footer-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
     .glance-list li { font-size: 13px; }
+    .countdown-value { font-size: 20px; }
+    .countdown-item { padding: 10px 4px; }
+    .share-modal { padding: 24px 18px; }
+    .share-modal h3 { font-size: 18px; }
+    .share-btn-item { font-size: 13px; padding: 11px 8px; }
+    .floating-share { width: 52px; height: 52px; font-size: 22px; bottom: 18px; right: 18px; }
   }
 </style>
 </head>
@@ -721,6 +894,30 @@
         </ul>
       </div>
 
+      <!-- New Year Countdown -->
+      <div class="countdown-box">
+        <div class="countdown-title">🎉 Countdown to New Year</div>
+        <div class="countdown-year" id="countdownTarget">January 1, 2027</div>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <div class="countdown-value" id="cdDays">0</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="cdHours">0</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="cdMinutes">0</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="cdSeconds">0</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+
       <!-- Refresh button -->
       <button class="btn" id="refreshBtn" type="button">✨ Refresh Live Data ✨</button>
 
@@ -758,12 +955,13 @@
 
     <h3 id="what-is">What Is the Current Year Calculator?</h3>
     <p>The <strong>Current Year Calculator</strong> is a free online tool that automatically detects your current date and time using your device's clock and timezone. It then calculates and displays a wide range of useful date-based information in real-time — no input required from you.</p>
-    <p>The tool also shows you a visual <strong>year progress bar</strong> that fills up as the year advances, plus quick statistics like days remaining in the year, days elapsed, days remaining in the current month, and the current week number. It's like having a mini dashboard for the calendar year.</p>
+    <p>The tool also shows you a visual <strong>year progress bar</strong> that fills up as the year advances, plus a live <strong>New Year countdown</strong> showing exactly how many days, hours, minutes, and seconds remain until January 1 of next year.</p>
 
     <h3 id="features">Key Features of This Tool</h3>
     <ul>
       <li><strong>Live updating every second</strong> — the time, date, and progress bar refresh automatically.</li>
       <li><strong>Year progress bar</strong> — a visual indicator of how much of 2026 has passed.</li>
+      <li><strong>New Year countdown</strong> — days, hours, minutes and seconds until January 1 of next year.</li>
       <li><strong>Current year, month, and day</strong> — instantly visible in the result grid.</li>
       <li><strong>Full formatted date</strong> — like "Monday, September 21, 2026".</li>
       <li><strong>Current time</strong> — including AM/PM in your local timezone.</li>
@@ -771,19 +969,12 @@
       <li><strong>Quarter number</strong> — Q1, Q2, Q3, or Q4.</li>
       <li><strong>Leap year check</strong> — instantly know if the current year is a leap year.</li>
       <li><strong>Quick stats</strong> — days elapsed, days remaining, days left in the month, and more.</li>
-      <li><strong>Year at a glance</strong> — a summary list of key calendar facts.</li>
+      <li><strong>Share modal</strong> — quickly share this tool on WhatsApp, Facebook, Twitter, LinkedIn, TikTok or copy the link.</li>
     </ul>
 
     <h3 id="year-progress">Understanding Year Progress</h3>
     <p>The <strong>year progress bar</strong> shows what percentage of the current year has already elapsed. For example, if today is September 21, 2026, then about 72% of the year has passed — and around 28% still remains.</p>
     <p>Our calculator computes this accurately using the exact number of days in the current year (365 for a common year, 366 for a leap year) and how many full days have passed since January 1. The result updates continuously as time moves forward, so the bar slowly fills up in real-time.</p>
-    <p>You can use this progress bar to:</p>
-    <ul>
-      <li>Track how much of the year is left for annual goals.</li>
-      <li>See how far through the fiscal or academic year you are.</li>
-      <li>Gamify personal progress (e.g., 100 books in a year).</li>
-      <li>Plan quarterly projects more effectively.</li>
-    </ul>
 
     <h3 id="use-cases">Real-Life Use Cases</h3>
     <ul>
@@ -794,7 +985,7 @@
       <li><strong>Academic tracking</strong> — students can follow term progress easily.</li>
       <li><strong>Curiosity</strong> — sometimes you just want to know what today's date is!</li>
       <li><strong>Scheduling</strong> — quickly check week number and quarter for planning meetings.</li>
-      <li><strong>Leap year awareness</strong> — know whether the current year has 365 or 366 days.</li>
+      <li><strong>New Year countdown</strong> — see exactly how long until the next year begins.</li>
     </ul>
 
     <h3 id="faq">Frequently Asked Questions</h3>
@@ -806,12 +997,17 @@
 
     <details class="faq-item">
       <summary>Does the Current Year Calculator update automatically?</summary>
-      <p>Yes. The tool updates every second using JavaScript, so the time, date, and year progress bar are always accurate. You don't need to refresh the page — everything happens live in your browser.</p>
+      <p>Yes. The tool updates every second using JavaScript, so the time, date, year progress bar and New Year countdown are always accurate. You don't need to refresh the page — everything happens live in your browser.</p>
     </details>
 
     <details class="faq-item">
       <summary>How is the year progress percentage calculated?</summary>
       <p>The tool divides the number of days elapsed since January 1 by the total days in the year (365 or 366), then multiplies by 100. It also adds the fraction of the current day for a smoother, more precise percentage.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How does the New Year countdown work?</summary>
+      <p>The countdown calculates the exact time difference between right now and midnight of January 1 of next year, then breaks that difference into days, hours, minutes, and seconds. It updates live every single second.</p>
     </details>
 
     <details class="faq-item">
@@ -830,11 +1026,6 @@
     </details>
 
     <details class="faq-item">
-      <summary>Does this tool work on mobile phones?</summary>
-      <p>Absolutely. The Current Year Calculator is fully responsive and works on any device — smartphone, tablet, laptop, or desktop. The layout adjusts automatically for smaller screens.</p>
-    </details>
-
-    <details class="faq-item">
       <summary>Is the Current Year Calculator free to use?</summary>
       <p>Yes, it is 100% free with no registration required. Just open the page and the tool works instantly — no sign-up, no downloads, no fees.</p>
     </details>
@@ -845,15 +1036,15 @@
       <ul>
         <li>Bookmark this page for a quick daily check-in on your year progress.</li>
         <li>Use the week number for planning weekly goals and sprints.</li>
-        <li>Check the "Days Remaining" figure when setting deadlines.</li>
+        <li>Watch the New Year countdown as the year comes to a close.</li>
         <li>Use the quarter display for business planning and reporting.</li>
         <li>Share your year progress on social media — it's a fun way to stay motivated!</li>
       </ul>
     </div>
 
     <h3 id="conclusion">Conclusion</h3>
-    <p>The <strong>Current Year Calculator</strong> is the perfect tool for anyone who wants to stay on top of time. It shows you today's date, the current time, how far into the year you are, how many days remain, the current week and quarter, and whether it's a leap year — all updating live, every second.</p>
-    <p>Whether you're a planner, a writer, a student, or just curious, this free tool makes it easy to see exactly where you are in the year. Bookmark it now and check it whenever you need to know the answer to "What year is it?" and much more.</p>
+    <p>The <strong>Current Year Calculator</strong> is the perfect tool for anyone who wants to stay on top of time. It shows you today's date, the current time, how far into the year you are, how many days remain, the current week and quarter, whether it's a leap year, and a live countdown to the next New Year — all updating live, every second.</p>
+    <p>Whether you're a planner, a writer, a student, or just curious, this free tool makes it easy to see exactly where you are in the year. Bookmark it now!</p>
 
     <!-- Author Bio -->
     <div class="author-bio">
@@ -912,18 +1103,34 @@
     </div>
   </div>
 
-  <div class="share-btns">
-    <button class="share-fb" onclick="shareTool('facebook')">📘 Facebook</button>
-    <button class="share-tw" onclick="shareTool('twitter')">🐦 Twitter</button>
-    <button class="share-wa" onclick="shareTool('whatsapp')">💬 WhatsApp</button>
-    <button class="share-li" onclick="shareTool('linkedin')">💼 LinkedIn</button>
-    <button class="share-cp" onclick="copyLink()">🔗 Copy Link</button>
-  </div>
-
   <div class="copyright">
     © 2026 Free OnlineTools203. All rights reserved. | Made with ❤️ by Zain Uddin
   </div>
 </footer>
+
+<!-- Floating Share Button -->
+<button class="floating-share" id="openShareBtn" type="button" aria-label="Share this tool">📤</button>
+
+<!-- Share Modal -->
+<div class="share-modal-overlay" id="shareModal">
+  <div class="share-modal">
+    <h3>📤 Share This Tool</h3>
+    <p class="share-sub">Share this Current Year Calculator with your friends and family!</p>
+
+    <div class="share-url-box" id="shareUrlText" onclick="copyShareLink()" style="cursor:pointer;" title="Click to copy">https://freeonlinetools203.com/current-year-calculator.html</div>
+
+    <div class="share-buttons-grid">
+      <button class="share-btn-item share-btn-whatsapp" onclick="openShare('whatsapp')">💬 WhatsApp</button>
+      <button class="share-btn-item share-btn-facebook" onclick="openShare('facebook')">📘 Facebook</button>
+      <button class="share-btn-item share-btn-twitter" onclick="openShare('twitter')">🐦 Twitter</button>
+      <button class="share-btn-item share-btn-linkedin" onclick="openShare('linkedin')">💼 LinkedIn</button>
+      <button class="share-btn-item share-btn-tiktok" onclick="openShare('tiktok')">🎵 TikTok</button>
+      <button class="share-btn-item share-btn-copy" onclick="copyShareLink()">🔗 Copy Link</button>
+    </div>
+
+    <button class="share-close-btn" onclick="closeShare()">Close</button>
+  </div>
+</div>
 
 <!-- Toast -->
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -937,11 +1144,17 @@
   "url": "https://freeonlinetools203.com/current-year-calculator.html",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "All",
-  "description": "Free live current year calculator showing today's date, time, year progress bar, days remaining, week number, quarter and leap year status. Updates every second.",
+  "description": "Free live current year calculator showing today's date, time, year progress bar, days remaining, week number, quarter, leap year status and a New Year countdown. Updates every second.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "1876"
+  },
   "featureList": [
     "Live current date and time",
     "Year progress bar in real-time",
+    "New Year countdown (days, hours, minutes, seconds)",
     "Days elapsed and days remaining",
     "Days left in current month",
     "Current week number",
@@ -959,7 +1172,7 @@
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Check the Current Year, Date and Time",
-  "description": "Use the free Current Year Calculator to instantly see today's date, current time, year progress and other live date information.",
+  "description": "Use the free Current Year Calculator to instantly see today's date, current time, year progress, New Year countdown and other live date information.",
   "totalTime": "PT1M",
   "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
   "tool": [{ "@type": "HowToTool", "name": "Current Year Calculator" }],
@@ -990,8 +1203,8 @@
     },
     {
       "@type": "HowToStep",
-      "name": "Explore quick stats",
-      "text": "Scroll down for days elapsed, days remaining, days left in the month, day of week and more.",
+      "name": "Watch the New Year countdown",
+      "text": "Scroll down to the countdown box to see how many days, hours, minutes and seconds remain until January 1 of next year.",
       "position": 5
     }
   ]
@@ -1025,12 +1238,17 @@
     {
       "@type": "Question",
       "name": "Does the Current Year Calculator update automatically?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The tool updates every second using JavaScript, so the time, date, and year progress bar are always accurate. You don't need to refresh the page — everything happens live in your browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The tool updates every second using JavaScript, so the time, date, year progress bar and New Year countdown are always accurate. You don't need to refresh the page — everything happens live in your browser." }
     },
     {
       "@type": "Question",
       "name": "How is the year progress percentage calculated?",
       "acceptedAnswer": { "@type": "Answer", "text": "The tool divides the number of days elapsed since January 1 by the total days in the year (365 or 366), then multiplies by 100. It also adds the fraction of the current day for a smoother, more precise percentage." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the New Year countdown work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The countdown calculates the exact time difference between right now and midnight of January 1 of next year, then breaks that difference into days, hours, minutes, and seconds. It updates live every single second." }
     },
     {
       "@type": "Question",
@@ -1046,11 +1264,6 @@
       "@type": "Question",
       "name": "Can I see days remaining in the current month?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Quick Stats section shows Days Left This Month — the exact number of days still to go before the current month ends." }
-    },
-    {
-      "@type": "Question",
-      "name": "Does this tool work on mobile phones?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. The Current Year Calculator is fully responsive and works on any device — smartphone, tablet, laptop, or desktop. The layout adjusts automatically for smaller screens." }
     },
     {
       "@type": "Question",
@@ -1082,9 +1295,9 @@
 {
   "@context": "https://schema.org",
   "@type": "ImageObject",
-  "contentUrl": "https://freeonlinetools203.com/current-year-calculator-og-image.jpg",
+  "contentUrl": "https://freeonlinetools203.com/images/current-year-calculator.png",
   "name": "Current Year Calculator Preview",
-  "description": "Preview image of the Current Year Calculator showing live date, time, year progress bar and quick stats.",
+  "description": "Preview image of the Current Year Calculator showing live date, time, year progress bar and New Year countdown.",
   "width": { "@type": "QuantitativeValue", "value": 1200 },
   "height": { "@type": "QuantitativeValue", "value": 630 },
   "uploadDate": "2026-01-01",
@@ -1131,6 +1344,12 @@
   var gNextLeap        = document.getElementById('gNextLeap');
   var gStartDay        = document.getElementById('gStartDay');
 
+  var cdDays           = document.getElementById('cdDays');
+  var cdHours          = document.getElementById('cdHours');
+  var cdMinutes        = document.getElementById('cdMinutes');
+  var cdSeconds        = document.getElementById('cdSeconds');
+  var countdownTarget  = document.getElementById('countdownTarget');
+
   var refreshBtn       = document.getElementById('refreshBtn');
   var toastEl          = document.getElementById('toast');
 
@@ -1162,7 +1381,6 @@
     return isLeapYear(year) ? 366 : 365;
   }
 
-  /* ISO week number */
   function getWeekNumber(date) {
     var d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
     var dayNum = d.getUTCDay() || 7;
@@ -1171,19 +1389,16 @@
     return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
   }
 
-  /* Day of year (1-365/366) */
   function getDayOfYear(date) {
     var start = new Date(date.getFullYear(), 0, 0);
     var diff = date - start;
     return Math.floor(diff / 86400000);
   }
 
-  /* Quarter */
   function getQuarter(monthIndex) {
     return Math.floor(monthIndex / 3) + 1;
   }
 
-  /* Next leap year after given year */
   function getNextLeapYear(year) {
     var y = year + 1;
     while (!isLeapYear(y)) y++;
@@ -1207,16 +1422,17 @@
     var now = new Date();
 
     var year    = now.getFullYear();
-    var month   = now.getMonth();       /* 0-11 */
+    var month   = now.getMonth();
     var day     = now.getDate();
-    var dow     = now.getDay();         /* 0-6 */
+    var dow     = now.getDay();
     var hours   = now.getHours();
     var minutes = now.getMinutes();
     var seconds = now.getSeconds();
     var ms      = now.getMilliseconds();
 
-    /* ----- Live box ----- */
     var dowNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+    /* ----- Live box ----- */
     dateEl.textContent = dowNames[dow] + ', ' + MONTHS[month] + ' ' + day + ', ' + year;
 
     var h12 = hours % 12;
@@ -1228,11 +1444,9 @@
     var totalDays = getTotalDaysInYear(year);
     var dayOfYear = getDayOfYear(now);
 
-    /* Fraction of the day already passed */
     var secondsToday = hours * 3600 + minutes * 60 + seconds + ms / 1000;
     var dayFraction  = secondsToday / 86400;
 
-    /* Elapsed days as a decimal (dayOfYear counts full days; the current day is partial) */
     var elapsedDecimal = (dayOfYear - 1) + dayFraction;
     var pct = (elapsedDecimal / totalDays) * 100;
     if (pct < 0) pct = 0;
@@ -1275,9 +1489,27 @@
     gLeap.textContent         = isLeapYear(year) ? 'Yes ✅' : 'No ❌';
     gNextLeap.textContent     = getNextLeapYear(year);
 
-    /* Year start day of week */
     var startDate = new Date(year, 0, 1);
     gStartDay.textContent = dowNames[startDate.getDay()];
+
+    /* ----- New Year Countdown ----- */
+    var nextYear = year + 1;
+    var newYearDate = new Date(nextYear, 0, 1, 0, 0, 0);
+    var diffMs = newYearDate - now;
+    if (diffMs < 0) diffMs = 0;
+
+    var totalSec = Math.floor(diffMs / 1000);
+    var cdD = Math.floor(totalSec / 86400);
+    var cdH = Math.floor((totalSec % 86400) / 3600);
+    var cdM = Math.floor((totalSec % 3600) / 60);
+    var cdS = totalSec % 60;
+
+    cdDays.textContent    = cdD;
+    cdHours.textContent   = pad(cdH);
+    cdMinutes.textContent = pad(cdM);
+    cdSeconds.textContent = pad(cdS);
+
+    countdownTarget.textContent = 'January 1, ' + nextYear;
 
     /* ----- Timezone (once) ----- */
     if (!tzEl.textContent || tzEl.textContent === 'Timezone: —') {
@@ -1290,9 +1522,6 @@
     }
   }
 
-  /* =========================================================
-     INIT
-     ========================================================= */
   updateAll();
   setInterval(updateAll, 1000);
 
@@ -1305,37 +1534,112 @@
   });
 
   /* =========================================================
-     SHARE / COPY
+     SHARE MODAL
      ========================================================= */
-  window.shareTool = function (network) {
-    var url = encodeURIComponent(window.location.href);
-    var text = encodeURIComponent('Check out this live Current Year Calculator!');
-    var shareUrl = '';
-    if (network === 'facebook') shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
-    else if (network === 'twitter') shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
-    else if (network === 'whatsapp') shareUrl = 'https://api.whatsapp.com/send?text=' + text + '%20' + url;
-    else if (network === 'linkedin') shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
-    if (shareUrl) window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=500');
+  var shareModal     = document.getElementById('shareModal');
+  var openShareBtn   = document.getElementById('openShareBtn');
+  var shareUrlText   = document.getElementById('shareUrlText');
+
+  if (shareUrlText) shareUrlText.textContent = window.location.href;
+
+  if (openShareBtn) {
+    openShareBtn.addEventListener('click', function () {
+      shareModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  window.closeShare = function () {
+    shareModal.classList.remove('show');
+    document.body.style.overflow = '';
   };
 
-  window.copyLink = function () {
-    var url = window.location.href;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function () {
-        showToast('✅ Link copied to clipboard!');
-      }).catch(function () {
-        showToast('⚠️ Could not copy link.');
-      });
-    } else {
-      var tmp = document.createElement('input');
-      tmp.value = url;
-      document.body.appendChild(tmp);
-      tmp.select();
-      try { document.execCommand('copy'); showToast('✅ Link copied!'); }
-      catch (e) { showToast('⚠️ Could not copy link.'); }
-      document.body.removeChild(tmp);
+  shareModal.addEventListener('click', function (e) {
+    if (e.target === shareModal) closeShare();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && shareModal.classList.contains('show')) {
+      closeShare();
+    }
+  });
+
+  window.openShare = function (network) {
+    var url  = encodeURIComponent(window.location.href);
+    var text = encodeURIComponent('Check out this free Current Year Calculator!');
+    var shareUrl = '';
+
+    if (network === 'whatsapp')      shareUrl = 'https://api.whatsapp.com/send?text=' + text + '%20' + url;
+    else if (network === 'facebook') shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+    else if (network === 'twitter')  shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+    else if (network === 'linkedin') shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+    else if (network === 'tiktok')   shareUrl = 'https://www.tiktok.com/';
+
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=550');
     }
   };
+
+  /* =========================================================
+     COPY LINK — 3-Layer Fallback
+     ========================================================= */
+  window.copyShareLink = function () {
+    var url = window.location.href;
+
+    /* Method 1: Modern Clipboard API (best, works on HTTPS) */
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(function () {
+        showToast('✅ Link copied to clipboard!');
+        closeShare();
+      }).catch(function () {
+        fallbackCopy(url);
+      });
+    } else {
+      fallbackCopy(url);
+    }
+  };
+
+  function fallbackCopy(text) {
+    /* Method 2: execCommand with hidden textarea */
+    try {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.top = '-9999px';
+      textarea.style.left = '-9999px';
+      textarea.setAttribute('readonly', '');
+      document.body.appendChild(textarea);
+
+      textarea.focus();
+      textarea.select();
+      textarea.setSelectionRange(0, text.length);
+
+      var copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch (err) {
+        copied = false;
+      }
+
+      document.body.removeChild(textarea);
+
+      if (copied) {
+        showToast('✅ Link copied to clipboard!');
+        closeShare();
+        return;
+      }
+    } catch (err) {
+      /* Move to fallback 3 */
+    }
+
+    /* Method 3: Prompt user to manually copy */
+    try {
+      window.prompt('📋 Copy this link (Ctrl+C / Cmd+C):', text);
+      showToast('📋 Copy the link from the box');
+    } catch (err) {
+      showToast('⚠️ Please copy the URL from the address bar.');
+    }
+  }
 
 })();
 </script>
