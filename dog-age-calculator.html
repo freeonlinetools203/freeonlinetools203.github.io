@@ -476,7 +476,7 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     max-width: 90vw;
     text-align: center;
-    z-index: 999;
+    z-index: 9998;
   }
   .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
@@ -584,6 +584,156 @@
     .author-bio { flex-direction: column; text-align: center; }
     .author-bio .bio-links { justify-content: center; }
     .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- SHARE MODAL (ADDED) ---------- */
+  .share-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn .25s ease;
+  }
+  .share-modal-overlay.show { display: flex; }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .share-modal {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px 28px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
+    animation: popUp .3s ease;
+    position: relative;
+  }
+  @keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+
+  .share-modal h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #5b21b6;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .share-modal .share-sub {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .share-url-box {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #4b5563;
+    word-break: break-all;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    transition: background .2s, border-color .2s;
+  }
+  .share-url-box:hover {
+    background: #ede9fe;
+    border-color: #ddd6fe;
+  }
+
+  .share-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .share-btn-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform .2s, opacity .2s;
+  }
+  .share-btn-item:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+  }
+  .share-btn-whatsapp { background: #25d366; }
+  .share-btn-facebook { background: #1877f2; }
+  .share-btn-twitter  { background: #1da1f2; }
+  .share-btn-linkedin { background: #0a66c2; }
+  .share-btn-tiktok   { background: #000000; }
+  .share-btn-copy     { background: #5b21b6; }
+
+  .share-close-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #f3f4f6;
+    color: #4b5563;
+    border: none;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .2s;
+  }
+  .share-close-btn:hover { background: #e5e7eb; }
+
+  /* Floating Share Button */
+  .floating-share {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 10px 25px -5px rgba(91,33,182,0.5);
+    z-index: 998;
+    transition: transform .25s, box-shadow .25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .floating-share:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 14px 30px -5px rgba(91,33,182,0.6);
+  }
+
+  @media (max-width: 480px) {
+    .share-modal { padding: 24px 18px; }
+    .share-modal h3 { font-size: 18px; }
+    .share-btn-item { font-size: 13px; padding: 11px 8px; }
+    .floating-share { width: 52px; height: 52px; font-size: 22px; bottom: 18px; right: 18px; }
   }
 </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
@@ -1101,6 +1251,30 @@ function showToast(message) {
 <!-- Toast notification -->
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<!-- ========== FLOATING SHARE BUTTON (ADDED) ========== -->
+<button class="floating-share" id="openShareBtn" type="button" aria-label="Share this tool">📤</button>
+
+<!-- ========== SHARE MODAL (ADDED) ========== -->
+<div class="share-modal-overlay" id="shareModal">
+  <div class="share-modal">
+    <h3>📤 Share This Tool</h3>
+    <p class="share-sub">Share this Dog Age Calculator with your friends and family!</p>
+
+    <div class="share-url-box" id="shareUrlText" onclick="copyShareLink()" style="cursor:pointer;" title="Click to copy">https://freeonlinetools203.com/dog-age-calculator.html</div>
+
+    <div class="share-buttons-grid">
+      <button class="share-btn-item share-btn-whatsapp" onclick="openShare('whatsapp')">💬 WhatsApp</button>
+      <button class="share-btn-item share-btn-facebook" onclick="openShare('facebook')">📘 Facebook</button>
+      <button class="share-btn-item share-btn-twitter" onclick="openShare('twitter')">🐦 Twitter</button>
+      <button class="share-btn-item share-btn-linkedin" onclick="openShare('linkedin')">💼 LinkedIn</button>
+      <button class="share-btn-item share-btn-tiktok" onclick="openShare('tiktok')">🎵 TikTok</button>
+      <button class="share-btn-item share-btn-copy" onclick="copyShareLink()">🔗 Copy Link</button>
+    </div>
+
+    <button class="share-close-btn" onclick="closeShare()">Close</button>
+  </div>
+</div>
+
 <!-- ==================== SCHEMA 1: SoftwareApplication ==================== -->
 <script type="application/ld+json">
 {
@@ -1516,7 +1690,7 @@ function showToast(message) {
   }
 
   /* =========================================================
-     SHARE / COPY
+     SHARE / COPY (existing inline share helpers)
      ========================================================= */
   window.shareTool = function (network) {
     var url = encodeURIComponent(window.location.href);
@@ -1547,6 +1721,111 @@ function showToast(message) {
       document.body.removeChild(tmp);
     }
   };
+
+  /* =========================================================
+     SHARE MODAL (ADDED) — 3-Layer Fallback
+     ========================================================= */
+  var shareModal     = document.getElementById('shareModal');
+  var openShareBtn   = document.getElementById('openShareBtn');
+  var shareUrlText   = document.getElementById('shareUrlText');
+
+  if (shareUrlText) shareUrlText.textContent = window.location.href;
+
+  if (openShareBtn) {
+    openShareBtn.addEventListener('click', function () {
+      shareModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  window.closeShare = function () {
+    shareModal.classList.remove('show');
+    document.body.style.overflow = '';
+  };
+
+  shareModal.addEventListener('click', function (e) {
+    if (e.target === shareModal) closeShare();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && shareModal.classList.contains('show')) {
+      closeShare();
+    }
+  });
+
+  window.openShare = function (network) {
+    var url  = encodeURIComponent(window.location.href);
+    var text = encodeURIComponent('Check out this free Dog Age Calculator!');
+    var shareUrl = '';
+
+    if (network === 'whatsapp')      shareUrl = 'https://api.whatsapp.com/send?text=' + text + '%20' + url;
+    else if (network === 'facebook') shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+    else if (network === 'twitter')  shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+    else if (network === 'linkedin') shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+    else if (network === 'tiktok')   shareUrl = 'https://www.tiktok.com/';
+
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=550');
+    }
+  };
+
+  window.copyShareLink = function () {
+    var url = window.location.href;
+
+    /* Method 1: Modern Clipboard API */
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(function () {
+        showToast('✅ Link copied to clipboard!');
+        closeShare();
+      }).catch(function () {
+        fallbackCopy(url);
+      });
+    } else {
+      fallbackCopy(url);
+    }
+  };
+
+  function fallbackCopy(text) {
+    /* Method 2: execCommand */
+    try {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.top = '-9999px';
+      textarea.style.left = '-9999px';
+      textarea.setAttribute('readonly', '');
+      document.body.appendChild(textarea);
+
+      textarea.focus();
+      textarea.select();
+      textarea.setSelectionRange(0, text.length);
+
+      var copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch (err) {
+        copied = false;
+      }
+
+      document.body.removeChild(textarea);
+
+      if (copied) {
+        showToast('✅ Link copied to clipboard!');
+        closeShare();
+        return;
+      }
+    } catch (err) {
+      /* Fall through */
+    }
+
+    /* Method 3: Prompt fallback */
+    try {
+      window.prompt('📋 Copy this link (Ctrl+C / Cmd+C):', text);
+      showToast('📋 Copy the link from the box');
+    } catch (err) {
+      showToast('⚠️ Please copy the URL from the address bar.');
+    }
+  }
 
   /* =========================================================
      EVENTS
