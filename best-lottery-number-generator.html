@@ -211,7 +211,7 @@ body.dark-mode .history-last-generated { color: #94a3b8; border-top-color: #3341
 .history-last-generated strong { color: #1e3a8a; }
 body.dark-mode .history-last-generated strong { color: #60a5fa; }
 
-.toast-notification { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #1f2937; color: white; padding: 8px 18px; border-radius: 50px; z-index: 1000; animation: slideUp 0.3s ease; font-weight: 500; font-size: 13px; }
+.toast-notification { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #1f2937; color: white; padding: 8px 18px; border-radius: 50px; z-index: 100000; animation: slideUp 0.3s ease; font-weight: 500; font-size: 13px; }
 @keyframes slideUp { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
 
 @media (max-width: 768px) {
@@ -251,10 +251,6 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
 .lottery-article .faq-item summary::after{content:'+';position:absolute;right:0;top:-2px;font-size:20px;font-weight:700;color:#2563eb}
 .lottery-article .faq-item[open] summary::after{content:'−'}
 .lottery-article .faq-item p{margin-top:10px;font-size:14px;color:#4b5563}
-.lottery-article .tips-box{background:linear-gradient(135deg,#f0f9ff 0%,#e6f4ff 100%);border:1px solid #bae6fd;border-radius:16px;padding:18px 22px;margin:18px 0}
-.lottery-article .tips-box h4{color:#1e3a8a;margin-bottom:10px;font-size:16px}
-.lottery-article .tips-box ul{margin-left:20px}
-.lottery-article .tips-box li{margin-bottom:8px;font-size:14px;color:#374151}
 .lottery-article .cmp-table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
 .lottery-article .cmp-table th,.lottery-article .cmp-table td{padding:12px 14px;text-align:left;border-bottom:1px solid #e5e7eb}
 .lottery-article .cmp-table th{background:#1e3a8a;color:#fff;font-weight:600}
@@ -285,7 +281,7 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
     color: #ffffff; border: none; cursor: pointer;
     font-size: 24px;
     box-shadow: 0 10px 25px -5px rgba(91,33,182,0.5);
-    z-index: 9998;
+    z-index: 99998;
     transition: transform .25s, box-shadow .25s;
     display: flex; align-items: center; justify-content: center;
 }
@@ -425,14 +421,14 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
         <h4>📑 Table of Contents</h4>
         <ol>
             <li><a href="#la-intro">Introduction</a></li>
-            <li><a href="#la-how">How to Use the Lottery Number Generator</a></li>
+            <li><a href="#la-how">How to Use</a></li>
             <li><a href="#la-features">Key Features</a></li>
-            <li><a href="#la-games">Popular Lottery Games &amp; State Presets</a></li>
-            <li><a href="#la-dream">Dream Numbers for the Lottery</a></li>
+            <li><a href="#la-games">Popular Lottery Games</a></li>
+            <li><a href="#la-dream">Dream Numbers</a></li>
             <li><a href="#la-zodiac">Zodiac Lucky Numbers</a></li>
             <li><a href="#la-simpsons">Simpsons Lottery Numbers</a></li>
             <li><a href="#la-ai">AI Lottery Number Generator</a></li>
-            <li><a href="#la-faq">Frequently Asked Questions</a></li>
+            <li><a href="#la-faq">FAQ</a></li>
             <li><a href="#la-conclusion">Conclusion</a></li>
         </ol>
     </div>
@@ -443,29 +439,27 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
 
     <h3 id="la-how">How to Use the Lottery Number Generator</h3>
     <ol>
-        <li><strong>Pick a preset</strong> — click Powerball, Mega Millions, Cash 5, Match 6, Pick 3, or any state preset to auto-set the range and count.</li>
+        <li><strong>Pick a preset</strong> — click Powerball, Mega Millions, Cash 5, Match 6, Pick 3, or any state preset.</li>
         <li><strong>Or set a custom range</strong> — enter your own Min, Max, and Count (up to 20 numbers).</li>
-        <li><strong>Toggle "No Repeats"</strong> — leave it ON for unique numbers (default).</li>
-        <li><strong>Click GENERATE NUMBERS</strong> — the random picker instantly shows your lucky picks.</li>
+        <li><strong>Toggle "No Repeats"</strong> — leave it ON for unique numbers.</li>
+        <li><strong>Click GENERATE NUMBERS</strong> — instantly shows your lucky picks.</li>
         <li><strong>Copy, Export, or Share</strong> — save as PNG, copy to clipboard, or share on social media.</li>
         <li><strong>Track History</strong> — every generation is saved in the last-20 history panel.</li>
     </ol>
 
-    <h3 id="la-features">Key Features of This Lottery Number Generator</h3>
+    <h3 id="la-features">Key Features</h3>
     <ul>
         <li><strong>🎯 7 Preset Games</strong> — Powerball, Mega Millions, UK Lotto, EuroMillions, Lotto 6/49, plus 1-10 and 1-100.</li>
-        <li><strong>🚫 No Repeats Option</strong> — ensures unique numbers for maximum coverage.</li>
-        <li><strong>📊 Live Statistics</strong> — tracks total generations, total numbers, and your most frequent picks.</li>
+        <li><strong>🚫 No Repeats Option</strong> — ensures unique numbers.</li>
+        <li><strong>📊 Live Statistics</strong> — tracks total generations and your most frequent picks.</li>
         <li><strong>📜 History Panel</strong> — automatically saves your last 20 generations.</li>
         <li><strong>🌙 Dark Mode</strong> — perfect for night-time play.</li>
-        <li><strong>📷 PNG Export</strong> — save your numbers as an image for easy sharing.</li>
+        <li><strong>📷 PNG Export</strong> — save your numbers as an image.</li>
         <li><strong>📤 Share Modal</strong> — WhatsApp, Facebook, X, LinkedIn, TikTok &amp; copy-link.</li>
-        <li><strong>💯 100% Free</strong> — no signup, no watermark, unlimited use.</li>
+        <li><strong>💯 100% Free</strong> — no signup, no watermark.</li>
     </ul>
 
     <h3 id="la-games">Popular Lottery Games &amp; Settings</h3>
-    <p>Our <strong>lottery number generator</strong> supports every major US and international lottery. Here is what each preset covers:</p>
-
     <table class="cmp-table">
         <thead>
             <tr><th>Game</th><th>Main Range</th><th>Count</th><th>Also Known As</th></tr>
@@ -483,7 +477,7 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
     </table>
 
     <h3 id="la-dream">Dream Numbers for the Lottery</h3>
-    <p>Dreams have guided players for centuries. Many people search for <strong>dream numbers for the lottery</strong> or <strong>lottery dream numbers</strong> to turn vivid dreams into a winning ticket. Our library covers 14 common dream symbols including:</p>
+    <p>Dreams have guided players for centuries. Our <strong>lottery dream numbers</strong> library covers 14 common dream symbols:</p>
     <ul>
         <li>🐍 <strong>Snake</strong> → 5, 15, 25</li>
         <li>💧 <strong>Water</strong> → 7, 17, 27</li>
@@ -495,8 +489,8 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
         <li>💍 <strong>Wedding</strong> → 10, 20, 30</li>
     </ul>
 
-    <h3 id="la-zodiac">Zodiac Lucky Numbers (Leo, Scorpio, Aries, Taurus)</h3>
-    <p>Each zodiac sign has its own traditional <strong>lucky numbers for the lottery</strong>. Players worldwide look up <strong>Leo lucky numbers</strong>, <strong>Scorpio lucky lottery numbers</strong>, <strong>lucky numbers for Aries</strong>, <strong>Taurus lucky lottery numbers</strong>, and <strong>Aquarius lucky numbers lottery predictions</strong> before buying tickets.</p>
+    <h3 id="la-zodiac">Zodiac Lucky Numbers</h3>
+    <p>Each zodiac sign has its own traditional <strong>lucky numbers for the lottery</strong>. Players worldwide look up <strong>Leo lucky numbers</strong>, <strong>Scorpio lucky lottery numbers</strong>, <strong>lucky numbers for Aries</strong>, and <strong>Taurus lucky lottery numbers</strong>.</p>
 
     <div class="zodiac-grid">
         <div class="zodiac-item">♈ <strong>Aries:</strong> 1, 8, 17</div>
@@ -514,32 +508,31 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
     </div>
 
     <h3 id="la-simpsons">Simpsons Lottery Numbers</h3>
-    <p>One of the most famous lottery picks in pop culture is the <strong>Simpsons lottery numbers</strong>: <strong>1, 5, 8, 14, 22, 33</strong> — famously drawn by Homer Simpson in the episode "Dog of Death." Fans worldwide still play these numbers as a nostalgic good-luck charm.</p>
+    <p>One of the most famous lottery picks in pop culture is the <strong>Simpsons lottery numbers</strong>: <strong>1, 5, 8, 14, 22, 33</strong> — famously drawn by Homer Simpson in the episode "Dog of Death."</p>
 
     <h3 id="la-ai">AI Lottery Number Generator</h3>
-    <p>Searches for <strong>AI lottery number generator</strong>, <strong>artificial intelligence lottery numbers</strong>, and <strong>best free AI lottery number generator</strong> have exploded in 2026. Here is the honest truth: <strong>no AI can predict winning lottery numbers</strong> — the lottery is genuinely random. What an AI-style generator can do is ensure that the numbers are produced with zero human bias, using a secure algorithm.</p>
-    <p>Whether you compare it to a <strong>ChatGPT lottery number generator</strong> or any premium AI tool, the math is the same: fair, unbiased, unpredictable numbers.</p>
+    <p>Searches for <strong>AI lottery number generator</strong> and <strong>best free AI lottery number generator</strong> have exploded in 2026. Here is the honest truth: <strong>no AI can predict winning lottery numbers</strong> — the lottery is genuinely random. What an AI-style generator can do is ensure that the numbers are produced with zero human bias, using a secure algorithm.</p>
 
     <h3 id="la-faq">Frequently Asked Questions</h3>
 
     <details class="faq-item">
         <summary>What is the best lottery number generator?</summary>
-        <p>The <strong>best lottery number generator</strong> is one that is 100% free, uses a fair random algorithm, and offers useful extras like no-repeat mode, history, and export. Our tool ticks every box and is rated 4.8/5 by 2,500+ players.</p>
+        <p>The <strong>best lottery number generator</strong> is one that is 100% free, uses a fair random algorithm, and offers useful extras like no-repeat mode, history, and export. Our tool ticks every box.</p>
     </details>
 
     <details class="faq-item">
         <summary>Is this lottery number generator completely free?</summary>
-        <p>Yes — 100% free, no signup, no watermark, no hidden charges. You can generate unlimited tickets any time of day.</p>
+        <p>Yes — 100% free, no signup, no watermark, no hidden charges. Generate unlimited tickets any time of day.</p>
     </details>
 
     <details class="faq-item">
         <summary>Does it support Powerball, Mega Millions, Cash 5, and Match 6?</summary>
-        <p>Yes. Our tool has one-click presets for <strong>Powerball</strong> (5 from 1–69 + Powerball 1–26), <strong>Mega Millions</strong> (5 from 1–70 + Mega Ball 1–25), <strong>NC Lottery Cash 5</strong>, and <strong>PA Lottery Match 6</strong>.</p>
+        <p>Yes. Our tool has one-click presets for <strong>Powerball</strong>, <strong>Mega Millions</strong>, <strong>NC Lottery Cash 5</strong>, and <strong>PA Lottery Match 6</strong>.</p>
     </details>
 
     <details class="faq-item">
         <summary>What are dream numbers for the lottery?</summary>
-        <p><strong>Dream numbers for the lottery</strong> are numbers associated with common dream symbols. Our <strong>lottery dream numbers</strong> library converts 14 dream symbols (snake, water, fire, money, baby, teeth) into playable digits.</p>
+        <p><strong>Dream numbers for the lottery</strong> are numbers associated with common dream symbols. Our <strong>lottery dream numbers</strong> library converts 14 dream symbols into playable digits.</p>
     </details>
 
     <details class="faq-item">
@@ -554,17 +547,16 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
 
     <details class="faq-item">
         <summary>Can AI predict winning lottery numbers?</summary>
-        <p>No — no AI can predict winning numbers. The lottery is genuinely random. Our <strong>AI-style lottery number generator</strong> ensures fair, unbiased picks using a secure random algorithm.</p>
+        <p>No — no AI can predict winning numbers. The lottery is genuinely random. Our AI-style generator ensures fair, unbiased picks using a secure random algorithm.</p>
     </details>
 
     <details class="faq-item">
         <summary>What are the most picked Powerball numbers?</summary>
-        <p>Commonly picked numbers are low digits like 1–31 (because players use birthdays). Choosing these means sharing the jackpot if you win. Our random picker spreads picks across the entire range.</p>
+        <p>Commonly picked numbers are low digits like 1–31 (because players use birthdays). Our random picker spreads picks across the entire range.</p>
     </details>
 
     <h3 id="la-conclusion">Conclusion</h3>
-    <p>Our <strong>best lottery number generator 2026</strong> is the most feature-rich free tool for anyone playing Powerball, Mega Millions, Cash 5, Match 6, Pick 3, Lucky for Life, or any other lottery. With game presets, dark mode, PNG export, and 100% free access — there is no better <strong>random lottery number generator</strong> online.</p>
-    <p>Bookmark this page, generate your lucky numbers, and good luck!</p>
+    <p>Our <strong>best lottery number generator 2026</strong> is the most feature-rich free tool for anyone playing Powerball, Mega Millions, Cash 5, Match 6, Pick 3, Lucky for Life, or any other lottery. Bookmark this page, generate your lucky numbers, and good luck!</p>
 
     <div class="kw-box">
         <h4>🔑 Related Searches (Quick Answers)</h4>
@@ -592,7 +584,9 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
         </div>
     </div>
 </article>
-  <!-- ===== AUTHOR BIO ===== -->
+<!-- ===== SEO ARTICLE END ===== -->
+
+<!-- ===== AUTHOR BIO ===== -->
 <div class="author-bio-wrapper">
     <div class="author-bio">
         <img src="https://freeonlinetools203.com/zain-uddin.jpg.png" alt="Zain Uddin" loading="lazy">
@@ -609,9 +603,10 @@ body.dark-mode .history-last-generated strong { color: #60a5fa; }
         </div>
     </div>
 </div>
-<!-- ===== SEO ARTICLE END ===== -->
-<!-- ========== SPIN THE WHEEL CATEGORY FOOTER START (DETAILED) ========== -->
+<!-- ===== AUTHOR BIO END ===== -->
 
+
+<!-- ========== SPIN THE WHEEL CATEGORY FOOTER START ========== -->
 <div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
 <style>
 .stw-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
@@ -735,6 +730,7 @@ function stwRenderTools() {
   const pageTools = filtered.slice(start, end);
 
   const grid = document.getElementById('stwToolsGrid');
+  if (!grid) return;
   grid.innerHTML = pageTools.map(tool => `
     <div class="stw-tool-card">
       <a href="${tool.url}">
@@ -819,7 +815,6 @@ function stwSetFilter(filter) {
   });
 }
 
-// ✅ Sirf ek baar — DOMContentLoaded mein
 document.addEventListener('DOMContentLoaded', () => {
   stwRenderTools();
   document.querySelectorAll('.stw-filter-chip').forEach(chip => {
@@ -829,87 +824,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 <!-- ========== SPIN THE WHEEL CATEGORY FOOTER END ========== -->
 
 
-<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
-
+<!-- ========== FINAL SOCIAL MEDIA FOOTER START ========== -->
 <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
-    
-    <!-- Animated Gradient Line -->
     <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a, #3b82f6); background-size: 300% 100%; animation: gradientMove 3s ease infinite;"></div>
-    
     <style>
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
-        .footer-link {
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .footer-link:hover {
-            transform: translateX(5px);
-            color: #60a5fa !important;
-        }
-        .social-btn {
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            color: white;
-            font-size: 18px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-        }
-        .social-btn:hover {
-            transform: translateY(-3px) scale(1.1);
-            filter: brightness(1.1);
-        }
-        .footer-col {
-            animation: float 4s ease-in-out infinite;
-        }
+        @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0px); } }
+        .footer-link { transition: all 0.3s ease; display: inline-block; }
+        .footer-link:hover { transform: translateX(5px); color: #60a5fa !important; }
+        .social-btn { transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; border: none; color: white; font-size: 18px; width: 36px; height: 36px; border-radius: 50%; }
+        .social-btn:hover { transform: translateY(-3px) scale(1.1); filter: brightness(1.1); }
+        .footer-col { animation: float 4s ease-in-out infinite; }
         .footer-col:nth-child(2) { animation-delay: 0.5s; }
         .footer-col:nth-child(3) { animation-delay: 1s; }
         .footer-col:nth-child(4) { animation-delay: 1.5s; }
     </style>
-
     <div style="max-width: 1100px; margin: 0 auto;">
-        
-        <!-- Footer Grid - 4 Columns -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin-bottom: 25px;">
-            
-            <!-- Column 1: Brand Info with SOCIAL MEDIA BUTTONS -->
             <div class="footer-col">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
                     <span style="font-size: 22px;">✨</span>
                     <h3 style="color: white; font-size: 1rem; margin: 0;">Free Online Tools 203</h3>
                 </div>
                 <p style="font-size: 0.7rem; line-height: 1.5; color: #94a3b8; margin-bottom: 10px;">100% free online tools for social media, SEO, calculators & fun games.</p>
-                
-                <!-- SOCIAL MEDIA SHARE BUTTONS -->
-                <div>
-                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                        <button onclick="sharePage('facebook')" class="social-btn" style="background: #1877F2; width: 32px; height: 32px; font-size: 15px;">📘</button>
-                        <button onclick="sharePage('twitter')" class="social-btn" style="background: #1DA1F2; width: 32px; height: 32px; font-size: 15px;">🐦</button>
-                        <button onclick="sharePage('whatsapp')" class="social-btn" style="background: #25D366; width: 32px; height: 32px; font-size: 15px;">💬</button>
-                        <button onclick="sharePage('linkedin')" class="social-btn" style="background: #0077B5; width: 32px; height: 32px; font-size: 15px;">🔗</button>
-                        <button onclick="copyPageLink()" class="social-btn" style="background: #6b7280; width: 32px; height: 32px; font-size: 13px;">📋</button>
-                    </div>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                    <button onclick="sharePage('facebook')" class="social-btn" style="background: #1877F2; width: 32px; height: 32px; font-size: 15px;">📘</button>
+                    <button onclick="sharePage('twitter')" class="social-btn" style="background: #1DA1F2; width: 32px; height: 32px; font-size: 15px;">🐦</button>
+                    <button onclick="sharePage('whatsapp')" class="social-btn" style="background: #25D366; width: 32px; height: 32px; font-size: 15px;">💬</button>
+                    <button onclick="sharePage('linkedin')" class="social-btn" style="background: #0077B5; width: 32px; height: 32px; font-size: 15px;">🔗</button>
+                    <button onclick="copyPageLink()" class="social-btn" style="background: #6b7280; width: 32px; height: 32px; font-size: 13px;">📋</button>
                 </div>
             </div>
-            
-            <!-- Column 2: Quick Links -->
             <div class="footer-col">
                 <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #3b82f6; padding-left: 10px;">📄 Quick Links</h4>
                 <div>
@@ -921,8 +869,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/disclaimer.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚠️ Disclaimer</a></p>
                 </div>
             </div>
-            
-            <!-- Column 3: Social Media Tools (5 Trending) -->
             <div class="footer-col">
                 <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #8b5cf6; padding-left: 10px;">📱 Social Media</h4>
                 <div>
@@ -933,8 +879,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📌 Pinterest Hashtag Generator</a></p>
                 </div>
             </div>
-            
-            <!-- Column 4: Popular Tools (5 Trending) -->
             <div class="footer-col">
                 <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #f59e0b; padding-left: 10px;">⭐ Trending Tools</h4>
                 <div>
@@ -945,53 +889,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/bmi-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚖️ BMI Calculator</a></p>
                 </div>
             </div>
-            
         </div>
-        
-        <!-- Copyright -->
         <div style="text-align: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.06);">
             <p style="font-size: 0.7rem; color: #64748b;">© 2026 <strong style="color: #94a3b8;">Free Online Tools 203</strong>. All rights reserved. | Made with <span style="color: #ec489a;">❤️</span></p>
         </div>
     </div>
 </footer>
-
 <script>
-// ========== SHARE FUNCTIONS - CURRENT PAGE LINK ==========
-
 function sharePage(platform) {
     let url = encodeURIComponent(window.location.href);
     let title = encodeURIComponent(document.title || "Free Online Tools 203");
-    
     let shareUrl = "";
-    if (platform === "whatsapp") {
-        shareUrl = "https://wa.me/?text=" + title + "%20" + url;
-    } else if (platform === "facebook") {
-        shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-    } else if (platform === "twitter") {
-        shareUrl = "https://twitter.com/intent/tweet?text=" + title + "&url=" + url;
-    } else if (platform === "linkedin") {
-        shareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + title;
-    }
-    
-    if (shareUrl) {
-        window.open(shareUrl, "_blank", "width=600,height=500");
-    }
+    if (platform === "whatsapp") shareUrl = "https://wa.me/?text=" + title + "%20" + url;
+    else if (platform === "facebook") shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    else if (platform === "twitter") shareUrl = "https://twitter.com/intent/tweet?text=" + title + "&url=" + url;
+    else if (platform === "linkedin") shareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + title;
+    if (shareUrl) window.open(shareUrl, "_blank", "width=600,height=500");
 }
-
 function copyPageLink() {
     let url = window.location.href;
-    
     if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(() => {
-            showToast('✅ Link copied! Share with friends.');
-        }).catch(() => {
-            fallbackCopy(url);
-        });
-    } else {
-        fallbackCopy(url);
-    }
+        navigator.clipboard.writeText(url).then(() => { showToast('✅ Link copied!'); }).catch(() => { fallbackCopy(url); });
+    } else { fallbackCopy(url); }
 }
-
 function fallbackCopy(text) {
     let textarea = document.createElement('textarea');
     textarea.value = text;
@@ -999,19 +919,38 @@ function fallbackCopy(text) {
     textarea.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
-    showToast('✅ Link copied! Share with friends.');
-}
-
-function showToast(message) {
-    let toast = document.createElement('div');
-    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:8px 18px;border-radius:50px;font-size:13px;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);animation:toastSlide 0.3s ease';
-    toast.textContent = message;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 2500);
+    showToast('✅ Link copied!');
 }
 </script>
+<!-- ========== FINAL SOCIAL MEDIA FOOTER END ========== -->
 
-<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER END ========== -->
+
+<!-- ========== FLOATING SHARE BUTTON (MOVED HERE - BEFORE SCRIPT) ========== -->
+<button class="floating-share" id="openShareBtn" type="button" aria-label="Share this tool">📤</button>
+
+<!-- ========== SHARE MODAL (MOVED HERE - BEFORE SCRIPT) ========== -->
+<div class="share-modal-overlay" id="shareModal">
+  <div class="share-modal">
+    <h3>📤 Share This Tool</h3>
+    <p class="share-sub">Share this Best Lottery Number Generator with your friends and family!</p>
+
+    <div class="share-url-box" id="shareUrlText" onclick="copyShareLink()" title="Click to copy">https://freeonlinetools203.com/best-lottery-number-generator.html</div>
+
+    <div class="share-buttons-grid">
+      <button class="share-btn-item share-btn-whatsapp" onclick="openShare('whatsapp')">💬 WhatsApp</button>
+      <button class="share-btn-item share-btn-facebook" onclick="openShare('facebook')">📘 Facebook</button>
+      <button class="share-btn-item share-btn-twitter" onclick="openShare('twitter')">🐦 Twitter</button>
+      <button class="share-btn-item share-btn-linkedin" onclick="openShare('linkedin')">💼 LinkedIn</button>
+      <button class="share-btn-item share-btn-tiktok" onclick="openShare('tiktok')">🎵 TikTok</button>
+      <button class="share-btn-item share-btn-copy" onclick="copyShareLink()">🔗 Copy Link</button>
+    </div>
+
+    <button class="share-close-btn" onclick="closeShare()">Close</button>
+  </div>
+</div>
+
+
+<!-- ========== MAIN SCRIPTS (MOVED TO END - NOW BUTTON & MODAL EXIST) ========== -->
 <script>
 // ===== DARK MODE =====
 let isDarkMode = false;
@@ -1046,7 +985,6 @@ let totalGenerations = parseInt(localStorage.getItem('totalGenerations')) || 0;
 let totalNumbers = parseInt(localStorage.getItem('totalNumbers')) || 0;
 let numberFrequency = JSON.parse(localStorage.getItem('numberFrequency')) || {};
 
-// ===== DOM REFS =====
 const multipleResultsEl = document.getElementById('multipleResults');
 const resultCard = document.getElementById('resultCard');
 const historyList = document.getElementById('historyList');
@@ -1056,7 +994,6 @@ const countInput = document.getElementById('countValue');
 const noRepeatsCheck = document.getElementById('noRepeats');
 const lastGeneratedValue = document.getElementById('lastGeneratedValue');
 
-// ===== COLOR PALETTE =====
 const colorPalette = [
     '#ef4444', '#f59e0b', '#eab308', '#22c55e', '#10b981', 
     '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6', '#ec489a',
@@ -1276,14 +1213,14 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && e.target.tagName !== 'INPUT') generateNumbers();
 });
 
-// ========== SHARE MODAL FUNCTIONS ==========
+// ========== SHARE MODAL FUNCTIONS (NOW ELEMENTS EXIST!) ==========
 var shareModal   = document.getElementById('shareModal');
 var openShareBtn = document.getElementById('openShareBtn');
 var shareUrlText = document.getElementById('shareUrlText');
 
 if (shareUrlText) shareUrlText.textContent = window.location.href;
 
-if (openShareBtn) {
+if (openShareBtn && shareModal) {
     openShareBtn.addEventListener('click', function () {
         shareModal.classList.add('show');
         document.body.style.overflow = 'hidden';
@@ -1351,30 +1288,6 @@ function fallbackCopy(text) {
     try { window.prompt('📋 Copy this link:', text); } catch (err) {}
 }
 </script>
-
-<!-- ========== FLOATING SHARE BUTTON ========== -->
-<button class="floating-share" id="openShareBtn" type="button" aria-label="Share this tool">📤</button>
-
-<!-- ========== SHARE MODAL (ONLY ONE) ========== -->
-<div class="share-modal-overlay" id="shareModal">
-  <div class="share-modal">
-    <h3>📤 Share This Tool</h3>
-    <p class="share-sub">Share this Best Lottery Number Generator with your friends and family!</p>
-
-    <div class="share-url-box" id="shareUrlText" onclick="copyShareLink()" title="Click to copy">https://freeonlinetools203.com/best-lottery-number-generator.html</div>
-
-    <div class="share-buttons-grid">
-      <button class="share-btn-item share-btn-whatsapp" onclick="openShare('whatsapp')">💬 WhatsApp</button>
-      <button class="share-btn-item share-btn-facebook" onclick="openShare('facebook')">📘 Facebook</button>
-      <button class="share-btn-item share-btn-twitter" onclick="openShare('twitter')">🐦 Twitter</button>
-      <button class="share-btn-item share-btn-linkedin" onclick="openShare('linkedin')">💼 LinkedIn</button>
-      <button class="share-btn-item share-btn-tiktok" onclick="openShare('tiktok')">🎵 TikTok</button>
-      <button class="share-btn-item share-btn-copy" onclick="copyShareLink()">🔗 Copy Link</button>
-    </div>
-
-    <button class="share-close-btn" onclick="closeShare()">Close</button>
-  </div>
-</div>
 
 </body>
 </html>
