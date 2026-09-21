@@ -6,20 +6,26 @@ const toolsDatabase = {
   catMostPopular: {
     name: "✨ Most Popular Tools",
     tools: [
+      "Age Calculator",
+      "Dog Age Calculator",
+      "What Year Was I Born Calculator",
+      "Born Year Age Calculator",
+      "Current Year Calculator",
       "Best Lottery Number Generator",
       "Spin The Wheel",
-      "Random Color Picker",
-      "Keyword Density Checker",
-      "Instagram Hashtag Generator",
-      "Age Calculator"
+      "Keyword Density Checker"
     ]
   },
   
-  // 2. AGE CALCULATOR TOOLS
+   // 2. AGE CALCULATOR TOOLS
   catAge: {
     name: "📅 Age Calculator Tools",
     tools: [
       "Age Calculator",
+      "Dog Age Calculator",
+      "What Year Was I Born Calculator",
+      "Born Year Age Calculator",
+      "Current Year Calculator",
       "Chronological Age Calculator",
       "Online Chronological Age Calculator",
       "Age Difference Calculator",
@@ -46,19 +52,9 @@ const toolsDatabase = {
       "Birthday Countdown",
       "Happy Birthday Tool",
       "Life Expectancy Calculator",
-      "Running Age Calculator",                    // ✅ ADDED
-      "Running Age Calculator by Date of Birth",  // ✅ ADDED
-      "Date of Birth Calculator Year"             // ✅ ADDED
-    ]
-  },
-  
-  // 3. AGE CALCULATION IN EXCEL (GUIDES)
-  catAgeExcel: {
-    name: "📗 Age Calculation in Excel (Guides)",
-    tools: [
-      "Excel Formula To Calculate Age",
-      "How To Calculate Age In Excel",
-      "Calculate Age From DOB In Excel"
+      "Running Age Calculator",
+      "Running Age Calculator by Date of Birth",
+      "Date of Birth Calculator Year"
     ]
   },
   
