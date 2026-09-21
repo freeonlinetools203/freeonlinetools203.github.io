@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>HTML Sitemap | Free Online Tools</title>
-    <meta name="description" content="Complete HTML sitemap of Free Online Tools. Find all 200+ free online tools, calculators, SEO tools, YouTube tools, and more in one place.">
+    <meta name="description" content="Complete HTML sitemap of Free Online Tools. Find all 240+ free online tools, calculators, SEO tools, YouTube tools, and more in one place.">
     <meta name="keywords" content="sitemap, html sitemap, free online tools list, all tools, website sitemap">
     <meta name="author" content="Free Online Tools">
     <meta name="robots" content="index, follow">
@@ -14,7 +14,7 @@
 
     <!-- ========== OPEN GRAPH START ========== -->
     <meta property="og:title" content="HTML Sitemap | Free Online Tools">
-    <meta property="og:description" content="Complete sitemap of 200+ free online tools. Find every tool in one place.">
+    <meta property="og:description" content="Complete sitemap of 240+ free online tools. Find every tool in one place.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freeonlinetools203.com/sitemap.html">
     <!-- ========== OPEN GRAPH END ========== -->
@@ -31,218 +31,48 @@
 
     <!-- ========== STYLES START ========== -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f3f4f6; min-height: 100vh; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f3f4f6;
-            min-height: 100vh;
-        }
+        .sitemap-header { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white; text-align: center; padding: 50px 20px 40px; }
+        .sitemap-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; }
+        .sitemap-header p { font-size: 1.1rem; opacity: 0.9; }
+        .sitemap-header .total-tools { display: inline-block; margin-top: 15px; background: rgba(255, 255, 255, 0.15); padding: 8px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; }
 
-        /* ===== HEADER ===== */
-        .sitemap-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: white;
-            text-align: center;
-            padding: 50px 20px 40px;
-        }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .sitemap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
-        .sitemap-header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
+        .sitemap-col { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); border: 1px solid rgba(229, 231, 235, 0.3); }
+        .sitemap-col h2 { color: #1e3a8a; font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #2563eb; display: flex; align-items: center; gap: 10px; }
+        .sitemap-col ul { list-style: none; padding: 0; }
+        .sitemap-col ul li { padding: 6px 0; border-bottom: 1px solid #f1f5f9; }
+        .sitemap-col ul li:last-child { border-bottom: none; }
+        .sitemap-col ul li a { color: #1e293b; text-decoration: none; font-size: 0.92rem; transition: all 0.2s ease; display: flex; align-items: center; gap: 8px; }
+        .sitemap-col ul li a:hover { color: #2563eb; padding-left: 8px; }
+        .sitemap-col ul li a .emoji { font-size: 1rem; width: 24px; text-align: center; }
 
-        .sitemap-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+        .back-home { text-align: center; margin: 30px 0; }
+        .back-home a { display: inline-block; padding: 14px 40px; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25); }
+        .back-home a:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35); }
 
-        .sitemap-header .total-tools {
-            display: inline-block;
-            margin-top: 15px;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 8px 28px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
+        .disclosure-box { max-width: 1200px; margin: 0 auto 40px; padding: 0 20px; }
+        .disclosure-box .inner { background: #fefce8; border-radius: 16px; padding: 18px 24px; border-left: 5px solid #eab308; font-size: 0.85rem; color: #713f12; line-height: 1.7; }
+        .disclosure-box .inner strong { color: #1e3a8a; }
+        .disclosure-box .inner a { color: #2563eb; font-weight: 600; text-decoration: none; }
+        .disclosure-box .inner a:hover { text-decoration: underline; }
 
-        /* ===== MAIN CONTAINER ===== */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+        .footer { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 30px 20px 20px; text-align: center; margin-top: 20px; }
+        .footer a { color: #94a3b8; text-decoration: none; margin: 0 10px; font-size: 0.85rem; transition: all 0.3s ease; }
+        .footer a:hover { color: #60a5fa; }
+        .footer p { font-size: 0.8rem; color: #64748b; margin-top: 12px; }
 
-        .sitemap-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        /* ===== SITEMAP COLUMN ===== */
-        .sitemap-col {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(229, 231, 235, 0.3);
-        }
-
-        .sitemap-col h2 {
-            color: #1e3a8a;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #2563eb;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .sitemap-col ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sitemap-col ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .sitemap-col ul li:last-child {
-            border-bottom: none;
-        }
-
-        .sitemap-col ul li a {
-            color: #1e293b;
-            text-decoration: none;
-            font-size: 0.92rem;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sitemap-col ul li a:hover {
-            color: #2563eb;
-            padding-left: 8px;
-        }
-
-        .sitemap-col ul li a .emoji {
-            font-size: 1rem;
-            width: 24px;
-            text-align: center;
-        }
-
-        /* ===== BACK HOME ===== */
-        .back-home {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .back-home a {
-            display: inline-block;
-            padding: 14px 40px;
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
-        }
-
-        .back-home a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
-        }
-
-        /* ===== AMAZON DISCLOSURE ===== */
-        .disclosure-box {
-            max-width: 1200px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
-        }
-
-        .disclosure-box .inner {
-            background: #fefce8;
-            border-radius: 16px;
-            padding: 18px 24px;
-            border-left: 5px solid #eab308;
-            font-size: 0.85rem;
-            color: #713f12;
-            line-height: 1.7;
-        }
-
-        .disclosure-box .inner strong {
-            color: #1e3a8a;
-        }
-
-        .disclosure-box .inner a {
-            color: #2563eb;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .disclosure-box .inner a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #cbd5e1;
-            padding: 30px 20px 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .footer a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: #60a5fa;
-        }
-
-        .footer p {
-            font-size: 0.8rem;
-            color: #64748b;
-            margin-top: 12px;
-        }
-
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .sitemap-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .sitemap-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .sitemap-col {
-                padding: 20px;
-            }
+            .sitemap-grid { grid-template-columns: 1fr; gap: 20px; }
+            .sitemap-header h1 { font-size: 1.8rem; }
+            .sitemap-col { padding: 20px; }
         }
-
         @media (max-width: 480px) {
-            .sitemap-col ul li a {
-                font-size: 0.85rem;
-            }
+            .sitemap-col ul li a { font-size: 0.85rem; }
         }
     </style>
     <!-- ========== STYLES END ========== -->
@@ -252,8 +82,8 @@
     <!-- ========== HEADER START ========== -->
     <header class="sitemap-header">
         <h1>🗺️ HTML Sitemap</h1>
-        <p>Find all 200+ free online tools in one place</p>
-        <div class="total-tools">🎯 200+ Free Tools</div>
+        <p>Find all 240+ free online tools in one place</p>
+        <div class="total-tools">🎯 240+ Free Tools</div>
     </header>
     <!-- ========== HEADER END ========== -->
 
@@ -277,6 +107,9 @@
                 <h2 style="margin-top:25px;">📅 Age Calculator Tools</h2>
                 <ul>
                     <li><a href="https://freeonlinetools203.com/age-calculator.html"><span class="emoji">📅</span> Age Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/what-year-was-i-born.html"><span class="emoji">🎂</span> What Year Was I Born Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/dog-age-calculator.html"><span class="emoji">🐶</span> Dog Age Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/born-year-age-calculator.html"><span class="emoji">📅</span> Born Year Age Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/chronological-age-calculator.html"><span class="emoji">📅</span> Chronological Age Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/online-chronological-age-calculator.html"><span class="emoji">📅</span> Online Chronological Age Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/age-difference-calculator.html"><span class="emoji">📅</span> Age Difference Calculator</a></li>
@@ -297,6 +130,13 @@
                     <li><a href="https://freeonlinetools203.com/age-in-days-calculator.html"><span class="emoji">📆</span> Age In Days Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/age-in-months-calculator.html"><span class="emoji">📆</span> Age In Months Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/birth-year-calculator.html"><span class="emoji">🎂</span> Birth Year Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/ai-age-guesser.html"><span class="emoji">🤖</span> AI Age Guesser</a></li>
+                    <li><a href="https://freeonlinetools203.com/future-age-predictor.html"><span class="emoji">🔮</span> Future Age Predictor</a></li>
+                    <li><a href="https://freeonlinetools203.com/korean-age-calculator.html"><span class="emoji">🇰🇷</span> Korean Age Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/life-expectancy-calculator.html"><span class="emoji">⏳</span> Life Expectancy Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/running-age-calculator.html"><span class="emoji">🏃</span> Running Age Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/running-age-calculator-by-date-of-birth.html"><span class="emoji">🏃</span> Running Age Calculator by Date of Birth</a></li>
+                    <li><a href="https://freeonlinetools203.com/date-of-birth-calculator-year.html"><span class="emoji">📅</span> Date of Birth Calculator Year</a></li>
                 </ul>
 
                 <h2 style="margin-top:25px;">📗 Age in Excel (Guides)</h2>
@@ -304,6 +144,21 @@
                     <li><a href="https://freeonlinetools203.com/excel-formula-to-calculate-age.html"><span class="emoji">📗</span> Excel Formula To Calculate Age</a></li>
                     <li><a href="https://freeonlinetools203.com/how-to-calculate-age-in-excel.html"><span class="emoji">📗</span> How To Calculate Age In Excel</a></li>
                     <li><a href="https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html"><span class="emoji">📗</span> Calculate Age From DOB In Excel</a></li>
+                </ul>
+
+                <h2 style="margin-top:25px;">⏰ Time Calculators</h2>
+                <ul>
+                    <li><a href="https://freeonlinetools203.com/current-year-calculator.html"><span class="emoji">🗓️</span> Current Year Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/time-calculator.html"><span class="emoji">⏰</span> Time Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/time-difference-calculator.html"><span class="emoji">⏰</span> Time Difference Calculator</a></li>
+                </ul>
+
+                <h2 style="margin-top:25px;">♈ Zodiac &amp; Birthday Tools</h2>
+                <ul>
+                    <li><a href="https://freeonlinetools203.com/zodiac-sign-finder.html"><span class="emoji">♈</span> Zodiac Sign Finder</a></li>
+                    <li><a href="https://freeonlinetools203.com/chinese-zodiac-finder.html"><span class="emoji">🐉</span> Chinese Zodiac Finder</a></li>
+                    <li><a href="https://freeonlinetools203.com/birthday-countdown.html"><span class="emoji">🎂</span> Birthday Countdown</a></li>
+                    <li><a href="https://freeonlinetools203.com/happy-birthday-tool.html"><span class="emoji">🎉</span> Happy Birthday Tool</a></li>
                 </ul>
             </div>
 
@@ -381,7 +236,7 @@
 
             <!-- ===== COLUMN 4 (Full Width) ===== -->
             <div class="sitemap-col" style="grid-column: 1 / -1;">
-                <h2 style="display:flex;justify-content:center;border-bottom-color:#7c3aed;">🎲 Random & Fun Tools</h2>
+                <h2 style="display:flex;justify-content:center;border-bottom-color:#7c3aed;">🎲 Random &amp; Fun Tools</h2>
                 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:5px 20px;">
                     <ul>
                         <li><a href="https://freeonlinetools203.com/spin-the-wheel.html"><span class="emoji">🎡</span> Spin The Wheel</a></li>
@@ -438,6 +293,7 @@
                     <li><a href="https://freeonlinetools203.com/palette-generator.html"><span class="emoji">🖼️</span> Palette Generator</a></li>
                     <li><a href="https://freeonlinetools203.com/color-shades-generator.html"><span class="emoji">🌈</span> Color Shades Generator</a></li>
                     <li><a href="https://freeonlinetools203.com/color-gradient-maker.html"><span class="emoji">🎭</span> Color Gradient Maker</a></li>
+                    <li><a href="https://freeonlinetools203.com/gradient-maker.html"><span class="emoji">🌈</span> Gradient Maker</a></li>
                     <li><a href="https://freeonlinetools203.com/color-contrast-checker.html"><span class="emoji">✅</span> Color Contrast Checker</a></li>
                     <li><a href="https://freeonlinetools203.com/color-name-finder.html"><span class="emoji">🏷️</span> Color Name Finder</a></li>
                     <li><a href="https://freeonlinetools203.com/random-color-picker.html"><span class="emoji">🎲</span> Random Color Picker</a></li>
@@ -487,6 +343,7 @@
                     <li><a href="https://freeonlinetools203.com/qr-code-generator.html"><span class="emoji">📱</span> QR Code Generator</a></li>
                     <li><a href="https://freeonlinetools203.com/advanced-qr-generator.html"><span class="emoji">⚙️</span> Advanced QR Generator</a></li>
                     <li><a href="https://freeonlinetools203.com/currency-converter.html"><span class="emoji">💱</span> Currency Converter</a></li>
+                    <li><a href="https://freeonlinetools203.com/my-birth-year.html"><span class="emoji">🎂</span> My Birth Year</a></li>
                 </ul>
             </div>
 
@@ -510,6 +367,12 @@
                     <li><a href="https://freeonlinetools203.com/bmr-calculator.html"><span class="emoji">🔥</span> BMR Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/calorie-calculator.html"><span class="emoji">🍎</span> Calorie Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/tdee-calculator.html"><span class="emoji">💪</span> TDEE Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/body-fat-calculator.html"><span class="emoji">💧</span> Body Fat Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/ideal-weight-calculator.html"><span class="emoji">⚖️</span> Ideal Weight Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/lean-body-mass-calculator.html"><span class="emoji">💪</span> Lean Body Mass Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/macro-calculator.html"><span class="emoji">🍽️</span> Macro Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/protein-calculator.html"><span class="emoji">🥩</span> Protein Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/waist-to-hip-calculator.html"><span class="emoji">📏</span> Waist to Hip Calculator</a></li>
                 </ul>
 
                 <h2 style="margin-top:25px;">💰 Financial Tools</h2>
@@ -539,6 +402,8 @@
                     <li><a href="https://freeonlinetools203.com/horse-pregnancy-calculator.html"><span class="emoji">🐴</span> Horse Pregnancy Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/sheep-pregnancy-calculator.html"><span class="emoji">🐑</span> Sheep Pregnancy Calculator</a></li>
                     <li><a href="https://freeonlinetools203.com/pig-pregnancy-calculator.html"><span class="emoji">🐷</span> Pig Pregnancy Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/lambing-calculator.html"><span class="emoji">🐑</span> Lambing Calculator</a></li>
+                    <li><a href="https://freeonlinetools203.com/horse-gestation-calculator.html"><span class="emoji">🐴</span> Horse Gestation Calculator</a></li>
                 </ul>
             </div>
 
