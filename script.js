@@ -343,20 +343,22 @@ const toolsDatabase = {
       "Birthday Countdown",
       "Happy Birthday Tool"
     ]
-  },
+   },
 
-  // 18. TIME CALCULATORS (NEW)
+  // 18. TIME CALCULATORS
   catTime: {
     name: "⏰ Time Calculators",
     tools: [
-      "Time Calculator",              // ✅ ADDED
+      "Time Calculator",
       "Time Difference Calculator",
       "Date Calculator",
+      "Date Calculator V2",        // ✅ NAYA
+      "Countdown Timer",            // ✅ NAYA
+      "World Clock",                // ✅ NAYA
       "Age Calculator"
     ]
   }
 };
-
 // =========================================================================
 // 2. TOOL URL MAPPING (COMPLETE - ALL 240+ TOOLS)
 // =========================================================================
