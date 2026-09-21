@@ -1475,3 +1475,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// =========================================================================
+// 12. GLOBAL SITEMAP / RELATED TOOLS SECTION
+//     Yeh section automatically har page par show hoga (sitemap.html ke ilawa)
+// =========================================================================
+const globalSitemapHTML = `
+<div style="max-width:1200px;margin:20px auto;padding:0 20px;">
+  <style>
+    .gsm-box{background:linear-gradient(135deg,#f0fdf4 0%,#bbf7d0 100%);border-radius:24px;padding:1.8rem;border:1px solid #86efac}
+    .gsm-title{font-size:1.5rem;font-weight:800;color:#14532d;margin-bottom:0.5rem;border-left:5px solid #16a34a;padding-left:16px}
+    .gsm-sub{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
+    .gsm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
+    .gsm-card{background:#fff;border-radius:16px;padding:14px 18px;border:1px solid #e2e8f0;transition:all 0.3s}
+    .gsm-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#86efac}
+    .gsm-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
+    .gsm-name{font-weight:700;font-size:0.95rem;color:#0f172a}
+    .gsm-desc{font-size:0.75rem;color:#64748b;margin-top:4px}
+    .gsm-btn{display:inline-block;background:#14532d;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;margin-top:1.5rem;transition:all 0.3s}
+    .gsm-btn:hover{background:#16a34a;transform:translateY(-2px)}
+  </style>
+
+  <div class="gsm-box">
+    <div class="gsm-title">🔗 Related Tools You Might Like</div>
+    <div class="gsm-sub">⚡ Explore more free tools on our site!</div>
+    <div class="gsm-grid">
+      <div class="gsm-card"><a href="https://freeonlinetools203.com/age-calculator.html">
+        <span style="font-size:1.5rem;">📅</span>
+        <div><div class="gsm-name">Age Calculator</div><div class="gsm-desc">Calculate your exact age</div></div>
+      </a></div>
+      <div class="gsm-card"><a href="https://freeonlinetools203.com/what-year-was-i-born.html">
+        <span style="font-size:1.5rem;">🎂</span>
+        <div><div class="gsm-name">What Year Was I Born</div><div class="gsm-desc">Find your birth year from age</div></div>
+      </a></div>
+      <div class="gsm-card"><a href="https://freeonlinetools203.com/dog-age-calculator.html">
+        <span style="font-size:1.5rem;">🐶</span>
+        <div><div class="gsm-name">Dog Age Calculator</div><div class="gsm-desc">Convert dog years to human years</div></div>
+      </a></div>
+      <div class="gsm-card"><a href="https://freeonlinetools203.com/born-year-age-calculator.html">
+        <span style="font-size:1.5rem;">📅</span>
+        <div><div class="gsm-name">Born Year Age Calculator</div><div class="gsm-desc">Find your age from birth year</div></div>
+      </a></div>
+      <div class="gsm-card"><a href="https://freeonlinetools203.com/current-year-calculator.html">
+        <span style="font-size:1.5rem;">🗓️</span>
+        <div><div class="gsm-name">Current Year Calculator</div><div class="gsm-desc">Live date, time &amp; year progress</div></div>
+      </a></div>
+      <div class="gsm-card"><a href="https://freeonlinetools203.com/bmi-calculator.html">
+        <span style="font-size:1.5rem;">⚖️</span>
+        <div><div class="gsm-name">BMI Calculator</div><div class="gsm-desc">Check your body mass index</div></div>
+      </a></div>
+    </div>
+    <div style="text-align:center;">
+      <a href="https://freeonlinetools203.com/sitemap.html" class="gsm-btn">🗺️ View All 240+ Tools</a>
+    </div>
+  </div>
+</div>
+`;
+
+// Inject on every page EXCEPT sitemap.html
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.indexOf('sitemap.html') !== -1) return;
+    const footer = document.querySelector('footer') || document.querySelector('.site-footer');
+    if (footer) {
+        footer.insertAdjacentHTML('beforebegin', globalSitemapHTML);
+    } else {
+        document.body.insertAdjacentHTML('beforeend', globalSitemapHTML);
+    }
+});
+// =========================================================================
+// END: GLOBAL SITEMAP / RELATED TOOLS SECTION
+// =========================================================================
