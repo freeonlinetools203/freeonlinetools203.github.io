@@ -54,7 +54,17 @@ const toolsDatabase = {
       "Life Expectancy Calculator",
       "Running Age Calculator",
       "Running Age Calculator by Date of Birth",
-      "Date of Birth Calculator Year"
+           "Date of Birth Calculator Year"
+    ]
+  },
+  
+  // 3. AGE CALCULATION IN EXCEL (GUIDES)
+  catAgeExcel: {
+    name: "📗 Age Calculation in Excel (Guides)",
+    tools: [
+      "Excel Formula To Calculate Age",
+      "How To Calculate Age In Excel",
+      "Calculate Age From DOB In Excel"
     ]
   },
   
