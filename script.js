@@ -763,17 +763,23 @@ const navbarHTML = `<div class="megamenu-container">
         <a href="#">🛠️ All Tools</a>
         <div class="mega-dropdown"><div class="dropdown-scroll"><div class="dropdown-grid">
           
-          <!-- COLUMN 1: Most Popular + Age Calculator Tools -->
+                   <!-- COLUMN 1: Most Popular + Age Calculator Tools -->
           <div class="dropdown-column">
             <h4>✨ Most Popular Tools</h4>
-            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
-            <a href="random-color-picker.html">🎨 Random Color Picker</a>
-            <a href="keyword-density-checker.html">🔑 Keyword Density Checker</a>
-            <a href="instagram-hashtag-generator.html">📱 Instagram Hashtag Generator</a>
             <a href="age-calculator.html">📅 Age Calculator</a>
+            <a href="dog-age-calculator.html">🐕 Dog Age Calculator</a>
+            <a href="what-year-was-i-born.html">🎂 What Year Was I Born</a>
+            <a href="born-year-age-calculator.html">📅 Born Year Age Calculator</a>
+            <a href="current-year-calculator.html">🗓️ Current Year Calculator</a>
+            <a href="spin-the-wheel.html">🎡 Spin The Wheel</a>
+            <a href="keyword-density-checker.html">🔑 Keyword Density Checker</a>
             
             <h4>📅 Age Calculator Tools</h4>
             <a href="age-calculator.html">Age Calculator</a>
+            <a href="dog-age-calculator.html">🐕 Dog Age Calculator</a>
+            <a href="what-year-was-i-born.html">🎂 What Year Was I Born Calculator</a>
+            <a href="born-year-age-calculator.html">📅 Born Year Age Calculator</a>
+            <a href="current-year-calculator.html">🗓️ Current Year Calculator</a>
             <a href="chronological-age-calculator.html">Chronological Age Calculator</a>
             <a href="online-chronological-age-calculator.html">Online Chronological Age Calculator</a>
             <a href="age-difference-calculator.html">Age Difference Calculator</a>
