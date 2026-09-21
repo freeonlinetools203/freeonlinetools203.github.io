@@ -542,11 +542,12 @@ const toolUrlMap = {
   "Zodiac Sign Finder": "zodiac-sign-finder.html",
   "Chinese Zodiac Finder": "chinese-zodiac-finder.html",
   
-  // Time Calculators
+   // Time Calculators
   "Time Difference Calculator": "time-difference-calculator.html",
-
-  // ===== NEW TIME TOOL ADDED =====
   "Time Calculator": "time-calculator.html",
+  "Date Calculator V2": "date-calculatorv2.html",
+  "Countdown Timer": "countdown-timer.html",
+  "World Clock": "world-clock.html",
   
   // Wheel & Fun Tools
   "Spin The Wheel": "spin-the-wheel.html",
@@ -1040,7 +1041,12 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="chinese-zodiac-finder.html">🐉 Chinese Zodiac Finder</a>
             
             <h4>⏰ Time Calculators</h4>
+            <a href="time-calculator.html">⏰ Time Calculator</a>
             <a href="time-difference-calculator.html">⏰ Time Difference Calculator</a>
+            <a href="date-calculator.html">📅 Date Calculator</a>
+            <a href="date-calculatorv2.html">📅 Date Calculator V2</a>
+            <a href="countdown-timer.html">⏳ Countdown Timer</a>
+            <a href="world-clock.html">🌍 World Clock</a>
           </div>
            
         </div></div></div>
