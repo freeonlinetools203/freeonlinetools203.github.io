@@ -353,6 +353,10 @@ const toolsDatabase = {
 const toolUrlMap = {
   // Age Calculator Tools
   "Age Calculator": "age-calculator.html",
+  "Dog Age Calculator": "dog-age-calculator.html",
+  "What Year Was I Born Calculator": "what-year-was-i-born.html",
+  "Born Year Age Calculator": "born-year-age-calculator.html",
+  "Current Year Calculator": "current-year-calculator.html",
   "Chronological Age Calculator": "chronological-age-calculator.html",
   "Online Chronological Age Calculator": "online-chronological-age-calculator.html",
   "Age Calculator Difference": "age-calculator-difference.html",
