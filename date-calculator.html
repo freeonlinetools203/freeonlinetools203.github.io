@@ -92,7 +92,7 @@
 </script>
 
 <!-- ============================================================ -->
-<!-- ========== SCHEMA MARKUP — 6 TYPES ========================= -->
+<!-- ========== DATE CALCULATOR - SCHEMA MARKUP START ============ -->
 <!-- ============================================================ -->
 
 <!-- 1. SoftwareApplication Schema -->
@@ -100,33 +100,20 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://freeonlinetools203.com/date-calculator.html#app",
-  "name": "Free Date Calculator – Calculate Days Between Dates, Add/Subtract Days",
-  "description": "Free online date calculator. Calculate days between two dates, add or subtract days. Year to date calculator, court date calculator, graduation date calculator.",
+  "name": "Date Calculator",
+  "description": "Free date calculator to calculate days between two dates, add or subtract days from a date. Perfect for year to date calculator, graduation date calculator, court date calculator, and age calculation.",
   "applicationCategory": "UtilityApplication",
-  "applicationSubCategory": "Date Calculator",
   "operatingSystem": "All",
   "browserRequirements": "Requires modern browser with JavaScript enabled",
   "url": "https://freeonlinetools203.com/date-calculator.html",
-  "inLanguage": "en-US",
-  "isAccessibleForFree": true,
-  "datePublished": "2025-01-15",
-  "dateModified": "2026-09-30",
-  "author": { "@type": "Person", "name": "Zain Uddin", "url": "https://freeonlinetools203.com/about.html" },
-  "publisher": { "@type": "Organization", "name": "Free Online Tools 203", "url": "https://freeonlinetools203.com/", "logo": { "@type": "ImageObject", "url": "https://freeonlinetools203.com/logo.png" } },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "1250" },
-  "featureList": [
-    "Calculate days between two dates",
-    "Add or subtract days from a date",
-    "Year to date calculator",
-    "Court date calculator",
-    "Graduation date calculator",
-    "Leap year support",
-    "Mobile friendly interface",
-    "No registration required"
-  ],
-  "screenshot": "https://freeonlinetools203.com/date-calculator-og-image.jpg"
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isFree": true,
+  "featureList": "Calculate days between two dates, Add or subtract days from a date, Year to date calculator, Age calculation from date of birth, Leap year support, Mobile friendly interface, Instant results, No registration required",
+  "screenshot": "https://freeonlinetools203.com/images/date-calculator-og-image.jpg"
 }
 </script>
 
@@ -135,16 +122,32 @@
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "@id": "https://freeonlinetools203.com/date-calculator.html#howto",
-  "name": "How to Calculate Days Between Dates Online",
-  "description": "Step-by-step guide to calculate date differences and add or subtract days using our free date calculator.",
-  "totalTime": "PT1M",
-  "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
+  "name": "How to Calculate Days Between Dates",
+  "description": "Calculate the exact number of days between two dates in 3 easy steps",
+  "tool": {
+    "@type": "SoftwareApplication",
+    "name": "Date Calculator"
+  },
+  "totalTime": "PT2M",
   "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Enter Start and End Dates", "text": "Select a start date and an end date in the date difference calculator." },
-    { "@type": "HowToStep", "position": 2, "name": "Click Calculate Difference", "text": "Click the Calculate Difference button to get the exact number of days between the two dates." },
-    { "@type": "HowToStep", "position": 3, "name": "Add or Subtract Days", "text": "Use the Add/Subtract Days calculator. Enter a base date and number of days (negative to subtract), then click Calculate New Date." },
-    { "@type": "HowToStep", "position": 4, "name": "View Results", "text": "Results appear instantly, accounting for leap years and month length variations." }
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Enter Start Date",
+      "text": "Click on the date picker and select the start date. This can be any date from the past or future."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Enter End Date",
+      "text": "Select the end date. The tool will automatically calculate the exact number of days between the two dates."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "View Date Difference Results",
+      "text": "Instantly see the exact number of days between your two dates. You can also use the Add/Subtract tab to calculate a new date."
+    }
   ]
 }
 </script>
@@ -154,10 +157,25 @@
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "@id": "https://freeonlinetools203.com/date-calculator.html#breadcrumb",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeonlinetools203.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Date Calculator", "item": "https://freeonlinetools203.com/date-calculator.html" }
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://freeonlinetools203.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "All Tools",
+      "item": "https://freeonlinetools203.com/tools.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Date Calculator",
+      "item": "https://freeonlinetools203.com/date-calculator.html"
+    }
   ]
 }
 </script>
@@ -167,16 +185,119 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://freeonlinetools203.com/date-calculator.html#faq",
   "mainEntity": [
-    { "@type": "Question", "name": "How to calculate days between two dates?", "acceptedAnswer": { "@type": "Answer", "text": "Enter start and end dates in the calculator, then click Calculate Difference. It will show the exact number of days between them." } },
-    { "@type": "Question", "name": "Is this date calculator free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100% free with unlimited use and no registration required." } },
-    { "@type": "Question", "name": "What is a year to date calculator?", "acceptedAnswer": { "@type": "Answer", "text": "A year to date calculator calculates the number of days from the start of the year to a specified date." } },
-    { "@type": "Question", "name": "What is a court date calculator?", "acceptedAnswer": { "@type": "Answer", "text": "A court date calculator helps calculate deadlines, response dates, and legal milestones. Our date calculator is perfect for this." } },
-    { "@type": "Question", "name": "What is a graduation date calculator?", "acceptedAnswer": { "@type": "Answer", "text": "A graduation date calculator helps plan academic milestones. Use our date calculator to count down to your graduation." } },
-    { "@type": "Question", "name": "How to calculate age from date of birth in Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Use the formula =DATEDIF(birth_date, TODAY(), \"Y\"). Our date calculator does this automatically." } },
-    { "@type": "Question", "name": "Does this tool account for leap years?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the calculator automatically accounts for leap years and month length variations." } },
-    { "@type": "Question", "name": "Can I add or subtract days from a date?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Use the Add/Subtract tab to add or subtract days from any date." } }
+    {
+      "@type": "Question",
+      "name": "How to calculate days between two dates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter the start and end dates in the calculator, then click Calculate Difference. It shows the exact number of days, weeks, and months between them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this date calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free with unlimited use and no registration required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a year to date calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A year to date calculator calculates the number of days from the start of the year (January 1st) to a specified date. Perfect for YTD income and financial reporting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a court date calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A court date calculator helps calculate legal deadlines, response dates, filing dates, and hearing dates. Our tool is perfect for legal professionals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a graduation date calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A graduation date calculator counts down the days until graduation. Perfect for students and parents planning academic milestones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate age from date of birth in Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the formula =DATEDIF(birth_date, TODAY(), \"Y\") in Excel. Our date calculator does this automatically without any formula."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate difference in dates in Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use =B1-A1 for days, or =DATEDIF(A1, B1, \"M\") for months. Our tool gives instant results without Excel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate dates in Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Excel dates are numbers. Simple arithmetic works: A1 + 30 adds 30 days to a date. For complex calculations, use our date calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to calculate days between two dates Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the formula =B1-A1 where A1 is start date and B1 is end date. Our date calculator does this instantly in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool account for leap years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the calculator automatically accounts for leap years and month length variations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add or subtract days from a date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Use the Add/Subtract tab to add or subtract days, weeks, or months from any date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a date duration calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A date duration calculator calculates the time span between two dates in days, weeks, months, or years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this tool mobile-friendly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, fully responsive and works perfectly on all devices including smartphones and tablets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the date calculator store my personal data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No! All calculations run directly in your browser. Your dates are never stored or uploaded to any server. Your privacy is 100% protected."
+      }
+    }
   ]
 }
 </script>
@@ -186,54 +307,31 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://freeonlinetools203.com/#website",
   "name": "Free Online Tools 203",
-  "alternateName": "Free Online Tools",
   "url": "https://freeonlinetools203.com/",
-  "inLanguage": "en-US",
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://freeonlinetools203.com/#organization",
-    "name": "Free Online Tools 203",
-    "url": "https://freeonlinetools203.com/",
-    "logo": { "@type": "ImageObject", "url": "https://freeonlinetools203.com/logo.png", "width": 512, "height": 512 },
-    "sameAs": [
-      "https://youtube.com/@freeonlinetools203",
-      "https://instagram.com/freeonlinetools203",
-      "https://facebook.com/freeonlinetools203",
-      "https://tiktok.com/@freeonlinetools203"
-    ]
-  },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": { "@type": "EntryPoint", "urlTemplate": "https://freeonlinetools203.com/search?q={search_term_string}" },
+    "target": "https://freeonlinetools203.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
 </script>
 
-<!-- 6. WebPage Schema -->
+<!-- 6. ImageObject Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://freeonlinetools203.com/date-calculator.html#webpage",
-  "url": "https://freeonlinetools203.com/date-calculator.html",
-  "name": "Date Calculator – Calculate Days Between Dates, Add/Subtract Days Free",
-  "description": "Free date calculator to calculate days between two dates, add or subtract days, year to date calculator, court date calculator, graduation date calculator.",
-  "inLanguage": "en-US",
-  "isPartOf": { "@id": "https://freeonlinetools203.com/#website" },
-  "about": { "@id": "https://freeonlinetools203.com/date-calculator.html#app" },
-  "breadcrumb": { "@id": "https://freeonlinetools203.com/date-calculator.html#breadcrumb" },
-  "primaryImageOfPage": { "@type": "ImageObject", "url": "https://freeonlinetools203.com/date-calculator-og-image.jpg" },
-  "datePublished": "2025-01-15",
-  "dateModified": "2026-09-30",
-  "author": { "@type": "Person", "name": "Zain Uddin", "url": "https://freeonlinetools203.com/about.html" }
+  "@type": "ImageObject",
+  "contentUrl": "https://freeonlinetools203.com/images/date-calculator-og-image.jpg",
+  "description": "Date Calculator - Calculate Days Between Dates, Add/Subtract Days",
+  "name": "Date Calculator",
+  "width": "1200",
+  "height": "630"
 }
 </script>
 
 <!-- ============================================================ -->
-<!-- ========== SCHEMA MARKUP END =============================== -->
+<!-- ========== DATE CALCULATOR - SCHEMA MARKUP END ============= -->
 <!-- ============================================================ -->
 
 <style>
