@@ -92,8 +92,10 @@
 </script>
 
 <!-- ============================================================ -->
-<!-- ========== SCHEMA MARKUP ================================== -->
+<!-- ========== SCHEMA MARKUP START ============================= -->
 <!-- ============================================================ -->
+
+<!-- 1. SoftwareApplication Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -120,12 +122,49 @@
     "Circle crop image",
     "Freehand image cropper",
     "Transparent image cropper",
+    "Flutter image cropper support",
+    "Image cropper android",
+    "Mudae image cropper",
     "No signup required",
     "100% free online"
   ],
   "screenshot": "https://freeonlinetools203.com/image-cropper-og-image.jpg"
 }
 </script>
+
+<!-- 2. HowTo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://freeonlinetools203.com/image-cropper.html#howto",
+  "name": "How to Crop Images Online with Custom Aspect Ratios",
+  "description": "Crop images online with custom aspect ratios using our free image cropper. Works for JPG, PNG, JPEG, WEBP.",
+  "totalTime": "PT1M",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Upload Your Image", "text": "Click the upload area and select your JPG, PNG, JPEG, or WEBP image (max 10MB)." },
+    { "@type": "HowToStep", "position": 2, "name": "Select Aspect Ratio", "text": "Choose from presets like 1:1 (Square), 4:3, 16:9, 9:16, or keep it Free." },
+    { "@type": "HowToStep", "position": 3, "name": "Drag to Select Crop Area", "text": "Drag on the image to select the area you want to keep. Move the selection by clicking inside it." },
+    { "@type": "HowToStep", "position": 4, "name": "Apply Crop & Download", "text": "Click 'Apply Crop' to crop, then 'Download Cropped' to save your file." }
+  ]
+}
+</script>
+
+<!-- 3. BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://freeonlinetools203.com/image-cropper.html#breadcrumb",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeonlinetools203.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Image Cropper", "item": "https://freeonlinetools203.com/image-cropper.html" }
+  ]
+}
+</script>
+
+<!-- 4. FAQPage Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -135,10 +174,75 @@
     { "@type": "Question", "name": "How to crop an image online?", "acceptedAnswer": { "@type": "Answer", "text": "Upload your image, select aspect ratio, drag to select crop area, click Apply Crop, then download." } },
     { "@type": "Question", "name": "Is this image cropper free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! This image cropper is completely free with no registration required." } },
     { "@type": "Question", "name": "Can I crop a transparent image?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our transparent image cropper supports PNG with transparency, preserving the alpha channel." } },
-    { "@type": "Question", "name": "What image formats are supported?", "acceptedAnswer": { "@type": "Answer", "text": "PNG, JPG, JPEG, and WEBP. Maximum file size is 10 MB." } }
+    { "@type": "Question", "name": "What image formats are supported?", "acceptedAnswer": { "@type": "Answer", "text": "PNG, JPG, JPEG, and WEBP. Maximum file size is 10 MB." } },
+    { "@type": "Question", "name": "What is a freehand image cropper?", "acceptedAnswer": { "@type": "Answer", "text": "A freehand image cropper lets you drag any custom area on the image without being restricted to a preset aspect ratio." } },
+    { "@type": "Question", "name": "Does this tool work for Flutter image cropper?", "acceptedAnswer": { "@type": "Answer", "text": "This is a web-based image cropper. For Flutter apps, you would use the image_cropper package, but you can use our tool to crop images before using them in Flutter apps." } },
+    { "@type": "Question", "name": "Can I use this as an image cropper for Android?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our image cropper works on Android devices through any modern browser like Chrome or Firefox." } },
+    { "@type": "Question", "name": "What is Mudae image cropper?", "acceptedAnswer": { "@type": "Answer", "text": "Mudae is a Discord bot for character collection. Users crop images to create Mudae character cards and rolls. Our image cropper works perfectly for this use case." } }
   ]
 }
 </script>
+
+<!-- 5. WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://freeonlinetools203.com/#website",
+  "name": "Free Online Tools 203",
+  "alternateName": "Free Online Tools",
+  "url": "https://freeonlinetools203.com/",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://freeonlinetools203.com/#organization",
+    "name": "Free Online Tools 203",
+    "url": "https://freeonlinetools203.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://freeonlinetools203.com/logo.png",
+      "width": 512,
+      "height": 512
+    },
+    "sameAs": [
+      "https://youtube.com/@freeonlinetools203",
+      "https://instagram.com/freeonlinetools203",
+      "https://facebook.com/freeonlinetools203",
+      "https://tiktok.com/@freeonlinetools203"
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://freeonlinetools203.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 6. WebPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://freeonlinetools203.com/image-cropper.html#webpage",
+  "url": "https://freeonlinetools203.com/image-cropper.html",
+  "name": "Image Cropper – Crop Images Online Free | Aspect Ratio Cropper",
+  "description": "Free image cropper online. Crop images with custom aspect ratios, square, circle crop. Support PNG, JPG, JPEG, WEBP. Transparent image cropper, freehand crop. No signup.",
+  "inLanguage": "en-US",
+  "isPartOf": { "@id": "https://freeonlinetools203.com/#website" },
+  "about": { "@id": "https://freeonlinetools203.com/image-cropper.html#app" },
+  "breadcrumb": { "@id": "https://freeonlinetools203.com/image-cropper.html#breadcrumb" },
+  "primaryImageOfPage": { "@type": "ImageObject", "url": "https://freeonlinetools203.com/image-cropper-og-image.jpg" },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-09-30",
+  "author": { "@type": "Person", "name": "Zain Uddin", "url": "https://freeonlinetools203.com/about.html" }
+}
+</script>
+
+<!-- ========== SCHEMA MARKUP END ========== -->
 
 <style>
 /* ===== RESET & BASE ===== */
