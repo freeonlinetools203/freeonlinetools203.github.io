@@ -40,11 +40,11 @@
     </url>
 
     <!-- ========== AGE CALCULATOR TOOLS ========== -->
-    <url>
-        <loc>https://freeonlinetools203.com/age-calculator.html</loc>
-        <lastmod>2026-09-19</lastmod>
+        <url>
+        <loc>https://freeonlinetools203.com/dog-age-calculator.html</loc>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
+        <priority>0.85</priority>
     </url>
     <url>
     <loc>https://freeonlinetools203.com/dog-age-calculator.html</loc>
@@ -54,7 +54,7 @@
 </url>
 <url>
     <loc>https://freeonlinetools203.com/what-year-was-i-born.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
 </url>
@@ -296,9 +296,9 @@
     </url>
 
     <!-- ========== DATE & TIME TOOLS ========== -->
-    <url>
+           <url>
         <loc>https://freeonlinetools203.com/date-calculator.html</loc>
-        <lastmod>2026-08-30</lastmod>
+        <lastmod>2026-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -1054,11 +1054,11 @@
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
-    <url>
+        <url>
         <loc>https://freeonlinetools203.com/image-to-pdf.html</loc>
-        <lastmod>2026-08-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
     </url>
     <url>
         <loc>https://freeonlinetools203.com/image-upscaler.html</loc>
