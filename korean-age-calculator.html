@@ -1535,7 +1535,7 @@ function copyPageLink() {
     
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(() => {
-            showToast('✅ Link copied! Share with friends.');
+            footerToast('✅ Link copied! Share with friends.');
         }).catch(() => {
             fallbackCopy(url);
         });
@@ -1551,10 +1551,10 @@ function fallbackCopy(text) {
     textarea.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
-    showToast('✅ Link copied! Share with friends.');
+    footerToast('✅ Link copied! Share with friends.');
 }
 
-function showToast(message) {
+function footerToast(message) {
     let toast = document.createElement('div');
     toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:8px 18px;border-radius:50px;font-size:13px;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);animation:toastSlide 0.3s ease';
     toast.textContent = message;
