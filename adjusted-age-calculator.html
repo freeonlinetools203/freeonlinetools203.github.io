@@ -900,13 +900,40 @@ function calculateAdjustedAge() {
 
     const birthDate = new Date(birthInput);
     const dueDate = new Date(dueInput);
+    const today = new Date();
 
     if (isNaN(birthDate.getTime()) || isNaN(dueDate.getTime())) {
         alert('❌ Invalid date!');
         return;
     }
 
-    const today = new Date();
+    // ========== VALIDATION ==========
+    // 1. Birth date cannot be in the future
+    if (birthDate > today) {
+        alert('❌ Birth date cannot be in the future! Please select a valid birth date.');
+        return;
+    }
+
+    // 2. Due date cannot be before birth date
+    if (dueDate < birthDate) {
+        alert('❌ Due date cannot be before birth date! Please check your input.');
+        return;
+    }
+
+    // 3. Due date cannot be more than 10 months after birth (reasonable preemie range)
+    const daysBetweenDates = Math.floor((dueDate - birthDate) / (1000 * 60 * 60 * 24));
+    if (daysBetweenDates > 300) {
+        alert('⚠️ Due date seems too far from birth date. Please check your input (max 10 months premature).');
+        return;
+    }
+
+    // 4. Birth date cannot be too old (reasonable range: after 2015)
+    if (birthDate.getFullYear() < 2015) {
+        alert('⚠️ Please enter a valid recent birth date (this tool is for babies).');
+        return;
+    }
+
+    // ========== CALCULATION ==========
     const chronologicalDays = calculateDaysBetween(birthDate, today);
     const earlyDays = calculateDaysBetween(birthDate, dueDate);
     const adjustedDays = Math.max(0, chronologicalDays - earlyDays);
