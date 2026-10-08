@@ -1,4 +1,22 @@
 // =========================================================================
+// 0. FAVICON AUTO-INJECTOR (Sabse pehle chalega)
+// =========================================================================
+(function() {
+    if (!document.querySelector('link[rel="icon"]')) {
+        const favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.type = 'image/png';
+        favicon.href = 'https://freeonlinetools203.com/favicon.png';
+        document.head.appendChild(favicon);
+
+        const appleIcon = document.createElement('link');
+        appleIcon.rel = 'apple-touch-icon';
+        appleIcon.href = 'https://freeonlinetools203.com/favicon.png';
+        document.head.appendChild(appleIcon);
+    }
+})();
+
+// =========================================================================
 // 1. CENTRALIZED TOOLS DATABASE (COMPLETE - 240+ TOOLS)
 // =========================================================================
 const toolsDatabase = {
