@@ -779,7 +779,7 @@ const navbarHTML = `<div class="megamenu-container">
   <div class="megamenu-wrapper">
     <div class="megamenu-logo">
       <a href="https://freeonlinetools203.com/index.html">
-        <img src="https://freeonlinetools203.com/3.jpeg.png" alt="Free Online Tools">
+        <img src="https://freeonlinetools203.com/logo.png" alt="Free Online Tools">
         <span>✨ Free Online Tools</span>
       </a>
     </div>
