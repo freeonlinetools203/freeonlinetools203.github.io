@@ -618,7 +618,8 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     </div>
 </div>
 
-<!-- INTERNAL LINKING FOOTER (Age Calculator) -->
+  <!-- ========== AGE CALCULATOR INTERNAL LINKING FOOTER START ========== -->
+
 <div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
 <style>
 .age-calc-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
@@ -636,6 +637,8 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
 .age-calc-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
 .age-calc-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
 .age-calc-tool-badge{display:inline-block;background:#dcfce7;color:#15803d;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
+.age-calc-tool-badge.new-badge{background:#fef3c7;color:#92400e}
+.age-calc-tool-badge.health-badge{background:#dbeafe;color:#1e40af}
 .age-calc-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
 .age-calc-page-btn{background:#fff;border:1px solid #86efac;padding:10px 20px;border-radius:40px;text-decoration:none;color:#14532d;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
 .age-calc-page-btn:hover{background:#16a34a;color:#fff}
@@ -656,10 +659,21 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
   <div class="age-calc-tools-box">
     <div class="age-calc-tools-title">🎂 Age Calculator Tools</div>
     <div class="age-calc-tools-subtitle">⚡ All age, birthday & date-of-birth calculators in one place!</div>
+
     <div class="age-calc-stats-bar">
       <div class="age-calc-total-tools">🎯 Total 29 Age Calculator Tools</div>
+      <div class="age-calc-category-filter">
+        <span class="age-calc-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="age-calc-filter-chip" data-filter="basic">📅 Basic</span>
+        <span class="age-calc-filter-chip" data-filter="difference">👫 Difference</span>
+        <span class="age-calc-filter-chip" data-filter="special">🧬 Special</span>
+        <span class="age-calc-filter-chip" data-filter="health">🕊️ Health</span>
+        <span class="age-calc-filter-chip" data-filter="excel">📊 Excel</span>
+      </div>
     </div>
+
     <div id="ageCalcToolsGrid" class="age-calc-tools-grid"></div>
+
     <div class="age-calc-pagination">
       <button class="age-calc-page-btn" id="ageCalcPrevBtn" onclick="ageCalcChangePage(-1)">◀ Prev</button>
       <div id="ageCalcPageNumbers"></div>
@@ -672,11 +686,14 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
 
 <script>
 const ageCalcWheelTools = [
+  /* ========== NEW TOOLS (Freshly Created) ========== */
   { name: "📅 Age Calculator", desc: "Calculate your exact age instantly", category: "basic", url: "https://freeonlinetools203.com/age-calculator.html" },
   { name: "🎂 What Year Was I Born Calculator", desc: "Find your birth year from age instantly", category: "basic", url: "https://freeonlinetools203.com/what-year-was-i-born.html" },
   { name: "🐶 Dog Age Calculator", desc: "Convert dog years to human years by size & breed", category: "basic", url: "https://freeonlinetools203.com/dog-age-calculator.html" },
   { name: "📅 Born Year Age Calculator", desc: "Find your age from birth year & target year", category: "basic", url: "https://freeonlinetools203.com/born-year-age-calculator.html" },
   { name: "🗓️ Current Year Calculator", desc: "Live date, time, year progress & countdown", category: "basic", url: "https://freeonlinetools203.com/current-year-calculator.html" },
+
+  /* ========== EXISTING BASIC TOOLS ========== */
   { name: "🎂 Chronological Age Calculator", desc: "Calculate precise chronological age", category: "basic", url: "https://freeonlinetools203.com/chronological-age-calculator.html" },
   { name: "🌐 Online Chronological Age Calculator", desc: "Free online chronological age tool", category: "basic", url: "https://freeonlinetools203.com/online-chronological-age-calculator.html" },
   { name: "🧑‍⚕️ Pearson Age Calculator", desc: "Pearson clinical age calculator", category: "basic", url: "https://freeonlinetools203.com/pearson-age-calculator.html" },
@@ -684,12 +701,16 @@ const ageCalcWheelTools = [
   { name: "🎈 Birth Year Calculator", desc: "Find birth year from age", category: "basic", url: "https://freeonlinetools203.com/birth-year-calculator.html" },
   { name: "📆 Age In Days Calculator", desc: "Calculate your age in total days", category: "basic", url: "https://freeonlinetools203.com/age-in-days-calculator.html" },
   { name: "🗓️ Age In Months Calculator", desc: "Calculate your age in total months", category: "basic", url: "https://freeonlinetools203.com/age-in-months-calculator.html" },
+
+  /* ========== DIFFERENCE TOOLS ========== */
   { name: "👫 Age Difference Calculator", desc: "Find age difference between two people", category: "difference", url: "https://freeonlinetools203.com/age-difference-calculator.html" },
   { name: "🔄 Age Calculator Difference", desc: "Compare ages between dates", category: "difference", url: "https://freeonlinetools203.com/age-calculator-difference.html" },
   { name: "➖ Calculate Age Difference", desc: "Quick age gap calculation tool", category: "difference", url: "https://freeonlinetools203.com/calculate-age-difference.html" },
   { name: "💑 Dating Age Difference Calculator", desc: "Check age gap for dating", category: "difference", url: "https://freeonlinetools203.com/dating-age-difference-calculator.html" },
   { name: "⚖️ Age Gap Calculator", desc: "Calculate age gap between two dates", category: "difference", url: "https://freeonlinetools203.com/age-gap-calculator.html" },
   { name: "❤️ Age Gap Dating Calculator", desc: "Dating age gap compatibility tool", category: "difference", url: "https://freeonlinetools203.com/age-gap-dating-calculator.html" },
+
+  /* ========== SPECIAL TOOLS ========== */
   { name: "🧬 Biological Age Calculator", desc: "Estimate your biological age", category: "special", url: "https://freeonlinetools203.com/biological-age-calculator.html" },
   { name: "🆓 Free Biological Age Calculator", desc: "Free biological age estimation tool", category: "special", url: "https://freeonlinetools203.com/free-biological-age-calculator.html" },
   { name: "📸 Age Calculator By Photo", desc: "Estimate age from a photo", category: "special", url: "https://freeonlinetools203.com/age-calculator-by-photo.html" },
@@ -698,43 +719,69 @@ const ageCalcWheelTools = [
   { name: "👶 Adjusted Age Calculator", desc: "Adjusted age for premature babies", category: "special", url: "https://freeonlinetools203.com/adjusted-age-calculator.html" },
   { name: "🍼 Preemie Adjusted Age Calculator", desc: "Corrected age calculator for preemies", category: "special", url: "https://freeonlinetools203.com/preemie-adjusted-age-calculator.html" },
   { name: "🕊️ Life Expectancy Calculator", desc: "Predict how long you will live", category: "health", url: "https://freeonlinetools203.com/life-expectancy-calculator.html" },
+
+  /* ========== EXCEL TOOLS ========== */
   { name: "📊 Excel Formula To Calculate Age", desc: "Learn Excel age formulas", category: "excel", url: "https://freeonlinetools203.com/excel-formula-to-calculate-age.html" },
   { name: "📈 How To Calculate Age In Excel", desc: "Step-by-step Excel age guide", category: "excel", url: "https://freeonlinetools203.com/how-to-calculate-age-in-excel.html" },
   { name: "🧾 Calculate Age From DOB In Excel", desc: "Excel DOB to age conversion", category: "excel", url: "https://freeonlinetools203.com/calculate-age-from-dob-in-excel.html" }
 ];
 
 let ageCalcCurrentPage = 1;
+let ageCalcCurrentFilter = "all";
 const ageCalcToolsPerPage = 8;
 
+function ageCalcGetFilteredTools() {
+  if (ageCalcCurrentFilter === "all") return ageCalcWheelTools;
+  return ageCalcWheelTools.filter(tool => tool.category === ageCalcCurrentFilter);
+}
+
 function ageCalcRenderTools() {
+  const filtered = ageCalcGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / ageCalcToolsPerPage);
   const start = (ageCalcCurrentPage - 1) * ageCalcToolsPerPage;
   const end = start + ageCalcToolsPerPage;
-  const pageTools = ageCalcWheelTools.slice(start, end);
-  const totalPages = Math.ceil(ageCalcWheelTools.length / ageCalcToolsPerPage);
+  const pageTools = filtered.slice(start, end);
 
   const grid = document.getElementById('ageCalcToolsGrid');
-  grid.innerHTML = pageTools.map(tool => `
+  grid.innerHTML = pageTools.map(tool => {
+    let badgeClass = '';
+    let badgeText = '';
+    if (['what-year-was-i-born','dog-age-calculator','born-year-age-calculator','current-year-calculator'].some(k => tool.url.includes(k))) {
+      badgeClass = 'new-badge';
+    } else if (tool.category === 'health') {
+      badgeClass = 'health-badge';
+    }
+    if (tool.category === 'basic') badgeText = '📅 Basic';
+    else if (tool.category === 'difference') badgeText = '👫 Difference';
+    else if (tool.category === 'special') badgeText = '🧬 Special';
+    else if (tool.category === 'health') badgeText = '🕊️ Health';
+    else badgeText = '📊 Excel';
+
+    return `
     <div class="age-calc-tool-card">
       <a href="${tool.url}">
         <div class="age-calc-tool-icon">${tool.name.split(' ')[0]}</div>
         <div class="age-calc-tool-info">
           <div class="age-calc-tool-name">${tool.name}</div>
           <div class="age-calc-tool-desc">${tool.desc}</div>
-          <span class="age-calc-tool-badge">🎂 Age Tool</span>
+          <span class="age-calc-tool-badge ${badgeClass}">${badgeText}</span>
         </div>
       </a>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
-  document.getElementById('ageCalcPageInfo').innerHTML = `📄 Page ${ageCalcCurrentPage} of ${totalPages} | 🎯 ${ageCalcWheelTools.length} tools`;
+  document.getElementById('ageCalcPageInfo').innerHTML = `📄 Page ${ageCalcCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${ageCalcCurrentFilter === 'all' ? 'All Tools' : ageCalcCurrentFilter}`;
   ageCalcRenderPageNumbers();
-  document.getElementById('ageCalcPrevBtn').disabled = ageCalcCurrentPage === 1;
-  document.getElementById('ageCalcNextBtn').disabled = ageCalcCurrentPage === totalPages;
+  ageCalcUpdateButtons();
 }
 
 function ageCalcRenderPageNumbers() {
-  const totalPages = Math.ceil(ageCalcWheelTools.length / ageCalcToolsPerPage);
+  const filtered = ageCalcGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / ageCalcToolsPerPage);
   const container = document.getElementById('ageCalcPageNumbers');
+  if (!container) return;
+
   let html = '';
   let startPage = Math.max(1, ageCalcCurrentPage - 2);
   let endPage = Math.min(totalPages, ageCalcCurrentPage + 2);
@@ -750,12 +797,23 @@ function ageCalcRenderPageNumbers() {
     if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
     html += `<span class="age-calc-page-number" onclick="ageCalcGoToPage(${totalPages})">${totalPages}</span>`;
   }
+
   container.innerHTML = html;
 }
 
-function ageCalcChangePage(dir) {
-  const totalPages = Math.ceil(ageCalcWheelTools.length / ageCalcToolsPerPage);
-  const newPage = ageCalcCurrentPage + dir;
+function ageCalcUpdateButtons() {
+  const filtered = ageCalcGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / ageCalcToolsPerPage);
+  const prevBtn = document.getElementById('ageCalcPrevBtn');
+  const nextBtn = document.getElementById('ageCalcNextBtn');
+  if (prevBtn) prevBtn.disabled = ageCalcCurrentPage === 1;
+  if (nextBtn) nextBtn.disabled = ageCalcCurrentPage === totalPages;
+}
+
+function ageCalcChangePage(direction) {
+  const filtered = ageCalcGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / ageCalcToolsPerPage);
+  const newPage = ageCalcCurrentPage + direction;
   if (newPage >= 1 && newPage <= totalPages) {
     ageCalcCurrentPage = newPage;
     ageCalcRenderTools();
@@ -763,16 +821,34 @@ function ageCalcChangePage(dir) {
 }
 
 function ageCalcGoToPage(page) {
-  const totalPages = Math.ceil(ageCalcWheelTools.length / ageCalcToolsPerPage);
+  const filtered = ageCalcGetFilteredTools();
+  const totalPages = Math.ceil(filtered.length / ageCalcToolsPerPage);
   if (page >= 1 && page <= totalPages) {
     ageCalcCurrentPage = page;
     ageCalcRenderTools();
   }
 }
 
-document.addEventListener('DOMContentLoaded', ageCalcRenderTools);
+function ageCalcSetFilter(filter) {
+  ageCalcCurrentFilter = filter;
+  ageCalcCurrentPage = 1;
+  ageCalcRenderTools();
+  document.querySelectorAll('.age-calc-filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ageCalcRenderTools();
+  document.querySelectorAll('.age-calc-filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      ageCalcSetFilter(chip.getAttribute('data-filter'));
+    });
+  });
+});
 </script>
 
+<!-- ========== AGE CALCULATOR INTERNAL LINKING FOOTER END ========== -->
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
 
 <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
