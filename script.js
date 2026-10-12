@@ -344,11 +344,10 @@ const toolsDatabase = {
       "Cow Pregnancy Calculator",
       "Rabbit Pregnancy Calculator",
       "Goat Pregnancy Calculator",
-      "Horse Pregnancy Calculator",
+      "Horse Gestation Calculator",    // ✅ Sirf yeh rahega
       "Sheep Pregnancy Calculator",
       "Pig Pregnancy Calculator",
-      "Lambing Calculator",           // ✅ ADDED
-      "Horse Gestation Calculator"    // ✅ ADDED
+      "Lambing Calculator"
     ]
   },
 
@@ -453,19 +452,18 @@ const toolUrlMap = {
   "YouTube Hashtag Generator": "youtube-hashtag-generator-v2.html",
   "Social Media Caption Generator": "social-media-caption-generator.html",
   
-  // Animal Pregnancy Tools
+ // Animal Pregnancy Tools
   "Dog Pregnancy Calculator": "dog-pregnancy-calculator.html",
   "Cat Pregnancy Calculator": "cat-pregnancy-calculator.html",
   "Cow Pregnancy Calculator": "cow-pregnancy-calculator.html",
   "Rabbit Pregnancy Calculator": "rabbit-pregnancy-calculator.html",
   "Goat Pregnancy Calculator": "goat-pregnancy-calculator.html",
-  "Horse Pregnancy Calculator": "horse-pregnancy-calculator.html",
+  "Horse Gestation Calculator": "horse-gestation-calculator.html",
   "Sheep Pregnancy Calculator": "sheep-pregnancy-calculator.html",
   "Pig Pregnancy Calculator": "pig-pregnancy-calculator.html",
 
   // ===== NEW ANIMAL TOOLS ADDED =====
   "Lambing Calculator": "lambing-calculator.html",
-  "Horse Gestation Calculator": "horse-gestation-calculator.html",
   
   // Developer & Security Tools
   "MD5 Hash Generator": "md5-generator.html",
@@ -1044,15 +1042,16 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="password-generator.html">Password Generator</a>
             <a href="password-checker.html">Password Strength Checker</a>
             
-            <h4>🐾 Animal Pregnancy Tools</h4>
+           <h4>🐾 Animal Pregnancy Tools</h4>
             <a href="dog-pregnancy-calculator.html">Dog Pregnancy Calculator</a>
             <a href="cat-pregnancy-calculator.html">Cat Pregnancy Calculator</a>
             <a href="cow-pregnancy-calculator.html">Cow Pregnancy Calculator</a>
             <a href="rabbit-pregnancy-calculator.html">Rabbit Pregnancy Calculator</a>
             <a href="goat-pregnancy-calculator.html">Goat Pregnancy Calculator</a>
-            <a href="horse-pregnancy-calculator.html">Horse Pregnancy Calculator</a>
+            <a href="horse-gestation-calculator.html">Horse Gestation Calculator</a>
             <a href="sheep-pregnancy-calculator.html">Sheep Pregnancy Calculator</a>
             <a href="pig-pregnancy-calculator.html">Pig Pregnancy Calculator</a>
+            <a href="lambing-calculator.html">Lambing Calculator</a>
             
             <h4>♈ Zodiac & Birthday Tools</h4>
             <a href="zodiac-sign-finder.html">♈ Zodiac Sign Finder</a>
