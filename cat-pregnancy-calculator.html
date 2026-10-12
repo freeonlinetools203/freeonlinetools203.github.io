@@ -463,6 +463,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f3f4f6;
 <!-- ========== SEO ARTICLE END ========== -->
 
 <!-- ========== ANIMAL PREGNANCY TOOLS CATEGORY FOOTER START ========== -->
+
 <div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
 <style>
 .apt-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
@@ -496,28 +497,32 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f3f4f6;
 </style>
 
 <div class="apt-related-section">
-<a href="https://freeonlinetools203.com/index.html" class="apt-btn-home">🏠 Back to Home</a>
-<div class="apt-tools-box">
-<div class="apt-tools-title">🐾 Animal Pregnancy Tools</div>
-<div class="apt-tools-subtitle">⚡ Free animal pregnancy calculators for pet & farm owners!</div>
-<div class="apt-stats-bar">
-<div class="apt-total-tools">🎯 Total 8 Animal Pregnancy Tools</div>
-<div class="apt-category-filter">
-<span class="apt-filter-chip active" data-filter="all">🔘 All</span>
-<span class="apt-filter-chip" data-filter="pet">🐶 Pet</span>
-<span class="apt-filter-chip" data-filter="farm">🐄 Farm</span>
-</div>
-</div>
-<div id="aptToolsGrid" class="apt-tools-grid"></div>
-<div class="apt-pagination">
-<button class="apt-page-btn" id="aptPrevBtn" onclick="aptChangePage(-1)">◀ Prev</button>
-<div id="aptPageNumbers"></div>
-<button class="apt-page-btn" id="aptNextBtn" onclick="aptChangePage(1)">Next ▶</button>
-</div>
-<div class="apt-page-info" id="aptPageInfo"></div>
-</div>
-</div>
+  <a href="https://freeonlinetools203.com/index.html" class="apt-btn-home">🏠 Back to Home</a>
+  <div class="apt-tools-box">
+    <div class="apt-tools-title">🐾 Animal Pregnancy Tools</div>
+    <div class="apt-tools-subtitle">⚡ Free animal pregnancy calculators for pet & farm owners!</div>
 
+    <div class="apt-stats-bar">
+     <div class="apt-total-tools">🎯 Total 10 Animal Pregnancy Tools</div>
+      <div class="apt-category-filter">
+        <span class="apt-filter-chip active" data-filter="all">🔘 All</span>
+        <span class="apt-filter-chip" data-filter="pet">🐶 Pet</span>
+        <span class="apt-filter-chip" data-filter="farm">🐄 Farm</span>
+      </div>
+    </div>
+
+    <div id="aptToolsGrid" class="apt-tools-grid"></div>
+
+    <div class="apt-pagination">
+      <button class="apt-page-btn" id="aptPrevBtn" onclick="aptChangePage(-1)">◀ Prev</button>
+      <div id="aptPageNumbers"></div>
+      <button class="apt-page-btn" id="aptNextBtn" onclick="aptChangePage(1)">Next ▶</button>
+    </div>
+    <div class="apt-page-info" id="aptPageInfo"></div>
+  </div>
+</div>
+</div>
+  
 <script>
 const aptToolsList = [
   { name: "🐶 Dog Pregnancy Calculator", desc: "Calculate dog pregnancy due date easily", category: "pet", url: "https://freeonlinetools203.com/dog-pregnancy-calculator.html" },
@@ -527,7 +532,9 @@ const aptToolsList = [
   { name: "🐐 Goat Pregnancy Calculator", desc: "Calculate goat pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/goat-pregnancy-calculator.html" },
   { name: "🐴 Horse Pregnancy Calculator", desc: "Calculate horse pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/horse-pregnancy-calculator.html" },
   { name: "🐑 Sheep Pregnancy Calculator", desc: "Calculate sheep pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/sheep-pregnancy-calculator.html" },
-  { name: "🐷 Pig Pregnancy Calculator", desc: "Calculate pig pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/pig-pregnancy-calculator.html" }
+  { name: "🐷 Pig Pregnancy Calculator", desc: "Calculate pig pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/pig-pregnancy-calculator.html" },
+  { name: "🐑 Lambing Calculator", desc: "Calculate sheep lambing due date", category: "farm", url: "https://freeonlinetools203.com/lambing-calculator.html" },
+  { name: "🐴 Horse Gestation Calculator", desc: "Calculate horse gestation due date", category: "farm", url: "https://freeonlinetools203.com/horse-gestation-calculator.html" }
 ];
 
 let aptCurrentPage = 1;
@@ -545,6 +552,7 @@ function aptRenderTools() {
   const start = (aptCurrentPage - 1) * aptToolsPerPage;
   const end = start + aptToolsPerPage;
   const pageTools = filtered.slice(start, end);
+
   const grid = document.getElementById('aptToolsGrid');
   grid.innerHTML = pageTools.map(tool => `
     <div class="apt-tool-card">
@@ -553,11 +561,14 @@ function aptRenderTools() {
         <div class="apt-tool-info">
           <div class="apt-tool-name">${tool.name}</div>
           <div class="apt-tool-desc">${tool.desc}</div>
-          <span class="apt-tool-badge">${tool.category === 'pet' ? '🐶 Pet' : '🐄 Farm'}</span>
+          <span class="apt-tool-badge">${
+            tool.category === 'pet' ? '🐶 Pet' : '🐄 Farm'
+          }</span>
         </div>
       </a>
     </div>
   `).join('');
+
   document.getElementById('aptPageInfo').innerHTML = `📄 Page ${aptCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${aptCurrentFilter === 'all' ? 'All Tools' : aptCurrentFilter}`;
   aptRenderPageNumbers();
   aptUpdateButtons();
@@ -568,9 +579,11 @@ function aptRenderPageNumbers() {
   const totalPages = Math.ceil(filtered.length / aptToolsPerPage);
   const container = document.getElementById('aptPageNumbers');
   if (!container) return;
+
   let html = '';
   let startPage = Math.max(1, aptCurrentPage - 2);
   let endPage = Math.min(totalPages, aptCurrentPage + 2);
+
   if (startPage > 1) {
     html += `<span class="apt-page-number" onclick="aptGoToPage(1)">1</span>`;
     if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
@@ -582,6 +595,7 @@ function aptRenderPageNumbers() {
     if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
     html += `<span class="apt-page-number" onclick="aptGoToPage(${totalPages})">${totalPages}</span>`;
   }
+
   container.innerHTML = html;
 }
 
@@ -622,6 +636,7 @@ function aptSetFilter(filter) {
   });
 }
 
+// ✅ Sirf ek baar
 document.addEventListener('DOMContentLoaded', () => {
   aptRenderTools();
   document.querySelectorAll('.apt-filter-chip').forEach(chip => {
@@ -631,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-</div>
+
 <!-- ========== ANIMAL PREGNANCY TOOLS CATEGORY FOOTER END ========== -->
 
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
