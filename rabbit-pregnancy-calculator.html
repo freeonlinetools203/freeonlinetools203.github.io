@@ -607,7 +607,7 @@ body {
     <div class="apt-tools-subtitle">⚡ Free animal pregnancy calculators for pet & farm owners!</div>
 
     <div class="apt-stats-bar">
-      <div class="apt-total-tools">🎯 Total 8 Animal Pregnancy Tools</div>
+     <div class="apt-total-tools">🎯 Total 9 Animal Pregnancy Tools</div>
       <div class="apt-category-filter">
         <span class="apt-filter-chip active" data-filter="all">🔘 All</span>
         <span class="apt-filter-chip" data-filter="pet">🐶 Pet</span>
@@ -620,13 +620,13 @@ body {
     <div class="apt-pagination">
       <button class="apt-page-btn" id="aptPrevBtn" onclick="aptChangePage(-1)">◀ Prev</button>
       <div id="aptPageNumbers"></div>
-      class="apt-page-btn" id="aptNextBtn" onclick="aptChangePage(1)">Next ▶</button>
+      <button class="apt-page-btn" id="aptNextBtn" onclick="aptChangePage(1)">Next ▶</button>
     </div>
     <div class="apt-page-info" id="aptPageInfo"></div>
   </div>
 </div>
 </div>
-
+  
 <script>
 const aptToolsList = [
   { name: "🐶 Dog Pregnancy Calculator", desc: "Calculate dog pregnancy due date easily", category: "pet", url: "https://freeonlinetools203.com/dog-pregnancy-calculator.html" },
@@ -634,9 +634,10 @@ const aptToolsList = [
   { name: "🐰 Rabbit Pregnancy Calculator", desc: "Calculate rabbit pregnancy due date", category: "pet", url: "https://freeonlinetools203.com/rabbit-pregnancy-calculator.html" },
   { name: "🐄 Cow Pregnancy Calculator", desc: "Calculate cow pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/cow-pregnancy-calculator.html" },
   { name: "🐐 Goat Pregnancy Calculator", desc: "Calculate goat pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/goat-pregnancy-calculator.html" },
-  { name: "🐴 Horse Pregnancy Calculator", desc: "Calculate horse pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/horse-pregnancy-calculator.html" },
   { name: "🐑 Sheep Pregnancy Calculator", desc: "Calculate sheep pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/sheep-pregnancy-calculator.html" },
-  { name: "🐷 Pig Pregnancy Calculator", desc: "Calculate pig pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/pig-pregnancy-calculator.html" }
+  { name: "🐷 Pig Pregnancy Calculator", desc: "Calculate pig pregnancy due date", category: "farm", url: "https://freeonlinetools203.com/pig-pregnancy-calculator.html" },
+  { name: "🐑 Lambing Calculator", desc: "Calculate sheep lambing due date", category: "farm", url: "https://freeonlinetools203.com/lambing-calculator.html" },
+  { name: "🐴 Horse Gestation Calculator", desc: "Calculate horse gestation due date", category: "farm", url: "https://freeonlinetools203.com/horse-gestation-calculator.html" }
 ];
 
 let aptCurrentPage = 1;
@@ -750,7 +751,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <!-- ========== ANIMAL PREGNANCY TOOLS CATEGORY FOOTER END ========== -->
-
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
 
 <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
