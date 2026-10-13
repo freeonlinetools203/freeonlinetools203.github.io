@@ -1567,7 +1567,7 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon",
             categories: ["age", "family", "health", "birthday", "kids"]
         },
-        {
+                {
             id: "space-jokes",
             title: "SPACE JOKES FOR KIDS",
             subtitle: "Out-of-this-World Puns & Cosmic Laughs!",
@@ -1575,6 +1575,15 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20",
             buttonText: "🛒 Buy on Amazon",
             categories: ["lucky", "random", "zodiac", "astrology", "kids"]
+        },       ← COMMA LAGAYA
+        {
+            id: "leapfrog-100-words",
+            title: "LeapFrog Learning Friends 100 Words Book",
+            subtitle: "Interactive Learning Toy for Kids Ages 18 Months - 4 Years!",
+            image: "https://m.media-amazon.com/images/I/81j9+YzxjxL._AC_SL1382_.jpg",
+            link: "https://amzn.to/4yN62rR",
+            buttonText: "🛒 Buy on Amazon",
+            categories: ["kids", "toy", "education", "fun", "family"]
         }
     ];
 
