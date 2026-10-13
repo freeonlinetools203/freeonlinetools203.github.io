@@ -1605,18 +1605,18 @@ document.addEventListener('DOMContentLoaded', function() {
         "lambing-calculator": ["animal", "farm"],
         "random-animal-wheel": ["animal", "fun"],
         
-        // Age / Family tools
-        "age-calculator": ["age", "family"],
-        "chronological-age-calculator": ["age", "family"],
-        "biological-age-calculator": ["age", "health"],
+                // Age / Family tools
+        "age-calculator": ["age", "family", "kids"],
+        "chronological-age-calculator": ["age", "family", "kids"],
+        "biological-age-calculator": ["age", "health", "kids"],
         "age-difference-calculator": ["age", "family"],
         "age-gap-calculator": ["age", "family"],
-        "birth-year-calculator": ["age", "birthday"],
-        "birthday-countdown": ["birthday", "family"],
-        "happy-birthday-tool": ["birthday", "family"],
+        "birth-year-calculator": ["age", "birthday", "kids"],
+        "birthday-countdown": ["birthday", "family", "kids"],
+        "happy-birthday-tool": ["birthday", "family", "kids"],
         "korean-age-calculator": ["age", "family"],
-        "what-year-was-i-born": ["age", "birthday"],
-        "born-year-age-calculator": ["age", "birthday"],
+        "what-year-was-i-born": ["age", "birthday", "kids"],
+        "born-year-age-calculator": ["age", "birthday", "kids"],
         
         // Fun / Game tools
         "spin-the-wheel": ["fun", "wheel", "game"],
@@ -1638,15 +1638,15 @@ document.addEventListener('DOMContentLoaded', function() {
         "random-color-picker": ["lucky", "random"],
         
         // Health tools
-        "bmi-calculator": ["health", "family"],
-        "bmr-calculator": ["health", "family"],
-        "calorie-calculator": ["health", "family"],
-        "body-fat-calculator": ["health", "family"],
+        "bmi-calculator": ["health", "family", "kids"],
+        "bmr-calculator": ["health", "family", "kids"],
+        "calorie-calculator": ["health", "family", "kids"],
+        "body-fat-calculator": ["health", "family", "kids"],
         
         // Zodiac tools
-        "zodiac-sign-finder": ["zodiac", "astrology"],
-        "chinese-zodiac-finder": ["zodiac", "astrology"],
-        "zodiac-wheel": ["zodiac", "astrology"]
+        "zodiac-sign-finder": ["zodiac", "astrology", "kids"],
+        "chinese-zodiac-finder": ["zodiac", "astrology", "kids"],
+        "zodiac-wheel": ["zodiac", "astrology", "kids"]
     };
 
     // ============================================================
