@@ -1575,7 +1575,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20",
             buttonText: "🛒 Buy on Amazon",
             categories: ["lucky", "random", "zodiac", "astrology", "kids"]
-        },       ← COMMA LAGAYA
+        },
         {
             id: "leapfrog-100-words",
             title: "LeapFrog Learning Friends 100 Words Book",
