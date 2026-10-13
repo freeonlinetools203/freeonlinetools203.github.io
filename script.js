@@ -1631,11 +1631,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "movie-picker-wheel": ["fun", "wheel"],
         "dinner-spinner": ["fun", "wheel"],
         
-        // Lucky / Random tools
-        "best-lottery-number-generator": ["lucky", "random"],
-        "random-number-generator": ["lucky", "random"],
-        "daily-lucky-number-wheel": ["lucky", "random"],
-        "random-color-picker": ["lucky", "random"],
+                // Lucky / Random tools
+        "best-lottery-number-generator": ["lucky", "random", "kids"],
+        "random-number-generator": ["lucky", "random", "kids"],
+        "daily-lucky-number-wheel": ["lucky", "random", "kids"],
+        "random-color-picker": ["lucky", "random", "kids"],
         
         // Health tools
         "bmi-calculator": ["health", "family", "kids"],
