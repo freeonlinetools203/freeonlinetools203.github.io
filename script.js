@@ -1580,7 +1580,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: "leapfrog-100-words",
             title: "LeapFrog Learning Friends 100 Words Book",
             subtitle: "Interactive Learning Toy for Kids Ages 18 Months - 4 Years!",
-            image: "https://m.media-amazon.com/images/I/81j9+YzxjxL._AC_SL1382_.jpg",
+           image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
             link: "https://amzn.to/4yN62rR",
             buttonText: "🛒 Buy on Amazon",
             categories: ["kids", "toy", "education", "fun", "family"]
