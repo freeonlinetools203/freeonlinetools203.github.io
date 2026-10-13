@@ -1826,6 +1826,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     `).join('')}
                 </div>
                 <p class="sps-disclosure">As an Amazon Associate, I earn from qualifying purchases.</p>
+                <p class="sps-disclosure" style="font-size: 0.68rem; color: #6b7280; margin-top: 6px;">💡 Tip: If you use ad-blocking or coupon extensions, they may overwrite our links. Please consider disabling them on this site to support our free tools.</p>
             </div>
         `;
         
