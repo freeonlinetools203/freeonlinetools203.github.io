@@ -684,9 +684,9 @@ function renderDashboard() {
             link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
         },
         "catAgeExcel": {
-            title: "50 FUNNY JOKES FOR KIDS",
-            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+            title: "LeapFrog Learning Friends 100 Words Book",
+            image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
+            link: "https://amzn.to/4yN62rR"
         },
         "catZodiac": {
             title: "SPACE JOKES FOR KIDS",
@@ -699,14 +699,14 @@ function renderDashboard() {
             link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20"
         },
         "catHash": {
-            title: "50 FUNNY JOKES FOR KIDS",
-            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+            title: "KNOCK-KNOCK JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20"
         },
         "catSeo": {
-            title: "50 FUNNY JOKES FOR KIDS",
-            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+            title: "KNOCK-KNOCK JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20"
         },
         "catYoutube": {
             title: "KNOCK-KNOCK JOKES FOR KIDS",
@@ -719,9 +719,9 @@ function renderDashboard() {
             link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20"
         },
         "catColor": {
-            title: "KNOCK-KNOCK JOKES FOR KIDS",
-            image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20"
+            title: "LeapFrog Learning Friends 100 Words Book",
+            image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
+            link: "https://amzn.to/4yN62rR"
         },
         "catPdf": {
             title: "50 FUNNY JOKES FOR KIDS",
@@ -739,9 +739,9 @@ function renderDashboard() {
             link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
         },
         "catDev": {
-            title: "50 FUNNY JOKES FOR KIDS",
-            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+            title: "LeapFrog Learning Friends 100 Words Book",
+            image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
+            link: "https://amzn.to/4yN62rR"
         },
         "catHealth": {
             title: "50 FUNNY JOKES FOR KIDS",
@@ -749,14 +749,14 @@ function renderDashboard() {
             link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
         },
         "catFin": {
-            title: "50 FUNNY JOKES FOR KIDS",
-            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+            title: "LeapFrog Learning Friends 100 Words Book",
+            image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
+            link: "https://amzn.to/4yN62rR"
         },
         "catText": {
-            title: "50 FUNNY JOKES FOR KIDS",
-            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+            title: "LeapFrog Learning Friends 100 Words Book",
+            image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
+            link: "https://amzn.to/4yN62rR"
         },
         "catPreg": {
             title: "DINOSAUR JOKES FOR KIDS",
