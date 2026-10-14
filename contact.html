@@ -7,7 +7,7 @@
     <title>Contact Us – Free Online Tools | Get Support & Feedback</title>
     <meta name="description" content="Contact Free Online Tools for support, feedback, tool suggestions, or business inquiries. Email us directly and we'll respond within 24-48 hours.">
     <meta name="keywords" content="contact us, free online tools support, feedback, tool suggestions, email support, online calculators help">
-    <meta name="author" content="Free Online Tools">
+    <meta name="author" content="Zain Uddin">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://freeonlinetools203.com/contact.html">
     <!-- ========== SEO TAGS END ========== -->
@@ -45,225 +45,38 @@
     <!-- ========== SCHEMA MARKUP END ========== -->
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f3f4f6;
-            min-height: 100vh;
-        }
-
-        /* ========== MAIN CONTAINER ========== */
-        .container {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .contact-card {
-            background: white;
-            border-radius: 24px;
-            padding: 45px 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-            border: 1px solid #eef2f6;
-        }
-
-        .contact-card h1 {
-            color: #1e3a8a;
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-
-        .contact-card .subtitle {
-            color: #6b7280;
-            font-size: 1rem;
-            margin-bottom: 30px;
-        }
-
-        .contact-card label {
-            display: block;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-
-        .contact-card label .required {
-            color: #ef4444;
-        }
-
-        .contact-card input,
-        .contact-card select,
-        .contact-card textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s;
-            box-sizing: border-box;
-            background: white;
-        }
-
-        .contact-card input:focus,
-        .contact-card select:focus,
-        .contact-card textarea:focus {
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .contact-card .form-group {
-            margin-bottom: 18px;
-        }
-
-        .contact-card .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-        }
-
-        .contact-card .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-        }
-
-        .contact-card .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .contact-card .success-msg {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background: #d1fae5;
-            border-radius: 12px;
-            color: #065f46;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .contact-card .error-msg {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background: #fee2e2;
-            border-radius: 12px;
-            color: #991b1b;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .contact-card .or-divider {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #eef2f6;
-            text-align: center;
-        }
-
-        .contact-card .or-divider p {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .contact-card .or-divider a {
-            color: #2563eb;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .contact-card .or-divider a:hover {
-            text-decoration: underline;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        /* ========== AFFILIATE DISCLOSURE ========== */
-        .affiliate-disclosure {
-            background: #fefce8;
-            padding: 14px 18px;
-            border-radius: 12px;
-            border-left: 4px solid #eab308;
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: #713f12;
-        }
-
-        .affiliate-disclosure strong {
-            color: #1e3a8a;
-        }
-
-        /* ========== FOOTER ========== */
-        .footer {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #cbd5e1;
-            padding: 40px 20px 25px;
-            margin-top: 50px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
-        }
-
-        .footer-col h4 {
-            color: white;
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-        }
-
-        .footer-col a {
-            display: block;
-            color: #94a3b8;
-            text-decoration: none;
-            padding: 4px 0;
-            font-size: 0.8rem;
-        }
-
-        .footer-col a:hover {
-            color: #60a5fa;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-
-        @media (max-width: 640px) {
-            .contact-card { padding: 30px 20px; }
-            .contact-card h1 { font-size: 1.5rem; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f3f4f6; min-height: 100vh; }
+        .container { max-width: 700px; margin: 40px auto; padding: 0 20px; }
+        .contact-card { background: white; border-radius: 24px; padding: 45px 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid #eef2f6; }
+        .contact-card h1 { color: #1e3a8a; font-size: 2rem; font-weight: 800; margin-bottom: 6px; }
+        .contact-card .subtitle { color: #6b7280; font-size: 1rem; margin-bottom: 30px; }
+        .last-updated { background: #f0fdf4; padding: 10px 18px; border-radius: 10px; margin-bottom: 20px; text-align: center; color: #10b981; font-weight: 500; border: 1px solid #d1fae5; display: inline-block; font-size: 0.85rem; }
+        .contact-card label { display: block; font-weight: 600; color: #1e293b; margin-bottom: 5px; font-size: 0.9rem; }
+        .contact-card label .required { color: #ef4444; }
+        .contact-card input, .contact-card select, .contact-card textarea { width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; font-family: inherit; outline: none; transition: border-color 0.2s; box-sizing: border-box; background: white; }
+        .contact-card input:focus, .contact-card select:focus, .contact-card textarea:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        .contact-card .form-group { margin-bottom: 18px; }
+        .contact-card .submit-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: white; border: none; border-radius: 12px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); }
+        .contact-card .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4); }
+        .contact-card .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+        .contact-card .success-msg { display: none; margin-top: 15px; padding: 15px; background: #d1fae5; border-radius: 12px; color: #065f46; text-align: center; font-weight: 600; }
+        .contact-card .error-msg { display: none; margin-top: 15px; padding: 15px; background: #fee2e2; border-radius: 12px; color: #991b1b; text-align: center; font-weight: 600; }
+        .contact-card .or-divider { margin-top: 25px; padding-top: 20px; border-top: 1px solid #eef2f6; text-align: center; }
+        .contact-card .or-divider p { color: #6b7280; font-size: 0.9rem; }
+        .contact-card .or-divider a { color: #2563eb; font-weight: 600; text-decoration: none; }
+        .contact-card .or-divider a:hover { text-decoration: underline; }
+        .back-link { display: inline-block; margin-top: 20px; color: #2563eb; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .affiliate-disclosure { background: #fefce8; padding: 14px 18px; border-radius: 12px; border-left: 4px solid #eab308; margin-top: 20px; font-size: 0.85rem; color: #713f12; }
+        .affiliate-disclosure strong { color: #1e3a8a; }
+        .footer { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; }
+        .footer-col h4 { color: white; font-size: 0.85rem; margin-bottom: 12px; }
+        .footer-col a { display: block; color: #94a3b8; text-decoration: none; padding: 4px 0; font-size: 0.8rem; }
+        .footer-col a:hover { color: #60a5fa; }
+        .footer-bottom { text-align: center; padding-top: 20px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.06); }
+        @media (max-width: 640px) { .contact-card { padding: 30px 20px; } .contact-card h1 { font-size: 1.5rem; } }
     </style>
     <script src="https://freeonlinetools203.com/script.js"></script>
 </head>
@@ -275,6 +88,8 @@
 
             <h1>📬 Contact Us</h1>
             <p class="subtitle">We'd love to hear from you! Get support, share feedback, or suggest new tools.</p>
+            
+            <div class="last-updated">📅 Last Updated: October 15, 2026</div>
 
             <!-- ✅ FORMSPREE FORM -->
             <form id="contactForm" 
@@ -343,6 +158,9 @@
                 <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">
                     ⏱️ Response Time: 24-48 hours (Monday to Friday)
                 </p>
+                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 8px;">
+                    👤 Managed by <strong style="color:#1e3a8a;">Zain Uddin</strong> — Founder & Developer
+                </p>
             </div>
 
             <!-- Back Link -->
@@ -393,7 +211,6 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Loading state
             btn.textContent = '⏳ Sending...';
             btn.disabled = true;
             success.style.display = 'none';
@@ -402,9 +219,7 @@
             fetch(form.action, {
                 method: 'POST',
                 body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             })
             .then(response => {
                 if (response.ok) {
