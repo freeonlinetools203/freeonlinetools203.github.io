@@ -1662,16 +1662,25 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon",
             categories: ["lucky", "random", "zodiac", "astrology", "kids"]
         },
-        {
-            id: "leapfrog-100-words",
-            title: "LeapFrog Learning Friends 100 Words Book",
-            subtitle: "Interactive Learning Toy for Kids Ages 18 Months - 4 Years!",
-           image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
-            link: "https://amzn.to/4yN62rR",
-            buttonText: "🛒 Buy on Amazon",
-            categories: ["kids", "toy", "education", "fun", "family"]
-        }
-    ];
+            {
+        id: "leapfrog-100-words",
+        title: "LeapFrog Learning Friends 100 Words Book",
+        subtitle: "Interactive Learning Toy for Kids Ages 18 Months - 4 Years!",
+        image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
+        link: "https://amzn.to/4yN6zRr",
+        buttonText: "🛒 Buy on Amazon",
+        categories: ["kids", "toy", "education", "fun", "family"]
+    },
+    {
+        id: "taco-vs-burrito",
+        title: "TACO VS BURRITO - The Card Game",
+        subtitle: "Wildly Popular Family-Friendly Party Game for Kids, Teens & Adults",
+        image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg",
+        link: "https://amzn.to/47g0tX5",
+        buttonText: "🛒 Buy on Amazon",
+        categories: ["fun", "game", "wheel", "kids", "family", "party"]
+    }
+];
 
     // ============================================================
     // PAGE-TO-CATEGORY MAPPING
