@@ -903,23 +903,21 @@ const categoryProductCSS = `<style>
     display: flex;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    background: transparent;
     border-radius: 12px;
-    padding: 10px 15px;
-    border: 1px solid #fbbf24;
-    box-shadow: 0 2px 8px rgba(251,191,36,0.2);
+    padding: 8px 12px;
+    border: none;
     transition: all 0.3s ease;
 }
 .category-product-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(251,191,36,0.35);
+    transform: translateY(-2px);
 }
 .category-product-box img {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .category-product-info {
     display: flex;
@@ -928,7 +926,7 @@ const categoryProductCSS = `<style>
 }
 .category-product-title {
     font-size: 0.75rem;
-    color: #92400e;
+    color: #1e3a8a;
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
