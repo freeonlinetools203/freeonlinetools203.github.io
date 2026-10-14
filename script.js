@@ -671,12 +671,122 @@ function renderDashboard() {
         "catPreg"
     ];
     
+    // ===== CATEGORY-TO-PRODUCT MAPPING =====
+    const CATEGORY_PRODUCT_MAP = {
+        "catMostPopular": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catAge": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catAgeExcel": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catZodiac": {
+            title: "SPACE JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20"
+        },
+        "catTime": {
+            title: "SPACE JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20"
+        },
+        "catHash": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catSeo": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catYoutube": {
+            title: "KNOCK-KNOCK JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20"
+        },
+        "catFun": {
+            title: "KNOCK-KNOCK JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20"
+        },
+        "catColor": {
+            title: "KNOCK-KNOCK JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20"
+        },
+        "catPdf": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catImage": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catPop": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catDev": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catHealth": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catFin": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catText": {
+            title: "50 FUNNY JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20"
+        },
+        "catPreg": {
+            title: "DINOSAUR JOKES FOR KIDS",
+            image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg",
+            link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20"
+        }
+    };
+    
     let html = '';
     for (const key of orderedCategoryKeys) {
         const cat = toolsDatabase[key];
         if (!cat) continue;
+        
+        const product = CATEGORY_PRODUCT_MAP[key];
+        
         html += `<div class="section" data-category="${key}" id="section_${key}">
-            <h2>${cat.name}</h2>
+            <div class="section-header-with-product">
+                <h2>${cat.name}</h2>`;
+        
+        if (product) {
+            html += `<div class="category-product-box">
+                <img src="${product.image}" alt="${product.title}" loading="lazy">
+                <div class="category-product-info">
+                    <p class="category-product-title">${product.title}</p>
+                    <a href="${product.link}" target="_blank" rel="noopener">🛒 Buy on Amazon</a>
+                </div>
+            </div>`;
+        }
+        
+        html += `</div>
             <div class="tools-grid">
                 ${cat.tools.map(tool => `<div class="tool-card"><a href="${getUrl(tool)}">${tool}</a></div>`).join('')}
             </div>
