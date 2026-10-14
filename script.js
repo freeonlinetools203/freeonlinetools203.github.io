@@ -1273,6 +1273,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.insertAdjacentHTML('beforeend', navbarCSS);
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
     
+    // ===== YEH NAYI LINE ADD KARO (categoryProductCSS inject) =====
+    if (typeof categoryProductCSS === 'string') {
+        document.head.insertAdjacentHTML('beforeend', `<style>${categoryProductCSS}</style>`);
+    } else if (typeof categoryProductCSS === 'function') {
+        categoryProductCSS();
+    }
+    // ==============================================================
+    
     const mobileMenuDiv = document.getElementById('mobileMenu');
     if (mobileMenuDiv) {
         mobileMenuDiv.innerHTML = generateMobileMenu();
