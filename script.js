@@ -881,6 +881,83 @@ const navbarCSS = `<style>
 </style>`;
 
 // =========================================================================
+// 7b. CATEGORY PRODUCT CSS
+// =========================================================================
+const categoryProductCSS = `<style>
+.section-header-with-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e5e7eb;
+}
+.section-header-with-product h2 {
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+}
+.category-product-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-radius: 12px;
+    padding: 10px 15px;
+    border: 1px solid #fbbf24;
+    box-shadow: 0 2px 8px rgba(251,191,36,0.2);
+    transition: all 0.3s ease;
+}
+.category-product-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(251,191,36,0.35);
+}
+.category-product-box img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.category-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.category-product-title {
+    font-size: 0.75rem;
+    color: #92400e;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+.category-product-box a {
+    display: inline-block;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+}
+.category-product-box a:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 600px) {
+    .section-header-with-product {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .category-product-box {
+        width: 100%;
+    }
+}
+</style>`;
+// =========================================================================
 // 8. NAVBAR HTML (7 COLUMNS - ALL TOOLS INCLUDED)
 // =========================================================================
 const navbarHTML = `<div class="megamenu-container">
