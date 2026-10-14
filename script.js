@@ -1166,7 +1166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // ===== YEH NAYI LINE ADD KARO (categoryProductCSS inject) =====
     if (typeof categoryProductCSS === 'string') {
-        document.head.insertAdjacentHTML('beforeend', `<style>${categoryProductCSS}</style>`);
+        document.head.insertAdjacentHTML('beforeend', categoryProductCSS);
     } else if (typeof categoryProductCSS === 'function') {
         categoryProductCSS();
     }
