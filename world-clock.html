@@ -931,7 +931,7 @@ function footerToast(message) {
 
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER END ========== -->
 
-<!-- ===== JAVASCRIPT ===== -->
+<!-- ========== WORLD CLOCK JAVASCRIPT ========== -->
 <script>
 // ===== Default Cities =====
 const defaultCities = [
@@ -991,8 +991,6 @@ function renderCities() {
         return;
     }
 
-    const format = document.getElementById('formatSelect').value;
-
     grid.innerHTML = cities.map(city => {
         const { time, date } = getTimeInTimezone(city.timezone);
         return `
@@ -1048,7 +1046,6 @@ function toggleView(mode) {
     document.querySelectorAll('.toggle-btn').forEach(btn => {
         btn.classList.toggle('active', btn.textContent.toLowerCase().includes(mode));
     });
-    // View change logic (grid/list)
     const grid = document.getElementById('cityGrid');
     if (mode === 'list') {
         grid.style.display = 'flex';
@@ -1089,21 +1086,12 @@ function showToast(msg) {
 
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Initial render
     renderCities();
-
-    // Update every second — LIVE!
     setInterval(renderCities, 1000);
-
-    // Format change
     document.getElementById('formatSelect').addEventListener('change', renderCities);
-
-    // Enter key support
     document.getElementById('addCitySelect').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') addCity();
     });
-
-    // CSS animation
     const style = document.createElement('style');
     style.textContent = `
         @keyframes slideUp {
@@ -1112,6 +1100,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+});
+
+// ========== SHARE MODAL FUNCTIONS ==========
+function openArticleShareModal() {
+    document.getElementById('articleShareModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function closeArticleShareModal() {
+    document.getElementById('articleShareModal').style.display = 'none';
+    document.body.style.overflow = '';
+}
+function copyArticleShareLink() {
+    const url = 'https://freeonlinetools203.com/world-clock.html';
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => alert('✅ Link copied!')).catch(() => fallbackCopy(url));
+    } else fallbackCopy(url);
+}
+function fallbackCopy(url) {
+    const ta = document.createElement('textarea');
+    ta.value = url;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('✅ Link copied!');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticleShareModal(); });
+document.addEventListener('click', e => {
+    var modal = document.getElementById('articleShareModal');
+    if (e.target === modal) closeArticleShareModal();
 });
 </script>
 </body>
