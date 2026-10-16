@@ -559,7 +559,6 @@ const toolUrlMap = {
   
    // Time Calculators
   "Time Calculator": "time-calculator.html",
-  "Date Calculator V2": "date-calculatorv2.html",
   "Countdown Timer": "countdown-timer.html",
   "World Clock": "world-clock.html",
   
@@ -1136,7 +1135,6 @@ const navbarHTML = `<div class="megamenu-container">
             <h4>⏰ Time Calculators</h4>
             <a href="time-calculator.html">⏰ Time Calculator</a>
             <a href="date-calculator.html">📅 Date Calculator</a>
-            <a href="date-calculatorv2.html">📅 Date Calculator V2</a>
             <a href="countdown-timer.html">⏳ Countdown Timer</a>
             <a href="world-clock.html">🌍 World Clock</a>
           </div>
