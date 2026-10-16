@@ -367,7 +367,6 @@ const toolsDatabase = {
     name: "⏰ Time Calculators",
     tools: [
       "Time Calculator",
-      "Time Difference Calculator",
       "Date Calculator",
       "Date Calculator V2",        // ✅ NAYA
       "Countdown Timer",            // ✅ NAYA
@@ -559,7 +558,6 @@ const toolUrlMap = {
   "Chinese Zodiac Finder": "chinese-zodiac-finder.html",
   
    // Time Calculators
-  "Time Difference Calculator": "time-difference-calculator.html",
   "Time Calculator": "time-calculator.html",
   "Date Calculator V2": "date-calculatorv2.html",
   "Countdown Timer": "countdown-timer.html",
@@ -1137,7 +1135,6 @@ const navbarHTML = `<div class="megamenu-container">
             
             <h4>⏰ Time Calculators</h4>
             <a href="time-calculator.html">⏰ Time Calculator</a>
-            <a href="time-difference-calculator.html">⏰ Time Difference Calculator</a>
             <a href="date-calculator.html">📅 Date Calculator</a>
             <a href="date-calculatorv2.html">📅 Date Calculator V2</a>
             <a href="countdown-timer.html">⏳ Countdown Timer</a>
