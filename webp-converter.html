@@ -1,1363 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>PDF to Web Page | Web Converter | HTML to Text, Base64, Rich Text Converter</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Free web converter tool - Convert PDF to Web Page, HTML to Text, Text to HTML, Rich Text to HTML, Text to Base64, Base64 to Text. How to convert PDF to web page online. 100% free, no registration. Used by 100,000+ developers.">
-    <meta name="keywords" content="convert pdf to web page, how to convert pdf to web page, pdf to html converter, html to text converter, text to html translator, rich text to html, base64 to text decoder, text to html, change html to text, convert text file to html, html converter to text, turn text to html, how to change text color html, text next to image html">
-    <meta name="author" content="Free Online Tools">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://freeonlinetools203.com/web-converter.html">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="PDF to Web Page | Web Converter - HTML, Text, Base64 Converter">
-    <meta property="og:description" content="Convert PDF to Web Page, HTML to Text, Text to HTML, Rich Text to HTML, Base64 encoding and decoding. Free online tool.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://freeonlinetools203.com/web-converter.html">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Web Converter - PDF to Web Page, HTML, Text, Base64">
-    <meta name="twitter:description" content="Convert PDF to web page, HTML to text, text to HTML, base64 encoding. Free tool.">
-    
-    <!-- Google tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EQ8DLY7HYN');
-    </script>
-    
-    <!-- PDF.js for PDF to Web Page -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            min-height: 100vh;
-        }
-
-        body.dark {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-        }
-
-        .navbar {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            width: 100%;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo a {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links li a:hover {
-            border-bottom: 2px solid white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .tool-card {
-            background: white;
-            border-radius: 28px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-            overflow: hidden;
-            margin-bottom: 35px;
-        }
-
-        body.dark .tool-card {
-            background: rgba(15, 25, 45, 0.95);
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            padding: 35px 30px;
-            text-align: center;
-        }
-
-        .card-header h1 {
-            color: white;
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .card-header p {
-            color: rgba(255,255,255,0.95);
-            font-size: 16px;
-        }
-
-        .card-content {
-            padding: 40px;
-        }
-
-        /* Converter Type Selector */
-        .converter-selector {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 30px;
-            justify-content: center;
-        }
-
-        .converter-btn {
-            background: #f1f5f9;
-            border: 2px solid #e2e8f0;
-            padding: 12px 24px;
-            border-radius: 60px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e3a8a;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        body.dark .converter-btn {
-            background: #1e293b;
-            border-color: #334155;
-            color: #a78bfa;
-        }
-
-        .converter-btn.active {
-            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
-            border-color: transparent;
-            color: white;
-        }
-
-        .converter-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .conversion-area {
-            display: none;
-        }
-
-        .conversion-area.active {
-            display: block;
-        }
-
-        .input-label {
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 12px;
-            font-size: 15px;
-            display: block;
-        }
-
-        body.dark .input-label {
-            color: #a78bfa;
-        }
-
-        textarea {
-            width: 100%;
-            padding: 18px;
-            border: 2px solid #e2e8f0;
-            border-radius: 20px;
-            font-size: 14px;
-            font-family: monospace;
-            resize: vertical;
-            transition: all 0.3s;
-            background: #f8fafc;
-            color: #1f2937;
-        }
-
-        body.dark textarea {
-            background: #0f172a;
-            border-color: #334155;
-            color: #cbd5e1;
-        }
-
-        textarea:focus {
-            outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
-        }
-
-        .output-box {
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 18px;
-            min-height: 150px;
-            font-family: monospace;
-            font-size: 14px;
-            word-break: break-all;
-            color: #1f2937;
-        }
-
-        body.dark .output-box {
-            background: #0f172a;
-            border-color: #334155;
-            color: #cbd5e1;
-        }
-
-        .file-upload-area {
-            background: #f8fafc;
-            border: 2px dashed #cbd5e1;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-bottom: 20px;
-        }
-
-        body.dark .file-upload-area {
-            background: #0f172a;
-            border-color: #334155;
-        }
-
-        .file-upload-area:hover {
-            background: #eef2ff;
-            border-color: #2563eb;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-weight: bold;
-            font-size: 1rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37,99,235,0.3);
-        }
-
-        .btn-secondary {
-            background: #f1f5f9;
-            border: 2px solid #e2e8f0;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1e3a8a;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        body.dark .btn-secondary {
-            background: #1e293b;
-            border-color: #334155;
-            color: #a78bfa;
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            background: #e2e8f0;
-        }
-
-        .stats-container {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .stat-card {
-            background: #f8fafc;
-            padding: 15px 20px;
-            border-radius: 20px;
-            text-align: center;
-            flex: 1;
-            border: 1px solid #e2e8f0;
-        }
-
-        body.dark .stat-card {
-            background: #0f172a;
-            border-color: #334155;
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1f2937;
-            padding: 12px 24px;
-            border-radius: 60px;
-            color: white;
-            z-index: 10000;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 14px;
-        }
-
-        .home-link {
-            display: inline-block;
-            background: #64748b;
-            color: white;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .home-link:hover {
-            background: #475569;
-            transform: translateY(-2px);
-        }
-
-        .footer {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #cbd5e1;
-            padding: 60px 20px 35px;
-            margin-top: 50px;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 45px;
-        }
-
-        .footer-col h3, .footer-col h4 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-
-        .footer-col h3::after, .footer-col h4::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            border-radius: 2px;
-        }
-
-        .footer-col a {
-            display: block;
-            color: #94a3b8;
-            text-decoration: none;
-            padding: 6px 0;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-col a:hover {
-            color: #60a5fa;
-            transform: translateX(5px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 35px;
-            margin-top: 45px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.85rem;
-            color: #64748b;
-        }
-
-        @media (max-width: 768px) {
-            .navbar { padding: 12px 20px; }
-            .nav-container { flex-direction: column; text-align: center; }
-            .card-content { padding: 25px 20px; }
-            .converter-btn { padding: 8px 16px; font-size: 12px; }
-            .action-buttons { flex-direction: column; }
-            .btn-primary, .btn-secondary { text-align: center; }
-            .stats-container { flex-direction: column; }
-            .footer-container { text-align: center; }
-            .footer-col h3::after, .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-        }
-    </style>
-    <script src="https://freeonlinetools203.com/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebP Converter - Convert WebP to JPG, PNG Free Online</title>
+<meta name="description" content="Free WebP converter online. Convert WebP images to JPG, PNG, BMP instantly. No signup, no watermark. 100% free and private.">
+<meta name="keywords" content="webp to jpg, webp to png, convert webp, webp converter, webp to jpeg, free webp converter">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freeonlinetools203.com/webp-converter.html">
+<meta property="og:title" content="WebP Converter - Convert WebP to JPG, PNG Free">
+<meta property="og:description" content="Convert WebP images to JPG, PNG instantly. Free, no signup, no watermark.">
+<meta property="og:url" content="https://freeonlinetools203.com/webp-converter.html">
+<meta property="og:type" content="website">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ8DLY7HYN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ8DLY7HYN');
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);min-height:100vh}
+.container{max-width:1100px;margin:40px auto;padding:0 20px}
+.tool-card{background:#fff;border-radius:28px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);overflow:hidden;margin-bottom:35px}
+.card-header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:35px 30px;text-align:center}
+.card-header h1{color:#fff;font-size:2rem;margin-bottom:12px}
+.card-header p{color:rgba(255,255,255,0.95);font-size:1rem}
+.card-content{padding:40px}
+.upload-area{background:#f8fafc;border:2px dashed #cbd5e1;border-radius:20px;padding:50px 30px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px}
+.upload-area:hover{background:#eef2ff;border-color:#2563eb}
+.upload-area.dragover{background:#dbeafe;border-color:#2563eb}
+.upload-icon{font-size:60px;margin-bottom:15px}
+.upload-title{font-weight:700;font-size:1.1rem;color:#1e3a8a;margin-bottom:8px}
+.upload-hint{font-size:0.85rem;color:#6b7280}
+.file-list{margin:20px 0}
+.file-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px 16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.file-item-info{display:flex;align-items:center;gap:12px;flex:1;min-width:200px}
+.file-icon{font-size:1.5rem}
+.file-name{font-weight:600;color:#1e293b;font-size:0.9rem;word-break:break-all}
+.file-size{font-size:0.75rem;color:#64748b}
+.file-status{font-size:0.8rem;font-weight:600;padding:4px 12px;border-radius:20px}
+.status-pending{background:#fef3c7;color:#92400e}
+.status-success{background:#d1fae5;color:#065f46}
+.status-error{background:#fee2e2;color:#991b1b}
+.format-selector{margin:20px 0;padding:20px;background:#f8fafc;border-radius:16px;border:1px solid #e2e8f0}
+.format-selector label{display:block;font-weight:700;color:#1e3a8a;margin-bottom:12px;font-size:0.95rem}
+.format-options{display:flex;gap:12px;flex-wrap:wrap}
+.format-option{padding:10px 24px;border:2px solid #e2e8f0;border-radius:60px;background:#fff;cursor:pointer;font-weight:600;color:#1e3a8a;transition:all 0.2s}
+.format-option:hover{border-color:#2563eb}
+.format-option.active{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);border-color:transparent;color:#fff}
+.action-buttons{display:flex;gap:15px;margin:25px 0;flex-wrap:wrap;justify-content:center}
+.btn-primary{background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);border:none;padding:14px 40px;border-radius:60px;font-weight:700;font-size:1rem;color:#fff;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 12px rgba(37,99,235,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,99,235,0.4)}
+.btn-primary:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+.btn-secondary{background:#f1f5f9;border:2px solid #e2e8f0;padding:14px 32px;border-radius:60px;font-size:0.95rem;font-weight:600;color:#1e3a8a;cursor:pointer;transition:all 0.3s}
+.btn-secondary:hover{background:#e2e8f0;transform:translateY(-2px)}
+.stats{display:flex;gap:20px;justify-content:space-around;flex-wrap:wrap;margin:20px 0;padding:20px;background:#f8fafc;border-radius:16px}
+.stat{text-align:center;flex:1;min-width:120px}
+.stat-number{font-size:1.5rem;font-weight:800;color:#1e3a8a}
+.stat-label{font-size:0.8rem;color:#64748b;margin-top:4px}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;padding:12px 24px;border-radius:60px;color:#fff;z-index:10000;opacity:0;transition:opacity 0.3s;font-size:0.9rem;pointer-events:none}
+.toast.show{opacity:1}
+@media(max-width:768px){.card-header h1{font-size:1.5rem}.card-content{padding:25px 20px}.upload-area{padding:35px 20px}.action-buttons{flex-direction:column}.btn-primary,.btn-secondary{width:100%}}
+</style>
+<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
 
 <div class="container">
-    <div class="tool-card">
-        <div class="card-header">
-            <h1>📄 PDF to Web Page | Web Converter | HTML, Text, Base64 Converter</h1>
-            <p>Convert PDF to Web Page, HTML to Text, Text to HTML, Rich Text to HTML, Base64 Encoder/Decoder - 100% Free</p>
-        </div>
-        <div class="card-content">
-            
-            <!-- Converter Type Selector -->
-            <div class="converter-selector">
-                <button class="converter-btn active" data-converter="pdfToWeb">📄 PDF to Web Page</button>
-                <button class="converter-btn" data-converter="htmlToText">📝 HTML to Text</button>
-                <button class="converter-btn" data-converter="textToHtml">🔧 Text to HTML</button>
-                <button class="converter-btn" data-converter="richTextToHtml">✍️ Rich Text to HTML</button>
-                <button class="converter-btn" data-converter="textToBase64">🔐 Text to Base64</button>
-                <button class="converter-btn" data-converter="base64ToText">🔓 Base64 to Text</button>
-                <button class="converter-btn" data-converter="htmlToBase64">🔄 HTML to Base64</button>
-                <button class="converter-btn" data-converter="htmlToPdf">📑 HTML to PDF</button>
-            </div>
-
-            <!-- PDF to Web Page Converter -->
-            <div id="pdfToWeb" class="conversion-area active">
-                <div class="file-upload-area" id="pdfUploadArea">
-                    <div style="font-size: 48px; margin-bottom: 10px;">📄</div>
-                    <div style="font-weight: bold; margin: 10px 0;">Click to upload PDF file</div>
-                    <div style="font-size: 12px;">Supports .pdf files - Convert to HTML web page</div>
-                    <input type="file" id="pdfFileInput" accept=".pdf" style="display: none;">
-                </div>
-                <div id="pdfUploadStatus" style="font-size: 12px; color: #6b7280; text-align: center; margin-bottom: 15px;"></div>
-                <div class="action-buttons">
-                    <button class="btn-primary" id="convertPdfToHtmlBtn">🌐 Convert to Web Page</button>
-                    <button class="btn-secondary" id="clearPdfBtn">🗑️ Clear</button>
-                </div>
-                <label class="input-label" style="margin-top: 20px;">🌐 HTML Output (Web Page):</label>
-                <div class="output-box" id="pdfToHtmlOutput" style="max-height: 300px; overflow-y: auto;"></div>
-                <div class="action-buttons">
-                    <button class="btn-secondary" id="copyPdfHtmlBtn">📋 Copy HTML</button>
-                    <button class="btn-secondary" id="previewHtmlBtn">👁️ Preview Web Page</button>
-                </div>
-            </div>
-
-            <!-- HTML to Text Converter -->
-            <div id="htmlToText" class="conversion-area">
-                <div class="action-buttons" style="margin-bottom: 20px;">
-                    <button class="btn-primary" id="convertHtmlToTextBtn">🔄 Convert HTML to Text</button>
-                    <button class="btn-secondary" id="clearHtmlToTextBtn">🗑️ Clear</button>
-                </div>
-                <label class="input-label">📝 HTML Input:</label>
-                <textarea id="htmlToTextInput" rows="6" placeholder="<h1>Hello World!</h1><p>This is HTML content.</p>"></textarea>
-                <label class="input-label" style="margin-top: 20px;">📄 Text Output:</label>
-                <div class="output-box" id="htmlToTextOutput"></div>
-            </div>
-
-            <!-- Text to HTML Converter -->
-            <div id="textToHtml" class="conversion-area">
-                <div class="action-buttons" style="margin-bottom: 20px;">
-                    <button class="btn-primary" id="convertTextToHtmlBtn">🔄 Convert Text to HTML</button>
-                    <button class="btn-secondary" id="clearTextToHtmlBtn">🗑️ Clear</button>
-                </div>
-                <label class="input-label">📝 Text Input:</label>
-                <textarea id="textToHtmlInput" rows="6" placeholder="Hello World! This is my text content."></textarea>
-                <label class="input-label" style="margin-top: 20px;">🌐 HTML Output:</label>
-                <div class="output-box" id="textToHtmlOutput"></div>
-            </div>
-
-            <!-- Rich Text to HTML Converter -->
-            <div id="richTextToHtml" class="conversion-area">
-                <div class="action-buttons" style="margin-bottom: 20px;">
-                    <button class="btn-primary" id="convertRichTextToHtmlBtn">🔄 Convert Rich Text to HTML</button>
-                    <button class="btn-secondary" id="clearRichTextBtn">🗑️ Clear</button>
-                </div>
-                <label class="input-label">✍️ Rich Text Input (with formatting):</label>
-                <div id="richTextEditor" contenteditable="true" style="width: 100%; min-height: 150px; border: 2px solid #e2e8f0; border-radius: 20px; padding: 15px; background: #f8fafc; font-family: monospace;" placeholder="Type or paste rich text here...">
-                    <h1>Sample Heading</h1>
-                    <p>This is <strong>bold text</strong> and <em>italic text</em>.</p>
-                    <ul><li>Bullet point 1</li><li>Bullet point 2</li></ul>
-                </div>
-                <label class="input-label" style="margin-top: 20px;">🌐 HTML Output:</label>
-                <div class="output-box" id="richTextToHtmlOutput"></div>
-            </div>
-
-            <!-- Text to Base64 Converter -->
-            <div id="textToBase64" class="conversion-area">
-                <div class="action-buttons" style="margin-bottom: 20px;">
-                    <button class="btn-primary" id="convertTextToBase64Btn">🔄 Convert to Base64</button>
-                    <button class="btn-secondary" id="clearTextToBase64Btn">🗑️ Clear</button>
-                </div>
-                <label class="input-label">📝 Text Input:</label>
-                <textarea id="textToBase64Input" rows="6" placeholder="Enter text to encode to Base64..."></textarea>
-                <label class="input-label" style="margin-top: 20px;">🔐 Base64 Output:</label>
-                <div class="output-box" id="textToBase64Output"></div>
-            </div>
-
-            <!-- Base64 to Text Converter -->
-            <div id="base64ToText" class="conversion-area">
-                <div class="action-buttons" style="margin-bottom: 20px;">
-                    <button class="btn-primary" id="convertBase64ToTextBtn">🔄 Convert to Text</button>
-                    <button class="btn-secondary" id="clearBase64ToTextBtn">🗑️ Clear</button>
-                </div>
-                <label class="input-label">🔐 Base64 Input:</label>
-                <textarea id="base64ToTextInput" rows="6" placeholder="SGVsbG8gV29ybGQh"></textarea>
-                <label class="input-label" style="margin-top: 20px;">📝 Text Output:</label>
-                <div class="output-box" id="base64ToTextOutput"></div>
-            </div>
-
-            <!-- HTML to Base64 Converter -->
-            <div id="htmlToBase64" class="conversion-area">
-                <div class="action-buttons" style="margin-bottom: 20px;">
-                    <button class="btn-primary" id="convertHtmlToBase64Btn">🔄 Convert HTML to Base64</button>
-                    <button class="btn-secondary" id="clearHtmlToBase64Btn">🗑️ Clear</button>
-                </div>
-                <label class="input-label">🌐 HTML Input:</label>
-                <textarea id="htmlToBase64Input" rows="6" placeholder="<h1>Hello World!</h1>"></textarea>
-                <label class="input-label" style="margin-top: 20px;">🔐 Base64 Output:</label>
-                <div class="output-box" id="htmlToBase64Output"></div>
-            </div>
-
-            <!-- HTML to PDF Converter -->
-            <div id="htmlToPdf" class="conversion-area">
-                <label class="input-label">📝 Enter HTML Code:</label>
-                <textarea id="htmlToPdfInput" rows="8" placeholder="<h1>Hello World!</h1><p>This is a sample HTML content that will be converted to PDF.</p>"></textarea>
-                <div class="action-buttons">
-                    <button class="btn-primary" id="convertHtmlToPdfBtn">📄 Convert to PDF</button>
-                    <button class="btn-secondary" id="clearHtmlToPdfBtn">🗑️ Clear</button>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="stats-container">
-                <div class="stat-card">🔄 8+ Conversion Types</div>
-                <div class="stat-card">⚡ Instant Conversion</div>
-                <div class="stat-card">🔒 100% Privacy</div>
-                <div class="stat-card">💯 Free Forever</div>
-            </div>
-        </div>
+  <div class="tool-card">
+    <div class="card-header">
+      <h1>🖼️ Free WebP Converter</h1>
+      <p>Convert WebP to JPG, PNG, BMP instantly — 100% Free, No Signup, No Watermark</p>
     </div>
+    <div class="card-content">
 
-<!-- ========== IMAGE TOOLS CATEGORY FOOTER START ========== -->
-
-<div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
-<style>
-.img-related-section{max-width:1200px;margin:2rem auto;padding:0 1rem}
-.img-btn-home{display:inline-flex;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:10px 24px;border-radius:50px;font-size:1rem;font-weight:600;text-decoration:none;transition:all .2s;margin-bottom:1rem}
-.img-btn-home:hover{background:#2563eb;transform:translateY(-2px)}
-.img-tools-box{background:linear-gradient(135deg,#ecfdf5 0%,#a7f3d0 100%);border-radius:24px;padding:1.8rem;border:1px solid #6ee7b7}
-.img-tools-title{font-size:1.5rem;font-weight:800;color:#064e3b;margin-bottom:0.5rem;border-left:5px solid #059669;padding-left:16px}
-.img-tools-subtitle{font-size:0.9rem;color:#475569;margin-bottom:1.5rem;padding-left:21px}
-.img-tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem}
-.img-tool-card{background:#fff;border-radius:16px;padding:14px 18px;transition:all 0.3s ease;border:1px solid #e2e8f0;box-shadow:0 2px 4px rgba(0,0,0,0.02)}
-.img-tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 20px rgba(0,0,0,0.1);border-color:#6ee7b7}
-.img-tool-card a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#1e293b}
-.img-tool-icon{font-size:1.8rem;min-width:48px;text-align:center}
-.img-tool-info{flex:1}
-.img-tool-name{font-weight:700;font-size:1rem;color:#0f172a;margin-bottom:4px}
-.img-tool-desc{font-size:0.75rem;color:#64748b;line-height:1.3}
-.img-tool-badge{display:inline-block;background:#ecfdf5;color:#065f46;font-size:0.65rem;padding:2px 8px;border-radius:20px;margin-top:6px;font-weight:500}
-.img-pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
-.img-page-btn{background:#fff;border:1px solid #6ee7b7;padding:10px 20px;border-radius:40px;text-decoration:none;color:#064e3b;font-weight:600;font-size:0.9rem;cursor:pointer;transition:all .2s}
-.img-page-btn:hover{background:#059669;color:#fff}
-.img-page-btn:disabled{opacity:0.4;cursor:not-allowed}
-.img-page-number{background:#fff;border:1px solid #6ee7b7;padding:8px 16px;border-radius:40px;color:#064e3b;font-weight:600;cursor:pointer;transition:all .2s;min-width:40px;text-align:center}
-.img-page-number:hover{background:#ecfdf5}
-.img-page-number.active{background:#064e3b;color:#fff;border-color:#064e3b}
-.img-page-info{font-size:0.85rem;color:#475569;margin-top:1rem;text-align:center}
-.img-stats-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:10px}
-.img-total-tools{background:#064e3b;color:#fff;padding:6px 16px;border-radius:40px;font-size:0.85rem;font-weight:600}
-.img-category-filter{display:flex;gap:8px;flex-wrap:wrap}
-.img-filter-chip{background:#fff;border:1px solid #6ee7b7;padding:5px 14px;border-radius:30px;font-size:0.75rem;cursor:pointer;transition:all .2s;color:#064e3b}
-.img-filter-chip:hover,.img-filter-chip.active{background:#059669;color:#fff}
-</style>
-
-<div class="img-related-section">
-  <a href="https://freeonlinetools203.com/index.html" class="img-btn-home">🏠 Back to Home</a>
-  <div class="img-tools-box">
-    <div class="img-tools-title">🖼️ Image Tools</div>
-    <div class="img-tools-subtitle">⚡ Free image tools — resize, compress, convert & more!</div>
-
-    <div class="img-stats-bar">
-      <div class="img-total-tools">🎯 Total 8 Image Tools</div>
-      <div class="img-category-filter">
-        <span class="img-filter-chip active" data-filter="all">🔘 All</span>
-        <span class="img-filter-chip" data-filter="convert">🔄 Convert</span>
-        <span class="img-filter-chip" data-filter="edit">✂️ Edit</span>
-        <span class="img-filter-chip" data-filter="optimize">⚡ Optimize</span>
+      <div class="upload-area" id="uploadArea">
+        <div class="upload-icon">📤</div>
+        <div class="upload-title">Click to upload or drag & drop WebP images</div>
+        <div class="upload-hint">Supports .webp files — Multiple files allowed</div>
+        <input type="file" id="fileInput" accept=".webp,image/webp" multiple style="display:none">
       </div>
-    </div>
 
-    <div id="imgToolsGrid" class="img-tools-grid"></div>
+      <div class="file-list" id="fileList"></div>
 
-    <div class="img-pagination">
-      <button class="img-page-btn" id="imgPrevBtn" onclick="imgChangePage(-1)">◀ Prev</button>
-      <div id="imgPageNumbers"></div>
-      <button class="img-page-btn" id="imgNextBtn" onclick="imgChangePage(1)">Next ▶</button>
+      <div class="format-selector">
+        <label>🎨 Output Format:</label>
+        <div class="format-options">
+          <div class="format-option active" data-format="image/jpeg">JPG</div>
+          <div class="format-option" data-format="image/png">PNG</div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-primary" id="convertBtn" disabled>🔄 Convert Now</button>
+        <button class="btn-secondary" id="downloadAllBtn" style="display:none;">⬇️ Download All</button>
+        <button class="btn-secondary" id="clearBtn">🗑️ Clear</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Free</div></div>
+        <div class="stat"><div class="stat-number">🔒</div><div class="stat-label">Private</div></div>
+        <div class="stat"><div class="stat-number">⚡</div><div class="stat-label">Instant</div></div>
+        <div class="stat"><div class="stat-number">∞</div><div class="stat-label">Unlimited</div></div>
+      </div>
+
     </div>
-    <div class="img-page-info" id="imgPageInfo"></div>
   </div>
 </div>
-</div>
+
+<div class="toast" id="toast">Message</div>
 
 <script>
-const imgToolsList = [
-  { name: "🔄 Image Converter", desc: "Convert images to any format instantly", category: "convert", url: "https://freeonlinetools203.com/image-converter.html" },
-  { name: "🌐 WebP Converter", desc: "Convert images to WebP format for web", category: "convert", url: "https://freeonlinetools203.com/webp-converter.html" },
-  { name: "📄 Image to PDF", desc: "Convert images to PDF documents", category: "convert", url: "https://freeonlinetools203.com/image-to-pdf.html" },
-  { name: "✂️ Image Cropper", desc: "Crop images to any size or shape", category: "edit", url: "https://freeonlinetools203.com/image-cropper.html" },
-  { name: "📐 Image Resizer", desc: "Resize images to exact dimensions", category: "edit", url: "https://freeonlinetools203.com/image-resizer.html" },
-  { name: "🎨 Image Color Extractor", desc: "Extract color palette from any image", category: "edit", url: "https://freeonlinetools203.com/image-color-extractor.html" },
-  { name: "⚡ Image Compressor", desc: "Compress images without losing quality", category: "optimize", url: "https://freeonlinetools203.com/image-compressor.html" },
-  { name: "🔍 Image Upscaler", desc: "Upscale images with AI enhancement", category: "optimize", url: "https://freeonlinetools203.com/image-upscaler.html" }
-];
+(function(){
+  var files = [];
+  var convertedFiles = [];
+  var selectedFormat = 'image/jpeg';
+  var fileIdCounter = 0;
 
-let imgCurrentPage = 1;
-let imgCurrentFilter = "all";
-const imgToolsPerPage = 8;
+  var uploadArea = document.getElementById('uploadArea');
+  var fileInput = document.getElementById('fileInput');
+  var fileList = document.getElementById('fileList');
+  var convertBtn = document.getElementById('convertBtn');
+  var downloadAllBtn = document.getElementById('downloadAllBtn');
+  var clearBtn = document.getElementById('clearBtn');
+  var toast = document.getElementById('toast');
 
-function imgGetFilteredTools() {
-  if (imgCurrentFilter === "all") return imgToolsList;
-  return imgToolsList.filter(tool => tool.category === imgCurrentFilter);
-}
-
-function imgRenderTools() {
-  const filtered = imgGetFilteredTools();
-  const totalPages = Math.ceil(filtered.length / imgToolsPerPage);
-  const start = (imgCurrentPage - 1) * imgToolsPerPage;
-  const end = start + imgToolsPerPage;
-  const pageTools = filtered.slice(start, end);
-
-  const grid = document.getElementById('imgToolsGrid');
-  grid.innerHTML = pageTools.map(tool => `
-    <div class="img-tool-card">
-      <a href="${tool.url}">
-        <div class="img-tool-icon">${tool.name.split(' ')[0]}</div>
-        <div class="img-tool-info">
-          <div class="img-tool-name">${tool.name}</div>
-          <div class="img-tool-desc">${tool.desc}</div>
-          <span class="img-tool-badge">${
-            tool.category === 'convert'  ? '🔄 Convert' :
-            tool.category === 'edit'     ? '✂️ Edit'    : '⚡ Optimize'
-          }</span>
-        </div>
-      </a>
-    </div>
-  `).join('');
-
-  document.getElementById('imgPageInfo').innerHTML = `📄 Page ${imgCurrentPage} of ${totalPages} | 🎯 ${filtered.length} tools | 🔍 Filter: ${imgCurrentFilter === 'all' ? 'All Tools' : imgCurrentFilter}`;
-  imgRenderPageNumbers();
-  imgUpdateButtons();
-}
-
-function imgRenderPageNumbers() {
-  const filtered = imgGetFilteredTools();
-  const totalPages = Math.ceil(filtered.length / imgToolsPerPage);
-  const container = document.getElementById('imgPageNumbers');
-  if (!container) return;
-
-  let html = '';
-  let startPage = Math.max(1, imgCurrentPage - 2);
-  let endPage = Math.min(totalPages, imgCurrentPage + 2);
-
-  if (startPage > 1) {
-    html += `<span class="img-page-number" onclick="imgGoToPage(1)">1</span>`;
-    if (startPage > 2) html += `<span style="padding:0 4px">...</span>`;
-  }
-  for (let i = startPage; i <= endPage; i++) {
-    html += `<span class="img-page-number ${i === imgCurrentPage ? 'active' : ''}" onclick="imgGoToPage(${i})">${i}</span>`;
-  }
-  if (endPage < totalPages) {
-    if (endPage < totalPages - 1) html += `<span style="padding:0 4px">...</span>`;
-    html += `<span class="img-page-number" onclick="imgGoToPage(${totalPages})">${totalPages}</span>`;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 2500);
   }
 
-  container.innerHTML = html;
-}
-
-function imgUpdateButtons() {
-  const filtered = imgGetFilteredTools();
-  const totalPages = Math.ceil(filtered.length / imgToolsPerPage);
-  const prevBtn = document.getElementById('imgPrevBtn');
-  const nextBtn = document.getElementById('imgNextBtn');
-  if (prevBtn) prevBtn.disabled = imgCurrentPage === 1;
-  if (nextBtn) nextBtn.disabled = imgCurrentPage === totalPages;
-}
-
-function imgChangePage(direction) {
-  const filtered = imgGetFilteredTools();
-  const totalPages = Math.ceil(filtered.length / imgToolsPerPage);
-  const newPage = imgCurrentPage + direction;
-  if (newPage >= 1 && newPage <= totalPages) {
-    imgCurrentPage = newPage;
-    imgRenderTools();
+  function formatSize(bytes){
+    if(bytes < 1024) return bytes + ' B';
+    if(bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
+    return (bytes/1048576).toFixed(2) + ' MB';
   }
-}
 
-function imgGoToPage(page) {
-  const filtered = imgGetFilteredTools();
-  const totalPages = Math.ceil(filtered.length / imgToolsPerPage);
-  if (page >= 1 && page <= totalPages) {
-    imgCurrentPage = page;
-    imgRenderTools();
+  function renderFiles(){
+    if(files.length === 0){
+      fileList.innerHTML = '';
+      convertBtn.disabled = true;
+      downloadAllBtn.style.display = 'none';
+      return;
+    }
+    var html = '';
+    files.forEach(function(f){
+      var statusClass = f.status === 'success' ? 'status-success' : f.status === 'error' ? 'status-error' : 'status-pending';
+      var statusText = f.status === 'success' ? '✅ Converted' : f.status === 'error' ? '❌ Error' : '⏳ Ready';
+      html += '<div class="file-item">' +
+        '<div class="file-item-info">' +
+          '<span class="file-icon">🖼️</span>' +
+          '<div>' +
+            '<div class="file-name">' + f.file.name + '</div>' +
+            '<div class="file-size">' + formatSize(f.file.size) + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">' +
+          '<span class="file-status ' + statusClass + '">' + statusText + '</span>' +
+          (f.status === 'success' ? '<button class="btn-secondary" style="padding:6px 16px;font-size:0.8rem;" onclick="window.downloadOne(' + f.id + ')">⬇️ Download</button>' : '') +
+        '</div>' +
+      '</div>';
+    });
+    fileList.innerHTML = html;
+    convertBtn.disabled = files.filter(function(f){ return f.status === 'pending'; }).length === 0;
+    downloadAllBtn.style.display = convertedFiles.length > 0 ? 'inline-block' : 'none';
   }
-}
 
-function imgSetFilter(filter) {
-  imgCurrentFilter = filter;
-  imgCurrentPage = 1;
-  imgRenderTools();
-  document.querySelectorAll('.img-filter-chip').forEach(chip => {
-    chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+  window.downloadOne = function(id){
+    var f = files.find(function(x){ return x.id === id; });
+    if(!f || !f.blob) return;
+    var ext = selectedFormat === 'image/png' ? 'png' : 'jpg';
+    var baseName = f.file.name.replace(/\.webp$/i, '');
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(f.blob);
+    a.download = baseName + '.' + ext;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast('✅ Downloaded ' + a.download);
+  };
+
+  function handleFiles(fileListInput){
+    var added = 0;
+    for(var i = 0; i < fileListInput.length; i++){
+      var f = fileListInput[i];
+      if(!f.type.match(/webp/i) && !f.name.toLowerCase().endsWith('.webp')){
+        showToast('❌ Only WebP files allowed: ' + f.name);
+        continue;
+      }
+      files.push({ id: ++fileIdCounter, file: f, status: 'pending', blob: null });
+      added++;
+    }
+    if(added > 0) showToast('✅ Added ' + added + ' file(s)');
+    renderFiles();
+  }
+
+  uploadArea.addEventListener('click', function(){ fileInput.click(); });
+  fileInput.addEventListener('change', function(e){ handleFiles(e.target.files); fileInput.value = ''; });
+
+  uploadArea.addEventListener('dragover', function(e){ e.preventDefault(); uploadArea.classList.add('dragover'); });
+  uploadArea.addEventListener('dragleave', function(){ uploadArea.classList.remove('dragover'); });
+  uploadArea.addEventListener('drop', function(e){
+    e.preventDefault();
+    uploadArea.classList.remove('dragover');
+    if(e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
   });
-}
 
-// ✅ Sirf ek baar
-document.addEventListener('DOMContentLoaded', () => {
-  imgRenderTools();
-  document.querySelectorAll('.img-filter-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      imgSetFilter(chip.getAttribute('data-filter'));
+  document.querySelectorAll('.format-option').forEach(function(opt){
+    opt.addEventListener('click', function(){
+      document.querySelectorAll('.format-option').forEach(function(o){ o.classList.remove('active'); });
+      opt.classList.add('active');
+      selectedFormat = opt.getAttribute('data-format');
     });
   });
-});
+
+  convertBtn.addEventListener('click', function(){
+    var pending = files.filter(function(f){ return f.status === 'pending'; });
+    if(pending.length === 0){ showToast('No files to convert'); return; }
+    convertBtn.disabled = true;
+    convertBtn.textContent = '⏳ Converting...';
+
+    var done = 0;
+    pending.forEach(function(f){
+      var img = new Image();
+      var url = URL.createObjectURL(f.file);
+      img.onload = function(){
+        var canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        var ctx = canvas.getContext('2d');
+        if(selectedFormat === 'image/jpeg'){
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        ctx.drawImage(img, 0, 0);
+        canvas.toBlob(function(blob){
+          f.blob = blob;
+          f.status = 'success';
+          URL.revokeObjectURL(url);
+          done++;
+          renderFiles();
+          if(done === pending.length){
+            convertBtn.textContent = '🔄 Convert Now';
+            convertBtn.disabled = false;
+            showToast('✅ All files converted!');
+          }
+        }, selectedFormat, 0.92);
+      };
+      img.onerror = function(){
+        f.status = 'error';
+        URL.revokeObjectURL(url);
+        done++;
+        renderFiles();
+        if(done === pending.length){
+          convertBtn.textContent = '🔄 Convert Now';
+          convertBtn.disabled = false;
+        }
+      };
+      img.src = url;
+    });
+  });
+
+  downloadAllBtn.addEventListener('click', function(){
+    var success = files.filter(function(f){ return f.status === 'success' && f.blob; });
+    if(success.length === 0){ showToast('No converted files'); return; }
+    success.forEach(function(f, i){
+      setTimeout(function(){ window.downloadOne(f.id); }, i * 300);
+    });
+    showToast('⬇️ Downloading ' + success.length + ' file(s)...');
+  });
+
+  clearBtn.addEventListener('click', function(){
+    files = [];
+    fileIdCounter = 0;
+    renderFiles();
+    showToast('🗑️ Cleared');
+  });
+
+  renderFiles();
+})();
 </script>
 
-<!-- ========== IMAGE TOOLS CATEGORY FOOTER END ========== -->
-
-    <!-- ========== 2500+ WORDS SEO ARTICLE ========== -->
-    <div class="tool-card" style="margin-top: 35px;">
-        <div class="card-header" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);">
-            <h2 style="color: white; font-size: 28px;">📖 Complete Guide to Web Converter | PDF to Web Page, HTML to Text, Base64</h2>
-            <p style="color: rgba(255,255,255,0.9);">Master the art of converting PDF to web pages, HTML to text, text to HTML, base64 encoding and more</p>
-        </div>
-        <div class="card-content" style="line-height: 1.8; color: #334155;">
-            
-            <p style="color: #6b7280; margin-bottom: 30px;">Last Updated: June 2, 2026 | 20 min read | By Web Development Experts | ⭐ 4.9/5 Rating</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 20px;">
-                <div style="text-align: center;"><strong style="font-size: 24px; color: #1e3a8a;">100K+</strong><br>Monthly Users</div>
-                <div style="text-align: center;"><strong style="font-size: 24px; color: #1e3a8a;">4.9/5</strong><br>User Rating</div>
-                <div style="text-align: center;"><strong style="font-size: 24px; color: #1e3a8a;">8+</strong><br>Converters</div>
-                <div style="text-align: center;"><strong style="font-size: 24px; color: #1e3a8a;">100%</strong><br>Free</div>
-            </div>
-
-            <div class="keyword-cloud" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">convert pdf to web page</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">how to convert pdf to web page</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">html to text converter</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">text to html translator</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">rich text to html</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">base64 to text decoder</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">convert text file to html</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">how to change text color html</span>
-                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 30px; font-size: 13px; color: #1e3a8a;">text next to image html</span>
-            </div>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">🎯 What is a Web Converter Tool?</h2>
-            <p>A <strong>web converter tool</strong> is an all-in-one online utility that allows you to convert between different web formats including <strong>PDF to web pages</strong>, <strong>HTML to text</strong>, <strong>text to HTML</strong>, <strong>rich text to HTML</strong>, and <strong>Base64 encoding/decoding</strong>. Whether you're a web developer, content creator, or just someone who needs to convert documents, our free web converter makes the process instant and effortless.</p>
-            <p>With over 100,000 monthly users, our tool is trusted by developers, designers, and content creators worldwide. All conversions happen locally in your browser - your data never leaves your device, ensuring complete privacy and security.</p>
-
-            <div style="background: #e6f4ff; padding: 20px; border-left: 4px solid #2563eb; border-radius: 12px; margin: 25px 0;">
-                <p><strong>📌 Did You Know?</strong> Over 2.5 trillion PDF files exist online, and millions need to be converted to web pages daily. Our tool helps you convert PDF to web page format instantly, making your content web-ready in seconds!</p>
-            </div>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">📊 How to Convert PDF to Web Page - Step by Step Guide</h2>
-            <p>Converting a PDF document to a fully functional web page (HTML) has never been easier. Follow these simple steps:</p>
-            <ol style="margin-left: 25px; margin-bottom: 20px;">
-                <li><strong>Upload Your PDF:</strong> Click on the upload area and select your PDF file, or simply drag and drop it</li>
-                <li><strong>Process the Document:</strong> Our PDF to HTML converter uses advanced PDF.js technology to extract all content</li>
-                <li><strong>Get HTML Output:</strong> The tool automatically converts your PDF to clean, well-formatted HTML code</li>
-                <li><strong>Copy or Preview:</strong> Copy the HTML code or click "Preview Web Page" to see how it looks in a browser</li>
-                <li><strong>Use on Your Website:</strong> Paste the HTML code into your website or content management system</li>
-            </ol>
-            <p>Our <strong>PDF to web page converter</strong> preserves all text formatting, images, and basic layout structure from your original PDF document.</p>
-
-            <div style="background: #ecfdf5; padding: 20px; border-left: 4px solid #10b981; border-radius: 12px; margin: 20px 0;">
-                <p><strong>💡 Pro Tip:</strong> For best results when converting PDF to web page, ensure your PDF contains selectable text rather than scanned images. Our tool works with both, but text-based PDFs produce cleaner HTML output.</p>
-            </div>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">📝 HTML to Text Converter</h2>
-            <p>The <strong>HTML to text converter</strong> removes all HTML tags and extracts clean, readable plain text from any HTML document. This is perfect for:</p>
-            <ul style="margin-left: 25px; margin-bottom: 20px;">
-                <li><strong>Content Extraction:</strong> Extract the readable content from web pages without any HTML markup</li>
-                <li><strong>Email Preparation:</strong> Convert HTML emails to plain text format for compatibility</li>
-                <li><strong>Database Storage:</strong> Store clean text versions of HTML content in databases</li>
-                <li><strong>SEO Analysis:</strong> Analyze the actual text content of web pages for SEO purposes</li>
-                <li><strong>Text Mining:</strong> Prepare HTML content for text analysis and processing</li>
-            </ul>
-            <p>Our <strong>change html to text converter</strong> intelligently strips all tags while preserving line breaks and basic text structure.</p>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">🔧 Text to HTML Converter</h2>
-            <p>The <strong>text to HTML converter</strong> transforms plain text into properly formatted HTML code. This is essential for:</p>
-            <ul style="margin-left: 25px; margin-bottom: 20px;">
-                <li><strong>Creating Web Content:</strong> Quickly turn plain text documents into web-ready HTML pages</li>
-                <li><strong>Blog Posts:</strong> Convert written drafts into blog post HTML format</li>
-                <li><strong>Documentation:</strong> Turn text documentation into structured HTML documents</li>
-                <li><strong>Email Newsletters:</strong> Create HTML email content from plain text</li>
-            </ul>
-            <p>Our <strong>turn text to html converter</strong> automatically converts line breaks to paragraph tags and preserves text formatting.</p>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">✍️ Rich Text to HTML Converter</h2>
-            <p>The <strong>rich text to HTML converter</strong> allows you to format text visually (bold, italic, lists, headings) and automatically converts it to clean HTML code. This is perfect for:</p>
-            <ul style="margin-left: 25px; margin-bottom: 20px;">
-                <li><strong>WYSIWYG Editing:</strong> Create formatted content visually, get HTML code automatically</li>
-                <li><strong>Content Management:</strong> Easily create formatted content for websites and blogs</li>
-                <li><strong>Email Templates:</strong> Design rich text email content and convert to HTML</li>
-                <li><strong>Document Formatting:</strong> Apply formatting like headings, lists, bold, and italic easily</li>
-            </ul>
-            <p>Our <strong>rich text to html translator</strong> supports all common formatting including headings (H1-H6), bold, italic, underline, bullet lists, numbered lists, and more.</p>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">🔐 Base64 Encoder/Decoder</h2>
-            <p>Base64 encoding is essential for embedding binary data in text format. Our tool provides:</p>
-            <ul style="margin-left: 25px; margin-bottom: 20px;">
-                <li><strong>Text to Base64:</strong> Encode any text string to Base64 format</li>
-                <li><strong>Base64 to Text:</strong> Decode Base64 strings back to readable text</li>
-                <li><strong>HTML to Base64:</strong> Encode entire HTML documents to Base64 for embedding</li>
-                <li><strong>Email Attachments:</strong> Prepare content for email embedding</li>
-                <li><strong>Data URLs:</strong> Create data URLs for images and other binary content</li>
-            </ul>
-            <p>Our <strong>base64 to text decoder</strong> and encoder work with UTF-8 text, ensuring all characters are properly handled.</p>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">📑 HTML to PDF Converter</h2>
-            <p>Convert your HTML code to a downloadable PDF document instantly. Features include:</p>
-            <ul style="margin-left: 25px; margin-bottom: 20px;">
-                <li><strong>High Quality Output:</strong> Professional PDF documents with preserved formatting</li>
-                <li><strong>CSS Support:</strong> All CSS styles are preserved in the PDF output</li>
-                <li><strong>Image Support:</strong> Images embedded in HTML are included in the PDF</li>
-                <li><strong>Responsive Design:</strong> HTML content is automatically formatted for PDF page size</li>
-            </ul>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">✅ Why Choose Our Web Converter Tool?</h2>
-            <ul style="margin-left: 25px; margin-bottom: 20px;">
-                <li><strong>✅ 100% Free:</strong> No registration, no hidden fees, unlimited conversions</li>
-                <li><strong>✅ 8+ Conversion Types:</strong> PDF to Web Page, HTML to Text, Text to HTML, Rich Text to HTML, Text to Base64, Base64 to Text, HTML to Base64, HTML to PDF</li>
-                <li><strong>✅ Privacy First:</strong> All conversions happen locally in your browser - we never upload your files</li>
-                <li><strong>✅ Instant Results:</strong> No waiting, no queues - results appear instantly</li>
-                <li><strong>✅ Mobile Responsive:</strong> Works perfectly on all devices</li>
-                <li><strong>✅ No Installation:</strong> Use directly in your browser, no software to download</li>
-            </ul>
-
-            <h2 style="color: #1e3a8a; font-size: 28px; margin: 30px 0 15px;">❓ Frequently Asked Questions (FAQ)</h2>
-            
-            <div style="background: #f8fafc; border-radius: 20px; padding: 25px; margin: 20px 0;">
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #1e3a8a;">❓ How to convert PDF to web page online?</strong>
-                    <p style="color: #475569; margin-top: 5px;">Simply upload your PDF file, click "Convert to Web Page", and you'll get clean HTML code that can be used on any website. It's that simple!</p>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #1e3a8a;">❓ Is this tool free to use?</strong>
-                    <p style="color: #475569; margin-top: 5px;">Yes, completely free with no registration required. Unlimited conversions for all users.</p>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #1e3a8a;">❓ What is the difference between HTML to text and text to HTML?</strong>
-                    <p style="color: #475569; margin-top: 5px;">HTML to text removes all HTML tags to get clean plain text. Text to HTML converts plain text into HTML code with proper formatting tags.</p>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #1e3a8a;">❓ How to change text color in HTML?</strong>
-                    <p style="color: #475569; margin-top: 5px;">Use the style attribute: &lt;p style="color: red;"&gt;Text&lt;/p&gt; or CSS: .class { color: blue; }. Our tool helps you see how HTML works!</p>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #1e3a8a;">❓ How to put text next to an image in HTML?</strong>
-                    <p style="color: #475569; margin-top: 5px;">Use the &lt;img&gt; tag with the align attribute or CSS float property: &lt;img src="image.jpg" style="float: left;"&gt;Text next to image&lt;/img&gt;</p>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #1e3a8a;">❓ Is my data safe when converting PDF to web page?</strong>
-                    <p style="color: #475569; margin-top: 5px;">Absolutely! All conversions happen locally in your browser. Your PDF files are never uploaded to any server - they stay on your device.</p>
-                </div>
-                <div>
-                    <strong style="color: #1e3a8a;">❓ Can I convert multiple PDF files?</strong>
-                    <p style="color: #475569; margin-top: 5px;">Yes, you can convert PDF files one at a time. There's no limit on the number of conversions you can perform.</p>
-                </div>
-            </div>
-
-            <div class="related-searches" style="background: #f1f5f9; border-radius: 20px; padding: 25px; margin: 30px 0; text-align: center;">
-                <h4 style="color: #1e3a8a; margin-bottom: 15px;">🔍 People Also Search For</h4>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">convert pdf to web page</span>
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">how to convert pdf to web page</span>
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">convert pdf to web page online</span>
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">html to text converter</span>
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">text to html translator</span>
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">rich text to html</span>
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">base64 to text decoder</span>
-                    <span style="background: white; border-radius: 30px; padding: 6px 14px; font-size: 13px; color: #2563eb;">convert text file to html</span>
-                </div>
-            </div>
-
-            <div style="background: #fef9e3; padding: 20px; border-left: 4px solid #f59e0b; border-radius: 12px; margin: 25px 0;">
-                <p><strong>📌 Final Thought:</strong> Whether you need to convert PDF to web page, HTML to text, text to HTML, or work with Base64 encoding, our Web Converter Tool has you covered. Bookmark this page for all your web conversion needs. It's 100% free, fast, and secure. Start converting now!</p>
-            </div>
-
-            <p style="margin-top: 30px; text-align: center; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280;"><strong>Free Online Tools</strong> | Web Converter | PDF to Web Page | HTML to Text | Base64 Converter | 100% Free | No Registration</p>
-        </div>
-    </div>
-</div>
-
-<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
-
-<footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
-    
-    <!-- Animated Gradient Line -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec489a, #3b82f6); background-size: 300% 100%; animation: gradientMove 3s ease infinite;"></div>
-    
-    <style>
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
-        }
-        .footer-link {
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .footer-link:hover {
-            transform: translateX(5px);
-            color: #60a5fa !important;
-        }
-        .social-btn {
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            color: white;
-            font-size: 18px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-        }
-        .social-btn:hover {
-            transform: translateY(-3px) scale(1.1);
-            filter: brightness(1.1);
-        }
-        .footer-col {
-            animation: float 4s ease-in-out infinite;
-        }
-        .footer-col:nth-child(2) { animation-delay: 0.5s; }
-        .footer-col:nth-child(3) { animation-delay: 1s; }
-        .footer-col:nth-child(4) { animation-delay: 1.5s; }
-    </style>
-
-    <div style="max-width: 1100px; margin: 0 auto;">
-        
-        <!-- Footer Grid - 4 Columns -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin-bottom: 25px;">
-            
-            <!-- Column 1: Brand Info with SOCIAL MEDIA BUTTONS -->
-            <div class="footer-col">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                    <span style="font-size: 22px;">✨</span>
-                    <h3 style="color: white; font-size: 1rem; margin: 0;">Free Online Tools 203</h3>
-                </div>
-                <p style="font-size: 0.7rem; line-height: 1.5; color: #94a3b8; margin-bottom: 10px;">100% free online tools for social media, SEO, calculators & fun games.</p>
-                
-                <!-- SOCIAL MEDIA SHARE BUTTONS -->
-                <div>
-                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                        <button onclick="sharePage('facebook')" class="social-btn" style="background: #1877F2; width: 32px; height: 32px; font-size: 15px;">📘</button>
-                        <button onclick="sharePage('twitter')" class="social-btn" style="background: #1DA1F2; width: 32px; height: 32px; font-size: 15px;">🐦</button>
-                        <button onclick="sharePage('whatsapp')" class="social-btn" style="background: #25D366; width: 32px; height: 32px; font-size: 15px;">💬</button>
-                        <button onclick="sharePage('linkedin')" class="social-btn" style="background: #0077B5; width: 32px; height: 32px; font-size: 15px;">🔗</button>
-                        <button onclick="copyPageLink()" class="social-btn" style="background: #6b7280; width: 32px; height: 32px; font-size: 13px;">📋</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Column 2: Quick Links -->
-            <div class="footer-col">
-                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #3b82f6; padding-left: 10px;">📄 Quick Links</h4>
-                <div>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/index.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🏠 Home</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/about.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">ℹ️ About</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/contact.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📧 Contact</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/privacy-policy.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🔒 Privacy</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/terms-conditions.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📜 Terms</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/disclaimer.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚠️ Disclaimer</a></p>
-                </div>
-            </div>
-            
-            <!-- Column 3: Social Media Tools (5 Trending) -->
-            <div class="footer-col">
-                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #8b5cf6; padding-left: 10px;">📱 Social Media</h4>
-                <div>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/instagram-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📸 Instagram Hashtag Generator</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/tiktok-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🎵 TikTok Hashtag Generator</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/facebook-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📘 Facebook Hashtag Generator</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/linkedin-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">💼 LinkedIn Hashtag Generator</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/pinterest-hashtag-generator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📌 Pinterest Hashtag Generator</a></p>
-                </div>
-            </div>
-            
-            <!-- Column 4: Popular Tools (5 Trending) -->
-            <div class="footer-col">
-                <h4 style="color: white; font-size: 0.85rem; margin-bottom: 12px; border-left: 3px solid #f59e0b; padding-left: 10px;">⭐ Trending Tools</h4>
-                <div>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/age-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">📅 Age Calculator</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/keyword-density-checker.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🔍 Keyword Density Checker</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/spin-the-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">🎡 Spin The Wheel</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/yes-no-wheel.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">✅ Yes/No Wheel</a></p>
-                    <p style="margin: 5px 0;"><a href="https://freeonlinetools203.com/bmi-calculator.html" class="footer-link" style="color: #cbd5e1; text-decoration: none; font-size: 0.78rem;">⚖️ BMI Calculator</a></p>
-                </div>
-            </div>
-            
-        </div>
-        
-        <!-- Copyright -->
-        <div style="text-align: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.06);">
-            <p style="font-size: 0.7rem; color: #64748b;">© 2026 <strong style="color: #94a3b8;">Free Online Tools 203</strong>. All rights reserved. | Made with <span style="color: #ec489a;">❤️</span></p>
-        </div>
-    </div>
-</footer>
-
-<script>
-// ========== SHARE FUNCTIONS - CURRENT PAGE LINK ==========
-
-function sharePage(platform) {
-    let url = encodeURIComponent(window.location.href);
-    let title = encodeURIComponent(document.title || "Free Online Tools 203");
-    
-    let shareUrl = "";
-    if (platform === "whatsapp") {
-        shareUrl = "https://wa.me/?text=" + title + "%20" + url;
-    } else if (platform === "facebook") {
-        shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-    } else if (platform === "twitter") {
-        shareUrl = "https://twitter.com/intent/tweet?text=" + title + "&url=" + url;
-    } else if (platform === "linkedin") {
-        shareUrl = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + title;
-    }
-    
-    if (shareUrl) {
-        window.open(shareUrl, "_blank", "width=600,height=500");
-    }
-}
-
-function copyPageLink() {
-    let url = window.location.href;
-    
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(() => {
-            showToast('✅ Link copied! Share with friends.');
-        }).catch(() => {
-            fallbackCopy(url);
-        });
-    } else {
-        fallbackCopy(url);
-    }
-}
-
-function fallbackCopy(text) {
-    let textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-    showToast('✅ Link copied! Share with friends.');
-}
-
-function showToast(message) {
-    let toast = document.createElement('div');
-    toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:8px 18px;border-radius:50px;font-size:13px;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);animation:toastSlide 0.3s ease';
-    toast.textContent = message;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 2500);
-}
-</script>
-
-<!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER END ========== -->
-
-<div id="toastMsg" class="toast">Copied!</div>
-
-<script>
-    function showToast(msg) {
-        const toast = document.getElementById('toastMsg');
-        toast.textContent = msg;
-        toast.style.opacity = '1';
-        setTimeout(() => { toast.style.opacity = '0'; }, 2000);
-    }
-
-    function copyToClipboard(text) {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.style.position = 'fixed';
-        textarea.style.top = '-9999px';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        textarea.setSelectionRange(0, textarea.value.length);
-        
-        try {
-            const successful = document.execCommand('copy');
-            if(successful) return true;
-        } catch(err) {
-            console.log('Copy failed:', err);
-        }
-        
-        try {
-            navigator.clipboard.writeText(text);
-            return true;
-        } catch(err) {
-            return false;
-        } finally {
-            document.body.removeChild(textarea);
-        }
-    }
-
-    // Converter selector
-    document.querySelectorAll('.converter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.converter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const converterId = btn.getAttribute('data-converter');
-            document.querySelectorAll('.conversion-area').forEach(area => area.classList.remove('active'));
-            document.getElementById(converterId).classList.add('active');
-        });
-    });
-
-    // PDF to Web Page Converter
-    let pdfFile = null;
-    const pdfUploadArea = document.getElementById('pdfUploadArea');
-    const pdfFileInput = document.getElementById('pdfFileInput');
-    const pdfUploadStatus = document.getElementById('pdfUploadStatus');
-
-    pdfUploadArea.addEventListener('click', () => pdfFileInput.click());
-    pdfFileInput.addEventListener('change', (e) => {
-        if (e.target.files.length > 0) {
-            pdfFile = e.target.files[0];
-            pdfUploadStatus.innerHTML = `✅ Selected: ${pdfFile.name}`;
-            pdfUploadStatus.style.color = '#10b981';
-        }
-    });
-
-    document.getElementById('convertPdfToHtmlBtn').addEventListener('click', async () => {
-        if (!pdfFile) {
-            showToast('Please select a PDF file first!');
-            return;
-        }
-        
-        showToast('Processing PDF... This may take a few seconds');
-        
-        const fileReader = new FileReader();
-        fileReader.onload = async function() {
-            const typedarray = new Uint8Array(this.result);
-            const pdf = await pdfjsLib.getDocument(typedarray).promise;
-            let htmlContent = '<div style="font-family: Arial, sans-serif; padding: 20px;">';
-            
-            for (let i = 1; i <= pdf.numPages; i++) {
-                const page = await pdf.getPage(i);
-                const textContent = await page.getTextContent();
-                const textItems = textContent.items.map(item => item.str).join(' ');
-                htmlContent += `<div style="margin-bottom: 20px; page-break-after: always;"><h3>Page ${i}</h3><p>${textItems}</p></div>`;
-            }
-            htmlContent += '</div>';
-            
-            document.getElementById('pdfToHtmlOutput').innerHTML = htmlContent;
-            showToast('PDF converted to HTML successfully!');
-        };
-        fileReader.readAsArrayBuffer(pdfFile);
-    });
-    
-    document.getElementById('clearPdfBtn').addEventListener('click', () => {
-        pdfFile = null;
-        pdfFileInput.value = '';
-        pdfUploadStatus.innerHTML = '';
-        document.getElementById('pdfToHtmlOutput').innerHTML = '';
-        showToast('Cleared!');
-    });
-    
-    document.getElementById('copyPdfHtmlBtn').addEventListener('click', () => {
-        const htmlContent = document.getElementById('pdfToHtmlOutput').innerHTML;
-        if (!htmlContent) {
-            showToast('No HTML content to copy!');
-            return;
-        }
-        if (copyToClipboard(htmlContent)) {
-            showToast('HTML copied to clipboard!');
-        }
-    });
-    
-    document.getElementById('previewHtmlBtn').addEventListener('click', () => {
-        const htmlContent = document.getElementById('pdfToHtmlOutput').innerHTML;
-        if (!htmlContent) {
-            showToast('No HTML content to preview!');
-            return;
-        }
-        const previewWindow = window.open();
-        previewWindow.document.write(htmlContent);
-        previewWindow.document.close();
-    });
-
-    // HTML to Text Converter
-    document.getElementById('convertHtmlToTextBtn').addEventListener('click', () => {
-        const html = document.getElementById('htmlToTextInput').value;
-        if (!html.trim()) { showToast('Please enter HTML content first!'); return; }
-        const text = html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-        document.getElementById('htmlToTextOutput').innerHTML = text;
-        showToast('Converted to text!');
-    });
-    
-    document.getElementById('clearHtmlToTextBtn').addEventListener('click', () => {
-        document.getElementById('htmlToTextInput').value = '';
-        document.getElementById('htmlToTextOutput').innerHTML = '';
-        showToast('Cleared!');
-    });
-
-    // Text to HTML Converter
-    document.getElementById('convertTextToHtmlBtn').addEventListener('click', () => {
-        const text = document.getElementById('textToHtmlInput').value;
-        if (!text.trim()) { showToast('Please enter text content first!'); return; }
-        const html = text.split('\n').map(line => `<p>${line}</p>`).join('');
-        document.getElementById('textToHtmlOutput').innerHTML = html;
-        showToast('Converted to HTML!');
-    });
-    
-    document.getElementById('clearTextToHtmlBtn').addEventListener('click', () => {
-        document.getElementById('textToHtmlInput').value = '';
-        document.getElementById('textToHtmlOutput').innerHTML = '';
-        showToast('Cleared!');
-    });
-
-    // Rich Text to HTML Converter
-    document.getElementById('convertRichTextToHtmlBtn').addEventListener('click', () => {
-        const richText = document.getElementById('richTextEditor').innerHTML;
-        document.getElementById('richTextToHtmlOutput').innerHTML = richText;
-        showToast('Converted to HTML!');
-    });
-    
-    document.getElementById('clearRichTextBtn').addEventListener('click', () => {
-        document.getElementById('richTextEditor').innerHTML = '<p>Type or paste rich text here...</p>';
-        document.getElementById('richTextToHtmlOutput').innerHTML = '';
-        showToast('Cleared!');
-    });
-
-    // Text to Base64 Converter
-    document.getElementById('convertTextToBase64Btn').addEventListener('click', () => {
-        const text = document.getElementById('textToBase64Input').value;
-        if (!text.trim()) { showToast('Please enter text first!'); return; }
-        const base64 = btoa(unescape(encodeURIComponent(text)));
-        document.getElementById('textToBase64Output').innerHTML = base64;
-        showToast('Converted to Base64!');
-    });
-    
-    document.getElementById('clearTextToBase64Btn').addEventListener('click', () => {
-        document.getElementById('textToBase64Input').value = '';
-        document.getElementById('textToBase64Output').innerHTML = '';
-        showToast('Cleared!');
-    });
-
-    // Base64 to Text Converter
-    document.getElementById('convertBase64ToTextBtn').addEventListener('click', () => {
-        const base64 = document.getElementById('base64ToTextInput').value;
-        if (!base64.trim()) { showToast('Please enter Base64 string first!'); return; }
-        try {
-            const text = decodeURIComponent(escape(atob(base64)));
-            document.getElementById('base64ToTextOutput').innerHTML = text;
-            showToast('Converted to text!');
-        } catch(e) {
-            showToast('Invalid Base64 string!');
-        }
-    });
-    
-    document.getElementById('clearBase64ToTextBtn').addEventListener('click', () => {
-        document.getElementById('base64ToTextInput').value = '';
-        document.getElementById('base64ToTextOutput').innerHTML = '';
-        showToast('Cleared!');
-    });
-
-    // HTML to Base64 Converter
-    document.getElementById('convertHtmlToBase64Btn').addEventListener('click', () => {
-        const html = document.getElementById('htmlToBase64Input').value;
-        if (!html.trim()) { showToast('Please enter HTML content first!'); return; }
-        const base64 = btoa(unescape(encodeURIComponent(html)));
-        document.getElementById('htmlToBase64Output').innerHTML = base64;
-        showToast('Converted to Base64!');
-    });
-    
-    document.getElementById('clearHtmlToBase64Btn').addEventListener('click', () => {
-        document.getElementById('htmlToBase64Input').value = '';
-        document.getElementById('htmlToBase64Output').innerHTML = '';
-        showToast('Cleared!');
-    });
-
-    // HTML to PDF Converter
-    document.getElementById('convertHtmlToPdfBtn').addEventListener('click', () => {
-        const htmlContent = document.getElementById('htmlToPdfInput').value;
-        if (!htmlContent.trim()) { showToast('Please enter HTML content first!'); return; }
-        
-        const element = document.createElement('div');
-        element.innerHTML = htmlContent;
-        element.style.padding = '20px';
-        element.style.fontFamily = 'Arial, sans-serif';
-        
-        const opt = {
-            margin: [0.5, 0.5, 0.5, 0.5],
-            filename: 'converted-document.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-        };
-        
-        html2pdf().set(opt).from(element).save();
-        showToast('PDF generated successfully!');
-    });
-    
-    document.getElementById('clearHtmlToPdfBtn').addEventListener('click', () => {
-        document.getElementById('htmlToPdfInput').value = '';
-        showToast('Cleared!');
-    });
-</script>
 </body>
 </html>
