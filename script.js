@@ -368,7 +368,6 @@ const toolsDatabase = {
     tools: [
       "Time Calculator",
       "Date Calculator",
-      "Date Calculator V2",        // ✅ NAYA
       "Countdown Timer",            // ✅ NAYA
       "World Clock",                // ✅ NAYA
       "Age Calculator"
