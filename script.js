@@ -1946,3 +1946,149 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 // END: SMART PRODUCT RECOMMENDATION SYSTEM
 // =========================================================================
+// =========================================================================
+// 14. DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS)
+// =========================================================================
+(function() {
+    // Sirf Home Page par chalane ke liye check
+    function isHomePage() {
+        let path = window.location.pathname;
+        return (path === '/' || path.endsWith('index.html') || path === '');
+    }
+
+    if (!isHomePage()) return; // Agar home page nahi hai to ruk jao
+
+    // Thoda wait karein jab tak tools load ho jayein
+    setTimeout(() => {
+        const toolsContainer = document.getElementById('toolsContainer');
+        if (!toolsContainer) return;
+
+        // 1. TOOLS KE CARDS MEIN "RELATED PRODUCTS" TAG ADD KARNA
+        const toolCards = toolsContainer.querySelectorAll('.tool-card');
+        toolCards.forEach(card => {
+            const link = card.querySelector('a');
+            if (link) {
+                // Ek chhota sa tag button banayein
+                const tag = document.createElement('span');
+                tag.innerHTML = '🛒 Products';
+                tag.style.cssText = 'display:inline-block; margin-top:8px; font-size:10px; background:#fef3c7; color:#d97706; padding:2px 8px; border-radius:10px; cursor:pointer; font-weight:bold;';
+                
+                // Click karne par popup (modal) khulega
+                tag.onclick = function(e) {
+                    e.preventDefault(); // Tool open hone se rokein
+                    e.stopPropagation();
+                    showProductPopup(link.innerText);
+                };
+                
+                card.appendChild(tag);
+            }
+        });
+
+        // 2. SIDEBAR (LAPTOP) AUR FLOATING BUTTON (MOBILE) BANANA
+        createSidebar();
+    }, 1000); // 1 second wait karein taake tools render ho jayein
+
+    // Popup dikhane ka function
+    function showProductPopup(toolName) {
+        // Products fetch karein (global variables se)
+        const products = getProductsForTool(toolName);
+        
+        if (products.length === 0) {
+            alert("Is tool ke liye abhi koi product available nahi hai.");
+            return;
+        }
+
+        // Popup design
+        let modalHTML = `
+            <div id="customProductModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:99999; display:flex; justify-content:center; align-items:center; padding:20px;">
+                <div style="background:white; border-radius:15px; padding:20px; max-width:400px; width:100%; position:relative; max-height:80vh; overflow-y:auto;">
+                    <span onclick="document.getElementById('customProductModal').remove()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#333;">&times;</span>
+                    <h3 style="margin-top:0; color:#1e3a8a; font-size:1.2rem;">🛒 Recommended for ${toolName}</h3>
+                    <div style="display:flex; flex-direction:column; gap:15px; margin-top:15px;">
+        `;
+
+        products.forEach(p => {
+            modalHTML += `
+                <div style="display:flex; gap:10px; border-bottom:1px solid #eee; padding-bottom:10px; align-items:center;">
+                    <img src="${p.image}" style="width:60px; height:60px; object-fit:contain; border-radius:8px;">
+                    <div style="flex:1;">
+                        <h4 style="margin:0 0 5px 0; font-size:0.85rem; color:#333;">${p.title}</h4>
+                        <a href="${p.link}" target="_blank" style="display:inline-block; background:#f59e0b; color:white; padding:5px 12px; border-radius:5px; text-decoration:none; font-size:0.75rem; font-weight:bold;">Buy on Amazon</a>
+                    </div>
+                </div>
+            `;
+        });
+
+        modalHTML += `</div></div></div>`;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+
+    // Sidebar aur mobile button banane ka function
+    function createSidebar() {
+        // Desktop Sidebar
+        const sidebar = document.createElement('div');
+        sidebar.id = 'desktopProductSidebar';
+        sidebar.innerHTML = `
+            <div style="position:fixed; right:20px; top:100px; width:250px; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.15); padding:15px; z-index:9000; border:1px solid #e5e7eb; display:none;">
+                <h4 style="margin:0 0 10px 0; color:#881e8a; font-size:1rem; text-align:center;">✨ Top Products</h4>
+                <p style="font-size:0.75rem; color:#666; text-align:center; margin-bottom:10px;">Kisi bhi tool par click karein product dekhne ke liye.</p>
+                <a href="https://amzn.to/47g0tX5" target="_blank">
+                    <img src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" style="width:100%; border-radius:8px;">
+                </a>
+            </div>
+        `;
+        document.body.appendChild(sidebar);
+
+        // Mobile Floating Button
+        const mobileBtn = document.createElement('div');
+        mobileBtn.innerHTML = '🛒';
+        mobileBtn.style.cssText = 'position:fixed; bottom:20px; right:20px; width:50px; height:50px; background:#f59e0b; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:24px; box-shadow:0 4px 15px rgba(245,158,11,0.4); z-index:9000; cursor:pointer;';
+        mobileBtn.onclick = function() {
+            showProductPopup("Popular Tools");
+        };
+        document.body.appendChild(mobileBtn);
+
+        // Screen size ke hisaab se dikhana
+        function checkScreen() {
+            if (window.innerWidth > 1200) {
+                sidebar.querySelector('div').style.display = 'block'; // Laptop par dikhao
+                mobileBtn.style.display = 'none'; // Mobile button chupao
+            } else {
+                sidebar.querySelector('div').style.display = 'none'; // Laptop sidebar chupao
+                mobileBtn.style.display = 'flex'; // Mobile button dikhao
+            }
+        }
+        
+        window.addEventListener('resize', checkScreen);
+        checkScreen();
+    }
+
+    // Tool ke naam se products dhoondne ka function (Aapki purani mapping use karega)
+    function getProductsForTool(toolName) {
+        // Yahan hum purane system se categories nikalenge
+        if (typeof toolsDatabase === 'undefined') return [];
+        
+        let foundCategory = "";
+        // toolsDatabase se dhoondein ke tool kis category mein hai
+        for (const [key, cat] of Object.entries(toolsDatabase)) {
+            if (cat.tools.includes(toolName)) {
+                foundCategory = key.replace('cat', '').toLowerCase(); // e.g., catHealth -> health
+                break;
+            }
+        }
+        
+        // Yahan hum purane PRODUCTS array ko access karenge
+        // (Kyunki PRODUCTS Section 13 ke andar hai, hum ek hack use karenge)
+        const allProducts = window.PRODUCTS_DB || []; 
+        
+        if (!foundCategory || allProducts.length === 0) return [];
+
+        // Simple matching (jo categories match kare)
+        return allProducts.filter(p => 
+            p.categories.some(c => foundCategory.includes(c) || c.includes(foundCategory))
+        ).slice(0, 3); // Max 3 products show karein
+    }
+})();
+// =========================================================================
+// END: DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS)
+// =========================================================================
