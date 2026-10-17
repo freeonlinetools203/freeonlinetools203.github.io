@@ -1619,7 +1619,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     // PRODUCTS DATABASE - All ASINs Updated ✅
     // ============================================================
-    const PRODUCTS = [
+    var PRODUCTS = [
         {
             id: "dinosaur-jokes",
             title: "DINOSAUR JOKES FOR KIDS",
