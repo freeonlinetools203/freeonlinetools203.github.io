@@ -1611,3 +1611,345 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 // END: GLOBAL "VIEW ALL TOOLS" BUTTON
 // =========================================================================
+// =========================================================================
+// 13. SMART PRODUCT RECOMMENDATION SYSTEM (AUTO INJECT BELOW CALCULATE)
+// =========================================================================
+(function() {
+    
+    // 1. PRODUCTS DATABASE
+    var PRODUCTS = [
+        { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["animal", "pet", "farm", "fun", "kids"] },
+        { id: "knock-knock-jokes", title: "KNOCK-KNOCK JOKES FOR KIDS", subtitle: "Hours of Silly Laughter!", image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "decision", "kids"] },
+        { id: "50-funny-jokes", title: "50 FUNNY JOKES FOR KIDS", subtitle: "Clean & Kid-Friendly Laughs!", image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["age", "family", "health", "birthday", "kids"] },
+        { id: "space-jokes", title: "SPACE JOKES FOR KIDS", subtitle: "Out-of-this-World Puns!", image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["lucky", "random", "zodiac", "astrology", "kids"] },
+        { id: "leapfrog-100-words", title: "LeapFrog Learning Friends 100 Words Book", subtitle: "Interactive Learning Toy!", image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg", link: "https://amzn.to/4yN6zRr", buttonText: "🛒 Buy on Amazon", categories: ["kids", "toy", "education", "fun", "family"] },
+        { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://amzn.to/47g0tX5", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] }
+    ];
+
+    window.PRODUCTS_DB = PRODUCTS; 
+
+    // 2. PAGE-TO-CATEGORY MAPPING (Har page ka category set)
+    const PAGE_CATEGORY_MAP = {
+        "age-calculator": ["age", "family"],
+        "chronological-age-calculator": ["age", "family"],
+        "birth-year-calculator": ["age", "birthday"],
+        "what-year-was-i-born": ["age", "birthday"],
+        "birthday-countdown": ["birthday", "family"],
+        "spin-the-wheel": ["fun", "wheel", "game"],
+        "yes-no-wheel": ["fun", "wheel", "decision"],
+        "decision-wheel": ["fun", "wheel", "decision"],
+        "prize-wheel": ["fun", "wheel"],
+        "truth-or-dare-generator": ["fun", "game"],
+        "food-picker-wheel": ["fun", "wheel"],
+        "dog-age-calculator": ["animal", "pet"],
+        "cat-pregnancy-calculator": ["animal", "pet"],
+        "horse-pregnancy-calculator": ["animal", "farm"],
+        "cow-pregnancy-calculator": ["animal", "farm"],
+        "random-animal-wheel": ["animal", "fun"],
+        "best-lottery-number-generator": ["lucky", "random"],
+        "random-number-generator": ["lucky", "random"],
+        "daily-lucky-number-wheel": ["lucky", "random"],
+        "bmi-calculator": ["health"],
+        "calorie-calculator": ["health"],
+        "zodiac-sign-finder": ["zodiac", "astrology"],
+        "chinese-zodiac-finder": ["zodiac", "astrology"]
+    };
+
+    // 3. GET CURRENT PAGE KEY
+    function getCurrentPageKey() {
+        let path = window.location.pathname;
+        let filename = path.split('/').pop();
+        if (!filename || filename === '' || filename === 'index.html') {
+            return 'home';
+        }
+        return filename.replace('.html', '');
+    }
+
+    // 4. FIND RELEVANT PRODUCTS (STRICT LOGIC)
+    function getRelevantProducts() {
+        const pageKey = getCurrentPageKey();
+        if (pageKey === 'home') return PRODUCTS;
+        
+        const categories = PAGE_CATEGORY_MAP[pageKey];
+        if (!categories) return [];
+        
+        return PRODUCTS.filter(product => 
+            product.categories.some(cat => categories.includes(cat))
+        );
+    }
+
+    // 5. CALCULATE BUTTON KE NICHE PRODUCT INJECT KARNE KA FUNCTION
+    function injectProductBelowCalculateButton() {
+        const products = getRelevantProducts();
+        if (products.length === 0 || getCurrentPageKey() === 'home') return;
+        
+        if (document.getElementById('inline-tool-product')) return;
+
+        const product = products[0];
+        
+        const productHTML = `
+            <div id="inline-tool-product" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 15px 20px; margin: 20px auto; max-width: 800px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="${product.image}" loading="lazy" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; background: white; padding: 4px;">
+                    <div>
+                        <h4 style="margin: 0 0 4px 0; color: #1e3a8a; font-size: 0.9rem;">${product.title}</h4>
+                        <p style="margin: 0; color: #6b7280; font-size: 0.75rem;">${product.subtitle}</p>
+                    </div>
+                </div>
+                <a href="${product.link}" target="_blank" rel="noopener" style="background: #f59e0b; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.8rem; font-weight: bold; white-space: nowrap;">${product.buttonText}</a>
+            </div>
+        `;
+
+        let resultContainer = document.getElementById('result') || document.getElementById('result-container') || document.getElementById('age-result');
+
+        if (!resultContainer) {
+            const allDivs = document.querySelectorAll('div');
+            for (let div of allDivs) {
+                if (div.innerText.includes('LIVE AGE UPDATES') || div.innerText.includes('YEARS')) {
+                    resultContainer = div.closest('.result-box') || div.parentElement.parentElement; 
+                    break;
+                }
+            }
+        }
+
+        if (resultContainer) {
+            resultContainer.insertAdjacentHTML('afterend', productHTML);
+        } else {
+            let calcBtn = document.getElementById('calculateBtn') || document.getElementById('calculate-button');
+            if (!calcBtn) {
+                const allButtons = document.querySelectorAll('button');
+                for (let btn of allButtons) {
+                    const btnText = btn.innerText.toLowerCase();
+                    if (btnText.includes('calculate') || btnText.includes('generate')) {
+                        calcBtn = btn;
+                        break;
+                    }
+                }
+            }
+            if (calcBtn) {
+                calcBtn.insertAdjacentHTML('afterend', productHTML);
+            }
+        }
+    }
+
+    // 6. RENDER BOTTOM SECTION (Page ke neeche wala product)
+    function renderProductSection() {
+        const products = getRelevantProducts();
+        if (products.length === 0) return;
+        
+        const pageKey = getCurrentPageKey();
+        const isHome = pageKey === 'home';
+        
+        let sectionTitle = isHome ? "📚 Recommended Books for Kids" : "📚 Recommended for You";
+        
+        const section = document.createElement('section');
+        section.className = 'smart-product-section';
+        section.innerHTML = `
+            <div style="max-width: 1100px; margin: 40px auto; padding: 0 20px; text-align: center;">
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 24px; padding: 35px 30px; border: 1px solid #bae6fd;">
+                    <span style="display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 12px;">${isHome ? '📚 RECOMMENDED' : '💡 YOU MAY LIKE'}</span>
+                    <h3 style="color: #1e3a8a; font-size: 1.6rem; font-weight: 800; margin: 8px 0;">${sectionTitle}</h3>
+                    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                        ${products.map(p => `
+                            <div style="background: white; border-radius: 18px; padding: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); max-width: 220px; width: 100%;">
+                                <img src="${p.image}" loading="lazy" style="width: 100%; max-height: 150px; object-fit: contain; border-radius: 12px; margin-bottom: 12px;">
+                                <h4 style="color: #1e3a8a; font-size: 0.9rem; margin: 0 0 8px;">${p.title}</h4>
+                                <a href="${p.link}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.8rem;">${p.buttonText}</a>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <p style="font-size: 0.7rem; color: #9ca3af; margin-top: 20px;">As an Amazon Associate, I earn from qualifying purchases.</p>
+                </div>
+            </div>
+        `;
+        
+        const footer = document.querySelector('footer');
+        if (footer) footer.parentNode.insertBefore(section, footer);
+        else document.body.appendChild(section);
+    }
+
+    // 7. INITIALIZE
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            injectProductBelowCalculateButton();
+            renderProductSection();
+        });
+    } else {
+        injectProductBelowCalculateButton();
+        renderProductSection();
+    }
+    
+})();
+
+
+// =========================================================================
+// 14. DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS) - STRICT VERSION
+// =========================================================================
+(function() {
+    function isHomePage() {
+        let path = window.location.pathname;
+        return (path === '/' || path.endsWith('index.html') || path === '');
+    }
+
+    if (!isHomePage()) return; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const toolsContainer = document.getElementById('toolsContainer');
+        if (!toolsContainer) return;
+
+        // 1. TOOLS KE CARDS MEIN "RELATED PRODUCTS" TAG ADD KARNA
+        setTimeout(() => {
+            const toolCards = toolsContainer.querySelectorAll('.tool-card');
+            toolCards.forEach(card => {
+                const link = card.querySelector('a');
+                if (link) {
+                    let pageKey = link.innerText.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+                    
+                    // Check karein ke is tool ke liye product available hai ya nahi
+                    let hasProduct = false;
+                    if (typeof PAGE_CATEGORY_MAP !== 'undefined' && PAGE_CATEGORY_MAP[pageKey]) {
+                        hasProduct = true;
+                    }
+
+                    // Sirf usi tool par tag lagao jiske products available hain
+                    if (hasProduct) {
+                        const tag = document.createElement('span');
+                        tag.innerHTML = '🛒 Products';
+                        tag.style.cssText = 'display:inline-block; margin-top:8px; font-size:10px; background:#fef3c7; color:#d97706; padding:2px 8px; border-radius:10px; cursor:pointer; font-weight:bold; z-index:10; position:relative;';
+                        
+                        tag.onclick = function(e) {
+                            e.preventDefault(); 
+                            e.stopPropagation();
+                            showProductPopup(link.innerText);
+                        };
+                        card.appendChild(tag);
+                    }
+                }
+            });
+        }, 500);
+
+        // 2. SIDEBAR (LAPTOP) AUR FLOATING BUTTON (MOBILE)
+        createSidebar();
+    });
+
+    // ============================================================
+    // POPUP DIKHANE KA FUNCTION (STRICT)
+    // ============================================================
+    function showProductPopup(toolName) {
+        let matchedProducts = [];
+        let pageKey = toolName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        
+        // Strict Matching
+        if (typeof PAGE_CATEGORY_MAP !== 'undefined' && PAGE_CATEGORY_MAP[pageKey]) {
+            const categories = PAGE_CATEGORY_MAP[pageKey];
+            const allProducts = window.PRODUCTS_DB || [];
+            
+            categories.forEach(cat => {
+                allProducts.forEach(p => {
+                    if (p.categories.includes(cat) && !matchedProducts.some(mp => mp.id === p.id)) {
+                        matchedProducts.push(p);
+                    }
+                });
+            });
+        }
+
+        // Agar product nahi mila (matlab tag galti se lag gaya), to popup mat kholo
+        if (matchedProducts.length === 0) {
+            return;
+        }
+
+        const existingModal = document.getElementById('customProductModal');
+        if(existingModal) existingModal.remove();
+
+        let modalHTML = `
+            <div id="customProductModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:99999; display:flex; justify-content:center; align-items:center; padding:20px;">
+                <div style="background:white; border-radius:15px; padding:20px; max-width:400px; width:100%; position:relative; max-height:80vh; overflow-y:auto; animation: fadeIn 0.3s ease;">
+                    <style>@keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }</style>
+                    <span onclick="document.getElementById('customProductModal').remove()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#333;">&times;</span>
+                    <h3 style="margin-top:0; color:#1e3a8a; font-size:1.2rem;">🛒 Recommended for ${toolName}</h3>
+                    <div style="display:flex; flex-direction:column; gap:15px; margin-top:15px;">
+        `;
+
+        matchedProducts.forEach(p => {
+            modalHTML += `
+                <div style="display:flex; gap:10px; border-bottom:1px solid #eee; padding-bottom:10px; align-items:center;">
+                    <img src="${p.image}" loading="lazy" style="width:60px; height:60px; object-fit:contain; border-radius:8px;">
+                    <div style="flex:1;">
+                        <h4 style="margin:0 0 5px 0; font-size:0.85rem; color:#333;">${p.title}</h4>
+                        <a href="${p.link}" target="_blank" style="display:inline-block; background:#f59e0b; color:white; padding:5px 12px; border-radius:5px; text-decoration:none; font-size:0.75rem; font-weight:bold;">Buy on Amazon</a>
+                    </div>
+                </div>
+            `;
+        });
+
+        modalHTML += `</div></div></div>`;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+
+    // ============================================================
+    // SIDEBAR & MOBILE BUTTON FUNCTION
+    // ============================================================
+    function createSidebar() {
+        const sidebar = document.createElement('div');
+        sidebar.id = 'desktopProductSidebar';
+        sidebar.innerHTML = `
+            <div id="sidebar-inner-box" style="position:fixed; right:15px; top:120px; width:170px; background:white; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); padding:10px; z-index:9000; border:1px solid #e5e7eb; display:none;">
+                <h4 style="margin:0 0 5px 0; color:#881e8a; font-size:0.85rem; text-align:center;">✨ Top Products</h4>
+                <p style="font-size:0.65rem; color:#666; text-align:center; margin-bottom:8px; line-height: 1.2;">Kisi bhi tool par click karein product dekhne ke liye.</p>
+                <a id="sidebar-dynamic-link" href="#" target="_blank">
+                    <img id="sidebar-dynamic-img" src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" loading="lazy" style="width:100%; border-radius:6px; display:block;">
+                </a>
+            </div>
+        `;
+        document.body.appendChild(sidebar);
+
+        let currentProductIndex = 0;
+        
+        function rotateSidebarProduct() {
+            if (typeof window.PRODUCTS_DB !== 'undefined' && window.PRODUCTS_DB.length > 0) {
+                currentProductIndex = (currentProductIndex + 1) % window.PRODUCTS_DB.length;
+                const newProduct = window.PRODUCTS_DB[currentProductIndex];
+                
+                const imgElement = document.getElementById('sidebar-dynamic-img');
+                const linkElement = document.getElementById('sidebar-dynamic-link');
+                
+                if (imgElement && linkElement) {
+                    imgElement.src = newProduct.image;
+                    linkElement.href = newProduct.link;
+                    imgElement.alt = newProduct.title;
+
+                    imgElement.onerror = function() {
+                        setTimeout(rotateSidebarProduct, 1000); 
+                    };
+                }
+            }
+        }
+
+        setTimeout(rotateSidebarProduct, 500);
+        setInterval(rotateSidebarProduct, 10000); 
+
+        const mobileBtn = document.createElement('div');
+        mobileBtn.innerHTML = '🛒';
+        mobileBtn.style.cssText = 'position:fixed; bottom:20px; right:20px; width:45px; height:45px; background:#f59e0b; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:20px; box-shadow:0 4px 15px rgba(245,158,11,0.4); z-index:9000; cursor:pointer;';
+        mobileBtn.onclick = function() {
+            showProductPopup("Popular Tools");
+        };
+        document.body.appendChild(mobileBtn);
+
+        function checkScreen() {
+            if (window.innerWidth > 1200) {
+                document.getElementById('sidebar-inner-box').style.display = 'block'; 
+                mobileBtn.style.display = 'none'; 
+            } else {
+                document.getElementById('sidebar-inner-box').style.display = 'none'; 
+                mobileBtn.style.display = 'flex'; 
+            }
+        }
+        
+        window.addEventListener('resize', checkScreen);
+        checkScreen();
+    }
+})();
+// =========================================================================
+// END: DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS) - STRICT VERSION
+// =========================================================================
