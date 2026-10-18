@@ -1882,14 +1882,18 @@ document.addEventListener('DOMContentLoaded', function() {
         createSidebar();
     });
 
-    // Popup dikhane ka function (STRICT CATEGORY MATCH)
+    // ============================================================
+    // POPUP DIKHANE KA FUNCTION (SMART KEYWORD MATCHING)
+    // ============================================================
     function showProductPopup(toolName) {
-        let pageKey = toolName.toLowerCase().replace(/\s+/g, '-');
         let matchedProducts = [];
         
+        // 1. Tool Name se URL banao (e.g. "Age Calculator" -> "age-calculator")
+        let pageKey = toolName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        
+        // 2. Check karo agar PAGE_CATEGORY_MAP mein direct match hai
         if (typeof PAGE_CATEGORY_MAP !== 'undefined' && PAGE_CATEGORY_MAP[pageKey]) {
             const categories = PAGE_CATEGORY_MAP[pageKey];
-            
             categories.forEach(cat => {
                 if (typeof CATEGORY_PRODUCTS !== 'undefined' && CATEGORY_PRODUCTS[cat]) {
                     const ids = CATEGORY_PRODUCTS[cat];
@@ -1903,10 +1907,34 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
+        // 3. Agar direct match nahi mila (spelling issue), to Keyword matching karo
         if (matchedProducts.length === 0) {
-            matchedProducts = [PRODUCTS[5]]; // Taco vs Burrito default
+            let keywordToMatch = "";
+            if (pageKey.includes('age') || pageKey.includes('birth')) keywordToMatch = "age";
+            else if (pageKey.includes('dog') || pageKey.includes('cat') || pageKey.includes('animal') || pageKey.includes('pet')) keywordToMatch = "animal";
+            else if (pageKey.includes('wheel') || pageKey.includes('spin') || pageKey.includes('game') || pageKey.includes('fun')) keywordToMatch = "fun";
+            else if (pageKey.includes('lottery') || pageKey.includes('random') || pageKey.includes('lucky')) keywordToMatch = "lucky";
+            else if (pageKey.includes('bmi') || pageKey.includes('calorie') || pageKey.includes('health')) keywordToMatch = "health";
+            else if (pageKey.includes('zodiac') || pageKey.includes('astrology')) keywordToMatch = "zodiac";
+            else if (pageKey.includes('pdf') || pageKey.includes('image') || pageKey.includes('color')) keywordToMatch = "education";
+
+            if (keywordToMatch && typeof CATEGORY_PRODUCTS !== 'undefined' && CATEGORY_PRODUCTS[keywordToMatch]) {
+                const ids = CATEGORY_PRODUCTS[keywordToMatch];
+                ids.forEach(id => {
+                    const p = PRODUCTS.find(prod => prod.id === id);
+                    if (p && !matchedProducts.some(mp => mp.id === p.id)) {
+                        matchedProducts.push(p);
+                    }
+                });
+            }
         }
 
+        // 4. Agar phir bhi kuch nahi mila, to Default product (Taco) dikhao
+        if (matchedProducts.length === 0 && typeof PRODUCTS !== 'undefined' && PRODUCTS.length > 0) {
+            matchedProducts = [PRODUCTS[5]]; // Taco vs Burrito
+        }
+
+        // Popup HTML Create karein
         const existingModal = document.getElementById('customProductModal');
         if(existingModal) existingModal.remove();
 
@@ -1935,9 +1963,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    // Sidebar aur mobile button banane ka function (RANDOM ROTATION ADDED)
+    // ============================================================
+    // SIDEBAR & MOBILE BUTTON FUNCTION (WITH ERROR HANDLING)
+    // ============================================================
     function createSidebar() {
-        // Desktop Sidebar (CHOTA SIZE)
         const sidebar = document.createElement('div');
         sidebar.id = 'desktopProductSidebar';
         sidebar.innerHTML = `
@@ -1945,19 +1974,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h4 style="margin:0 0 5px 0; color:#881e8a; font-size:0.85rem; text-align:center;">✨ Top Products</h4>
                 <p style="font-size:0.65rem; color:#666; text-align:center; margin-bottom:8px; line-height: 1.2;">Kisi bhi tool par click karein product dekhne ke liye.</p>
                 <a id="sidebar-dynamic-link" href="#" target="_blank">
-                    <img id="sidebar-dynamic-img" src="" loading="lazy" style="width:100%; border-radius:6px;">
+                    <img id="sidebar-dynamic-img" src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" loading="lazy" style="width:100%; border-radius:6px; display:block;">
                 </a>
             </div>
         `;
         document.body.appendChild(sidebar);
 
-        // --- NAYA LOGIC: RANDOM PRODUCT CHANGE KARNE KE LIYE ---
         let currentProductIndex = 0;
         
         function rotateSidebarProduct() {
-            // Check karein ki PRODUCTS available hain ya nahi
             if (typeof PRODUCTS !== 'undefined' && PRODUCTS.length > 0) {
-                // Ek naya product uthao (agar list khatam ho jaye to wapis 0 se shuru karo)
                 currentProductIndex = (currentProductIndex + 1) % PRODUCTS.length;
                 const newProduct = PRODUCTS[currentProductIndex];
                 
@@ -1968,18 +1994,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     imgElement.src = newProduct.image;
                     linkElement.href = newProduct.link;
                     imgElement.alt = newProduct.title;
+
+                    // Error Handling: Agar image load na ho to agla product try karo
+                    imgElement.onerror = function() {
+                        setTimeout(rotateSidebarProduct, 1000); 
+                    };
                 }
             }
         }
 
-        // Shuru mein pehla product set karein
-        setTimeout(rotateSidebarProduct, 100);
-        
-        // Har 10 second (10000 ms) baad product automatically badle
+        setTimeout(rotateSidebarProduct, 500);
         setInterval(rotateSidebarProduct, 10000); 
-        // --------------------------------------------------------
 
-        // Mobile Floating Button
         const mobileBtn = document.createElement('div');
         mobileBtn.innerHTML = '🛒';
         mobileBtn.style.cssText = 'position:fixed; bottom:20px; right:20px; width:45px; height:45px; background:#f59e0b; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:20px; box-shadow:0 4px 15px rgba(245,158,11,0.4); z-index:9000; cursor:pointer;';
