@@ -1721,7 +1721,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return matchedProducts; 
     }
 
-    // ============================================================
+        // ============================================================
     // 6. CALCULATE BUTTON KE NICHE PRODUCT INJECT KARNE KA FUNCTION
     // ============================================================
     function injectProductBelowCalculateButton() {
@@ -1745,24 +1745,46 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        let calcBtn = document.getElementById('calculateBtn') || document.getElementById('calculate-button');
-        
-        if (!calcBtn) {
-            const allButtons = document.querySelectorAll('button');
-            for (let btn of allButtons) {
-                const btnText = btn.innerText.toLowerCase();
-                if (btnText.includes('calculate') || btnText.includes('generate') || btnText.includes('submit') || btnText.includes('find') || btnText.includes('convert')) {
-                    calcBtn = btn;
+        // 1. Result Container dhoondein (Jahan years, months, days dikhte hain)
+        // Aam taur par iska ID 'result' ya 'result-container' hota hai. 
+        // Agar ID nahi hai to hum us div ko dhoondenge jisme "YEARS" ya "LIVE AGE UPDATES" likha hai.
+        let resultContainer = document.getElementById('result') || 
+                              document.getElementById('result-container') || 
+                              document.getElementById('age-result');
+
+        if (!resultContainer) {
+            // Agar ID se nahi mila, to text ke zariye dhoondein
+            const allDivs = document.querySelectorAll('div');
+            for (let div of allDivs) {
+                if (div.innerText.includes('LIVE AGE UPDATES') || div.innerText.includes('YEARS')) {
+                    // Humne sabse andar wala container dhoond liya, ab humein uske parent (bahar wale box) par jana hai
+                    resultContainer = div.closest('.result-box') || div.parentElement.parentElement; 
                     break;
                 }
             }
         }
 
-        if (calcBtn) {
-            calcBtn.insertAdjacentHTML('afterend', productHTML);
+        // 2. Agar Result Container mil gaya, to uske theek BAAD product insert karein
+        if (resultContainer) {
+            resultContainer.insertAdjacentHTML('afterend', productHTML);
+        } else {
+            // 3. Agar Result Container phir bhi na mile (safety ke liye), to Calculate button ke baad daal dein
+            let calcBtn = document.getElementById('calculateBtn') || document.getElementById('calculate-button');
+            if (!calcBtn) {
+                const allButtons = document.querySelectorAll('button');
+                for (let btn of allButtons) {
+                    const btnText = btn.innerText.toLowerCase();
+                    if (btnText.includes('calculate') || btnText.includes('generate')) {
+                        calcBtn = btn;
+                        break;
+                    }
+                }
+            }
+            if (calcBtn) {
+                calcBtn.insertAdjacentHTML('afterend', productHTML);
+            }
         }
     }
-
     // ============================================================
     // 7. RENDER BOTTOM SECTION (Page ke neeche wala product)
     // ============================================================
