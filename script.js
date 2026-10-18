@@ -1913,21 +1913,49 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    // Sidebar aur mobile button banane ka function (UPDATED SIZE)
+    // Sidebar aur mobile button banane ka function (RANDOM ROTATION ADDED)
     function createSidebar() {
         // Desktop Sidebar (CHOTA SIZE)
         const sidebar = document.createElement('div');
         sidebar.id = 'desktopProductSidebar';
         sidebar.innerHTML = `
-            <div style="position:fixed; right:15px; top:120px; width:170px; background:white; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); padding:10px; z-index:9000; border:1px solid #e5e7eb; display:none;">
+            <div id="sidebar-inner-box" style="position:fixed; right:15px; top:120px; width:170px; background:white; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); padding:10px; z-index:9000; border:1px solid #e5e7eb; display:none;">
                 <h4 style="margin:0 0 5px 0; color:#881e8a; font-size:0.85rem; text-align:center;">✨ Top Products</h4>
                 <p style="font-size:0.65rem; color:#666; text-align:center; margin-bottom:8px; line-height: 1.2;">Kisi bhi tool par click karein product dekhne ke liye.</p>
-                <a href="https://amzn.to/47g0tX5" target="_blank">
-                    <img src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" loading="lazy" style="width:100%; border-radius:6px;">
+                <a id="sidebar-dynamic-link" href="#" target="_blank">
+                    <img id="sidebar-dynamic-img" src="" loading="lazy" style="width:100%; border-radius:6px;">
                 </a>
             </div>
         `;
         document.body.appendChild(sidebar);
+
+        // --- NAYA LOGIC: RANDOM PRODUCT CHANGE KARNE KE LIYE ---
+        let currentProductIndex = 0;
+        
+        function rotateSidebarProduct() {
+            // Check karein ki PRODUCTS available hain ya nahi
+            if (typeof PRODUCTS !== 'undefined' && PRODUCTS.length > 0) {
+                // Ek naya product uthao (agar list khatam ho jaye to wapis 0 se shuru karo)
+                currentProductIndex = (currentProductIndex + 1) % PRODUCTS.length;
+                const newProduct = PRODUCTS[currentProductIndex];
+                
+                const imgElement = document.getElementById('sidebar-dynamic-img');
+                const linkElement = document.getElementById('sidebar-dynamic-link');
+                
+                if (imgElement && linkElement) {
+                    imgElement.src = newProduct.image;
+                    linkElement.href = newProduct.link;
+                    imgElement.alt = newProduct.title;
+                }
+            }
+        }
+
+        // Shuru mein pehla product set karein
+        setTimeout(rotateSidebarProduct, 100);
+        
+        // Har 10 second (10000 ms) baad product automatically badle
+        setInterval(rotateSidebarProduct, 10000); 
+        // --------------------------------------------------------
 
         // Mobile Floating Button
         const mobileBtn = document.createElement('div');
@@ -1940,10 +1968,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function checkScreen() {
             if (window.innerWidth > 1200) {
-                sidebar.querySelector('div').style.display = 'block'; 
+                document.getElementById('sidebar-inner-box').style.display = 'block'; 
                 mobileBtn.style.display = 'none'; 
             } else {
-                sidebar.querySelector('div').style.display = 'none'; 
+                document.getElementById('sidebar-inner-box').style.display = 'none'; 
                 mobileBtn.style.display = 'flex'; 
             }
         }
