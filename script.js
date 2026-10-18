@@ -1862,16 +1862,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Popup dikhane ka function (STRICT CATEGORY MATCH)
     function showProductPopup(toolName) {
-        // Tool Name se page key nikalo (e.g. "Age Calculator" -> "age-calculator")
         let pageKey = toolName.toLowerCase().replace(/\s+/g, '-');
-        
         let matchedProducts = [];
         
-        // Page Category Map check karo
         if (typeof PAGE_CATEGORY_MAP !== 'undefined' && PAGE_CATEGORY_MAP[pageKey]) {
             const categories = PAGE_CATEGORY_MAP[pageKey];
             
-            // Category Products se matching products nikalo
             categories.forEach(cat => {
                 if (typeof CATEGORY_PRODUCTS !== 'undefined' && CATEGORY_PRODUCTS[cat]) {
                     const ids = CATEGORY_PRODUCTS[cat];
@@ -1885,12 +1881,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Agar specific category ka product nahi mila, to sirf ek default product dikhao (taaki same product baar baar na aaye)
         if (matchedProducts.length === 0) {
             matchedProducts = [PRODUCTS[5]]; // Taco vs Burrito default
         }
 
-        // Agar pehle se popup khula hai to usko hatao
         const existingModal = document.getElementById('customProductModal');
         if(existingModal) existingModal.remove();
 
@@ -1919,17 +1913,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    // Sidebar aur mobile button banane ka function
+    // Sidebar aur mobile button banane ka function (UPDATED SIZE)
     function createSidebar() {
-        // Desktop Sidebar
+        // Desktop Sidebar (CHOTA SIZE)
         const sidebar = document.createElement('div');
         sidebar.id = 'desktopProductSidebar';
         sidebar.innerHTML = `
-            <div style="position:fixed; right:20px; top:100px; width:250px; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.15); padding:15px; z-index:9000; border:1px solid #e5e7eb; display:none;">
-                <h4 style="margin:0 0 10px 0; color:#881e8a; font-size:1rem; text-align:center;">✨ Top Products</h4>
-                <p style="font-size:0.75rem; color:#666; text-align:center; margin-bottom:10px;">Kisi bhi tool par click karein product dekhne ke liye.</p>
+            <div style="position:fixed; right:15px; top:120px; width:170px; background:white; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); padding:10px; z-index:9000; border:1px solid #e5e7eb; display:none;">
+                <h4 style="margin:0 0 5px 0; color:#881e8a; font-size:0.85rem; text-align:center;">✨ Top Products</h4>
+                <p style="font-size:0.65rem; color:#666; text-align:center; margin-bottom:8px; line-height: 1.2;">Kisi bhi tool par click karein product dekhne ke liye.</p>
                 <a href="https://amzn.to/47g0tX5" target="_blank">
-                    <img src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" loading="lazy" style="width:100%; border-radius:8px;">
+                    <img src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" loading="lazy" style="width:100%; border-radius:6px;">
                 </a>
             </div>
         `;
@@ -1938,7 +1932,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mobile Floating Button
         const mobileBtn = document.createElement('div');
         mobileBtn.innerHTML = '🛒';
-        mobileBtn.style.cssText = 'position:fixed; bottom:20px; right:20px; width:50px; height:50px; background:#f59e0b; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:24px; box-shadow:0 4px 15px rgba(245,158,11,0.4); z-index:9000; cursor:pointer;';
+        mobileBtn.style.cssText = 'position:fixed; bottom:20px; right:20px; width:45px; height:45px; background:#f59e0b; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:20px; box-shadow:0 4px 15px rgba(245,158,11,0.4); z-index:9000; cursor:pointer;';
         mobileBtn.onclick = function() {
             showProductPopup("Popular Tools");
         };
