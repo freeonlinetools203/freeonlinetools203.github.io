@@ -1612,12 +1612,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // END: GLOBAL "VIEW ALL TOOLS" BUTTON
 // =========================================================================
 // =========================================================================
-// 13. SMART PRODUCT RECOMMENDATION SYSTEM (STRICT CATEGORY MATCHING)
+// 13. SMART PRODUCT RECOMMENDATION SYSTEM (AUTO INJECT BELOW CALCULATE)
 // =========================================================================
 (function() {
     
     // ============================================================
-    // 1. PRODUCTS DATABASE (Yahan products ki details rahengi)
+    // 1. PRODUCTS DATABASE
     // ============================================================
     var PRODUCTS = [
         { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon" },
@@ -1631,36 +1631,23 @@ document.addEventListener('DOMContentLoaded', function() {
     window.PRODUCTS_DB = PRODUCTS; 
 
     // ============================================================
-    // 2. CATEGORY TO PRODUCT MAPPING (YAHAN AAP CATEGORY WISE SET KARENGE)
+    // 2. CATEGORY TO PRODUCT MAPPING (Yahan category wise product set karein)
     // ============================================================
-    // Aap ek category mein ek ya zyada product ID daal sakte hain.
-    // Har category ka product alag hai, taaki mix na ho.
     const CATEGORY_PRODUCTS = {
-        // Age / Family Tools
         "age": ["50-funny-jokes"],
         "family": ["50-funny-jokes"],
         "birthday": ["50-funny-jokes"],
-        
-        // Fun / Game Tools
         "fun": ["taco-vs-burrito"],
         "game": ["taco-vs-burrito"],
         "wheel": ["taco-vs-burrito"],
         "decision": ["knock-knock-jokes"],
-        
-        // Animal / Pet Tools
         "animal": ["dinosaur-jokes"],
         "pet": ["dinosaur-jokes"],
         "farm": ["dinosaur-jokes"],
-        
-        // Lucky / Random Tools
         "lucky": ["space-jokes"],
         "random": ["space-jokes"],
-        
-        // Health / Education Tools
         "health": ["leapfrog-100-words"],
         "education": ["leapfrog-100-words"],
-        
-        // Zodiac Tools
         "zodiac": ["space-jokes"],
         "astrology": ["space-jokes"]
     };
@@ -1669,38 +1656,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. PAGE-TO-CATEGORY MAPPING (Har page ka category set)
     // ============================================================
     const PAGE_CATEGORY_MAP = {
-        // Age / Family
         "age-calculator": ["age", "family"],
         "chronological-age-calculator": ["age", "family"],
         "birth-year-calculator": ["age", "birthday"],
         "what-year-was-i-born": ["age", "birthday"],
         "birthday-countdown": ["birthday", "family"],
-        
-        // Fun / Game
         "spin-the-wheel": ["fun", "wheel", "game"],
         "yes-no-wheel": ["fun", "wheel", "decision"],
         "decision-wheel": ["fun", "wheel", "decision"],
         "prize-wheel": ["fun", "wheel"],
         "truth-or-dare-generator": ["fun", "game"],
         "food-picker-wheel": ["fun", "wheel"],
-        
-        // Animal / Pet
         "dog-age-calculator": ["animal", "pet"],
         "cat-pregnancy-calculator": ["animal", "pet"],
         "horse-pregnancy-calculator": ["animal", "farm"],
         "cow-pregnancy-calculator": ["animal", "farm"],
         "random-animal-wheel": ["animal", "fun"],
-        
-        // Lucky / Random
         "best-lottery-number-generator": ["lucky", "random"],
         "random-number-generator": ["lucky", "random"],
         "daily-lucky-number-wheel": ["lucky", "random"],
-        
-        // Health
         "bmi-calculator": ["health"],
         "calorie-calculator": ["health"],
-        
-        // Zodiac
         "zodiac-sign-finder": ["zodiac", "astrology"],
         "chinese-zodiac-finder": ["zodiac", "astrology"]
     };
@@ -1722,21 +1698,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     function getRelevantProducts() {
         const pageKey = getCurrentPageKey();
+        if (pageKey === 'home') return PRODUCTS;
         
-        // Home page ke liye saare products dikhao
-        if (pageKey === 'home') {
-            return PRODUCTS;
-        }
-        
-        // Page ke categories check karo
         const categories = PAGE_CATEGORY_MAP[pageKey];
-        if (!categories) {
-            return []; // Agar koi mapping nahi hai, to kuch mat dikhao
-        }
+        if (!categories) return [];
         
-        // Products ko filter karo (sirf wahi jo mapped categories mein hain)
         let matchedProducts = [];
-        let seenProductIds = new Set(); // Duplicate remove karne ke liye
+        let seenProductIds = new Set();
         
         categories.forEach(cat => {
             const productIds = CATEGORY_PRODUCTS[cat] || [];
@@ -1750,89 +1718,99 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
-        // Agar category se product nahi mila, to kuch bhi mat dikhao (No Fallback)
         return matchedProducts; 
     }
 
     // ============================================================
-    // 6. RENDER PRODUCT SECTION
+    // 6. CALCULATE BUTTON KE NICHE PRODUCT INJECT KARNE KA FUNCTION
+    // ============================================================
+    function injectProductBelowCalculateButton() {
+        const products = getRelevantProducts();
+        if (products.length === 0 || getCurrentPageKey() === 'home') return;
+        
+        if (document.getElementById('inline-tool-product')) return;
+
+        const product = products[0];
+        
+        const productHTML = `
+            <div id="inline-tool-product" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 15px 20px; margin: 20px auto; max-width: 800px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="${product.image}" loading="lazy" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; background: white; padding: 4px;">
+                    <div>
+                        <h4 style="margin: 0 0 4px 0; color: #1e3a8a; font-size: 0.9rem;">${product.title}</h4>
+                        <p style="margin: 0; color: #6b7280; font-size: 0.75rem;">${product.subtitle}</p>
+                    </div>
+                </div>
+                <a href="${product.link}" target="_blank" rel="noopener" style="background: #f59e0b; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.8rem; font-weight: bold; white-space: nowrap;">${product.buttonText}</a>
+            </div>
+        `;
+
+        let calcBtn = document.getElementById('calculateBtn') || document.getElementById('calculate-button');
+        
+        if (!calcBtn) {
+            const allButtons = document.querySelectorAll('button');
+            for (let btn of allButtons) {
+                const btnText = btn.innerText.toLowerCase();
+                if (btnText.includes('calculate') || btnText.includes('generate') || btnText.includes('submit') || btnText.includes('find') || btnText.includes('convert')) {
+                    calcBtn = btn;
+                    break;
+                }
+            }
+        }
+
+        if (calcBtn) {
+            calcBtn.insertAdjacentHTML('afterend', productHTML);
+        }
+    }
+
+    // ============================================================
+    // 7. RENDER BOTTOM SECTION (Page ke neeche wala product)
     // ============================================================
     function renderProductSection() {
         const products = getRelevantProducts();
-        if (products.length === 0) return; // Agar us category ka product nahi, to section hide
+        if (products.length === 0) return;
         
         const pageKey = getCurrentPageKey();
         const isHome = pageKey === 'home';
         
-        let sectionTitle, sectionSubtitle, sectionBadge;
-        if (isHome) {
-            sectionTitle = "📚 Recommended Books for Kids";
-            sectionSubtitle = "100% Clean, Kid-Friendly Jokes & Puns — Perfect for Family Fun!";
-            sectionBadge = "📚 RECOMMENDED";
-        } else {
-            sectionTitle = "📚 Recommended for You";
-            sectionSubtitle = "Based on this tool, you might also like:";
-            sectionBadge = "💡 YOU MAY LIKE";
-        }
+        let sectionTitle = isHome ? "📚 Recommended Books for Kids" : "📚 Recommended for You";
         
         const section = document.createElement('section');
         section.className = 'smart-product-section';
         section.innerHTML = `
-            <style>
-                .smart-product-section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-                .sps-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 24px; padding: 35px 30px; border: 1px solid #bae6fd; text-align: center; }
-                .sps-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
-                .sps-title { color: #1e3a8a; font-size: 1.6rem; font-weight: 800; margin: 8px 0 8px; }
-                .sps-subtitle { color: #6b7280; font-size: 0.95rem; margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto; }
-                .sps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
-                .sps-card { background: white; border-radius: 18px; padding: 20px 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); transition: all 0.3s ease; border: 1px solid #e5e7eb; display: flex; flex-direction: column; }
-                .sps-card:hover { transform: translateY(-6px); box-shadow: 0 14px 35px rgba(30,58,138,0.15); border-color: #bfdbfe; }
-                .sps-card img { width: 100%; max-width: 170px; height: auto; border-radius: 12px; margin: 0 auto 14px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
-                .sps-card h4 { color: #1e3a8a; font-size: 0.92rem; font-weight: 700; margin: 4px 0 6px; line-height: 1.3; }
-                .sps-card p { color: #6b7280; font-size: 0.78rem; margin: 4px 0 16px; line-height: 1.4; flex-grow: 1; }
-                .sps-card a { display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.82rem; box-shadow: 0 4px 12px rgba(245,158,11,0.35); transition: all 0.2s; margin-top: auto; }
-                .sps-card a:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245,158,11,0.5); }
-                .sps-disclosure { font-size: 0.72rem; color: #9ca3af; margin-top: 22px; }
-                @media (max-width: 600px) {
-                    .sps-box { padding: 25px 16px; }
-                    .sps-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-                    .sps-card { padding: 14px 12px; }
-                    .sps-card h4 { font-size: 0.8rem; }
-                    .sps-card p { font-size: 0.72rem; }
-                    .sps-card a { padding: 8px 16px; font-size: 0.75rem; }
-                    .sps-title { font-size: 1.2rem; }
-                }
-            </style>
-            <div class="sps-box">
-                <span class="sps-badge">${sectionBadge}</span>
-                <h3 class="sps-title">${sectionTitle}</h3>
-                <p class="sps-subtitle">${sectionSubtitle}</p>
-                <div class="sps-grid">
-                    ${products.map(product => `
-                        <div class="sps-card">
-                            <img src="${product.image}" alt="${product.title}" loading="lazy">
-                            <h4>${product.title}</h4>
-                            <p>${product.subtitle}</p>
-                            <a href="${product.link}" target="_blank" rel="noopener">${product.buttonText}</a>
-                        </div>
-                    `).join('')}
+            <div style="max-width: 1100px; margin: 40px auto; padding: 0 20px; text-align: center;">
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 24px; padding: 35px 30px; border: 1px solid #bae6fd;">
+                    <span style="display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 12px;">${isHome ? '📚 RECOMMENDED' : '💡 YOU MAY LIKE'}</span>
+                    <h3 style="color: #1e3a8a; font-size: 1.6rem; font-weight: 800; margin: 8px 0;">${sectionTitle}</h3>
+                    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                        ${products.map(p => `
+                            <div style="background: white; border-radius: 18px; padding: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); max-width: 220px; width: 100%;">
+                                <img src="${p.image}" loading="lazy" style="width: 100%; max-height: 150px; object-fit: contain; border-radius: 12px; margin-bottom: 12px;">
+                                <h4 style="color: #1e3a8a; font-size: 0.9rem; margin: 0 0 8px;">${p.title}</h4>
+                                <a href="${p.link}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.8rem;">${p.buttonText}</a>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <p style="font-size: 0.7rem; color: #9ca3af; margin-top: 20px;">As an Amazon Associate, I earn from qualifying purchases.</p>
                 </div>
-                <p class="sps-disclosure">As an Amazon Associate, I earn from qualifying purchases.</p>
             </div>
         `;
         
         const footer = document.querySelector('footer');
-        if (footer) {
-            footer.parentNode.insertBefore(section, footer);
-        } else {
-            document.body.appendChild(section);
-        }
+        if (footer) footer.parentNode.insertBefore(section, footer);
+        else document.body.appendChild(section);
     }
 
+    // ============================================================
+    // 8. INITIALIZE
+    // ============================================================
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', renderProductSection);
+        document.addEventListener('DOMContentLoaded', () => {
+            injectProductBelowCalculateButton();
+            renderProductSection();
+        });
     } else {
+        injectProductBelowCalculateButton();
         renderProductSection();
     }
     
