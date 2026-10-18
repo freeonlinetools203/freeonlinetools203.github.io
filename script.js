@@ -1656,7 +1656,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "zodiac-wheel": ["zodiac", "astrology"]
     };
 
-    window.PAGE_CATEGORY_MAP = PAGE_CATEGORY_MAP; // Global banaya taake Section 14 use kar sake
+    window.PAGE_CATEGORY_MAP = PAGE_CATEGORY_MAP;
 
     function getCurrentPageKey() {
         let path = window.location.pathname;
@@ -1665,15 +1665,80 @@ document.addEventListener('DOMContentLoaded', function() {
         return filename.replace('.html', '');
     }
 
-    function renderToolPageProducts() {
+    function getRelevantProducts() {
         const pageKey = getCurrentPageKey();
-        if (pageKey === 'home') return;
+        if (pageKey === 'home') return PRODUCTS;
         
         const categories = PAGE_CATEGORY_MAP[pageKey];
-        if (!categories) return; 
+        if (!categories) return [];
         
-        let products = PRODUCTS.filter(p => p.categories.some(cat => categories.includes(cat)));
+        return PRODUCTS.filter(product => 
+            product.categories.some(cat => categories.includes(cat))
+        );
+    }
+
+    // 3. CALCULATE BUTTON KE NICHE PRODUCT INJECT KARNE KA FUNCTION
+    function injectProductBelowCalculateButton() {
+        const products = getRelevantProducts();
+        if (products.length === 0 || getCurrentPageKey() === 'home') return;
+        
+        if (document.getElementById('inline-tool-product')) return;
+
+        const product = products[0];
+        
+        const productHTML = `
+            <div id="inline-tool-product" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 15px 20px; margin: 20px auto; max-width: 800px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="${product.image}" loading="lazy" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; background: white; padding: 4px;">
+                    <div>
+                        <h4 style="margin: 0 0 4px 0; color: #1e3a8a; font-size: 0.9rem;">${product.title}</h4>
+                        <p style="margin: 0; color: #6b7280; font-size: 0.75rem;">${product.subtitle}</p>
+                    </div>
+                </div>
+                <a href="${product.link}" target="_blank" rel="noopener" style="background: #f59e0b; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.8rem; font-weight: bold; white-space: nowrap;">${product.buttonText}</a>
+            </div>
+        `;
+
+        let calcBtn = document.getElementById('calculateBtn') || document.getElementById('calculate-button');
+        
+        if (!calcBtn) {
+            const allButtons = document.querySelectorAll('button');
+            for (let btn of allButtons) {
+                const btnText = btn.innerText.toLowerCase();
+                if (btnText.includes('calculate') || btnText.includes('generate') || btnText.includes('find')) {
+                    calcBtn = btn;
+                    break;
+                }
+            }
+        }
+
+        if (calcBtn) {
+            let targetElement = calcBtn.closest('form') || calcBtn.parentElement;
+            targetElement.insertAdjacentHTML('afterend', productHTML);
+        } else {
+            let resultContainer = document.getElementById('result') || document.getElementById('result-container') || document.getElementById('age-result');
+            if (!resultContainer) {
+                const allDivs = document.querySelectorAll('div');
+                for (let div of allDivs) {
+                    if (div.innerText.includes('LIVE AGE UPDATES') || div.innerText.includes('YEARS')) {
+                        resultContainer = div.closest('.result-box') || div.parentElement.parentElement; 
+                        break;
+                    }
+                }
+            }
+            if (resultContainer) {
+                resultContainer.insertAdjacentHTML('afterend', productHTML);
+            }
+        }
+    }
+
+    // 4. RENDER BOTTOM SECTION
+    function renderToolPageProducts() {
+        const products = getRelevantProducts();
         if (products.length === 0) return;
+        
+        const pageKey = getCurrentPageKey();
+        if (pageKey === 'home') return;
 
         const section = document.createElement('section');
         section.innerHTML = `
@@ -1699,9 +1764,14 @@ document.addEventListener('DOMContentLoaded', function() {
         else document.body.appendChild(section);
     }
 
+    // INITIALIZE
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', renderToolPageProducts);
+        document.addEventListener('DOMContentLoaded', () => {
+            injectProductBelowCalculateButton();
+            renderToolPageProducts();
+        });
     } else {
+        injectProductBelowCalculateButton();
         renderToolPageProducts();
     }
 })();
