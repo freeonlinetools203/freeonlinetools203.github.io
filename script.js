@@ -1612,138 +1612,101 @@ document.addEventListener('DOMContentLoaded', function() {
 // END: GLOBAL "VIEW ALL TOOLS" BUTTON
 // =========================================================================
 // =========================================================================
-// 13. SMART PRODUCT RECOMMENDATION SYSTEM
+// 13. SMART PRODUCT RECOMMENDATION SYSTEM (STRICT CATEGORY MATCHING)
 // =========================================================================
 (function() {
     
     // ============================================================
-    // PRODUCTS DATABASE - All ASINs Updated ✅
+    // 1. PRODUCTS DATABASE (Yahan products ki details rahengi)
     // ============================================================
     var PRODUCTS = [
-        {
-            id: "dinosaur-jokes",
-            title: "DINOSAUR JOKES FOR KIDS",
-            subtitle: "100 Prehistoric Puns & Roaring Laughs!",
-            image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20",
-            buttonText: "🛒 Buy on Amazon",
-            categories: ["animal", "pet", "farm", "fun", "kids"]
-        },
-        {
-            id: "knock-knock-jokes",
-            title: "KNOCK-KNOCK JOKES FOR KIDS",
-            subtitle: "Who's There? Hours of Silly Laughter!",
-            image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20",
-            buttonText: "🛒 Buy on Amazon",
-            categories: ["fun", "game", "wheel", "decision", "kids"]
-        },
-        {
-            id: "50-funny-jokes",
-            title: "50 FUNNY JOKES FOR KIDS",
-            subtitle: "Clean & Kid-Friendly Laughs Guaranteed!",
-            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20",
-            buttonText: "🛒 Buy on Amazon",
-            categories: ["age", "family", "health", "birthday", "kids"]
-        },
-        {
-            id: "space-jokes",
-            title: "SPACE JOKES FOR KIDS",
-            subtitle: "Out-of-this-World Puns & Cosmic Laughs!",
-            image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg",
-            link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20",
-            buttonText: "🛒 Buy on Amazon",
-            categories: ["lucky", "random", "zodiac", "astrology", "kids"]
-        },
-        {
-            id: "leapfrog-100-words",
-            title: "LeapFrog Learning Friends 100 Words Book",
-            subtitle: "Interactive Learning Toy for Kids Ages 18 Months - 4 Years!",
-            image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg",
-            link: "https://amzn.to/4yN6zRr",
-            buttonText: "🛒 Buy on Amazon",
-            categories: ["kids", "toy", "education", "fun", "family"]
-        },
-        {
-            id: "taco-vs-burrito",
-            title: "TACO VS BURRITO - The Card Game",
-            subtitle: "Wildly Popular Family-Friendly Party Game for Kids, Teens & Adults",
-            image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg",
-            link: "https://amzn.to/47g0tX5",
-            buttonText: "🛒 Buy on Amazon",
-            categories: ["fun", "game", "wheel", "kids", "family", "party"]
-        }
+        { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon" },
+        { id: "knock-knock-jokes", title: "KNOCK-KNOCK JOKES FOR KIDS", subtitle: "Hours of Silly Laughter!", image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon" },
+        { id: "50-funny-jokes", title: "50 FUNNY JOKES FOR KIDS", subtitle: "Clean & Kid-Friendly Laughs!", image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon" },
+        { id: "space-jokes", title: "SPACE JOKES FOR KIDS", subtitle: "Out-of-this-World Puns!", image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon" },
+        { id: "leapfrog-100-words", title: "LeapFrog Learning Friends 100 Words Book", subtitle: "Interactive Learning Toy!", image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg", link: "https://amzn.to/4yN6zRr", buttonText: "🛒 Buy on Amazon" },
+        { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://amzn.to/47g0tX5", buttonText: "🛒 Buy on Amazon" }
     ];
 
-    // ===== YEH LINE DASHBOARD KE LIYE ZAROORI HAI =====
     window.PRODUCTS_DB = PRODUCTS; 
-    // ==================================================
 
     // ============================================================
-    // PAGE-TO-CATEGORY MAPPING
+    // 2. CATEGORY TO PRODUCT MAPPING (YAHAN AAP CATEGORY WISE SET KARENGE)
     // ============================================================
-    const PAGE_CATEGORY_MAP = {
-        // Animal / Pet tools
-        "dog-pregnancy-calculator": ["animal", "pet"],
-        "cat-pregnancy-calculator": ["animal", "pet"],
-        "dog-age-calculator": ["animal", "pet"],
-        "cow-pregnancy-calculator": ["animal", "farm"],
-        "horse-gestation-calculator": ["animal", "farm"],
-        "horse-pregnancy-calculator": ["animal", "farm"],
-        "goat-pregnancy-calculator": ["animal", "farm"],
-        "sheep-pregnancy-calculator": ["animal", "farm"],
-        "pig-pregnancy-calculator": ["animal", "farm"],
-        "rabbit-pregnancy-calculator": ["animal", "pet"],
-        "lambing-calculator": ["animal", "farm"],
-        "random-animal-wheel": ["animal", "fun"],
+    // Aap ek category mein ek ya zyada product ID daal sakte hain.
+    // Har category ka product alag hai, taaki mix na ho.
+    const CATEGORY_PRODUCTS = {
+        // Age / Family Tools
+        "age": ["50-funny-jokes"],
+        "family": ["50-funny-jokes"],
+        "birthday": ["50-funny-jokes"],
         
-        // Age / Family tools
-        "age-calculator": ["age", "family", "kids"],
-        "chronological-age-calculator": ["age", "family", "kids"],
-        "biological-age-calculator": ["age", "health", "kids"],
-        "age-difference-calculator": ["age", "family"],
-        "age-gap-calculator": ["age", "family"],
-        "birth-year-calculator": ["age", "birthday", "kids"],
-        "birthday-countdown": ["birthday", "family", "kids"],
-        "happy-birthday-tool": ["birthday", "family", "kids"],
-        "korean-age-calculator": ["age", "family"],
-        "what-year-was-i-born": ["age", "birthday", "kids"],
-        "born-year-age-calculator": ["age", "birthday", "kids"],
+        // Fun / Game Tools
+        "fun": ["taco-vs-burrito"],
+        "game": ["taco-vs-burrito"],
+        "wheel": ["taco-vs-burrito"],
+        "decision": ["knock-knock-jokes"],
         
-        // Fun / Game tools
-        "spin-the-wheel": ["fun", "wheel", "game"],
-        "yes-no-wheel": ["fun", "wheel", "decision"],
-        "decision-wheel": ["fun", "wheel", "decision"],
-        "decision-roulette": ["fun", "wheel", "decision"],
-        "random-name-picker": ["fun", "wheel"],
-        "name-picker-wheel": ["fun", "wheel"],
-        "prize-wheel": ["fun", "wheel"],
-        "truth-or-dare-generator": ["fun", "game"],
-        "food-picker-wheel": ["fun", "wheel"],
-        "movie-picker-wheel": ["fun", "wheel"],
-        "dinner-spinner": ["fun", "wheel"],
+        // Animal / Pet Tools
+        "animal": ["dinosaur-jokes"],
+        "pet": ["dinosaur-jokes"],
+        "farm": ["dinosaur-jokes"],
         
-        // Lucky / Random tools
-        "best-lottery-number-generator": ["lucky", "random", "kids"],
-        "random-number-generator": ["lucky", "random", "kids"],
-        "daily-lucky-number-wheel": ["lucky", "random", "kids"],
-        "random-color-picker": ["lucky", "random", "kids"],
+        // Lucky / Random Tools
+        "lucky": ["space-jokes"],
+        "random": ["space-jokes"],
         
-        // Health tools
-        "bmi-calculator": ["health", "family", "kids"],
-        "bmr-calculator": ["health", "family", "kids"],
-        "calorie-calculator": ["health", "family", "kids"],
-        "body-fat-calculator": ["health", "family", "kids"],
+        // Health / Education Tools
+        "health": ["leapfrog-100-words"],
+        "education": ["leapfrog-100-words"],
         
-        // Zodiac tools
-        "zodiac-sign-finder": ["zodiac", "astrology", "kids"],
-        "chinese-zodiac-finder": ["zodiac", "astrology", "kids"],
-        "zodiac-wheel": ["zodiac", "astrology", "kids"]
+        // Zodiac Tools
+        "zodiac": ["space-jokes"],
+        "astrology": ["space-jokes"]
     };
 
     // ============================================================
-    // GET CURRENT PAGE KEY
+    // 3. PAGE-TO-CATEGORY MAPPING (Har page ka category set)
+    // ============================================================
+    const PAGE_CATEGORY_MAP = {
+        // Age / Family
+        "age-calculator": ["age", "family"],
+        "chronological-age-calculator": ["age", "family"],
+        "birth-year-calculator": ["age", "birthday"],
+        "what-year-was-i-born": ["age", "birthday"],
+        "birthday-countdown": ["birthday", "family"],
+        
+        // Fun / Game
+        "spin-the-wheel": ["fun", "wheel", "game"],
+        "yes-no-wheel": ["fun", "wheel", "decision"],
+        "decision-wheel": ["fun", "wheel", "decision"],
+        "prize-wheel": ["fun", "wheel"],
+        "truth-or-dare-generator": ["fun", "game"],
+        "food-picker-wheel": ["fun", "wheel"],
+        
+        // Animal / Pet
+        "dog-age-calculator": ["animal", "pet"],
+        "cat-pregnancy-calculator": ["animal", "pet"],
+        "horse-pregnancy-calculator": ["animal", "farm"],
+        "cow-pregnancy-calculator": ["animal", "farm"],
+        "random-animal-wheel": ["animal", "fun"],
+        
+        // Lucky / Random
+        "best-lottery-number-generator": ["lucky", "random"],
+        "random-number-generator": ["lucky", "random"],
+        "daily-lucky-number-wheel": ["lucky", "random"],
+        
+        // Health
+        "bmi-calculator": ["health"],
+        "calorie-calculator": ["health"],
+        
+        // Zodiac
+        "zodiac-sign-finder": ["zodiac", "astrology"],
+        "chinese-zodiac-finder": ["zodiac", "astrology"]
+    };
+
+    // ============================================================
+    // 4. GET CURRENT PAGE KEY
     // ============================================================
     function getCurrentPageKey() {
         let path = window.location.pathname;
@@ -1755,31 +1718,49 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // FIND RELEVANT PRODUCTS
+    // 5. FIND RELEVANT PRODUCTS (STRICT LOGIC)
     // ============================================================
     function getRelevantProducts() {
         const pageKey = getCurrentPageKey();
         
+        // Home page ke liye saare products dikhao
         if (pageKey === 'home') {
             return PRODUCTS;
         }
         
+        // Page ke categories check karo
         const categories = PAGE_CATEGORY_MAP[pageKey];
         if (!categories) {
-            return [];
+            return []; // Agar koi mapping nahi hai, to kuch mat dikhao
         }
         
-        return PRODUCTS.filter(product => 
-            product.categories.some(cat => categories.includes(cat))
-        );
+        // Products ko filter karo (sirf wahi jo mapped categories mein hain)
+        let matchedProducts = [];
+        let seenProductIds = new Set(); // Duplicate remove karne ke liye
+        
+        categories.forEach(cat => {
+            const productIds = CATEGORY_PRODUCTS[cat] || [];
+            productIds.forEach(id => {
+                if (!seenProductIds.has(id)) {
+                    const foundProduct = PRODUCTS.find(p => p.id === id);
+                    if (foundProduct) {
+                        matchedProducts.push(foundProduct);
+                        seenProductIds.add(id);
+                    }
+                }
+            });
+        });
+        
+        // Agar category se product nahi mila, to kuch bhi mat dikhao (No Fallback)
+        return matchedProducts; 
     }
 
     // ============================================================
-    // RENDER PRODUCT SECTION
+    // 6. RENDER PRODUCT SECTION
     // ============================================================
     function renderProductSection() {
         const products = getRelevantProducts();
-        if (products.length === 0) return;
+        if (products.length === 0) return; // Agar us category ka product nahi, to section hide
         
         const pageKey = getCurrentPageKey();
         const isHome = pageKey === 'home';
@@ -1799,110 +1780,20 @@ document.addEventListener('DOMContentLoaded', function() {
         section.className = 'smart-product-section';
         section.innerHTML = `
             <style>
-                .smart-product-section {
-                    max-width: 1100px;
-                    margin: 40px auto;
-                    padding: 0 20px;
-                }
-                .sps-box {
-                    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-                    border-radius: 24px;
-                    padding: 35px 30px;
-                    border: 1px solid #bae6fd;
-                    text-align: center;
-                }
-                .sps-badge {
-                    display: inline-block;
-                    background: linear-gradient(135deg, #f59e0b, #d97706);
-                    color: white;
-                    padding: 6px 18px;
-                    border-radius: 20px;
-                    font-size: 12px;
-                    font-weight: 700;
-                    margin-bottom: 12px;
-                    letter-spacing: 0.5px;
-                }
-                .sps-title {
-                    color: #1e3a8a;
-                    font-size: 1.6rem;
-                    font-weight: 800;
-                    margin: 8px 0 8px;
-                }
-                .sps-subtitle {
-                    color: #6b7280;
-                    font-size: 0.95rem;
-                    margin-bottom: 28px;
-                    max-width: 600px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                .sps-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                    gap: 20px;
-                    max-width: 900px;
-                    margin: 0 auto;
-                }
-                .sps-card {
-                    background: white;
-                    border-radius: 18px;
-                    padding: 20px 16px;
-                    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-                    transition: all 0.3s ease;
-                    border: 1px solid #e5e7eb;
-                    display: flex;
-                    flex-direction: column;
-                }
-                .sps-card:hover {
-                    transform: translateY(-6px);
-                    box-shadow: 0 14px 35px rgba(30,58,138,0.15);
-                    border-color: #bfdbfe;
-                }
-                .sps-card img {
-                    width: 100%;
-                    max-width: 170px;
-                    height: auto;
-                    border-radius: 12px;
-                    margin: 0 auto 14px;
-                    display: block;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-                }
-                .sps-card h4 {
-                    color: #1e3a8a;
-                    font-size: 0.92rem;
-                    font-weight: 700;
-                    margin: 4px 0 6px;
-                    line-height: 1.3;
-                }
-                .sps-card p {
-                    color: #6b7280;
-                    font-size: 0.78rem;
-                    margin: 4px 0 16px;
-                    line-height: 1.4;
-                    flex-grow: 1;
-                }
-                .sps-card a {
-                    display: inline-block;
-                    background: linear-gradient(135deg, #f59e0b, #d97706);
-                    color: white;
-                    padding: 10px 24px;
-                    border-radius: 50px;
-                    text-decoration: none;
-                    font-weight: 700;
-                    font-size: 0.82rem;
-                    box-shadow: 0 4px 12px rgba(245,158,11,0.35);
-                    transition: all 0.2s;
-                    margin-top: auto;
-                }
-                .sps-card a:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 20px rgba(245,158,11,0.5);
-                }
-                .sps-disclosure {
-                    font-size: 0.72rem;
-                    color: #9ca3af;
-                    margin-top: 22px;
-                }
+                .smart-product-section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+                .sps-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 24px; padding: 35px 30px; border: 1px solid #bae6fd; text-align: center; }
+                .sps-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
+                .sps-title { color: #1e3a8a; font-size: 1.6rem; font-weight: 800; margin: 8px 0 8px; }
+                .sps-subtitle { color: #6b7280; font-size: 0.95rem; margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto; }
+                .sps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+                .sps-card { background: white; border-radius: 18px; padding: 20px 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); transition: all 0.3s ease; border: 1px solid #e5e7eb; display: flex; flex-direction: column; }
+                .sps-card:hover { transform: translateY(-6px); box-shadow: 0 14px 35px rgba(30,58,138,0.15); border-color: #bfdbfe; }
+                .sps-card img { width: 100%; max-width: 170px; height: auto; border-radius: 12px; margin: 0 auto 14px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+                .sps-card h4 { color: #1e3a8a; font-size: 0.92rem; font-weight: 700; margin: 4px 0 6px; line-height: 1.3; }
+                .sps-card p { color: #6b7280; font-size: 0.78rem; margin: 4px 0 16px; line-height: 1.4; flex-grow: 1; }
+                .sps-card a { display: inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.82rem; box-shadow: 0 4px 12px rgba(245,158,11,0.35); transition: all 0.2s; margin-top: auto; }
+                .sps-card a:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245,158,11,0.5); }
+                .sps-disclosure { font-size: 0.72rem; color: #9ca3af; margin-top: 22px; }
                 @media (max-width: 600px) {
                     .sps-box { padding: 25px 16px; }
                     .sps-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -1928,7 +1819,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     `).join('')}
                 </div>
                 <p class="sps-disclosure">As an Amazon Associate, I earn from qualifying purchases.</p>
-                <p class="sps-disclosure" style="font-size: 0.68rem; color: #6b7280; margin-top: 6px;">💡 Tip: If you use ad-blocking or coupon extensions, they may overwrite our links. Please consider disabling them on this site to support our free tools.</p>
             </div>
         `;
         
@@ -1950,11 +1840,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 // END: SMART PRODUCT RECOMMENDATION SYSTEM
 // =========================================================================
+
+
 // =========================================================================
-// 14. DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS) - OPTIMIZED
+// 14. DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS) - STRICT CATEGORY
 // =========================================================================
 (function() {
-    // Sirf Home Page par chalane ke liye check
     function isHomePage() {
         let path = window.location.pathname;
         return (path === '/' || path.endsWith('index.html') || path === '');
@@ -1962,13 +1853,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!isHomePage()) return; 
 
-    // Page load hone ke baad code chalayein (bina delay ke)
     document.addEventListener('DOMContentLoaded', () => {
         const toolsContainer = document.getElementById('toolsContainer');
         if (!toolsContainer) return;
 
         // 1. TOOLS KE CARDS MEIN "RELATED PRODUCTS" TAG ADD KARNA
-        // Isko jaldi render karne ke liye setTimeout hata diya hai
         setTimeout(() => {
             const toolCards = toolsContainer.querySelectorAll('.tool-card');
             toolCards.forEach(card => {
@@ -1987,22 +1876,43 @@ document.addEventListener('DOMContentLoaded', function() {
                     card.appendChild(tag);
                 }
             });
-        }, 500); // Delay kam kar ke 0.5 second kar diya hai taake tools jaldi load hon
+        }, 500);
 
-        // 2. SIDEBAR (LAPTOP) AUR FLOATING BUTTON (MOBILE) BANANA
+        // 2. SIDEBAR (LAPTOP) AUR FLOATING BUTTON (MOBILE)
         createSidebar();
     });
 
-    // Popup dikhane ka function (Fast & Smooth)
+    // Popup dikhane ka function (STRICT CATEGORY MATCH)
     function showProductPopup(toolName) {
-        const products = getProductsForTool(toolName);
+        // Tool Name se page key nikalo (e.g. "Age Calculator" -> "age-calculator")
+        let pageKey = toolName.toLowerCase().replace(/\s+/g, '-');
         
-        if (products.length === 0) {
-            alert("Is tool ke liye abhi koi product available nahi hai.");
-            return;
+        let matchedProducts = [];
+        
+        // Page Category Map check karo
+        if (typeof PAGE_CATEGORY_MAP !== 'undefined' && PAGE_CATEGORY_MAP[pageKey]) {
+            const categories = PAGE_CATEGORY_MAP[pageKey];
+            
+            // Category Products se matching products nikalo
+            categories.forEach(cat => {
+                if (typeof CATEGORY_PRODUCTS !== 'undefined' && CATEGORY_PRODUCTS[cat]) {
+                    const ids = CATEGORY_PRODUCTS[cat];
+                    ids.forEach(id => {
+                        const p = PRODUCTS.find(prod => prod.id === id);
+                        if (p && !matchedProducts.some(mp => mp.id === p.id)) {
+                            matchedProducts.push(p);
+                        }
+                    });
+                }
+            });
         }
 
-        // Agar pehle se popup khula hai to usko hatao (duplicate na ho)
+        // Agar specific category ka product nahi mila, to sirf ek default product dikhao (taaki same product baar baar na aaye)
+        if (matchedProducts.length === 0) {
+            matchedProducts = [PRODUCTS[5]]; // Taco vs Burrito default
+        }
+
+        // Agar pehle se popup khula hai to usko hatao
         const existingModal = document.getElementById('customProductModal');
         if(existingModal) existingModal.remove();
 
@@ -2015,7 +1925,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div style="display:flex; flex-direction:column; gap:15px; margin-top:15px;">
         `;
 
-        products.forEach(p => {
+        matchedProducts.forEach(p => {
             modalHTML += `
                 <div style="display:flex; gap:10px; border-bottom:1px solid #eee; padding-bottom:10px; align-items:center;">
                     <img src="${p.image}" loading="lazy" style="width:60px; height:60px; object-fit:contain; border-radius:8px;">
@@ -2056,7 +1966,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         document.body.appendChild(mobileBtn);
 
-        // Screen size ke hisaab se dikhana
         function checkScreen() {
             if (window.innerWidth > 1200) {
                 sidebar.querySelector('div').style.display = 'block'; 
@@ -2070,50 +1979,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', checkScreen);
         checkScreen();
     }
-
-    // FIXED FUNCTION: Tool ke naam se sahi products dhoondna
-    function getProductsForTool(toolName) {
-        if (typeof toolsDatabase === 'undefined') return [];
-        
-        let foundCategoryKey = "";
-        for (const [key, cat] of Object.entries(toolsDatabase)) {
-            if (cat.tools.includes(toolName)) {
-                foundCategoryKey = key;
-                break;
-            }
-        }
-        
-        if (!foundCategoryKey) return [];
-
-        const categoryKeywords = {
-            "catAge": ["age", "family", "kids", "birthday"],
-            "catFun": ["fun", "game", "wheel", "decision", "party", "kids"],
-            "catColor": ["color", "image"],
-            "catPdf": ["pdf", "text", "image"],
-            "catImage": ["image", "pdf"],
-            "catHealth": ["health", "fitness", "bmi"],
-            "catZodiac": ["zodiac", "astrology", "random", "lucky", "kids"],
-            "catHash": ["social", "hashtag", "youtube"],
-            "catYoutube": ["youtube", "social", "image", "seo"],
-            "catSeo": ["seo", "text"]
-        };
-
-        let searchKeywords = categoryKeywords[foundCategoryKey] || [foundCategoryKey.replace('cat', '').toLowerCase()];
-
-        const allProducts = window.PRODUCTS_DB || []; 
-        if (allProducts.length === 0) return [];
-
-        const matchedProducts = allProducts.filter(p => 
-            p.categories.some(c => searchKeywords.includes(c))
-        ).slice(0, 3); 
-
-        if (matchedProducts.length === 0) {
-            return allProducts.slice(0, 2); 
-        }
-
-        return matchedProducts;
-    }
 })();
 // =========================================================================
-// END: DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS) - OPTIMIZED
+// END: DASHBOARD SMART PRODUCTS (SIDEBAR + TOOL TAGS) - STRICT CATEGORY
 // =========================================================================
