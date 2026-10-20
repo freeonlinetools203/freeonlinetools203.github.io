@@ -1628,16 +1628,18 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: "leapfrog-100-words", title: "LeapFrog Learning Friends 100 Words Book", subtitle: "Interactive Learning Toy!", image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg", link: "https://amzn.to/4yN6zRr", buttonText: "🛒 Buy on Amazon", categories: ["kids", "toy", "education", "fun", "family"] },
         { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://amzn.to/47g0tX5", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] },
         
-        // ===== NAYA PRODUCT: LITTLE PAWS, BIG DREAMS (IMAGE FIXED) =====
+        // ===== NAYA PRODUCT: LITTLE PAWS, BIG DREAMS (CLEAN LINKS) =====
         { 
             id: "little-paws-big-dreams", 
             title: "LITTLE PAWS, BIG DREAMS", 
             subtitle: "10 Cozy Animal Bedtime Stories for Kids Ages 3-7", 
-            // 👇 Yahan aapki book ki asli image ka link hai 👇
+            // 👇 Sahi Image Link (GitHub se) 👇
             image: "https://raw.githubusercontent.com/freeonlinetools203/freeonlinetools203.github.io/main/little-paws-big-dreams.jpg", 
-            link: "https://amzn.to/4z01UFi", 
+            // 👇 Direct Book Link (Bina Affiliate Tag ke) 👇
+            link: "https://www.amazon.com/dp/B0GBZCSFF", 
             buttonText: "🛒 Buy on Amazon", 
-            authorLink: "https://amzn.to/4z0WHgo",
+            // 👇 Direct Author Page Link (Bina Affiliate Tag ke) 👇
+            authorLink: "https://www.amazon.com/author/zainuddin", 
             categories: ["kids", "animal", "family", "education"] 
         }
     ];
