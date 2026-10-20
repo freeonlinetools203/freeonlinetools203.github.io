@@ -1664,7 +1664,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.PRODUCTS_DB = PRODUCTS;
 
-    // ============================================================
+       // ============================================================
     // 2. PAGE-TO-CATEGORY MAPPING (Strict Matching)
     // ============================================================
     const PAGE_CATEGORY_MAP = {
@@ -1689,10 +1689,17 @@ document.addEventListener('DOMContentLoaded', function() {
         "truth-or-dare-generator": ["fun", "game", "kids"],
         "party-games-spin-wheel": ["fun", "game", "party", "kids"],
         
-        // --- Health Tools (Yahan Sirf Earbuds Show Honge) ---
-        "bmi-calculator": ["health", "tech"],
-        "bmr-calculator": ["health", "tech"],
-        "calorie-calculator": ["health", "tech"],
+        // --- Health Tools (Yahan Earbuds Aur Kitchen Scale Dono Show Honge) ---
+        "bmi-calculator": ["health", "tech", "family"],
+        "bmr-calculator": ["health", "tech", "family"],
+        "calorie-calculator": ["health", "tech", "family"],
+        "tdee-calculator": ["health", "tech", "family"],
+        "body-fat-calculator": ["health", "tech", "family"],
+        "ideal-weight-calculator": ["health", "tech", "family"],
+        "lean-body-mass-calculator": ["health", "tech", "family"],
+        "macro-calculator": ["health", "tech", "family"],
+        "protein-calculator": ["health", "tech", "family"],
+        "waist-to-hip-calculator": ["health", "tech", "family"],
         
         // --- Zodiac Tools (Yahan Sirf Book Show Hogi) ---
         "zodiac-sign-finder": ["zodiac", "astrology", "kids"],
@@ -1720,7 +1727,6 @@ document.addEventListener('DOMContentLoaded', function() {
             product.categories.some(cat => categories.includes(cat))
         );
     }
-
     // ============================================================
     // 3. CALCULATE BUTTON KE NICHE PRODUCT INJECT
     // ============================================================
