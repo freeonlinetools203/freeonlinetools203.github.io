@@ -1616,44 +1616,73 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 (function() {
     
+    // ============================================================
     // 1. PRODUCTS DATABASE
+    // ============================================================
     var PRODUCTS = [
+        // Existing Products
         { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["animal", "pet", "farm", "fun", "kids"] },
         { id: "knock-knock-jokes", title: "KNOCK-KNOCK JOKES FOR KIDS", subtitle: "Hours of Silly Laughter!", image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "decision", "kids"] },
         { id: "50-funny-jokes", title: "50 FUNNY JOKES FOR KIDS", subtitle: "Clean & Kid-Friendly Laughs!", image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["age", "family", "health", "birthday", "kids"] },
         { id: "space-jokes", title: "SPACE JOKES FOR KIDS", subtitle: "Out-of-this-World Puns!", image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["lucky", "random", "zodiac", "astrology", "kids"] },
         { id: "leapfrog-100-words", title: "LeapFrog Learning Friends 100 Words Book", subtitle: "Interactive Learning Toy!", image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg", link: "https://amzn.to/4yN6zRr", buttonText: "🛒 Buy on Amazon", categories: ["kids", "toy", "education", "fun", "family"] },
-        { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://amzn.to/47g0tX5", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] }
+        { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://amzn.to/47g0tX5", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] },
+        
+        // ===== NAYA PRODUCT: LITTLE PAWS, BIG DREAMS =====
+        { 
+            id: "little-paws-big-dreams", 
+            title: "LITTLE PAWS, BIG DREAMS", 
+            subtitle: "10 Cozy Animal Bedtime Stories for Kids Ages 3-7", 
+            // 👇 YAHAN APNI BOOK KI IMAGE KA DIRECT URL DALEIN (Screenshot wala nahi chalega) 👇
+            image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg", // <-- Isko change karein
+            link: "https://amzn.to/4z01UFi", 
+            buttonText: "🛒 Buy on Amazon", 
+            authorLink: "https://amzn.to/4z0WHgo",
+            categories: ["kids", "animal", "family", "education"] 
+        }
     ];
 
     window.PRODUCTS_DB = PRODUCTS; 
 
-    // 2. PAGE-TO-CATEGORY MAPPING
+    // ============================================================
+    // 2. PAGE-TO-CATEGORY MAPPING (Har tool ki category)
+    // ============================================================
     const PAGE_CATEGORY_MAP = {
-        "dog-age-calculator": ["animal", "pet"],
-        "cat-pregnancy-calculator": ["animal", "pet"],
-        "dog-pregnancy-calculator": ["animal", "pet"],
-        "random-animal-wheel": ["animal", "fun"],
-        "age-calculator": ["age", "family"],
-        "chronological-age-calculator": ["age", "family"],
-        "birth-year-calculator": ["age", "birthday"],
-        "birthday-countdown": ["birthday", "family"],
-        "happy-birthday-tool": ["birthday", "family"],
-        "spin-the-wheel": ["fun", "wheel", "game"],
-        "yes-no-wheel": ["fun", "wheel", "decision"],
-        "decision-wheel": ["fun", "wheel", "decision"],
-        "decision-roulette": ["fun", "wheel", "decision"],
-        "truth-or-dare-generator": ["fun", "game"],
-        "party-games-spin-wheel": ["fun", "game", "party"],
-        "best-lottery-number-generator": ["lucky", "random"],
-        "random-number-generator": ["lucky", "random"],
-        "daily-lucky-number-wheel": ["lucky", "random"],
+        // Animal / Kids Tools
+        "dog-age-calculator": ["animal", "pet", "kids"],
+        "cat-pregnancy-calculator": ["animal", "pet", "kids"],
+        "dog-pregnancy-calculator": ["animal", "pet", "kids"],
+        "random-animal-wheel": ["animal", "fun", "kids"],
+        
+        // Age / Family Tools (Yahan aapki book show hogi)
+        "age-calculator": ["age", "family", "kids", "education"],
+        "chronological-age-calculator": ["age", "family", "kids", "education"],
+        "birth-year-calculator": ["age", "birthday", "kids", "education"],
+        "birthday-countdown": ["birthday", "family", "kids"],
+        "happy-birthday-tool": ["birthday", "family", "kids"],
+        
+        // Fun / Game Tools
+        "spin-the-wheel": ["fun", "wheel", "game", "kids"],
+        "yes-no-wheel": ["fun", "wheel", "decision", "kids"],
+        "decision-wheel": ["fun", "wheel", "decision", "kids"],
+        "decision-roulette": ["fun", "wheel", "decision", "kids"],
+        "truth-or-dare-generator": ["fun", "game", "kids"],
+        "party-games-spin-wheel": ["fun", "game", "party", "kids"],
+        
+        // Random / Lucky Tools
+        "best-lottery-number-generator": ["lucky", "random", "kids"],
+        "random-number-generator": ["lucky", "random", "kids"],
+        "daily-lucky-number-wheel": ["lucky", "random", "kids"],
+        
+        // Health Tools
         "bmi-calculator": ["health", "family"],
         "bmr-calculator": ["health", "family"],
         "calorie-calculator": ["health", "family"],
-        "zodiac-sign-finder": ["zodiac", "astrology"],
-        "chinese-zodiac-finder": ["zodiac", "astrology"],
-        "zodiac-wheel": ["zodiac", "astrology"]
+        
+        // Zodiac Tools
+        "zodiac-sign-finder": ["zodiac", "astrology", "kids"],
+        "chinese-zodiac-finder": ["zodiac", "astrology", "kids"],
+        "zodiac-wheel": ["zodiac", "astrology", "kids"]
     };
 
     window.PAGE_CATEGORY_MAP = PAGE_CATEGORY_MAP;
@@ -1677,14 +1706,16 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
-    // 3. CALCULATE BUTTON KE NICHE PRODUCT INJECT KARNE KA FUNCTION
+    // ============================================================
+    // 3. CALCULATE BUTTON KE NICHE PRODUCT INJECT
+    // ============================================================
     function injectProductBelowCalculateButton() {
         const products = getRelevantProducts();
         if (products.length === 0 || getCurrentPageKey() === 'home') return;
         
         if (document.getElementById('inline-tool-product')) return;
 
-        const product = products[0];
+        const product = products[0]; // Pehla matching product uthayega
         
         const productHTML = `
             <div id="inline-tool-product" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 15px 20px; margin: 20px auto; max-width: 800px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
@@ -1717,22 +1748,15 @@ document.addEventListener('DOMContentLoaded', function() {
             targetElement.insertAdjacentHTML('afterend', productHTML);
         } else {
             let resultContainer = document.getElementById('result') || document.getElementById('result-container') || document.getElementById('age-result');
-            if (!resultContainer) {
-                const allDivs = document.querySelectorAll('div');
-                for (let div of allDivs) {
-                    if (div.innerText.includes('LIVE AGE UPDATES') || div.innerText.includes('YEARS')) {
-                        resultContainer = div.closest('.result-box') || div.parentElement.parentElement; 
-                        break;
-                    }
-                }
-            }
             if (resultContainer) {
                 resultContainer.insertAdjacentHTML('afterend', productHTML);
             }
         }
     }
 
-    // 4. RENDER BOTTOM SECTION
+    // ============================================================
+    // 4. RENDER BOTTOM SECTION (Page ke neeche wala product)
+    // ============================================================
     function renderToolPageProducts() {
         const products = getRelevantProducts();
         if (products.length === 0) return;
@@ -1778,8 +1802,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 // END: SMART PRODUCT RECOMMENDATION SYSTEM (TOOL PAGES)
 // =========================================================================
+
+
 // =========================================================================
-// 14. DASHBOARD SMART PRODUCTS (HOME PAGE TAGS & POPUPS)
+// 14. DASHBOARD SMART PRODUCTS (HOME PAGE TAGS, POPUPS & AUTO-ROTATING SIDEBAR)
 // =========================================================================
 (function() {
     function isHomePage() {
@@ -1793,6 +1819,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const toolsContainer = document.getElementById('toolsContainer');
         if (!toolsContainer) return;
 
+        // 1. TAGS LAGANA
         setTimeout(() => {
             const toolCards = toolsContainer.querySelectorAll('.tool-card');
             toolCards.forEach(card => {
@@ -1800,7 +1827,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (link) {
                     let pageKey = link.innerText.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
                     
-                    // STRICT CHECK: Tag sirf tab lagao jab PAGE_CATEGORY_MAP mein ho
                     if (window.PAGE_CATEGORY_MAP && window.PAGE_CATEGORY_MAP[pageKey]) {
                         const tag = document.createElement('span');
                         tag.innerHTML = '🛒 Products';
@@ -1815,9 +1841,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 500);
 
+        // 2. SIDEBAR & MOBILE BTN
         createSidebarAndFloatingBtn();
     });
 
+    // POPUP LOGIC
     function showProductPopup(toolName) {
         let pageKey = toolName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
         let matchedProducts = [];
@@ -1833,7 +1861,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        if (matchedProducts.length === 0) return; // Agar strict match nahi mila, popup mat kholo
+        if (matchedProducts.length === 0) return; 
 
         const existingModal = document.getElementById('customProductModal');
         if(existingModal) existingModal.remove();
@@ -1853,6 +1881,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div style="flex:1;">
                         <h4 style="margin:0 0 5px 0; font-size:0.85rem; color:#333;">${p.title}</h4>
                         <a href="${p.link}" target="_blank" style="display:inline-block; background:#f59e0b; color:white; padding:5px 12px; border-radius:5px; text-decoration:none; font-size:0.75rem; font-weight:bold;">Buy on Amazon</a>
+                        ${p.authorLink ? `<a href="${p.authorLink}" target="_blank" style="display:inline-block; background:#3b82f6; color:white; padding:5px 12px; border-radius:5px; text-decoration:none; font-size:0.75rem; font-weight:bold; margin-top:5px;">Author Page</a>` : ''}
                     </div>
                 </div>
             `;
@@ -1862,19 +1891,39 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
+    // SIDEBAR WITH AUTO-ROTATION
     function createSidebarAndFloatingBtn() {
         const sidebar = document.createElement('div');
         sidebar.innerHTML = `
             <div id="sidebar-inner-box" style="position:fixed; right:15px; top:120px; width:170px; background:white; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); padding:10px; z-index:9000; border:1px solid #e5e7eb; display:none;">
                 <h4 style="margin:0 0 5px 0; color:#881e8a; font-size:0.85rem; text-align:center;">✨ Top Products</h4>
                 <p style="font-size:0.65rem; color:#666; text-align:center; margin-bottom:8px; line-height: 1.2;">Kisi bhi tool par click karein.</p>
-                <a href="https://amzn.to/47g0tX5" target="_blank">
-                    <img src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" loading="lazy" style="width:100%; border-radius:6px; display:block;">
+                <a id="sidebar-dynamic-link" href="#" target="_blank">
+                    <img id="sidebar-dynamic-img" src="https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg" loading="lazy" style="width:100%; border-radius:6px; display:block;">
                 </a>
             </div>
         `;
         document.body.appendChild(sidebar);
 
+        let currentIndex = 0;
+        function rotateSidebarProduct() {
+            if (window.PRODUCTS_DB && window.PRODUCTS_DB.length > 0) {
+                currentIndex = (currentIndex + 1) % window.PRODUCTS_DB.length;
+                const p = window.PRODUCTS_DB[currentIndex];
+                const img = document.getElementById('sidebar-dynamic-img');
+                const link = document.getElementById('sidebar-dynamic-link');
+                if (img && link) {
+                    img.src = p.image;
+                    link.href = p.link;
+                    img.onerror = function() { setTimeout(rotateSidebarProduct, 1000); };
+                }
+            }
+        }
+        
+        setTimeout(rotateSidebarProduct, 500);
+        setInterval(rotateSidebarProduct, 10000); // Har 10 second baad change
+
+        // MOBILE BUTTON
         const mobileBtn = document.createElement('div');
         mobileBtn.innerHTML = '🛒';
         mobileBtn.style.cssText = 'position:fixed; bottom:20px; right:20px; width:45px; height:45px; background:#f59e0b; color:white; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:20px; box-shadow:0 4px 15px rgba(245,158,11,0.4); z-index:9000; cursor:pointer;';
@@ -1893,6 +1942,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div style="flex:1;">
                             <h4 style="margin:0 0 5px 0; font-size:0.85rem; color:#333;">${p.title}</h4>
                             <a href="${p.link}" target="_blank" style="display:inline-block; background:#f59e0b; color:white; padding:5px 12px; border-radius:5px; text-decoration:none; font-size:0.75rem; font-weight:bold;">Buy on Amazon</a>
+                            ${p.authorLink ? `<a href="${p.authorLink}" target="_blank" style="display:inline-block; background:#3b82f6; color:white; padding:5px 12px; border-radius:5px; text-decoration:none; font-size:0.75rem; font-weight:bold; margin-top:5px;">Author Page</a>` : ''}
                         </div>
                     </div>
                 `;
@@ -1919,5 +1969,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })();
 // =========================================================================
-// END: DASHBOARD SMART PRODUCTS (HOME PAGE TAGS & POPUPS)
+// END: DASHBOARD SMART PRODUCTS (HOME PAGE TAGS, POPUPS & AUTO-ROTATING SIDEBAR)
 // =========================================================================
