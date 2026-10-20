@@ -1628,7 +1628,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: "leapfrog-100-words", title: "LeapFrog Learning Friends 100 Words Book", subtitle: "Interactive Learning Toy!", image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg", link: "https://www.amazon.com/dp/B07CCFDZZ3?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["kids", "toy", "education", "fun", "family"] },
         { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://www.amazon.com/dp/B0B4Y6YQ1Y?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] },
         
-        // ===== AAPKI BOOK (Strict: Kids, Animal, Education, Age) =====
+        // ===== AAPKI BOOK =====
         { 
             id: "little-paws-big-dreams", 
             title: "LITTLE PAWS, BIG DREAMS", 
@@ -1638,14 +1638,14 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             authorLink: "https://www.amazon.com/author/zainuddin", 
             categories: ["kids", "animal", "family", "education", "age"] 
-        },
+        }, // <-- Yahan comma hona zaroori hai
 
-        // ===== TOZO EARBUDS (Strict: Tech, Health, Fun) =====
+        // ===== TOZO EARBUDS =====
         { 
             id: "tozo-hybrid-anc", 
             title: "TOZO Hybrid ANC Wireless Earbuds", 
             subtitle: "68H Playtime, 6 Mics AI Clear Calls, IPX8 Waterproof", 
-            image: "https://m.media-amazon.com/images/I/61X0f3y1PqL._AC_SL1500_.jpg", 
+            image: "https://m.media-amazon.com/images/I/81tM16JrMWL._AC_SL1500_.jpg", 
             link: "https://www.amazon.com/dp/B0DGKWQMSM?tag=freeonlinet0d-20", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "health", "fun"] 
