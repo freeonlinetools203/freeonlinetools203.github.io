@@ -1655,7 +1655,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: "etekcity-22lb-scale", 
             title: "Etekcity 22lb Food Kitchen Scale", 
             subtitle: "USB Rechargeable, IPX6 Waterproof, 1g Precision - Ships to Pakistan", 
-            image: "https://m.media-amazon.com/images/I/81HZY1Dn7sL._AC_SL1500_.jpg", 
+            image: "https://m.media-amazon.com/images/I/71xTA6Qo2ZL._AC_SL1500_.jpg", 
             link: "https://www.amazon.com/dp/B0BB6MBR9C?tag=freeonlinet0d-20", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["health", "family", "tech"] 
