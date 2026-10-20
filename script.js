@@ -1636,7 +1636,6 @@ document.addEventListener('DOMContentLoaded', function() {
             image: "https://raw.githubusercontent.com/freeonlinetools203/freeonlinetools203.github.io/main/little-paws-big-dreams.jpg", 
             link: "https://www.amazon.com/dp/B0GBZCSFF", 
             buttonText: "🛒 Buy on Amazon", 
-            authorLink: "https://www.amazon.com/author/zainuddin", 
             categories: ["kids", "animal", "family", "education", "age"] 
         }, // <-- Yahan comma hona zaroori hai
 
