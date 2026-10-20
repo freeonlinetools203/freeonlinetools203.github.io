@@ -1616,7 +1616,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 (function() {
     
-       // ============================================================
+    // ============================================================
     // 1. PRODUCTS DATABASE
     // ============================================================
     var PRODUCTS = [
@@ -1626,61 +1626,65 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: "50-funny-jokes", title: "50 FUNNY JOKES FOR KIDS", subtitle: "Clean & Kid-Friendly Laughs!", image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["age", "family", "health", "birthday", "kids"] },
         { id: "space-jokes", title: "SPACE JOKES FOR KIDS", subtitle: "Out-of-this-World Puns!", image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["lucky", "random", "zodiac", "astrology", "kids"] },
         { id: "leapfrog-100-words", title: "LeapFrog Learning Friends 100 Words Book", subtitle: "Interactive Learning Toy!", image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg", link: "https://www.amazon.com/dp/B07CCFDZZ3?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["kids", "toy", "education", "fun", "family"] },
-        { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://amzn.to/47g0tX5", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] },
+        { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://www.amazon.com/dp/B0B4Y6YQ1Y?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] },
         
-        // ===== NAYA PRODUCT: LITTLE PAWS, BIG DREAMS (CLEAN LINKS) =====
+        // ===== AAPKI BOOK (Strict: Kids, Animal, Education, Age) =====
         { 
             id: "little-paws-big-dreams", 
             title: "LITTLE PAWS, BIG DREAMS", 
             subtitle: "10 Cozy Animal Bedtime Stories for Kids Ages 3-7", 
-            // 👇 Sahi Image Link (GitHub se) 👇
             image: "https://raw.githubusercontent.com/freeonlinetools203/freeonlinetools203.github.io/main/little-paws-big-dreams.jpg", 
-            // 👇 Direct Book Link (Bina Affiliate Tag ke) 👇
             link: "https://www.amazon.com/dp/B0GBZCSFF", 
             buttonText: "🛒 Buy on Amazon", 
-            // 👇 Direct Author Page Link (Bina Affiliate Tag ke) 👇
             authorLink: "https://www.amazon.com/author/zainuddin", 
-            categories: ["kids", "animal", "family", "education"] 
+            categories: ["kids", "animal", "family", "education", "age"] 
+        },
+
+        // ===== TOZO EARBUDS (Strict: Tech, Health, Fun) =====
+        { 
+            id: "tozo-hybrid-anc", 
+            title: "TOZO Hybrid ANC Wireless Earbuds", 
+            subtitle: "68H Playtime, 6 Mics AI Clear Calls, IPX8 Waterproof", 
+            image: "https://m.media-amazon.com/images/I/61X0f3y1PqL._AC_SL1500_.jpg", 
+            link: "https://www.amazon.com/dp/B0DGKWQMSM?tag=freeonlinet0d-20", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["tech", "health", "fun"] 
         }
     ];
 
     window.PRODUCTS_DB = PRODUCTS;
+
     // ============================================================
-    // 2. PAGE-TO-CATEGORY MAPPING (Har tool ki category)
+    // 2. PAGE-TO-CATEGORY MAPPING (Strict Matching)
     // ============================================================
     const PAGE_CATEGORY_MAP = {
-        // Animal / Kids Tools
-        "dog-age-calculator": ["animal", "pet", "kids"],
-        "cat-pregnancy-calculator": ["animal", "pet", "kids"],
-        "dog-pregnancy-calculator": ["animal", "pet", "kids"],
-        "random-animal-wheel": ["animal", "fun", "kids"],
-        
-        // Age / Family Tools (Yahan aapki book show hogi)
+        // --- Age / Family / Kids Tools (Yahan Sirf Book Show Hogi) ---
         "age-calculator": ["age", "family", "kids", "education"],
         "chronological-age-calculator": ["age", "family", "kids", "education"],
         "birth-year-calculator": ["age", "birthday", "kids", "education"],
         "birthday-countdown": ["birthday", "family", "kids"],
         "happy-birthday-tool": ["birthday", "family", "kids"],
         
-        // Fun / Game Tools
-        "spin-the-wheel": ["fun", "wheel", "game", "kids"],
-        "yes-no-wheel": ["fun", "wheel", "decision", "kids"],
-        "decision-wheel": ["fun", "wheel", "decision", "kids"],
-        "decision-roulette": ["fun", "wheel", "decision", "kids"],
+        // --- Animal / Pet Tools (Yahan Sirf Book Show Hogi) ---
+        "dog-age-calculator": ["animal", "pet", "kids"],
+        "cat-pregnancy-calculator": ["animal", "pet", "kids"],
+        "dog-pregnancy-calculator": ["animal", "pet", "kids"],
+        "random-animal-wheel": ["animal", "fun", "kids"],
+        
+        // --- Fun / Game Tools (Yahan Book Aur Earbuds Dono Show Honge) ---
+        "spin-the-wheel": ["fun", "game", "wheel", "kids"],
+        "yes-no-wheel": ["fun", "game", "wheel", "kids"],
+        "decision-wheel": ["fun", "game", "wheel", "kids"],
+        "decision-roulette": ["fun", "game", "wheel", "kids"],
         "truth-or-dare-generator": ["fun", "game", "kids"],
         "party-games-spin-wheel": ["fun", "game", "party", "kids"],
         
-        // Random / Lucky Tools
-        "best-lottery-number-generator": ["lucky", "random", "kids"],
-        "random-number-generator": ["lucky", "random", "kids"],
-        "daily-lucky-number-wheel": ["lucky", "random", "kids"],
+        // --- Health Tools (Yahan Sirf Earbuds Show Honge) ---
+        "bmi-calculator": ["health", "tech"],
+        "bmr-calculator": ["health", "tech"],
+        "calorie-calculator": ["health", "tech"],
         
-        // Health Tools
-        "bmi-calculator": ["health", "family"],
-        "bmr-calculator": ["health", "family"],
-        "calorie-calculator": ["health", "family"],
-        
-        // Zodiac Tools
+        // --- Zodiac Tools (Yahan Sirf Book Show Hogi) ---
         "zodiac-sign-finder": ["zodiac", "astrology", "kids"],
         "chinese-zodiac-finder": ["zodiac", "astrology", "kids"],
         "zodiac-wheel": ["zodiac", "astrology", "kids"]
@@ -1716,7 +1720,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (document.getElementById('inline-tool-product')) return;
 
-        const product = products[0]; // Pehla matching product uthayega
+        const product = products[0];
         
         const productHTML = `
             <div id="inline-tool-product" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 15px 20px; margin: 20px auto; max-width: 800px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
@@ -1756,7 +1760,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================================
-    // 4. RENDER BOTTOM SECTION (Page ke neeche wala product)
+    // 4. RENDER BOTTOM SECTION
     // ============================================================
     function renderToolPageProducts() {
         const products = getRelevantProducts();
@@ -1922,7 +1926,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         setTimeout(rotateSidebarProduct, 500);
-        setInterval(rotateSidebarProduct, 10000); // Har 10 second baad change
+        setInterval(rotateSidebarProduct, 10000); 
 
         // MOBILE BUTTON
         const mobileBtn = document.createElement('div');
