@@ -1639,7 +1639,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["kids", "animal", "family", "education", "age"] 
         }, // <-- Yahan comma hona zaroori hai
 
-        // ===== TOZO EARBUDS =====
+                // ===== TOZO EARBUDS =====
         { 
             id: "tozo-hybrid-anc", 
             title: "TOZO Hybrid ANC Wireless Earbuds", 
@@ -1648,6 +1648,17 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://www.amazon.com/dp/B0DGKWQMSM?tag=freeonlinet0d-20", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "health", "fun"] 
+        }, // <-- YEH COMMA ZAROORI HAI
+
+        // ===== NAYA PRODUCT: ETEKCITY 22LB KITCHEN SCALE (GLOBAL SHIPPING) =====
+        { 
+            id: "etekcity-22lb-scale", 
+            title: "Etekcity 22lb Food Kitchen Scale", 
+            subtitle: "USB Rechargeable, IPX6 Waterproof, 1g Precision - Ships to Pakistan", 
+            image: "https://m.media-amazon.com/images/I/81HZY1Dn7sL._AC_SL1500_.jpg", 
+            link: "https://www.amazon.com/dp/B0BB6MBR9C?tag=freeonlinet0d-20", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["health", "family", "tech"] 
         }
     ];
 
