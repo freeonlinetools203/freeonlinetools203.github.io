@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Image Resizer | Resize Images Online | Free Image Resizer Tool</title>
+<title>Free Image Resizer - Resize Images Online in KB & Pixels</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Free image resizer for USA, UK, India. Resize images to any dimension instantly. Preset sizes for social media, thumbnails, and more. 100% free, no registration needed.">
-<meta name="keywords" content="image resizer, resize image online, image resizer 8k, resize photo, image resizer free, 8k image resizer, resize image to 8kb, image size reducer, photo resizer, batch image resizer">
+<meta name="description" content="Free online image resizer. Resize images to any dimension in pixels or KB instantly. Preset sizes for social media, thumbnails, 8K images, and more. 100% free, no signup.">
+<meta name="keywords" content="image resizer, resize image online, image resizer 8k, resize photo, image resizer free, 8k image resizer, resize image to 8kb, image size reducer, photo resizer, batch image resizer, compress image to kb">
 <meta name="author" content="Free Online Tools">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="US, GB, IN, CA, AU, PK">
 <link rel="canonical" href="https://freeonlinetools203.com/image-resizer.html">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Image Resizer | Resize Images Online Free">
+<meta property="og:title" content="Free Image Resizer | Resize Images Online Free">
 <meta property="og:description" content="Free online image resizer. Resize images to any dimension instantly.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeonlinetools203.com/image-resizer.html">
@@ -97,6 +97,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-display: swap;
         }
 
         body {
@@ -621,6 +622,20 @@
                     </div>
                     <button class="custom-download-btn" id="customDownloadBtn">⬇️ Resize & Download Custom Size</button>
                 </div>
+
+                <!-- 🔥 NEW FEATURE: KB COMPRESS -->
+                <div class="resize-controls" style="margin-top:20px; border: 2px solid #2563eb;">
+                    <label class="dimension-label" style="color: #1e3a8a; font-size: 14px;">⚖️ Compress to KB (Target File Size)</label>
+                    <div class="dimension-row" style="margin-bottom: 0;">
+                        <div class="dimension-box">
+                            <input type="number" id="targetKB" class="dimension-input" placeholder="Enter target KB (e.g. 20, 50)">
+                        </div>
+                        <div class="dimension-box">
+                            <button class="custom-download-btn" id="kbCompressBtn" style="padding: 12px;">⬇️ Compress Image</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -816,8 +831,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <!-- ========== SEO ARTICLE ========== -->
     <div class="info-section">
-        <h1 style="font-size: 32px; margin-bottom: 20px; border-bottom: none;">📐 Complete Guide to Image Resizer</h1>
-        <p style="color: #6b7280; margin-bottom: 30px;">Last Updated: April 13, 2026 | 8 min read | By Image Experts</p>
+        <h2 style="font-size: 32px; margin-bottom: 20px; border-bottom: none;">📐 Complete Guide to Image Resizer</h2>
+        <p style="color: #6b7280; margin-bottom: 30px;">Last Updated: October 2024 | 8 min read | By Image Experts</p>
 
         <h2>🎯 What is an Image Resizer?</h2>
         <p>An <strong>image resizer</strong> is a tool that changes the dimensions of an image without losing quality. Whether you need to resize images for social media, websites, thumbnails, or print, our free tool handles it instantly. Supports <strong>8k image resizing</strong>, custom dimensions, and preset sizes.</p>
@@ -1089,6 +1104,8 @@ const previewImg = document.getElementById('previewImg');
 const customWidth = document.getElementById('customWidth');
 const customHeight = document.getElementById('customHeight');
 const customDownloadBtn = document.getElementById('customDownloadBtn');
+const targetKB = document.getElementById('targetKB');
+const kbCompressBtn = document.getElementById('kbCompressBtn');
 
 let originalFile = null;
 let originalURL = null;
@@ -1114,7 +1131,7 @@ function handleImageUpload(file) {
     originalURL = URL.createObjectURL(file);
     previewImg.src = originalURL;
     previewSection.classList.add('show');
-    showToast('Image loaded! Click any size to resize and download.');
+    showToast('Image loaded! Choose a size or enter target KB.');
 }
 
 function resizeAndDownload(targetW, targetH) {
@@ -1165,6 +1182,52 @@ customDownloadBtn.addEventListener('click', () => {
     }
     resizeAndDownload(w, h);
 });
+
+// KB Compress Feature
+if (kbCompressBtn) {
+    kbCompressBtn.addEventListener('click', () => {
+        if (!originalFile) return showToast('Upload image first!');
+        const targetKBValue = parseInt(targetKB.value);
+        if (isNaN(targetKBValue) || targetKBValue < 5) return showToast('Enter valid KB (min 5)');
+        
+        const img = new Image();
+        img.src = originalURL;
+        img.onload = () => {
+            let quality = 0.9;
+            let currentSize = originalFile.size / 1024;
+            if (currentSize <= targetKBValue) {
+                showToast('Original image is already smaller!');
+                return;
+            }
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            
+            function tryCompress() {
+                canvas.toBlob((blob) => {
+                    const sizeKB = blob.size / 1024;
+                    if (sizeKB > targetKBValue && quality > 0.1) {
+                        quality -= 0.1;
+                        tryCompress();
+                    } else {
+                        const link = document.createElement('a');
+                        const name = originalFile.name.split('.');
+                        const ext = name.pop();
+                        link.download = `${name.join('.')}_${targetKBValue}KB.${ext}`;
+                        link.href = URL.createObjectURL(blob);
+                        link.click();
+                        URL.revokeObjectURL(link.href);
+                        showToast(`Compressed to ~${sizeKB.toFixed(1)}KB!`);
+                    }
+                }, originalFile.type, quality);
+            }
+            tryCompress();
+        };
+    });
+}
 
 function showToast(msg) {
     const toast = document.createElement('div');
