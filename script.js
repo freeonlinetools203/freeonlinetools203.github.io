@@ -1619,8 +1619,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     // 1. PRODUCTS DATABASE
     // ============================================================
-           var PRODUCTS = [
-       // ===== NAYA PRODUCT: BIRTHDAY CANDLE (AGE CALCULATOR KE LIYE) =====
+     var PRODUCTS = [
+        // ===== BIRTHDAY CANDLE (AGE CALCULATOR) =====
         { 
             id: "vegishine-birthday-candle", 
             title: "VEGISHINE Happy Birthday Candle", 
@@ -1630,8 +1630,7 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             categories: ["birthday", "age", "family"] 
         },
-
-     // ===== NAYA PRODUCT: PHD CAKE BIRTHDAY CANDLE =====
+        // ===== PHD CAKE CANDLE =====
         { 
             id: "phd-cake-birthday-candle", 
             title: "PHD CAKE Happy Birthday Candle", 
@@ -1641,7 +1640,7 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             categories: ["birthday", "age", "family"] 
         },
-   // ===== NAYA PRODUCT: BIRTHDAY CAKE TOPPER =====
+        // ===== CAKE TOPPER =====
         { 
             id: "birthday-cake-topper", 
             title: "BEAN LIEVE Happy Birthday Cake Topper", 
@@ -1651,7 +1650,6 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             categories: ["birthday", "age", "family"] 
         },
-
         // ===== TOZO EARBUDS =====
         { 
             id: "tozo-hybrid-anc", 
@@ -1662,8 +1660,7 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "health", "fun"] 
         },
-
-        // ===== ETEKCITY 22LB KITCHEN SCALE =====
+        // ===== ETEKCITY KITCHEN SCALE =====
         { 
             id: "etekcity-22lb-scale", 
             title: "Etekcity 22lb Food Kitchen Scale", 
@@ -1673,8 +1670,7 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             categories: ["health", "family", "tech"] 
         },
-
-        // ===== MAYBESTA WIRELESS MINI MICROPHONE (YOUTUBE) =====
+        // ===== MAYBESTA MIC =====
         { 
             id: "maybesta-wireless-mic", 
             title: "MAYBESTA Wireless Mini Microphone", 
@@ -1684,8 +1680,7 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             categories: ["youtube", "tech"] 
         },
-
-        // ===== ULANZI VL49 RGB LED LIGHT (YOUTUBE) =====
+        // ===== ULANZI LIGHT =====
         { 
             id: "ulanzi-vl49-rgb-light", 
             title: "ULANZI VL49 RGB Video Light", 
@@ -1702,21 +1697,22 @@ document.addEventListener('DOMContentLoaded', function() {
        // ============================================================
     // 2. PAGE-TO-CATEGORY MAPPING (Strict Matching)
     // ============================================================
-   const PAGE_CATEGORY_MAP = {
-        // --- Age / Family / Kids Tools (Yahan Ab Candle Aur Tech Products Show Honge) ---
-        "age-calculator": ["birthday", "age", "family", "tech"],
-        "chronological-age-calculator": ["birthday", "age", "family", "tech"],
-        "birth-year-calculator": ["birthday", "age", "family", "tech"],
+    
+    const PAGE_CATEGORY_MAP = {
+        // --- Age / Birthday Tools (Yahan Sirf Birthday Wale Products Show Honge) ---
+        "age-calculator": ["birthday", "age", "family"], // <-- Yahan se "tech" hata diya
+        "chronological-age-calculator": ["birthday", "age", "family"],
+        "birth-year-calculator": ["birthday", "age", "family"],
         "birthday-countdown": ["birthday", "family"],
         "happy-birthday-tool": ["birthday", "family"],
         
-        // --- Animal / Pet Tools (Yahan Sirf Book Show Hogi) ---
+        // --- Animal / Pet Tools ---
         "dog-age-calculator": ["animal", "pet", "kids"],
         "cat-pregnancy-calculator": ["animal", "pet", "kids"],
         "dog-pregnancy-calculator": ["animal", "pet", "kids"],
         "random-animal-wheel": ["animal", "fun", "kids"],
         
-        // --- Fun / Game Tools (Yahan Book Aur Earbuds Dono Show Honge) ---
+        // --- Fun / Game Tools ---
         "spin-the-wheel": ["fun", "game", "wheel", "kids"],
         "yes-no-wheel": ["fun", "game", "wheel", "kids"],
         "decision-wheel": ["fun", "game", "wheel", "kids"],
@@ -1724,7 +1720,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "truth-or-dare-generator": ["fun", "game", "kids"],
         "party-games-spin-wheel": ["fun", "game", "party", "kids"],
 
-                // --- YouTube Tools (Yahan Sirf YouTube Wala Mic Show Hoga) ---
+        // --- YouTube Tools ---
         "youtube-seo-score-checker": ["youtube", "tech"],
         "youtube-keyword-generator": ["youtube", "tech"],
         "youtube-keyword-research": ["youtube", "tech"],
@@ -1750,7 +1746,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "youtube-channel-name-generator": ["youtube", "tech"],
         "youtube-community-post-generator": ["youtube", "tech"],
 
-        // --- SEO Tools (Yahan Tech Products Show Honge) ---
+        // --- SEO Tools ---
         "keyword-density-checker": ["tech"],
         "meta-tags-generator": ["tech"],
         "meta-tag-analyzer": ["tech"],
@@ -1766,7 +1762,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "image-alt-analyzer": ["tech"],
         "xml-sitemap-generator": ["tech"],
         
-        // --- Health Tools (Yahan Earbuds Aur Kitchen Scale Dono Show Honge) ---
+        // --- Health Tools ---
         "bmi-calculator": ["health", "tech", "family"],
         "bmr-calculator": ["health", "tech", "family"],
         "calorie-calculator": ["health", "tech", "family"],
@@ -1778,32 +1774,14 @@ document.addEventListener('DOMContentLoaded', function() {
         "protein-calculator": ["health", "tech", "family"],
         "waist-to-hip-calculator": ["health", "tech", "family"],
         
-        // --- Zodiac Tools (Yahan Sirf Book Show Hogi) ---
+        // --- Zodiac Tools ---
         "zodiac-sign-finder": ["zodiac", "astrology", "kids"],
         "chinese-zodiac-finder": ["zodiac", "astrology", "kids"],
         "zodiac-wheel": ["zodiac", "astrology", "kids"]
     };
 
     window.PAGE_CATEGORY_MAP = PAGE_CATEGORY_MAP;
-
-    function getCurrentPageKey() {
-        let path = window.location.pathname;
-        let filename = path.split('/').pop();
-        if (!filename || filename === '' || filename === 'index.html') return 'home';
-        return filename.replace('.html', '');
-    }
-
-    function getRelevantProducts() {
-        const pageKey = getCurrentPageKey();
-        if (pageKey === 'home') return PRODUCTS;
-        
-        const categories = PAGE_CATEGORY_MAP[pageKey];
-        if (!categories) return [];
-        
-        return PRODUCTS.filter(product => 
-            product.categories.some(cat => categories.includes(cat))
-        );
-    }
+    
     // ============================================================
     // 3. CALCULATE BUTTON KE NICHE PRODUCT INJECT
     // ============================================================
