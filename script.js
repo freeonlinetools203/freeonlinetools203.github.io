@@ -1747,6 +1747,22 @@ document.addEventListener('DOMContentLoaded', function() {
         "youtube-shorts-idea-calendar-generator": ["youtube", "tech"],
         "youtube-channel-name-generator": ["youtube", "tech"],
         "youtube-community-post-generator": ["youtube", "tech"],
+
+                // --- SEO Tools (Yahan UGREEN Hub Show Hoga) ---
+        "keyword-density-checker": ["seo"],
+        "meta-tags-generator": ["seo"],
+        "meta-tag-analyzer": ["seo"],
+        "broken-link-checker": ["seo"],
+        "free-backlink-checker": ["seo"],
+        "google-index-checker": ["seo"],
+        "seo-analyzer": ["seo"],
+        "seo-score-checker": ["seo"],
+        "seo-title-generator": ["seo"],
+        "serp-snippet-preview": ["seo"],
+        "readability-checker": ["seo"],
+        "heading-structure-checker": ["seo"],
+        "image-alt-analyzer": ["seo"],
+        "xml-sitemap-generator": ["seo"],
         
         // --- Health Tools (Yahan Earbuds Aur Kitchen Scale Dono Show Honge) ---
         "bmi-calculator": ["health", "tech", "family"],
