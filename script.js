@@ -1650,7 +1650,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["tech", "health", "fun"] 
         }, // <-- YEH COMMA ZAROORI HAI
 
-        // ===== NAYA PRODUCT: ETEKCITY 22LB KITCHEN SCALE (GLOBAL SHIPPING) =====
+               // ===== NAYA PRODUCT: ETEKCITY 22LB KITCHEN SCALE (GLOBAL SHIPPING) =====
         { 
             id: "etekcity-22lb-scale", 
             title: "Etekcity 22lb Food Kitchen Scale", 
@@ -1659,11 +1659,22 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://www.amazon.com/dp/B0BB6MBR9C?tag=freeonlinet0d-20", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["health", "family", "tech"] 
+        },
+
+        // ===== NAYA PRODUCT: MAYBESTA WIRELESS MINI MICROPHONE (YOUTUBE) =====
+        { 
+            id: "maybesta-wireless-mic", 
+            title: "MAYBESTA Wireless Mini Microphone", 
+            subtitle: "Lavalier Lapel Mic for YouTube, TikTok & Vlogging - No Adapter Needed", 
+            image: "https://m.media-amazon.com/images/I/81+jApjQ5xL._AC_SL1500_.jpg", 
+            link: "https://link.amazon/B01KRxwMz", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["youtube", "tech"] 
         }
     ];
 
     window.PRODUCTS_DB = PRODUCTS;
-
+    
        // ============================================================
     // 2. PAGE-TO-CATEGORY MAPPING (Strict Matching)
     // ============================================================
@@ -1688,6 +1699,32 @@ document.addEventListener('DOMContentLoaded', function() {
         "decision-roulette": ["fun", "game", "wheel", "kids"],
         "truth-or-dare-generator": ["fun", "game", "kids"],
         "party-games-spin-wheel": ["fun", "game", "party", "kids"],
+
+                // --- YouTube Tools (Yahan Sirf YouTube Wala Mic Show Hoga) ---
+        "youtube-seo-score-checker": ["youtube", "tech"],
+        "youtube-keyword-generator": ["youtube", "tech"],
+        "youtube-keyword-research": ["youtube", "tech"],
+        "youtube-channel-analyzer": ["youtube", "tech"],
+        "youtube-channel-comparison": ["youtube", "tech"],
+        "youtube-viral-video-predictor": ["youtube", "tech"],
+        "youtube-seo-checklist-generator": ["youtube", "tech"],
+        "youtube-title-generator": ["youtube", "tech"],
+        "youtube-description-generator": ["youtube", "tech"],
+        "youtube-video-idea-generator": ["youtube", "tech"],
+        "youtube-video-outline-generator": ["youtube", "tech"],
+        "youtube-content-planner-ai": ["youtube", "tech"],
+        "youtube-video-tags-extractor": ["youtube", "tech"],
+        "youtube-video-tags-generator": ["youtube", "tech"],
+        "youtube-thumbnail-downloader": ["youtube", "tech"],
+        "youtube-thumbnail-text-generator": ["youtube", "tech"],
+        "youtube-thumbnail-color-palette-generator": ["youtube", "tech"],
+        "youtube-thumbnail-split-tester": ["youtube", "tech"],
+        "youtube-thumbnail-ctr-predictor": ["youtube", "tech"],
+        "youtube-shorts-hook-generator": ["youtube", "tech"],
+        "youtube-shorts-script-generator": ["youtube", "tech"],
+        "youtube-shorts-idea-calendar-generator": ["youtube", "tech"],
+        "youtube-channel-name-generator": ["youtube", "tech"],
+        "youtube-community-post-generator": ["youtube", "tech"],
         
         // --- Health Tools (Yahan Earbuds Aur Kitchen Scale Dono Show Honge) ---
         "bmi-calculator": ["health", "tech", "family"],
