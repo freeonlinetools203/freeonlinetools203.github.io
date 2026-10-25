@@ -1631,6 +1631,17 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["birthday", "age", "family"] 
         },
 
+     // ===== NAYA PRODUCT: PHD CAKE BIRTHDAY CANDLE =====
+        { 
+            id: "phd-cake-birthday-candle", 
+            title: "PHD CAKE Happy Birthday Candle", 
+            subtitle: "Natural Soy Wax Vanilla Scented - Perfect Birthday Gift", 
+            image: "https://raw.githubusercontent.com/freeonlinetools203/freeonlinetools203.github.io/main/product-phd-cake-birthday-candle.jpg", 
+            link: "https://link.amazon/B0g0jp9II", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["birthday", "age", "family"] 
+        },
+
         // ===== TOZO EARBUDS =====
         { 
             id: "tozo-hybrid-anc", 
