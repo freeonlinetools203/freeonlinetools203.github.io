@@ -1641,6 +1641,16 @@ document.addEventListener('DOMContentLoaded', function() {
             buttonText: "🛒 Buy on Amazon", 
             categories: ["birthday", "age", "family"] 
         },
+   // ===== NAYA PRODUCT: BIRTHDAY CAKE TOPPER =====
+        { 
+            id: "birthday-cake-topper", 
+            title: "BEAN LIEVE Happy Birthday Cake Topper", 
+            subtitle: "12 Pieces Gold Cake Decorations & Cupcake Toppers", 
+            image: "https://raw.githubusercontent.com/freeonlinetools203/freeonlinetools203.github.io/main/product-birthday-cake-topper.jpg", 
+            link: "https://link.amazon/B04NTE4Yw", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["birthday", "age", "family"] 
+        },
 
         // ===== TOZO EARBUDS =====
         { 
