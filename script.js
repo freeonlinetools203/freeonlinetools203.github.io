@@ -1698,14 +1698,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. PAGE-TO-CATEGORY MAPPING (Strict Matching)
     // ============================================================
     
-    const PAGE_CATEGORY_MAP = {
-        // --- Age / Birthday Tools (Yahan Sirf Birthday Wale Products Show Honge) ---
-        "age-calculator": ["birthday", "age", "family"], // <-- Yahan se "tech" hata diya
+   const PAGE_CATEGORY_MAP = {
+        // --- 1. Birthday / Gift Tools (Yahan Candle & Topper Dikhenge) ---
+        "age-calculator": ["birthday", "age", "family"],
         "chronological-age-calculator": ["birthday", "age", "family"],
         "birth-year-calculator": ["birthday", "age", "family"],
         "birthday-countdown": ["birthday", "family"],
         "happy-birthday-tool": ["birthday", "family"],
+        "korean-age-calculator": ["birthday", "age", "family"],
+        "future-age-predictor": ["birthday", "age", "family"],
+        "my-birth-year": ["birthday", "age", "family"],
+
+        // --- 2. Health / Body Tools (Yahan Kitchen Scale & Earbuds Dikhenge) ---
+        "biological-age-calculator": ["health", "tech"],
+        "free-biological-age-calculator": ["health", "tech"],
+        "life-expectancy-calculator": ["health", "tech"],
+        "running-age-calculator": ["health", "tech"],
+        "running-age-calculator-by-date-of-birth": ["health", "tech"],
         
+        // --- 3. Age Difference / Dating Tools (Yahan Filhal Kuch Nahi) ---
+        "age-difference-calculator": ["tech"], // General tech products
+        "age-calculator-difference": ["tech"],
+        "calculate-age-difference": ["tech"],
+        "age-gap-calculator": ["tech"],
+        "age-gap-dating-calculator": ["tech"],
+        "dating-age-difference-calculator": ["tech"],
+
         // --- Animal / Pet Tools ---
         "dog-age-calculator": ["animal", "pet", "kids"],
         "cat-pregnancy-calculator": ["animal", "pet", "kids"],
