@@ -1619,7 +1619,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     // 1. PRODUCTS DATABASE
     // ============================================================
-    var PRODUCTS = [
+       var PRODUCTS = [
         // Existing Products
         { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["animal", "pet", "farm", "fun", "kids"] },
         { id: "knock-knock-jokes", title: "KNOCK-KNOCK JOKES FOR KIDS", subtitle: "Hours of Silly Laughter!", image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "decision", "kids"] },
@@ -1637,6 +1637,17 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://www.amazon.com/dp/B0GBZCSFF", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["kids", "animal", "family", "education", "age"] 
+        },
+
+        // ===== NAYA PRODUCT: MONSTER JOKES FOR KIDS (AAPKI BOOK) =====
+        { 
+            id: "monster-jokes", 
+            title: "MONSTER JOKES FOR KIDS", 
+            subtitle: "100 Funny Monster Jokes, Silly Puns & Spooky Riddles for Ages 6-12", 
+            image: "https://freeonlinetools203.github.io/monster-jokes-cover.webp", 
+            link: "https://link.amazon/B0c8txiEm", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["kids", "family", "fun", "education"] 
         },
 
         // ===== TOZO EARBUDS =====
