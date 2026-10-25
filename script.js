@@ -1620,13 +1620,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. PRODUCTS DATABASE
     // ============================================================
            var PRODUCTS = [
-        // ===== NAYA PRODUCT: BIRTHDAY CANDLE (AGE CALCULATOR KE LIYE) =====
+       // ===== NAYA PRODUCT: BIRTHDAY CANDLE (AGE CALCULATOR KE LIYE) =====
         { 
             id: "vegishine-birthday-candle", 
             title: "VEGISHINE Happy Birthday Candle", 
             subtitle: "Vanilla Birthday Cake Scented - Perfect Birthday Gift", 
-            image: "https://m.media-amazon.com/images/I/71z6lT4zKqL._AC_SL1500_.jpg", // Candle ki image ka link
-            link: "https://link.amazon/B0iacXbzp", // Aapka diya hua link
+            image: "https://raw.githubusercontent.com/freeonlinetools203/freeonlinetools203.github.io/main/productaproduct-birthday-candle.jpg-birthday-candle.jpg", 
+            link: "https://link.amazon/B0iacXbzp", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["birthday", "age", "family"] 
         },
