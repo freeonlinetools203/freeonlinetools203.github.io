@@ -1688,7 +1688,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: "ugreen-usbc-hub", 
             title: "UGREEN USB C Hub 5-in-1", 
             subtitle: "4K HDMI, 100W PD, 3 USB-A Ports - Compatible with MacBook, iPad & Laptops", 
-            image: "https://m.media-amazon.com/images/I/71fA-b5oZaL._AC_SL1500_.jpg", 
+            https://m.media-amazon.com/images/I/61ZrDcJ4nYL._AC_SL1500_.jpg, 
             link: "https://link.amazon/B00VAA0EJ", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "seo"] 
@@ -1699,7 +1699,7 @@ document.addEventListener('DOMContentLoaded', function() {
             id: "syntech-usbc-adapter", 
             title: "Syntech USB C to USB Adapter (Pack of 2)", 
             subtitle: "USB 3.0, Thunderbolt 3/4 Compatible for MacBook Pro, iPad, Laptops", 
-            image: "https://m.media-amazon.com/images/I/71fA-b5oZaL.jpg", 
+            https://m.media-amazon.com/images/I/71fA-b5ozaL._AC_SL1500_.jpg 
             link: "https://link.amazon/B06cbVDN4", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "seo"] 
