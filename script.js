@@ -1619,35 +1619,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     // 1. PRODUCTS DATABASE
     // ============================================================
-       var PRODUCTS = [
-        // Existing Products
-        { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["animal", "pet", "farm", "fun", "kids"] },
-        { id: "knock-knock-jokes", title: "KNOCK-KNOCK JOKES FOR KIDS", subtitle: "Hours of Silly Laughter!", image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "decision", "kids"] },
-        { id: "50-funny-jokes", title: "50 FUNNY JOKES FOR KIDS", subtitle: "Clean & Kid-Friendly Laughs!", image: "https://freeonlinetools203.github.io/50-funny-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK8SHYB2?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["age", "family", "health", "birthday", "kids"] },
-        { id: "space-jokes", title: "SPACE JOKES FOR KIDS", subtitle: "Out-of-this-World Puns!", image: "https://freeonlinetools203.github.io/space-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKZB8SL4?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["lucky", "random", "zodiac", "astrology", "kids"] },
-        { id: "leapfrog-100-words", title: "LeapFrog Learning Friends 100 Words Book", subtitle: "Interactive Learning Toy!", image: "https://m.media-amazon.com/images/I/81K35upJrHL._AC_SL1500_.jpg", link: "https://www.amazon.com/dp/B07CCFDZZ3?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["kids", "toy", "education", "fun", "family"] },
-        { id: "taco-vs-burrito", title: "TACO VS BURRITO - Card Game", subtitle: "Family-Friendly Party Game!", image: "https://m.media-amazon.com/images/I/71hPE6FpfnL._AC_SL1500_.jpg", link: "https://www.amazon.com/dp/B0B4Y6YQ1Y?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "kids", "family", "party"] },
-        
-        // ===== AAPKI BOOK =====
+           var PRODUCTS = [
+        // ===== NAYA PRODUCT: BIRTHDAY CANDLE (AGE CALCULATOR KE LIYE) =====
         { 
-            id: "little-paws-big-dreams", 
-            title: "LITTLE PAWS, BIG DREAMS", 
-            subtitle: "10 Cozy Animal Bedtime Stories for Kids Ages 3-7", 
-            image: "https://raw.githubusercontent.com/freeonlinetools203/freeonlinetools203.github.io/main/little-paws-big-dreams.jpg", 
-            link: "https://www.amazon.com/dp/B0GBZCSFF", 
+            id: "vegishine-birthday-candle", 
+            title: "VEGISHINE Happy Birthday Candle", 
+            subtitle: "Vanilla Birthday Cake Scented - Perfect Birthday Gift", 
+            image: "https://m.media-amazon.com/images/I/71z6lT4zKqL._AC_SL1500_.jpg", // Candle ki image ka link
+            link: "https://link.amazon/B0iacXbzp", // Aapka diya hua link
             buttonText: "🛒 Buy on Amazon", 
-            categories: ["kids", "animal", "family", "education", "age"] 
-        },
-
-        // ===== NAYA PRODUCT: MONSTER JOKES FOR KIDS (AAPKI BOOK) =====
-        { 
-            id: "monster-jokes", 
-            title: "MONSTER JOKES FOR KIDS", 
-            subtitle: "100 Funny Monster Jokes, Silly Puns & Spooky Riddles for Ages 6-12", 
-            image: "https://freeonlinetools203.github.io/monster-jokes-cover.webp", 
-            link: "https://link.amazon/B0c8txiEm", 
-            buttonText: "🛒 Buy on Amazon", 
-            categories: ["kids", "family", "fun", "education"] 
+            categories: ["birthday", "age", "family"] 
         },
 
         // ===== TOZO EARBUDS =====
@@ -1665,7 +1646,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { 
             id: "etekcity-22lb-scale", 
             title: "Etekcity 22lb Food Kitchen Scale", 
-            subtitle: "USB Rechargeable, IPX6 Waterproof, 1g Precision - Ships to Pakistan", 
+            subtitle: "USB Rechargeable, IPX6 Waterproof, 1g Precision", 
             image: "https://m.media-amazon.com/images/I/71xTA6Qo2ZL._AC_SL1500_.jpg", 
             link: "https://www.amazon.com/dp/B0BB6MBR9C?tag=freeonlinet0d-20", 
             buttonText: "🛒 Buy on Amazon", 
@@ -1676,7 +1657,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { 
             id: "maybesta-wireless-mic", 
             title: "MAYBESTA Wireless Mini Microphone", 
-            subtitle: "Lavalier Lapel Mic for YouTube, TikTok & Vlogging - No Adapter Needed", 
+            subtitle: "Lavalier Lapel Mic for YouTube, TikTok & Vlogging", 
             image: "https://m.media-amazon.com/images/I/81+jApjQ5xL._AC_SL1500_.jpg", 
             link: "https://link.amazon/B01KRxwMz", 
             buttonText: "🛒 Buy on Amazon", 
@@ -1687,7 +1668,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { 
             id: "ulanzi-vl49-rgb-light", 
             title: "ULANZI VL49 RGB Video Light", 
-            subtitle: "360° Full Color, 2500-9000K, CRI 95+, 2000mAh Rechargeable", 
+            subtitle: "360° Full Color, 2500-9000K, CRI 95+", 
             image: "https://m.media-amazon.com/images/I/71vp1ZCn5WL._AC_SL1500_.jpg", 
             link: "https://link.amazon/B0dCye3KQ", 
             buttonText: "🛒 Buy on Amazon", 
@@ -1700,13 +1681,13 @@ document.addEventListener('DOMContentLoaded', function() {
        // ============================================================
     // 2. PAGE-TO-CATEGORY MAPPING (Strict Matching)
     // ============================================================
-    const PAGE_CATEGORY_MAP = {
-        // --- Age / Family / Kids Tools (Yahan Sirf Book Show Hogi) ---
-        "age-calculator": ["age", "family", "kids", "education"],
-        "chronological-age-calculator": ["age", "family", "kids", "education"],
-        "birth-year-calculator": ["age", "birthday", "kids", "education"],
-        "birthday-countdown": ["birthday", "family", "kids"],
-        "happy-birthday-tool": ["birthday", "family", "kids"],
+   const PAGE_CATEGORY_MAP = {
+        // --- Age / Family / Kids Tools (Yahan Ab Candle Aur Tech Products Show Honge) ---
+        "age-calculator": ["birthday", "age", "family", "tech"],
+        "chronological-age-calculator": ["birthday", "age", "family", "tech"],
+        "birth-year-calculator": ["birthday", "age", "family", "tech"],
+        "birthday-countdown": ["birthday", "family"],
+        "happy-birthday-tool": ["birthday", "family"],
         
         // --- Animal / Pet Tools (Yahan Sirf Book Show Hogi) ---
         "dog-age-calculator": ["animal", "pet", "kids"],
