@@ -1794,7 +1794,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const allButtons = document.querySelectorAll('button');
             for (let btn of allButtons) {
                 const btnText = btn.innerText.toLowerCase();
-                if (btnText.includes('calculate') || btnText.includes('generate') || btnText.includes('find')) {
+                // Yahan analyze aur score bhi add kar diya gaya hai
+                if (btnText.includes('calculate') || btnText.includes('generate') || btnText.includes('find') || btnText.includes('analyze') || btnText.includes('score')) {
                     calcBtn = btn;
                     break;
                 }
@@ -1811,7 +1812,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-
     // ============================================================
     // 4. RENDER BOTTOM SECTION
     // ============================================================
