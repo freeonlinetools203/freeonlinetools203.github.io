@@ -1668,7 +1668,7 @@ document.addEventListener('DOMContentLoaded', function() {
             image: "https://m.media-amazon.com/images/I/71xTA6Qo2ZL._AC_SL1500_.jpg", 
             link: "https://www.amazon.com/dp/B0BB6MBR9C?tag=freeonlinet0d-20", 
             buttonText: "🛒 Buy on Amazon", 
-            categories: ["health", "family", "tech"] 
+            categories: ["health", "tech"] 
         },
         // ===== MAYBESTA MIC =====
         { 
