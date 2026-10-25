@@ -1987,7 +1987,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
-    // SIDEBAR WITH AUTO-ROTATION
+// SIDEBAR WITH AUTO-ROTATION
     function createSidebarAndFloatingBtn() {
         const sidebar = document.createElement('div');
         sidebar.innerHTML = `
@@ -2002,10 +2002,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(sidebar);
 
         let currentIndex = 0;
+        let filteredProducts = window.PRODUCTS_DB.filter(p => 
+            p.categories.includes("tech") || 
+            p.categories.includes("youtube") || 
+            p.categories.includes("seo")
+        );
+
+        if (filteredProducts.length === 0) filteredProducts = window.PRODUCTS_DB;
+
         function rotateSidebarProduct() {
-            if (window.PRODUCTS_DB && window.PRODUCTS_DB.length > 0) {
-                currentIndex = (currentIndex + 1) % window.PRODUCTS_DB.length;
-                const p = window.PRODUCTS_DB[currentIndex];
+            if (filteredProducts && filteredProducts.length > 0) {
+                currentIndex = (currentIndex + 1) % filteredProducts.length;
+                const p = filteredProducts[currentIndex];
                 const img = document.getElementById('sidebar-dynamic-img');
                 const link = document.getElementById('sidebar-dynamic-link');
                 if (img && link) {
