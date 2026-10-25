@@ -1619,7 +1619,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     // 1. PRODUCTS DATABASE
     // ============================================================
-       var PRODUCTS = [
+    var PRODUCTS = [
         // Existing Products
         { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["animal", "pet", "farm", "fun", "kids"] },
         { id: "knock-knock-jokes", title: "KNOCK-KNOCK JOKES FOR KIDS", subtitle: "Hours of Silly Laughter!", image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "decision", "kids"] },
@@ -1681,28 +1681,6 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://link.amazon/B0dCye3KQ", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["youtube", "tech"] 
-        },
-
-        // ===== UGREEN USB-C HUB (SEO TOOLS) =====
-        { 
-            id: "ugreen-usbc-hub", 
-            title: "UGREEN USB C Hub 5-in-1", 
-            subtitle: "4K HDMI, 100W PD, 3 USB-A Ports - Compatible with MacBook, iPad & Laptops", 
-            image: "https://m.media-amazon.com/images/I/61ZrDcj4nYL._AC_SL1500_.jpg", 
-            link: "https://link.amazon/B00VAA0EJ", 
-            buttonText: "🛒 Buy on Amazon", 
-            categories: ["tech", "seo"] 
-        },
-
-        // ===== SYNTECH USB-C TO USB ADAPTER (SEO TOOLS) =====
-        { 
-            id: "syntech-usbc-adapter", 
-            title: "Syntech USB C to USB Adapter (Pack of 2)", 
-            subtitle: "USB 3.0, Thunderbolt 3/4 Compatible for MacBook Pro, iPad, Laptops", 
-            image: "https://m.media-amazon.com/images/I/71fA-b5oZaL._AC_SL1500_.jpg", 
-            link: "https://link.amazon/B06cbVDN4", 
-            buttonText: "🛒 Buy on Amazon", 
-            categories: ["tech", "seo"] 
         }
     ];
 
