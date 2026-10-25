@@ -1619,7 +1619,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     // 1. PRODUCTS DATABASE
     // ============================================================
-    var PRODUCTS = [
+       var PRODUCTS = [
         // Existing Products
         { id: "dinosaur-jokes", title: "DINOSAUR JOKES FOR KIDS", subtitle: "100 Prehistoric Puns!", image: "https://freeonlinetools203.github.io/dinosaur-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HKYQLC6V?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["animal", "pet", "farm", "fun", "kids"] },
         { id: "knock-knock-jokes", title: "KNOCK-KNOCK JOKES FOR KIDS", subtitle: "Hours of Silly Laughter!", image: "https://freeonlinetools203.github.io/knock-knock-jokes-cover.jpg", link: "https://www.amazon.com/dp/B0HK1H5GVM?tag=freeonlinet0d-20", buttonText: "🛒 Buy on Amazon", categories: ["fun", "game", "wheel", "decision", "kids"] },
@@ -1637,9 +1637,9 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://www.amazon.com/dp/B0GBZCSFF", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["kids", "animal", "family", "education", "age"] 
-        }, // <-- Yahan comma hona zaroori hai
+        },
 
-                // ===== TOZO EARBUDS =====
+        // ===== TOZO EARBUDS =====
         { 
             id: "tozo-hybrid-anc", 
             title: "TOZO Hybrid ANC Wireless Earbuds", 
@@ -1648,9 +1648,9 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://www.amazon.com/dp/B0DGKWQMSM?tag=freeonlinet0d-20", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "health", "fun"] 
-        }, // <-- YEH COMMA ZAROORI HAI
+        },
 
-               // ===== NAYA PRODUCT: ETEKCITY 22LB KITCHEN SCALE (GLOBAL SHIPPING) =====
+        // ===== ETEKCITY 22LB KITCHEN SCALE =====
         { 
             id: "etekcity-22lb-scale", 
             title: "Etekcity 22lb Food Kitchen Scale", 
@@ -1661,7 +1661,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["health", "family", "tech"] 
         },
 
-     // ===== NAYA PRODUCT: MAYBESTA WIRELESS MINI MICROPHONE (YOUTUBE) =====
+        // ===== MAYBESTA WIRELESS MINI MICROPHONE (YOUTUBE) =====
         { 
             id: "maybesta-wireless-mic", 
             title: "MAYBESTA Wireless Mini Microphone", 
@@ -1672,7 +1672,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["youtube", "tech"] 
         },
 
-       // ===== NAYA PRODUCT: ULANZI VL49 RGB LED LIGHT (YOUTUBE) =====
+        // ===== ULANZI VL49 RGB LED LIGHT (YOUTUBE) =====
         { 
             id: "ulanzi-vl49-rgb-light", 
             title: "ULANZI VL49 RGB Video Light", 
@@ -1683,27 +1683,27 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["youtube", "tech"] 
         },
 
-        // ===== NAYA PRODUCT: UGREEN USB-C HUB (SEO TOOLS) =====
+        // ===== UGREEN USB-C HUB (SEO TOOLS) =====
         { 
             id: "ugreen-usbc-hub", 
             title: "UGREEN USB C Hub 5-in-1", 
             subtitle: "4K HDMI, 100W PD, 3 USB-A Ports - Compatible with MacBook, iPad & Laptops", 
-            https://m.media-amazon.com/images/I/61ZrDcJ4nYL._AC_SL1500_.jpg, 
+            image: "https://m.media-amazon.com/images/I/61ZrDcj4nYL._AC_SL1500_.jpg", 
             link: "https://link.amazon/B00VAA0EJ", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "seo"] 
         },
 
-        // ===== NAYA PRODUCT: SYNTECH USB-C TO USB ADAPTER (SEO TOOLS) =====
+        // ===== SYNTECH USB-C TO USB ADAPTER (SEO TOOLS) =====
         { 
             id: "syntech-usbc-adapter", 
             title: "Syntech USB C to USB Adapter (Pack of 2)", 
             subtitle: "USB 3.0, Thunderbolt 3/4 Compatible for MacBook Pro, iPad, Laptops", 
-            https://m.media-amazon.com/images/I/71fA-b5ozaL._AC_SL1500_.jpg 
+            image: "https://m.media-amazon.com/images/I/71fA-b5oZaL._AC_SL1500_.jpg", 
             link: "https://link.amazon/B06cbVDN4", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["tech", "seo"] 
-        } // <--- YAHAN COMMA NAHI HOGA
+        }
     ];
 
     window.PRODUCTS_DB = PRODUCTS;
