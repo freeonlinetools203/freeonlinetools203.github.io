@@ -1661,13 +1661,24 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["health", "family", "tech"] 
         },
 
-        // ===== NAYA PRODUCT: MAYBESTA WIRELESS MINI MICROPHONE (YOUTUBE) =====
+               // ===== NAYA PRODUCT: MAYBESTA WIRELESS MINI MICROPHONE (YOUTUBE) =====
         { 
             id: "maybesta-wireless-mic", 
             title: "MAYBESTA Wireless Mini Microphone", 
             subtitle: "Lavalier Lapel Mic for YouTube, TikTok & Vlogging - No Adapter Needed", 
             image: "https://m.media-amazon.com/images/I/81+jApjQ5xL._AC_SL1500_.jpg", 
             link: "https://link.amazon/B01KRxwMz", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["youtube", "tech"] 
+        },
+
+        // ===== NAYA PRODUCT: ULANZI VL49 RGB LED LIGHT (YOUTUBE) =====
+        { 
+            id: "ulanzi-vl49-rgb-light", 
+            title: "ULANZI VL49 RGB Video Light", 
+            subtitle: "360° Full Color, 2500-9000K, CRI 95+, 2000mAh Rechargeable", 
+            image: "https://m.media-amazon.com/images/I/71vp1ZCn5WL._AC_SL1500_.jpg", 
+            link: "https://link.amazon/B0dCye3KQ", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["youtube", "tech"] 
         }
