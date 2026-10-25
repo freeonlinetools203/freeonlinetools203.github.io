@@ -1672,7 +1672,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categories: ["youtube", "tech"] 
         },
 
-        // ===== NAYA PRODUCT: ULANZI VL49 RGB LED LIGHT (YOUTUBE) =====
+               // ===== NAYA PRODUCT: ULANZI VL49 RGB LED LIGHT (YOUTUBE) =====
         { 
             id: "ulanzi-vl49-rgb-light", 
             title: "ULANZI VL49 RGB Video Light", 
@@ -1681,6 +1681,17 @@ document.addEventListener('DOMContentLoaded', function() {
             link: "https://link.amazon/B0dCye3KQ", 
             buttonText: "🛒 Buy on Amazon", 
             categories: ["youtube", "tech"] 
+        },
+
+        // ===== NAYA PRODUCT: UGREEN USB-C HUB (SEO TOOLS) =====
+        { 
+            id: "ugreen-usbc-hub", 
+            title: "UGREEN USB C Hub 5-in-1", 
+            subtitle: "4K HDMI, 100W PD, 3 USB-A Ports - Compatible with MacBook, iPad & Laptops", 
+            image: "https://m.media-amazon.com/images/I/61ZrDcj4nYL._AC_SL1500_.jpg", 
+            link: "https://link.amazon/B00VAA0EJ", 
+            buttonText: "🛒 Buy on Amazon", 
+            categories: ["tech", "seo"] 
         }
     ];
 
