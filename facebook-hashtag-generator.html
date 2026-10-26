@@ -382,7 +382,7 @@
             </p>
         </div>
 
-        <h2>📌 1. Best Hashtags for Walking Facebook Page & Groups (2026)</h2>
+        <h3>📌 1. Best Hashtags for Walking Facebook Page & Groups (2026)</h3>
         <p>If you run a fitness or travel page, finding the <strong>best hashtags for walking facebook page 2026</strong> is crucial. Whether you are posting about a <strong>facebook hashtags for walking group 2025</strong> challenge or sharing <strong>travel walking hashtags instagram facebook 2025</strong> content, you need the right tags.</p>
         <ul>
             <li><strong>#WalkingChallenge</strong> - Perfect for step-count challenges.</li>
@@ -392,7 +392,7 @@
             <li><strong>#HealthyLifestyle</strong> - Broad tag for health and wellness pages.</li>
         </ul>
 
-        <h2>📊 2. Facebook Hashtag Strategy: Best Practices & How Many to Use</h2>
+        <h3>📊 2. Facebook Hashtag Strategy: Best Practices & How Many to Use</h3>
         <p>When researching <strong>facebook hashtag strategy best practices how many hashtags</strong> to use, the answer is very different from Instagram.</p>
         <ul>
             <li><strong>The Sweet Spot:</strong> Use <strong>2 to 3 highly relevant hashtags</strong>. Facebook's algorithm relies more on the content of your post than massive tag blocks.</li>
@@ -400,7 +400,7 @@
             <li><strong>Placement:</strong> Place them at the end of your post or integrate them naturally into a sentence.</li>
         </ul>
 
-        <h2>🎬 3. Best Hashtags for Facebook Reels</h2>
+        <h3>🎬 3. Best Hashtags for Facebook Reels</h3>
         <p>If you are wondering <strong>how many hashtags should i use on facebook reels</strong>, the rule is simple: use 3 to 5 tags. <strong>Best hashtags for facebook reels</strong> help the algorithm push your short videos to the Explore page.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
             <span style="background: #1a1a2e; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px;">#FacebookReels</span>
@@ -410,7 +410,7 @@
             <span style="background: #1a1a2e; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px;">#ReelsExplore</span>
         </div>
 
-        <h2>📈 4. Trending Hashtags on Facebook Today</h2>
+        <h3>📈 4. Trending Hashtags on Facebook Today</h3>
         <p>To get maximum reach, you need to use <strong>trending hashtags on facebook</strong> or <strong>facebook trending hashtags</strong> relevant to your niche. Here are some of the <strong>hashtags trending on facebook</strong>:</p>
         <ul>
             <li><strong>#Viral</strong> - General tag for viral content.</li>
@@ -420,7 +420,7 @@
             <li><strong>#Explore</strong> - Helps your post appear on the discovery feed.</li>
         </ul>
 
-        <h2>➕ 5. How to Use Hashtags on Facebook</h2>
+        <h3>➕ 5. How to Use Hashtags on Facebook</h3>
         <p>Many users ask <strong>how to use hashtags on facebook</strong> or <strong>how to hashtag on facebook</strong>. The process is simple:</p>
         <ol>
             <li>Type the <strong># symbol</strong> followed by your keyword (e.g., #WalkingGroup).</li>
@@ -988,13 +988,14 @@ function copyHashtags() {
     if(navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
             showToast('📋 All hashtags copied!');
-        }).catch(() => fallbackArticleCopy(text));
+        }).catch(() => fallbackCopyTool(text));
     } else {
-        fallbackArticleCopy(text);
+        fallbackCopyTool(text);
     }
 }
 
-function fallbackArticleCopy(text) {
+// ✅ FIX: Changed name from fallbackArticleCopy to fallbackCopyTool to avoid clash
+function fallbackCopyTool(text) {
     const textarea = document.createElement('textarea');
     textarea.value = text;
     document.body.appendChild(textarea);
