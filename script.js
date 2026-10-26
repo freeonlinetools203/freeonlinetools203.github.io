@@ -1611,6 +1611,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 // END: GLOBAL "VIEW ALL TOOLS" BUTTON
 // =========================================================================
+/*
 // =========================================================================
 // 13. SMART PRODUCT RECOMMENDATION SYSTEM (TOOL PAGES)
 // =========================================================================
@@ -1896,8 +1897,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 // END: SMART PRODUCT RECOMMENDATION SYSTEM (TOOL PAGES)
 // =========================================================================
-
-
+*/
+/*
 // =========================================================================
 // 14. DASHBOARD SMART PRODUCTS (HOME PAGE TAGS, POPUPS & AUTO-ROTATING SIDEBAR)
 // =========================================================================
@@ -2073,3 +2074,4 @@ document.addEventListener('DOMContentLoaded', function() {
 // =========================================================================
 // END: DASHBOARD SMART PRODUCTS (HOME PAGE TAGS, POPUPS & AUTO-ROTATING SIDEBAR)
 // =========================================================================
+*/ 
