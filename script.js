@@ -1,5 +1,3 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5210907242912923"
-     crossorigin="anonymous"></script>
 // =========================================================================
 // 0. FAVICON AUTO-INJECTOR (Sabse pehle chalega)
 // =========================================================================
