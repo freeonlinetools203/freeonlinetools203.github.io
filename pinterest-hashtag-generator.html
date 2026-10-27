@@ -1043,7 +1043,8 @@ function fallbackCopyTool(text) {
 function downloadTXT() {
     if(currentHashtags.length === 0) return;
     const keyword = document.getElementById('keywordInput').value.trim();
-    const content = `Pinterest Hashtags for ${keyword}\nGenerated: ${new Date().toLocaleString()}\nTotal: ${currentHashtags.length} hashtags\n\n💡 Pinterest Tip: Use 5-10 hashtags per pin for best engagement!\n\n${currentHashtags.join(' ')}`;
+    // ✅ FIX: Yahan 5-10 ki jagah 2-5 kar diya gaya hai
+    const content = `Pinterest Hashtags for ${keyword}\nGenerated: ${new Date().toLocaleString()}\nTotal: ${currentHashtags.length} hashtags\n\n💡 Pinterest Tip: Use 2-5 specific hashtags per pin for best engagement!\n\n${currentHashtags.join(' ')}`;
     const blob = new Blob([content], {type: 'text/plain'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
