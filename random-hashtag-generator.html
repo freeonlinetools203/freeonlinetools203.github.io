@@ -805,7 +805,7 @@ function renderRandomList(list) {
     document.querySelectorAll('.hashtag-item').forEach(item => {
         item.addEventListener('click', () => {
             const tag = item.getAttribute('data-hashtag');
-            if(copyToClipboard(tag)) showToast(`✅ Copied: ${tag}`);
+            if(copyToClipboard(tag)) toolToast(`✅ Copied: ${tag}`);
         });
     });
 }
@@ -819,7 +819,7 @@ function generate5() {
     const tags = getRandomHashtags(5);
     currentRandomList = tags;
     renderRandomList(tags);
-    showToast('✨ 5 random hashtags generated!');
+    toolToast('✨ 5 random hashtags generated!');
 }
 
 function copyAll() {
@@ -827,11 +827,11 @@ function copyAll() {
         generate5();
         setTimeout(() => {
             const text = currentRandomList.join(' ');
-            if(copyToClipboard(text)) showToast('📋 All hashtags copied!');
+            if(copyToClipboard(text)) toolToast('📋 All hashtags copied!');
         }, 100);
     } else {
         const text = currentRandomList.join(' ');
-        if(copyToClipboard(text)) showToast('📋 All hashtags copied!');
+        if(copyToClipboard(text)) toolToast('📋 All hashtags copied!');
     }
 }
 
@@ -860,7 +860,7 @@ function copyToClipboard(text) {
     }
 }
 
-// ✅ FIX: Renamed to avoid clash with footer share function
+// ✅ FIX: Unique function name to avoid clash
 function fallbackCopyTool(text) {
     const textarea = document.createElement('textarea');
     textarea.value = text;
@@ -868,10 +868,10 @@ function fallbackCopyTool(text) {
     textarea.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
-    showToast('✅ Copied!');
+    toolToast('✅ Copied!');
 }
 
-function showToast(msg) {
+function toolToast(msg) {
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = msg;
@@ -882,7 +882,7 @@ function showToast(msg) {
 // Event Listeners
 document.getElementById('randomBtn').addEventListener('click', () => {
     updateRandomHashtag();
-    showToast('🎲 New random hashtag generated!');
+    toolToast('🎲 New random hashtag generated!');
 });
 
 document.getElementById('generate5Btn').addEventListener('click', generate5);
@@ -890,7 +890,7 @@ document.getElementById('copyAllBtn').addEventListener('click', copyAll);
 
 document.getElementById('randomHashtag').addEventListener('click', () => {
     const tag = document.getElementById('randomHashtag').innerHTML;
-    if(copyToClipboard(tag)) showToast(`✅ Copied: ${tag}`);
+    if(copyToClipboard(tag)) toolToast(`✅ Copied: ${tag}`);
 });
 
 window.addEventListener('load', () => {
