@@ -992,13 +992,14 @@ function copyHashtags() {
     if(navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
             showToast('📋 All hashtags copied!');
-        }).catch(() => fallbackCopy(text));
+        }).catch(() => fallbackCopyTool(text)); // <-- FIX: Name changed
     } else {
-        fallbackCopy(text);
+        fallbackCopyTool(text); // <-- FIX: Name changed
     }
 }
 
-function fallbackCopy(text) {
+// ✅ FIX: New function to avoid conflict
+function fallbackCopyTool(text) {
     const textarea = document.createElement('textarea');
     textarea.value = text;
     document.body.appendChild(textarea);
@@ -1050,6 +1051,7 @@ document.getElementById('keywordInput').addEventListener('keypress', (e) => { if
 
 window.addEventListener('load', () => {
     document.getElementById('keywordInput').value = 'fashion';
+    generateHashtags(); // <-- FIX: Auto generate on load
 });
 </script>
 </body>
