@@ -872,7 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <!-- Copyright -->
         <div style="text-align: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.06);">
-            <p style="font-size: 0.7rem; color: #64748b;">© 2025 <strong style="color: #94a3b8;">Free Online Tools 203</strong>. All rights reserved. | Made with <span style="color: #ec489a;">❤️</span></p>
+            <p style="font-size: 0.7rem; color: #64748b;">© 2026 <strong style="color: #94a3b8;">Free Online Tools 203</strong>. All rights reserved. | Made with <span style="color: #ec489a;">❤️</span></p>
         </div>
     </div>
 </footer>
@@ -907,11 +907,21 @@ function copyPageLink() {
         navigator.clipboard.writeText(url).then(() => {
             footerToast('✅ Link copied! Share with friends.');
         }).catch(() => {
-            fallbackArticleCopy(url);
+            fallbackCopy(url);
         });
     } else {
-        fallbackArticleCopy(url);
+        fallbackCopy(url);
     }
+}
+
+function fallbackCopy(text) {
+    let textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    footerToast('✅ Link copied! Share with friends.');
 }
 
 function footerToast(message) {
