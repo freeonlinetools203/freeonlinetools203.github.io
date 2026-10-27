@@ -1181,7 +1181,6 @@ function getHashtagsForKeyword(keyword, platform) {
     let keywordLower = keyword.toLowerCase().trim();
     let baseHashtags = [];
     
-    // Find matching category
     if(hashtagsDB[keywordLower]) baseHashtags = [...hashtagsDB[keywordLower]];
     else if(keywordLower.includes('fashion')) baseHashtags = [...hashtagsDB.fashion];
     else if(keywordLower.includes('food')) baseHashtags = [...hashtagsDB.food];
@@ -1194,13 +1193,11 @@ function getHashtagsForKeyword(keyword, platform) {
     else if(keywordLower.includes('beauty') || keywordLower.includes('makeup')) baseHashtags = [...hashtagsDB.beauty];
     else baseHashtags = [...hashtagsDB.general];
     
-    // Add keyword-specific hashtags
     const keywordTags = [`#${keywordLower}`, `#${keywordLower}love`, `#${keywordLower}life`, `#${keywordLower}style`, `#${keywordLower}addict`, `#${keywordLower}inspo`, `#${keywordLower}gram`, `#${keywordLower}oftheday`, `#${keywordLower}community`, `#${keywordLower}vibes`];
     
     let allHashtags = [...baseHashtags, ...keywordTags, ...hashtagsDB.general];
     allHashtags = [...new Set(allHashtags)];
     
-    // Platform-specific adjustments
     if(platform === 'instagram') {
         allHashtags = allHashtags.slice(0, 25);
     } else if(platform === 'tiktok') {
@@ -1235,7 +1232,7 @@ document.querySelectorAll('.platform-btn').forEach(btn => {
 function generateHashtags() {
     const keyword = document.getElementById('keywordInput').value.trim();
     if(!keyword) {
-        showToast('❌ Please enter a keyword or niche');
+        toolToast('❌ Please enter a keyword or niche');
         return;
     }
     
@@ -1248,30 +1245,45 @@ function generateHashtags() {
     document.getElementById('trendingCount').textContent = Math.floor(Math.random() * 10) + 5;
     document.getElementById('viralCount').textContent = Math.floor(Math.random() * 8) + 3;
     document.getElementById('resultSection').classList.add('show');
-    showToast(`✅ ${hashtags.length} hashtags generated for ${currentPlatform}!`);
+    toolToast(`✅ ${hashtags.length} hashtags generated for ${currentPlatform}!`);
 }
 
 function copyAllHashtags() {
     if(currentHashtags.length === 0) {
-        showToast('❌ No hashtags to copy. Generate first.');
+        toolToast('❌ No hashtags to copy. Generate first.');
         return;
     }
     const text = currentHashtags.join(' ');
-    navigator.clipboard.writeText(text).then(() => {
-        showToast('📋 All hashtags copied!');
-    }).catch(() => {
-        showToast('❌ Failed to copy');
-    });
+    
+    if(navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            toolToast('📋 All hashtags copied!');
+        }).catch(() => {
+            fallbackCopyTool(text);
+        });
+    } else {
+        fallbackCopyTool(text);
+    }
+}
+
+function fallbackCopyTool(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    toolToast('📋 All hashtags copied!');
 }
 
 function clearAll() {
     document.getElementById('keywordInput').value = '';
     document.getElementById('resultSection').classList.remove('show');
     currentHashtags = [];
-    showToast('🗑️ Cleared!');
+    toolToast('🗑️ Cleared!');
 }
 
-function showToast(msg) {
+function toolToast(msg) {
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = msg;
