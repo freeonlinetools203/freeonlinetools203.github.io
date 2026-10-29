@@ -520,6 +520,7 @@ function smhSetFilter(filter) {
   });
 }
 
+// ✅ Sirf ek baar
 document.addEventListener('DOMContentLoaded', () => {
   smhRenderTools();
   document.querySelectorAll('.smh-filter-chip').forEach(chip => {
@@ -531,7 +532,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <!-- ========== SOCIAL MEDIA HASHTAG TOOLS CATEGORY FOOTER END ========== -->
-
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
 
 <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #cbd5e1; padding: 40px 20px 25px; margin-top: 50px; position: relative; overflow: hidden;">
@@ -682,16 +682,26 @@ function copyPageLink() {
     
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(() => {
-            showToast('✅ Link copied! Share with friends.');
+            footerToast('✅ Link copied! Share with friends.');
         }).catch(() => {
-            fallbackCopyTool(url);
+            fallbackCopy(url);
         });
     } else {
-        fallbackCopyTool(url);
+        fallbackCopy(url);
     }
 }
 
-function showToast(message) {
+function fallbackCopy(text) {
+    let textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    footerToast('✅ Link copied! Share with friends.');
+}
+
+function footerToast(message) {
     let toast = document.createElement('div');
     toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:white;padding:8px 18px;border-radius:50px;font-size:13px;z-index:10000;box-shadow:0 4px 15px rgba(0,0,0,0.2);animation:toastSlide 0.3s ease';
     toast.textContent = message;
