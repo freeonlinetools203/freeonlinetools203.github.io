@@ -447,7 +447,7 @@ const toolUrlMap = {
   "Threads Hashtag Generator": "threads-hashtag-generator.html",
   "Trending Hashtags Today": "trending-hashtags-today.html",
   "Viral Hashtag Generator": "viral-hashtag-generator.html",
-  "YouTube Hashtag Generator": "youtube-hashtag-generator-v2.html",
+  "YouTube Hashtag Generator": "youtube-hashtag-generator.html",
   "Social Media Caption Generator": "social-media-caption-generator.html",
   
  // Animal Pregnancy Tools
@@ -923,7 +923,7 @@ const navbarHTML = `<div class="megamenu-container">
             <a href="threads-hashtag-generator.html">🧵 Threads Hashtag Generator</a>
             <a href="trending-hashtags-today.html">📈 Trending Hashtags Today</a>
             <a href="viral-hashtag-generator.html">⚡ Viral Hashtag Generator</a>
-            <a href="youtube-hashtag-generator-v2.html">📺 YouTube Hashtag Generator</a>
+            <a href="youtube-hashtag-generator.html">📺 YouTube Hashtag Generator</a>
             <a href="social-media-caption-generator.html">✍️ Social Media Caption Generator</a>
             
             <h4>🔍 SEO Tools</h4>
