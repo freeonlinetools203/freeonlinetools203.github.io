@@ -1290,7 +1290,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
 
-        <!-- Internal Links -->
+<!-- ========== SHARE THIS TOOL SECTION START ========== -->
+        <div style="background:#eff6ff;border:2px solid #2563eb;border-radius:16px;padding:28px 22px;text-align:center;margin:28px 0;">
+            <h3 style="color:#1e3a8a;margin-top:0;font-size:1.2rem;">🔗 Share This Tool</h3>
+            <p style="color:#4b5563;margin-bottom:16px;">Share the <strong>AI Age Guesser</strong> with your friends and family!</p>
+            <button onclick="showShareModal()" style="background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;border:none;padding:13px 34px;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 15px rgba(30,58,138,0.35);">🔗 Share This Tool</button>
+        </div>
+        <!-- ========== SHARE THIS TOOL SECTION END ========== -->
+
+                <!-- Internal Links -->
         <div style="background: #eff6ff; padding: 18px; border-radius: 20px; text-align: center; margin: 30px 0; border: 1px solid #60a5fa;">
             <p style="margin: 0; font-size: 1rem; color: #1f2937;">
                 🔗 <a href="#" onclick="showShareModal(); return false;" style="color: #1a1a3e; font-weight: bold; text-decoration: underline;">📤 Share: AI Age Guesser</a> 
@@ -1306,7 +1314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="shareModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
             <div style="background: white; border-radius: 24px; padding: 30px; max-width: 450px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
                 <h3 style="color: #1a1a2e; margin-top: 0;">📤 Share This Tool</h3>
-                <p style="color: #6b7280; margin-bottom: 20px;">Share the AI Age Guesser with your friends!</p>
+                <p style="color: #6b7280; margin-bottom: 20px;">Share the <strong>AI Age Guesser</strong> with your friends and family!</p>
                 <div style="background: #f1f5f9; padding: 10px 15px; border-radius: 10px; margin-bottom: 20px; word-break: break-all;">
                     <span style="font-size: 0.85rem; color: #1a1a2e;">https://freeonlinetools203.com/ai-age-guesser.html</span>
                 </div>
@@ -1325,13 +1333,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <script>
             function showShareModal() {
                 document.getElementById('shareModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
             }
             function closeShareModal() {
                 document.getElementById('shareModal').style.display = 'none';
+                document.body.style.overflow = '';
             }
             function shareOn(platform) {
                 const url = encodeURIComponent('https://freeonlinetools203.com/ai-age-guesser.html');
-                const text = encodeURIComponent('🤖 Check out this amazing AI Age Guesser tool! Let AI guess your age based on your name and style - completely free!');
+                const text = encodeURIComponent('🤖 Try this free AI Age Guesser! Let AI guess your age based on your name and style:');
                 let shareUrl = '';
                 switch(platform) {
                     case 'whatsapp': shareUrl = `https://wa.me/?text=${text}%20${url}`; break;
@@ -1365,9 +1375,26 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="keyword-tag">guess the age game</span>
         </div>
 
+        <!-- AUTHOR BIO -->
+        <div style="background:#f0f9ff;border-radius:14px;padding:24px;margin:35px 0 20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;border:1px solid #bae6fd;">
+            <img src="https://freeonlinetools203.com/zain-uddin.jpg.png" alt="Zain Uddin - Founder of FreeOnlineTools203.com" style="width:90px;height:90px;border-radius:50%;object-fit:cover;object-position:center 30%;border:3px solid #2563eb;">
+            <div style="flex:1;min-width:220px;">
+                <h3 style="margin-top:0;color:#1e3a8a;font-size:1.1rem;">About the Author: Zain Uddin</h3>
+                <p style="font-size:0.88rem;margin-bottom:8px;color:#374151;"><strong>Founder, FreeOnlineTools203.com | Web Developer &amp; SEO Expert</strong></p>
+                <p style="font-size:0.88rem;color:#374151;margin-bottom:10px;">Zain Uddin is the founder of FreeOnlineTools203.com, a platform offering 240+ free online tools across 18 categories. With 3+ years of experience in web development, SEO, and freelancing (Fiverr), he personally builds and tests every tool for accuracy. He is also a published author on Amazon Kindle (KDP).</p>
+                <p style="font-size:0.82rem;color:#6b7280;margin-bottom:10px;"><strong>Expertise:</strong> Calculator tools, SEO, article writing, translation, graphics design.</p>
+                <div style="font-size:0.82rem;">
+                    <a href="https://freeonlinetools203.com" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">🌐 Website</a>
+                    <a href="https://youtube.com/@freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">📺 YouTube</a>
+                    <a href="https://instagram.com/freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">📸 Instagram</a>
+                    <a href="https://facebook.com/freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">📘 Facebook</a>
+                    <a href="https://tiktok.com/@freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;">🎵 TikTok</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-
 <!-- ========== SEO ARTICLE END ========== -->
 
 <!-- ========== FINAL CLEAN SOCIAL MEDIA FOOTER START ========== -->
