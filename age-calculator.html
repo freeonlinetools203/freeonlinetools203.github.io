@@ -1249,9 +1249,17 @@ function calculateAndStartAge() {
         showToastMsg('❌ Date of birth cannot be in the future!');
         return;
     }
+    
     currentBirthDate = birthDateObj;
     const resultBox = document.getElementById('resultBox');
-    if(resultBox.style.display === 'none') resultBox.style.display = 'block';
+    
+    if(resultBox.style.display === 'none') {
+        resultBox.style.display = 'block';
+    }
+    
+    // 👇 NAYI LINE: Auto Scroll to Result 👇
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
     updateAgeUI();
     startLiveAgeUpdater();
     showToastMsg('✅ Age calculated! Watching live seconds...');
