@@ -439,6 +439,56 @@
   }
   .author-bio .bio-links a:hover { background: #dbeafe; }
 
+  /* ---------- SHARE MODULE (NEW) ---------- */
+  .share-module-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  .share-module {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .share-module h3 {
+    color: #1e3a8a;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .share-module p {
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  .btn-share-module {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  }
+  .btn-share-module:hover {
+    background: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37,99,235,0.3);
+  }
+
   /* ---------- TOAST ---------- */
   .toast {
     position: fixed;
@@ -563,6 +613,10 @@
     .author-bio { flex-direction: column; text-align: center; }
     .author-bio .bio-links { justify-content: center; }
     .footer-grid { grid-template-columns: 1fr; }
+    
+    /* Responsive Share Module */
+    .share-module { padding: 20px 15px; }
+    .share-module h3 { font-size: 18px; }
   }
 </style>
 <script src="https://freeonlinetools203.com/script.js"></script>
