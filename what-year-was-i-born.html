@@ -75,44 +75,47 @@
     margin-top: 18px;
   }
 
-  /* ---------- HERO HEADER ---------- */
+  /* ---------- HERO HEADER (Compact) ---------- */
   .hero {
     background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    padding: 30px 25px;
+    padding: 18px 20px;
     text-align: center;
     color: #ffffff;
   }
-  .hero h1 { font-size: 26px; font-weight: 700; line-height: 1.35; }
+  .hero h1 { font-size: 22px; font-weight: 700; line-height: 1.3; }
   .hero p {
-    margin-top: 10px;
-    font-size: 15px;
+    margin-top: 6px;
+    font-size: 14px;
     color: rgba(255,255,255,0.9);
   }
 
-  .card-body { padding: 30px 25px; }
+  .card-body { padding: 20px; }
 
-  /* ---------- LIVE DATETIME BOX ---------- */
+  /* ---------- LIVE DATETIME BOX (Compact Horizontal) ---------- */
   .live-box {
     background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 100%);
     border: 1px solid #bae6fd;
-    border-radius: 20px;
-    padding: 22px 20px;
-    text-align: center;
-    margin-bottom: 28px;
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 12px;
+    margin-bottom: 18px;
   }
   .live-label {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 12px;
+    gap: 6px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #1e3a8a;
     text-transform: uppercase;
   }
   .dot {
-    width: 10px; height: 10px;
+    width: 8px; height: 8px;
     border-radius: 50%;
     background: #ef4444;
     animation: pulse 1.4s infinite;
@@ -123,33 +126,43 @@
     70%  { box-shadow: 0 0 0 10px rgba(239,68,68,0); opacity: .55; }
     100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); opacity: 1; }
   }
-  .live-date { margin-top: 12px; font-size: 16px; font-weight: 600; color: #1f2937; }
+  .live-date { font-size: 14px; font-weight: 600; color: #1f2937; margin: 0; }
   .live-time {
     font-family: 'Courier New', monospace;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 700;
     color: #1e3a8a;
     letter-spacing: 1px;
-    line-height: 1.3;
+    line-height: 1.2;
   }
-  .live-tz { font-size: 13px; color: #6b7280; margin-top: 4px; }
+  .live-tz { font-size: 12px; color: #6b7280; margin: 0; width: 100%; text-align: center; }
 
   /* ---------- FORM FIELDS ---------- */
-  .field { margin-bottom: 22px; }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: start;
+  }
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  .field { margin-bottom: 15px; }
   .field > label {
     display: block;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     color: #1f2937;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
   .field input,
   .field select {
     width: 100%;
-    padding: 16px 20px;
+    padding: 12px 15px;
     border: 2px solid #e5e7eb;
-    border-radius: 16px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 15px;
     font-family: inherit;
     color: #1f2937;
     background: #ffffff;
@@ -161,9 +174,9 @@
   .field select {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 18px center;
-    background-size: 16px;
-    padding-right: 48px;
+    background-position: right 15px center;
+    background-size: 14px;
+    padding-right: 40px;
     cursor: pointer;
   }
   .field input:focus,
@@ -176,23 +189,22 @@
   .field-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 10px;
   }
-  .hint { font-size: 13px; color: #6b7280; margin-top: 8px; }
+  .hint { font-size: 13px; color: #6b7280; margin-top: 4px; text-align: center; margin-bottom: 15px; }
 
   /* ---------- BUTTON ---------- */
   .btn {
     width: 100%;
-    padding: 16px;
+    padding: 14px;
     border: none;
-    border-radius: 16px;
+    border-radius: 12px;
     background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
     color: #ffffff;
     font-size: 18px;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
-    margin-top: 6px;
     transition: transform .25s, box-shadow .25s;
   }
   .btn:hover {
@@ -204,7 +216,7 @@
   /* ---------- RESULT BOX ---------- */
   .result-box {
     display: none;
-    margin-top: 28px;
+    margin-top: 25px;
     background: #f9fafb;
     border: 1px solid #e5e7eb;
     border-radius: 20px;
@@ -522,26 +534,25 @@
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
-    .hero h1 { font-size: 21px; }
-    .live-time { font-size: 26px; }
-    .card-body { padding: 24px 18px; }
+    .hero h1 { font-size: 20px; }
+    .live-time { font-size: 18px; }
+    .card-body { padding: 16px; }
     .article-card { padding: 26px 20px; }
     .article-card h2 { font-size: 22px; }
     .article-card h3 { font-size: 18px; }
   }
   @media (max-width: 480px) {
     body { padding: 0 0 0; }
-    .hero { padding: 24px 18px; }
+    .hero { padding: 15px; }
     .hero h1 { font-size: 18px; }
     .hero p { font-size: 13px; }
-    .live-box { padding: 18px 14px; }
-    .live-date { font-size: 14px; }
-    .live-time { font-size: 22px; }
-    .live-tz { font-size: 12px; }
-    .field > label { font-size: 15px; }
-    .field input, .field select { padding: 14px 16px; font-size: 15px; }
-    .field select { padding-right: 42px; }
-    .btn { font-size: 16px; padding: 15px; }
+    .live-box { padding: 8px 10px; }
+    .live-date { font-size: 13px; }
+    .live-time { font-size: 16px; }
+    .live-tz { font-size: 11px; }
+    .field > label { font-size: 14px; }
+    .field input, .field select { padding: 10px 12px; font-size: 14px; }
+    .btn { font-size: 16px; padding: 12px; }
     .result-box { padding: 18px; }
     .result-grid { gap: 10px; }
     .result-item { padding: 13px 10px; }
@@ -566,51 +577,55 @@
   <main class="card">
 
     <header class="hero">
-      <h1>🎂 What Year Was I Born Calculator – Find Your Birth Year Instantly</h1>
-      <p>Free what year was I born calculator – enter your age and instantly find the year you were born, your possible birth years, your star sign and your Chinese zodiac. 100% free, no registration required.</p>
+      <h1>🎂 What Year Was I Born Calculator</h1>
+      <p>Enter your age to instantly find your birth year, star sign & Chinese zodiac. 100% free.</p>
     </header>
 
     <div class="card-body">
 
-      <!-- Live current time -->
+      <!-- Live current time (Compact) -->
       <div class="live-box">
-        <div class="live-label"><span class="dot"></span> Live Current Time</div>
+        <div class="live-label"><span class="dot"></span> Live Time:</div>
         <div class="live-date" id="liveDate">—</div>
         <div class="live-time" id="liveTime">--:--:-- --</div>
         <div class="live-tz" id="liveTz">Timezone: —</div>
       </div>
 
-      <!-- Input 1: Age -->
-      <div class="field">
-        <label for="ageInput">🎂 Your Current Age (Years)</label>
-        <input type="number" id="ageInput" inputmode="numeric" min="0" max="120" step="1" placeholder="e.g. 25" autocomplete="off">
-      </div>
-
-      <!-- Input 2 & 3: Optional month + day -->
-      <div class="field">
-        <label for="monthSel">🎈 Your Birth Month &amp; Day (Optional)</label>
-        <div class="field-row">
-          <select id="monthSel" aria-label="Birth month">
-            <option value="">Month</option>
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <select id="daySel" aria-label="Birth day">
-            <option value="">Day</option>
-          </select>
+      <!-- Form Grid to save vertical space -->
+      <div class="form-grid">
+        <!-- Input 1: Age -->
+        <div class="field">
+          <label for="ageInput">🎂 Your Current Age (Years)</label>
+          <input type="number" id="ageInput" inputmode="numeric" min="0" max="120" step="1" placeholder="e.g. 25" autocomplete="off">
         </div>
-        <p class="hint">Add these to get your exact birth year and your star sign. Leave empty if you are not sure.</p>
+
+        <!-- Input 2 & 3: Optional month + day -->
+        <div class="field">
+          <label for="monthSel">🎈 Birth Month &amp; Day (Optional)</label>
+          <div class="field-row">
+            <select id="monthSel" aria-label="Birth month">
+              <option value="">Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select id="daySel" aria-label="Birth day">
+              <option value="">Day</option>
+            </select>
+          </div>
+        </div>
       </div>
+      
+      <p class="hint">Add month & day to get your exact birth year and star sign. Leave empty if unsure.</p>
 
       <!-- Calculate button -->
       <button class="btn" id="calcBtn" type="button">✨ Calculate My Birth Year ✨</button>
@@ -646,6 +661,7 @@
 
     </div>
   </main>
+  
 <!-- ========== AGE CALCULATOR INTERNAL LINKING FOOTER START ========== -->
 
 <div class="container" style="max-width:1200px;margin:20px auto;padding:0 20px">
