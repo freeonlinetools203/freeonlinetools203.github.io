@@ -1790,6 +1790,23 @@ function showToast(message) {
   };
 
   /* =========================================================
+     SHARE NATIVE (NEW BUTTON FUNCTION)
+     ========================================================= */
+  window.shareNative = function () {
+    if (navigator.share) {
+      navigator.share({
+        title: document.title,
+        text: 'Check out this free What Year Was I Born Calculator!',
+        url: window.location.href
+      }).then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error));
+    } else {
+      // Fallback to copy link if native share isn't supported (Desktop)
+      window.copyLink();
+    }
+  };
+
+  /* =========================================================
      EVENTS
      ========================================================= */
   calcBtn.addEventListener('click', calculate);
