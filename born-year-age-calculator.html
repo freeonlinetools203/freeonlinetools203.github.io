@@ -1260,15 +1260,16 @@ function showToast(message) {
 <!-- Toast notification -->
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- ==================== SCHEMA 1: SoftwareApplication ==================== -->
+<!-- ==================== SCHEMA 1: WebApplication ==================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   "name": "Born Year Age Calculator",
   "url": "https://freeonlinetools203.com/born-year-age-calculator.html",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "description": "Free born year age calculator to find your age from your birth year and a target year. Includes Chinese zodiac, generation label and multi-year comparison.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "featureList": [
@@ -1284,52 +1285,7 @@ function showToast(message) {
 }
 </script>
 
-<!-- ==================== SCHEMA 2: HowTo ==================== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to Calculate Age From Birth Year",
-  "description": "Use the free Born Year Age Calculator to find your age on January 1 and December 31 of any target year, along with your Chinese zodiac and generation.",
-  "totalTime": "PT1M",
-  "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "0" },
-  "tool": [{ "@type": "HowToTool", "name": "Born Year Age Calculator" }],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Enter your birth year",
-      "text": "Type your birth year into the first input field, or use one of the quick-select buttons.",
-      "position": 1
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter the target year",
-      "text": "Type the year you want to calculate your age in. The default is 2026.",
-      "position": 2
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Click Calculate My Age",
-      "text": "Press the button to run the calculation.",
-      "position": 3
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Read your results",
-      "text": "The result box shows your age on January 1 and December 31, Chinese zodiac and generation label.",
-      "position": 4
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Check the comparison table",
-      "text": "Scroll down to see your age in 2025, 2026, 2027 and 2030 at a glance.",
-      "position": 5
-    }
-  ]
-}
-</script>
-
-<!-- ==================== SCHEMA 3: BreadcrumbList ==================== -->
+<!-- ==================== SCHEMA 2: BreadcrumbList ==================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1342,7 +1298,7 @@ function showToast(message) {
 }
 </script>
 
-<!-- ==================== SCHEMA 4: FAQPage ==================== -->
+<!-- ==================== SCHEMA 3: FAQPage ==================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1392,7 +1348,7 @@ function showToast(message) {
 }
 </script>
 
-<!-- ==================== SCHEMA 5: WebSite ==================== -->
+<!-- ==================== SCHEMA 4: WebSite ==================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1408,7 +1364,7 @@ function showToast(message) {
 }
 </script>
 
-<!-- ==================== SCHEMA 6: ImageObject ==================== -->
+<!-- ==================== SCHEMA 5: ImageObject ==================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1422,6 +1378,7 @@ function showToast(message) {
   "representativeOfPage": true
 }
 </script>
+  
 <script>
 (function () {
   'use strict';
