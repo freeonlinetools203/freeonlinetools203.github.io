@@ -95,294 +95,366 @@ const toolsDatabase = {
     ]
   },
   
-  // 4. SOCIAL MEDIA HASHTAG TOOLS
+   // 4. SOCIAL MEDIA HASHTAG TOOLS (UPDATED WITH CATEGORIES)
   catHash: {
     name: "📱 Social Media Hashtag Tools",
     tools: [
-      "Instagram Hashtag Generator",
-      "LinkedIn Hashtag Generator",
-      "Facebook Hashtag Generator",
-      "Pinterest Hashtag Generator",
-      "AI Hashtag Generator",
-      "SEO Hashtags Generator",
-      "Random Hashtag Generator",
-      "TikTok Hashtag Generator",
-      "Twitter Hashtag Generator",
-      "Threads Hashtag Generator",
-      "Trending Hashtags Today",
-      "Viral Hashtag Generator",
-      "YouTube Hashtag Generator",
-      "Social Media Caption Generator"
+      // PLATFORMS
+      { name: "Instagram Hashtag Generator", category: "platforms" },
+      { name: "LinkedIn Hashtag Generator", category: "platforms" },
+      { name: "Facebook Hashtag Generator", category: "platforms" },
+      { name: "Pinterest Hashtag Generator", category: "platforms" },
+      { name: "TikTok Hashtag Generator", category: "platforms" },
+      { name: "Twitter Hashtag Generator", category: "platforms" },
+      { name: "Threads Hashtag Generator", category: "platforms" },
+      { name: "YouTube Hashtag Generator", category: "platforms" },
+
+      // AI & SEO
+      { name: "AI Hashtag Generator", category: "ai-seo" },
+      { name: "SEO Hashtags Generator", category: "ai-seo" },
+      { name: "Viral Hashtag Generator", category: "ai-seo" },
+      
+      // OTHER
+      { name: "Random Hashtag Generator", category: "other" },
+      { name: "Trending Hashtags Today", category: "other" },
+      { name: "Social Media Caption Generator", category: "other" }
     ]
   },
 
-  // 5. SEO TOOLS
+    // 5. SEO TOOLS (UPDATED WITH CATEGORIES)
   catSeo: {
     name: "🔍 SEO Tools",
     tools: [
-      "Keyword Density Checker",
-      "Meta Tags Generator",
-      "Meta Tag Analyzer",
-      "Broken Link Checker",
-      "Free Backlink Checker",
-      "Google Index Checker",
-      "SEO Analyzer",
-      "SEO Score Checker",
-      "SEO Title Generator",
-      "SERP Snippet Preview",
-      "Readability Checker",
-      "Heading Structure Checker",
-      "Image Alt Analyzer",
-      "XML Sitemap Generator"
+      // ANALYSIS & AUDITING
+      { name: "SEO Analyzer", category: "analysis" },
+      { name: "SEO Score Checker", category: "analysis" },
+      { name: "Readability Checker", category: "analysis" },
+      { name: "Heading Structure Checker", category: "analysis" },
+      { name: "Image Alt Analyzer", category: "analysis" },
+      { name: "Broken Link Checker", category: "analysis" },
+      { name: "Google Index Checker", category: "analysis" },
+
+      // META & CONTENT
+      { name: "Meta Tags Generator", category: "meta-content" },
+      { name: "Meta Tag Analyzer", category: "meta-content" },
+      { name: "SEO Title Generator", category: "meta-content" },
+      { name: "SERP Snippet Preview", category: "meta-content" },
+      { name: "Keyword Density Checker", category: "meta-content" },
+
+      // LINKS & TECHNICAL
+      { name: "Free Backlink Checker", category: "technical" },
+      { name: "XML Sitemap Generator", category: "technical" }
     ]
   },
-
-  // 6. YOUTUBE TOOLS (25 TOOLS)
+    
+   // 6. YOUTUBE TOOLS (UPDATED WITH CATEGORIES)
   catYoutube: {
     name: "🎬 YouTube Tools",
     tools: [
-      "YouTube SEO Score Checker",
-      "YouTube Keyword Generator",
-      "YouTube Keyword Research",
-      "YouTube Channel Analyzer",
-      "YouTube Channel Comparison",
-      "YouTube Viral Video Predictor",
-      "YouTube SEO Checklist Generator",
-      "YouTube Title Generator",
-      "YouTube Description Generator",
-      "YouTube Video Idea Generator",
-      "YouTube Video Outline Generator",
-      "YouTube Content Planner AI",
-      "YouTube Video Tags Extractor",
-      "YouTube Video Tags Generator",
-      "YouTube Hashtag Generator",
-      "YouTube Thumbnail Downloader",
-      "YouTube Thumbnail Text Generator",
-      "YouTube Thumbnail Color Palette Generator",
-      "YouTube Thumbnail Split Tester",
-      "YouTube Thumbnail CTR Predictor",
-      "YouTube Shorts Hook Generator",
-      "YouTube Shorts Script Generator",
-      "YouTube Shorts Idea Calendar Generator",
-      "YouTube Channel Name Generator",
-      "YouTube Community Post Generator"
+      // SEO & ANALYTICS
+      { name: "YouTube SEO Score Checker", category: "seo" },
+      { name: "YouTube Keyword Generator", category: "seo" },
+      { name: "YouTube Keyword Research", category: "seo" },
+      { name: "YouTube Channel Analyzer", category: "seo" },
+      { name: "YouTube Channel Comparison", category: "seo" },
+      { name: "YouTube Viral Video Predictor", category: "seo" },
+      { name: "YouTube SEO Checklist Generator", category: "seo" },
+
+      // CONTENT & SCRIPTING
+      { name: "YouTube Title Generator", category: "content" },
+      { name: "YouTube Description Generator", category: "content" },
+      { name: "YouTube Video Idea Generator", category: "content" },
+      { name: "YouTube Video Outline Generator", category: "content" },
+      { name: "YouTube Content Planner AI", category: "content" },
+      { name: "YouTube Shorts Hook Generator", category: "content" },
+      { name: "YouTube Shorts Script Generator", category: "content" },
+      { name: "YouTube Shorts Idea Calendar Generator", category: "content" },
+
+      // TAGS & HASHTAGS
+      { name: "YouTube Video Tags Extractor", category: "tags" },
+      { name: "YouTube Video Tags Generator", category: "tags" },
+      { name: "YouTube Hashtag Generator", category: "tags" },
+
+      // THUMBNAILS
+      { name: "YouTube Thumbnail Downloader", category: "thumbnails" },
+      { name: "YouTube Thumbnail Text Generator", category: "thumbnails" },
+      { name: "YouTube Thumbnail Color Palette Generator", category: "thumbnails" },
+      { name: "YouTube Thumbnail Split Tester", category: "thumbnails" },
+      { name: "YouTube Thumbnail CTR Predictor", category: "thumbnails" },
+
+      // CHANNEL & COMMUNITY
+      { name: "YouTube Channel Name Generator", category: "channel" },
+      { name: "YouTube Community Post Generator", category: "channel" }
     ]
   },
 
-  // 7. RANDOM & FUN TOOLS
+    // 7. RANDOM & FUN TOOLS (UPDATED WITH CATEGORIES)
   catFun: {
     name: "🎲 Random & Fun Tools",
     tools: [
-      "Spin The Wheel",
-      "Yes/No Wheel",
-      "Decision Roulette",
-      "Random Name Picker",
-      "Random Number Generator",
-      "Prize Wheel",
-      "Lucky Prize Wheel",
-      "Daily Lucky Number Wheel",
-      "Task Spinner",
-      "Art Roulette",
-      "Chore Wheel",
-      "Country Picker Wheel",
-      "Decision Wheel",
-      "Dinner Spinner",
-      "Icebreaker Wheel",
-      "Random Fact Wheel",
-      "Random Animal Wheel",
-      "Zodiac Wheel",
-      "Twister Spinner",
-      "Truth or Dare Generator",
-      "Sketch or Dare",
-      "Dare or Draw",
-      "Hot Seat Challenge",
-      "Stop Right There Wheel",
-      "Holiday Activity Wheel",
-      "Food Picker Wheel",
-      "Drink Picker Wheel",
-      "Exercise Wheel",
-      "Workout Spinner",
-      "Movie Picker Wheel",
-      "You vs Food Wheel",
-      "Mystery Gift Wheel",
-      "Casino Games Wheel",
-      "Color Wheel",
-      "Name Picker Wheel",
-      "Squid Game Spin Wheel",
-      "Game Character Spin Wheel",
-      "Party Games Spin Wheel",
-      "Drinking Game Spin Wheel",
-      "Board Game Spin Wheel",
-      "Carnival Game Spin Wheel"
+      // SPINNERS & WHEELS
+      { name: "Spin The Wheel", category: "spinners" },
+      { name: "Yes/No Wheel", category: "spinners" },
+      { name: "Decision Roulette", category: "spinners" },
+      { name: "Decision Wheel", category: "spinners" },
+      { name: "Task Spinner", category: "spinners" },
+      { name: "Art Roulette", category: "spinners" },
+      { name: "Chore Wheel", category: "spinners" },
+      { name: "Twister Spinner", category: "spinners" },
+      { name: "Stop Right There Wheel", category: "spinners" },
+      { name: "Color Wheel", category: "spinners" },
+      { name: "Squid Game Spin Wheel", category: "spinners" },
+      { name: "Game Character Spin Wheel", category: "spinners" },
+      { name: "Carnival Game Spin Wheel", category: "spinners" },
+
+      // PICKERS & RANDOM
+      { name: "Random Name Picker", category: "pickers" },
+      { name: "Name Picker Wheel", category: "pickers" },
+      { name: "Random Number Generator", category: "pickers" },
+      { name: "Prize Wheel", category: "pickers" },
+      { name: "Lucky Prize Wheel", category: "pickers" },
+      { name: "Daily Lucky Number Wheel", category: "pickers" },
+      { name: "Country Picker Wheel", category: "pickers" },
+      { name: "Mystery Gift Wheel", category: "pickers" },
+      { name: "Random Fact Wheel", category: "pickers" },
+      { name: "Random Animal Wheel", category: "pickers" },
+      { name: "Zodiac Wheel", category: "pickers" },
+      { name: "Exercise Wheel", category: "pickers" },
+      { name: "Workout Spinner", category: "pickers" },
+      { name: "Movie Picker Wheel", category: "pickers" },
+      { name: "Holiday Activity Wheel", category: "pickers" },
+      { name: "Icebreaker Wheel", category: "pickers" },
+
+      // FOOD & DRINK
+      { name: "Dinner Spinner", category: "food-drink" },
+      { name: "Food Picker Wheel", category: "food-drink" },
+      { name: "Drink Picker Wheel", category: "food-drink" },
+      { name: "You vs Food Wheel", category: "food-drink" },
+
+      // PARTY & GAMES
+      { name: "Truth or Dare Generator", category: "party-games" },
+      { name: "Sketch or Dare", category: "party-games" },
+      { name: "Dare or Draw", category: "party-games" },
+      { name: "Hot Seat Challenge", category: "party-games" },
+      { name: "Casino Games Wheel", category: "party-games" },
+      { name: "Party Games Spin Wheel", category: "party-games" },
+      { name: "Drinking Game Spin Wheel", category: "party-games" },
+      { name: "Board Game Spin Wheel", category: "party-games" }
     ]
   },
 
-  // 8. COLOR TOOLS
+   // 8. COLOR TOOLS (UPDATED WITH CATEGORIES)
   catColor: {
     name: "🎨 Color Tools",
     tools: [
-      "Color Palette Generator",
-      "Palette Generator",
-      "Color Shades Generator",
-      "Color Gradient Maker",
-      "Color Contrast Checker",
-      "Color Name Finder",
-      "Random Color Picker",
-      "Color Wheel",
-      "Image Color Extractor",
-      "Gradient Maker"        // ✅ ADDED
+      // GENERATORS
+      { name: "Color Palette Generator", category: "generators" },
+      { name: "Palette Generator", category: "generators" },
+      { name: "Color Shades Generator", category: "generators" },
+
+      // GRADIENTS
+      { name: "Color Gradient Maker", category: "gradients" },
+      { name: "Gradient Maker", category: "gradients" },
+
+      // CHECKERS
+      { name: "Color Contrast Checker", category: "checkers" },
+      { name: "Color Name Finder", category: "checkers" },
+
+      // PICKERS
+      { name: "Random Color Picker", category: "pickers" },
+      { name: "Color Wheel", category: "pickers" },
+      { name: "Image Color Extractor", category: "pickers" }
     ]
   },
 
-  // 9. PDF TOOLS
+   // 9. PDF TOOLS (UPDATED WITH CATEGORIES)
   catPdf: {
     name: "📄 PDF Tools",
     tools: [
-      "PDF Merger",
-      "PDF Splitter",
-      "PDF to Image",
-      "PDF to JPG",
-      "PDF to PNG",
-      "PDF to BMP",
-      "PDF to WEBP",
-      "PDF to TIFF",
-      "PDF to Word",
-      "PDF to Excel",
-      "PDF to Text",
-      "PDF Rotator"
+      // ORGANIZE & EDIT
+      { name: "PDF Merger", category: "organize" },
+      { name: "PDF Splitter", category: "organize" },
+      { name: "PDF Rotator", category: "organize" },
+
+      // CONVERT TO IMAGE
+      { name: "PDF to Image", category: "to-image" },
+      { name: "PDF to JPG", category: "to-image" },
+      { name: "PDF to PNG", category: "to-image" },
+      { name: "PDF to BMP", category: "to-image" },
+      { name: "PDF to WEBP", category: "to-image" },
+      { name: "PDF to TIFF", category: "to-image" },
+
+      // CONVERT TO DOCUMENT
+      { name: "PDF to Word", category: "to-document" },
+      { name: "PDF to Excel", category: "to-document" },
+      { name: "PDF to Text", category: "to-document" }
     ]
   },
-
-  // 10. IMAGE TOOLS
+    
+   // 10. IMAGE TOOLS (UPDATED WITH CATEGORIES)
   catImage: {
     name: "🖼️ Image Tools",
     tools: [
-      "Image Color Extractor",
-      "Image Converter",
-      "Image Cropper",
-      "Image Resizer",
-      "Image to PDF",
-      "Image Upscaler",
-      "Image Compressor",
-      "WebP Converter"
+      // EDIT & RESIZE
+      { name: "Image Cropper", category: "edit" },
+      { name: "Image Resizer", category: "edit" },
+      { name: "Image Upscaler", category: "edit" },
+
+      // CONVERTERS
+      { name: "Image Converter", category: "converters" },
+      { name: "WebP Converter", category: "converters" },
+      { name: "Image to PDF", category: "converters" },
+
+      // OPTIMIZE & COLOR
+      { name: "Image Compressor", category: "optimize" },
+      { name: "Image Color Extractor", category: "optimize" }
     ]
   },
 
-  // 11. POPULAR CALCULATORS
+   // 11. POPULAR CALCULATORS (UPDATED WITH CATEGORIES)
   catPop: {
     name: "📊 Popular Calculators",
     tools: [
-      "Unit Converter",
-      "Age Calculator",
-      "Age Difference Calculator",
-      "Discount Calculator",
-      "Profit & Loss Calculator",
-      "GPA Calculator",
-      "GST Calculator",
-      "Percentage Calculator",
-      "Date Calculator",
-      "QR Code Generator",
-      "Advanced QR Generator",
-      "YouTube Thumbnail Downloader",
-      "Currency Converter",
-      "My Birth Year"          // ✅ ADDED
+      // AGE & DATE
+      { name: "Age Calculator", category: "age-date" },
+      { name: "Age Difference Calculator", category: "age-date" },
+      { name: "Date Calculator", category: "age-date" },
+      { name: "My Birth Year", category: "age-date" },
+
+      // FINANCE & MATH
+      { name: "Discount Calculator", category: "finance-math" },
+      { name: "Profit & Loss Calculator", category: "finance-math" },
+      { name: "GST Calculator", category: "finance-math" },
+      { name: "Percentage Calculator", category: "finance-math" },
+      { name: "Currency Converter", category: "finance-math" },
+      { name: "GPA Calculator", category: "finance-math" },
+
+      // UTILITIES & GENERATORS
+      { name: "Unit Converter", category: "utilities" },
+      { name: "QR Code Generator", category: "utilities" },
+      { name: "Advanced QR Generator", category: "utilities" },
+      { name: "YouTube Thumbnail Downloader", category: "utilities" }
     ]
   },
 
-  // 12. DEVELOPER & SECURITY TOOLS
+    // 12. DEVELOPER & SECURITY TOOLS (UPDATED WITH CATEGORIES)
   catDev: {
     name: "🔐 Developer & Security Tools",
     tools: [
-      "MD5 Hash Generator",
-      "SHA-256 Hash Generator",
-      "SHA-1 Hash Generator",
-      "Base64 Encoder/Decoder",
-      "URL Encoder/Decoder",
-      "HTML Encoder/Decoder",
-      "HTML Minifier Pro",
-      "JSON Formatter & Validator"
+      // HASHING & SECURITY
+      { name: "MD5 Hash Generator", category: "hashing" },
+      { name: "SHA-256 Hash Generator", category: "hashing" },
+      { name: "SHA-1 Hash Generator", category: "hashing" },
+
+      // ENCODERS & DECODERS
+      { name: "Base64 Encoder/Decoder", category: "encoders" },
+      { name: "URL Encoder/Decoder", category: "encoders" },
+      { name: "HTML Encoder/Decoder", category: "encoders" },
+
+      // FORMATTERS & MINIFIERS
+      { name: "HTML Minifier Pro", category: "formatters" },
+      { name: "JSON Formatter & Validator", category: "formatters" }
     ]
   },
 
-  // 13. HEALTH & FITNESS
+    // 13. HEALTH & FITNESS (UPDATED WITH CATEGORIES)
   catHealth: {
     name: "🏃‍♂️ Health & Fitness",
     tools: [
-      "BMI Calculator",
-      "BMR Calculator",
-      "Calorie Calculator",
-      "TDEE Calculator",
-      "Body Fat Calculator",
-      "Ideal Weight Calculator",
-      "Lean Body Mass Calculator",
-      "Macro Calculator",
-      "Protein Calculator",
-      "Waist to Hip Calculator"
+      // BODY METRICS
+      { name: "BMI Calculator", category: "metrics" },
+      { name: "Body Fat Calculator", category: "metrics" },
+      { name: "Ideal Weight Calculator", category: "metrics" },
+      { name: "Lean Body Mass Calculator", category: "metrics" },
+      { name: "Waist to Hip Calculator", category: "metrics" },
+
+      // NUTRITION & CALORIES
+      { name: "BMR Calculator", category: "nutrition" },
+      { name: "Calorie Calculator", category: "nutrition" },
+      { name: "TDEE Calculator", category: "nutrition" },
+      { name: "Macro Calculator", category: "nutrition" },
+      { name: "Protein Calculator", category: "nutrition" }
     ]
   },
 
-  // 14. FINANCIAL TOOLS
+    // 14. FINANCIAL TOOLS (UPDATED WITH CATEGORIES)
   catFin: {
     name: "💰 Financial Tools",
     tools: [
-      "EMI Calculator",
-      "Loan Calculator",
-      "Zakat Calculator",
-      "SIP Calculator"
+      // LOANS & INVESTMENTS
+      { name: "EMI Calculator", category: "loans" },
+      { name: "Loan Calculator", category: "loans" },
+      { name: "SIP Calculator", category: "loans" },
+
+      // TAX & RELIGIOUS
+      { name: "Zakat Calculator", category: "tax" }
     ]
   },
 
-  // 15. TEXT & WRITING TOOLS
+   // 15. TEXT & WRITING TOOLS (UPDATED WITH CATEGORIES)
   catText: {
     name: "📝 Text & Writing Tools",
     tools: [
-      "Word Counter",
-      "Line Counter",
-      "Text Case Converter",
-      "Password Generator",
-      "Password Strength Checker"
+      // TEXT UTILITIES
+      { name: "Word Counter", category: "text-tools" },
+      { name: "Line Counter", category: "text-tools" },
+      { name: "Text Case Converter", category: "text-tools" },
+
+      // SECURITY
+      { name: "Password Generator", category: "security" },
+      { name: "Password Strength Checker", category: "security" }
     ]
   },
 
-  // 16. ANIMAL PREGNANCY TOOLS
+   // 16. ANIMAL PREGNANCY TOOLS (UPDATED WITH CATEGORIES)
   catPreg: {
     name: "🐾 Animal Pregnancy Tools",
     tools: [
-      "Dog Pregnancy Calculator",
-      "Cat Pregnancy Calculator",
-      "Cow Pregnancy Calculator",
-      "Rabbit Pregnancy Calculator",
-      "Goat Pregnancy Calculator",
-      "Horse Gestation Calculator",    // ✅ Sirf yeh rahega
-      "Sheep Pregnancy Calculator",
-      "Pig Pregnancy Calculator",
-      "Lambing Calculator"
+      // PETS
+      { name: "Dog Pregnancy Calculator", category: "pets" },
+      { name: "Cat Pregnancy Calculator", category: "pets" },
+      { name: "Rabbit Pregnancy Calculator", category: "pets" },
+
+      // LIVESTOCK & FARM
+      { name: "Cow Pregnancy Calculator", category: "livestock" },
+      { name: "Goat Pregnancy Calculator", category: "livestock" },
+      { name: "Horse Gestation Calculator", category: "livestock" },
+      { name: "Sheep Pregnancy Calculator", category: "livestock" },
+      { name: "Pig Pregnancy Calculator", category: "livestock" },
+      { name: "Lambing Calculator", category: "livestock" }
     ]
   },
-
-  // 17. ZODIAC & BIRTHDAY TOOLS (NEW)
+    
+   // 17. ZODIAC & BIRTHDAY TOOLS (UPDATED WITH CATEGORIES)
   catZodiac: {
     name: "♈ Zodiac & Birthday Tools",
     tools: [
-      "Zodiac Sign Finder",
-      "Chinese Zodiac Finder",
-      "Birthday Countdown",
-      "Happy Birthday Tool"
-    ]
-   },
+      // ZODIAC
+      { name: "Zodiac Sign Finder", category: "zodiac" },
+      { name: "Chinese Zodiac Finder", category: "zodiac" },
 
-  // 18. TIME CALCULATORS
+      // BIRTHDAY
+      { name: "Birthday Countdown", category: "birthday" },
+      { name: "Happy Birthday Tool", category: "birthday" }
+    ]
+  },
+
+   // 18. TIME CALCULATORS (UPDATED WITH CATEGORIES)
   catTime: {
     name: "⏰ Time Calculators",
     tools: [
-      "Time Calculator",
-      "Date Calculator",
-      "Countdown Timer",            // ✅ NAYA
-      "World Clock",                // ✅ NAYA
-      "Age Calculator"
+      // CALCULATORS
+      { name: "Time Calculator", category: "calculators" },
+      { name: "Date Calculator", category: "calculators" },
+      { name: "Age Calculator", category: "calculators" },
+
+      // TIMERS & CLOCKS
+      { name: "Countdown Timer", category: "timers-clocks" },
+      { name: "World Clock", category: "timers-clocks" }
     ]
   }
 };
+
 // =========================================================================
 // 2. TOOL URL MAPPING (COMPLETE - ALL 240+ TOOLS)
 // =========================================================================
