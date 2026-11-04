@@ -639,15 +639,20 @@ const toolUrlMap = {
   "YouTube Community Post Generator": "youtube-community-post-generator.html"
 };
 // =========================================================================
-// 3. HELPER FUNCTION - GET URL
+// 3. HELPER FUNCTION - GET URL (START)
 // =========================================================================
 function getUrl(toolName) {
-    if (toolUrlMap[toolName]) {
-        return "https://freeonlinetools203.com/" + toolUrlMap[toolName];
+    // Agar toolName ek object hai (jaise naye catAge mein hai), toh uska 'name' nikal lo
+    let nameStr = (typeof toolName === 'object' && toolName !== null) ? toolName.name : toolName;
+    
+    if (toolUrlMap[nameStr]) {
+        return "https://freeonlinetools203.com/" + toolUrlMap[nameStr];
     }
-    return "https://freeonlinetools203.com/" + toolName.toLowerCase().trim().replace(/ /g, '-').replace(/[^\w\-]/g, '') + '.html';
+    return "https://freeonlinetools203.com/" + nameStr.toLowerCase().trim().replace(/ /g, '-').replace(/[^\w\-]/g, '') + '.html';
 }
-
+// =========================================================================
+// 3. HELPER FUNCTION - GET URL END
+// =========================================================================
 // ==========================================
 // NAYA CODE (Isko Paste Karein)
 // ==========================================
