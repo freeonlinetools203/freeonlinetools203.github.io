@@ -653,32 +653,18 @@ function getUrl(toolName) {
 // =========================================================================
 // 3. HELPER FUNCTION - GET URL END
 // =========================================================================
-// ==========================================
-// NAYA CODE (Isko Paste Karein)
-// ==========================================
+// =========================================================================
+// 1. RENDER DASHBOARD (Tabs + Show More for All Categories)
+// =========================================================================
 function renderDashboard() {
     const container = document.getElementById('toolsContainer');
     if (!container) return;
     
     const orderedCategoryKeys = [
-        "catMostPopular",
-        "catAge",
-        "catAgeExcel",
-        "catZodiac",
-        "catTime",
-        "catHash", 
-        "catSeo", 
-        "catYoutube",
-        "catFun", 
-        "catColor",
-        "catPdf", 
-        "catImage", 
-        "catPop", 
-        "catDev", 
-        "catHealth",
-        "catFin", 
-        "catText", 
-        "catPreg"
+        "catMostPopular", "catAge", "catAgeExcel", "catZodiac", "catTime",
+        "catHash", "catSeo", "catYoutube", "catFun", "catColor",
+        "catPdf", "catImage", "catPop", "catDev", "catHealth",
+        "catFin", "catText", "catPreg"
     ];
     
     let html = '';
@@ -686,19 +672,19 @@ function renderDashboard() {
         const cat = toolsDatabase[key];
         if (!cat) continue;
 
-        // ===== YAHAN SPECIAL CONDITION LAGI HAI AGE TOOLS KE LIYE =====
+        // ==========================================
+        // AGE TOOLS (Tabs + Local Search)
+        // ==========================================
         if (key === 'catAge') {
             html += `<div class="section" data-category="${key}" id="section_${key}">
                 <div class="section-header-with-product">
                     <h2>${cat.name}</h2>
                 </div>
                 
-                <!-- Search Bar -->
                 <div class="age-local-search">
                     <input type="text" id="ageLocalSearch" placeholder="🔍 Search inside Age Tools (e.g., Chronological, Dog)...">
                 </div>
                 
-                <!-- Tabs -->
                 <div class="age-tabs" id="ageTabs">
                     <button class="age-tab-btn active" data-filter="all">All Tools</button>
                     <button class="age-tab-btn" data-filter="basic">Basic</button>
@@ -708,7 +694,6 @@ function renderDashboard() {
                     <button class="age-tab-btn" data-filter="photo">Photo AI</button>
                 </div>
                 
-                <!-- Grid with Categories -->
                 <div class="tools-grid" id="ageToolsGrid">
                     ${cat.tools.map(tool => `
                         <div class="tool-card age-tool-card" data-category="${tool.category}">
@@ -716,21 +701,58 @@ function renderDashboard() {
                         </div>
                     `).join('')}
                     
-                    <!-- Smart Message (Jab galat tab par search kare) -->
                     <div id="ageSmartMessage" style="display:none; grid-column: 1 / -1; text-align: center; padding: 25px; background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px;">
                         <p style="color:#475569; font-size:16px; margin-bottom:15px;">🤔 Ye tool is category mein nahi hai. Kya aap ise saare Age Tools mein dhoondhna chahte hain?</p>
                         <button onclick="switchToAllAgeTools()" style="background:#2563eb; color:white; border:none; padding:10px 24px; border-radius:8px; font-size:14px; font-weight:bold; cursor:pointer;">🔍 Search in All Age Tools</button>
                     </div>
                 </div>
             </div>`;
-        } else {
-            // ===== NORMAL RENDER FOR OTHER CATEGORIES =====
+        } 
+        
+        // ==========================================
+        // ALL OTHER CATEGORIES (Show More / Show Less)
+        // ==========================================
+        else {
+            let toolsToShow = cat.tools;
+            let hasMore = false;
+            let hiddenHTML = '';
+
+            // Agar tools 12 se zyada hain, toh sirf pehle 12 dikhao
+            if (cat.tools.length > 12) {
+                toolsToShow = cat.tools.slice(0, 12);
+                hasMore = true;
+                
+                // Baaki tools ko hidden div mein daalo
+                let hiddenToolsHTML = cat.tools.slice(12).map(tool => {
+                    let nameStr = (typeof tool === 'object' && tool !== null) ? tool.name : tool;
+                    return `<div class="tool-card"><a href="${getUrl(nameStr)}">${nameStr}</a></div>`;
+                }).join('');
+
+                hiddenHTML = `
+                    <div id="hidden_${key}" style="display: none; grid-column: 1 / -1; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 20px;">
+                        ${hiddenToolsHTML}
+                    </div>
+                    <div style="grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+                        <button onclick="toggleShowMore('${key}')" id="btn_${key}" style="padding: 12px 30px; background: #eff6ff; color: #1e3a8a; border: 2px solid #bfdbfe; border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 15px; transition: all 0.2s;">
+                            ⬇️ Show All ${cat.tools.length} Tools
+                        </button>
+                    </div>
+                `;
+            }
+
+            // Visible tools ki HTML banao
+            let visibleToolsHTML = toolsToShow.map(tool => {
+                let nameStr = (typeof tool === 'object' && tool !== null) ? tool.name : tool;
+                return `<div class="tool-card"><a href="${getUrl(nameStr)}">${nameStr}</a></div>`;
+            }).join('');
+
             html += `<div class="section" data-category="${key}" id="section_${key}">
                 <div class="section-header-with-product">
                     <h2>${cat.name}</h2>
                 </div>
-                <div class="tools-grid">
-                    ${cat.tools.map(tool => `<div class="tool-card"><a href="${getUrl(tool)}">${tool}</a></div>`).join('')}
+                <div class="tools-grid" style="grid-column: 1 / -1;">
+                    ${visibleToolsHTML}
+                    ${hiddenHTML}
                 </div>
             </div>`;
         }
@@ -742,8 +764,32 @@ function renderDashboard() {
         initAgeToolsFilter();
     }
 }
+
 // =========================================================================
-// AGE TOOLS - LOCAL SEARCH & TABS LOGIC
+// 2. SHOW MORE BUTTON LOGIC (For YouTube, Fun, PDF, etc.)
+// =========================================================================
+window.toggleShowMore = function(categoryKey) {
+    const hiddenDiv = document.getElementById(`hidden_${categoryKey}`);
+    const btn = document.getElementById(`btn_${categoryKey}`);
+    
+    if (hiddenDiv && btn) {
+        if (hiddenDiv.style.display === 'none') {
+            hiddenDiv.style.display = 'grid'; // Saare tools dikhao
+            btn.innerHTML = '⬆️ Show Less';   // Button text badlo
+            btn.style.background = '#f1f5f9'; 
+            btn.style.color = '#475569';
+        } else {
+            hiddenDiv.style.display = 'none'; // Wapas chupao
+            btn.innerHTML = `⬇️ Show All Tools`; 
+            btn.style.background = '#eff6ff';
+            btn.style.color = '#1e3a8a';
+            document.getElementById(`section_${categoryKey}`).scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+};
+
+// =========================================================================
+// 3. AGE TOOLS - LOCAL SEARCH & TABS LOGIC
 // =========================================================================
 let currentAgeTab = 'all';
 
@@ -766,7 +812,6 @@ function initAgeToolsFilter() {
             const matchesSearch = toolName.includes(searchText);
             const matchesTab = (currentAgeTab === 'all' || toolCategory === currentAgeTab);
 
-            // Strict Logic: Dono true hone chahiye
             if (matchesSearch && matchesTab) {
                 card.style.display = 'block';
                 visibleCount++;
@@ -775,15 +820,13 @@ function initAgeToolsFilter() {
             }
         });
 
-        // Smart Message Logic (Jab galat tab par search kare)
         if (smartMsg) {
             if (visibleCount === 0 && searchText !== '' && currentAgeTab !== 'all') {
-                // Check karo ki tool kisi doosri category mein hai ya nahi
                 const existsElsewhere = toolsDatabase.catAge.tools.some(t => t.name.toLowerCase().includes(searchText));
                 if (existsElsewhere) {
-                    smartMsg.style.display = 'block'; // Dikhao
+                    smartMsg.style.display = 'block'; 
                 } else {
-                    smartMsg.style.display = 'none'; // Chupao
+                    smartMsg.style.display = 'none'; 
                 }
             } else {
                 smartMsg.style.display = 'none';
@@ -791,29 +834,25 @@ function initAgeToolsFilter() {
         }
     }
 
-    // Tab Click Event
     tabButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             tabButtons.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentAgeTab = e.target.getAttribute('data-filter');
-            searchInput.value = ''; // Tab change par search clear
+            searchInput.value = ''; 
             filterAgeTools();
         });
     });
 
-    // Search Input Event
     searchInput.addEventListener('input', filterAgeTools);
 }
 
-// Smart Button Function (All Tools par switch karne ke liye)
 window.switchToAllAgeTools = function() {
     const tabButtons = document.querySelectorAll('.age-tab-btn');
     tabButtons.forEach(b => b.classList.remove('active'));
     document.querySelector('.age-tab-btn[data-filter="all"]').classList.add('active');
     currentAgeTab = 'all';
     
-    // Re-run filter (search text same rahega)
     const searchInput = document.getElementById('ageLocalSearch');
     if(searchInput) {
         const event = new Event('input');
