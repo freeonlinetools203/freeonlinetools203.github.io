@@ -728,6 +728,84 @@ function renderDashboard() {
         initAgeToolsFilter();
     }
 }
+// =========================================================================
+// AGE TOOLS - LOCAL SEARCH & TABS LOGIC
+// =========================================================================
+let currentAgeTab = 'all';
+
+function initAgeToolsFilter() {
+    const searchInput = document.getElementById('ageLocalSearch');
+    const tabButtons = document.querySelectorAll('.age-tab-btn');
+    const toolCards = document.querySelectorAll('.age-tool-card');
+    const smartMsg = document.getElementById('ageSmartMessage');
+
+    if(!searchInput) return;
+
+    function filterAgeTools() {
+        const searchText = searchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        toolCards.forEach(card => {
+            const toolName = card.querySelector('a').textContent.toLowerCase();
+            const toolCategory = card.getAttribute('data-category');
+
+            const matchesSearch = toolName.includes(searchText);
+            const matchesTab = (currentAgeTab === 'all' || toolCategory === currentAgeTab);
+
+            // Strict Logic: Dono true hone chahiye
+            if (matchesSearch && matchesTab) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Smart Message Logic (Jab galat tab par search kare)
+        if (smartMsg) {
+            if (visibleCount === 0 && searchText !== '' && currentAgeTab !== 'all') {
+                // Check karo ki tool kisi doosri category mein hai ya nahi
+                const existsElsewhere = toolsDatabase.catAge.tools.some(t => t.name.toLowerCase().includes(searchText));
+                if (existsElsewhere) {
+                    smartMsg.style.display = 'block'; // Dikhao
+                } else {
+                    smartMsg.style.display = 'none'; // Chupao
+                }
+            } else {
+                smartMsg.style.display = 'none';
+            }
+        }
+    }
+
+    // Tab Click Event
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            tabButtons.forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentAgeTab = e.target.getAttribute('data-filter');
+            searchInput.value = ''; // Tab change par search clear
+            filterAgeTools();
+        });
+    });
+
+    // Search Input Event
+    searchInput.addEventListener('input', filterAgeTools);
+}
+
+// Smart Button Function (All Tools par switch karne ke liye)
+window.switchToAllAgeTools = function() {
+    const tabButtons = document.querySelectorAll('.age-tab-btn');
+    tabButtons.forEach(b => b.classList.remove('active'));
+    document.querySelector('.age-tab-btn[data-filter="all"]').classList.add('active');
+    currentAgeTab = 'all';
+    
+    // Re-run filter (search text same rahega)
+    const searchInput = document.getElementById('ageLocalSearch');
+    if(searchInput) {
+        const event = new Event('input');
+        searchInput.dispatchEvent(event);
+    }
+}
 
 // =========================================================================
 // 5. GENERATE MOBILE MENU
