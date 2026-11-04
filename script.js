@@ -639,9 +639,9 @@ function getUrl(toolName) {
     return "https://freeonlinetools203.com/" + toolName.toLowerCase().trim().replace(/ /g, '-').replace(/[^\w\-]/g, '') + '.html';
 }
 
-// =========================================================================
-// 4. RENDER DASHBOARD
-// =========================================================================
+// ==========================================
+// NAYA CODE (Isko Paste Karein)
+// ==========================================
 function renderDashboard() {
     const container = document.getElementById('toolsContainer');
     if (!container) return;
@@ -671,17 +671,62 @@ function renderDashboard() {
     for (const key of orderedCategoryKeys) {
         const cat = toolsDatabase[key];
         if (!cat) continue;
-        
-        html += `<div class="section" data-category="${key}" id="section_${key}">
-            <div class="section-header-with-product">
-                <h2>${cat.name}</h2>
-            </div>
-            <div class="tools-grid">
-                ${cat.tools.map(tool => `<div class="tool-card"><a href="${getUrl(tool)}">${tool}</a></div>`).join('')}
-            </div>
-        </div>`;
+
+        // ===== YAHAN SPECIAL CONDITION LAGI HAI AGE TOOLS KE LIYE =====
+        if (key === 'catAge') {
+            html += `<div class="section" data-category="${key}" id="section_${key}">
+                <div class="section-header-with-product">
+                    <h2>${cat.name}</h2>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="age-local-search">
+                    <input type="text" id="ageLocalSearch" placeholder="🔍 Search inside Age Tools (e.g., Chronological, Dog)...">
+                </div>
+                
+                <!-- Tabs -->
+                <div class="age-tabs" id="ageTabs">
+                    <button class="age-tab-btn active" data-filter="all">All Tools</button>
+                    <button class="age-tab-btn" data-filter="basic">Basic</button>
+                    <button class="age-tab-btn" data-filter="difference">Difference</button>
+                    <button class="age-tab-btn" data-filter="health">Health & Science</button>
+                    <button class="age-tab-btn" data-filter="pet">Pet & Fun</button>
+                    <button class="age-tab-btn" data-filter="photo">Photo AI</button>
+                </div>
+                
+                <!-- Grid with Categories -->
+                <div class="tools-grid" id="ageToolsGrid">
+                    ${cat.tools.map(tool => `
+                        <div class="tool-card age-tool-card" data-category="${tool.category}">
+                            <a href="${getUrl(tool.name)}">${tool.name}</a>
+                        </div>
+                    `).join('')}
+                    
+                    <!-- Smart Message (Jab galat tab par search kare) -->
+                    <div id="ageSmartMessage" style="display:none; grid-column: 1 / -1; text-align: center; padding: 25px; background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px;">
+                        <p style="color:#475569; font-size:16px; margin-bottom:15px;">🤔 Ye tool is category mein nahi hai. Kya aap ise saare Age Tools mein dhoondhna chahte hain?</p>
+                        <button onclick="switchToAllAgeTools()" style="background:#2563eb; color:white; border:none; padding:10px 24px; border-radius:8px; font-size:14px; font-weight:bold; cursor:pointer;">🔍 Search in All Age Tools</button>
+                    </div>
+                </div>
+            </div>`;
+        } else {
+            // ===== NORMAL RENDER FOR OTHER CATEGORIES =====
+            html += `<div class="section" data-category="${key}" id="section_${key}">
+                <div class="section-header-with-product">
+                    <h2>${cat.name}</h2>
+                </div>
+                <div class="tools-grid">
+                    ${cat.tools.map(tool => `<div class="tool-card"><a href="${getUrl(tool)}">${tool}</a></div>`).join('')}
+                </div>
+            </div>`;
+        }
     }
     container.innerHTML = html;
+
+    // Age Tools Filter ko initialize karein
+    if (document.getElementById('ageToolsGrid')) {
+        initAgeToolsFilter();
+    }
 }
 
 // =========================================================================
