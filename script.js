@@ -654,7 +654,7 @@ function getUrl(toolName) {
 // 3. HELPER FUNCTION - GET URL END
 // =========================================================================
 // =========================================================================
-// 1. RENDER DASHBOARD (Tabs + Show More for All Categories)
+// 1. RENDER DASHBOARD (Age Tabs + Other Category Search + Show More)
 // =========================================================================
 function renderDashboard() {
     const container = document.getElementById('toolsContainer');
@@ -673,7 +673,7 @@ function renderDashboard() {
         if (!cat) continue;
 
         // ==========================================
-        // AGE TOOLS (Tabs + Local Search)
+        // AGE TOOLS (Special Case)
         // ==========================================
         if (key === 'catAge') {
             html += `<div class="section" data-category="${key}" id="section_${key}">
@@ -710,19 +710,17 @@ function renderDashboard() {
         } 
         
         // ==========================================
-        // ALL OTHER CATEGORIES (Show More / Show Less)
+        // OTHER CATEGORIES (Search Bar + Show More)
         // ==========================================
         else {
             let toolsToShow = cat.tools;
             let hasMore = false;
             let hiddenHTML = '';
 
-            // Agar tools 12 se zyada hain, toh sirf pehle 12 dikhao
             if (cat.tools.length > 12) {
                 toolsToShow = cat.tools.slice(0, 12);
                 hasMore = true;
                 
-                // Baaki tools ko hidden div mein daalo
                 let hiddenToolsHTML = cat.tools.slice(12).map(tool => {
                     let nameStr = (typeof tool === 'object' && tool !== null) ? tool.name : tool;
                     return `<div class="tool-card"><a href="${getUrl(nameStr)}">${nameStr}</a></div>`;
@@ -740,17 +738,27 @@ function renderDashboard() {
                 `;
             }
 
-            // Visible tools ki HTML banao
             let visibleToolsHTML = toolsToShow.map(tool => {
                 let nameStr = (typeof tool === 'object' && tool !== null) ? tool.name : tool;
                 return `<div class="tool-card"><a href="${getUrl(nameStr)}">${nameStr}</a></div>`;
             }).join('');
 
+            // Khoobsurat Search Bar (Sirf un categories mein jahan 5 se zyada tools hon)
+            let searchBarHTML = '';
+            if (cat.tools.length > 5) {
+                searchBarHTML = `
+                    <div class="age-local-search" style="margin-bottom: 20px;">
+                        <input type="text" class="other-cat-search" data-category="${key}" placeholder="🔍 Search in ${cat.name.replace(/[^\w\s]/gi, '')}...">
+                    </div>
+                `;
+            }
+
             html += `<div class="section" data-category="${key}" id="section_${key}">
                 <div class="section-header-with-product">
                     <h2>${cat.name}</h2>
                 </div>
-                <div class="tools-grid" style="grid-column: 1 / -1;">
+                ${searchBarHTML}
+                <div class="tools-grid" id="grid_${key}" style="grid-column: 1 / -1;">
                     ${visibleToolsHTML}
                     ${hiddenHTML}
                 </div>
@@ -759,14 +767,16 @@ function renderDashboard() {
     }
     container.innerHTML = html;
 
-    // Age Tools Filter ko initialize karein
     if (document.getElementById('ageToolsGrid')) {
         initAgeToolsFilter();
     }
+    
+    // Baaki categories ke search bar ko active karein
+    attachGeneralSearch();
 }
 
 // =========================================================================
-// 2. SHOW MORE BUTTON LOGIC (For YouTube, Fun, PDF, etc.)
+// 2. SHOW MORE BUTTON LOGIC
 // =========================================================================
 window.toggleShowMore = function(categoryKey) {
     const hiddenDiv = document.getElementById(`hidden_${categoryKey}`);
@@ -774,12 +784,12 @@ window.toggleShowMore = function(categoryKey) {
     
     if (hiddenDiv && btn) {
         if (hiddenDiv.style.display === 'none') {
-            hiddenDiv.style.display = 'grid'; // Saare tools dikhao
-            btn.innerHTML = '⬆️ Show Less';   // Button text badlo
+            hiddenDiv.style.display = 'grid';
+            btn.innerHTML = '⬆️ Show Less';
             btn.style.background = '#f1f5f9'; 
             btn.style.color = '#475569';
         } else {
-            hiddenDiv.style.display = 'none'; // Wapas chupao
+            hiddenDiv.style.display = 'none';
             btn.innerHTML = `⬇️ Show All Tools`; 
             btn.style.background = '#eff6ff';
             btn.style.color = '#1e3a8a';
@@ -789,7 +799,47 @@ window.toggleShowMore = function(categoryKey) {
 };
 
 // =========================================================================
-// 3. AGE TOOLS - LOCAL SEARCH & TABS LOGIC
+// 3. NAYA: BAQI CATEGORIES KE SEARCH BAR KA LOGIC
+// =========================================================================
+function attachGeneralSearch() {
+    document.querySelectorAll('.other-cat-search').forEach(input => {
+        input.addEventListener('input', function() {
+            const searchText = this.value.toLowerCase().trim();
+            const catKey = this.getAttribute('data-category');
+            const grid = document.getElementById(`grid_${catKey}`);
+            if (!grid) return;
+
+            // Category ke saare tools check karo
+            const cards = grid.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                const toolName = card.textContent.toLowerCase();
+                if (toolName.includes(searchText)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show More button ko handle karo search ke waqt
+            const btn = document.getElementById(`btn_${catKey}`);
+            const hiddenDiv = document.getElementById(`hidden_${catKey}`);
+            
+            if (btn && hiddenDiv) {
+                if (searchText !== '') {
+                    btn.style.display = 'none'; // Search ke waqt button hide
+                    hiddenDiv.style.display = 'grid'; // Hidden tools ko bhi search mein shamil karo
+                } else {
+                    btn.style.display = 'inline-block'; // Wapas dikhao
+                    hiddenDiv.style.display = 'none'; // Wapas chupao
+                    btn.innerHTML = `⬇️ Show All ${toolsDatabase[catKey].tools.length} Tools`;
+                }
+            }
+        });
+    });
+}
+
+// =========================================================================
+// 4. AGE TOOLS - LOCAL SEARCH & TABS LOGIC (Waisa hi rahega)
 // =========================================================================
 let currentAgeTab = 'all';
 
