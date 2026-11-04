@@ -35,44 +35,53 @@ const toolsDatabase = {
     ]
   },
   
-   // 2. AGE CALCULATOR TOOLS
+   // 2. AGE CALCULATOR TOOLS (UPDATED WITH CATEGORIES)
   catAge: {
     name: "📅 Age Calculator Tools",
     tools: [
-      "Age Calculator",
-      "Dog Age Calculator",
-      "What Year Was I Born Calculator",
-      "Born Year Age Calculator",
-      "Current Year Calculator",
-      "Chronological Age Calculator",
-      "Online Chronological Age Calculator",
-      "Age Difference Calculator",
-      "Age Calculator Difference",
-      "Calculate Age Difference",
-      "Age Gap Calculator",
-      "Age Gap Dating Calculator",
-      "Dating Age Difference Calculator",
-      "Biological Age Calculator",
-      "Free Biological Age Calculator",
-      "Adjusted Age Calculator",
-      "Preemie Adjusted Age Calculator",
-      "Pearson Age Calculator",
-      "Pearson Chronological Age Calculator",
-      "Age Calculator By Photo",
-      "Photo Age Calculator",
-      "Geekzilla Age Calculator",
-      "Age In Days Calculator",
-      "Age In Months Calculator",
-      "Birth Year Calculator",
-      "AI Age Guesser",
-      "Future Age Predictor",
-      "Korean Age Calculator",
-      "Birthday Countdown",
-      "Happy Birthday Tool",
-      "Life Expectancy Calculator",
-      "Running Age Calculator",
-      "Running Age Calculator by Date of Birth",
-           "Date of Birth Calculator Year"
+      // BASIC
+      { name: "Age Calculator", category: "basic" },
+      { name: "Current Year Calculator", category: "basic" },
+      { name: "What Year Was I Born Calculator", category: "basic" },
+      { name: "Born Year Age Calculator", category: "basic" },
+      { name: "Birth Year Calculator", category: "basic" },
+      { name: "Age In Days Calculator", category: "basic" },
+      { name: "Age In Months Calculator", category: "basic" },
+      { name: "Date of Birth Calculator Year", category: "basic" },
+      { name: "Dog Age Calculator", category: "pet" },
+
+      // DIFFERENCE
+      { name: "Age Difference Calculator", category: "difference" },
+      { name: "Age Calculator Difference", category: "difference" },
+      { name: "Calculate Age Difference", category: "difference" },
+      { name: "Age Gap Calculator", category: "difference" },
+      { name: "Age Gap Dating Calculator", category: "difference" },
+      { name: "Dating Age Difference Calculator", category: "difference" },
+
+      // HEALTH
+      { name: "Chronological Age Calculator", category: "health" },
+      { name: "Online Chronological Age Calculator", category: "health" },
+      { name: "Biological Age Calculator", category: "health" },
+      { name: "Free Biological Age Calculator", category: "health" },
+      { name: "Adjusted Age Calculator", category: "health" },
+      { name: "Preemie Adjusted Age Calculator", category: "health" },
+      { name: "Pearson Age Calculator", category: "health" },
+      { name: "Pearson Chronological Age Calculator", category: "health" },
+      { name: "Life Expectancy Calculator", category: "health" },
+
+      // PET & FUN
+      { name: "AI Age Guesser", category: "pet" },
+      { name: "Future Age Predictor", category: "pet" },
+      { name: "Korean Age Calculator", category: "pet" },
+      { name: "Birthday Countdown", category: "pet" },
+      { name: "Happy Birthday Tool", category: "pet" },
+      { name: "Running Age Calculator", category: "pet" },
+      { name: "Running Age Calculator by Date of Birth", category: "pet" },
+
+      // PHOTO
+      { name: "Age Calculator By Photo", category: "photo" },
+      { name: "Photo Age Calculator", category: "photo" },
+      { name: "Geekzilla Age Calculator", category: "photo" }
     ]
   },
   
