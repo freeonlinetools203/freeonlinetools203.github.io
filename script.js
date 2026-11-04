@@ -2380,3 +2380,56 @@ document.addEventListener('DOMContentLoaded', function() {
 // END: DASHBOARD SMART PRODUCTS (HOME PAGE TAGS, POPUPS & AUTO-ROTATING SIDEBAR)
 // =========================================================================
 */ 
+// =========================================================================
+// 4. BACK TO TOP BUTTON (Mobile & Desktop ke liye)
+// =========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Button banayein
+    const topBtn = document.createElement('button');
+    topBtn.innerHTML = '⬆️';
+    topBtn.id = 'backToTopBtn';
+    
+    // 2. Button ki Styling
+    topBtn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        display: none;
+        z-index: 10000;
+        transition: all 0.3s ease;
+        align-items: center;
+        justify-content: center;
+    `;
+    
+    // Hover effect ke liye
+    topBtn.onmouseover = () => topBtn.style.transform = 'translateY(-5px)';
+    topBtn.onmouseout = () => topBtn.style.transform = 'translateY(0)';
+
+    document.body.appendChild(topBtn);
+
+    // 3. Scroll par button show/hide karein
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) { // Agar 300px se zyada neeche scroll ho
+            topBtn.style.display = 'flex';
+        } else {
+            topBtn.style.display = 'none';
+        }
+    });
+
+    // 4. Click par upar le jayein
+    topBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
