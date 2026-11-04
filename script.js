@@ -744,8 +744,44 @@ function renderDashboard() {
         const cat = toolsDatabase[key];
         if (!cat) continue;
 
-        // Check karein ki data object hai (yani usme categories hain) ya nahi
         const hasSubCategories = (typeof cat.tools[0] === 'object' && cat.tools[0] !== null);
+
+        // Tools ko 12 ki limit mein baanto (Tabs wali aur bina tabs wali dono ke liye)
+        let toolsToShow = cat.tools;
+        let hasMore = false;
+        let hiddenHTML = '';
+
+        if (cat.tools.length > 12) {
+            toolsToShow = cat.tools.slice(0, 12);
+            hasMore = true;
+            
+            // Hidden tools ki HTML banayein
+            let hiddenToolsHTML = cat.tools.slice(12).map(tool => {
+                let nameStr = (typeof tool === 'object' && tool !== null) ? tool.name : tool;
+                let catClass = hasSubCategories ? 'tab-tool-card' : '';
+                let subcat = hasSubCategories ? `data-subcat="${tool.category}"` : '';
+                return `<div class="tool-card ${catClass}" data-category="${key}" ${subcat}><a href="${getUrl(nameStr)}">${nameStr}</a></div>`;
+            }).join('');
+
+            hiddenHTML = `
+                <div id="hidden_${key}" style="display: none; grid-column: 1 / -1; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 20px;">
+                    ${hiddenToolsHTML}
+                </div>
+                <div style="grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+                    <button onclick="toggleShowMore('${key}')" id="btn_${key}" style="padding: 12px 30px; background: #eff6ff; color: #1e3a8a; border: 2px solid #bfdbfe; border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 15px; transition: all 0.2s;">
+                        ⬇️ Show All ${cat.tools.length} Tools
+                    </button>
+                </div>
+            `;
+        }
+
+        // Visible tools ki HTML banayein
+        let visibleToolsHTML = toolsToShow.map(tool => {
+            let nameStr = (typeof tool === 'object' && tool !== null) ? tool.name : tool;
+            let catClass = hasSubCategories ? 'tab-tool-card' : '';
+            let subcat = hasSubCategories ? `data-subcat="${tool.category}"` : '';
+            return `<div class="tool-card ${catClass}" data-category="${key}" ${subcat}><a href="${getUrl(nameStr)}">${nameStr}</a></div>`;
+        }).join('');
 
         // ==========================================
         // 1. AGAR CATEGORY MEIN TABS (SUB-CATEGORIES) HAIN
@@ -773,11 +809,8 @@ function renderDashboard() {
                 </div>
                 
                 <div class="tools-grid" id="grid_${key}">
-                    ${cat.tools.map(tool => `
-                        <div class="tool-card tab-tool-card" data-category="${key}" data-subcat="${tool.category}">
-                            <a href="${getUrl(tool.name)}">${tool.name}</a>
-                        </div>
-                    `).join('')}
+                    ${visibleToolsHTML}
+                    ${hiddenHTML}
                 </div>
             </div>`;
         } 
@@ -786,34 +819,6 @@ function renderDashboard() {
         // 2. AGAR CATEGORY MEIN SIRF STRINGS HAIN (No Sub-categories yet)
         // ==========================================
         else {
-            let toolsToShow = cat.tools;
-            let hasMore = false;
-            let hiddenHTML = '';
-
-            if (cat.tools.length > 12) {
-                toolsToShow = cat.tools.slice(0, 12);
-                hasMore = true;
-                
-                let hiddenToolsHTML = cat.tools.slice(12).map(tool => {
-                    return `<div class="tool-card"><a href="${getUrl(tool)}">${tool}</a></div>`;
-                }).join('');
-
-                hiddenHTML = `
-                    <div id="hidden_${key}" style="display: none; grid-column: 1 / -1; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 20px;">
-                        ${hiddenToolsHTML}
-                    </div>
-                    <div style="grid-column: 1 / -1; text-align: center; margin-top: 20px;">
-                        <button onclick="toggleShowMore('${key}')" id="btn_${key}" style="padding: 12px 30px; background: #eff6ff; color: #1e3a8a; border: 2px solid #bfdbfe; border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 15px; transition: all 0.2s;">
-                            ⬇️ Show All ${cat.tools.length} Tools
-                        </button>
-                    </div>
-                `;
-            }
-
-            let visibleToolsHTML = toolsToShow.map(tool => {
-                return `<div class="tool-card"><a href="${getUrl(tool)}">${tool}</a></div>`;
-            }).join('');
-
             let searchBarHTML = '';
             if (cat.tools.length > 5) {
                 searchBarHTML = `
@@ -836,8 +841,6 @@ function renderDashboard() {
         }
     }
     container.innerHTML = html;
-
-    // Sabhi Categories ke Filters aur Searches ko Activate karein
     initUniversalFilters();
 }
 
@@ -845,19 +848,31 @@ function renderDashboard() {
 // 2. UNIVERSAL FILTER & SEARCH LOGIC
 // =========================================================================
 function initUniversalFilters() {
-    // TABS LOGIC
+    // 1. TABS LOGIC
     document.querySelectorAll('.age-tabs').forEach(tabContainer => {
         const catKey = tabContainer.id.replace('tabs_', '');
         const btns = tabContainer.querySelectorAll('.age-tab-btn');
         const grid = document.getElementById(`grid_${catKey}`);
+        const hiddenDiv = document.getElementById(`hidden_${catKey}`);
+        const btn = document.getElementById(`btn_${catKey}`);
         
-        btns.forEach(btn => {
-            btn.addEventListener('click', () => {
+        btns.forEach(btnElement => {
+            btnElement.addEventListener('click', () => {
                 btns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+                btnElement.classList.add('active');
                 
-                const filter = btn.getAttribute('data-filter');
+                const filter = btnElement.getAttribute('data-filter');
                 const cards = grid.querySelectorAll('.tab-tool-card');
+                
+                // Logic: Agar koi specific Tab click hua hai (jaise "Spinners"), toh saare tools dikhao
+                // Aur agar "All Tools" click hua hai, toh wapas 12 ki limit lagao
+                if (filter !== 'all') {
+                    if(hiddenDiv) hiddenDiv.style.display = 'grid';
+                    if(btn) btn.style.display = 'none';
+                } else {
+                    if(hiddenDiv) hiddenDiv.style.display = 'none';
+                    if(btn) btn.style.display = 'inline-block';
+                }
                 
                 cards.forEach(card => {
                     if (filter === 'all' || card.getAttribute('data-subcat') === filter) {
@@ -871,17 +886,28 @@ function initUniversalFilters() {
         });
     });
 
-    // SEARCH FOR TABBED CATEGORIES
+    // 2. SEARCH FOR TABBED CATEGORIES
     document.querySelectorAll('.tab-search-input').forEach(input => {
         input.addEventListener('input', function() {
             const catKey = this.getAttribute('data-category');
             const searchText = this.value.toLowerCase().trim();
             const grid = document.getElementById(`grid_${catKey}`);
             const cards = grid.querySelectorAll('.tab-tool-card');
+            const hiddenDiv = document.getElementById(`hidden_${catKey}`);
+            const btn = document.getElementById(`btn_${catKey}`);
             
             const tabs = document.getElementById(`tabs_${catKey}`).querySelectorAll('.age-tab-btn');
             tabs.forEach(t => t.classList.remove('active'));
             tabs[0].classList.add('active');
+
+            // Search ke waqt saare hidden tools dikha do
+            if (searchText !== '') {
+                if(hiddenDiv) hiddenDiv.style.display = 'grid'; 
+                if(btn) btn.style.display = 'none';
+            } else {
+                if(hiddenDiv) hiddenDiv.style.display = 'none'; 
+                if(btn) btn.style.display = 'inline-block';
+            }
 
             cards.forEach(card => {
                 const toolName = card.textContent.toLowerCase();
@@ -894,7 +920,7 @@ function initUniversalFilters() {
         });
     });
 
-    // SIMPLE SEARCH LOGIC
+    // 3. SIMPLE SEARCH LOGIC
     document.querySelectorAll('.simple-cat-search').forEach(input => {
         input.addEventListener('input', function() {
             const catKey = this.getAttribute('data-category');
