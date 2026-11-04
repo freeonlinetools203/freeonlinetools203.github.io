@@ -795,14 +795,22 @@ function renderDashboard() {
                 tabsHTML += `<button class="age-tab-btn" data-filter="${c}">${catName}</button>`;
             });
 
+            // Search Bar SIRF tab aayega jab 12 se zyada tools hon
+            let searchHTML = '';
+            if (cat.tools.length > 12) {
+                searchHTML = `
+                    <div class="age-local-search">
+                        <input type="text" id="search_${key}" class="tab-search-input" data-category="${key}" placeholder="🔍 Search inside ${cat.name.replace(/[^\w\s]/gi, '')}...">
+                    </div>
+                `;
+            }
+
             html += `<div class="section" data-category="${key}" id="section_${key}">
                 <div class="section-header-with-product">
                     <h2>${cat.name}</h2>
                 </div>
                 
-                <div class="age-local-search">
-                    <input type="text" id="search_${key}" class="tab-search-input" data-category="${key}" placeholder="🔍 Search inside ${cat.name.replace(/[^\w\s]/gi, '')}...">
-                </div>
+                ${searchHTML}
                 
                 <div class="age-tabs" id="tabs_${key}">
                     ${tabsHTML}
@@ -819,8 +827,9 @@ function renderDashboard() {
         // 2. AGAR CATEGORY MEIN SIRF STRINGS HAIN (No Sub-categories yet)
         // ==========================================
         else {
+            // Search Bar SIRF tab aayega jab 12 se zyada tools hon
             let searchBarHTML = '';
-            if (cat.tools.length > 5) {
+            if (cat.tools.length > 12) {
                 searchBarHTML = `
                     <div class="age-local-search" style="margin-bottom: 20px;">
                         <input type="text" class="simple-cat-search" data-category="${key}" placeholder="🔍 Search in ${cat.name.replace(/[^\w\s]/gi, '')}...">
@@ -864,8 +873,6 @@ function initUniversalFilters() {
                 const filter = btnElement.getAttribute('data-filter');
                 const cards = grid.querySelectorAll('.tab-tool-card');
                 
-                // Logic: Agar koi specific Tab click hua hai (jaise "Spinners"), toh saare tools dikhao
-                // Aur agar "All Tools" click hua hai, toh wapas 12 ki limit lagao
                 if (filter !== 'all') {
                     if(hiddenDiv) hiddenDiv.style.display = 'grid';
                     if(btn) btn.style.display = 'none';
@@ -881,7 +888,12 @@ function initUniversalFilters() {
                         card.style.display = 'none';
                     }
                 });
-                document.getElementById(`search_${catKey}`).value = '';
+
+                // SAFETY CHECK: Agar search bar na ho toh error na aaye
+                const searchInput = document.getElementById(`search_${catKey}`);
+                if (searchInput) {
+                    searchInput.value = '';
+                }
             });
         });
     });
@@ -900,7 +912,6 @@ function initUniversalFilters() {
             tabs.forEach(t => t.classList.remove('active'));
             tabs[0].classList.add('active');
 
-            // Search ke waqt saare hidden tools dikha do
             if (searchText !== '') {
                 if(hiddenDiv) hiddenDiv.style.display = 'grid'; 
                 if(btn) btn.style.display = 'none';
