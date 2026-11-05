@@ -372,11 +372,20 @@ body {
 
 /* RESULT BOX - DAYS FOCUS */
 .result-box {
+    display: none;
     background: #f0fdf4;
     border-radius: 20px;
     padding: 30px;
     border: 2px solid #86efac;
     text-align: center;
+}
+.result-box.show {
+    display: block;
+    animation: fadeUp 0.4s ease;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 .live-badge {
     display: inline-block;
@@ -429,7 +438,7 @@ body {
     font-weight: 800;
     color: #064e3b;
 }
-
+  
 /* FOOTER */
 .professional-footer {
     background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
