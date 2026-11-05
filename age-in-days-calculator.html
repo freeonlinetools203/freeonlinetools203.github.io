@@ -1111,7 +1111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Start using our <strong>age in days calculator</strong> today and find out exactly how many days old you are!
         </p>
 
-        <!-- SHARE THIS TOOL MODULE -->
+       <!-- SHARE THIS TOOL MODULE -->
         <div style="background:#eff6ff;border:2px solid #2563eb;border-radius:16px;padding:28px 22px;text-align:center;margin:28px 0;">
             <h3 style="color:#1e3a8a;margin-top:0;font-size:1.2rem;">🔗 Share This Tool</h3>
             <p style="color:#4b5563;margin-bottom:16px;">Share the <strong>Age in Days Calculator</strong> with your friends and family!</p>
@@ -1136,6 +1136,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button onclick="closeShareModal()" style="background:#e5e7eb; border:none; color:#374151; padding:10px 30px; border-radius:40px; cursor:pointer; font-weight:600; font-size:14px;">Close</button>
             </div>
         </div>
+
+        <!-- JavaScript for Share Modal (YEH MISSING THA) -->
+        <script>
+            function showShareModal() {
+                document.getElementById('shareModal').style.display = 'flex';
+            }
+            function closeShareModal() {
+                document.getElementById('shareModal').style.display = 'none';
+            }
+            function shareOn(platform) {
+                const url = encodeURIComponent('https://freeonlinetools203.com/age-in-days-calculator.html');
+                const text = encodeURIComponent('📆 Check out this amazing Age in Days Calculator tool! Find out exactly how many days old you are - completely free!');
+                let shareUrl = '';
+                switch(platform) {
+                    case 'whatsapp': shareUrl = `https://wa.me/?text=${text}%20${url}`; break;
+                    case 'facebook': shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`; break;
+                    case 'twitter': shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`; break;
+                    case 'linkedin': shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`; break;
+                }
+                if(shareUrl) window.open(shareUrl, '_blank');
+            }
+            function copyLink() {
+                const link = 'https://freeonlinetools203.com/age-in-days-calculator.html';
+                navigator.clipboard.writeText(link).then(function() {
+                    alert('✅ Link copied to clipboard!');
+                }).catch(function() {
+                    prompt('Copy this link:', link);
+                });
+            }
+        </script>
 
         <!-- AUTHOR BIO -->
         <div style="background:#f0f9ff;border-radius:14px;padding:24px;margin:35px 0 20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;border:1px solid #bae6fd;">
