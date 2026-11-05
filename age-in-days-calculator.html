@@ -1417,7 +1417,8 @@ function calculateAge() {
     if (isNaN(birthDateObj.getTime())) { alert('❌ Invalid date!'); return; }
     if (birthDateObj > new Date()) { alert('❌ Date cannot be in the future!'); return; }
     currentBirthDate = birthDateObj;
-    document.getElementById('resultBox').style.display = 'block';
+   document.getElementById('resultBox').classList.add('show');
+document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     updateAgeUI();
     if (activeInterval) clearInterval(activeInterval);
     activeInterval = setInterval(updateAgeUI, 1000);
