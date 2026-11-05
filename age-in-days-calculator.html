@@ -1432,14 +1432,20 @@ function updateLiveTime() {
     document.getElementById('liveTimezone').innerText = `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
 }
 
+// 🔥 UPDATED: Total days calculation (Bug Fix)
 function updateAgeUI() {
     if (!currentBirthDate) return;
     const now = new Date();
     const age = computeAge(currentBirthDate, now);
+    
     document.getElementById('years').innerText = age.years;
     document.getElementById('months').innerText = age.months;
     document.getElementById('days').innerText = age.days;
-    document.getElementById('mainDays').innerText = age.days;
+
+    // Total days calculate karein (YEARS + MONTHS + DAYS milakar)
+    const diffTime = Math.abs(now - currentBirthDate);
+    const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById('mainDays').innerText = totalDays.toLocaleString();
 }
 
 function calculateAge() {
@@ -1466,7 +1472,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setDefaultDate();
     updateLiveTime();
     setInterval(updateLiveTime, 1000);
-    document.getElementById('resultBox').style.display = 'none';
+    // 🔥 REMOVED: document.getElementById('resultBox').style.display = 'none';
+    // (Ab result box pehle se visible rahega taake Google Bot ko content mile)
+    
+    // Default values calculate karein taake result box khali na dikhe
+    currentBirthDate = new Date(document.getElementById('dobDate').value);
+    updateAgeUI();
+    
     document.getElementById('calculateBtn').addEventListener('click', calculateAge);
 });
 </script>
