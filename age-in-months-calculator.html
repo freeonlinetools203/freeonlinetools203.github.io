@@ -1211,8 +1211,14 @@ function calculateAge() {
     const birthDateObj = new Date(dobInput);
     if (isNaN(birthDateObj.getTime())) { alert('❌ Invalid date!'); return; }
     if (birthDateObj > new Date()) { alert('❌ Date cannot be in the future!'); return; }
+    
     currentBirthDate = birthDateObj;
-    document.getElementById('resultBox').style.display = 'block';
+    
+    // Yahan humne 'show' class add ki hai aur smooth scroll lagaya hai
+    const resultBox = document.getElementById('resultBox');
+    resultBox.classList.add('show');
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    
     updateAgeUI();
     if (activeInterval) clearInterval(activeInterval);
     activeInterval = setInterval(updateAgeUI, 1000);
@@ -1228,7 +1234,10 @@ document.addEventListener('DOMContentLoaded', function() {
     setDefaultDate();
     updateLiveTime();
     setInterval(updateLiveTime, 1000);
-    document.getElementById('resultBox').style.display = 'none';
+    
+    // resultBox.style.display = 'none'; wali line humne yahan se hata di hai
+    // kyunke CSS mein pehle se .result-box { display: none; } likha hai.
+    
     document.getElementById('calculateBtn').addEventListener('click', calculateAge);
 });
 </script>
