@@ -211,6 +211,7 @@
 <!-- ============================================================ -->
 <!-- ========== AGE IN MONTHS CALCULATOR - SCHEMA MARKUP END ===== -->
 <!-- ============================================================ -->
+
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -292,13 +293,25 @@ body {
 }
 .calc-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(124, 58, 237, 0.35); }
 
+/* === RESULT BOX UPDATED === */
 .result-box {
+    display: none; /* Shuru mein chhupa rahega */
     background: #f5f3ff;
     border-radius: 20px;
     padding: 30px;
     border: 2px solid #c4b5fd;
     text-align: center;
 }
+.result-box.show {
+    display: block;
+    animation: fadeUp 0.4s ease;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+/* ======================== */
+
 .live-badge { display: inline-block; background: #7c3aed; color: white; font-size: 12px; padding: 5px 16px; border-radius: 30px; margin-bottom: 20px; animation: pulse 1.5s infinite; }
 @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
 
