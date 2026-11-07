@@ -175,6 +175,7 @@
 }
 </script>
 <!-- ========== SCHEMA MARKUP END ========== -->
+
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -234,14 +235,14 @@ body {
 /* === MAIN CONTAINER === */
 .container {
     max-width: 850px;
-    margin: 40px auto 0;
+    margin: 20px auto 0; /* Reduced margin */
     padding: 0 20px;
 }
 
 /* === AGE CARD === */
 .age-card {
     background: #ffffff;
-    border-radius: 24px;
+    border-radius: 20px;
     box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.15);
     overflow: hidden;
     margin-bottom: 30px;
@@ -249,7 +250,7 @@ body {
 }
 .card-header {
     background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
-    padding: 30px 25px;
+    padding: 18px 20px; /* Compact padding */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -260,43 +261,46 @@ body {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 50px;
+    font-size: 40px;
     opacity: 0.15;
 }
 .card-header h1 {
     color: white;
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 22px; /* Smaller heading */
+    margin-bottom: 6px;
     font-weight: 700;
 }
 .card-header p {
     color: rgba(255,255,255,0.9);
-    font-size: 16px;
+    font-size: 14px;
 }
 .card-content {
-    padding: 35px;
+    padding: 20px; /* Compact padding */
 }
 
-/* === LIVE DATETIME === */
+/* === LIVE DATETIME (Horizontal) === */
 .live-datetime {
     background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 30px;
-    text-align: center;
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 12px;
+    margin-bottom: 18px;
     border: 1px solid #bfdbfe;
 }
 .live-datetime-label {
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #2563eb;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 .live-datetime-label::before {
     content: "🔴";
@@ -304,25 +308,25 @@ body {
     animation: blink 1s infinite;
 }
 @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-.live-date { font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
-.live-time { font-size: 32px; font-weight: 800; color: #1e3a8a; font-family: monospace; letter-spacing: 2px; }
-.live-timezone { font-size: 12px; color: #64748b; margin-top: 6px; }
+.live-date { font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 0; }
+.live-time { font-size: 20px; font-weight: 800; color: #1e3a8a; font-family: monospace; letter-spacing: 1px; line-height: 1.2; }
+.live-timezone { font-size: 12px; color: #64748b; margin-top: 0; width: 100%; text-align: center; }
 
 /* === INPUT === */
-.input-group { margin-bottom: 28px; }
+.input-group { margin-bottom: 15px; } /* Compact margin */
 .input-group label {
     display: block;
     font-weight: 600;
     color: #1f2937;
-    margin-bottom: 12px;
-    font-size: 16px;
+    margin-bottom: 6px;
+    font-size: 15px;
 }
 .date-input-wrapper input {
     width: 100%;
-    padding: 16px 20px;
-    font-size: 16px;
+    padding: 12px 15px; /* Compact input */
+    font-size: 15px;
     border: 2px solid #bfdbfe;
-    border-radius: 16px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     font-family: inherit;
     background: #ffffff;
@@ -336,16 +340,16 @@ body {
 /* === CALCULATE BUTTON === */
 .calc-btn {
     width: 100%;
-    padding: 16px;
+    padding: 14px;
     background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
     color: white;
     border: none;
-    border-radius: 16px;
+    border-radius: 12px;
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 30px;
+    margin-bottom: 15px; /* Reduced margin */
     position: relative;
     overflow: hidden;
 }
@@ -355,7 +359,7 @@ body {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
+    font-size: 22px;
 }
 .calc-btn:hover {
     transform: translateY(-3px);
@@ -364,11 +368,20 @@ body {
 
 /* === RESULT BOX === */
 .result-box {
+    display: none; /* Hidden by default */
     background: #eff6ff;
-    border-radius: 20px;
-    padding: 30px;
+    border-radius: 16px;
+    padding: 25px;
     border: 2px solid #bfdbfe;
     text-align: center;
+}
+.result-box.show {
+    display: block;
+    animation: fadeUp 0.4s ease;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 .result-badge {
     display: inline-block;
@@ -377,14 +390,14 @@ body {
     font-size: 12px;
     padding: 5px 20px;
     border-radius: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .years-display {
-    font-size: 72px;
+    font-size: 65px;
     font-weight: 900;
     color: #1e3a8a;
     line-height: 1;
-    margin: 15px 0 5px;
+    margin: 10px 0 5px;
 }
 .years-label {
     font-size: 18px;
@@ -434,18 +447,19 @@ body {
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     .container { margin-top: 20px; padding: 0 16px; }
-    .card-content { padding: 25px 20px; }
-    .card-header h1 { font-size: 24px; }
-    .live-time { font-size: 26px; }
+    .card-content { padding: 20px 15px; }
+    .card-header h1 { font-size: 20px; }
+    .live-time { font-size: 18px; }
     .years-display { font-size: 52px; }
     .seo-article { padding: 25px 20px; margin: 20px 16px 0; width: auto; }
 }
 @media (max-width: 480px) {
-    .live-time { font-size: 22px; }
+    .live-time { font-size: 16px; }
     .years-display { font-size: 42px; }
-    .calc-btn { font-size: 16px; padding: 14px; }
+    .calc-btn { font-size: 16px; padding: 12px; }
 }
 </style>
+  
 <script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
