@@ -619,44 +619,36 @@ body {
     
     <h3 class="simple-links-title">🔗 Explore Other Age Calculators</h3>
     
-    <div class="simple-links-grid">
+    <div class="simple-links-grid" id="auto-hide-links-grid">
       
-      <!-- 1. Age Calculator -->
       <a href="https://freeonlinetools203.com/age-calculator.html" class="simple-link-card card-blue">
         📅 Age Calculator
       </a>
 
-      <!-- 2. Current Year Calculator -->
       <a href="https://freeonlinetools203.com/current-year-calculator.html" class="simple-link-card card-green">
         🗓️ Current Year Calculator
       </a>
 
-      <!-- 3. What Year Was I Born -->
       <a href="https://freeonlinetools203.com/what-year-was-i-born.html" class="simple-link-card card-yellow">
         🎂 What Year Was I Born
       </a>
 
-      <!-- 4. Born Year Age Calculator -->
       <a href="https://freeonlinetools203.com/born-year-age-calculator.html" class="simple-link-card card-purple">
         📅 Born Year Age Calculator
       </a>
 
-      <!-- 5. Birth Year Calculator -->
       <a href="https://freeonlinetools203.com/birth-year-calculator.html" class="simple-link-card card-pink">
         🎈 Birth Year Calculator
       </a>
 
-      <!-- 6. Age In Days Calculator -->
       <a href="https://freeonlinetools203.com/age-in-days-calculator.html" class="simple-link-card card-orange">
         📆 Age In Days Calculator
       </a>
 
-      <!-- 7. Age In Months Calculator -->
       <a href="https://freeonlinetools203.com/age-in-months-calculator.html" class="simple-link-card card-teal">
         🗓️ Age In Months Calculator
       </a>
 
-      <!-- 8. Date Of Birth Calculator -->
       <a href="https://freeonlinetools203.com/date-of-birth-calculator-year.html" class="simple-link-card card-indigo">
         📅 Date Of Birth Calculator
       </a>
@@ -667,7 +659,27 @@ body {
 
   </div>
 </div>
-<!-- ========== AGE CALCULATOR (BASIC) COLORFUL FOOTER END ========== -->
+
+<script>
+// Yeh script automatically us link ko chupa dega jo current page ka hai
+document.addEventListener("DOMContentLoaded", function() {
+    // Current page ka path nikalain (e.g., /date-of-birth-calculator-year.html)
+    var currentPath = window.location.pathname;
+    
+    // Footer ke saare links ko dhoondein
+    var footerLinks = document.querySelectorAll('.simple-links-grid .simple-link-card');
+    
+    footerLinks.forEach(function(link) {
+        var linkHref = link.getAttribute('href');
+        
+        // Agar link ka URL current page ke URL se match karta hai, toh usko hata dein
+        if (linkHref && linkHref.includes(currentPath)) {
+            link.remove();
+        }
+    });
+});
+</script>
+<!-- ========== AGE CALCULATOR (BASIC)COLORFUL FOOTER END ========== -->
 <!-- ========== SEO ARTICLE START ========== -->
 
 <div class="article-container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
