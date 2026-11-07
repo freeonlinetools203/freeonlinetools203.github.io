@@ -1294,9 +1294,11 @@ function calculateAgeInYears() {
         years--;
     }
 
-    // Display result
+    // Display result (UPDATED FOR SMOOTH SCROLL)
     const resultBox = document.getElementById('resultBox');
-    resultBox.style.display = 'block';
+    resultBox.classList.add('show'); // Add 'show' class for animation
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Scroll to result box
+    
     document.getElementById('yearsDisplay').innerText = years;
     document.getElementById('birthYearDisplay').innerText = 'Born in: ' + birthDate.getFullYear();
 
@@ -1330,9 +1332,8 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLiveDateTimeAlways();
     setInterval(updateLiveDateTimeAlways, 1000);
 
-    const resultBox = document.getElementById('resultBox');
-    if (resultBox) resultBox.style.display = 'none';
-
+    // REMOVED: resultBox.style.display = 'none'; (CSS handles this now via .result-box { display: none; })
+    
     const btn = document.getElementById('calculateBtn');
     if (btn) {
         const newBtn = btn.cloneNode(true);
