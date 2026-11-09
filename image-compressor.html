@@ -398,12 +398,23 @@ body {
     border-top: 10px solid white;
 }
 
-/* ===== RESULT BAR ===== */
+/* ===== RESULT BAR (UPDATED) ===== */
 .result-bar {
     display: none;
-    background: linear-gradient(135deg, #2d3748, #1a202c);
+    position: fixed; /* Screen ke sath fix kar diya */
+    bottom: 20px; /* Neeche se 20px ka gap */
+    left: 50%;
+    transform: translateX(-50%); /* Center karne ke liye */
+    width: 95%;
+    max-width: 650px;
+    z-index: 9999; /* Sabke upar dikhne ke liye */
+    background: rgba(30, 41, 59, 0.95); /* Glass effect */
+    backdrop-filter: blur(10px);
     color: white;
-    padding: 25px 30px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     flex-wrap: wrap;
     gap: 15px;
     align-items: center;
@@ -412,8 +423,8 @@ body {
 }
 .result-bar.show { display: flex; }
 @keyframes slideUpBar {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translate(-50%, 20px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
 }
 .result-info { flex: 1; min-width: 250px; }
 .result-info h3 {
@@ -520,7 +531,7 @@ body {
     padding: 12px 24px;
     border-radius: 40px;
     font-size: 14px;
-    z-index: 1000;
+    z-index: 10000; /* Z-index increased to stay above result bar */
     animation: slideUp 0.3s ease;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
@@ -820,7 +831,14 @@ body.dark .setting-group select { background: #374151; color: white; border-colo
     .upload-btn-large { padding: 16px 38px; font-size: 16px; }
     .cat-mascot-corner { width: 90px; height: 90px; right: 10px; bottom: 10px; }
     .cat-bubble { right: 80px; bottom: 80px; font-size: 11px; padding: 8px 12px; }
-    .result-bar { padding: 20px; flex-direction: column; align-items: stretch; text-align: center; }
+    .result-bar { 
+        padding: 15px; 
+        flex-direction: column; 
+        align-items: stretch; 
+        text-align: center; 
+        bottom: 10px; /* Mobile ke liye gap kam kiya */
+        width: 92%;
+    }
     .result-actions { justify-content: center; }
     .btn-download-all, .btn-clear-all { flex: 1; justify-content: center; }
     .settings-grid { grid-template-columns: 1fr; }
