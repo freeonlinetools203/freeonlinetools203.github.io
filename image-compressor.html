@@ -398,27 +398,27 @@ body {
     border-top: 10px solid white;
 }
 
-/* ===== RESULT BAR (UPDATED) ===== */
+/* ===== RESULT BAR (COMPACT & CENTERED) ===== */
 .result-bar {
     display: none;
-    position: fixed; /* Screen ke sath fix kar diya */
-    bottom: 20px; /* Neeche se 20px ka gap */
+    position: fixed;
+    bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Center karne ke liye */
-    width: 95%;
-    max-width: 650px;
-    z-index: 9999; /* Sabke upar dikhne ke liye */
-    background: rgba(30, 41, 59, 0.95); /* Glass effect */
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 480px; /* Size chhota kiya */
+    z-index: 9999;
+    background: rgba(30, 41, 59, 0.95);
     backdrop-filter: blur(10px);
     color: white;
     padding: 20px;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    flex-wrap: wrap;
+    flex-direction: column; /* Column layout */
     gap: 15px;
     align-items: center;
-    justify-content: space-between;
+    text-align: center; /* Center align */
     animation: slideUpBar 0.4s ease;
 }
 .result-bar.show { display: flex; }
@@ -426,45 +426,52 @@ body {
     from { opacity: 0; transform: translate(-50%, 20px); }
     to { opacity: 1; transform: translate(-50%, 0); }
 }
-.result-info { flex: 1; min-width: 250px; }
+.result-info { width: 100%; }
 .result-info h3 {
     color: #10b981;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 6px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
 }
-.result-info p { color: #cbd5e1; font-size: 14px; }
+.result-info p { color: #cbd5e1; font-size: 13px; margin: 0;}
 .result-info p strong { color: white; }
-.result-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.result-actions { display: flex; gap: 10px; width: 100%; justify-content: center; }
 .btn-download-all {
     background: linear-gradient(135deg, #10b981, #059669);
     color: white;
     border: none;
-    padding: 14px 30px;
+    padding: 12px 24px;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+    flex: 1;
 }
 .btn-download-all:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16,185,129,0.5); }
 .btn-clear-all {
     background: rgba(255,255,255,0.15);
     color: white;
     border: 1px solid rgba(255,255,255,0.3);
-    padding: 14px 24px;
+    padding: 12px 24px;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 .btn-clear-all:hover { background: rgba(255,255,255,0.25); }
 
@@ -531,7 +538,7 @@ body {
     padding: 12px 24px;
     border-radius: 40px;
     font-size: 14px;
-    z-index: 10000; /* Z-index increased to stay above result bar */
+    z-index: 10000;
     animation: slideUp 0.3s ease;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
@@ -831,16 +838,7 @@ body.dark .setting-group select { background: #374151; color: white; border-colo
     .upload-btn-large { padding: 16px 38px; font-size: 16px; }
     .cat-mascot-corner { width: 90px; height: 90px; right: 10px; bottom: 10px; }
     .cat-bubble { right: 80px; bottom: 80px; font-size: 11px; padding: 8px 12px; }
-    .result-bar { 
-        padding: 15px; 
-        flex-direction: column; 
-        align-items: stretch; 
-        text-align: center; 
-        bottom: 10px; /* Mobile ke liye gap kam kiya */
-        width: 92%;
-    }
-    .result-actions { justify-content: center; }
-    .btn-download-all, .btn-clear-all { flex: 1; justify-content: center; }
+    .result-bar { padding: 15px; bottom: 15px; width: 95%; }
     .settings-grid { grid-template-columns: 1fr; }
     .seo-article { padding: 25px 20px; }
     .article-header h2 { font-size: 22px; }
