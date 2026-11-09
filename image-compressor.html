@@ -1843,13 +1843,24 @@ function initDarkMode() {
 }
 initDarkMode();
 
+/* ========== UPDATED TOAST FUNCTION ========== */
 function showToast(msg, isSuccess = false) {
     const existing = document.querySelector('.toast-notification');
     if (existing) existing.remove();
+    
     const toast = document.createElement('div');
     toast.className = 'toast-notification';
     toast.style.background = isSuccess ? '#10b981' : '#1f2937';
     toast.textContent = msg;
+    
+    // Agar Result Bar screen par visible hai, to Toast ko upar dikhayein
+    const resultBar = document.getElementById('resultBar');
+    if (resultBar && resultBar.classList.contains('show')) {
+        toast.style.bottom = '150px'; // Fixed download button ke upar
+    } else {
+        toast.style.bottom = '30px'; // Normal position
+    }
+    
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 2500);
 }
