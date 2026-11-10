@@ -1286,3 +1286,29 @@ footer::before {
         display: none;
     }
 }
+
+/* =========================================================================
+   FIX: RESTORE BLUE TOOL CARDS (DASHBOARD)
+   ========================================================================= */
+.tool-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%) !important; 
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.15) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.tool-card a {
+    color: #ffffff !important; /* Text wapas white */
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-align: center;
+    display: block;
+    padding: 20px 15px;
+    text-decoration: none;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3) !important;
+}
