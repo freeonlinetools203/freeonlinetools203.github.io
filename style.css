@@ -897,11 +897,23 @@ footer::before {
 /* Hero Image Setup */
 .hero-image { 
     position: relative; 
-    width: 650px; 
+    width: 600px; /* Width thodi kam ki */
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    /* Laptop ko text ki taraf aage laane ke liye */
+    margin-left: -50px; 
+    /* Agar aur zyada aage laana ho toh isko -80px ya -100px kar dein */
+}
+
+/* Laptop image ko thoda bada karne ke liye (taake space fill ho) */
+.hero-image .laptop-img {
+    width: 110%; /* 100% se badha kar 110% kiya */
+    /* transform: scaleX(-1); <- IS LINE KO HATA DEIN */
+    filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
+    transition: 0.3s ease;
 }
 
 .hero-image .laptop-img {
