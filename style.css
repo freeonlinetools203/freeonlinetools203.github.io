@@ -1054,3 +1054,107 @@ footer::before {
     .categories-bar { flex-wrap: wrap; border-radius: 20px; gap: 20px; justify-content: center; }
     .categories-wrapper { margin-top: 20px; }
 }
+
+/* =========================================================================
+   FINAL POLISH: MAKING IT LOOK EXACTLY LIKE THE TARGET DESIGN
+   ========================================================================= */
+
+/* 1. Navbar ko Purple se Dark Blue karna */
+.megamenu-container {
+    background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 100%) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
+.megamenu-nav > li > a { color: #e2e8f0 !important; }
+.megamenu-nav > li > a:hover { background: rgba(255,255,255,0.1) !important; }
+.megamenu-logo span { color: #ffffff !important; }
+.megamenu-logo img { filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); }
+
+/* 2. Hero Section ka Background (Split Design with Glow) */
+.hero {
+    /* Left side light hai, Right side dark blue gradient hai */
+    background: radial-gradient(circle at 80% 50%, #1e3a8a 0%, #0f172a 40%, #f0f7ff 40.1%, #e0f2fe 100%) !important;
+    padding: 40px 50px !important;
+    min-height: 500px;
+    align-items: center;
+}
+
+/* 3. Hero Text ko Dark aur Crisp karna */
+.hero h1 { color: #0f172a !important; }
+.hero p { color: #334155 !important; font-weight: 500; }
+
+/* 4. Laptop aur Badge ki Perfect Positioning */
+.hero-image {
+    width: 700px !important; /* Laptop ko aur bada kiya */
+    margin-left: -50px !important;
+    z-index: 10 !important;
+}
+
+.hero-image .laptop-img {
+    width: 100% !important;
+    transform: scale(1.1) !important; /* Laptop ko 10% aur bada kiya */
+    filter: drop-shadow(0px 20px 50px rgba(0,0,0,0.5)) !important;
+}
+
+/* Badge ko laptop ke kone par set karna */
+.gold-badge-container {
+    top: -20px !important;      
+    right: -40px !important;    
+    width: 130px !important;    
+    z-index: 15 !important; /* Laptop ke upar rakhne ke liye */
+    transform: rotate(15deg) !important;
+}
+
+/* 5. Categories Bar ko Target jaisa banane ke liye */
+.categories-wrapper {
+    margin-top: -35px !important; /* Hero ke upar overlap karne ke liye */
+}
+
+.categories-bar {
+    background: #ffffff !important;
+    border-radius: 60px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+    padding: 15px 25px !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+}
+
+.browse-btn {
+    background: #1e3a8a !important;
+    border-radius: 40px !important;
+    padding: 15px 25px !important;
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3) !important;
+}
+
+.category-item {
+    border-right: 1px solid #f1f5f9; /* Icons ke darmiyan line */
+    padding: 0 10px;
+}
+.category-item:last-child { border-right: none; }
+.category-item i { font-size: 26px !important; }
+.category-item:hover { color: #2563eb !important; }
+
+/* 6. Popular Tools Section ka Background */
+.popular-tools {
+    background: #f8fafc; /* Halka blue/grey background */
+    padding-top: 60px !important;
+}
+
+/* Tool Cards ko Target jaisa clean karna (JS wale cards ke liye) */
+.section {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.tool-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03) !important;
+    border-radius: 12px !important;
+}
+.tool-card a {
+    color: #1e293b !important; /* Text ko dark kiya white ki jagah */
+    font-weight: 600 !important;
+}
+.tool-card:hover {
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1) !important;
+    border-color: #bfdbfe !important;
+}
