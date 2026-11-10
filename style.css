@@ -797,20 +797,19 @@ footer::before {
 }
 
 /* =========================================================================
-   PERFECT HERO SECTION STYLES (Matching the Design)
+   PERFECT HERO SECTION STYLES (FINAL CLEAN CODE)
    ========================================================================= */
-.hero-image .laptop-img {
-    width: 100%;
-    /* transform: scaleX(-1); <- IS LINE KO HATA DEIN */
-    
-    /* Laptop ko left taraf shift karne ke liye */
-    transform: translateX(-50px); 
-    
-    filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
-    transition: 0.3s ease;
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px; /* Padding kam ki taake search bar upar aaye */
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f7ff 40%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Background mein dotted pattern add karne ke liye */
+/* Background mein dotted pattern */
 .hero::before {
     content: '';
     position: absolute;
@@ -824,22 +823,14 @@ footer::before {
     z-index: 0;
 }
 
-.hero-content { max-width: 600px; z-index: 2; }
-
-.badge {
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+/* Left Side Text Content */
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: 56px;
+    font-size: 50px;
     line-height: 1.1;
     color: #0f172a;
     margin-bottom: 20px;
@@ -857,12 +848,13 @@ footer::before {
 }
 
 .hero-buttons { display: flex; gap: 15px; margin-bottom: 30px; }
+
 .btn-primary {
     background: linear-gradient(90deg, #3b82f6, #2563eb);
     color: white;
     border: none;
     padding: 14px 30px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -871,6 +863,7 @@ footer::before {
     gap: 8px;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
     transition: 0.3s;
+    text-decoration: none; /* Button link ke liye */
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6); }
 
@@ -879,7 +872,7 @@ footer::before {
     color: #0f172a;
     border: 2px solid #cbd5e1;
     padding: 12px 25px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -894,31 +887,19 @@ footer::before {
 .features-list span { font-size: 14px; font-weight: 600; color: #1e293b; display: flex; align-items: center; gap: 6px; }
 .text-green { color: #10b981; }
 
-/* Hero Image Setup */
+/* Right Side Image Container */
 .hero-image { 
     position: relative; 
-    width: 600px; /* Width thodi kam ki */
+    width: 600px; 
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* Laptop ko text ki taraf aage laane ke liye */
-    margin-left: -50px; 
-    /* Agar aur zyada aage laana ho toh isko -80px ya -100px kar dein */
-}
-
-/* Laptop image ko thoda bada karne ke liye (taake space fill ho) */
-.hero-image .laptop-img {
-    width: 110%; /* 100% se badha kar 110% kiya */
-    /* transform: scaleX(-1); <- IS LINE KO HATA DEIN */
-    filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
-    transition: 0.3s ease;
+    margin-left: -40px; /* Laptop ko text ki taraf aage layega */
 }
 
 .hero-image .laptop-img {
     width: 100%;
-    /* transform: scaleX(-1); <- IS LINE KO HATA DEIN */
     filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
     transition: 0.3s ease;
 }
@@ -943,7 +924,7 @@ footer::before {
     position: absolute;
     top: -10px;      
     right: -20px;    
-    width: 110px;    /* Size 160px se chota karke 110px kar diya */
+    width: 110px;    
     z-index: 4;
     transform: rotate(15deg);
     filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3));
@@ -953,48 +934,65 @@ footer::before {
 .gold-badge-container:hover {
     transform: rotate(5deg) scale(1.05);
 }
+
 .badge-img { width: 100%; display: block; }
+
+/* Badge Text */
 .badge-text {
     position: absolute; 
     top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
 }
 
-/* "240+" Text */
 .badge-text .text-top { 
     position: absolute;
     top: 42%; 
     left: 0; right: 0;
     text-align: center;
-    font-size: 20px; /* 32px se chota karke 20px kiya */
+    font-size: 20px; 
     font-weight: 900; 
     color: #3b1c00; 
     line-height: 1; 
     font-family: 'Arial Black', sans-serif; 
 }
 
-/* "TOOLS" Text */
 .badge-text .text-middle { 
     position: absolute;
     top: 60%; 
     left: 0; right: 0;
     text-align: center;
-    font-size: 10px; /* 15px se chota karke 10px kiya */
+    font-size: 10px; 
     font-weight: 800; 
     color: #3b1c00; 
     letter-spacing: 0.5px; 
 }
 
-/* "FREE FOREVER" Text (Ribbon ke upar) */
 .badge-text .text-bottom { 
     position: absolute;
     bottom: 22%; 
     left: 0; right: 0;
     text-align: center;
-    font-size: 7px; /* 11px se chota karke 7px kiya */
+    font-size: 7px; 
     font-weight: 900; 
     color: #000; 
     letter-spacing: 0.5px; 
+}
+
+/* Responsive (Mobile ke liye) */
+@media (max-width: 1024px) {
+    .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+    .hero-content { max-width: 100%; margin-bottom: 40px; }
+    .hero-buttons, .features-list { justify-content: center; }
+    .hero-image { margin-left: 0; width: 100%; }
+    .gold-badge-container { width: 90px; right: 10px; }
+    .shield { left: 10%; }
+    .bolt { right: 10%; }
+    .cloud { right: 10%; }
+}
+@media (max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { justify-content: center; }
 }
 
 /* =========================================================================
