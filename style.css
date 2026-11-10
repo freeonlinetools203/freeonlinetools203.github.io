@@ -799,15 +799,15 @@ footer::before {
 /* =========================================================================
    PERFECT HERO SECTION STYLES (Matching the Design)
    ========================================================================= */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 50px;
-    /* Naya gradient background */
-    background: linear-gradient(135deg, #e0f2fe 0%, #f0f7ff 40%, #ffffff 100%);
-    position: relative;
-    overflow: hidden;
+.hero-image .laptop-img {
+    width: 100%;
+    /* transform: scaleX(-1); <- IS LINE KO HATA DEIN */
+    
+    /* Laptop ko left taraf shift karne ke liye */
+    transform: translateX(-50px); 
+    
+    filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
+    transition: 0.3s ease;
 }
 
 /* Background mein dotted pattern add karne ke liye */
