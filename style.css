@@ -906,8 +906,7 @@ footer::before {
 
 .hero-image .laptop-img {
     width: 100%;
-    /* Laptop ko Left side ghoomane ke liye yeh line add ki hai */
-    transform: scaleX(-1); 
+    /* transform: scaleX(-1); <- IS LINE KO HATA DEIN */
     filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
     transition: 0.3s ease;
 }
@@ -930,14 +929,15 @@ footer::before {
 /* Gold Badge Setup */
 .gold-badge-container {
     position: absolute;
-    top: 0px;      
-    right: -10px;    
-    width: 160px;    
+    top: -10px;      
+    right: -20px;    
+    width: 110px;    /* Size 160px se chota karke 110px kar diya */
     z-index: 4;
     transform: rotate(15deg);
     filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3));
     transition: 0.3s ease;
 }
+
 .gold-badge-container:hover {
     transform: rotate(5deg) scale(1.05);
 }
