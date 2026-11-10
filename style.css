@@ -797,91 +797,121 @@ footer::before {
 }
 
 /* =========================================================================
-   NEW HERO SECTION STYLES (Light Theme)
+   PERFECT HERO SECTION STYLES (Matching the Design)
    ========================================================================= */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 60px 50px;
-    background: linear-gradient(135deg, #f0f7ff, #e0f2fe, #ffffff);
+    /* Naya gradient background */
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f7ff 40%, #ffffff 100%);
     position: relative;
     overflow: hidden;
+}
+
+/* Background mein dotted pattern add karne ke liye */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-image: radial-gradient(#93c5fd 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 0;
 }
 
 .hero-content { max-width: 600px; z-index: 2; }
 
 .badge {
-    background: #dbeafe;
-    color: #1e40af;
-    padding: 6px 15px;
-    border-radius: 20px;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
     font-size: 14px;
     font-weight: 600;
     display: inline-block;
     margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .hero h1 {
-    font-size: 52px;
+    font-size: 56px;
     line-height: 1.1;
     color: #0f172a;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .hero h1 .highlight { color: #2563eb; }
 
 .hero p {
-    font-size: 16px;
+    font-size: 17px;
     color: #475569;
     margin-bottom: 30px;
     line-height: 1.6;
 }
 
-.hero-buttons { display: flex; gap: 15px; margin-bottom: 25px; }
+.hero-buttons { display: flex; gap: 15px; margin-bottom: 30px; }
 .btn-primary {
     background: linear-gradient(90deg, #3b82f6, #2563eb);
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 15px;
+    padding: 14px 30px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    transition: 0.3s;
 }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6); }
+
 .btn-secondary {
-    background: white;
+    background: transparent;
     color: #0f172a;
     border: 2px solid #cbd5e1;
     padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 15px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: 0.3s;
 }
+.btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
 
 .features-list { display: flex; gap: 20px; }
-.features-list span { font-size: 14px; font-weight: 500; color: #334155; }
+.features-list span { font-size: 14px; font-weight: 600; color: #1e293b; display: flex; align-items: center; gap: 6px; }
 .text-green { color: #10b981; }
 
-/* Hero Image & Floating Icons */
-.hero-image { position: relative; width: 600px; z-index: 1; }
+/* Hero Image Setup */
+.hero-image { 
+    position: relative; 
+    width: 650px; 
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hero-image .laptop-img {
     width: 100%;
-    /* Agar laptop ko left side ghoomana hai toh neeche wali line se comment hata dein */
-    /* transform: scaleX(-1); */
-    filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.2));
+    /* Laptop ko 3D look dene ke liye shadow */
+    filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
     transition: 0.3s ease;
 }
 
+/* Floating Icons (Shield, Bolt, Cloud) */
 .floating-icon {
     position: absolute;
     background: white;
@@ -889,35 +919,35 @@ footer::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     z-index: 3;
 }
-.shield { top: 10%; left: -5%; width: 60px; height: 60px; color: #10b981; font-size: 24px; }
-.bolt { top: 40%; right: -5%; width: 50px; height: 50px; color: #fbbf24; font-size: 20px; }
-.cloud { bottom: 10%; right: -2%; width: 70px; height: 70px; color: #3b82f6; font-size: 30px; }
+.shield { top: 10%; left: 0%; width: 65px; height: 65px; color: #10b981; font-size: 28px; }
+.bolt { top: 40%; right: -5%; width: 55px; height: 55px; color: #fbbf24; font-size: 24px; }
+.cloud { bottom: 15%; right: 0%; width: 75px; height: 75px; color: #3b82f6; font-size: 32px; }
 
-/* Gold Badge Container */
+/* Gold Badge Setup */
 .gold-badge-container {
     position: absolute;
-    top: -30px;      
-    right: -40px;    
+    top: 0px;      
+    right: -10px;    
     width: 160px;    
     z-index: 4;
-    transform: rotate(10deg);
-    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));
+    transform: rotate(15deg);
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3));
     transition: 0.3s ease;
 }
 .gold-badge-container:hover {
-    transform: rotate(0deg) scale(1.05);
+    transform: rotate(5deg) scale(1.05);
 }
 .badge-img { width: 100%; display: block; }
 .badge-text {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none;
 }
-.badge-text .text-top { font-size: 32px; font-weight: 800; color: #3b1c00; line-height: 1; margin-top: -15px; }
-.badge-text .text-middle { font-size: 16px; font-weight: 700; color: #3b1c00; margin-bottom: 25px; }
-.badge-text .text-bottom { font-size: 11px; font-weight: 800; color: #000; position: absolute; bottom: 28px; letter-spacing: 1px; }
+.badge-text .text-top { font-size: 34px; font-weight: 900; color: #3b1c00; line-height: 1; margin-top: -10px; font-family: 'Arial Black', sans-serif; }
+.badge-text .text-middle { font-size: 16px; font-weight: 800; color: #3b1c00; margin-bottom: 25px; letter-spacing: 1px; }
+.badge-text .text-bottom { font-size: 12px; font-weight: 900; color: #000; position: absolute; bottom: 32px; letter-spacing: 1px; }
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -925,11 +955,13 @@ footer::before {
     .hero-content { max-width: 100%; }
     .hero-buttons, .features-list { justify-content: center; }
     .hero-image { margin-top: 40px; width: 100%; }
-    .gold-badge-container { width: 120px; right: 0; top: -20px; }
-    .shield { left: 5%; }
-    .bolt { right: 5%; }
-    .cloud { right: 5%; }
+    .gold-badge-container { width: 120px; right: 10px; top: -10px; }
+    .shield { left: 10%; }
+    .bolt { right: 10%; }
+    .cloud { right: 10%; }
 }
 @media (max-width: 768px) {
-    .hero h1 { font-size: 36px; }
+    .hero h1 { font-size: 40px; }
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { justify-content: center; }
 }
