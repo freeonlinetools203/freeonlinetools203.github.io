@@ -1158,3 +1158,47 @@ footer::before {
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1) !important;
     border-color: #bfdbfe !important;
 }
+
+/* =========================================================================
+   FINAL ADJUSTMENT: REDUCING LAPTOP SIZE & BRINGING SEARCH BAR UP
+   ========================================================================= */
+
+/* 1. Hero Section ki Height Kam Karein */
+.hero {
+    padding: 30px 50px !important; /* Padding kam ki */
+    min-height: 420px !important; /* Height kam ki (pehle 500px thi) */
+}
+
+/* 2. Laptop ka Container Chota Karein */
+.hero-image {
+    width: 550px !important; /* Width 700px se kam karke 550px ki */
+    margin-left: -30px !important;
+}
+
+/* 3. Laptop Image ka Size Chota Karein */
+.hero-image .laptop-img {
+    transform: scale(0.9) !important; /* Scale 1.1 se kam karke 0.9 kiya taake laptop chota lage */
+}
+
+/* 4. Floating Icons ko Naye Size ke Mutabiq Adjust Karein */
+.shield { 
+    top: 12% !important; left: -2% !important; 
+    width: 60px !important; height: 60px !important; font-size: 26px !important; 
+}
+.bolt { 
+    top: 45% !important; right: -2% !important; 
+    width: 50px !important; height: 50px !important; font-size: 24px !important; 
+}
+.cloud { 
+    bottom: 15% !important; right: 0% !important; 
+    width: 65px !important; height: 65px !important; font-size: 30px !important; 
+}
+
+/* 5. Categories Bar aur Search Bar ko Upar Khinchein */
+.categories-wrapper {
+    margin-top: -45px !important; /* Categories bar ko hero ke upar overlap kiya */
+}
+
+.tool-search-section {
+    margin-top: 15px !important; /* Search bar ko categories ke paas laya */
+}
