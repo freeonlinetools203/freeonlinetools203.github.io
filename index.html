@@ -1489,5 +1489,40 @@
     </div>
 </footer>
 
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Thoda wait karein taake script.js navbar load kar le
+    setTimeout(function() {
+        const navbarWrapper = document.querySelector('.megamenu-wrapper');
+        // Agar navbar mil gaya aur search bar pehle se nahi hai
+        if (navbarWrapper && !document.querySelector('.nav-search-container')) {
+            const searchHTML = `
+                <div class="nav-search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search tools..." id="navSearchInput" onkeypress="handleNavSearch(event)">
+                </div>
+            `;
+            // Mobile toggle button se pehle search bar add karein
+            const mobileToggle = document.getElementById('mobileToggle');
+            if (mobileToggle) {
+                mobileToggle.insertAdjacentHTML('beforebegin', searchHTML);
+            } else {
+                navbarWrapper.insertAdjacentHTML('beforeend', searchHTML);
+            }
+
+            // Jab user search kare aur Enter dabaye
+            window.handleNavSearch = function(e) {
+                if (e.key === 'Enter') {
+                    const query = document.getElementById('navSearchInput').value.trim();
+                    if (query) {
+                        // User ko search results page par bhejne ke liye (ya home page par scroll karne ke liye)
+                        window.location.href = `https://freeonlinetools203.com/index.html#toolsContainer`;
+                    }
+                }
+            }
+        }
+    }, 500); // 500ms ka delay taake navbar pehle load ho jaye
+});
+</script>
 </body>
 </html>
