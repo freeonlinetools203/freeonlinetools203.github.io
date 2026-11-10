@@ -951,10 +951,10 @@ footer::before {
 /* "240+" Text */
 .badge-text .text-top { 
     position: absolute;
-    top: 42%; /* Center se thoda upar */
+    top: 42%; 
     left: 0; right: 0;
     text-align: center;
-    font-size: 32px; 
+    font-size: 20px; /* 32px se chota karke 20px kiya */
     font-weight: 900; 
     color: #3b1c00; 
     line-height: 1; 
@@ -964,25 +964,25 @@ footer::before {
 /* "TOOLS" Text */
 .badge-text .text-middle { 
     position: absolute;
-    top: 60%; /* 240+ ke theek neeche */
+    top: 60%; 
     left: 0; right: 0;
     text-align: center;
-    font-size: 15px; 
+    font-size: 10px; /* 15px se chota karke 10px kiya */
     font-weight: 800; 
     color: #3b1c00; 
-    letter-spacing: 1px; 
+    letter-spacing: 0.5px; 
 }
 
 /* "FREE FOREVER" Text (Ribbon ke upar) */
 .badge-text .text-bottom { 
     position: absolute;
-    bottom: 22%; /* Neeche wale ribbon par set karne ke liye */
+    bottom: 22%; 
     left: 0; right: 0;
     text-align: center;
-    font-size: 11px; 
+    font-size: 7px; /* 11px se chota karke 7px kiya */
     font-weight: 900; 
     color: #000; 
-    letter-spacing: 1px; 
+    letter-spacing: 0.5px; 
 }
 
 /* =========================================================================
