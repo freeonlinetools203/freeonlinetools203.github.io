@@ -888,18 +888,21 @@ footer::before {
 .text-green { color: #10b981; }
 
 /* Right Side Image Container */
+/* Right Side Image Container */
 .hero-image { 
     position: relative; 
-    width: 600px; 
+    width: 650px; /* Width badhai */
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -40px; /* Laptop ko text ki taraf aage layega */
+    margin-left: -120px; /* Laptop ko text ki taraf ZYADA aage laya */
 }
 
 .hero-image .laptop-img {
-    width: 100%;
+    width: 115%; /* Laptop ko bada kiya taake khali space bhare */
+    position: relative;
+    z-index: 5; /* Laptop ko badge ke AAGE (upar) kar diya */
     filter: drop-shadow(0px 30px 40px rgba(37, 99, 235, 0.25));
     transition: 0.3s ease;
 }
@@ -923,9 +926,9 @@ footer::before {
 .gold-badge-container {
     position: absolute;
     top: -10px;      
-    right: -20px;    
-    width: 110px;    
-    z-index: 4;
+    right: -30px;    /* Thoda right shift kiya */
+    width: 120px;    
+    z-index: 4;      /* Z-index 4 diya taake laptop ke PEECHE rahe */
     transform: rotate(15deg);
     filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3));
     transition: 0.3s ease;
