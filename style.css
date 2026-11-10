@@ -1312,3 +1312,32 @@ footer::before {
     transform: translateY(-5px) !important;
     box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3) !important;
 }
+
+/* =========================================================================
+   FIX: HIDE OLD SECTIONS & FIX OVERLAPPING
+   ========================================================================= */
+
+/* 1. Purane Stats Section (Blue boxes) aur Trust Badges ko Hide karein */
+.stats-section {
+    display: none !important;
+}
+.trust-badges {
+    display: none !important;
+}
+
+/* 2. Hero section mein neeche space badhayein taake green text kate nahi */
+.hero {
+    padding-bottom: 100px !important; 
+}
+
+/* 3. Categories bar ko sahi position par set karein */
+.categories-wrapper {
+    margin-top: -60px !important; 
+    position: relative;
+    z-index: 30;
+}
+
+/* 4. Popular Tools ka heading thoda upar aur clean karein */
+.section-header-with-product {
+    margin-top: 20px !important;
+}
