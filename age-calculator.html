@@ -675,16 +675,21 @@ Simply enter your date of birth to see your age in years, months, days, hours, m
 </ul>
 
 
-    <!-- SECTION 3: EXCEL -->
-    <h2 id="age-excel" style="color:#1e3a8a;font-size:24px;margin:35px 0 15px;border-left:5px solid #2563eb;padding-left:15px;">📊 How to Calculate Age in Excel (Formula)</h2>
-    <p>A lot of people prefer doing this themselves in Excel or Google Sheets. If you search for "<em>calculate age from date of birth in excel</em>", here is the most accurate formula to use:</p>
     
-    <div style="background:#1f2937;color:#f9fafb;padding:14px 18px;border-radius:10px;font-family:'Courier New',monospace;font-size:0.9rem;margin:12px 0;overflow-x:auto;">
-        =DATEDIF(A1, TODAY(), "Y") &amp; " Years, " &amp; DATEDIF(A1, TODAY(), "YM") &amp; " Months, " &amp; DATEDIF(A1, TODAY(), "MD") &amp; " Days"
-    </div>
-    <p>Just replace <strong>A1</strong> with the cell containing the date of birth. This handles the <em>excel age calculation from birth date</em> perfectly, including all those tricky leap years.</p>
+<!-- SECTION 3: EXCEL -->
+<h2 id="age-excel" style="color:#1e3a8a;font-size:24px;margin:35px 0 15px;border-left:5px solid #2563eb;padding-left:15px;">📊 How to Calculate Age in Excel (Formula)</h2>
 
-    <!-- SECTION 4: FAQ -->
+<p>You can also calculate someone's age using Microsoft Excel or Google Sheets. If you have a date of birth in a spreadsheet, the DATEDIF function can help you find the difference between that date and today's date in years, months, and days.</p>
+
+<p>Enter the date of birth in cell <strong>A1</strong>, then use this formula:</p>
+
+<div style="background:#1f2937;color:#f9fafb;padding:14px 18px;border-radius:10px;font-family:'Courier New',monospace;font-size:0.9rem;margin:12px 0;overflow-x:auto;">
+=DATEDIF(A1, TODAY(), "Y") &amp; " Years, " &amp; DATEDIF(A1, TODAY(), "YM") &amp; " Months, " &amp; DATEDIF(A1, TODAY(), "MD") &amp; " Days"
+</div>
+
+<p>The formula uses <strong>A1</strong> as the date-of-birth cell and <strong>TODAY()</strong> to get the current date automatically. The result displays the difference in years, months, and days. Make sure the date in A1 is entered in a format that Excel or Google Sheets recognizes.</p>
+
+  <!-- SECTION 4: FAQ -->
     <h2 id="age-faq" style="color:#1e3a8a;font-size:24px;margin:35px 0 15px;border-left:5px solid #2563eb;padding-left:15px;">❓ Frequently Asked Questions</h2>
 
     <div style="background:#f0f9ff;border-left:4px solid #2563eb;padding:14px 18px;border-radius:8px;margin-bottom:12px;">
