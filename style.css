@@ -795,3 +795,10 @@ footer::before {
     color: white;
     border-color: #1e3a8a;
 }
+
+/* Button ka color target image jaisa blue karna */
+.custom-view-all {
+    background: #2563eb !important; /* White se Blue kiya */
+    color: #ffffff !important;      /* Text White */
+    border: none !important;
+}
