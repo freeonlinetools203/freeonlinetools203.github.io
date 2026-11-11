@@ -1341,3 +1341,110 @@ footer::before {
 .section-header-with-product {
     margin-top: 20px !important;
 }
+
+/* =========================================================================
+   FINAL MATCH: EXACT TARGET DESIGN FOR CATEGORIES & TOOL CARDS
+   ========================================================================= */
+
+/* 1. Categories Bar mein Icons ke darmiyan line lagana */
+.category-item {
+    border-right: 1px solid #e2e8f0 !important;
+    padding: 0 15px !important;
+    border-radius: 0 !important;
+}
+.category-item:last-child {
+    border-right: none !important;
+}
+
+/* 2. "Popular Tools" ka Heading Style (Target jaisa) */
+.section-header-with-product {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-bottom: none !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+}
+.section-header-with-product h2 {
+    font-size: 32px !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+}
+
+/* Heading ke upar "🔥 Popular Tools" ka chota badge */
+.section-header-with-product h2::before {
+    content: '🔥 Popular Tools';
+    display: block;
+    background: #0f172a;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 0 auto 10px auto;
+    letter-spacing: 0.5px;
+}
+
+/* 3. Tool Cards ko Blue se White mein badalna (Target jaisa) */
+.tool-card {
+    background: #ffffff !important; 
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+/* Card ke andar ka Text */
+.tool-card a {
+    color: #1e293b !important; 
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    text-align: left !important;
+    padding: 0 !important;
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+}
+
+/* Card ke Left side par Icon lagana */
+.tool-card::before {
+    content: '\f0ad'; /* Wrench Icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    background: #eff6ff;
+    color: #3b82f6;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Card ke Right side par Arrow lagana */
+.tool-card::after {
+    content: '\f054'; /* Right Arrow */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #94a3b8;
+    font-size: 14px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tool-card:hover {
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1) !important;
+    border-color: #bfdbfe !important;
+}
