@@ -1491,54 +1491,42 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Thoda wait karein taake purana JS load ho jaye
+    // Thoda wait karein taake main script.js load ho jaye
     setTimeout(function() {
-        // Saare sections ko dhoondein
-        const sections = document.querySelectorAll('.section');
+        // SIRF PEHLE SECTION (Most Popular Tools) ko target karein
+        const firstSection = document.querySelector('.section');
         
-        // Sirf PEHLE section (Most Popular Tools) ko target karein
-        if (sections.length > 0) {
-            const firstSection = sections[0];
+        if (firstSection) {
+            // 1. Sirf pehle section ke header mein badge aur button lagayein
             const header = firstSection.querySelector('.section-header-with-product');
-            
-            // Agar header mil jaye
-            if (header) {
-                // Purane badge aur button hata dein agar hain
-                const oldBadge = header.querySelector('.custom-badge');
-                if (oldBadge) oldBadge.remove();
-                const oldBtn = header.querySelector('.custom-view-all');
-                if (oldBtn) oldBtn.remove();
-
-                // Naya Badge banayein
+            if (header && !header.querySelector('.custom-badge')) {
+                // Naya Badge
                 const badge = document.createElement('div');
                 badge.className = 'custom-badge';
                 badge.innerHTML = '🔥 Popular Tools';
                 badge.style.cssText = 'background: #0f172a; color: white; font-size: 13px; font-weight: 600; padding: 6px 18px; border-radius: 20px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; width: fit-content;';
                 
-                // Naya View All Button banayein
+                // Naya View All Button
                 const btn = document.createElement('a');
                 btn.className = 'custom-view-all';
                 btn.href = '#';
                 btn.innerHTML = 'View All Tools <i class="fa-solid fa-arrow-right"></i>';
                 btn.style.cssText = 'background: #ffffff; color: #2563eb; padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: absolute; right: 35px; top: 50%; transform: translateY(-50%);';
                 
-                // Header ko flex banayein taake button right side mein aaye
-                header.style.cssText = 'display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; margin-bottom: 30px;';
+                header.style.cssText = 'display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; margin-bottom: 30px; border-bottom: none;';
                 
-                // Badge aur Button ko header mein add karein
                 header.insertBefore(badge, header.firstChild);
                 header.appendChild(btn);
             }
 
-            // Cards ko target jaisa banane ke liye unke andar ka text aur icon set karein
+            // 2. Sirf pehle section ke cards mein apne asli icons lagayein
             const cards = firstSection.querySelectorAll('.tool-card');
             cards.forEach(card => {
                 const link = card.querySelector('a');
                 if (link) {
                     const toolName = link.innerText.trim();
-                    let iconHTML = '';
+                    let iconHTML = '<i class="fa-solid fa-wrench" style="color:#64748b; font-size:24px;"></i>'; // Default
                     
-                    // Tool ke naam ke hisaab se icon set karein
                     if (toolName.includes('PDF')) iconHTML = '<i class="fa-solid fa-file-pdf" style="color:#ef4444; font-size:24px;"></i>';
                     else if (toolName.includes('BMI')) iconHTML = '<i class="fa-solid fa-calculator" style="color:#3b82f6; font-size:24px;"></i>';
                     else if (toolName.includes('QR')) iconHTML = '<i class="fa-solid fa-qrcode" style="color:#8b5cf6; font-size:24px;"></i>';
@@ -1549,24 +1537,20 @@ document.addEventListener("DOMContentLoaded", function() {
                     else if (toolName.includes('Age')) iconHTML = '<i class="fa-solid fa-calendar-days" style="color:#f97316; font-size:24px;"></i>';
                     else if (toolName.includes('Time')) iconHTML = '<i class="fa-solid fa-clock" style="color:#3b82f6; font-size:24px;"></i>';
                     else if (toolName.includes('Love')) iconHTML = '<i class="fa-solid fa-heart" style="color:#ef4444; font-size:24px;"></i>';
-                    else iconHTML = '<i class="fa-solid fa-wrench" style="color:#64748b; font-size:24px;"></i>';
 
-                    // Card ke andar ka HTML set karein
                     card.innerHTML = `
-                        <div style="background: #f8fafc; width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <div class="custom-card-icon" style="background: #f8fafc; width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
                             ${iconHTML}
                         </div>
                         <div style="flex: 1;">
-                            <div style="font-weight: 600; color: #1e293b; font-size: 15px;">${toolName}</div>
+                            <div style="font-weight: 600; color: #1e293b; font-size: 15px; line-height: 1.2;">${toolName}</div>
                         </div>
                         <i class="fa-solid fa-chevron-right" style="color: #94a3b8; font-size: 14px;"></i>
                     `;
-                    // Card ki styling set karein
-                    card.style.cssText = 'background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; display: flex; align-items: center; transition: all 0.3s ease; cursor: pointer;';
                 }
             });
         }
-    }, 1000); // 1 second ka delay taake sab load ho jaye
+    }, 1000); 
 });
 </script>
 </body>
