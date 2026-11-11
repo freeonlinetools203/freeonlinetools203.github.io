@@ -1448,3 +1448,17 @@ footer::before {
     box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1) !important;
     border-color: #bfdbfe !important;
 }
+
+/* =========================================================================
+   FINAL FIX: ADDING DARK BLUE/PURPLE GLOW BEHIND LAPTOP
+   ========================================================================= */
+
+.hero {
+    /* Background mein radial gradient add kiya jo laptop ke peeche glow dega */
+    background: 
+        radial-gradient(circle at 80% 50%, #0b1120 0%, #1e3a8a 30%, transparent 60%),
+        linear-gradient(90deg, #f0f9ff 0%, #e0f2fe 40%, #1e3a8a 100%) !important;
+    
+    padding: 30px 50px !important; 
+    min-height: 420px !important;
+}
