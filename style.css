@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-body {
+body {a
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #ffffff; 
     min-height: 100vh;
@@ -796,6 +796,12 @@ footer::before {
     border-color: #1e3a8a;
 }
 
+/* Button ka color target image jaisa blue karna */
+.custom-view-all {
+    background: #2563eb !important; /* White se Blue kiya */
+    color: #ffffff !important;      /* Text White */
+    border: none !important;
+}
 /* Button ka color target image jaisa blue karna */
 .custom-view-all {
     background: #2563eb !important; /* White se Blue kiya */
