@@ -702,21 +702,61 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
         <strong>📌 Important:</strong> These specialized assessments are not features of every standard BMI calculator. Choose an assessment method appropriate to the person's age and circumstances, and consult a qualified healthcare professional when you need medical guidance.
     </p>
 </div>
-        <!-- SECTION 9 -->
-        <h2 id="section9" style="color: #1a1a2e; font-size: 27px; margin: 40px 0 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">📊 9. How to Calculate BMI in Excel</h2>
-        <p style="line-height: 1.8; font-size: 16px;">Wondering <strong>how to calculate BMI Excel</strong>? Here's the formula:</p>
+      
+<!-- SECTION 9 -->
+<h2 id="section9" style="color: #1a1a2e; font-size: 27px; margin: 40px 0 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">📊 9. How to Calculate BMI in Excel</h2>
 
-        <div style="background: #f8fafc; padding: 20px; border-radius: 16px; margin: 20px 0; border: 1px solid #e2e8f0;">
-            <h4 style="color: #1a1a2e; margin-top: 0;">📌 Excel Formula for BMI (Metric)</h4>
-            <p style="font-size: 16px; background: #e5e7eb; padding: 10px; border-radius: 8px; font-family: monospace;">=ROUND(weight/(height*height), 1)</p>
-            <p style="font-size: 14px; color: #6b7280;">Where weight = cell with kg, height = cell with meters</p>
-        </div>
+<p style="line-height: 1.8; font-size: 16px;">
+    You can calculate Body Mass Index (BMI) in Microsoft Excel using a simple formula. Enter your weight and height into separate cells, then use the appropriate formula for your measurement system.
+</p>
 
-        <div style="background: #f8fafc; padding: 20px; border-radius: 16px; margin: 20px 0; border: 1px solid #e2e8f0;">
-            <h4 style="color: #1a1a2e; margin-top: 0;">📌 Excel Formula for BMI (Imperial)</h4>
-            <p style="font-size: 16px; background: #e5e7eb; padding: 10px; border-radius: 8px; font-family: monospace;">=ROUND((weight/(height*height))*703, 1)</p>
-            <p style="font-size: 14px; color: #6b7280;">Where weight = cell with lbs, height = cell with inches</p>
-        </div>
+<div style="background: #f8fafc; padding: 20px; border-radius: 16px; margin: 20px 0; border: 1px solid #e2e8f0;">
+    <h4 style="color: #1a1a2e; margin-top: 0;">📌 Excel Formula for BMI (Metric System)</h4>
+
+    <p style="line-height: 1.8; font-size: 15px;">
+        Suppose your weight in kilograms is entered in cell A2 and your height in meters is entered in cell B2.
+    </p>
+
+    <p style="font-size: 16px; background: #e5e7eb; padding: 12px; border-radius: 8px; font-family: monospace; overflow-wrap: anywhere;">
+        =ROUND(A2/(B2*B2),1)
+    </p>
+
+    <p style="font-size: 14px; color: #6b7280; line-height: 1.8;">
+        Example: A2 = 70 kg and B2 = 1.75 meters. The formula returns a BMI of 22.9.
+    </p>
+</div>
+
+<div style="background: #f8fafc; padding: 20px; border-radius: 16px; margin: 20px 0; border: 1px solid #e2e8f0;">
+    <h4 style="color: #1a1a2e; margin-top: 0;">📌 Excel Formula for BMI (Imperial System)</h4>
+
+    <p style="line-height: 1.8; font-size: 15px;">
+        If your weight in pounds is entered in cell A2 and your height in inches is entered in cell B2, use this formula:
+    </p>
+
+    <p style="font-size: 16px; background: #e5e7eb; padding: 12px; border-radius: 8px; font-family: monospace; overflow-wrap: anywhere;">
+        =ROUND((A2/(B2*B2))*703,1)
+    </p>
+
+    <p style="font-size: 14px; color: #6b7280; line-height: 1.8;">
+        Example: A2 = 154 lbs and B2 = 69 inches. The formula returns a BMI of approximately 22.7.
+    </p>
+</div>
+
+<h3 style="color: #1a1a2e; font-size: 20px; margin: 25px 0 10px;">📝 How to Use the Excel Formula</h3>
+
+<ol style="line-height: 2.2; font-size: 16px; padding-left: 25px;">
+    <li>Open a blank worksheet in Microsoft Excel.</li>
+    <li>Enter your weight in cell A2.</li>
+    <li>Enter your height in cell B2 using the correct unit.</li>
+    <li>Enter the matching BMI formula in cell C2.</li>
+    <li>Press Enter to display your calculated BMI.</li>
+</ol>
+
+<div style="background: #eff6ff; padding: 18px 22px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #3b82f6;">
+    <p style="margin: 0; font-size: 15px; line-height: 1.8;">
+        <strong>💡 Tip:</strong> Make sure your height and weight units match the formula you are using. For the metric formula, enter height in meters, not centimeters. For the imperial formula, enter height in inches. These examples use positive, valid measurements.
+    </p>
+</div>
 
         <!-- SECTION 10 - FAQ -->
         <h2 id="section10" style="color: #1a1a2e; font-size: 27px; margin: 40px 0 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">❓ 10. Frequently Asked Questions (FAQ)</h2>
