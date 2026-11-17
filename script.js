@@ -1050,6 +1050,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function enhanceIndividualToolPage() {
+  // Purane ya faltu duplicate footers / navbars ko automatic remove karne ke liye
+  const duplicateNavs = document.querySelectorAll('.navbar, .megamenu-container, footer:not(.fot-footer)');
+  duplicateNavs.forEach(el => el.remove());
+
   const currentPath = window.location.pathname.split('/').pop();
   let foundCategoryKey = 'calculators';
   let foundCategoryTitle = 'Calculators';
@@ -1071,7 +1075,7 @@ function enhanceIndividualToolPage() {
   // 1. Insert Breadcrumbs right below header if not exists
   if (!document.querySelector('.fot-breadcrumbs')) {
     const breadcrumbHtml = `
-      <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
+      <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
         <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;color:#475569;font-weight:600;">
           <a href="https://freeonlinetools203.com/" style="color:#2563EB;text-decoration:none;">🏠 Home</a> › 
           <a href="https://freeonlinetools203.com/?category=${foundCategoryKey}" style="color:#2563EB;text-decoration:none;">${foundCategoryTitle}</a> › 
@@ -1118,7 +1122,7 @@ function enhanceIndividualToolPage() {
             </div>
           </section>`;
 
-        const footer = document.querySelector('footer');
+        const footer = document.querySelector('footer.fot-footer');
         if (footer) {
           footer.insertAdjacentHTML('beforebegin', relatedHtml);
         } else {
