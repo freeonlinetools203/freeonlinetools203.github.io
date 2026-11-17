@@ -1036,24 +1036,22 @@ window.addEventListener('popstate', function() {
 });
 
 // =========================================================================
-// 8. STAGE 5: INDIVIDUAL TOOL PAGES ENHANCEMENT ENGINE (BREADCRUMBS & RELATED TOOLS)
+// STAGE 5: INDIVIDUAL TOOL PAGES ENHANCEMENT ENGINE (UPDATED & CLEAN)
 // =========================================================================
 document.addEventListener('DOMContentLoaded', function() {
-  // Check if we are on an individual tool page (not homepage, not dynamic category view)
   const isHomepage = document.getElementById('fotHomepageView') !== null;
   const isDynamicView = document.getElementById('fotDynamicViewArea') !== null;
   
   if (!isHomepage && !isDynamicView) {
-    // We are on a standalone tool page (e.g. age-calculator.html)
+    // Yeh line ab har tool page (PDF, Image, SEO, Finance waghera) par purane navbars aur footers ko hata degi!
+    const oldElements = document.querySelectorAll('.navbar, .megamenu-container, footer:not(.fot-footer), .footer-old');
+    oldElements.forEach(el => el.remove());
+    
     enhanceIndividualToolPage();
   }
 });
 
 function enhanceIndividualToolPage() {
-  // Purane ya faltu duplicate footers / navbars ko automatic remove karne ke liye
-  const duplicateNavs = document.querySelectorAll('.navbar, .megamenu-container, footer:not(.fot-footer)');
-  duplicateNavs.forEach(el => el.remove());
-
   const currentPath = window.location.pathname.split('/').pop();
   let foundCategoryKey = 'calculators';
   let foundCategoryTitle = 'Calculators';
@@ -1093,7 +1091,6 @@ function enhanceIndividualToolPage() {
   if (!document.querySelector('.fot-related-tools-section') && typeof categoryPagesDB !== 'undefined') {
     const catData = categoryPagesDB[foundCategoryKey];
     if (catData && catData.tools.length > 1) {
-      // Pick up to 4 related tools excluding current one
       const related = catData.tools.filter(t => !getUrl(t.name).includes(currentPath)).slice(0, 4);
       
       if (related.length > 0) {
@@ -1107,7 +1104,7 @@ function enhanceIndividualToolPage() {
               </div>
               <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
                 ${related.map(t => `
-                  <div style="background:#FFFFFF;color:#0F172A;border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,0.1);transition:transform 0.2s;">
+                  <div style="background:#FFFFFF;color:#0F172A;border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,0.1);">
                     <div>
                       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
                         <span style="font-size:1.5rem;">${catData.icon}</span>
