@@ -1119,3 +1119,12 @@ body.dark-mode .fot-theme-toggle .moon-active {
   }
   .fot-reveal { opacity: 1 !important; transform: none !important; }
 }
+
+/* ========================================================================= */
+/* UNIVERSAL PURGE: Hide old footers & duplicate navbars on all tool pages    */
+/* ========================================================================= */
+body *:not(.fot-footer):not(.fot-breadcrumbs):not(.fot-related-tools-section) > footer:not(.fot-footer),
+.navbar:not(.fot-topbar),
+.megamenu-container {
+  display: none !important;
+}
