@@ -1034,3 +1034,127 @@ window.addEventListener('popstate', function() {
   else if (viewParam === 'all-tools') window.openAllToolsView(null);
   else window.openHomeView(null);
 });
+
+// =========================================================================
+// 8. STAGE 5: INDIVIDUAL TOOL PAGES ENHANCEMENT ENGINE (BREADCRUMBS & RELATED TOOLS)
+// =========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if we are on an individual tool page (not homepage, not dynamic category view)
+  const isHomepage = document.getElementById('fotHomepageView') !== null;
+  const isDynamicView = document.getElementById('fotDynamicViewArea') !== null;
+  
+  if (!isHomepage && !isDynamicView) {
+    // We are on a standalone tool page (e.g. age-calculator.html)
+    enhanceIndividualToolPage();
+  }
+});
+
+function enhanceIndividualToolPage() {
+  const currentPath = window.location.pathname.split('/').pop();
+  let foundCategoryKey = 'calculators';
+  let foundCategoryTitle = 'Calculators';
+  let toolDisplayName = document.title.split('—')[0].split('|')[0].trim() || "Tool";
+
+  // Find which category this tool belongs to in categoryPagesDB
+  if (typeof categoryPagesDB !== 'undefined') {
+    for (const [catKey, catObj] of Object.entries(categoryPagesDB)) {
+      const match = catObj.tools.find(t => getUrl(t.name).includes(currentPath));
+      if (match) {
+        foundCategoryKey = catKey;
+        foundCategoryTitle = catObj.title;
+        toolDisplayName = match.name;
+        break;
+      }
+    }
+  }
+
+  // 1. Insert Breadcrumbs right below header if not exists
+  if (!document.querySelector('.fot-breadcrumbs')) {
+    const breadcrumbHtml = `
+      <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
+        <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;color:#475569;font-weight:600;">
+          <a href="https://freeonlinetools203.com/" style="color:#2563EB;text-decoration:none;">🏠 Home</a> › 
+          <a href="https://freeonlinetools203.com/?category=${foundCategoryKey}" style="color:#2563EB;text-decoration:none;">${foundCategoryTitle}</a> › 
+          <span style="color:#0F172A;">${toolDisplayName}</span>
+        </div>
+      </div>`;
+    
+    const topbar = document.querySelector('.fot-topbar') || document.querySelector('header');
+    if (topbar) {
+      topbar.insertAdjacentHTML('afterend', breadcrumbHtml);
+    }
+  }
+
+  // 2. Append Related Tools Section above footer
+  if (!document.querySelector('.fot-related-tools-section') && typeof categoryPagesDB !== 'undefined') {
+    const catData = categoryPagesDB[foundCategoryKey];
+    if (catData && catData.tools.length > 1) {
+      // Pick up to 4 related tools excluding current one
+      const related = catData.tools.filter(t => !getUrl(t.name).includes(currentPath)).slice(0, 4);
+      
+      if (related.length > 0) {
+        const relatedHtml = `
+          <section class="fot-related-tools-section" style="max-width:1320px;margin:40px auto 50px;padding:0 24px;font-family:'Inter',sans-serif;">
+            <div style="background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);border-radius:20px;padding:30px 24px;color:#FFF;box-shadow:0 12px 30px rgba(29,78,216,0.2);">
+              <div style="text-align:center;margin-bottom:22px;">
+                <h3 style="font-size:1.4rem;font-weight:900;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);padding:8px 24px;border-radius:999px;">
+                  🔥 Related Tools in ${catData.title}
+                </h3>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
+                ${related.map(t => `
+                  <div style="background:#FFFFFF;color:#0F172A;border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,0.1);transition:transform 0.2s;">
+                    <div>
+                      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                        <span style="font-size:1.5rem;">${catData.icon}</span>
+                        <h4 style="font-size:0.95rem;font-weight:800;color:#0F296E;line-height:1.2;">${t.name}</h4>
+                      </div>
+                      <p style="font-size:0.78rem;color:#475569;margin-bottom:12px;line-height:1.4;">Fast &amp; accurate online browser tool for your daily needs.</p>
+                    </div>
+                    <a href="${getUrl(t.name)}" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:8px 12px;background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);color:#FFFFFF;border-radius:999px;font-size:0.82rem;font-weight:700;text-decoration:none;">Try Now →</a>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>`;
+
+        const footer = document.querySelector('footer');
+        if (footer) {
+          footer.insertAdjacentHTML('beforebegin', relatedHtml);
+        } else {
+          document.body.insertAdjacentHTML('beforeend', relatedHtml);
+        }
+      }
+    }
+  }
+
+  // 3. Ensure unified footer exists on tool pages
+  if (!document.querySelector('.fot-footer')) {
+    const unifiedFooter = `
+      <footer class="fot-footer" style="background:#0F172A;color:#CBD5E1;padding:48px 24px 24px;border-top:4px solid #2563EB;font-family:'Inter',sans-serif;">
+        <div style="max-width:1320px;margin:0 auto;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-bottom:30px;">
+            <div>
+              <h4 style="color:#FFF;font-size:0.95rem;font-weight:800;margin-bottom:12px;">FreeOnlineTools203.com</h4>
+              <p style="font-size:0.86rem;color:#94A3B8;line-height:1.6;">240+ Free Online Tools • Fast • Easy • 100% Free.</p>
+            </div>
+            <div>
+              <h4>Quick Links</h4>
+              <a href="https://freeonlinetools203.com/" style="color:#94A3B8;text-decoration:none;display:block;padding:4px 0;">Home</a>
+              <a href="https://freeonlinetools203.com/?view=all-tools" style="color:#94A3B8;text-decoration:none;display:block;padding:4px 0;">All Tools (240+)</a>
+            </div>
+            <div>
+              <h4>Legal Pages</h4>
+              <a href="https://freeonlinetools203.com/privacy-policy.html" style="color:#94A3B8;text-decoration:none;display:block;padding:4px 0;">Privacy Policy</a>
+              <a href="https://freeonlinetools203.com/terms-conditions.html" style="color:#94A3B8;text-decoration:none;display:block;padding:4px 0;">Terms &amp; Conditions</a>
+            </div>
+          </div>
+          <div style="border-top:1px solid #1E293B;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:0.8rem;color:#64748B;">
+            <span>© 2026 FreeOnlineTools203.com. All rights reserved.</span>
+            <span>240+ Free Online Tools • Fast • Easy • 100% Free</span>
+          </div>
+        </div>
+      </footer>`;
+    document.body.insertAdjacentHTML('beforeend', unifiedFooter);
+  }
+}
