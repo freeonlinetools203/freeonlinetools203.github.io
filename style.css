@@ -1133,3 +1133,14 @@ nav:not(.fot-topbar), .nav-container, .menu-bar,
   height: 0 !important;
   overflow: hidden !important;
 }
+
+/* ========================================================================= */
+/* HIDE OLD HARDCODED CATEGORY BOXES GLOBALLY                                */
+/* ========================================================================= */
+.age-calc-related-section,
+.simple-links-wrap,
+div[style*="background:linear-gradient(135deg,#f0fdf4"],
+div[style*="background: #f0fdf4"],
+div[style*="background:#edf2f7"] {
+  display: none !important;
+}
