@@ -1159,3 +1159,25 @@ function enhanceIndividualToolPage() {
     document.body.insertAdjacentHTML('beforeend', unifiedFooter);
   }
 }
+
+// =========================================================================
+// UNIVERSAL HARDCODED FOOTER REMOVER (100% CLEANER FOR ALL TOOL PAGES)
+// =========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const isHomepage = document.getElementById('fotHomepageView') !== null;
+  const isDynamicView = document.getElementById('fotDynamicViewArea') !== null;
+  
+  if (!isHomepage && !isDynamicView) {
+    // 1. Purane hardcoded footers ko dhoond kar foran hatao
+    const oldFooters = document.querySelectorAll('.simple-links-wrap, .age-calc-related-section');
+    oldFooters.forEach(el => el.remove());
+    
+    // 2. Agar koi aur purana footer ya container bach gaya ho toh use bhi uda do
+    const extraLegacyFooters = document.querySelectorAll('div > .container > style + div');
+    extraLegacyFooters.forEach(el => {
+      if (el.textContent && el.textContent.includes('Age Calculator Tools')) {
+        el.parentElement.remove();
+      }
+    });
+  }
+});
