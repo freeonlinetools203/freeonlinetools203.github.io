@@ -61,7 +61,7 @@
        ===================================================================== -->
   <header class="fot-topbar">
     <div class="fot-topbar-inner">
-      <a href="https://freeonlinetools203.com/" class="fot-logo-wrap">
+      <a href="https://freeonlinetools203.com/" onclick="return openHomeView(event)" class="fot-logo-wrap">
         <div class="fot-logo-badge" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -74,7 +74,7 @@
       </a>
 
       <ul class="fot-nav-list" id="fotMainNav">
-        <li><a href="https://freeonlinetools203.com/" class="fot-nav-link active-pill">🏠 Home</a></li>
+        <li><a href="https://freeonlinetools203.com/" onclick="return openHomeView(event)" class="fot-nav-link active-pill" id="navHomeBtn">🏠 Home</a></li>
         <li>
           <a href="https://freeonlinetools203.com/about.html" class="fot-nav-link">AdSense Pages ▾</a>
           <div class="fot-dropdown-menu">
@@ -86,25 +86,25 @@
           </div>
         </li>
         <li>
-          <a href="https://freeonlinetools203.com/all-tools.html" class="fot-nav-link">All Tools ▾</a>
+          <a href="?view=all-tools" onclick="return openAllToolsView(event)" class="fot-nav-link" id="navAllToolsBtn">All Tools ▾</a>
           <div class="fot-dropdown-menu fot-mega-categories">
-            <a href="https://freeonlinetools203.com/all-tools.html" style="grid-column: 1 / -1; background: #EFF6FF; color: #1D4ED8;">📂 Browse All 240+ Tools Directory →</a>
-            <a href="https://freeonlinetools203.com/category-calculators.html">🧮 Calculators</a>
-            <a href="https://freeonlinetools203.com/category-pdf-tools.html">📄 PDF Tools</a>
-            <a href="https://freeonlinetools203.com/category-image-tools.html">🖼️ Image Tools</a>
-            <a href="https://freeonlinetools203.com/category-youtube-tools.html">🎬 YouTube Tools</a>
-            <a href="https://freeonlinetools203.com/category-seo-tools.html">🔍 SEO Tools</a>
-            <a href="https://freeonlinetools203.com/category-text-tools.html">📝 Text Tools</a>
-            <a href="https://freeonlinetools203.com/category-financial-tools.html">💰 Financial Tools</a>
-            <a href="https://freeonlinetools203.com/category-health-tools.html">❤️ Health Tools</a>
-            <a href="https://freeonlinetools203.com/category-age-calculators.html">📅 Age Calculators</a>
-            <a href="https://freeonlinetools203.com/category-random-fun.html">🎲 Random &amp; Fun</a>
-            <a href="https://freeonlinetools203.com/category-pet-animal.html">🐾 Pet &amp; Animal Tools</a>
-            <a href="https://freeonlinetools203.com/category-date-time.html">⏰ Date &amp; Time Tools</a>
-            <a href="https://freeonlinetools203.com/category-developer-tools.html">💻 Developer Tools</a>
-            <a href="https://freeonlinetools203.com/category-color-tools.html">🎨 Color Tools</a>
-            <a href="https://freeonlinetools203.com/category-social-media.html">📱 Social Media Tools</a>
-            <a href="https://freeonlinetools203.com/category-productivity.html">📗 Productivity &amp; Excel Tools</a>
+            <a href="?view=all-tools" onclick="return openAllToolsView(event)" style="grid-column: 1 / -1; background: #EFF6FF; color: #1D4ED8;">📂 Browse All 240+ Tools Directory →</a>
+            <a href="?category=calculators" onclick="return openCategoryView(event, 'calculators')">🧮 Calculators</a>
+            <a href="?category=pdf-tools" onclick="return openCategoryView(event, 'pdf-tools')">📄 PDF Tools</a>
+            <a href="?category=image-tools" onclick="return openCategoryView(event, 'image-tools')">🖼️ Image Tools</a>
+            <a href="?category=youtube-tools" onclick="return openCategoryView(event, 'youtube-tools')">🎬 YouTube Tools</a>
+            <a href="?category=seo-tools" onclick="return openCategoryView(event, 'seo-tools')">🔍 SEO Tools</a>
+            <a href="?category=text-tools" onclick="return openCategoryView(event, 'text-tools')">📝 Text Tools</a>
+            <a href="?category=financial-tools" onclick="return openCategoryView(event, 'financial-tools')">💰 Financial Tools</a>
+            <a href="?category=health-tools" onclick="return openCategoryView(event, 'health-tools')">❤️ Health Tools</a>
+            <a href="?category=age-calculators" onclick="return openCategoryView(event, 'age-calculators')">📅 Age Calculators</a>
+            <a href="?category=random-fun" onclick="return openCategoryView(event, 'random-fun')">🎲 Random &amp; Fun</a>
+            <a href="?category=pet-animal" onclick="return openCategoryView(event, 'pet-animal')">🐾 Pet &amp; Animal Tools</a>
+            <a href="?category=date-time" onclick="return openCategoryView(event, 'date-time')">⏰ Date &amp; Time Tools</a>
+            <a href="?category=developer-tools" onclick="return openCategoryView(event, 'developer-tools')">💻 Developer Tools</a>
+            <a href="?category=color-tools" onclick="return openCategoryView(event, 'color-tools')">🎨 Color Tools</a>
+            <a href="?category=social-media" onclick="return openCategoryView(event, 'social-media')">📱 Social Media Tools</a>
+            <a href="?category=productivity" onclick="return openCategoryView(event, 'productivity')">📗 Productivity &amp; Excel Tools</a>
           </div>
         </li>
         <li><a href="https://freeonlinetools203.com/about.html" class="fot-nav-link">About</a></li>
@@ -122,368 +122,366 @@
   </header>
 
   <!-- =====================================================================
-       2. LARGE BLUE HERO BANNER + ROBOT + FEATURED AGE CALCULATOR
+       DYNAMIC VIEW CONTAINER (FOR DEDICATED CATEGORY & ALL TOOLS VIEWS)
        ===================================================================== -->
-  <section class="fot-hero-wrapper">
-    <div class="fot-hero-grid">
-
-      <!-- Left: Headline & Features -->
-      <div class="fot-hero-left">
-        <h1>Your Ultimate <span>Online Tools</span> Hub</h1>
-        <p class="fot-hero-desc">Get 240+ Free Tools for Calculators, Converters, Image Editing, SEO, PDF, and Much More...</p>
-        <div class="fot-hero-checks">
-          <span class="fot-check-item"><span class="fot-check-icon">✓</span> 100% Free</span>
-          <span class="fot-check-item"><span class="fot-check-icon">✓</span> No Registration</span>
-          <span class="fot-check-item"><span class="fot-check-icon">✓</span> Fast &amp; Accurate</span>
-          <span class="fot-check-item"><span class="fot-check-icon">✓</span> Works on All Devices</span>
-        </div>
-      </div>
-
-      <!-- Center: Friendly Robot Mascot + Speech Bubble -->
-      <div class="fot-hero-center">
-        <div class="fot-robot-bubble">
-          Try Our <span>Age Calculator</span> Now!
-        </div>
-        <!-- Friendly AI Robot Vector Illustration -->
-        <svg class="fot-robot-svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Friendly AI Robot Mascot">
-          <circle cx="110" cy="24" r="10" fill="#38BDF8"/>
-          <rect x="106" y="32" width="8" height="16" rx="4" fill="#E2E8F0"/>
-          <rect x="52" y="46" width="116" height="78" rx="36" fill="#FFFFFF" stroke="#93C5FD" stroke-width="4"/>
-          <rect x="66" y="60" width="88" height="50" rx="22" fill="#0F172A"/>
-          <circle cx="92" cy="83" r="9" fill="#38BDF8"/>
-          <circle cx="128" cy="83" r="9" fill="#38BDF8"/>
-          <path d="M98 97C104 103 116 103 122 97" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/>
-          <rect x="38" y="72" width="14" height="28" rx="7" fill="#2563EB"/>
-          <rect x="168" y="72" width="14" height="28" rx="7" fill="#2563EB"/>
-          <rect x="64" y="130" width="92" height="68" rx="26" fill="#FFFFFF" stroke="#93C5FD" stroke-width="4"/>
-          <rect x="84" y="146" width="52" height="28" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
-          <circle cx="110" cy="160" r="7" fill="#2563EB"/>
-          <path d="M156 148L192 134" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
-          <circle cx="195" cy="133" r="10" fill="#38BDF8"/>
-          <path d="M64 148L36 168" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
-        </svg>
-
-        <!-- Curved Yellow Arrow pointing to Age Calculator -->
-        <svg class="fot-yellow-arrow" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M8 46C24 22 46 18 64 24L56 10L76 28L52 42L58 30C42 26 24 30 8 46Z" fill="#FACC15" stroke="#FEF08A" stroke-width="2"/>
-        </svg>
-      </div>
-
-      <!-- Right: Featured Age Calculator Widget -->
-      <div class="fot-featured-age-card">
-        <div class="fot-age-card-head">
-          <span class="fot-featured-badge">Featured Tool</span>
-          <span style="font-size:1.45rem;">📅</span>
-          <h2>Age Calculator</h2>
-        </div>
-        <div class="fot-age-card-body">
-          <p class="fot-age-sub">Calculate Your Exact Age in Seconds!</p>
-          <div class="fot-dob-selects">
-            <select id="heroDobDay" aria-label="Birth Day"></select>
-            <select id="heroDobMonth" aria-label="Birth Month">
-              <option value="0">January</option>
-              <option value="1">February</option>
-              <option value="2">March</option>
-              <option value="3">April</option>
-              <option value="4">May</option>
-              <option value="5" selected>June</option>
-              <option value="6">July</option>
-              <option value="7">August</option>
-              <option value="8">September</option>
-              <option value="9">October</option>
-              <option value="10">November</option>
-              <option value="11">December</option>
-            </select>
-            <select id="heroDobYear" aria-label="Birth Year"></select>
-          </div>
-
-          <button type="button" class="fot-age-calc-btn" id="heroCalcAgeBtn">▶ Calculate My Age</button>
-
-          <div class="fot-age-result-pill" id="heroAgeResultBox">
-            <span style="font-size:1.85rem;">🎂</span>
-            <div class="fot-age-result-text">
-              <small>Your Exact Age is:</small>
-              <strong id="heroAgeOutput">Select DOB &amp; Click Calculate</strong>
-            </div>
-          </div>
-
-          <a href="https://freeonlinetools203.com/age-calculator.html" class="fot-age-full-link">Open Full Live Seconds Age Calculator →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  <div id="fotDynamicViewArea" style="display:none;"></div>
 
   <!-- =====================================================================
-       3. WORKING PROMINENT SEARCH BAR
+       DEFAULT HOMEPAGE VIEW WRAPPER
        ===================================================================== -->
-  <div class="fot-search-floating-wrap">
-    <div class="fot-search-bar">
-      <span style="font-size:1.25rem;color:#2563EB;" aria-hidden="true">🔍</span>
-      <input type="text" id="tsInput" placeholder="Search for any tool... e.g. age calculator, PDF converter" autocomplete="off">
-      <button type="button" class="fot-search-submit" onclick="tsSearch()">Search</button>
+  <div id="fotHomepageView">
+
+    <!-- 2. LARGE BLUE HERO BANNER + ROBOT + FEATURED AGE CALCULATOR -->
+    <section class="fot-hero-wrapper">
+      <div class="fot-hero-grid">
+
+        <!-- Left: Headline & Features -->
+        <div class="fot-hero-left">
+          <h1>Your Ultimate <span>Online Tools</span> Hub</h1>
+          <p class="fot-hero-desc">Get 240+ Free Tools for Calculators, Converters, Image Editing, SEO, PDF, and Much More...</p>
+          <div class="fot-hero-checks">
+            <span class="fot-check-item"><span class="fot-check-icon">✓</span> 100% Free</span>
+            <span class="fot-check-item"><span class="fot-check-icon">✓</span> No Registration</span>
+            <span class="fot-check-item"><span class="fot-check-icon">✓</span> Fast &amp; Accurate</span>
+            <span class="fot-check-item"><span class="fot-check-icon">✓</span> Works on All Devices</span>
+          </div>
+        </div>
+
+        <!-- Center: Friendly Robot Mascot + Speech Bubble -->
+        <div class="fot-hero-center">
+          <div class="fot-robot-bubble">
+            Try Our <span>Age Calculator</span> Now!
+          </div>
+          <svg class="fot-robot-svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Friendly AI Robot Mascot">
+            <circle cx="110" cy="24" r="10" fill="#38BDF8"/>
+            <rect x="106" y="32" width="8" height="16" rx="4" fill="#E2E8F0"/>
+            <rect x="52" y="46" width="116" height="78" rx="36" fill="#FFFFFF" stroke="#93C5FD" stroke-width="4"/>
+            <rect x="66" y="60" width="88" height="50" rx="22" fill="#0F172A"/>
+            <circle cx="92" cy="83" r="9" fill="#38BDF8"/>
+            <circle cx="128" cy="83" r="9" fill="#38BDF8"/>
+            <path d="M98 97C104 103 116 103 122 97" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/>
+            <rect x="38" y="72" width="14" height="28" rx="7" fill="#2563EB"/>
+            <rect x="168" y="72" width="14" height="28" rx="7" fill="#2563EB"/>
+            <rect x="64" y="130" width="92" height="68" rx="26" fill="#FFFFFF" stroke="#93C5FD" stroke-width="4"/>
+            <rect x="84" y="146" width="52" height="28" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+            <circle cx="110" cy="160" r="7" fill="#2563EB"/>
+            <path d="M156 148L192 134" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+            <circle cx="195" cy="133" r="10" fill="#38BDF8"/>
+            <path d="M64 148L36 168" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+          </svg>
+          <svg class="fot-yellow-arrow" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 46C24 22 46 18 64 24L56 10L76 28L52 42L58 30C42 26 24 30 8 46Z" fill="#FACC15" stroke="#FEF08A" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <!-- Right: Featured Age Calculator Widget -->
+        <div class="fot-featured-age-card">
+          <div class="fot-age-card-head">
+            <span class="fot-featured-badge">Featured Tool</span>
+            <span style="font-size:1.45rem;">📅</span>
+            <h2>Age Calculator</h2>
+          </div>
+          <div class="fot-age-card-body">
+            <p class="fot-age-sub">Calculate Your Exact Age in Seconds!</p>
+            <div class="fot-dob-selects">
+              <select id="heroDobDay" aria-label="Birth Day"></select>
+              <select id="heroDobMonth" aria-label="Birth Month">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5" selected>June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+              </select>
+              <select id="heroDobYear" aria-label="Birth Year"></select>
+            </div>
+
+            <button type="button" class="fot-age-calc-btn" id="heroCalcAgeBtn">▶ Calculate My Age</button>
+
+            <div class="fot-age-result-pill" id="heroAgeResultBox">
+              <span style="font-size:1.85rem;">🎂</span>
+              <div class="fot-age-result-text">
+                <small>Your Exact Age is:</small>
+                <strong id="heroAgeOutput">Select DOB &amp; Click Calculate</strong>
+              </div>
+            </div>
+
+            <a href="https://freeonlinetools203.com/age-calculator.html" class="fot-age-full-link">Open Full Live Seconds Age Calculator →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. WORKING PROMINENT SEARCH BAR -->
+    <div class="fot-search-floating-wrap">
+      <div class="fot-search-bar">
+        <span style="font-size:1.25rem;color:#2563EB;" aria-hidden="true">🔍</span>
+        <input type="text" id="tsInput" placeholder="Search for any tool... e.g. age calculator, PDF converter" autocomplete="off">
+        <button type="button" class="fot-search-submit" onclick="tsSearch()">Search</button>
+      </div>
+
+      <div class="fot-search-results-box" id="tsResultsContainer" style="display:none;">
+        <div id="tsResultLabel" style="font-weight:700;font-size:0.9rem;color:#1E3A8A;"></div>
+        <div class="fot-search-grid" id="tsResults"></div>
+      </div>
     </div>
 
-    <div class="fot-search-results-box" id="tsResultsContainer" style="display:none;">
-      <div id="tsResultLabel" style="font-weight:700;font-size:0.9rem;color:#1E3A8A;"></div>
-      <div class="fot-search-grid" id="tsResults"></div>
-    </div>
+    <!-- 4. EXPLORE OUR CATEGORIES (OPENS DEDICATED CATEGORY VIEW INSTANTLY) -->
+    <main class="fot-main-container">
+
+      <section class="fot-reveal">
+        <div class="fot-section-header-center">
+          <div class="fot-section-pill-title">⭐ Explore Our Categories</div>
+        </div>
+
+        <div class="fot-categories-grid">
+          <a href="?category=calculators" onclick="return openCategoryView(event, 'calculators')" class="fot-cat-card cat-tint-blue">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">🧮</span>
+              <div class="fot-cat-info"><h3>Calculators</h3><span>14+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=pdf-tools" onclick="return openCategoryView(event, 'pdf-tools')" class="fot-cat-card cat-tint-red">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">📄</span>
+              <div class="fot-cat-info"><h3>PDF Tools</h3><span>12+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=image-tools" onclick="return openCategoryView(event, 'image-tools')" class="fot-cat-card cat-tint-cyan">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">🖼️</span>
+              <div class="fot-cat-info"><h3>Image Tools</h3><span>8+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=youtube-tools" onclick="return openCategoryView(event, 'youtube-tools')" class="fot-cat-card cat-tint-rose">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">🎬</span>
+              <div class="fot-cat-info"><h3>YouTube Tools</h3><span>25+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=seo-tools" onclick="return openCategoryView(event, 'seo-tools')" class="fot-cat-card cat-tint-indigo">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">🔍</span>
+              <div class="fot-cat-info"><h3>SEO Tools</h3><span>14+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=text-tools" onclick="return openCategoryView(event, 'text-tools')" class="fot-cat-card cat-tint-purple">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">📝</span>
+              <div class="fot-cat-info"><h3>Text Tools</h3><span>5+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=financial-tools" onclick="return openCategoryView(event, 'financial-tools')" class="fot-cat-card cat-tint-green">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">💰</span>
+              <div class="fot-cat-info"><h3>Financial Tools</h3><span>4+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=health-tools" onclick="return openCategoryView(event, 'health-tools')" class="fot-cat-card cat-tint-purple">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">❤️</span>
+              <div class="fot-cat-info"><h3>Health Tools</h3><span>10+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=age-calculators" onclick="return openCategoryView(event, 'age-calculators')" class="fot-cat-card fot-cat-featured-active">
+            <span class="fot-popular-tag">Popular</span>
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">📅</span>
+              <div class="fot-cat-info"><h3>Age Calculators</h3><span>34+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=random-fun" onclick="return openCategoryView(event, 'random-fun')" class="fot-cat-card cat-tint-amber">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">🎲</span>
+              <div class="fot-cat-info"><h3>Random &amp; Fun</h3><span>41+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=pet-animal" onclick="return openCategoryView(event, 'pet-animal')" class="fot-cat-card cat-tint-blue">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">🐾</span>
+              <div class="fot-cat-info"><h3>Pet &amp; Animal</h3><span>10+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=date-time" onclick="return openCategoryView(event, 'date-time')" class="fot-cat-card cat-tint-cyan">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">⏰</span>
+              <div class="fot-cat-info"><h3>Date &amp; Time</h3><span>8+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=developer-tools" onclick="return openCategoryView(event, 'developer-tools')" class="fot-cat-card cat-tint-indigo">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">💻</span>
+              <div class="fot-cat-info"><h3>Developer Tools</h3><span>8+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=color-tools" onclick="return openCategoryView(event, 'color-tools')" class="fot-cat-card cat-tint-rose">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">🎨</span>
+              <div class="fot-cat-info"><h3>Color Tools</h3><span>10+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=social-media" onclick="return openCategoryView(event, 'social-media')" class="fot-cat-card cat-tint-blue">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">📱</span>
+              <div class="fot-cat-info"><h3>Social Media Tools</h3><span>14+ Tools</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+
+          <a href="?category=productivity" onclick="return openCategoryView(event, 'productivity')" class="fot-cat-card cat-tint-green">
+            <div class="fot-cat-left">
+              <span class="fot-cat-icon">📗</span>
+              <div class="fot-cat-info"><h3>Productivity Tools</h3><span>3+ Guides</span></div>
+            </div>
+            <span class="fot-cat-arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 5. MOST POPULAR TOOLS SECTION (6 EXACT CARDS) -->
+      <section class="fot-reveal">
+        <div class="fot-popular-header">
+          <div class="fot-popular-badge">🔥 Most Popular Tools</div>
+          <a href="?view=all-tools" onclick="return openAllToolsView(event)" class="fot-view-all-link">View All Popular Tools →</a>
+        </div>
+
+        <div class="fot-popular-grid">
+          <div class="fot-pop-card">
+            <div class="fot-pop-top">
+              <div class="fot-pop-icon">📅</div>
+              <div>
+                <h3>Age Calculator</h3>
+                <p>Calculate your exact age instantly.</p>
+              </div>
+            </div>
+            <a href="https://freeonlinetools203.com/age-calculator.html" class="fot-try-btn">Try Now →</a>
+          </div>
+
+          <div class="fot-pop-card">
+            <div class="fot-pop-top">
+              <div class="fot-pop-icon">🛡️</div>
+              <div>
+                <h3>BMI Calculator</h3>
+                <p>Check your BMI &amp; health status.</p>
+              </div>
+            </div>
+            <a href="https://freeonlinetools203.com/bmi-calculator.html" class="fot-try-btn">Try Now →</a>
+          </div>
+
+          <div class="fot-pop-card">
+            <div class="fot-pop-top">
+              <div class="fot-pop-icon">📄</div>
+              <div>
+                <h3>PDF Converter</h3>
+                <p>Convert PDF to Word, JPG and more.</p>
+              </div>
+            </div>
+            <a href="https://freeonlinetools203.com/pdf-to-word.html" class="fot-try-btn">Try Now →</a>
+          </div>
+
+          <div class="fot-pop-card">
+            <div class="fot-pop-top">
+              <div class="fot-pop-icon">🖼️</div>
+              <div>
+                <h3>Image Resizer</h3>
+                <p>Resize images easily in browser.</p>
+              </div>
+            </div>
+            <a href="https://freeonlinetools203.com/image-resizer.html" class="fot-try-btn">Try Now →</a>
+          </div>
+
+          <div class="fot-pop-card">
+            <div class="fot-pop-top">
+              <div class="fot-pop-icon">🎬</div>
+              <div>
+                <h3>YouTube Keyword Tool</h3>
+                <p>Find the best video keywords.</p>
+              </div>
+            </div>
+            <a href="https://freeonlinetools203.com/youtube-keyword-generator.html" class="fot-try-btn">Try Now →</a>
+          </div>
+
+          <div class="fot-pop-card">
+            <div class="fot-pop-top">
+              <div class="fot-pop-icon">📱</div>
+              <div>
+                <h3>QR Code Generator</h3>
+                <p>Create custom QR codes free.</p>
+              </div>
+            </div>
+            <a href="https://freeonlinetools203.com/qr-code-generator.html" class="fot-try-btn">Try Now →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. HAPPY USERS PROMOTIONAL FOOTER BANNER -->
+      <section class="fot-promo-banner fot-reveal">
+        <div class="fot-promo-left">
+          <span class="fot-trophy-icon" aria-hidden="true">🏆</span>
+          <div>
+            <h2>Join Millions of Happy Users!</h2>
+            <p>Save Time • Boost Productivity • Get Things Done</p>
+          </div>
+        </div>
+
+        <div class="fot-promo-stats">
+          <div class="fot-pstat">
+            <span class="fot-pstat-icon">👥</span>
+            <div><strong>1M+</strong><span>Happy Users</span></div>
+          </div>
+          <div class="fot-pstat">
+            <span class="fot-pstat-icon">🛠️</span>
+            <div><strong>240+</strong><span>Tools</span></div>
+          </div>
+          <div class="fot-pstat">
+            <span class="fot-pstat-icon">❤️</span>
+            <div><strong>100%</strong><span>Free</span></div>
+          </div>
+        </div>
+
+        <a href="?view=all-tools" onclick="return openAllToolsView(event)" class="fot-promo-cta">
+          🚀 Start Exploring Now →
+          <small>freeonlinetools203.com</small>
+        </a>
+      </section>
+
+    </main>
   </div>
-
-  <!-- =====================================================================
-       4. EXPLORE OUR CATEGORIES (LINKS TO SEPARATE DEDICATED PAGES)
-       ===================================================================== -->
-  <main class="fot-main-container">
-
-    <section class="fot-reveal">
-      <div class="fot-section-header-center">
-        <div class="fot-section-pill-title">⭐ Explore Our Categories</div>
-      </div>
-
-      <div class="fot-categories-grid">
-        <a href="https://freeonlinetools203.com/category-calculators.html" class="fot-cat-card cat-tint-blue">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">🧮</span>
-            <div class="fot-cat-info"><h3>Calculators</h3><span>14+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-pdf-tools.html" class="fot-cat-card cat-tint-red">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">📄</span>
-            <div class="fot-cat-info"><h3>PDF Tools</h3><span>12+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-image-tools.html" class="fot-cat-card cat-tint-cyan">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">🖼️</span>
-            <div class="fot-cat-info"><h3>Image Tools</h3><span>8+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-youtube-tools.html" class="fot-cat-card cat-tint-rose">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">🎬</span>
-            <div class="fot-cat-info"><h3>YouTube Tools</h3><span>25+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-seo-tools.html" class="fot-cat-card cat-tint-indigo">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">🔍</span>
-            <div class="fot-cat-info"><h3>SEO Tools</h3><span>14+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-text-tools.html" class="fot-cat-card cat-tint-purple">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">📝</span>
-            <div class="fot-cat-info"><h3>Text Tools</h3><span>5+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-financial-tools.html" class="fot-cat-card cat-tint-green">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">💰</span>
-            <div class="fot-cat-info"><h3>Financial Tools</h3><span>4+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-health-tools.html" class="fot-cat-card cat-tint-purple">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">❤️</span>
-            <div class="fot-cat-info"><h3>Health Tools</h3><span>10+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-age-calculators.html" class="fot-cat-card fot-cat-featured-active">
-          <span class="fot-popular-tag">Popular</span>
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">📅</span>
-            <div class="fot-cat-info"><h3>Age Calculators</h3><span>34+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-random-fun.html" class="fot-cat-card cat-tint-amber">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">🎲</span>
-            <div class="fot-cat-info"><h3>Random &amp; Fun</h3><span>41+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-pet-animal.html" class="fot-cat-card cat-tint-blue">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">🐾</span>
-            <div class="fot-cat-info"><h3>Pet &amp; Animal</h3><span>9+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-date-time.html" class="fot-cat-card cat-tint-cyan">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">⏰</span>
-            <div class="fot-cat-info"><h3>Date &amp; Time</h3><span>9+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-developer-tools.html" class="fot-cat-card cat-tint-indigo">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">💻</span>
-            <div class="fot-cat-info"><h3>Developer Tools</h3><span>8+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-color-tools.html" class="fot-cat-card cat-tint-rose">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">🎨</span>
-            <div class="fot-cat-info"><h3>Color Tools</h3><span>10+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-social-media.html" class="fot-cat-card cat-tint-blue">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">📱</span>
-            <div class="fot-cat-info"><h3>Social Media Tools</h3><span>14+ Tools</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-
-        <a href="https://freeonlinetools203.com/category-productivity.html" class="fot-cat-card cat-tint-green">
-          <div class="fot-cat-left">
-            <span class="fot-cat-icon">📗</span>
-            <div class="fot-cat-info"><h3>Productivity Tools</h3><span>3+ Guides</span></div>
-          </div>
-          <span class="fot-cat-arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         5. MOST POPULAR TOOLS SECTION (6 EXACT CARDS)
-         ===================================================================== -->
-    <section class="fot-reveal">
-      <div class="fot-popular-header">
-        <div class="fot-popular-badge">🔥 Most Popular Tools</div>
-        <a href="https://freeonlinetools203.com/all-tools.html" class="fot-view-all-link">View All Popular Tools →</a>
-      </div>
-
-      <div class="fot-popular-grid">
-        <div class="fot-pop-card">
-          <div class="fot-pop-top">
-            <div class="fot-pop-icon">📅</div>
-            <div>
-              <h3>Age Calculator</h3>
-              <p>Calculate your exact age instantly.</p>
-            </div>
-          </div>
-          <a href="https://freeonlinetools203.com/age-calculator.html" class="fot-try-btn">Try Now →</a>
-        </div>
-
-        <div class="fot-pop-card">
-          <div class="fot-pop-top">
-            <div class="fot-pop-icon">🛡️</div>
-            <div>
-              <h3>BMI Calculator</h3>
-              <p>Check your BMI &amp; health status.</p>
-            </div>
-          </div>
-          <a href="https://freeonlinetools203.com/bmi-calculator.html" class="fot-try-btn">Try Now →</a>
-        </div>
-
-        <div class="fot-pop-card">
-          <div class="fot-pop-top">
-            <div class="fot-pop-icon">📄</div>
-            <div>
-              <h3>PDF Converter</h3>
-              <p>Convert PDF to Word, JPG and more.</p>
-            </div>
-          </div>
-          <a href="https://freeonlinetools203.com/pdf-to-word.html" class="fot-try-btn">Try Now →</a>
-        </div>
-
-        <div class="fot-pop-card">
-          <div class="fot-pop-top">
-            <div class="fot-pop-icon">🖼️</div>
-            <div>
-              <h3>Image Resizer</h3>
-              <p>Resize images easily in browser.</p>
-            </div>
-          </div>
-          <a href="https://freeonlinetools203.com/image-resizer.html" class="fot-try-btn">Try Now →</a>
-        </div>
-
-        <div class="fot-pop-card">
-          <div class="fot-pop-top">
-            <div class="fot-pop-icon">🎬</div>
-            <div>
-              <h3>YouTube Keyword Tool</h3>
-              <p>Find the best video keywords.</p>
-            </div>
-          </div>
-          <a href="https://freeonlinetools203.com/youtube-keyword-generator.html" class="fot-try-btn">Try Now →</a>
-        </div>
-
-        <div class="fot-pop-card">
-          <div class="fot-pop-top">
-            <div class="fot-pop-icon">📱</div>
-            <div>
-              <h3>QR Code Generator</h3>
-              <p>Create custom QR codes free.</p>
-            </div>
-          </div>
-          <a href="https://freeonlinetools203.com/qr-code-generator.html" class="fot-try-btn">Try Now →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         6. HAPPY USERS PROMOTIONAL FOOTER BANNER
-         ===================================================================== -->
-    <section class="fot-promo-banner fot-reveal">
-      <div class="fot-promo-left">
-        <span class="fot-trophy-icon" aria-hidden="true">🏆</span>
-        <div>
-          <h2>Join Millions of Happy Users!</h2>
-          <p>Save Time • Boost Productivity • Get Things Done</p>
-        </div>
-      </div>
-
-      <div class="fot-promo-stats">
-        <div class="fot-pstat">
-          <span class="fot-pstat-icon">👥</span>
-          <div><strong>1M+</strong><span>Happy Users</span></div>
-        </div>
-        <div class="fot-pstat">
-          <span class="fot-pstat-icon">🛠️</span>
-          <div><strong>240+</strong><span>Tools</span></div>
-        </div>
-        <div class="fot-pstat">
-          <span class="fot-pstat-icon">❤️</span>
-          <div><strong>100%</strong><span>Free</span></div>
-        </div>
-      </div>
-
-      <a href="https://freeonlinetools203.com/all-tools.html" class="fot-promo-cta">
-        🚀 Start Exploring Now →
-        <small>freeonlinetools203.com</small>
-      </a>
-    </section>
-
-  </main>
 
   <!-- =====================================================================
        7. CLEAN SAAS FOOTER + AMAZON DISCLOSURE
@@ -498,8 +496,8 @@
         </div>
         <div>
           <h4>Quick Links</h4>
-          <a href="https://freeonlinetools203.com/">Home</a>
-          <a href="https://freeonlinetools203.com/all-tools.html">All Tools (240+)</a>
+          <a href="https://freeonlinetools203.com/" onclick="return openHomeView(event)">Home</a>
+          <a href="?view=all-tools" onclick="return openAllToolsView(event)">All Tools (240+)</a>
           <a href="https://freeonlinetools203.com/about.html">About Us</a>
           <a href="https://freeonlinetools203.com/contact.html">Contact Us</a>
         </div>
@@ -511,10 +509,10 @@
         </div>
         <div>
           <h4>Top Categories</h4>
-          <a href="https://freeonlinetools203.com/category-age-calculators.html">Age Calculators</a>
-          <a href="https://freeonlinetools203.com/category-pdf-tools.html">PDF Tools</a>
-          <a href="https://freeonlinetools203.com/category-image-tools.html">Image Tools</a>
-          <a href="https://freeonlinetools203.com/category-seo-tools.html">SEO Tools</a>
+          <a href="?category=age-calculators" onclick="return openCategoryView(event, 'age-calculators')">Age Calculators</a>
+          <a href="?category=pdf-tools" onclick="return openCategoryView(event, 'pdf-tools')">PDF Tools</a>
+          <a href="?category=image-tools" onclick="return openCategoryView(event, 'image-tools')">Image Tools</a>
+          <a href="?category=seo-tools" onclick="return openCategoryView(event, 'seo-tools')">SEO Tools</a>
         </div>
       </div>
       <div class="fot-footer-bottom">
