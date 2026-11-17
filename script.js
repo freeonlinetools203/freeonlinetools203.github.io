@@ -417,3 +417,467 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// =========================================================================
+// 5. FULL CATEGORIZED DATABASE FOR DEDICATED CATEGORY & ALL-TOOLS PAGES
+// =========================================================================
+const categoryPagesDB = {
+  "calculators": {
+    title: "Calculators",
+    icon: "🧮",
+    desc: "Fast and accurate everyday math, discount, percentage, GPA, currency, and QR code calculators.",
+    tools: [
+      { name: "Age Calculator", sub: "Age & Date" },
+      { name: "Age Difference Calculator", sub: "Age & Date" },
+      { name: "Date Calculator", sub: "Age & Date" },
+      { name: "My Birth Year", sub: "Age & Date" },
+      { name: "Discount Calculator", sub: "Finance & Math" },
+      { name: "Profit & Loss Calculator", sub: "Finance & Math" },
+      { name: "GST Calculator", sub: "Finance & Math" },
+      { name: "Percentage Calculator", sub: "Finance & Math" },
+      { name: "Currency Converter", sub: "Finance & Math" },
+      { name: "GPA Calculator", sub: "Finance & Math" },
+      { name: "Unit Converter", sub: "Utilities" },
+      { name: "QR Code Generator", sub: "Utilities" },
+      { name: "Advanced QR Generator", sub: "Utilities" },
+      { name: "YouTube Thumbnail Downloader", sub: "Utilities" }
+    ]
+  },
+  "pdf-tools": {
+    title: "PDF Tools",
+    icon: "📄",
+    desc: "Merge, split, rotate, and convert PDF files to Word, Excel, JPG, PNG, and Text online.",
+    tools: [
+      { name: "PDF Merger", sub: "Organize PDF" },
+      { name: "PDF Splitter", sub: "Organize PDF" },
+      { name: "PDF Rotator", sub: "Organize PDF" },
+      { name: "PDF to Word", sub: "Convert to Document" },
+      { name: "PDF to Excel", sub: "Convert to Document" },
+      { name: "PDF to Text", sub: "Convert to Document" },
+      { name: "PDF to Image", sub: "Convert to Image" },
+      { name: "PDF to JPG", sub: "Convert to Image" },
+      { name: "PDF to PNG", sub: "Convert to Image" },
+      { name: "PDF to BMP", sub: "Convert to Image" },
+      { name: "PDF to WEBP", sub: "Convert to Image" },
+      { name: "PDF to TIFF", sub: "Convert to Image" }
+    ]
+  },
+  "image-tools": {
+    title: "Image Tools",
+    icon: "🖼️",
+    desc: "Crop, resize, compress, upscale, and convert images directly in your browser.",
+    tools: [
+      { name: "Image Resizer", sub: "Edit Image" },
+      { name: "Image Cropper", sub: "Edit Image" },
+      { name: "Image Upscaler", sub: "Edit Image" },
+      { name: "Image Compressor", sub: "Optimize" },
+      { name: "Image Converter", sub: "Convert" },
+      { name: "WebP Converter", sub: "Convert" },
+      { name: "Image to PDF", sub: "Convert" },
+      { name: "Image Color Extractor", sub: "Colors" }
+    ]
+  },
+  "youtube-tools": {
+    title: "YouTube Tools",
+    icon: "🎬",
+    desc: "Optimize video titles, tags, keywords, thumbnails, Shorts scripts, and channel SEO.",
+    tools: [
+      { name: "YouTube Keyword Generator", sub: "SEO & Keywords" },
+      { name: "YouTube Keyword Research", sub: "SEO & Keywords" },
+      { name: "YouTube SEO Score Checker", sub: "SEO & Keywords" },
+      { name: "YouTube Channel Analyzer", sub: "SEO & Keywords" },
+      { name: "YouTube Channel Comparison", sub: "SEO & Keywords" },
+      { name: "YouTube Viral Video Predictor", sub: "SEO & Keywords" },
+      { name: "YouTube SEO Checklist Generator", sub: "SEO & Keywords" },
+      { name: "YouTube Title Generator", sub: "Content & Scripts" },
+      { name: "YouTube Description Generator", sub: "Content & Scripts" },
+      { name: "YouTube Video Idea Generator", sub: "Content & Scripts" },
+      { name: "YouTube Video Outline Generator", sub: "Content & Scripts" },
+      { name: "YouTube Content Planner AI", sub: "Content & Scripts" },
+      { name: "YouTube Shorts Hook Generator", sub: "Content & Scripts" },
+      { name: "YouTube Shorts Script Generator", sub: "Content & Scripts" },
+      { name: "YouTube Shorts Idea Calendar Generator", sub: "Content & Scripts" },
+      { name: "YouTube Video Tags Extractor", sub: "Tags & Hashtags" },
+      { name: "YouTube Video Tags Generator", sub: "Tags & Hashtags" },
+      { name: "YouTube Hashtag Generator", sub: "Tags & Hashtags" },
+      { name: "YouTube Thumbnail Downloader", sub: "Thumbnails" },
+      { name: "YouTube Thumbnail Text Generator", sub: "Thumbnails" },
+      { name: "YouTube Thumbnail Color Palette Generator", sub: "Thumbnails" },
+      { name: "YouTube Thumbnail Split Tester", sub: "Thumbnails" },
+      { name: "YouTube Thumbnail CTR Predictor", sub: "Thumbnails" },
+      { name: "YouTube Channel Name Generator", sub: "Channel" },
+      { name: "YouTube Community Post Generator", sub: "Channel" }
+    ]
+  },
+  "seo-tools": {
+    title: "SEO Tools",
+    icon: "🔍",
+    desc: "Check keyword density, analyze meta tags, preview SERP snippets, and audit on-page SEO.",
+    tools: [
+      { name: "Keyword Density Checker", sub: "Content & Meta" },
+      { name: "Meta Tags Generator", sub: "Content & Meta" },
+      { name: "Meta Tag Analyzer", sub: "Content & Meta" },
+      { name: "SEO Title Generator", sub: "Content & Meta" },
+      { name: "SERP Snippet Preview", sub: "Content & Meta" },
+      { name: "SEO Analyzer", sub: "Site Audit" },
+      { name: "SEO Score Checker", sub: "Site Audit" },
+      { name: "Readability Checker", sub: "Site Audit" },
+      { name: "Heading Structure Checker", sub: "Site Audit" },
+      { name: "Image Alt Analyzer", sub: "Site Audit" },
+      { name: "Broken Link Checker", sub: "Site Audit" },
+      { name: "Google Index Checker", sub: "Site Audit" },
+      { name: "Free Backlink Checker", sub: "Technical" },
+      { name: "XML Sitemap Generator", sub: "Technical" }
+    ]
+  },
+  "text-tools": {
+    title: "Text Tools",
+    icon: "📝",
+    desc: "Count words and lines, convert text case, and generate or verify strong passwords.",
+    tools: [
+      { name: "Word Counter", sub: "Writing" },
+      { name: "Line Counter", sub: "Writing" },
+      { name: "Text Case Converter", sub: "Writing" },
+      { name: "Password Generator", sub: "Security" },
+      { name: "Password Strength Checker", sub: "Security" }
+    ]
+  },
+  "financial-tools": {
+    title: "Financial Tools",
+    icon: "💰",
+    desc: "Calculate loan EMIs, SIP investment returns, and annual Zakat accurately.",
+    tools: [
+      { name: "EMI Calculator", sub: "Loans & Investments" },
+      { name: "Loan Calculator", sub: "Loans & Investments" },
+      { name: "SIP Calculator", sub: "Loans & Investments" },
+      { name: "Zakat Calculator", sub: "Tax & Zakat" }
+    ]
+  },
+  "health-tools": {
+    title: "Health Tools",
+    icon: "❤️",
+    desc: "Check BMI, BMR, daily calories, TDEE, body fat percentage, macros, and ideal weight.",
+    tools: [
+      { name: "BMI Calculator", sub: "Body Metrics" },
+      { name: "Body Fat Calculator", sub: "Body Metrics" },
+      { name: "Ideal Weight Calculator", sub: "Body Metrics" },
+      { name: "Lean Body Mass Calculator", sub: "Body Metrics" },
+      { name: "Waist to Hip Calculator", sub: "Body Metrics" },
+      { name: "BMR Calculator", sub: "Nutrition & Calories" },
+      { name: "Calorie Calculator", sub: "Nutrition & Calories" },
+      { name: "TDEE Calculator", sub: "Nutrition & Calories" },
+      { name: "Macro Calculator", sub: "Nutrition & Calories" },
+      { name: "Protein Calculator", sub: "Nutrition & Calories" }
+    ]
+  },
+  "age-calculators": {
+    title: "Age Calculators",
+    icon: "📅",
+    desc: "Calculate exact chronological age, age gaps, biological age, preemie adjusted age, and birth year.",
+    tools: [
+      { name: "Age Calculator", sub: "Basic Age" },
+      { name: "Current Year Calculator", sub: "Basic Age" },
+      { name: "What Year Was I Born Calculator", sub: "Basic Age" },
+      { name: "Born Year Age Calculator", sub: "Basic Age" },
+      { name: "Birth Year Calculator", sub: "Basic Age" },
+      { name: "Age In Days Calculator", sub: "Basic Age" },
+      { name: "Age In Months Calculator", sub: "Basic Age" },
+      { name: "Date of Birth Calculator Year", sub: "Basic Age" },
+      { name: "Age Difference Calculator", sub: "Age Difference" },
+      { name: "Age Calculator Difference", sub: "Age Difference" },
+      { name: "Calculate Age Difference", sub: "Age Difference" },
+      { name: "Age Gap Calculator", sub: "Age Difference" },
+      { name: "Age Gap Dating Calculator", sub: "Age Difference" },
+      { name: "Dating Age Difference Calculator", sub: "Age Difference" },
+      { name: "Chronological Age Calculator", sub: "Health & Clinical" },
+      { name: "Online Chronological Age Calculator", sub: "Health & Clinical" },
+      { name: "Biological Age Calculator", sub: "Health & Clinical" },
+      { name: "Free Biological Age Calculator", sub: "Health & Clinical" },
+      { name: "Adjusted Age Calculator", sub: "Health & Clinical" },
+      { name: "Preemie Adjusted Age Calculator", sub: "Health & Clinical" },
+      { name: "Pearson Age Calculator", sub: "Health & Clinical" },
+      { name: "Pearson Chronological Age Calculator", sub: "Health & Clinical" },
+      { name: "Life Expectancy Calculator", sub: "Health & Clinical" },
+      { name: "Dog Age Calculator", sub: "Fun & Specialty" },
+      { name: "AI Age Guesser", sub: "Fun & Specialty" },
+      { name: "Future Age Predictor", sub: "Fun & Specialty" },
+      { name: "Korean Age Calculator", sub: "Fun & Specialty" },
+      { name: "Birthday Countdown", sub: "Fun & Specialty" },
+      { name: "Happy Birthday Tool", sub: "Fun & Specialty" },
+      { name: "Running Age Calculator", sub: "Fun & Specialty" },
+      { name: "Running Age Calculator by Date of Birth", sub: "Fun & Specialty" },
+      { name: "Age Calculator By Photo", sub: "Photo Age" },
+      { name: "Photo Age Calculator", sub: "Photo Age" },
+      { name: "Geekzilla Age Calculator", sub: "Photo Age" }
+    ]
+  },
+  "random-fun": {
+    title: "Random & Fun Tools",
+    icon: "🎲",
+    desc: "Spin custom decision wheels, pick random names, generate lottery numbers, and play party games.",
+    tools: [
+      { name: "Spin The Wheel", sub: "Decision Wheels" },
+      { name: "Yes/No Wheel", sub: "Decision Wheels" },
+      { name: "Decision Roulette", sub: "Decision Wheels" },
+      { name: "Decision Wheel", sub: "Decision Wheels" },
+      { name: "Task Spinner", sub: "Decision Wheels" },
+      { name: "Art Roulette", sub: "Decision Wheels" },
+      { name: "Chore Wheel", sub: "Decision Wheels" },
+      { name: "Twister Spinner", sub: "Decision Wheels" },
+      { name: "Stop Right There Wheel", sub: "Decision Wheels" },
+      { name: "Color Wheel", sub: "Decision Wheels" },
+      { name: "Squid Game Spin Wheel", sub: "Decision Wheels" },
+      { name: "Game Character Spin Wheel", sub: "Decision Wheels" },
+      { name: "Carnival Game Spin Wheel", sub: "Decision Wheels" },
+      { name: "Random Name Picker", sub: "Pickers & Numbers" },
+      { name: "Name Picker Wheel", sub: "Pickers & Numbers" },
+      { name: "Random Number Generator", sub: "Pickers & Numbers" },
+      { name: "Best Lottery Number Generator", sub: "Pickers & Numbers" },
+      { name: "Prize Wheel", sub: "Pickers & Numbers" },
+      { name: "Lucky Prize Wheel", sub: "Pickers & Numbers" },
+      { name: "Daily Lucky Number Wheel", sub: "Pickers & Numbers" },
+      { name: "Country Picker Wheel", sub: "Pickers & Numbers" },
+      { name: "Mystery Gift Wheel", sub: "Pickers & Numbers" },
+      { name: "Random Fact Wheel", sub: "Pickers & Numbers" },
+      { name: "Random Animal Wheel", sub: "Pickers & Numbers" },
+      { name: "Zodiac Wheel", sub: "Pickers & Numbers" },
+      { name: "Exercise Wheel", sub: "Pickers & Numbers" },
+      { name: "Workout Spinner", sub: "Pickers & Numbers" },
+      { name: "Movie Picker Wheel", sub: "Pickers & Numbers" },
+      { name: "Holiday Activity Wheel", sub: "Pickers & Numbers" },
+      { name: "Icebreaker Wheel", sub: "Pickers & Numbers" },
+      { name: "Dinner Spinner", sub: "Food & Drink" },
+      { name: "Food Picker Wheel", sub: "Food & Drink" },
+      { name: "Drink Picker Wheel", sub: "Food & Drink" },
+      { name: "You vs Food Wheel", sub: "Food & Drink" },
+      { name: "Truth or Dare Generator", sub: "Party Games" },
+      { name: "Sketch or Dare", sub: "Party Games" },
+      { name: "Dare or Draw", sub: "Party Games" },
+      { name: "Hot Seat Challenge", sub: "Party Games" },
+      { name: "Casino Games Wheel", sub: "Party Games" },
+      { name: "Party Games Spin Wheel", sub: "Party Games" },
+      { name: "Drinking Game Spin Wheel", sub: "Party Games" },
+      { name: "Board Game Spin Wheel", sub: "Party Games" }
+    ]
+  },
+  "pet-animal": {
+    title: "Pet & Animal Tools",
+    icon: "🐾",
+    desc: "Calculate pregnancy due dates, gestation timelines, and pet age equivalents.",
+    tools: [
+      { name: "Dog Pregnancy Calculator", sub: "Pets" },
+      { name: "Cat Pregnancy Calculator", sub: "Pets" },
+      { name: "Rabbit Pregnancy Calculator", sub: "Pets" },
+      { name: "Dog Age Calculator", sub: "Pets" },
+      { name: "Cow Pregnancy Calculator", sub: "Livestock" },
+      { name: "Goat Pregnancy Calculator", sub: "Livestock" },
+      { name: "Horse Gestation Calculator", sub: "Livestock" },
+      { name: "Sheep Pregnancy Calculator", sub: "Livestock" },
+      { name: "Pig Pregnancy Calculator", sub: "Livestock" },
+      { name: "Lambing Calculator", sub: "Livestock" }
+    ]
+  },
+  "date-time": {
+    title: "Date & Time Tools",
+    icon: "⏰",
+    desc: "Calculate date durations, time intervals, birthday countdowns, zodiac signs, and world time.",
+    tools: [
+      { name: "Date Calculator", sub: "Date & Time" },
+      { name: "Time Calculator", sub: "Date & Time" },
+      { name: "Countdown Timer", sub: "Date & Time" },
+      { name: "World Clock", sub: "Date & Time" },
+      { name: "Birthday Countdown", sub: "Birthday & Zodiac" },
+      { name: "Happy Birthday Tool", sub: "Birthday & Zodiac" },
+      { name: "Zodiac Sign Finder", sub: "Birthday & Zodiac" },
+      { name: "Chinese Zodiac Finder", sub: "Birthday & Zodiac" }
+    ]
+  },
+  "developer-tools": {
+    title: "Developer Tools",
+    icon: "💻",
+    desc: "Format JSON, minify HTML, encode/decode Base64 & URLs, and generate MD5/SHA hashes.",
+    tools: [
+      { name: "JSON Formatter & Validator", sub: "Formatters" },
+      { name: "HTML Minifier Pro", sub: "Formatters" },
+      { name: "Base64 Encoder/Decoder", sub: "Encoders" },
+      { name: "URL Encoder/Decoder", sub: "Encoders" },
+      { name: "HTML Encoder/Decoder", sub: "Encoders" },
+      { name: "MD5 Hash Generator", sub: "Hashing" },
+      { name: "SHA-256 Hash Generator", sub: "Hashing" },
+      { name: "SHA-1 Hash Generator", sub: "Hashing" }
+    ]
+  },
+  "color-tools": {
+    title: "Color Tools",
+    icon: "🎨",
+    desc: "Generate harmonious color palettes, CSS gradients, color shades, and check contrast.",
+    tools: [
+      { name: "Color Palette Generator", sub: "Palettes" },
+      { name: "Palette Generator", sub: "Palettes" },
+      { name: "Color Shades Generator", sub: "Palettes" },
+      { name: "Color Gradient Maker", sub: "Gradients" },
+      { name: "Gradient Maker", sub: "Gradients" },
+      { name: "Color Contrast Checker", sub: "Pickers & Checkers" },
+      { name: "Color Name Finder", sub: "Pickers & Checkers" },
+      { name: "Random Color Picker", sub: "Pickers & Checkers" },
+      { name: "Color Wheel", sub: "Pickers & Checkers" },
+      { name: "Image Color Extractor", sub: "Pickers & Checkers" }
+    ]
+  },
+  "social-media": {
+    title: "Social Media Tools",
+    icon: "📱",
+    desc: "Generate trending hashtags and engaging captions for Instagram, TikTok, LinkedIn, and X.",
+    tools: [
+      { name: "Instagram Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "TikTok Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "LinkedIn Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "Facebook Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "Pinterest Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "Twitter Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "Threads Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "YouTube Hashtag Generator", sub: "Platform Hashtags" },
+      { name: "AI Hashtag Generator", sub: "AI & Viral" },
+      { name: "SEO Hashtags Generator", sub: "AI & Viral" },
+      { name: "Viral Hashtag Generator", sub: "AI & Viral" },
+      { name: "Trending Hashtags Today", sub: "AI & Viral" },
+      { name: "Random Hashtag Generator", sub: "AI & Viral" },
+      { name: "Social Media Caption Generator", sub: "Captions" }
+    ]
+  },
+  "productivity": {
+    title: "Productivity & Excel Tools",
+    icon: "📗",
+    desc: "Master Excel DATEDIF formulas and spreadsheet guides for accurate date and age tracking.",
+    tools: [
+      { name: "Excel Formula To Calculate Age", sub: "Excel Guides" },
+      { name: "How To Calculate Age In Excel", sub: "Excel Guides" },
+      { name: "Calculate Age From DOB In Excel", sub: "Excel Guides" }
+    ]
+  }
+};
+
+// =========================================================================
+// 6. DEDICATED CATEGORY PAGE RENDERER (STRICTLY ONLY SELECTED CATEGORY)
+// =========================================================================
+function initDedicatedCategoryPage() {
+  const root = document.getElementById('fotCategoryPageRoot');
+  if (!root) return;
+
+  const slug = root.getAttribute('data-category');
+  const catData = categoryPagesDB[slug];
+  if (!catData) return;
+
+  const uniqueSubs = [...new Set(catData.tools.map(t => t.sub))];
+  const initialLimit = 12;
+  let showAll = catData.tools.length <= initialLimit;
+  let currentSub = 'all';
+  let currentQuery = '';
+
+  root.innerHTML = `
+    <div style="background:linear-gradient(135deg,#1D4ED8 0%,#0F296E 100%);color:#FFF;padding:36px 24px;border-radius:20px;margin:24px auto;max-width:1320px;box-shadow:0 12px 30px rgba(15,41,110,0.2);">
+      <nav style="font-size:0.84rem;margin-bottom:12px;color:#BFDBFE;">
+        <a href="https://freeonlinetools203.com/" style="color:#FFF;text-decoration:none;font-weight:600;">Home</a> ›
+        <a href="https://freeonlinetools203.com/all-tools.html" style="color:#FFF;text-decoration:none;font-weight:600;">All Tools</a> ›
+        <span>${catData.title}</span>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <span style="font-size:2.6rem;background:rgba(255,255,255,0.15);padding:10px 14px;border-radius:16px;">${catData.icon}</span>
+        <div>
+          <h1 style="font-size:clamp(1.7rem,3vw,2.3rem);font-weight:900;margin-bottom:4px;">${catData.title} (${catData.tools.length} Tools)</h1>
+          <p style="color:#E0F2FE;font-size:0.96rem;max-width:720px;">${catData.desc}</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width:1320px;margin:0 auto 48px;padding:0 24px;">
+      <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:24px;box-shadow:0 6px 20px rgba(15,23,42,0.05);">
+        <input type="text" id="catOnlySearchInput" placeholder="Search inside ${catData.title} only..." style="width:100%;padding:13px 18px;border:1.5px solid #CBD5E1;border-radius:12px;font-size:0.96rem;font-family:inherit;margin-bottom:16px;outline:none;">
+
+        ${uniqueSubs.length > 1 ? `
+        <div id="catFilterTabs" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+          <button type="button" data-sub="all" class="cat-sub-btn active" style="padding:7px 16px;border-radius:999px;border:1px solid #2563EB;background:#2563EB;color:#FFF;font-weight:700;font-size:0.84rem;cursor:pointer;">All (${catData.tools.length})</button>
+          ${uniqueSubs.map(s => `<button type="button" data-sub="${s}" class="cat-sub-btn" style="padding:7px 16px;border-radius:999px;border:1px solid #CBD5E1;background:#F8FAFC;color:#0F172A;font-weight:600;font-size:0.84rem;cursor:pointer;">${s}</button>`).join('')}
+        </div>` : ''}
+
+        <div id="catToolsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;"></div>
+
+        <div id="catShowAllWrap" style="text-align:center;margin-top:24px;"></div>
+      </div>
+
+      <!-- Related Categories -->
+      <div style="margin-top:32px;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:24px;">
+        <h3 style="font-size:1.1rem;font-weight:800;color:#0F296E;margin-bottom:14px;">Explore Other Tool Categories</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          ${Object.entries(categoryPagesDB).filter(([k]) => k !== slug).slice(0, 8).map(([k, v]) =>
+            `<a href="https://freeonlinetools203.com/category-${k}.html" style="padding:8px 16px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:999px;color:#1D4ED8;font-weight:700;font-size:0.85rem;text-decoration:none;">${v.icon} ${v.title}</a>`
+          ).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+
+  const gridEl = document.getElementById('catToolsGrid');
+  const showAllWrap = document.getElementById('catShowAllWrap');
+  const searchEl = document.getElementById('catOnlySearchInput');
+
+  function renderCategoryTools() {
+    const filtered = catData.tools.filter(t => {
+      const matchSub = currentSub === 'all' || t.sub === currentSub;
+      const matchQuery = t.name.toLowerCase().includes(currentQuery);
+      return matchSub && matchQuery;
+    });
+
+    const isFiltering = currentSub !== 'all' || currentQuery !== '';
+    const visibleList = (showAll || isFiltering) ? filtered : filtered.slice(0, initialLimit);
+
+    if (visibleList.length === 0) {
+      gridEl.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:24px;color:#64748B;">No tools found inside ${catData.title} matching "${currentQuery}".</div>`;
+      showAllWrap.innerHTML = '';
+      return;
+    }
+
+    gridEl.innerHTML = visibleList.map(t => `
+      <a href="${getUrl(t.name)}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;background:linear-gradient(135deg,#2563EB 0%,#1E3A8A 100%);color:#FFFFFF;border-radius:14px;text-decoration:none;font-weight:700;font-size:0.93rem;box-shadow:0 4px 12px rgba(37,99,235,0.2);transition:transform 0.2s;">
+        <span>${catData.icon} ${t.name}</span>
+        <span>→</span>
+      </a>
+    `).join('');
+
+    if (!isFiltering && filtered.length > initialLimit) {
+      showAllWrap.innerHTML = `<button type="button" id="toggleCatAllBtn" style="padding:11px 28px;background:#EFF6FF;color:#1D4ED8;border:1.5px solid #2563EB;border-radius:999px;font-weight:800;font-size:0.92rem;cursor:pointer;">
+        ${showAll ? 'Show Less ↑' : `Show All ${filtered.length} ${catData.title} ↓`}
+      </button>`;
+      document.getElementById('toggleCatAllBtn').addEventListener('click', () => {
+        showAll = !showAll;
+        renderCategoryTools();
+      });
+    } else {
+      showAllWrap.innerHTML = '';
+    }
+  }
+
+  renderCategoryTools();
+
+  searchEl.addEventListener('input', function() {
+    currentQuery = this.value.toLowerCase().trim();
+    renderCategoryTools();
+  });
+
+  document.querySelectorAll('.cat-sub-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.cat-sub-btn').forEach(b => {
+        b.style.background = '#F8FAFC';
+        b.style.color = '#0F172A';
+        b.style.borderColor = '#CBD5E1';
+      });
+      this.style.background = '#2563EB';
+      this.style.color = '#FFFFFF';
+      this.style.borderColor = '#2563EB';
+      currentSub = this.getAttribute('data-sub');
+      renderCategoryTools();
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initDedicatedCategoryPage);
