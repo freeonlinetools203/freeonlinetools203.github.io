@@ -1121,10 +1121,15 @@ body.dark-mode .fot-theme-toggle .moon-active {
 }
 
 /* ========================================================================= */
-/* UNIVERSAL PURGE: Hide old footers & duplicate navbars on all tool pages    */
+/* ULTRA PURGE: Hides all old footers, navbars, and legacy links globally     */
 /* ========================================================================= */
-body *:not(.fot-footer):not(.fot-breadcrumbs):not(.fot-related-tools-section) > footer:not(.fot-footer),
-.navbar:not(.fot-topbar),
-.megamenu-container {
+body > footer:not(.fot-footer),
+div#footer, div.footer, .footer-wrapper, 
+nav:not(.fot-topbar), .nav-container, .menu-bar,
+.related-links-old, .legacy-footer {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
