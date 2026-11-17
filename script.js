@@ -223,203 +223,7 @@ function getUrl(toolName) {
 }
 
 // =========================================================================
-// 2. FEATURED HERO AGE CALCULATOR (REAL WORKING CALCULATION)
-// =========================================================================
-function initHeroAgeCalculator() {
-  const daySel = document.getElementById('heroDobDay');
-  const monthSel = document.getElementById('heroDobMonth');
-  const yearSel = document.getElementById('heroDobYear');
-  const calcBtn = document.getElementById('heroCalcAgeBtn');
-  const outputEl = document.getElementById('heroAgeOutput');
-  const resultBox = document.getElementById('heroAgeResultBox');
-
-  if (!daySel || !monthSel || !yearSel || !calcBtn || !outputEl) return;
-
-  // Populate Days 1-31
-  for (let d = 1; d <= 31; d++) {
-    const opt = document.createElement('option');
-    opt.value = d;
-    opt.textContent = d;
-    if (d === 15) opt.selected = true;
-    daySel.appendChild(opt);
-  }
-
-  // Populate Years 1920 - Current Year
-  const now = new Date();
-  const currentYear = now.getFullYear();
-  for (let y = currentYear; y >= 1920; y--) {
-    const opt = document.createElement('option');
-    opt.value = y;
-    opt.textContent = y;
-    if (y === 2000) opt.selected = true;
-    yearSel.appendChild(opt);
-  }
-
-  function calculateHeroExactAge() {
-    const day = parseInt(daySel.value, 10);
-    const month = parseInt(monthSel.value, 10);
-    const year = parseInt(yearSel.value, 10);
-
-    const birthDate = new Date(year, month, day);
-    const today = new Date();
-
-    if (birthDate > today) {
-      outputEl.textContent = "Birth date cannot be in the future!";
-      outputEl.style.color = "#DC2626";
-      return;
-    }
-
-    outputEl.style.color = "#1D4ED8";
-    let years = today.getFullYear() - birthDate.getFullYear();
-    let months = today.getMonth() - birthDate.getMonth();
-    let days = today.getDate() - birthDate.getDate();
-
-    if (days < 0) {
-      months--;
-      const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-      days += prevMonth.getDate();
-    }
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    // Trigger smooth re-reveal animation on result box
-    if (resultBox) {
-      resultBox.style.animation = 'none';
-      resultBox.offsetHeight;
-      resultBox.style.animation = 'fotResultReveal 0.35s cubic-bezier(0.22, 1, 0.36, 1) both';
-    }
-
-    outputEl.textContent = `${years} Years, ${months} Months, ${days} Days`;
-  }
-
-  // Calculate initial real age for default date and bind button
-  calculateHeroExactAge();
-  calcBtn.addEventListener('click', calculateHeroExactAge);
-}
-
-// =========================================================================
-// 3. WORKING HOMEPAGE & GLOBAL SEARCH BAR
-// =========================================================================
-window.tsSearch = function() {
-  const input = document.getElementById('tsInput');
-  const container = document.getElementById('tsResultsContainer');
-  const label = document.getElementById('tsResultLabel');
-  const grid = document.getElementById('tsResults');
-  if (!input || !container || !grid) return;
-
-  const query = input.value.toLowerCase().trim();
-  if (!query) {
-    container.style.display = 'none';
-    grid.innerHTML = '';
-    return;
-  }
-
-  const matches = Object.entries(toolUrlMap).filter(([name]) =>
-    name.toLowerCase().includes(query)
-  );
-
-  container.style.display = 'block';
-  if (matches.length === 0) {
-    label.textContent = `No tools found matching "${input.value}" — try searching Age, PDF, BMI, SEO, or QR.`;
-    grid.innerHTML = '';
-    return;
-  }
-
-  label.textContent = `Showing ${matches.length} matching tool(s):`;
-  grid.innerHTML = matches.map(([name, file]) =>
-    `<a href="https://freeonlinetools203.com/${file}" class="fot-search-item"><span>${name}</span><span>→</span></a>`
-  ).join('');
-};
-
-// =========================================================================
-// 4. NAVIGATION, THEME TOGGLE, SCROLL REVEAL & TOOL PAGE HEADER INJECTION
-// =========================================================================
-document.addEventListener('DOMContentLoaded', function() {
-  // Init Hero Age Calculator if on homepage
-  initHeroAgeCalculator();
-
-  // Live search input listener
-  const searchInput = document.getElementById('tsInput');
-  if (searchInput) {
-    searchInput.addEventListener('input', window.tsSearch);
-    searchInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        window.tsSearch();
-      }
-    });
-  }
-
-  // Light / Dark Mode Toggle
-  const themeBtn = document.getElementById('fotThemeBtn');
-  if (localStorage.getItem('fotTheme') === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function() {
-      document.body.classList.toggle('dark-mode');
-      localStorage.setItem('fotTheme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-    });
-  }
-
-  // Mobile Menu Toggle
-  const mobileBtn = document.getElementById('fotMobileBtn');
-  const mainNav = document.getElementById('fotMainNav');
-  if (mobileBtn && mainNav) {
-    mobileBtn.addEventListener('click', function() {
-      mainNav.classList.toggle('mobile-open');
-    });
-  }
-
-  // Inject Unified Blue & White Header on Sub-Pages if they don't already have .fot-topbar
-  if (!document.querySelector('.fot-topbar')) {
-    const oldNav = document.querySelector('.navbar, .megamenu-container');
-    if (oldNav) oldNav.remove();
-
-    const subPageHeader = `
-    <header style="background:#FFFFFF;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(15,23,42,0.05);font-family:'Inter',sans-serif;">
-      <div style="max-width:1320px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-        <a href="https://freeonlinetools203.com/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-          <span style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2563EB,#1E3A8A);color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-weight:900;">🛠️</span>
-          <span>
-            <strong style="display:block;font-size:1.1rem;color:#0F296E;">FreeOnlineTools203.com</strong>
-            <small style="display:block;font-size:0.7rem;color:#475569;font-weight:600;">240+ Free Online Tools • Fast • Easy • 100% Free</small>
-          </span>
-        </a>
-        <nav style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-          <a href="https://freeonlinetools203.com/" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">Home</a>
-          <a href="https://freeonlinetools203.com/all-tools.html" style="background:#2563EB;color:#FFF;padding:7px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.88rem;">All Tools (240+)</a>
-          <a href="https://freeonlinetools203.com/about.html" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">About</a>
-          <a href="https://freeonlinetools203.com/contact.html" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">Contact</a>
-        </nav>
-      </div>
-    </header>`;
-    document.body.insertAdjacentHTML('afterbegin', subPageHeader);
-  }
-
-  // Subtle Scroll Reveal Animation (IntersectionObserver)
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    const revealTargets = document.querySelectorAll('.fot-reveal, .section, .reviews-section, .seo-article-wrap');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fot-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-    revealTargets.forEach(el => {
-      el.classList.add('fot-reveal');
-      observer.observe(el);
-    });
-  }
-});
-
-// =========================================================================
-// 5. FULL CATEGORIZED DATABASE FOR DEDICATED CATEGORY & ALL-TOOLS PAGES
+// 2. FULL CATEGORIZED DATABASE (16 DEDICATED CATEGORIES)
 // =========================================================================
 const categoryPagesDB = {
   "calculators": {
@@ -758,15 +562,159 @@ const categoryPagesDB = {
 };
 
 // =========================================================================
-// 6. DEDICATED CATEGORY PAGE RENDERER (STRICTLY ONLY SELECTED CATEGORY)
+// 3. FEATURED HERO AGE CALCULATOR (REAL WORKING CALCULATION)
 // =========================================================================
-function initDedicatedCategoryPage() {
-  const root = document.getElementById('fotCategoryPageRoot');
-  if (!root) return;
+function initHeroAgeCalculator() {
+  const daySel = document.getElementById('heroDobDay');
+  const monthSel = document.getElementById('heroDobMonth');
+  const yearSel = document.getElementById('heroDobYear');
+  const calcBtn = document.getElementById('heroCalcAgeBtn');
+  const outputEl = document.getElementById('heroAgeOutput');
+  const resultBox = document.getElementById('heroAgeResultBox');
 
-  const slug = root.getAttribute('data-category');
+  if (!daySel || !monthSel || !yearSel || !calcBtn || !outputEl) return;
+
+  for (let d = 1; d <= 31; d++) {
+    const opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = d;
+    if (d === 15) opt.selected = true;
+    daySel.appendChild(opt);
+  }
+
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  for (let y = currentYear; y >= 1920; y--) {
+    const opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    if (y === 2000) opt.selected = true;
+    yearSel.appendChild(opt);
+  }
+
+  function calculateHeroExactAge() {
+    const day = parseInt(daySel.value, 10);
+    const month = parseInt(monthSel.value, 10);
+    const year = parseInt(yearSel.value, 10);
+
+    const birthDate = new Date(year, month, day);
+    const today = new Date();
+
+    if (birthDate > today) {
+      outputEl.textContent = "Birth date cannot be in the future!";
+      outputEl.style.color = "#DC2626";
+      return;
+    }
+
+    outputEl.style.color = "#1D4ED8";
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+      months--;
+      const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+      days += prevMonth.getDate();
+    }
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    if (resultBox) {
+      resultBox.style.animation = 'none';
+      resultBox.offsetHeight;
+      resultBox.style.animation = 'fotResultReveal 0.35s cubic-bezier(0.22, 1, 0.36, 1) both';
+    }
+
+    outputEl.textContent = `${years} Years, ${months} Months, ${days} Days`;
+  }
+
+  calculateHeroExactAge();
+  calcBtn.addEventListener('click', calculateHeroExactAge);
+}
+
+// =========================================================================
+// 4. WORKING HOMEPAGE SEARCH BAR
+// =========================================================================
+window.tsSearch = function() {
+  const input = document.getElementById('tsInput');
+  const container = document.getElementById('tsResultsContainer');
+  const label = document.getElementById('tsResultLabel');
+  const grid = document.getElementById('tsResults');
+  if (!input || !container || !grid) return;
+
+  const query = input.value.toLowerCase().trim();
+  if (!query) {
+    container.style.display = 'none';
+    grid.innerHTML = '';
+    return;
+  }
+
+  const matches = Object.entries(toolUrlMap).filter(([name]) =>
+    name.toLowerCase().includes(query)
+  );
+
+  container.style.display = 'block';
+  if (matches.length === 0) {
+    label.textContent = `No tools found matching "${input.value}" — try searching Age, PDF, BMI, SEO, or QR.`;
+    grid.innerHTML = '';
+    return;
+  }
+
+  label.textContent = `Showing ${matches.length} matching tool(s):`;
+  grid.innerHTML = matches.map(([name, file]) =>
+    `<a href="https://freeonlinetools203.com/${file}" class="fot-search-item"><span>${name}</span><span>→</span></a>`
+  ).join('');
+};
+
+// =========================================================================
+// 5. SINGLE-PAGE CATEGORY & ALL-TOOLS VIEW CONTROLLER
+// =========================================================================
+function setActiveNavPill(type) {
+  const homeBtn = document.getElementById('navHomeBtn');
+  const allBtn = document.getElementById('navAllToolsBtn');
+  if (homeBtn) homeBtn.classList.toggle('active-pill', type === 'home');
+  if (allBtn) allBtn.classList.toggle('active-pill', type !== 'home');
+}
+
+window.openHomeView = function(e) {
+  if (e) e.preventDefault();
+  const homeView = document.getElementById('fotHomepageView');
+  const dynView = document.getElementById('fotDynamicViewArea');
+  if (!homeView || !dynView) {
+    window.location.href = 'https://freeonlinetools203.com/';
+    return false;
+  }
+  dynView.style.display = 'none';
+  dynView.innerHTML = '';
+  homeView.style.display = 'block';
+  setActiveNavPill('home');
+  if (window.history && window.history.pushState) {
+    window.history.pushState({}, '', 'https://freeonlinetools203.com/');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+};
+
+window.openCategoryView = function(e, slug) {
+  if (e) e.preventDefault();
+  const homeView = document.getElementById('fotHomepageView');
+  const dynView = document.getElementById('fotDynamicViewArea');
   const catData = categoryPagesDB[slug];
-  if (!catData) return;
+
+  if (!homeView || !dynView || !catData) {
+    window.location.href = 'https://freeonlinetools203.com/?category=' + slug;
+    return false;
+  }
+
+  homeView.style.display = 'none';
+  dynView.style.display = 'block';
+  setActiveNavPill('category');
+
+  if (window.history && window.history.pushState) {
+    window.history.pushState({ category: slug }, '', '?category=' + slug);
+  }
 
   const uniqueSubs = [...new Set(catData.tools.map(t => t.sub))];
   const initialLimit = 12;
@@ -774,110 +722,315 @@ function initDedicatedCategoryPage() {
   let currentSub = 'all';
   let currentQuery = '';
 
-  root.innerHTML = `
-    <div style="background:linear-gradient(135deg,#1D4ED8 0%,#0F296E 100%);color:#FFF;padding:36px 24px;border-radius:20px;margin:24px auto;max-width:1320px;box-shadow:0 12px 30px rgba(15,41,110,0.2);">
-      <nav style="font-size:0.84rem;margin-bottom:12px;color:#BFDBFE;">
-        <a href="https://freeonlinetools203.com/" style="color:#FFF;text-decoration:none;font-weight:600;">Home</a> ›
-        <a href="https://freeonlinetools203.com/all-tools.html" style="color:#FFF;text-decoration:none;font-weight:600;">All Tools</a> ›
+  dynView.innerHTML = `
+    <div style="background:linear-gradient(135deg,#1D4ED8 0%,#0F296E 100%);color:#FFF;padding:34px 24px;border-radius:20px;margin:24px auto;max-width:1320px;box-shadow:0 12px 30px rgba(15,41,110,0.2);">
+      <nav style="font-size:0.84rem;margin-bottom:12px;color:#BFDBFE;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <a href="https://freeonlinetools203.com/" onclick="return openHomeView(event)" style="color:#FFF;text-decoration:none;font-weight:700;">🏠 Home</a> ›
+        <a href="?view=all-tools" onclick="return openAllToolsView(event)" style="color:#FFF;text-decoration:none;font-weight:700;">All Tools</a> ›
         <span>${catData.title}</span>
       </nav>
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-        <span style="font-size:2.6rem;background:rgba(255,255,255,0.15);padding:10px 14px;border-radius:16px;">${catData.icon}</span>
-        <div>
-          <h1 style="font-size:clamp(1.7rem,3vw,2.3rem);font-weight:900;margin-bottom:4px;">${catData.title} (${catData.tools.length} Tools)</h1>
-          <p style="color:#E0F2FE;font-size:0.96rem;max-width:720px;">${catData.desc}</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+          <span style="font-size:2.5rem;background:rgba(255,255,255,0.16);padding:10px 14px;border-radius:16px;">${catData.icon}</span>
+          <div>
+            <h1 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;margin-bottom:4px;">${catData.title} (${catData.tools.length} Tools)</h1>
+            <p style="color:#E0F2FE;font-size:0.95rem;max-width:700px;">${catData.desc}</p>
+          </div>
         </div>
+        <button type="button" onclick="openHomeView(event)" style="background:#FACC15;color:#0F172A;border:none;padding:10px 20px;border-radius:999px;font-weight:800;font-size:0.88rem;cursor:pointer;">← Back to Homepage</button>
       </div>
     </div>
 
     <div style="max-width:1320px;margin:0 auto 48px;padding:0 24px;">
       <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:24px;box-shadow:0 6px 20px rgba(15,23,42,0.05);">
-        <input type="text" id="catOnlySearchInput" placeholder="Search inside ${catData.title} only..." style="width:100%;padding:13px 18px;border:1.5px solid #CBD5E1;border-radius:12px;font-size:0.96rem;font-family:inherit;margin-bottom:16px;outline:none;">
+        <input type="text" id="dynCatSearchInput" placeholder="Search inside ${catData.title} only..." style="width:100%;padding:13px 18px;border:1.5px solid #CBD5E1;border-radius:12px;font-size:0.96rem;font-family:inherit;margin-bottom:16px;outline:none;">
 
         ${uniqueSubs.length > 1 ? `
-        <div id="catFilterTabs" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
-          <button type="button" data-sub="all" class="cat-sub-btn active" style="padding:7px 16px;border-radius:999px;border:1px solid #2563EB;background:#2563EB;color:#FFF;font-weight:700;font-size:0.84rem;cursor:pointer;">All (${catData.tools.length})</button>
-          ${uniqueSubs.map(s => `<button type="button" data-sub="${s}" class="cat-sub-btn" style="padding:7px 16px;border-radius:999px;border:1px solid #CBD5E1;background:#F8FAFC;color:#0F172A;font-weight:600;font-size:0.84rem;cursor:pointer;">${s}</button>`).join('')}
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+          <button type="button" data-sub="all" class="dyn-sub-btn" style="padding:7px 16px;border-radius:999px;border:1px solid #2563EB;background:#2563EB;color:#FFF;font-weight:700;font-size:0.84rem;cursor:pointer;">All (${catData.tools.length})</button>
+          ${uniqueSubs.map(s => `<button type="button" data-sub="${s}" class="dyn-sub-btn" style="padding:7px 16px;border-radius:999px;border:1px solid #CBD5E1;background:#F8FAFC;color:#0F172A;font-weight:600;font-size:0.84rem;cursor:pointer;">${s}</button>`).join('')}
         </div>` : ''}
 
-        <div id="catToolsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;"></div>
-
-        <div id="catShowAllWrap" style="text-align:center;margin-top:24px;"></div>
+        <div id="dynCatGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;"></div>
+        <div id="dynCatShowAll" style="text-align:center;margin-top:24px;"></div>
       </div>
 
-      <!-- Related Categories -->
-      <div style="margin-top:32px;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:24px;">
-        <h3 style="font-size:1.1rem;font-weight:800;color:#0F296E;margin-bottom:14px;">Explore Other Tool Categories</h3>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          ${Object.entries(categoryPagesDB).filter(([k]) => k !== slug).slice(0, 8).map(([k, v]) =>
-            `<a href="https://freeonlinetools203.com/category-${k}.html" style="padding:8px 16px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:999px;color:#1D4ED8;font-weight:700;font-size:0.85rem;text-decoration:none;">${v.icon} ${v.title}</a>`
+      <div style="margin-top:28px;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:18px;padding:22px;">
+        <h3 style="font-size:1.05rem;font-weight:800;color:#0F296E;margin-bottom:12px;">Explore Other Categories</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;">
+          ${Object.entries(categoryPagesDB).filter(([k]) => k !== slug).map(([k, v]) =>
+            `<a href="?category=${k}" onclick="return openCategoryView(event, '${k}')" style="padding:8px 15px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:999px;color:#1D4ED8;font-weight:700;font-size:0.84rem;text-decoration:none;">${v.icon} ${v.title}</a>`
           ).join('')}
         </div>
       </div>
     </div>
   `;
 
-  const gridEl = document.getElementById('catToolsGrid');
-  const showAllWrap = document.getElementById('catShowAllWrap');
-  const searchEl = document.getElementById('catOnlySearchInput');
+  const gridEl = document.getElementById('dynCatGrid');
+  const showAllEl = document.getElementById('dynCatShowAll');
+  const searchEl = document.getElementById('dynCatSearchInput');
 
-  function renderCategoryTools() {
+  function renderCatCards() {
     const filtered = catData.tools.filter(t => {
-      const matchSub = currentSub === 'all' || t.sub === currentSub;
-      const matchQuery = t.name.toLowerCase().includes(currentQuery);
-      return matchSub && matchQuery;
+      const mSub = currentSub === 'all' || t.sub === currentSub;
+      const mQ = t.name.toLowerCase().includes(currentQuery);
+      return mSub && mQ;
     });
 
     const isFiltering = currentSub !== 'all' || currentQuery !== '';
-    const visibleList = (showAll || isFiltering) ? filtered : filtered.slice(0, initialLimit);
+    const visible = (showAll || isFiltering) ? filtered : filtered.slice(0, initialLimit);
 
-    if (visibleList.length === 0) {
+    if (visible.length === 0) {
       gridEl.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:24px;color:#64748B;">No tools found inside ${catData.title} matching "${currentQuery}".</div>`;
-      showAllWrap.innerHTML = '';
+      showAllEl.innerHTML = '';
       return;
     }
 
-    gridEl.innerHTML = visibleList.map(t => `
-      <a href="${getUrl(t.name)}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;background:linear-gradient(135deg,#2563EB 0%,#1E3A8A 100%);color:#FFFFFF;border-radius:14px;text-decoration:none;font-weight:700;font-size:0.93rem;box-shadow:0 4px 12px rgba(37,99,235,0.2);transition:transform 0.2s;">
+    gridEl.innerHTML = visible.map(t => `
+      <a href="${getUrl(t.name)}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;background:linear-gradient(135deg,#2563EB 0%,#1E3A8A 100%);color:#FFFFFF;border-radius:14px;text-decoration:none;font-weight:700;font-size:0.93rem;box-shadow:0 4px 12px rgba(37,99,235,0.2);">
         <span>${catData.icon} ${t.name}</span>
         <span>→</span>
       </a>
     `).join('');
 
     if (!isFiltering && filtered.length > initialLimit) {
-      showAllWrap.innerHTML = `<button type="button" id="toggleCatAllBtn" style="padding:11px 28px;background:#EFF6FF;color:#1D4ED8;border:1.5px solid #2563EB;border-radius:999px;font-weight:800;font-size:0.92rem;cursor:pointer;">
+      showAllEl.innerHTML = `<button type="button" id="dynToggleAllBtn" style="padding:11px 28px;background:#EFF6FF;color:#1D4ED8;border:1.5px solid #2563EB;border-radius:999px;font-weight:800;font-size:0.92rem;cursor:pointer;">
         ${showAll ? 'Show Less ↑' : `Show All ${filtered.length} ${catData.title} ↓`}
       </button>`;
-      document.getElementById('toggleCatAllBtn').addEventListener('click', () => {
+      document.getElementById('dynToggleAllBtn').addEventListener('click', () => {
         showAll = !showAll;
-        renderCategoryTools();
+        renderCatCards();
       });
     } else {
-      showAllWrap.innerHTML = '';
+      showAllEl.innerHTML = '';
     }
   }
 
-  renderCategoryTools();
-
-  searchEl.addEventListener('input', function() {
-    currentQuery = this.value.toLowerCase().trim();
-    renderCategoryTools();
+  renderCatCards();
+  searchEl.addEventListener('input', () => {
+    currentQuery = searchEl.value.toLowerCase().trim();
+    renderCatCards();
   });
 
-  document.querySelectorAll('.cat-sub-btn').forEach(btn => {
+  dynView.querySelectorAll('.dyn-sub-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-      document.querySelectorAll('.cat-sub-btn').forEach(b => {
-        b.style.background = '#F8FAFC';
-        b.style.color = '#0F172A';
-        b.style.borderColor = '#CBD5E1';
+      dynView.querySelectorAll('.dyn-sub-btn').forEach(b => {
+        b.style.background = '#F8FAFC'; b.style.color = '#0F172A'; b.style.borderColor = '#CBD5E1';
       });
-      this.style.background = '#2563EB';
-      this.style.color = '#FFFFFF';
-      this.style.borderColor = '#2563EB';
+      this.style.background = '#2563EB'; this.style.color = '#FFFFFF'; this.style.borderColor = '#2563EB';
       currentSub = this.getAttribute('data-sub');
-      renderCategoryTools();
+      renderCatCards();
     });
   });
-}
 
-document.addEventListener('DOMContentLoaded', initDedicatedCategoryPage);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+};
+
+window.openAllToolsView = function(e) {
+  if (e) e.preventDefault();
+  const homeView = document.getElementById('fotHomepageView');
+  const dynView = document.getElementById('fotDynamicViewArea');
+  if (!homeView || !dynView) return false;
+
+  homeView.style.display = 'none';
+  dynView.style.display = 'block';
+  setActiveNavPill('all');
+
+  if (window.history && window.history.pushState) {
+    window.history.pushState({ view: 'all-tools' }, '', '?view=all-tools');
+  }
+
+  let selectedCat = 'all';
+  let alphaMode = false;
+
+  dynView.innerHTML = `
+    <div style="background:linear-gradient(135deg,#1D4ED8 0%,#0F296E 100%);color:#FFF;padding:38px 24px;text-align:center;">
+      <h1 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;margin-bottom:8px;">All 240+ Free Online Tools</h1>
+      <p style="color:#E0F2FE;max-width:650px;margin:0 auto 20px;">Search any tool, filter by category, or switch to A–Z alphabetical view.</p>
+      <div style="max-width:740px;margin:0 auto;display:flex;gap:8px;background:#FFF;padding:6px;border-radius:999px;flex-wrap:wrap;">
+        <input type="text" id="dynAllSearch" placeholder="Search all 240+ tools by name..." style="flex:1;min-width:200px;border:none;outline:none;padding:10px 18px;font-size:0.96rem;border-radius:999px;">
+        <button type="button" id="dynAlphaToggle" style="background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE;padding:10px 18px;border-radius:999px;font-weight:800;cursor:pointer;">A–Z View</button>
+        <button type="button" onclick="openHomeView(event)" style="background:#FACC15;color:#0F172A;border:none;padding:10px 18px;border-radius:999px;font-weight:800;cursor:pointer;">← Home</button>
+      </div>
+    </div>
+
+    <div style="max-width:1320px;margin:24px auto 48px;padding:0 24px;">
+      <div id="dynAllPills" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px;"></div>
+      <div id="dynAllArea"></div>
+    </div>
+  `;
+
+  const pillsEl = document.getElementById('dynAllPills');
+  const areaEl = document.getElementById('dynAllArea');
+  const searchEl = document.getElementById('dynAllSearch');
+  const alphaBtn = document.getElementById('dynAlphaToggle');
+
+  pillsEl.innerHTML = `<button type="button" data-c="all" class="dyn-at-pill" style="padding:8px 16px;border-radius:999px;border:1px solid #2563EB;background:#2563EB;color:#FFF;font-weight:700;font-size:0.84rem;cursor:pointer;">All Categories (16)</button>` +
+    Object.entries(categoryPagesDB).map(([k, v]) =>
+      `<button type="button" data-c="${k}" class="dyn-at-pill" style="padding:8px 16px;border-radius:999px;border:1px solid #CBD5E1;background:#FFF;color:#0F172A;font-weight:600;font-size:0.84rem;cursor:pointer;">${v.icon} ${v.title}</button>`
+    ).join('');
+
+  function renderAllArea() {
+    const q = searchEl.value.toLowerCase().trim();
+    if (alphaMode) {
+      const allSorted = Object.entries(toolUrlMap)
+        .filter(([name]) => name.toLowerCase().includes(q))
+        .sort((a, b) => a[0].localeCompare(b[0]));
+
+      areaEl.innerHTML = `<div style="background:#FFF;border:1px solid #E2E8F0;border-radius:18px;padding:24px;">
+        <h2 style="font-size:1.3rem;font-weight:800;color:#0F296E;margin-bottom:16px;">Alphabetical A–Z Directory (${allSorted.length} Tools)</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;">
+          ${allSorted.map(([name, file]) => `<a href="https://freeonlinetools203.com/${file}" style="padding:13px 16px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;color:#1E3A8A;font-weight:700;font-size:0.9rem;text-decoration:none;display:flex;justify-content:space-between;"><span>${name}</span><span>→</span></a>`).join('')}
+        </div>
+      </div>`;
+      return;
+    }
+
+    let html = '';
+    Object.entries(categoryPagesDB).forEach(([k, v]) => {
+      if (selectedCat !== 'all' && selectedCat !== k) return;
+      const matches = v.tools.filter(t => t.name.toLowerCase().includes(q));
+      if (matches.length === 0) return;
+
+      html += `<section style="background:#FFF;border:1px solid #E2E8F0;border-radius:18px;padding:24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+          <h2 style="font-size:1.25rem;font-weight:800;color:#0F296E;">${v.icon} ${v.title} (${matches.length})</h2>
+          <a href="?category=${k}" onclick="return openCategoryView(event, '${k}')" style="color:#2563EB;font-weight:700;font-size:0.86rem;text-decoration:none;">Open ${v.title} Page →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:12px;">
+          ${matches.map(t => `<a href="${getUrl(t.name)}" style="padding:13px 16px;background:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #2563EB;border-radius:11px;color:#0F172A;font-weight:700;font-size:0.88rem;text-decoration:none;display:flex;justify-content:space-between;"><span>${t.name}</span><span style="color:#2563EB;">→</span></a>`).join('')}
+        </div>
+      </section>`;
+    });
+
+    areaEl.innerHTML = html || `<div style="text-align:center;padding:30px;background:#FFF;border-radius:16px;color:#64748B;">No tools matched "${q}".</div>`;
+  }
+
+  renderAllArea();
+  searchEl.addEventListener('input', renderAllArea);
+  alphaBtn.addEventListener('click', () => {
+    alphaMode = !alphaMode;
+    alphaBtn.textContent = alphaMode ? 'Category View' : 'A–Z View';
+    renderAllArea();
+  });
+
+  pillsEl.addEventListener('click', ev => {
+    if (ev.target.classList.contains('dyn-at-pill')) {
+      alphaMode = false;
+      alphaBtn.textContent = 'A–Z View';
+      pillsEl.querySelectorAll('.dyn-at-pill').forEach(b => {
+        b.style.background = '#FFF'; b.style.color = '#0F172A'; b.style.borderColor = '#CBD5E1';
+      });
+      ev.target.style.background = '#2563EB'; ev.target.style.color = '#FFF'; ev.target.style.borderColor = '#2563EB';
+      selectedCat = ev.target.getAttribute('data-c');
+      renderAllArea();
+    }
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+};
+
+// =========================================================================
+// 6. INITIALIZATION, THEME TOGGLE, SUB-PAGE HEADER & SCROLL ANIMATIONS
+// =========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  initHeroAgeCalculator();
+
+  // Live search listener
+  const searchInput = document.getElementById('tsInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', window.tsSearch);
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        window.tsSearch();
+      }
+    });
+  }
+
+  // Light / Dark Mode Toggle
+  const themeBtn = document.getElementById('fotThemeBtn');
+  if (localStorage.getItem('fotTheme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('fotTheme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+  }
+
+  // Mobile Menu Toggle
+  const mobileBtn = document.getElementById('fotMobileBtn');
+  const mainNav = document.getElementById('fotMainNav');
+  if (mobileBtn && mainNav) {
+    mobileBtn.addEventListener('click', function() {
+      mainNav.classList.toggle('mobile-open');
+    });
+  }
+
+  // Handle direct URL visits like ?category=age-calculators or ?view=all-tools
+  const params = new URLSearchParams(window.location.search);
+  const catParam = params.get('category');
+  const viewParam = params.get('view');
+  if (catParam && categoryPagesDB[catParam]) {
+    window.openCategoryView(null, catParam);
+  } else if (viewParam === 'all-tools') {
+    window.openAllToolsView(null);
+  }
+
+  // Inject Unified Blue & White Header on Individual Tool Sub-Pages
+  if (!document.querySelector('.fot-topbar')) {
+    const oldNav = document.querySelector('.navbar, .megamenu-container');
+    if (oldNav) oldNav.remove();
+
+    const subPageHeader = `
+    <header style="background:#FFFFFF;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(15,23,42,0.05);font-family:'Inter',sans-serif;">
+      <div style="max-width:1320px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <a href="https://freeonlinetools203.com/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+          <span style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2563EB,#1E3A8A);color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-weight:900;">🛠️</span>
+          <span>
+            <strong style="display:block;font-size:1.1rem;color:#0F296E;">FreeOnlineTools203.com</strong>
+            <small style="display:block;font-size:0.7rem;color:#475569;font-weight:600;">240+ Free Online Tools • Fast • Easy • 100% Free</small>
+          </span>
+        </a>
+        <nav style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+          <a href="https://freeonlinetools203.com/" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">Home</a>
+          <a href="https://freeonlinetools203.com/?view=all-tools" style="background:#2563EB;color:#FFF;padding:7px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.88rem;">All Tools (240+)</a>
+          <a href="https://freeonlinetools203.com/about.html" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">About</a>
+          <a href="https://freeonlinetools203.com/contact.html" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">Contact</a>
+        </nav>
+      </div>
+    </header>`;
+    document.body.insertAdjacentHTML('afterbegin', subPageHeader);
+  }
+
+  // Subtle Scroll Reveal Animation
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('.fot-reveal, .section, .reviews-section, .seo-article-wrap');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fot-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    revealTargets.forEach(el => {
+      el.classList.add('fot-reveal');
+      observer.observe(el);
+    });
+  }
+});
+
+window.addEventListener('popstate', function() {
+  const params = new URLSearchParams(window.location.search);
+  const catParam = params.get('category');
+  const viewParam = params.get('view');
+  if (catParam && categoryPagesDB[catParam]) window.openCategoryView(null, catParam);
+  else if (viewParam === 'all-tools') window.openAllToolsView(null);
+  else window.openHomeView(null);
+});
