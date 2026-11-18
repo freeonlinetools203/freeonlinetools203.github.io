@@ -276,3 +276,18 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
 #fotHomepageView .fot-promo-banner{padding:14px 5%;margin-top:6px}
 #fotHomepageView .fot-trophy-icon{font-size:2.6rem}
 #fotHomepageView .fot-promo-left h2{font-size:1.4rem}
+
+/* =====================================================================
+   POORI CHAURAI: zoom ke baad dono taraf ki khali jagah bhar do
+   ===================================================================== */
+@media (min-width:1000px){
+  body:has(#fotHomepageView) .fot-topbar-inner,
+  #fotHomepageView .fot-hero-grid,
+  #fotHomepageView .fot-main-container,
+  #fotHomepageView .fot-search-floating-wrap{max-width:1880px}
+  #fotHomepageView .fot-hero-left h1{font-size:clamp(2rem,3.2vw,3.4rem)}
+}
+/* 15va card (Productivity) homepage se chhupao, menu me maujood rahega */
+@media (min-width:1000px){
+  #fotHomepageView .fot-categories-grid a[href*="category=productivity"]{display:none}
+}
