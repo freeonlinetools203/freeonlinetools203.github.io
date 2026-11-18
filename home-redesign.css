@@ -291,3 +291,60 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
 @media (min-width:1000px){
   #fotHomepageView .fot-categories-grid a[href*="category=productivity"]{display:none}
 }
+
+/* =====================================================================
+   ASLI ICONS (image wale) + SEARCH CHHOTA + ROBOT FADE
+   Icons "icons" folder me hain (home-redesign.css ke saath wale folder me)
+   ===================================================================== */
+/* --- search bar chhota, calculator bara --- */
+@media (min-width:1000px){
+  #fotHomepageView .fot-search-floating-wrap{max-width:860px}
+  #fotHomepageView .fot-hero-grid{grid-template-columns:1.05fr .95fr 1.2fr}
+  #fotHomepageView .fot-age-card-head h2{font-size:1.8rem}
+  #fotHomepageView .fot-age-card-head{padding:12px 14px}
+  #fotHomepageView .fot-age-sub{font-size:1.05rem;margin-bottom:10px}
+  #fotHomepageView .fot-dob-selects select{padding:9px 10px;font-size:1.05rem}
+  #fotHomepageView .fot-age-calc-btn{padding:12px;font-size:1.3rem}
+  #fotHomepageView .fot-age-result-pill{padding:10px 14px}
+  #fotHomepageView .fot-age-result-text strong{font-size:1.1rem}
+}
+/* --- robot ka neeche wala hissa narmi se gayab --- */
+#fotHomepageView .fot-robot-img{
+  -webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 97%);
+          mask-image:linear-gradient(to bottom,#000 60%,transparent 97%);
+}
+/* --- category icons --- */
+#fotHomepageView .fot-cat-icon,#fotHomepageView .fot-pop-icon,
+#fotHomepageView .fot-trophy-icon,#fotHomepageView .fot-pstat-icon{
+  font-size:0 !important;color:transparent;background-color:transparent !important;
+  background-repeat:no-repeat;background-position:center;background-size:contain;
+  border:0;box-shadow:none;flex:none;
+}
+#fotHomepageView .fot-cat-icon{width:42px;height:42px;filter:drop-shadow(0 3px 3px rgba(0,0,0,.2))}
+#fotHomepageView .fot-pop-icon{width:44px;height:44px}
+#fotHomepageView .fot-trophy-icon{display:inline-block;width:86px;height:72px}
+#fotHomepageView .fot-pstat-icon{display:inline-block;width:34px;height:34px}
+#fotHomepageView a[href="?category=calculators"] .fot-cat-icon{background-image:url("icons/cat-calculators.png")}
+#fotHomepageView a[href="?category=pdf-tools"] .fot-cat-icon{background-image:url("icons/cat-pdf-tools.png")}
+#fotHomepageView a[href="?category=image-tools"] .fot-cat-icon{background-image:url("icons/cat-image-tools.png")}
+#fotHomepageView a[href="?category=youtube-tools"] .fot-cat-icon{background-image:url("icons/cat-youtube-tools.png")}
+#fotHomepageView a[href="?category=seo-tools"] .fot-cat-icon{background-image:url("icons/cat-seo-tools.png")}
+#fotHomepageView a[href="?category=text-tools"] .fot-cat-icon{background-image:url("icons/cat-text-tools.png")}
+#fotHomepageView a[href="?category=financial-tools"] .fot-cat-icon{background-image:url("icons/cat-financial-tools.png")}
+#fotHomepageView a[href="?category=health-tools"] .fot-cat-icon{background-image:url("icons/cat-health-tools.png")}
+#fotHomepageView a[href="?category=age-calculators"] .fot-cat-icon{background-image:url("icons/cat-age-calculators.png")}
+#fotHomepageView a[href="?category=random-fun"] .fot-cat-icon{background-image:url("icons/cat-random-fun.png")}
+#fotHomepageView a[href="?category=pet-animal"] .fot-cat-icon{background-image:url("icons/cat-pet-animal.png")}
+#fotHomepageView a[href="?category=date-time"] .fot-cat-icon{background-image:url("icons/cat-date-time.png")}
+#fotHomepageView a[href="?category=developer-tools"] .fot-cat-icon{background-image:url("icons/cat-developer-tools.png")}
+#fotHomepageView a[href="?category=color-tools"] .fot-cat-icon{background-image:url("icons/cat-color-tools.png")}
+#fotHomepageView .fot-popular-grid .fot-pop-card:nth-child(1) .fot-pop-icon{background-image:url("icons/pop-age.png")}
+#fotHomepageView .fot-popular-grid .fot-pop-card:nth-child(2) .fot-pop-icon{background-image:url("icons/pop-bmi.png")}
+#fotHomepageView .fot-popular-grid .fot-pop-card:nth-child(3) .fot-pop-icon{background-image:url("icons/pop-pdf.png")}
+#fotHomepageView .fot-popular-grid .fot-pop-card:nth-child(4) .fot-pop-icon{background-image:url("icons/pop-image.png")}
+#fotHomepageView .fot-popular-grid .fot-pop-card:nth-child(5) .fot-pop-icon{background-image:url("icons/pop-youtube.png")}
+#fotHomepageView .fot-popular-grid .fot-pop-card:nth-child(6) .fot-pop-icon{background-image:url("icons/pop-qr.png")}
+#fotHomepageView .fot-trophy-icon{background-image:url("icons/promo-trophy.png")}
+#fotHomepageView .fot-pstat:nth-child(1) .fot-pstat-icon{background-image:url("icons/promo-users.png")}
+#fotHomepageView .fot-pstat:nth-child(2) .fot-pstat-icon{background-image:url("icons/promo-tools.png")}
+#fotHomepageView .fot-pstat:nth-child(3) .fot-pstat-icon{background-image:url("icons/promo-heart.png")}
