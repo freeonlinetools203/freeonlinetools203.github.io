@@ -240,7 +240,7 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
    0.7 = aur chhota,  0.85 = thoda bara,  1 = asli size
    ===================================================================== */
 @media (min-width:1000px){
-  body:has(#fotHomepageView){zoom:0.78}
+  body:has(#fotHomepageView){zoom:0.7}
 }
 
 /* hero aur patla */
@@ -249,3 +249,30 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
 #fotHomepageView .fot-hero-desc{margin-bottom:8px}
 #fotHomepageView .fot-robot-img{max-width:330px}
 #fotHomepageView .fot-hero-wrapper::after{height:36px}
+
+/* =====================================================================
+   SAB KUCH EK SCREEN ME: khali jagah kam + Popular Tools patla
+   ===================================================================== */
+#fotHomepageView .fot-search-floating-wrap{margin-top:-30px;margin-bottom:6px}
+#fotHomepageView .fot-main-container{padding-top:0}
+#fotHomepageView .fot-main-container > section{margin-top:6px !important;margin-bottom:6px !important;padding-top:0 !important;padding-bottom:0 !important}
+#fotHomepageView .fot-section-header-center{margin-bottom:8px;margin-top:0}
+#fotHomepageView .fot-section-pill-title{font-size:1.05rem;padding:5px 24px}
+#fotHomepageView .fot-popular-header{margin-bottom:8px}
+#fotHomepageView .fot-popular-badge{font-size:1rem;padding:5px 20px}
+
+/* categories cards thode patle */
+#fotHomepageView .fot-cat-card{min-height:58px;padding:7px 8px}
+#fotHomepageView .fot-cat-icon{font-size:1.6rem}
+
+/* Most Popular cards patle */
+#fotHomepageView .fot-pop-card{padding:8px 10px;gap:4px}
+#fotHomepageView .fot-pop-icon{width:32px;height:32px;font-size:1.1rem}
+#fotHomepageView .fot-pop-card h3{font-size:.85rem}
+#fotHomepageView .fot-pop-card p{font-size:.7rem;line-height:1.25;margin:0}
+#fotHomepageView .fot-try-btn{padding:4px 14px;font-size:.75rem}
+
+/* neeche ka blue banner patla */
+#fotHomepageView .fot-promo-banner{padding:14px 5%;margin-top:6px}
+#fotHomepageView .fot-trophy-icon{font-size:2.6rem}
+#fotHomepageView .fot-promo-left h2{font-size:1.4rem}
