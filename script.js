@@ -1159,3 +1159,127 @@ function enhanceIndividualToolPage() {
     document.body.insertAdjacentHTML('beforeend', unifiedFooter);
   }
 }
+
+// =========================================================================
+// UNIVERSAL HARDCODED FOOTER REMOVER (100% CLEANER FOR ALL TOOL PAGES)
+// =========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const isHomepage = document.getElementById('fotHomepageView') !== null;
+  const isDynamicView = document.getElementById('fotDynamicViewArea') !== null;
+  
+  if (!isHomepage && !isDynamicView) {
+    // 1. Purane hardcoded footers ko dhoond kar foran hatao
+    const oldFooters = document.querySelectorAll('.simple-links-wrap, .age-calc-related-section');
+    oldFooters.forEach(el => el.remove());
+    
+    // 2. Agar koi aur purana footer ya container bach gaya ho toh use bhi uda do
+    const extraLegacyFooters = document.querySelectorAll('div > .container > style + div');
+    extraLegacyFooters.forEach(el => {
+      if (el.textContent && el.textContent.includes('Age Calculator Tools')) {
+        el.parentElement.remove();
+      }
+    });
+  }
+});
+
+// =========================================================================
+// UNIVERSAL HARDCODED FOOTER REMOVER (100% CLEANER FOR ALL TOOL PAGES)
+// =========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const isHomepage = document.getElementById('fotHomepageView') !== null;
+  const isDynamicView = document.getElementById('fotDynamicViewArea') !== null;
+  
+  if (!isHomepage && !isDynamicView) {
+    // 1. Purane hardcoded footers ko dhoond kar foran hatao
+    const oldFooters = document.querySelectorAll('.simple-links-wrap, .age-calc-related-section');
+    oldFooters.forEach(el => el.remove());
+    
+    // 2. Agar koi aur purana footer ya container bach gaya ho toh use bhi uda do
+    const extraLegacyFooters = document.querySelectorAll('div > .container > style + div');
+    extraLegacyFooters.forEach(el => {
+      if (el.textContent && el.textContent.includes('Age Calculator Tools')) {
+        el.parentElement.remove();
+      }
+    });
+  }
+});
+
+// =========================================================================
+// OLD CATEGORY FOOTERS REMOVER (ALL TOOL PAGES)
+// Purane hardcoded footers (Age, Colors, Wheel, Basic, etc.) hat jayenge.
+// Naya "Related Tools" (.fot-related-tools-section) aur .fot-footer rahenge.
+// =========================================================================
+(function removeOldCategoryFooters() {
+  function isToolPage() {
+    return !document.getElementById('fotHomepageView') &&
+           !document.getElementById('fotDynamicViewArea');
+  }
+
+  const KEEP = '.fot-related-tools-section, .fot-footer, .fot-breadcrumbs, .fot-topbar';
+  const isProtected = el => !el || el.matches(KEEP) || el.closest(KEEP) || el.querySelector(KEEP);
+
+  function removeEl(el) {
+    if (!el || !el.parentElement || isProtected(el)) return;
+    const parent = el.parentElement;
+    el.remove();
+    // Agar wrapper .container khali reh gaya ho to use bhi hatao
+    if (parent !== document.body && parent.classList.contains('container') &&
+        !parent.textContent.trim() && !parent.querySelector('canvas,input,button,select,textarea,iframe,img')) {
+      parent.remove();
+    }
+  }
+
+  function run() {
+    if (!isToolPage() || !document.body) return;
+
+    // 1) Comment markers: <!-- ... FOOTER START --> ... <!-- ... FOOTER END -->
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_COMMENT);
+    const starts = [];
+    while (walker.nextNode()) {
+      if (/FOOTER\s+START/i.test(walker.currentNode.nodeValue)) starts.push(walker.currentNode);
+    }
+    starts.forEach(startNode => {
+      const toRemove = [];
+      let n = startNode.nextSibling, closed = false;
+      while (n) {
+        if (n.nodeType === 8 && /FOOTER\s+END/i.test(n.nodeValue)) { closed = true; break; }
+        toRemove.push(n);
+        n = n.nextSibling;
+      }
+      if (!closed) return;
+      if (toRemove.some(x => x.nodeType === 1 && isProtected(x))) return;
+      const endNode = n;
+      toRemove.forEach(x => x.remove());
+      startNode.remove();
+      if (endNode) endNode.remove();
+    });
+
+    // 2) Class based: simple-links-wrap, xxx-related-section (age-calc, clr, etc.)
+    document.querySelectorAll('.simple-links-wrap, [class$="-related-section"], [class*="-related-section "]')
+      .forEach(removeEl);
+
+    // 3) Text based: "Total 41 ... Tools" + "Page 1 of 6" wala box (kisi bhi prefix ke sath)
+    const totalRe = /Total\s+\d+\s+[^\n]{0,40}?Tools/i;
+    const pageRe  = /Page\s+\d+\s+of\s+\d+/i;
+    const cands = Array.from(document.querySelectorAll('div, section, aside')).filter(el => {
+      if (isProtected(el) || el.querySelector('footer, nav, header')) return false;
+      const t = el.textContent || '';
+      return totalRe.test(t) && pageRe.test(t);
+    });
+    cands.filter(el => !cands.some(o => o !== el && el.contains(o))).forEach(box => {
+      let prev = box.previousElementSibling;
+      while (prev && (prev.textContent || '').length < 200 &&
+             /Click any|interactive (spinners|tools)/i.test(prev.textContent)) {
+        const r = prev; prev = prev.previousElementSibling; r.remove();
+      }
+      removeEl(box);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    run();
+    let tries = 0;
+    const timer = setInterval(function () { run(); if (++tries >= 10) clearInterval(timer); }, 500);
+    new MutationObserver(run).observe(document.body, { childList: true, subtree: true });
+  });
+})();
