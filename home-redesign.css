@@ -214,3 +214,22 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
   #fotHomepageView .fot-hero-left h1{font-size:2.1rem}
   #fotHomepageView .fot-robot-img{max-width:280px}
 }
+
+/* =====================================================================
+   CATEGORIES FIX: 7 cards screen ke andar, naam ek line me
+   ===================================================================== */
+#fotHomepageView .fot-categories-grid{
+  grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;padding:10px;
+}
+#fotHomepageView .fot-cat-card{padding:10px 8px;gap:4px;min-height:68px;min-width:0}
+#fotHomepageView .fot-cat-left{gap:6px;min-width:0}
+#fotHomepageView .fot-cat-icon{font-size:1.9rem}
+#fotHomepageView .fot-cat-info{min-width:0}
+#fotHomepageView .fot-cat-info h3{font-size:.8rem;line-height:1.15;white-space:normal}
+#fotHomepageView .fot-cat-info span{font-size:.7rem}
+#fotHomepageView .fot-cat-arrow{width:22px;height:22px;font-size:.75rem}
+#fotHomepageView .fot-popular-tag{font-size:.6rem;padding:2px 8px}
+#fotHomepageView .fot-section-pill-title{font-size:1.2rem;padding:6px 28px}
+@media (min-width:1181px){
+  #fotHomepageView .fot-main-container{max-width:1320px;overflow-x:clip}
+}
