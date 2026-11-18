@@ -233,3 +233,19 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
 @media (min-width:1181px){
   #fotHomepageView .fot-main-container{max-width:1320px;overflow-x:clip}
 }
+
+/* =====================================================================
+   POORA HOMEPAGE CHHOTA (zoom) taake sab kuch ek screen me nazar aaye
+   Bara chhota karna ho to neeche 0.78 ko badlein:
+   0.7 = aur chhota,  0.85 = thoda bara,  1 = asli size
+   ===================================================================== */
+@media (min-width:1000px){
+  body:has(#fotHomepageView){zoom:0.78}
+}
+
+/* hero aur patla */
+#fotHomepageView .fot-hero-wrapper{padding:12px 24px 40px}
+#fotHomepageView .fot-hero-left h1{font-size:clamp(1.8rem,3.2vw,3rem);margin-bottom:6px}
+#fotHomepageView .fot-hero-desc{margin-bottom:8px}
+#fotHomepageView .fot-robot-img{max-width:330px}
+#fotHomepageView .fot-hero-wrapper::after{height:36px}
