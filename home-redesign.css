@@ -476,3 +476,8 @@ body:has(#fotHomepageView) .fot-logo-badge svg{display:none}
   #fotHomepageView .fot-age-full-link{margin-top:7px;padding:6px 10px;font-size:.82rem}
   #fotHomepageView .fot-search-floating-wrap{margin-bottom:14px}
 }
+
+/* ROUND 12 */
+@media (min-width:1000px){
+  #fotHomepageView .fot-dob-selects select{padding-left:38px}
+}
