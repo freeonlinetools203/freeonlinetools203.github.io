@@ -981,31 +981,109 @@ document.addEventListener('DOMContentLoaded', function() {
     window.openAllToolsView(null);
   }
 
-  // Inject Unified Blue & White Header on Individual Tool Sub-Pages
-  if (!document.querySelector('.fot-topbar')) {
-    const oldNav = document.querySelector('.navbar, .megamenu-container');
-    if (oldNav) oldNav.remove();
+  // Unified header on ALL sub-pages (tool pages + AdSense pages): ek hi header, double nahi
+  (function injectUnifiedHeader() {
+    if (document.querySelector('.fot-topbar')) return;            // homepage ka apna header hai
+    if (document.getElementById('fotSubHeader')) return;          // pehle se laga hai
 
-    const subPageHeader = `
-    <header style="background:#FFFFFF;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(15,23,42,0.05);font-family:'Inter',sans-serif;">
-      <div style="max-width:1320px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-        <a href="https://freeonlinetools203.com/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-          <span style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2563EB,#1E3A8A);color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-weight:900;">🛠️</span>
-          <span>
-            <strong style="display:block;font-size:1.1rem;color:#0F296E;">FreeOnlineTools203.com</strong>
-            <small style="display:block;font-size:0.7rem;color:#475569;font-weight:600;">240+ Free Online Tools • Fast • Easy • 100% Free</small>
-          </span>
-        </a>
-        <nav style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-          <a href="https://freeonlinetools203.com/" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">Home</a>
-          <a href="https://freeonlinetools203.com/?view=all-tools" style="background:#2563EB;color:#FFF;padding:7px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.88rem;">All Tools (240+)</a>
-          <a href="https://freeonlinetools203.com/about.html" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">About</a>
-          <a href="https://freeonlinetools203.com/contact.html" style="color:#0F172A;text-decoration:none;font-weight:600;font-size:0.9rem;">Contact</a>
-        </nav>
-      </div>
-    </header>`;
-    document.body.insertAdjacentHTML('afterbegin', subPageHeader);
-  }
+    // Purane / doosre headers hatao taake double na ho
+    document.querySelectorAll('.navbar, .megamenu-container').forEach(el => el.remove());
+    Array.from(document.body.children).forEach(el => {
+      if (el.tagName === 'HEADER' && el.id !== 'fotSubHeader') {
+        const t = (el.textContent || '');
+        if (/Home/i.test(t) && /(About|Contact|Tools)/i.test(t)) el.remove();
+      }
+    });
+
+    const base = 'https://freeonlinetools203.com';
+    const path = location.pathname.replace(/\/+$/, '') || '/';
+    const adPages = [
+      ['/about.html', 'ℹ️ About Us'], ['/contact.html', '📧 Contact Us'],
+      ['/privacy-policy.html', '🔒 Privacy Policy'], ['/terms-conditions.html', '📜 Terms & Conditions'],
+      ['/disclaimer.html', '⚠️ Disclaimer']
+    ];
+    const cats = [
+      ['calculators','🧮 Calculators'],['pdf-tools','📄 PDF Tools'],['image-tools','🖼️ Image Tools'],
+      ['youtube-tools','🎬 YouTube Tools'],['seo-tools','🔍 SEO Tools'],['text-tools','📝 Text Tools'],
+      ['financial-tools','💰 Financial Tools'],['health-tools','❤️ Health Tools'],['age-calculators','📅 Age Calculators'],
+      ['random-fun','🎲 Random & Fun'],['pet-animal','🐾 Pet & Animal Tools'],['date-time','⏰ Date & Time Tools'],
+      ['developer-tools','💻 Developer Tools'],['color-tools','🎨 Color Tools'],['social-media','📱 Social Media Tools'],
+      ['productivity','📗 Productivity & Excel Tools']
+    ];
+    const isAdPage = adPages.some(p => path === p[0]);
+    const adHtml = adPages.map(p => `<a href="${base}${p[0]}"${path === p[0] ? ' class="cur"' : ''}>${p[1]}</a>`).join('');
+    const catHtml = `<a href="${base}/?view=all-tools" class="all">📂 Browse All 240+ Tools Directory →</a>` +
+      cats.map(c => `<a href="${base}/?category=${c[0]}">${c[1]}</a>`).join('');
+
+    const css = `
+#fotSubHeader{background:linear-gradient(180deg,#e6f3ff,#d4e9ff);border-bottom:1px solid #c7ddf5;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(15,23,42,.06);font-family:'Inter','Segoe UI',Arial,sans-serif}
+#fotSubHeader *{box-sizing:border-box}
+#fotSubHeader .sh-in{max-width:1320px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+#fotSubHeader .sh-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+#fotSubHeader .sh-logo img{width:46px;height:46px;object-fit:contain}
+#fotSubHeader .sh-logo strong{display:block;font-size:1.1rem;color:#0F296E;font-weight:800}
+#fotSubHeader .sh-logo small{display:block;font-size:.7rem;color:#475569;font-weight:600}
+#fotSubHeader ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+#fotSubHeader li{position:relative}
+#fotSubHeader .sh-link{display:inline-block;padding:8px 14px;border-radius:999px;color:#0F172A;text-decoration:none;font-weight:700;font-size:.9rem;cursor:pointer}
+#fotSubHeader .sh-link:hover{background:rgba(37,99,235,.1);color:#1D4ED8}
+#fotSubHeader .sh-link.home{background:linear-gradient(180deg,#2f7bff,#1546d6);color:#fff;box-shadow:0 4px 10px rgba(21,70,214,.3)}
+#fotSubHeader li.active > .sh-link{background:rgba(37,99,235,.14);color:#1D4ED8}
+#fotSubHeader .sh-menu{display:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid #E2E8F0;border-radius:12px;box-shadow:0 12px 28px rgba(15,23,42,.18);padding:8px;z-index:1100}
+#fotSubHeader .sh-menu a{display:block;padding:9px 12px;border-radius:8px;color:#0F172A;text-decoration:none;font-weight:600;font-size:.86rem;white-space:nowrap}
+#fotSubHeader .sh-menu a:hover,#fotSubHeader .sh-menu a.cur{background:#EFF6FF;color:#1D4ED8}
+#fotSubHeader .sh-menu.mega{width:520px;grid-template-columns:1fr 1fr;gap:2px}
+#fotSubHeader .sh-menu.mega a.all{grid-column:1/-1;background:#EFF6FF;color:#1D4ED8}
+#fotSubHeader li:hover > .sh-menu,#fotSubHeader li.open > .sh-menu{display:block}
+#fotSubHeader li:hover > .sh-menu.mega,#fotSubHeader li.open > .sh-menu.mega{display:grid}
+@media (max-width:760px){
+  #fotSubHeader .sh-in{padding:8px 12px}
+  #fotSubHeader .sh-menu,#fotSubHeader .sh-menu.mega{position:fixed;left:8px;right:8px;top:auto;width:auto;max-height:70vh;overflow:auto}
+  #fotSubHeader .sh-menu.mega{grid-template-columns:1fr}
+}`;
+
+    const header = `
+<header id="fotSubHeader">
+  <div class="sh-in">
+    <a class="sh-logo" href="${base}/">
+      <img src="${base}/logo.png" alt="FreeOnlineTools203.com" onerror="this.style.display='none'">
+      <span><strong>FreeOnlineTools203.com</strong><small>240+ Free Online Tools • Fast • Easy • 100% Free</small></span>
+    </a>
+    <nav><ul>
+      <li><a class="sh-link home" href="${base}/">🏠 Home</a></li>
+      <li class="${isAdPage ? 'active' : ''}" data-dd><a class="sh-link" href="${base}/about.html">AdSense Pages ▾</a><div class="sh-menu">${adHtml}</div></li>
+      <li data-dd><a class="sh-link" href="${base}/?view=all-tools">All Tools ▾</a><div class="sh-menu mega">${catHtml}</div></li>
+      <li><a class="sh-link" href="${base}/about.html">About</a></li>
+      <li><a class="sh-link" href="${base}/contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>`;
+
+    if (!document.getElementById('fotSubHeaderStyle')) {
+      const st = document.createElement('style'); st.id = 'fotSubHeaderStyle'; st.textContent = css;
+      document.head.appendChild(st);
+    }
+    document.body.insertAdjacentHTML('afterbegin', header);
+
+    // Mobile/touch: tap se dropdown khule
+    document.querySelectorAll('#fotSubHeader li[data-dd] > a').forEach(a => {
+      a.addEventListener('click', function (e) {
+        if (window.matchMedia('(hover: none)').matches) {
+          const li = a.parentElement;
+          if (!li.classList.contains('open')) {
+            e.preventDefault();
+            document.querySelectorAll('#fotSubHeader li.open').forEach(x => x.classList.remove('open'));
+            li.classList.add('open');
+          }
+        }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('#fotSubHeader li[data-dd]')) {
+        document.querySelectorAll('#fotSubHeader li.open').forEach(x => x.classList.remove('open'));
+      }
+    });
+  })();
 
   // Subtle Scroll Reveal Animation
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
