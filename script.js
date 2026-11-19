@@ -1135,8 +1135,20 @@ function enhanceIndividualToolPage() {
   let foundCategoryTitle = 'Calculators';
   let toolDisplayName = document.title.split('—')[0].split('|')[0].trim() || "Tool";
 
+  // AdSense / legal pages: inke related me tools nahi, baqi pages dikhenge
+  const AD_PAGES = {
+    'about.html':          { icon: '\u2139\uFE0F', name: 'About Us',            desc: 'Learn who we are, our mission and why our tools are free.' },
+    'contact.html':        { icon: '\uD83D\uDCE7', name: 'Contact Us',          desc: 'Get in touch for questions, feedback or suggestions.' },
+    'privacy-policy.html': { icon: '\uD83D\uDD12', name: 'Privacy Policy',      desc: 'How we handle your data, cookies and advertising.' },
+    'terms-conditions.html':{ icon: '\uD83D\uDCDC', name: 'Terms & Conditions',  desc: 'The rules for using our website and free tools.' },
+    'disclaimer.html':     { icon: '\u26A0\uFE0F', name: 'Disclaimer',          desc: 'Important notes about the accuracy of our tools.' }
+  };
+  const adKey = AD_PAGES[currentPath] ? currentPath : (AD_PAGES[currentPath + '.html'] ? currentPath + '.html' : '');
+  const adInfo = adKey ? AD_PAGES[adKey] : null;
+  if (adInfo) { foundCategoryTitle = 'AdSense Pages'; toolDisplayName = adInfo.name; }
+
   // Find which category this tool belongs to in categoryPagesDB
-  if (typeof categoryPagesDB !== 'undefined') {
+  if (!adInfo && typeof categoryPagesDB !== 'undefined') {
     for (const [catKey, catObj] of Object.entries(categoryPagesDB)) {
       const match = catObj.tools.find(t => getUrl(t.name).includes(currentPath));
       if (match) {
@@ -1154,7 +1166,7 @@ function enhanceIndividualToolPage() {
       <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
         <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;color:#475569;font-weight:600;">
           <a href="https://freeonlinetools203.com/" style="color:#2563EB;text-decoration:none;">🏠 Home</a> › 
-          <a href="https://freeonlinetools203.com/?category=${foundCategoryKey}" style="color:#2563EB;text-decoration:none;">${foundCategoryTitle}</a> › 
+          <a href="${adInfo ? 'https://freeonlinetools203.com/about.html' : 'https://freeonlinetools203.com/?category=' + foundCategoryKey}" style="color:#2563EB;text-decoration:none;">${foundCategoryTitle}</a> › 
           <span style="color:#0F172A;">${toolDisplayName}</span>
         </div>
       </div>`;
@@ -1165,8 +1177,40 @@ function enhanceIndividualToolPage() {
     }
   }
 
-  // 2. Append Related Tools Section above footer
-  if (!document.querySelector('.fot-related-tools-section') && typeof categoryPagesDB !== 'undefined') {
+  // 2a. AdSense pages: "Related Pages" (baqi AdSense pages)
+  if (adInfo && !document.querySelector('.fot-related-tools-section')) {
+    const relPages = Object.keys(AD_PAGES).filter(k => k !== adKey);
+    const relPagesHtml = `
+      <section class="fot-related-tools-section" style="max-width:1320px;margin:40px auto 50px;padding:0 24px;font-family:'Inter',sans-serif;">
+        <div style="background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);border-radius:20px;padding:30px 24px;color:#FFF;box-shadow:0 12px 30px rgba(29,78,216,0.2);">
+          <div style="text-align:center;margin-bottom:22px;">
+            <h3 style="font-size:1.4rem;font-weight:900;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);padding:8px 24px;border-radius:999px;">
+              \uD83D\uDD17 Related Pages
+            </h3>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;">
+            ${relPages.map(k => `
+              <div style="background:#FFFFFF;color:#0F172A;border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,0.1);">
+                <div>
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                    <span style="font-size:1.5rem;">${AD_PAGES[k].icon}</span>
+                    <h4 style="font-size:0.95rem;font-weight:800;color:#0F296E;line-height:1.2;margin:0;">${AD_PAGES[k].name}</h4>
+                  </div>
+                  <p style="font-size:0.78rem;color:#475569;margin:0 0 12px;line-height:1.4;">${AD_PAGES[k].desc}</p>
+                </div>
+                <a href="https://freeonlinetools203.com/${k}" style="display:inline-flex;align-items:center;justify-content:center;width:100%;padding:8px 12px;background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);color:#FFFFFF;border-radius:999px;font-size:0.82rem;font-weight:700;text-decoration:none;">Open Page \u2192</a>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>`;
+    const ftr = document.querySelector('footer.fot-footer');
+    if (ftr) ftr.insertAdjacentHTML('beforebegin', relPagesHtml);
+    else document.body.insertAdjacentHTML('beforeend', relPagesHtml);
+  }
+
+  // 2. Append Related Tools Section above footer (sirf tool pages ke liye)
+  if (!adInfo && !document.querySelector('.fot-related-tools-section') && typeof categoryPagesDB !== 'undefined') {
     const catData = categoryPagesDB[foundCategoryKey];
     if (catData && catData.tools.length > 1) {
       const related = catData.tools.filter(t => !getUrl(t.name).includes(currentPath)).slice(0, 4);
