@@ -449,3 +449,6 @@ body:has(#fotHomepageView) .fot-logo-badge svg{display:none}
 #fotHomepageView .fot-live-badge i{width:7px;height:7px;border-radius:50%;background:#fff;animation:fotLivePulse 1.1s infinite}
 @keyframes fotLivePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 #fotHomepageView .fot-live-text b{color:#1d4ed8;font-weight:800}
+
+/* ROUND 9 */
+#fotHomepageView .fot-hero-left h1 span{font-size:.72em;white-space:nowrap}
