@@ -363,3 +363,19 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
   display:inline-block;width:max-content;align-self:flex-start;
   padding:5px 20px;font-size:.78rem;margin-top:4px;
 }
+
+/* ROUND 3 */
+#fotHomepageView .fot-yellow-arrow{
+  background:url("arrow.png") center/contain no-repeat;
+  width:110px;height:138px;right:-34px;top:18%;filter:none;
+}
+#fotHomepageView .fot-yellow-arrow path{display:none}
+#fotHomepageView .fot-cat-card{min-height:74px;padding:10px 12px}
+#fotHomepageView .fot-cat-icon{width:56px;height:56px}
+#fotHomepageView .fot-cat-info h3{font-size:.95rem}
+#fotHomepageView .fot-cat-info span{font-size:.8rem}
+#fotHomepageView .fot-cat-arrow{width:26px;height:26px;font-size:.85rem}
+#fotHomepageView .fot-pop-icon{width:62px;height:62px}
+#fotHomepageView .fot-pop-card h3{font-size:.98rem}
+#fotHomepageView .fot-pop-card p{font-size:.78rem}
+#fotHomepageView .fot-try-btn{padding:6px 22px;font-size:.85rem}
