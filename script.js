@@ -1028,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', function() {
 #fotSubHeader .sh-link{display:inline-block;padding:8px 14px;border-radius:999px;color:#0F172A;text-decoration:none;font-weight:700;font-size:.9rem;cursor:pointer}
 #fotSubHeader .sh-link:hover{background:rgba(37,99,235,.1);color:#1D4ED8}
 #fotSubHeader .sh-link.home{background:linear-gradient(180deg,#2f7bff,#1546d6);color:#fff;box-shadow:0 4px 10px rgba(21,70,214,.3)}
-#fotSubHeader li.active > .sh-link{background:rgba(37,99,235,.14);color:#1D4ED8}
+#fotSubHeader li.active > .sh-link{background:linear-gradient(180deg,#2f7bff,#1546d6);color:#fff;box-shadow:0 4px 10px rgba(21,70,214,.3)}
 #fotSubHeader .sh-menu{display:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid #E2E8F0;border-radius:12px;box-shadow:0 12px 28px rgba(15,23,42,.18);padding:8px;z-index:1100}
 #fotSubHeader .sh-menu a{display:block;padding:9px 12px;border-radius:8px;color:#0F172A;text-decoration:none;font-weight:600;font-size:.86rem;white-space:nowrap}
 #fotSubHeader .sh-menu a:hover,#fotSubHeader .sh-menu a.cur{background:#EFF6FF;color:#1D4ED8}
@@ -1050,9 +1050,9 @@ document.addEventListener('DOMContentLoaded', function() {
       <span><strong>FreeOnlineTools203.com</strong><small>240+ Free Online Tools • Fast • Easy • 100% Free</small></span>
     </a>
     <nav><ul>
-      <li><a class="sh-link home" href="${base}/">🏠 Home</a></li>
+      <li><a class="sh-link" href="${base}/">🏠 Home</a></li>
       <li class="${isAdPage ? 'active' : ''}" data-dd><a class="sh-link" href="${base}/about.html">AdSense Pages ▾</a><div class="sh-menu">${adHtml}</div></li>
-      <li data-dd><a class="sh-link" href="${base}/?view=all-tools">All Tools ▾</a><div class="sh-menu mega">${catHtml}</div></li>
+      <li class="${isAdPage ? '' : 'active'}" data-dd><a class="sh-link" href="${base}/?view=all-tools">All Tools ▾</a><div class="sh-menu mega">${catHtml}</div></li>
       <li><a class="sh-link" href="${base}/about.html">About</a></li>
       <li><a class="sh-link" href="${base}/contact.html">Contact</a></li>
     </ul></nav>
