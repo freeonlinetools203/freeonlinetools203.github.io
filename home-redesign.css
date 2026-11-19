@@ -418,3 +418,11 @@ body:has(#fotHomepageView) .fot-logo-badge{
   box-shadow:none !important;border:0 !important;width:54px;height:54px;
 }
 body:has(#fotHomepageView) .fot-logo-badge svg{display:none}
+
+/* ROUND 7 */
+@media (min-width:1000px){
+  #fotHomepageView .fot-hero-desc{font-size:1.12rem;line-height:1.28}
+  #fotHomepageView .fot-hero-wrapper{padding-top:14px;padding-bottom:22px}
+  #fotHomepageView .fot-search-floating-wrap{margin-bottom:26px}
+  #fotHomepageView .fot-cat-card{min-height:68px}
+}
