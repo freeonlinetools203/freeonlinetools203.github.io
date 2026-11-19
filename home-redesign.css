@@ -379,3 +379,9 @@ body:has(#fotHomepageView) .fot-logo-title{font-family:'Poppins',sans-serif;font
 #fotHomepageView .fot-pop-card h3{font-size:.98rem}
 #fotHomepageView .fot-pop-card p{font-size:.78rem}
 #fotHomepageView .fot-try-btn{padding:6px 22px;font-size:.85rem}
+
+/* ROUND 4 */
+#fotHomepageView .fot-yellow-arrow{
+  right:14px;top:40%;width:92px;height:112px;z-index:5;
+}
+#fotHomepageView .fot-robot-img{max-width:420px}
