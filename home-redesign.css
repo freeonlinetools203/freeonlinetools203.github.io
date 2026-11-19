@@ -452,3 +452,27 @@ body:has(#fotHomepageView) .fot-logo-badge svg{display:none}
 
 /* ROUND 9 */
 #fotHomepageView .fot-hero-left h1 span{font-size:.72em;white-space:nowrap}
+
+/* ROUND 10 */
+#fotHomepageView .fot-reveal,#fotHomepageView.fot-reveal{opacity:1 !important;transform:none !important}
+#fotHomepageView .fot-rocket{
+  display:inline-block;width:34px;height:34px;vertical-align:middle;font-size:0;
+  background:url("rocket.png") center/contain no-repeat;
+}
+
+/* ROUND 11 */
+@media (min-width:1000px){
+  #fotHomepageView .fot-hero-wrapper{padding-top:8px;padding-bottom:10px}
+  #fotHomepageView .fot-age-card-head{padding:7px 12px}
+  #fotHomepageView .fot-age-card-head h2{font-size:1.5rem}
+  #fotHomepageView .fot-age-card-head > span:not(.fot-featured-badge){width:32px;height:34px}
+  #fotHomepageView .fot-age-card-body{padding:7px 14px 9px}
+  #fotHomepageView .fot-age-sub{font-size:.95rem;margin-bottom:5px}
+  #fotHomepageView .fot-dob-selects{margin-bottom:7px}
+  #fotHomepageView .fot-dob-selects select{padding:5px 8px;font-size:.98rem}
+  #fotHomepageView .fot-age-calc-btn{padding:8px;font-size:1.15rem}
+  #fotHomepageView .fot-age-result-pill{padding:4px 12px;margin-top:7px}
+  #fotHomepageView .fot-age-result-pill > span:first-child{width:40px;height:44px}
+  #fotHomepageView .fot-age-full-link{margin-top:7px;padding:6px 10px;font-size:.82rem}
+  #fotHomepageView .fot-search-floating-wrap{margin-bottom:14px}
+}
