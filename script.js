@@ -1036,10 +1036,25 @@ document.addEventListener('DOMContentLoaded', function() {
 #fotSubHeader .sh-menu.mega a.all{grid-column:1/-1;background:#EFF6FF;color:#1D4ED8}
 #fotSubHeader li:hover > .sh-menu,#fotSubHeader li.open > .sh-menu{display:block}
 #fotSubHeader li:hover > .sh-menu.mega,#fotSubHeader li.open > .sh-menu.mega{display:grid}
-@media (max-width:760px){
-  #fotSubHeader .sh-in{padding:8px 12px}
-  #fotSubHeader .sh-menu,#fotSubHeader .sh-menu.mega{position:fixed;left:8px;right:8px;top:auto;width:auto;max-height:70vh;overflow:auto}
+#fotSubHeader .sh-burger{display:none;background:#fff;border:1px solid #c7ddf5;border-radius:10px;width:42px;height:42px;font-size:1.3rem;cursor:pointer;color:#0F296E;line-height:1}
+@media (min-width:901px){#fotSubHeader .sh-in{flex-wrap:nowrap}}
+@media (max-width:900px){
+  #fotSubHeader .sh-in{padding:8px 12px;flex-wrap:wrap}
+  #fotSubHeader .sh-logo{min-width:0;flex:1 1 auto}
+  #fotSubHeader .sh-logo img{width:38px;height:38px}
+  #fotSubHeader .sh-logo strong{font-size:.98rem}
+  #fotSubHeader .sh-logo small{display:none}
+  #fotSubHeader .sh-burger{display:block;flex:none}
+  #fotSubHeader nav{display:none;width:100%}
+  #fotSubHeader.nav-open nav{display:block}
+  #fotSubHeader ul{flex-direction:column;align-items:stretch;gap:2px;padding-top:6px}
+  #fotSubHeader .sh-link{display:block;border-radius:10px;padding:11px 14px}
+  #fotSubHeader .sh-menu,#fotSubHeader .sh-menu.mega{position:static;display:none;box-shadow:none;border:0;background:rgba(255,255,255,.75);width:auto;max-height:50vh;overflow:auto;margin:2px 0 6px}
   #fotSubHeader .sh-menu.mega{grid-template-columns:1fr}
+  #fotSubHeader li:hover > .sh-menu{display:none}
+  #fotSubHeader li.open > .sh-menu{display:block}
+  #fotSubHeader li.open > .sh-menu.mega{display:grid}
+}
 }`;
 
     const header = `
@@ -1049,6 +1064,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <img src="${base}/logo.png" alt="FreeOnlineTools203.com" onerror="this.style.display='none'">
       <span><strong>FreeOnlineTools203.com</strong><small>240+ Free Online Tools • Fast • Easy • 100% Free</small></span>
     </a>
+    <button class="sh-burger" type="button" aria-label="Menu" aria-expanded="false">\u2630</button>
     <nav><ul>
       <li><a class="sh-link" href="${base}/">🏠 Home</a></li>
       <li class="${isAdPage ? 'active' : ''}" data-dd><a class="sh-link" href="${base}/about.html">AdSense Pages ▾</a><div class="sh-menu">${adHtml}</div></li>
@@ -1068,7 +1084,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile/touch: tap se dropdown khule
     document.querySelectorAll('#fotSubHeader li[data-dd] > a').forEach(a => {
       a.addEventListener('click', function (e) {
-        if (window.matchMedia('(hover: none)').matches) {
+        if (window.matchMedia('(hover: none)').matches || window.matchMedia('(max-width: 900px)').matches) {
           const li = a.parentElement;
           if (!li.classList.contains('open')) {
             e.preventDefault();
@@ -1077,6 +1093,12 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       });
+    });
+    const burger = document.querySelector('#fotSubHeader .sh-burger');
+    if (burger) burger.addEventListener('click', function () {
+      const hd = document.getElementById('fotSubHeader');
+      const open = hd.classList.toggle('nav-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     document.addEventListener('click', function (e) {
       if (!e.target.closest('#fotSubHeader li[data-dd]')) {
@@ -1201,7 +1223,7 @@ function enhanceIndividualToolPage() {
                   </div>
                   <p style="font-size:0.78rem;color:#475569;margin:0 0 12px;line-height:1.4;">${AD_PAGES[k].desc}</p>
                 </div>
-                <a href="https://freeonlinetools203.com/${k}" style="display:inline-flex;align-items:center;justify-content:center;width:100%;padding:8px 12px;background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);color:#FFFFFF;border-radius:999px;font-size:0.82rem;font-weight:700;text-decoration:none;">Open Page \u2192</a>
+                <a href="https://freeonlinetools203.com/${k}" style="display:inline-flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;padding:8px 12px;background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);color:#FFFFFF;border-radius:999px;font-size:0.82rem;font-weight:700;text-decoration:none;">Open Page \u2192</a>
               </div>
             `).join('')}
           </div>
@@ -1237,7 +1259,7 @@ function enhanceIndividualToolPage() {
                       </div>
                       <p style="font-size:0.78rem;color:#475569;margin-bottom:12px;line-height:1.4;">Fast &amp; accurate online browser tool for your daily needs.</p>
                     </div>
-                    <a href="${getUrl(t.name)}" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:8px 12px;background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);color:#FFFFFF;border-radius:999px;font-size:0.82rem;font-weight:700;text-decoration:none;">Try Now →</a>
+                    <a href="${getUrl(t.name)}" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;box-sizing:border-box;padding:8px 12px;background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);color:#FFFFFF;border-radius:999px;font-size:0.82rem;font-weight:700;text-decoration:none;">Try Now →</a>
                   </div>
                 `).join('')}
               </div>
