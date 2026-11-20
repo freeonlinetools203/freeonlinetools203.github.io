@@ -1032,7 +1032,7 @@ document.addEventListener('DOMContentLoaded', function() {
 #fotSubHeader .sh-menu{display:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid #E2E8F0;border-radius:12px;box-shadow:0 12px 28px rgba(15,23,42,.18);padding:8px;z-index:1100}
 #fotSubHeader .sh-menu a{display:block;padding:9px 12px;border-radius:8px;color:#0F172A;text-decoration:none;font-weight:600;font-size:.86rem;white-space:nowrap}
 #fotSubHeader .sh-menu a:hover,#fotSubHeader .sh-menu a.cur{background:#EFF6FF;color:#1D4ED8}
-#fotSubHeader .sh-menu.mega{width:520px;grid-template-columns:1fr 1fr;gap:2px}
+#fotSubHeader .sh-menu.mega{width:520px;grid-template-columns:1fr 1fr;gap:2px;left:auto;right:0}
 #fotSubHeader .sh-menu.mega a.all{grid-column:1/-1;background:#EFF6FF;color:#1D4ED8}
 #fotSubHeader li:hover > .sh-menu,#fotSubHeader li.open > .sh-menu{display:block}
 #fotSubHeader li:hover > .sh-menu.mega,#fotSubHeader li.open > .sh-menu.mega{display:grid}
@@ -1160,9 +1160,11 @@ function enhanceIndividualToolPage() {
     }
   }
 
-  // 1. Insert Breadcrumbs right below header if not exists
-    if (!document.querySelector('.fot-breadcrumbs')) {
-  if (!document.querySelector('.fot-breadcrumbs')) {
+  // AdSense pages par breadcrumb nahi (header me pehle se Home / AdSense Pages hai, double na ho)
+  if (adInfo) document.querySelectorAll('.fot-breadcrumbs').forEach(el => el.remove());
+
+  // 1. Insert Breadcrumbs right below header if not exists (sirf tool pages par)
+  if (!adInfo && !document.querySelector('.fot-breadcrumbs')) {
     const breadcrumbHtml = `
       <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
         <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;color:#475569;font-weight:600;">
