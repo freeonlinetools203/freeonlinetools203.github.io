@@ -587,3 +587,9 @@ body:has(#fotHomepageView) .fot-mega-categories{left:auto !important;right:0 !im
 
 /* robot ke ird gird ka halka dhundla dabba hatao */
 #fotHomepageView .fot-robot-img{filter:none !important}
+
+/* ROUND 14 */
+@media (min-width:1181px){
+  #fotHomepageView .fot-hero-grid{align-items:center}
+  #fotHomepageView .fot-featured-age-card{align-self:center;position:relative;top:6px}
+}
