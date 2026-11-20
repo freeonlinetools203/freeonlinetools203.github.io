@@ -1161,6 +1161,7 @@ function enhanceIndividualToolPage() {
   }
 
   // 1. Insert Breadcrumbs right below header if not exists
+    if (!document.querySelector('.fot-breadcrumbs')) {
   if (!document.querySelector('.fot-breadcrumbs')) {
     const breadcrumbHtml = `
       <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
