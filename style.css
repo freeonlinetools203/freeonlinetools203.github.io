@@ -1171,3 +1171,16 @@ div[style*="background:#edf2f7"] {
   color: #ffe600;
   text-shadow: 0 2px 10px rgba(0,0,0,.25);
 }
+
+/* Dark mode: Most Popular cards ka text theek karein */
+body.dark-mode .popular-card h3,
+body.dark-mode .popular-card h4,
+body.dark-mode .popular-card .tool-title,
+body.dark-mode .popular-card .tool-name {
+  color: #0f1b3d !important;
+}
+
+body.dark-mode .popular-card p,
+body.dark-mode .popular-card .tool-desc {
+  color: #3d4a6b !important;
+}
