@@ -724,46 +724,69 @@
         </div>
         <div class="card-content">
             
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">🖼️</div>
-                <div class="upload-text">Click to upload an image</div>
-                <div class="upload-hint">PNG, JPG, JPEG, WEBP (Max 10MB)</div>
-                <input type="file" id="fileInput" accept="image/*" style="display: none">
+           <div class="upload-area" id="uploadArea">
+    <div class="upload-icon">🖼️</div>
+    <div class="upload-text">Click to upload an image</div>
+    <div class="upload-hint">PNG, JPG, JPEG, WEBP (Max 10MB)</div>
+    <input type="file" id="fileInput" accept="image/*" style="display: none">
+</div>
+
+<div class="preview-section" id="previewSection">
+    
+    <!-- 🔄 RESET BUTTON -->
+    <div style="text-align: right; margin-bottom: 15px;">
+        <button id="resetImageBtn" style="background: #ef4444; color: white; border: none; padding: 10px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+            🔄 Doosri Image Upload Karein
+        </button>
+    </div>
+
+    <img id="previewImg" class="preview-img" alt="Preview">
+
+    <div class="preset-section">
+        <div class="preset-title">⚡ Preset Sizes (Click to Resize & Download)</div>
+        <div class="preset-buttons" id="presetButtons">
+            <button class="preset-btn" data-w="1920" data-h="1080">1920x1080 (HD)</button>
+            <button class="preset-btn" data-w="1280" data-h="720">1280x720 (720p)</button>
+            <button class="preset-btn" data-w="1080" data-h="1080">1080x1080 (Instagram)</button>
+            <button class="preset-btn" data-w="1080" data-h="1350">1080x1350 (IG Portrait)</button>
+            <button class="preset-btn" data-w="1200" data-h="628">1200x628 (Facebook)</button>
+            <button class="preset-btn" data-w="800" data-h="600">800x600 (Small)</button>
+            <button class="preset-btn" data-w="640" data-h="480">640x480 (Old TV)</button>
+            <button class="preset-btn" data-w="500" data-h="500">500x500 (Square)</button>
+            <button class="preset-btn" data-w="300" data-h="250">300x250 (Ad)</button>
+            <button class="preset-btn" data-w="150" data-h="150">150x150 (Thumbnail)</button>
+        </div>
+    </div>
+
+    <div class="resize-controls">
+        <div class="dimension-row">
+            <div class="dimension-box">
+                <label class="dimension-label">📏 Custom Width (px)</label>
+                <input type="number" id="customWidth" class="dimension-input" placeholder="Width">
             </div>
+            <div class="dimension-box">
+                <label class="dimension-label">📐 Custom Height (px)</label>
+                <input type="number" id="customHeight" class="dimension-input" placeholder="Height">
+            </div>
+        </div>
+        <button class="custom-download-btn" id="customDownloadBtn">⬇️ Resize & Download Custom Size</button>
+    </div>
 
-            <div class="preview-section" id="previewSection">
-                <img id="previewImg" class="preview-img" alt="Preview">
+    <!-- ⚖️ KB COMPRESS -->
+    <div class="resize-controls" style="margin-top:20px; border: 2px solid #2563eb;">
+        <label class="dimension-label" style="color: #1e3a8a; font-size: 14px;">⚖️ Compress to KB (Target File Size)</label>
+        <div class="dimension-row" style="margin-bottom: 0;">
+            <div class="dimension-box">
+                <input type="number" id="targetKB" class="dimension-input" placeholder="Enter target KB (e.g. 20, 50)">
+            </div>
+            <div class="dimension-box">
+                <button class="custom-download-btn" id="kbCompressBtn" style="padding: 12px;">⬇️ Compress Image</button>
+            </div>
+        </div>
+    </div>
 
-                <div class="preset-section">
-                    <div class="preset-title">⚡ Preset Sizes (Click to Resize & Download)</div>
-                    <div class="preset-buttons" id="presetButtons">
-                        <button class="preset-btn" data-w="1920" data-h="1080">1920x1080 (HD)</button>
-                        <button class="preset-btn" data-w="1280" data-h="720">1280x720 (720p)</button>
-                        <button class="preset-btn" data-w="1080" data-h="1080">1080x1080 (Instagram)</button>
-                        <button class="preset-btn" data-w="1080" data-h="1350">1080x1350 (IG Portrait)</button>
-                        <button class="preset-btn" data-w="1200" data-h="628">1200x628 (Facebook)</button>
-                        <button class="preset-btn" data-w="800" data-h="600">800x600 (Small)</button>
-                        <button class="preset-btn" data-w="640" data-h="480">640x480 (Old TV)</button>
-                        <button class="preset-btn" data-w="500" data-h="500">500x500 (Square)</button>
-                        <button class="preset-btn" data-w="300" data-h="250">300x250 (Ad)</button>
-                        <button class="preset-btn" data-w="150" data-h="150">150x150 (Thumbnail)</button>
-                    </div>
-                </div>
-
-                <div class="resize-controls">
-                    <div class="dimension-row">
-                        <div class="dimension-box">
-                            <label class="dimension-label">📏 Custom Width (px)</label>
-                            <input type="number" id="customWidth" class="dimension-input" placeholder="Width">
-                        </div>
-                        <div class="dimension-box">
-                            <label class="dimension-label">📐 Custom Height (px)</label>
-                            <input type="number" id="customHeight" class="dimension-input" placeholder="Height">
-                        </div>
-                    </div>
-                    <button class="custom-download-btn" id="customDownloadBtn">⬇️ Resize & Download Custom Size</button>
-                </div>
-
+</div>
+          
                 <!-- 🔥 NEW FEATURE: KB COMPRESS -->
                 <div class="resize-controls" style="margin-top:20px; border: 2px solid #2563eb;">
                     <label class="dimension-label" style="color: #1e3a8a; font-size: 14px;">⚖️ Compress to KB (Target File Size)</label>
@@ -1177,6 +1200,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const customDownloadBtn = document.getElementById('customDownloadBtn');
     const targetKB = document.getElementById('targetKB');
     const kbCompressBtn = document.getElementById('kbCompressBtn');
+    const resetImageBtn = document.getElementById('resetImageBtn'); // Naya
 
     let originalImage = null;
     let originalFileName = 'image';
@@ -1204,6 +1228,20 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         reader.readAsDataURL(file);
     });
+
+    // 🔄 RESET BUTTON FUNCTION
+    if (resetImageBtn) {
+        resetImageBtn.addEventListener('click', function() {
+            fileInput.value = '';
+            previewSection.classList.remove('show');
+            uploadArea.style.display = 'block';
+            originalImage = null;
+            previewImg.src = '';
+            customWidth.value = '';
+            customHeight.value = '';
+            targetKB.value = '';
+        });
+    }
 
     function resizeImage(width, height, format = 'image/jpeg', quality = 0.9) {
         if (!originalImage) return;
