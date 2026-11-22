@@ -588,13 +588,51 @@ body:has(#fotHomepageView) .fot-mega-categories{left:auto !important;right:0 !im
 /* robot ke ird gird ka halka dhundla dabba hatao */
 #fotHomepageView .fot-robot-img{filter:none !important}
 
-/* ROUND 14 */
+/* ROUND 14: calculator hero ke beech me (thoda neeche) */
 @media (min-width:1181px){
   #fotHomepageView .fot-hero-grid{align-items:center}
   #fotHomepageView .fot-featured-age-card{align-self:center;position:relative;top:6px}
 }
 
-/* ROUND 15 */
+/* ROUND 15: search bar thoda upar (hero ke neeche wali khali jagah me) */
 @media (min-width:1181px){
   #fotHomepageView .fot-search-floating-wrap{margin-top:-96px;margin-bottom:22px}
+}
+
+
+/* ROUND 16: mobile/tablet par lehrein robot ke upar aur neeche (laptop jaisi) */
+@media (max-width:1180px){
+  /* purani neeche wali lehrein hatao, sirf halki roshni rakho */
+  #fotHomepageView .fot-hero-wrapper::before{
+    background:radial-gradient(circle at 70% 28%,rgba(120,210,255,.38),transparent 55%) !important;
+  }
+  #fotHomepageView .fot-hero-center{position:relative;padding:22px 0 26px}
+  #fotHomepageView .fot-hero-center::before{
+    content:'';position:absolute;left:50%;top:0;bottom:0;width:100vw;transform:translateX(-50%);
+    background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 260%22 preserveAspectRatio=%22none%22%3E%3Cdefs%3E%3ClinearGradient id=%22a%22 x1=%220%22 x2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23cfeaff%22 stop-opacity=%22.08%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%23bfe6ff%22 stop-opacity=%22.55%22/%3E%3Cstop offset=%221%22 stop-color=%22%23e6f6ff%22 stop-opacity=%22.15%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22b%22 x1=%220%22 x2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%238ed8ff%22 stop-opacity=%22.08%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%239fe0ff%22 stop-opacity=%22.5%22/%3E%3Cstop offset=%221%22 stop-color=%22%23cfeeff%22 stop-opacity=%22.12%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22c%22 x1=%220%22 x2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23fff%22 stop-opacity=%220%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%23fff%22 stop-opacity=%22.95%22/%3E%3Cstop offset=%221%22 stop-color=%22%23fff%22 stop-opacity=%220%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d=%22M-20 58C160 8 330 72 520 34S720 6 830 38V-10H-20Z%22 fill=%22url(%23b)%22/%3E%3Cpath d=%22M-20 214C180 168 360 252 560 208S740 168 830 196V270H-20Z%22 fill=%22url(%23a)%22/%3E%3Cpath d=%22M-20 58C160 8 330 72 520 34S720 6 830 38%22 fill=%22none%22 stroke=%22url(%23c)%22 stroke-width=%223.5%22 vector-effect=%22non-scaling-stroke%22/%3E%3Cpath d=%22M-20 78C170 30 340 92 530 56S730 30 830 58%22 fill=%22none%22 stroke=%22url(%23c)%22 stroke-width=%222%22 opacity=%22.55%22 vector-effect=%22non-scaling-stroke%22/%3E%3Cpath d=%22M-20 214C180 168 360 252 560 208S740 168 830 196%22 fill=%22none%22 stroke=%22url(%23c)%22 stroke-width=%223.5%22 vector-effect=%22non-scaling-stroke%22/%3E%3Cpath d=%22M-20 238C190 196 370 266 570 232S750 200 830 222%22 fill=%22none%22 stroke=%22url(%23c)%22 stroke-width=%222%22 opacity=%22.55%22 vector-effect=%22non-scaling-stroke%22/%3E%3C/svg%3E") center/100% 100% no-repeat;pointer-events:none;z-index:0;
+  }
+  #fotHomepageView .fot-hero-center .fot-robot-img{position:relative;z-index:2}
+}
+
+/* lehron ke kinare narmi se gayab */
+@media (max-width:1180px){
+  #fotHomepageView .fot-hero-center::before{
+    top:-34px;bottom:-38px;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 17%,#000 83%,transparent 100%);
+            mask-image:linear-gradient(to bottom,transparent 0,#000 17%,#000 83%,transparent 100%);
+  }
+}
+
+/* chhote phone par logo ka poora naam */
+@media (max-width:400px){
+  body:has(#fotHomepageView) .fot-logo-title{font-size:.76rem !important;letter-spacing:-.2px}
+  body:has(#fotHomepageView) .fot-logo-badge{width:34px !important;height:34px !important}
+  body:has(#fotHomepageView) .fot-header-right{gap:4px}
+  body:has(#fotHomepageView) .fot-theme-toggle{transform:scale(.8);transform-origin:right center;margin-left:-6px}
+}
+
+@media (max-width:400px){
+  body:has(#fotHomepageView) .fot-theme-toggle{transform:none !important;margin-left:0 !important;zoom:.78}
+  body:has(#fotHomepageView) .fot-mobile-toggle{width:36px !important;height:36px !important}
+  body:has(#fotHomepageView) .fot-topbar-inner{padding:8px 10px;gap:6px}
 }
