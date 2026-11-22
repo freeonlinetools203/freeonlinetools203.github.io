@@ -1546,6 +1546,12 @@ const applyCropBtn = document.getElementById('applyCropBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 const clearBtn = document.getElementById('clearBtn');
 
+// ✅ NAYA: Preview elements
+const uploadPreview = document.getElementById('uploadPreview');
+const previewThumbnail = document.getElementById('previewThumbnail');
+const previewFileName = document.getElementById('previewFileName');
+const changeImageBtn = document.getElementById('changeImageBtn');
+
 let img = new Image();
 let imageWidth = 0, imageHeight = 0;
 let displayScale = 1;
@@ -1558,7 +1564,15 @@ let currentAspect = null;
 let croppedBlob = null;
 let originalFile = null;
 
+// ✅ Upload box click
 uploadArea.addEventListener('click', () => fileInput.click());
+
+// ✅ NAYA: Change Image button
+changeImageBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    fileInput.click();
+});
+
 fileInput.addEventListener('change', (e) => { if (e.target.files.length) handleImageUpload(e.target.files[0]); });
 
 function handleImageUpload(file) {
@@ -1566,7 +1580,15 @@ function handleImageUpload(file) {
     if (file.size > 10 * 1024 * 1024) { showToast('Image too large! Max 10MB'); return; }
     originalFile = file;
     const reader = new FileReader();
-    reader.onload = (e) => { img.src = e.target.result; };
+    reader.onload = (e) => { 
+        img.src = e.target.result; 
+        
+        // ✅ NAYA: Upload box hide karo, Preview dikhao
+        uploadArea.style.display = 'none';
+        uploadPreview.style.display = 'flex';
+        previewThumbnail.src = e.target.result;
+        previewFileName.textContent = file.name;
+    };
     reader.readAsDataURL(file);
 }
 
@@ -1781,6 +1803,13 @@ function clearAll() {
     originalFile = null; croppedBlob = null;
     downloadBtn.style.display = 'none';
     document.getElementById('cropInfoPanel').classList.remove('show');
+    
+    // ✅ NAYA: Wapas Upload box dikhao, Preview hide karo
+    uploadArea.style.display = 'block';
+    uploadPreview.style.display = 'none';
+    previewThumbnail.src = '';
+    previewFileName.textContent = '';
+    
     showToast('🗑️ Cleared!');
 }
 
