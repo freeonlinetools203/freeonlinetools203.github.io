@@ -1680,15 +1680,31 @@ img.onload = () => {
     updateCropInfo();
 };
 
+/* ✅ FIXED: drawCropOverlay (White box gayab, andar clear image) */
 function drawCropOverlay() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // 1. Pehle poori image draw karein (normal brightness)
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(0,0,0,0.5)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.clearRect(cropRect.x, cropRect.y, cropRect.w, cropRect.h);
+    
+    // 2. Crop area ke bahar dark overlay lagayein (4 rectangles se)
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    
+    // Top area
+    ctx.fillRect(0, 0, canvas.width, cropRect.y);
+    // Bottom area
+    ctx.fillRect(0, cropRect.y + cropRect.h, canvas.width, canvas.height - (cropRect.y + cropRect.h));
+    // Left area
+    ctx.fillRect(0, cropRect.y, cropRect.x, cropRect.h);
+    // Right area
+    ctx.fillRect(cropRect.x + cropRect.w, cropRect.y, canvas.width - (cropRect.x + cropRect.w), cropRect.h);
+    
+    // 3. Crop area ka border draw karein
     ctx.strokeStyle = '#2563eb';
     ctx.lineWidth = 2;
     ctx.strokeRect(cropRect.x, cropRect.y, cropRect.w, cropRect.h);
+    
+    // 4. Corner handles draw karein
     const hs = 8;
     const corners = [
         [cropRect.x - hs/2, cropRect.y - hs/2],
@@ -1698,6 +1714,7 @@ function drawCropOverlay() {
     ];
     ctx.fillStyle = 'white';
     corners.forEach(p => ctx.fillRect(p[0], p[1], hs, hs));
+    
     updateCropInfo();
 }
 
