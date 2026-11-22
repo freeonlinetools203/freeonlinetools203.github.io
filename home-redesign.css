@@ -636,3 +636,10 @@ body:has(#fotHomepageView) .fot-mega-categories{left:auto !important;right:0 !im
   body:has(#fotHomepageView) .fot-mobile-toggle{width:36px !important;height:36px !important}
   body:has(#fotHomepageView) .fot-topbar-inner{padding:8px 10px;gap:6px}
 }
+
+/* ROUND 17 */
+@media (min-width:1181px){
+  #fotHomepageView .fot-search-floating-wrap{margin-bottom:34px}
+  #fotHomepageView .fot-section-header-center{position:relative;z-index:6}
+  #fotHomepageView .fot-section-pill-title{position:relative;z-index:6}
+}
