@@ -637,9 +637,44 @@ body:has(#fotHomepageView) .fot-mega-categories{left:auto !important;right:0 !im
   body:has(#fotHomepageView) .fot-topbar-inner{padding:8px 10px;gap:6px}
 }
 
-/* ROUND 17 */
+/* ROUND 17: "Explore Our Categories" patti hamesha poori nazar aaye */
 @media (min-width:1181px){
   #fotHomepageView .fot-search-floating-wrap{margin-bottom:34px}
   #fotHomepageView .fot-section-header-center{position:relative;z-index:6}
   #fotHomepageView .fot-section-pill-title{position:relative;z-index:6}
+}
+
+/* ROUND 18: "Why Use Us" + FAQ sections (AdSense ke liye asli content) */
+#fotHomepageView .fot-why,#fotHomepageView .fot-faq{margin-top:26px !important}
+#fotHomepageView .fot-why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:12px}
+#fotHomepageView .fot-why-card{
+  background:linear-gradient(180deg,#fff,#f1f7ff);border:1px solid #d6e5ff;border-radius:16px;
+  padding:18px 16px;text-align:center;box-shadow:0 4px 14px rgba(29,78,216,.07);
+}
+#fotHomepageView .fot-why-ico{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;background:#e8f1ff;font-size:1.7rem;margin-bottom:8px}
+#fotHomepageView .fot-why-card h3{font-size:1rem;font-weight:800;color:#0F296E;margin:0 0 6px}
+#fotHomepageView .fot-why-card p{font-size:.86rem;line-height:1.5;color:#475569;margin:0}
+#fotHomepageView .fot-faq-list{max-width:920px;margin:12px auto 0;display:flex;flex-direction:column;gap:8px}
+#fotHomepageView .fot-faq-item{background:#fff;border:1px solid #d6e5ff;border-radius:14px;box-shadow:0 2px 8px rgba(29,78,216,.05);overflow:hidden}
+#fotHomepageView .fot-faq-item summary{
+  list-style:none;cursor:pointer;padding:14px 46px 14px 18px;font-weight:700;font-size:.95rem;color:#0F296E;position:relative;
+}
+#fotHomepageView .fot-faq-item summary::-webkit-details-marker{display:none}
+#fotHomepageView .fot-faq-item summary::after{
+  content:'+';position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  width:24px;height:24px;border-radius:50%;background:#e8f1ff;color:#1D4ED8;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;
+}
+#fotHomepageView .fot-faq-item[open] summary::after{content:'\2212'}
+#fotHomepageView .fot-faq-item[open] summary{background:#f1f7ff}
+#fotHomepageView .fot-faq-item p{margin:0;padding:4px 18px 16px;font-size:.9rem;line-height:1.6;color:#475569}
+#fotHomepageView .fot-faq-item a{color:#1D4ED8;font-weight:700}
+@media (max-width:1180px){#fotHomepageView .fot-why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){#fotHomepageView .fot-why-grid{grid-template-columns:1fr}}
+#fotHomepageView .fot-faq{margin-top:40px !important}
+@media (max-width:560px){
+  #fotHomepageView .fot-why-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  #fotHomepageView .fot-why-card{padding:14px 10px}
+  #fotHomepageView .fot-why-ico{width:44px;height:44px;font-size:1.4rem}
+  #fotHomepageView .fot-why-card h3{font-size:.9rem}
+  #fotHomepageView .fot-why-card p{font-size:.78rem;line-height:1.4}
 }
