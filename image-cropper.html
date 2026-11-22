@@ -370,31 +370,39 @@ body {
 .cropper-container { display: none; }
 .cropper-container.show { display: block; }
 
+/* ✅ NAYA: Canvas Wrapper ki height fix ki taaki buttons screen par rahein */
 .canvas-wrapper {
     background: #f9fafb;
     border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 18px;
+    padding: 15px;
+    margin-bottom: 15px;
     text-align: center;
     border: 1px solid #e5e7eb;
-    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Screen ki 50% height */
+    max-height: 450px; /* Desktop par max 450px */
+    overflow: hidden;
 }
 #imageCanvas {
     max-width: 100%;
+    max-height: 100%;
     cursor: crosshair;
     display: block;
     margin: 0 auto;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    object-fit: contain;
 }
 
 /* ===== LIVE CROP INFO PANEL (COMPACT) ===== */
 .crop-info-panel {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: white;
-    padding: 10px 15px; /* Padding kam ki */
+    padding: 10px 15px;
     border-radius: 14px;
-    margin-bottom: 10px; /* Margin kam kiya */
+    margin-bottom: 10px;
     display: none;
     box-shadow: 0 6px 18px rgba(30,58,138,0.25);
 }
@@ -407,11 +415,11 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 .crop-info-title {
-    font-size: 10px; /* Font chhota kiya */
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    margin-bottom: 6px; /* Margin kam kiya */
+    margin-bottom: 6px;
     opacity: 0.9;
     display: flex;
     align-items: center;
@@ -420,16 +428,16 @@ body {
 .crop-info-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 6px; /* Gap kam kiya */
+    gap: 6px;
 }
 .crop-info-item {
     text-align: center;
     background: rgba(255,255,255,0.15);
-    padding: 5px 4px; /* Padding kam ki */
-    border-radius: 8px; /* Radius kam kiya */
+    padding: 5px 4px;
+    border-radius: 8px;
 }
 .crop-info-label {
-    font-size: 8px; /* Font chhota kiya */
+    font-size: 8px;
     text-transform: uppercase;
     opacity: 0.85;
     margin-bottom: 2px;
@@ -437,7 +445,7 @@ body {
     letter-spacing: 0.5px;
 }
 .crop-info-value {
-    font-size: 12px; /* Font chhota kiya */
+    font-size: 12px;
     font-weight: 700;
     font-family: monospace;
 }
@@ -446,62 +454,27 @@ body {
 .aspect-section {
     background: #f9fafb;
     border-radius: 14px;
-    padding: 10px 12px; /* Padding kam ki */
-    margin-bottom: 10px; /* Margin kam kiya */
+    padding: 10px 12px;
+    margin-bottom: 10px;
     border: 1px solid #e5e7eb;
 }
 .aspect-title {
     font-weight: 700;
     color: #1e3a8a;
-    margin-bottom: 6px; /* Margin kam kiya */
-    font-size: 12px; /* Font chhota kiya */
-}
-.aspect-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px; /* Gap kam kiya */
-}
-.aspect-btn {
-    background: #f1f5f9;
-    border: none;
-    padding: 5px 10px; /* Padding kam ki */
-    border-radius: 50px;
-    font-size: 10px; /* Font chhota kiya */
-    font-weight: 600;
-    color: #1e3a8a;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.aspect-btn.active {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    color: white;
-}
-.aspect-btn:hover { transform: translateY(-1px); }  
-/* ===== ASPECT SECTION ===== */
-.aspect-section {
-    background: #f9fafb;
-    border-radius: 20px;
-    padding: 18px;
-    margin-bottom: 18px;
-    border: 1px solid #e5e7eb;
-}
-.aspect-title {
-    font-weight: 700;
-    color: #1e3a8a;
-    margin-bottom: 12px;
-    font-size: 14px;
-}
-.aspect-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-.aspect-btn {
-    background: #f1f5f9;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 50px;
+    margin-bottom: 6px;
     font-size: 12px;
+}
+.aspect-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.aspect-btn {
+    background: #f1f5f9;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 10px;
     font-weight: 600;
     color: #1e3a8a;
     cursor: pointer;
@@ -511,7 +484,7 @@ body {
     background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
     color: white;
 }
-.aspect-btn:hover { transform: translateY(-2px); }
+.aspect-btn:hover { transform: translateY(-1px); }
 
 /* ===== ACTION BUTTONS ===== */
 .action-buttons {
@@ -792,6 +765,7 @@ body {
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+/* ✅ NAYA: Mobile Responsive Fixes */
 @media (max-width: 768px) {
     .card-header h1 { font-size: 20px; }
     .card-header p { font-size: 13px; }
@@ -803,6 +777,16 @@ body {
     .article-header h2 { font-size: 22px; }
     .crop-info-grid { grid-template-columns: repeat(2, 1fr); }
     .crop-info-value { font-size: 12px; }
+
+    /* Mobile par image aur chhoti taaki buttons dikhein */
+    .canvas-wrapper {
+        height: 35vh; 
+        padding: 10px;
+    }
+    .upload-preview { flex-direction: row; padding: 10px; gap: 10px; }
+    .upload-preview img { width: 45px; height: 45px; }
+    .preview-info span { font-size: 11px; max-width: 130px; }
+    .change-image-btn { padding: 4px 8px; font-size: 10px; }
 }
 </style>
 </head>
