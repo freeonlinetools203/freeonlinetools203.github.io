@@ -813,22 +813,21 @@ body {
                 <input type="file" id="fileInput" accept="image/*" style="display: none">
             </div>
 
-            <!-- Chhota Preview (Upload ke baad dikhega) -->
-            <div class="upload-preview" id="uploadPreview" style="display: none;">
-                <img id="previewThumbnail" src="" alt="Preview">
-                <div class="preview-info">
-                    <span id="previewFileName">image.jpg</span>
-                    <button class="change-image-btn" id="changeImageBtn">🔄 Change Image</button>
-                </div>
-            </div>
-
             <div class="cropper-container" id="cropperContainer">
+                
+                <!-- ✅ NAYA: Change Image Button (Image ke upar right side mein) -->
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                    <button class="change-image-btn" id="changeImageBtn" style="display: none;">
+                        🔄 Change Image
+                    </button>
+                </div>
+
                 <!-- Canvas Area -->
                 <div class="canvas-wrapper">
                     <canvas id="imageCanvas"></canvas>
                 </div>
 
-                <!-- ✅ NAYA: Action Buttons (Ab yeh image ke theek neeche hain) -->
+                <!-- Action Buttons (Ab yeh image ke theek neeche hain) -->
                 <div class="action-buttons" style="margin-bottom: 18px;">
                     <button class="action-btn crop" id="applyCropBtn">✂️ Apply Crop</button>
                     <button class="action-btn download" id="downloadBtn" style="display: none;">⬇️ Download Cropped</button>
@@ -1619,10 +1618,7 @@ const applyCropBtn = document.getElementById('applyCropBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 const clearBtn = document.getElementById('clearBtn');
 
-// ✅ NAYA: Preview elements
-const uploadPreview = document.getElementById('uploadPreview');
-const previewThumbnail = document.getElementById('previewThumbnail');
-const previewFileName = document.getElementById('previewFileName');
+// ✅ Change Image Button (Ab yeh image ke upar hai)
 const changeImageBtn = document.getElementById('changeImageBtn');
 
 let img = new Image();
@@ -1640,7 +1636,7 @@ let originalFile = null;
 // ✅ Upload box click
 uploadArea.addEventListener('click', () => fileInput.click());
 
-// ✅ NAYA: Change Image button
+// ✅ Change Image Button click
 changeImageBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     fileInput.click();
@@ -1656,11 +1652,11 @@ function handleImageUpload(file) {
     reader.onload = (e) => { 
         img.src = e.target.result; 
         
-        // ✅ NAYA: Upload box hide karo, Preview dikhao
+        // ✅ Upload box hide karo
         uploadArea.style.display = 'none';
-        uploadPreview.style.display = 'flex';
-        previewThumbnail.src = e.target.result;
-        previewFileName.textContent = file.name;
+        
+        // ✅ NAYA: Change Image button dikhao
+        changeImageBtn.style.display = 'block';
 
         // ✅ NAYA: Header Hide Karein
         document.getElementById('mainHeader').style.display = 'none';
@@ -1880,13 +1876,13 @@ function clearAll() {
     downloadBtn.style.display = 'none';
     document.getElementById('cropInfoPanel').classList.remove('show');
     
-    // ✅ NAYA: Wapas Upload box dikhao, Preview hide karo
+    // ✅ Wapas Upload box dikhao
     uploadArea.style.display = 'block';
-    uploadPreview.style.display = 'none';
-    previewThumbnail.src = '';
-    previewFileName.textContent = '';
+    
+    // ✅ Change Image button hide karo
+    changeImageBtn.style.display = 'none';
 
-    // ✅ NAYA: Header Wapas Dikhayein
+    // ✅ Header Wapas Dikhayein
     document.getElementById('mainHeader').style.display = 'block';
     
     showToast('🗑️ Cleared!');
