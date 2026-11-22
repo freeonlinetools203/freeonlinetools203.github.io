@@ -593,3 +593,8 @@ body:has(#fotHomepageView) .fot-mega-categories{left:auto !important;right:0 !im
   #fotHomepageView .fot-hero-grid{align-items:center}
   #fotHomepageView .fot-featured-age-card{align-self:center;position:relative;top:6px}
 }
+
+/* ROUND 15 */
+@media (min-width:1181px){
+  #fotHomepageView .fot-search-floating-wrap{margin-top:-96px;margin-bottom:22px}
+}
