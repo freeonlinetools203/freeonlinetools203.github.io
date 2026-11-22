@@ -279,7 +279,7 @@ body {
 .nav-links li a:hover { color: #f0f0f0; border-bottom: 2px solid white; }
 
 /* ===== CONTAINER ===== */
-.container { max-width: 1000px; margin: 30px auto 0; padding: 0 20px; }
+.container { max-width: 1100px; margin: 30px auto 0; padding: 0 20px; }
 
 /* ===== MAIN CARD ===== */
 .cropper-card {
@@ -388,13 +388,13 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* ===== LIVE CROP INFO PANEL ===== */
+/* ===== LIVE CROP INFO PANEL (COMPACT) ===== */
 .crop-info-panel {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: white;
-    padding: 15px 20px;
+    padding: 10px 15px; /* Padding kam ki */
     border-radius: 14px;
-    margin-bottom: 18px;
+    margin-bottom: 10px; /* Margin kam kiya */
     display: none;
     box-shadow: 0 6px 18px rgba(30,58,138,0.25);
 }
@@ -407,11 +407,11 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 .crop-info-title {
-    font-size: 11px;
+    font-size: 10px; /* Font chhota kiya */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    margin-bottom: 10px;
+    margin-bottom: 6px; /* Margin kam kiya */
     opacity: 0.9;
     display: flex;
     align-items: center;
@@ -420,28 +420,63 @@ body {
 .crop-info-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 6px; /* Gap kam kiya */
 }
 .crop-info-item {
     text-align: center;
     background: rgba(255,255,255,0.15);
-    padding: 8px 6px;
-    border-radius: 10px;
+    padding: 5px 4px; /* Padding kam ki */
+    border-radius: 8px; /* Radius kam kiya */
 }
 .crop-info-label {
-    font-size: 9px;
+    font-size: 8px; /* Font chhota kiya */
     text-transform: uppercase;
     opacity: 0.85;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 .crop-info-value {
-    font-size: 14px;
+    font-size: 12px; /* Font chhota kiya */
     font-weight: 700;
     font-family: monospace;
 }
 
+/* ===== ASPECT SECTION (COMPACT) ===== */
+.aspect-section {
+    background: #f9fafb;
+    border-radius: 14px;
+    padding: 10px 12px; /* Padding kam ki */
+    margin-bottom: 10px; /* Margin kam kiya */
+    border: 1px solid #e5e7eb;
+}
+.aspect-title {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 6px; /* Margin kam kiya */
+    font-size: 12px; /* Font chhota kiya */
+}
+.aspect-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Gap kam kiya */
+}
+.aspect-btn {
+    background: #f1f5f9;
+    border: none;
+    padding: 5px 10px; /* Padding kam ki */
+    border-radius: 50px;
+    font-size: 10px; /* Font chhota kiya */
+    font-weight: 600;
+    color: #1e3a8a;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.aspect-btn.active {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+}
+.aspect-btn:hover { transform: translateY(-1px); }  
 /* ===== ASPECT SECTION ===== */
 .aspect-section {
     background: #f9fafb;
