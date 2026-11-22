@@ -736,12 +736,22 @@ body {
         </div>
         <div class="card-content">
             
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">🖼️</div>
-                <div class="upload-text">Click to upload an image</div>
-                <div class="upload-hint">PNG, JPG, JPEG, WEBP (Max 10MB)</div>
-                <input type="file" id="fileInput" accept="image/*" style="display: none">
-            </div>
+           <!-- Upload Area (Default) -->
+<div class="upload-area" id="uploadArea">
+    <div class="upload-icon">🖼️</div>
+    <div class="upload-text">Click to upload an image</div>
+    <div class="upload-hint">PNG, JPG, JPEG, WEBP (Max 10MB)</div>
+    <input type="file" id="fileInput" accept="image/*" style="display: none">
+</div>
+
+<!-- Chhota Preview (Upload ke baad dikhega) -->
+<div class="upload-preview" id="uploadPreview" style="display: none;">
+    <img id="previewThumbnail" src="" alt="Preview">
+    <div class="preview-info">
+        <span id="previewFileName">image.jpg</span>
+        <button class="change-image-btn" id="changeImageBtn">🔄 Change Image</button>
+    </div>
+</div>
 
             <div class="cropper-container" id="cropperContainer">
                 <div class="canvas-wrapper">
