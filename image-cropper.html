@@ -770,7 +770,6 @@ body {
     .crop-info-value { font-size: 12px; }
 }
 </style>
-<script src="https://freeonlinetools203.com/script.js"></script>
 </head>
 <body>
 
@@ -780,35 +779,44 @@ body {
 
 <div class="container">
     <div class="cropper-card">
-        <div class="card-header">
+        <!-- Header (Isko hide karne ke liye ID di hai) -->
+        <div class="card-header" id="mainHeader">
             <h1>✂️ Image Cropper – Crop Images Online with Custom Aspect Ratios</h1>
             <p>Crop any image with custom aspect ratios. Perfect for social media, thumbnails, and design projects.</p>
         </div>
         <div class="card-content">
             
-           <!-- Upload Area (Default) -->
-<div class="upload-area" id="uploadArea">
-    <div class="upload-icon">🖼️</div>
-    <div class="upload-text">Click to upload an image</div>
-    <div class="upload-hint">PNG, JPG, JPEG, WEBP (Max 10MB)</div>
-    <input type="file" id="fileInput" accept="image/*" style="display: none">
-</div>
+            <!-- Upload Area (Default) -->
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">🖼️</div>
+                <div class="upload-text">Click to upload an image</div>
+                <div class="upload-hint">PNG, JPG, JPEG, WEBP (Max 10MB)</div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none">
+            </div>
 
-<!-- Chhota Preview (Upload ke baad dikhega) -->
-<div class="upload-preview" id="uploadPreview" style="display: none;">
-    <img id="previewThumbnail" src="" alt="Preview">
-    <div class="preview-info">
-        <span id="previewFileName">image.jpg</span>
-        <button class="change-image-btn" id="changeImageBtn">🔄 Change Image</button>
-    </div>
-</div>
+            <!-- Chhota Preview (Upload ke baad dikhega) -->
+            <div class="upload-preview" id="uploadPreview" style="display: none;">
+                <img id="previewThumbnail" src="" alt="Preview">
+                <div class="preview-info">
+                    <span id="previewFileName">image.jpg</span>
+                    <button class="change-image-btn" id="changeImageBtn">🔄 Change Image</button>
+                </div>
+            </div>
 
             <div class="cropper-container" id="cropperContainer">
+                <!-- Canvas Area -->
                 <div class="canvas-wrapper">
                     <canvas id="imageCanvas"></canvas>
                 </div>
 
-                <!-- Live Crop Info Panel -->
+                <!-- ✅ NAYA: Action Buttons (Ab yeh image ke theek neeche hain) -->
+                <div class="action-buttons" style="margin-bottom: 18px;">
+                    <button class="action-btn crop" id="applyCropBtn">✂️ Apply Crop</button>
+                    <button class="action-btn download" id="downloadBtn" style="display: none;">⬇️ Download Cropped</button>
+                    <button class="action-btn clear" id="clearBtn">🗑️ Clear All</button>
+                </div>
+
+                <!-- Live Crop Info Panel (Ab yeh buttons ke neeche hai) -->
                 <div class="crop-info-panel" id="cropInfoPanel">
                     <div class="crop-info-title">📐 Live Crop Details</div>
                     <div class="crop-info-grid">
@@ -831,6 +839,7 @@ body {
                     </div>
                 </div>
 
+                <!-- Aspect Ratio Section (Ab yeh sabse neeche hai) -->
                 <div class="aspect-section">
                     <div class="aspect-title">📐 Aspect Ratio Presets</div>
                     <div class="aspect-buttons" id="aspectButtons">
@@ -845,11 +854,6 @@ body {
                     </div>
                 </div>
 
-                <div class="action-buttons">
-                    <button class="action-btn crop" id="applyCropBtn">✂️ Apply Crop</button>
-                    <button class="action-btn download" id="downloadBtn" style="display: none;">⬇️ Download Cropped</button>
-                    <button class="action-btn clear" id="clearBtn">🗑️ Clear All</button>
-                </div>
             </div>
         </div>
     </div>
@@ -1638,6 +1642,9 @@ function handleImageUpload(file) {
         uploadPreview.style.display = 'flex';
         previewThumbnail.src = e.target.result;
         previewFileName.textContent = file.name;
+
+        // ✅ NAYA: Header Hide Karein
+        document.getElementById('mainHeader').style.display = 'none';
     };
     reader.readAsDataURL(file);
 }
@@ -1859,6 +1866,9 @@ function clearAll() {
     uploadPreview.style.display = 'none';
     previewThumbnail.src = '';
     previewFileName.textContent = '';
+
+    // ✅ NAYA: Header Wapas Dikhayein
+    document.getElementById('mainHeader').style.display = 'block';
     
     showToast('🗑️ Cleared!');
 }
