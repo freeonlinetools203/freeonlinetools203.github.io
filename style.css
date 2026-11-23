@@ -1125,7 +1125,7 @@ body.dark-mode .fot-theme-toggle .moon-active {
 /* ========================================================================= */
 body > footer:not(.fot-footer),
 div#footer, div.footer, .footer-wrapper, 
-nav:not(.fot-topbar), .nav-container, .menu-bar,
+body > nav:not(.fot-topbar), .nav-container, .menu-bar,
 .related-links-old, .legacy-footer {
   display: none !important;
   visibility: hidden !important;
