@@ -1,3 +1,7 @@
+/* Protected wrapper: tool page ke apne const/let/function names ab is file se clash nahi karenge,
+   isliye header, breadcrumb aur related tools hamesha load honge. */
+(function () {
+'use strict';
 // =========================================================================
 // 1. CENTRALIZED TOOLS DATABASE & URL MAP (ALL 240+ EXISTING URLS SAFE)
 // =========================================================================
@@ -1011,6 +1015,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ['productivity','📗 Productivity & Excel Tools']
     ];
     const isAdPage = adPages.some(p => path === p[0]);
+    const isBlogPage = /^\/blog(-[^\/]*)?(\.html)?$/.test(path);
     const adHtml = adPages.map(p => `<a href="${base}${p[0]}"${path === p[0] ? ' class="cur"' : ''}>${p[1]}</a>`).join('');
     const catHtml = `<a href="${base}/?view=all-tools" class="all">📂 Browse All 240+ Tools Directory →</a>` +
       cats.map(c => `<a href="${base}/?category=${c[0]}">${c[1]}</a>`).join('');
@@ -1068,7 +1073,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <nav><ul>
       <li><a class="sh-link" href="${base}/">🏠 Home</a></li>
       <li class="${isAdPage ? 'active' : ''}" data-dd><a class="sh-link" href="${base}/about.html">AdSense Pages ▾</a><div class="sh-menu">${adHtml}</div></li>
-      <li class="${isAdPage ? '' : 'active'}" data-dd><a class="sh-link" href="${base}/?view=all-tools">All Tools ▾</a><div class="sh-menu mega">${catHtml}</div></li>
+      <li class="${(isAdPage || isBlogPage) ? '' : 'active'}" data-dd><a class="sh-link" href="${base}/?view=all-tools">All Tools ▾</a><div class="sh-menu mega">${catHtml}</div></li>
+      <li class="${isBlogPage ? 'active' : ''}"><a class="sh-link" href="${base}/blog.html">📝 Blog</a></li>
       <li><a class="sh-link" href="${base}/about.html">About</a></li>
       <li><a class="sh-link" href="${base}/contact.html">Contact</a></li>
     </ul></nav>
@@ -1167,6 +1173,13 @@ function enhanceIndividualToolPage() {
   };
   const adKey = AD_PAGES[currentPath] ? currentPath : (AD_PAGES[currentPath + '.html'] ? currentPath + '.html' : '');
   const adInfo = adKey ? AD_PAGES[adKey] : null;
+
+  // Blog pages (blog.html + blog-*.html): Blog breadcrumb + related ARTICLES (tools nahi)
+  const BLOG_POSTS = [["blog-age-calculator.html", "🎂", "Age Calculator Guide: How to Calculate Your Exact Age", "Learn how age is worked out in years, months and days, why results can differ between methods, and how to use an online age calculator correctly."], ["blog-bmi.html", "❤️", "What Is BMI? Body Mass Index Explained", "Understand what Body Mass Index measures, how it is calculated, what the categories mean and what BMI cannot tell you about your health."], ["blog-zakat-calculation.html", "🕌", "How to Calculate Zakat: A Simple Guide", "A clear introduction to calculating Zakat, including what counts as wealth, the nisab threshold and how to work out the amount due."], ["blog-percentage-calculation.html", "➗", "How to Calculate Percentages: Simple Methods and Examples", "Easy step-by-step methods for finding percentages, increases, decreases and discounts, with everyday examples."], ["blog-strong-password.html", "🔒", "How to Create a Strong Password", "Practical advice on building passwords that are hard to guess, and the common mistakes that make accounts easy to hack."], ["blog-qr-codes.html", "🔳", "QR Codes Explained: What They Are and How to Use Them", "What QR codes are, how they work, where they are used, and tips for creating and scanning them safely."], ["blog-image-compression.html", "🖼️", "Why Image Compression Matters for Faster Websites", "See how compressing images reduces file size, speeds up page loading and saves storage without a visible loss in quality."], ["blog-pdf-to-jpg.html", "📄", "How to Convert PDF to JPG Images", "A simple walkthrough on turning PDF pages into JPG images, with tips on quality, resolution and when to use this format."], ["blog-pdf-to-word.html", "📝", "How to Convert PDF to Word Documents", "Learn how PDF to Word conversion works, what to expect from the result and how to keep your formatting as intact as possible."], ["blog-youtube-keywords.html", "▶️", "How to Find the Right Keywords for YouTube Videos", "A beginner-friendly guide to YouTube keyword research and using keywords in titles, descriptions and tags."], ["blog-tools-for-students.html", "🎓", "Top 10 Free Online Tools for Students", "A roundup of free online tools that help students calculate, convert, write and study more efficiently."], ["blog-free-vs-paid-tools.html", "💡", "Free vs Paid Online Tools: Which Should You Choose?", "A practical comparison of free and paid online tools, and when free browser-based tools are all you need."], ["blog-mobile-friendly.html", "📱", "Why Mobile-Friendly Websites Matter", "Why most visitors browse on phones, what makes a site mobile-friendly and how it affects user experience."], ["blog-spin-the-wheel.html", "🎡", "Spin the Wheel: Fun Ways to Make Random Choices", "Discover how a spin the wheel works and creative ways to use it for games, classrooms, giveaways and decisions."], ["blog-yes-no-wheel.html", "🎯", "Yes/No Wheel: How to Make Quick Decisions", "How a Yes/No wheel can help with small everyday decisions, and why random choices can break indecision."]];
+  const blogFile = currentPath.endsWith('.html') ? currentPath : currentPath + '.html';
+  const isBlogIndex = blogFile === 'blog.html';
+  const isBlogPost = /^blog-.+\.html$/.test(blogFile);
+  const blogMode = isBlogIndex || isBlogPost;
   if (adInfo) { foundCategoryTitle = 'AdSense Pages'; toolDisplayName = adInfo.name; }
 
   // Find which category this tool belongs to in categoryPagesDB
@@ -1186,7 +1199,7 @@ function enhanceIndividualToolPage() {
   if (adInfo) document.querySelectorAll('.fot-breadcrumbs').forEach(el => el.remove());
 
   // 1. Insert Breadcrumbs right below header if not exists (sirf tool pages par)
-  if (!adInfo && !document.querySelector('.fot-breadcrumbs')) {
+  if (!adInfo && !blogMode && !document.querySelector('.fot-breadcrumbs')) {
     const breadcrumbHtml = `
       <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
         <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;color:#475569;font-weight:600;">
@@ -1235,7 +1248,7 @@ function enhanceIndividualToolPage() {
   }
 
   // 2. Append Related Tools Section above footer (sirf tool pages ke liye)
-  if (!adInfo && !document.querySelector('.fot-related-tools-section') && typeof categoryPagesDB !== 'undefined') {
+  if (!adInfo && !blogMode && !document.querySelector('.fot-related-tools-section') && typeof categoryPagesDB !== 'undefined') {
     const catData = categoryPagesDB[foundCategoryKey];
     if (catData && catData.tools.length > 1) {
       const related = catData.tools.filter(t => !getUrl(t.name).includes(currentPath)).slice(0, 4);
@@ -1276,6 +1289,51 @@ function enhanceIndividualToolPage() {
     }
   }
 
+  // 2b. Blog pages: breadcrumb (Home > Blog > Article) + "More Articles"
+  if (blogMode) {
+    const B = 'https://freeonlinetools203.com/';
+    if (!document.querySelector('.fot-breadcrumbs')) {
+      const cur = BLOG_POSTS.find(p => p[0] === blogFile);
+      const last = isBlogIndex ? '<span style="color:#0F172A;">Blog</span>'
+        : '<a href="' + B + 'blog.html" style="color:#2563EB;text-decoration:none;">Blog</a> › <span style="color:#0F172A;">' + (cur ? cur[2] : toolDisplayName) + '</span>';
+      const crumb = `
+      <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
+        <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#475569;font-weight:600;">
+          <a href="${B}" style="color:#2563EB;text-decoration:none;">🏠 Home</a> › ${last}
+        </div>
+      </div>`;
+      const hdr = document.querySelector('.fot-topbar') || document.querySelector('header');
+      if (hdr) hdr.insertAdjacentHTML('afterend', crumb);
+    }
+    if (isBlogPost && !document.querySelector('.fot-related-tools-section')) {
+      const idx = BLOG_POSTS.findIndex(p => p[0] === blogFile);
+      const others = BLOG_POSTS.filter(p => p[0] !== blogFile);
+      const start = idx >= 0 ? idx : 0;
+      const more = [];
+      for (let i = 0; i < 3 && i < others.length; i++) more.push(others[(start + i) % others.length]);
+      const cardsHtml = more.map(p => `
+        <div style="background:#FFF;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+          <div style="font-size:1.6rem;">${p[1]}</div>
+          <h4 style="margin:0;font-size:1rem;font-weight:800;color:#0F296E;line-height:1.35;">${p[2]}</h4>
+          <p style="margin:0;font-size:0.86rem;color:#475569;flex:1;">${p[3]}</p>
+          <a href="${B}${p[0]}" style="display:block;text-align:center;background:linear-gradient(135deg,#1E3A8A,#2563EB);color:#FFF;padding:10px;border-radius:10px;font-weight:800;text-decoration:none;font-size:0.88rem;">Read Article →</a>
+        </div>`).join('');
+      const moreHtml = `
+      <section class="fot-related-tools-section" style="max-width:1320px;margin:40px auto 50px;padding:0 24px;font-family:'Inter',sans-serif;">
+        <div style="background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);border-radius:20px;padding:30px 24px;color:#FFF;box-shadow:0 12px 30px rgba(29,78,216,0.2);">
+          <div style="text-align:center;margin-bottom:22px;">
+            <h3 style="font-size:1.4rem;font-weight:900;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);padding:8px 24px;border-radius:999px;margin:0;">📚 More Articles</h3>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">${cardsHtml}</div>
+          <div style="text-align:center;margin-top:20px;"><a href="${B}blog.html" style="color:#FFF;font-weight:800;text-decoration:underline;">View all articles →</a></div>
+        </div>
+      </section>`;
+      const ftr = document.querySelector('footer.fot-footer');
+      if (ftr) ftr.insertAdjacentHTML('beforebegin', moreHtml);
+      else document.body.insertAdjacentHTML('beforeend', moreHtml);
+    }
+  }
+
   // 3. Ensure unified footer exists on tool pages
   if (!document.querySelector('.fot-footer')) {
     const unifiedFooter = `
@@ -1290,6 +1348,7 @@ function enhanceIndividualToolPage() {
               <h4>Quick Links</h4>
               <a href="https://freeonlinetools203.com/" style="color:#94A3B8;text-decoration:none;display:block;padding:4px 0;">Home</a>
               <a href="https://freeonlinetools203.com/?view=all-tools" style="color:#94A3B8;text-decoration:none;display:block;padding:4px 0;">All Tools (240+)</a>
+              <a href="https://freeonlinetools203.com/blog.html" style="color:#94A3B8;text-decoration:none;display:block;padding:4px 0;">Blog</a>
             </div>
             <div>
               <h4>Legal Pages</h4>
@@ -1429,4 +1488,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const timer = setInterval(function () { run(); if (++tries >= 10) clearInterval(timer); }, 500);
     new MutationObserver(run).observe(document.body, { childList: true, subtree: true });
   });
+})();
+
+// Public API (sirf wahi jo doosre pages ko chahiye)
+window.toolUrlMap = toolUrlMap;
+window.categoryPagesDB = categoryPagesDB;
+window.getUrl = getUrl;
 })();
