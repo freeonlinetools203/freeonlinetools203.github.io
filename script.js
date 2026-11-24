@@ -1190,6 +1190,13 @@ function enhanceIndividualToolPage() {
         foundCategoryKey = catKey;
         foundCategoryTitle = catObj.title;
         toolDisplayName = match.name;
+        // "Recently Used Tools" ke liye: visitor ke browser mein is tool ka naam save karo (max 6)
+        try {
+          let recent = JSON.parse(localStorage.getItem('fotRecentTools') || '[]');
+          recent = recent.filter(n => n !== match.name);
+          recent.unshift(match.name);
+          localStorage.setItem('fotRecentTools', JSON.stringify(recent.slice(0, 6)));
+        } catch (e) {}
         break;
       }
     }
