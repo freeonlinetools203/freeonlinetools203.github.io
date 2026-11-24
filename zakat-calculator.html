@@ -1266,7 +1266,7 @@ function calculateZakat() {
     let debts = parseFloat(document.getElementById('debts').value) || 0;
     let liabilities = parseFloat(document.getElementById('liabilities').value) || 0;
 
-    let totalAssets = cashHand + cashBank + goldValue + silverValue + investments + businessAssets + otherSavings;
+    let totalAssets = cashHand + cashBank + goldValue + investments + businessAssets + otherSavings;
     let totalDebts = debts + liabilities;
     let netWealth = totalAssets - totalDebts;
     let zakatPayable = 0;
