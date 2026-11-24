@@ -69,18 +69,6 @@
     .fx-recent-list{display:flex;flex-wrap:wrap;gap:8px}
     .fx-chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #d6e5ff;color:#1E3A8A;padding:6px 12px;border-radius:999px;font-weight:700;font-size:.8rem;text-decoration:none}
     .fx-chip:hover{background:#e8f1ff}
-    .fx-art-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px}
-    .fx-art{display:flex;flex-direction:column;background:linear-gradient(180deg,#fff,#f1f7ff);border:1px solid #d6e5ff;border-radius:16px;padding:18px 16px;box-shadow:0 4px 14px rgba(29,78,216,.07);transition:transform .15s,box-shadow .15s}
-    .fx-art:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(29,78,216,.15)}
-    .fx-art-ico{font-size:1.8rem;line-height:1;margin-bottom:8px}
-    .fx-art-tag{align-self:flex-start;background:#e8f1ff;color:#1D4ED8;font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:8px}
-    .fx-art h3{font-size:1rem;font-weight:800;line-height:1.35;margin:0 0 6px}
-    .fx-art h3 a{color:#0F296E;text-decoration:none}
-    .fx-art h3 a:hover{color:#2563EB}
-    .fx-art p{font-size:.86rem;line-height:1.5;color:#475569;margin:0 0 12px;flex:1}
-    .fx-art-link{color:#2563EB;font-weight:800;font-size:.85rem;text-decoration:none}
-    .fx-art-more{text-align:center;margin-top:14px}
-    .fx-art-more a{display:inline-block;background:linear-gradient(135deg,#1E3A8A,#2563EB);color:#fff !important;padding:9px 26px;border-radius:999px;font-weight:800;font-size:.9rem;text-decoration:none}
     #fxBackTop{position:fixed;right:18px;bottom:20px;width:44px;height:44px;border-radius:50%;border:none;background:#FACC15;color:#1E293B;font-size:1.3rem;font-weight:900;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s;z-index:900}
     #fxBackTop.show{opacity:1;visibility:visible;transform:none}
     #fxBackTop:hover{filter:brightness(1.05)}
@@ -91,7 +79,50 @@
     body.dark-mode .fx-ico,body.dark-mode .fx-art-tag{background:#1e2f55;color:#93c5fd}
     body.dark-mode .fx-chip{background:#0f172a;border-color:#24365f;color:#bfdbfe}
     body.dark-mode .fx-art-link{color:#60a5fa}
-    @media (max-width:900px){.fx-grid{grid-template-columns:1fr}.fx-art-grid{grid-template-columns:1fr}}
+    @media (max-width:900px){.fx-grid{grid-template-columns:1fr}}
+    /* ===== Latest Articles (bade, rangeen cards) ===== */
+    .fx-head-sub{text-align:center;color:#475569;font-size:1rem;max-width:720px;margin:12px auto 0;line-height:1.6}
+    .fx-art-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:18px}
+    .fx-art{display:flex;flex-direction:column;background:#fff;border:1px solid #d6e5ff;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(29,78,216,.10);transition:transform .2s,box-shadow .2s}
+    .fx-art:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(29,78,216,.22)}
+    .fx-art-banner{position:relative;display:flex;align-items:center;justify-content:center;height:140px;background:linear-gradient(135deg,var(--c1),var(--c2));text-decoration:none}
+    .fx-art-emoji{font-size:3.8rem;line-height:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25));transition:transform .2s}
+    .fx-art:hover .fx-art-emoji{transform:scale(1.12) rotate(-4deg)}
+    .fx-art-tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.93);color:#0F296E;font-size:.74rem;font-weight:800;padding:4px 12px;border-radius:999px}
+    .fx-art-body{display:flex;flex-direction:column;flex:1;padding:20px 20px 22px}
+    .fx-art h3{font-size:1.2rem;font-weight:800;line-height:1.35;margin:0 0 10px}
+    .fx-art h3 a{color:#0F296E;text-decoration:none}
+    .fx-art h3 a:hover{color:#2563EB}
+    .fx-art p{font-size:.95rem;line-height:1.65;color:#475569;margin:0 0 18px;flex:1}
+    .fx-art-btn{display:block;text-align:center;background:linear-gradient(135deg,#1E3A8A,#2563EB);color:#fff !important;padding:11px 16px;border-radius:12px;font-weight:800;font-size:.92rem;text-decoration:none;transition:filter .2s}
+    .fx-art-btn:hover{filter:brightness(1.12)}
+    .fx-art-more{text-align:center;margin-top:22px}
+    .fx-art-more a{display:inline-block;background:linear-gradient(135deg,#FACC15,#F59E0B);color:#1E293B !important;padding:12px 34px;border-radius:999px;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 6px 16px rgba(245,158,11,.35);transition:transform .2s}
+    .fx-art-more a:hover{transform:translateY(-2px)}
+    @media (max-width:1000px){.fx-art-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){.fx-art-grid{grid-template-columns:1fr}.fx-art-banner{height:120px}}
+
+    /* ===== FAQ (bada aur baqi features jaisa) ===== */
+    #fotHomepageView .fot-faq-list{max-width:1000px;gap:14px;margin-top:18px;counter-reset:faq}
+    #fotHomepageView .fot-faq-item{border-radius:18px;border:1px solid #d6e5ff;background:linear-gradient(180deg,#fff,#f1f7ff);box-shadow:0 6px 18px rgba(29,78,216,.09);transition:box-shadow .2s,transform .2s}
+    #fotHomepageView .fot-faq-item:hover{box-shadow:0 12px 28px rgba(29,78,216,.16);transform:translateY(-2px)}
+    #fotHomepageView .fot-faq-item[open]{border-color:#2563EB}
+    #fotHomepageView .fot-faq-item summary{padding:20px 64px 20px 68px;font-size:1.08rem;line-height:1.4}
+    #fotHomepageView .fot-faq-item summary::before{counter-increment:faq;content:counter(faq);position:absolute;left:18px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#1E3A8A,#2563EB);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:800}
+    #fotHomepageView .fot-faq-item summary::after{width:32px;height:32px;right:18px;font-size:1.3rem}
+    #fotHomepageView .fot-faq-item p{padding:0 24px 22px 68px;font-size:1rem;line-height:1.75}
+    @media (max-width:560px){
+      #fotHomepageView .fot-faq-item summary{padding:16px 54px 16px 56px;font-size:.98rem}
+      #fotHomepageView .fot-faq-item summary::before{left:12px;width:30px;height:30px;font-size:.85rem}
+      #fotHomepageView .fot-faq-item summary::after{right:12px;width:28px;height:28px}
+      #fotHomepageView .fot-faq-item p{padding:0 16px 18px 56px;font-size:.94rem}
+    }
+    body.dark-mode .fx-head-sub{color:#94a3b8}
+    body.dark-mode .fx-art-tag{background:rgba(255,255,255,.93);color:#0F296E}
+    body.dark-mode #fotHomepageView .fot-faq-item{background:linear-gradient(180deg,#111c33,#0f172a);border-color:#24365f}
+    body.dark-mode #fotHomepageView .fot-faq-item summary{color:#bfdbfe}
+    body.dark-mode #fotHomepageView .fot-faq-item[open] summary{background:#16233f}
+    body.dark-mode #fotHomepageView .fot-faq-item p{color:#94a3b8}
   </style>
   <script src="https://freeonlinetools203.com/script.js" defer></script>
 </head>
@@ -498,27 +529,55 @@
         <div class="fot-section-header-center">
           <h2 class="fot-section-pill-title" id="latestTitle">📚 Latest Articles</h2>
         </div>
+        <p class="fx-head-sub">Simple, practical guides and tutorials to help you understand and get more from our free online tools.</p>
         <div class="fx-art-grid">
-          <article class="fx-art">
-            <div class="fx-art-ico" aria-hidden="true">❤️</div>
-            <span class="fx-art-tag">Health</span>
-            <h3><a href="https://freeonlinetools203.com/blog-bmi.html">What Is BMI? Body Mass Index Explained</a></h3>
-            <p>Understand what Body Mass Index measures, how it is calculated, what the categories mean and what BMI cannot tell you about your health.</p>
-            <a class="fx-art-link" href="https://freeonlinetools203.com/blog-bmi.html">Read Article →</a>
+          <article class="fx-art" style="--c1:#047857;--c2:#34D399">
+            <a class="fx-art-banner" href="https://freeonlinetools203.com/blog-zakat-calculation.html" tabindex="-1" aria-hidden="true"><span class="fx-art-emoji">🕌</span><span class="fx-art-tag">Finance</span></a>
+            <div class="fx-art-body">
+              <h3><a href="https://freeonlinetools203.com/blog-zakat-calculation.html">How to Calculate Zakat: A Simple Guide</a></h3>
+              <p>A clear introduction to calculating Zakat, including what counts as wealth, the nisab threshold and how to work out the amount due.</p>
+              <a class="fx-art-btn" href="https://freeonlinetools203.com/blog-zakat-calculation.html">Read Article →</a>
+            </div>
           </article>
-          <article class="fx-art">
-            <div class="fx-art-ico" aria-hidden="true">🕌</div>
-            <span class="fx-art-tag">Finance</span>
-            <h3><a href="https://freeonlinetools203.com/blog-zakat-calculation.html">How to Calculate Zakat: A Simple Guide</a></h3>
-            <p>A clear introduction to calculating Zakat, including what counts as wealth, the nisab threshold and how to work out the amount due.</p>
-            <a class="fx-art-link" href="https://freeonlinetools203.com/blog-zakat-calculation.html">Read Article →</a>
+          <article class="fx-art" style="--c1:#7C3AED;--c2:#EC4899">
+            <a class="fx-art-banner" href="https://freeonlinetools203.com/blog-spin-the-wheel.html" tabindex="-1" aria-hidden="true"><span class="fx-art-emoji">🎡</span><span class="fx-art-tag">Fun &amp; Games</span></a>
+            <div class="fx-art-body">
+              <h3><a href="https://freeonlinetools203.com/blog-spin-the-wheel.html">Spin the Wheel: Fun Ways to Make Random Choices</a></h3>
+              <p>Discover how a spin the wheel works and creative ways to use it for games, classrooms, giveaways and everyday decisions.</p>
+              <a class="fx-art-btn" href="https://freeonlinetools203.com/blog-spin-the-wheel.html">Read Article →</a>
+            </div>
           </article>
-          <article class="fx-art">
-            <div class="fx-art-ico" aria-hidden="true">🔒</div>
-            <span class="fx-art-tag">Security</span>
-            <h3><a href="https://freeonlinetools203.com/blog-strong-password.html">How to Create a Strong Password</a></h3>
-            <p>Practical advice on building passwords that are hard to guess, and the common mistakes that make accounts easy to hack.</p>
-            <a class="fx-art-link" href="https://freeonlinetools203.com/blog-strong-password.html">Read Article →</a>
+          <article class="fx-art" style="--c1:#2563EB;--c2:#06B6D4">
+            <a class="fx-art-banner" href="https://freeonlinetools203.com/blog-age-calculator.html" tabindex="-1" aria-hidden="true"><span class="fx-art-emoji">🎂</span><span class="fx-art-tag">Age</span></a>
+            <div class="fx-art-body">
+              <h3><a href="https://freeonlinetools203.com/blog-age-calculator.html">Age Calculator Guide: How to Calculate Your Exact Age</a></h3>
+              <p>Learn how age is worked out in years, months and days, why results can differ between methods, and how to use an online age calculator correctly.</p>
+              <a class="fx-art-btn" href="https://freeonlinetools203.com/blog-age-calculator.html">Read Article →</a>
+            </div>
+          </article>
+          <article class="fx-art" style="--c1:#E11D48;--c2:#F97316">
+            <a class="fx-art-banner" href="https://freeonlinetools203.com/blog-bmi.html" tabindex="-1" aria-hidden="true"><span class="fx-art-emoji">❤️</span><span class="fx-art-tag">Health</span></a>
+            <div class="fx-art-body">
+              <h3><a href="https://freeonlinetools203.com/blog-bmi.html">What Is BMI? Body Mass Index Explained</a></h3>
+              <p>Understand what Body Mass Index measures, how it is calculated, what the categories mean and what BMI cannot tell you about your health.</p>
+              <a class="fx-art-btn" href="https://freeonlinetools203.com/blog-bmi.html">Read Article →</a>
+            </div>
+          </article>
+          <article class="fx-art" style="--c1:#1E3A8A;--c2:#6366F1">
+            <a class="fx-art-banner" href="https://freeonlinetools203.com/blog-strong-password.html" tabindex="-1" aria-hidden="true"><span class="fx-art-emoji">🔒</span><span class="fx-art-tag">Security</span></a>
+            <div class="fx-art-body">
+              <h3><a href="https://freeonlinetools203.com/blog-strong-password.html">How to Create a Strong Password</a></h3>
+              <p>Practical advice on building passwords that are hard to guess, and the common mistakes that make accounts easy to hack.</p>
+              <a class="fx-art-btn" href="https://freeonlinetools203.com/blog-strong-password.html">Read Article →</a>
+            </div>
+          </article>
+          <article class="fx-art" style="--c1:#334155;--c2:#0EA5E9">
+            <a class="fx-art-banner" href="https://freeonlinetools203.com/blog-qr-codes.html" tabindex="-1" aria-hidden="true"><span class="fx-art-emoji">🔳</span><span class="fx-art-tag">Technology</span></a>
+            <div class="fx-art-body">
+              <h3><a href="https://freeonlinetools203.com/blog-qr-codes.html">QR Codes Explained: What They Are and How to Use Them</a></h3>
+              <p>What QR codes are, how they work, where they are used, and tips for creating and scanning them safely.</p>
+              <a class="fx-art-btn" href="https://freeonlinetools203.com/blog-qr-codes.html">Read Article →</a>
+            </div>
           </article>
         </div>
         <div class="fx-art-more"><a href="https://freeonlinetools203.com/blog.html">View All Articles →</a></div>
