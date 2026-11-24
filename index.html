@@ -53,6 +53,46 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home-redesign.css">
+
+  <!-- Homepage extras: Tool of the Day, Recently Used, Latest Articles, Back to Top -->
+  <style id="fotHomeExtras">
+    .fx-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+    .fx-grid.single{grid-template-columns:1fr}
+    .fx-card{background:linear-gradient(180deg,#fff,#f1f7ff);border:1px solid #d6e5ff;border-radius:16px;padding:16px 18px;box-shadow:0 4px 14px rgba(29,78,216,.07)}
+    .fx-title{font-size:.95rem;font-weight:800;color:#0F296E;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+    .fx-totd-body{display:flex;align-items:center;gap:14px}
+    .fx-ico{width:56px;height:56px;border-radius:14px;background:#e8f1ff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex:none}
+    .fx-name{font-weight:800;font-size:1.05rem;color:#0F172A;line-height:1.3}
+    .fx-sub{font-size:.8rem;color:#64748b;margin-top:2px}
+    .fx-btn{display:inline-block;margin-top:8px;background:linear-gradient(135deg,#1E3A8A,#2563EB);color:#fff !important;padding:7px 18px;border-radius:999px;font-weight:700;font-size:.82rem;text-decoration:none}
+    .fx-btn:hover{filter:brightness(1.1)}
+    .fx-recent-list{display:flex;flex-wrap:wrap;gap:8px}
+    .fx-chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #d6e5ff;color:#1E3A8A;padding:6px 12px;border-radius:999px;font-weight:700;font-size:.8rem;text-decoration:none}
+    .fx-chip:hover{background:#e8f1ff}
+    .fx-art-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px}
+    .fx-art{display:flex;flex-direction:column;background:linear-gradient(180deg,#fff,#f1f7ff);border:1px solid #d6e5ff;border-radius:16px;padding:18px 16px;box-shadow:0 4px 14px rgba(29,78,216,.07);transition:transform .15s,box-shadow .15s}
+    .fx-art:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(29,78,216,.15)}
+    .fx-art-ico{font-size:1.8rem;line-height:1;margin-bottom:8px}
+    .fx-art-tag{align-self:flex-start;background:#e8f1ff;color:#1D4ED8;font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+    .fx-art h3{font-size:1rem;font-weight:800;line-height:1.35;margin:0 0 6px}
+    .fx-art h3 a{color:#0F296E;text-decoration:none}
+    .fx-art h3 a:hover{color:#2563EB}
+    .fx-art p{font-size:.86rem;line-height:1.5;color:#475569;margin:0 0 12px;flex:1}
+    .fx-art-link{color:#2563EB;font-weight:800;font-size:.85rem;text-decoration:none}
+    .fx-art-more{text-align:center;margin-top:14px}
+    .fx-art-more a{display:inline-block;background:linear-gradient(135deg,#1E3A8A,#2563EB);color:#fff !important;padding:9px 26px;border-radius:999px;font-weight:800;font-size:.9rem;text-decoration:none}
+    #fxBackTop{position:fixed;right:18px;bottom:20px;width:44px;height:44px;border-radius:50%;border:none;background:#FACC15;color:#1E293B;font-size:1.3rem;font-weight:900;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s;z-index:900}
+    #fxBackTop.show{opacity:1;visibility:visible;transform:none}
+    #fxBackTop:hover{filter:brightness(1.05)}
+    body.dark-mode .fx-card,body.dark-mode .fx-art{background:linear-gradient(180deg,#111c33,#0f172a);border-color:#24365f}
+    body.dark-mode .fx-title,body.dark-mode .fx-art h3 a{color:#bfdbfe}
+    body.dark-mode .fx-name{color:#f1f5f9}
+    body.dark-mode .fx-sub,body.dark-mode .fx-art p{color:#94a3b8}
+    body.dark-mode .fx-ico,body.dark-mode .fx-art-tag{background:#1e2f55;color:#93c5fd}
+    body.dark-mode .fx-chip{background:#0f172a;border-color:#24365f;color:#bfdbfe}
+    body.dark-mode .fx-art-link{color:#60a5fa}
+    @media (max-width:900px){.fx-grid{grid-template-columns:1fr}.fx-art-grid{grid-template-columns:1fr}}
+  </style>
   <script src="https://freeonlinetools203.com/script.js" defer></script>
 </head>
 <body>
@@ -432,6 +472,58 @@
         </div>
       </section>
 
+      <!-- 5a. TOOL OF THE DAY + RECENTLY USED -->
+      <section class="fot-reveal" aria-label="Tool of the day and recently used tools">
+        <div class="fx-grid single" id="fxGrid">
+          <div class="fx-card" id="fxToolOfDay">
+            <h2 class="fx-title">🌟 Tool of the Day</h2>
+            <div class="fx-totd-body">
+              <div class="fx-ico" id="fxTotdIco">🎂</div>
+              <div>
+                <div class="fx-name" id="fxTotdName">Age Calculator</div>
+                <div class="fx-sub" id="fxTotdSub">Calculators</div>
+                <a class="fx-btn" id="fxTotdLink" href="https://freeonlinetools203.com/age-calculator.html">Try It Now →</a>
+              </div>
+            </div>
+          </div>
+          <div class="fx-card" id="fxRecent" style="display:none;">
+            <h2 class="fx-title">🕒 Recently Used Tools</h2>
+            <div class="fx-recent-list" id="fxRecentList"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5a-2. LATEST ARTICLES -->
+      <section class="fot-reveal" aria-labelledby="latestTitle">
+        <div class="fot-section-header-center">
+          <h2 class="fot-section-pill-title" id="latestTitle">📚 Latest Articles</h2>
+        </div>
+        <div class="fx-art-grid">
+          <article class="fx-art">
+            <div class="fx-art-ico" aria-hidden="true">❤️</div>
+            <span class="fx-art-tag">Health</span>
+            <h3><a href="https://freeonlinetools203.com/blog-bmi.html">What Is BMI? Body Mass Index Explained</a></h3>
+            <p>Understand what Body Mass Index measures, how it is calculated, what the categories mean and what BMI cannot tell you about your health.</p>
+            <a class="fx-art-link" href="https://freeonlinetools203.com/blog-bmi.html">Read Article →</a>
+          </article>
+          <article class="fx-art">
+            <div class="fx-art-ico" aria-hidden="true">🕌</div>
+            <span class="fx-art-tag">Finance</span>
+            <h3><a href="https://freeonlinetools203.com/blog-zakat-calculation.html">How to Calculate Zakat: A Simple Guide</a></h3>
+            <p>A clear introduction to calculating Zakat, including what counts as wealth, the nisab threshold and how to work out the amount due.</p>
+            <a class="fx-art-link" href="https://freeonlinetools203.com/blog-zakat-calculation.html">Read Article →</a>
+          </article>
+          <article class="fx-art">
+            <div class="fx-art-ico" aria-hidden="true">🔒</div>
+            <span class="fx-art-tag">Security</span>
+            <h3><a href="https://freeonlinetools203.com/blog-strong-password.html">How to Create a Strong Password</a></h3>
+            <p>Practical advice on building passwords that are hard to guess, and the common mistakes that make accounts easy to hack.</p>
+            <a class="fx-art-link" href="https://freeonlinetools203.com/blog-strong-password.html">Read Article →</a>
+          </article>
+        </div>
+        <div class="fx-art-more"><a href="https://freeonlinetools203.com/blog.html">View All Articles →</a></div>
+      </section>
+
       <!-- 5b. WHY CHOOSE US (sachi khoobiyan) -->
       <section class="fot-reveal fot-why" aria-labelledby="whyTitle">
         <div class="fot-section-header-center">
@@ -552,5 +644,68 @@
     </div>
   </footer>
 
+
+<!-- Homepage extras script: Tool of the Day, Recently Used, Back to Top -->
+<button type="button" id="fxBackTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function initExtras() {
+    var DB = window.categoryPagesDB, gu = window.getUrl;
+    if (!DB || !gu) return;
+    var all = [], seen = {};
+    Object.keys(DB).forEach(function (k) {
+      DB[k].tools.forEach(function (t) {
+        if (seen[t.name]) return;
+        seen[t.name] = 1;
+        all.push({ name: t.name, sub: t.sub || '', icon: DB[k].icon || '🛠️', cat: DB[k].title });
+      });
+    });
+    if (!all.length) return;
+
+    // Tool of the Day: roz ek tool, har visitor ko us din wahi tool dikhta hai
+    var day = Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
+    var pick = all[day % all.length];
+    var ico = document.getElementById('fxTotdIco'), nm = document.getElementById('fxTotdName'),
+        sb = document.getElementById('fxTotdSub'), lk = document.getElementById('fxTotdLink');
+    if (ico && nm && sb && lk) {
+      ico.textContent = pick.icon;
+      nm.textContent = pick.name;
+      sb.textContent = pick.cat + (pick.sub ? ' • ' + pick.sub : '');
+      lk.href = gu(pick.name);
+    }
+
+    // Recently Used: visitor ke browser mein save hota hai (tool pages ye save karte hain)
+    var recent = [];
+    try { recent = JSON.parse(localStorage.getItem('fotRecentTools') || '[]'); } catch (e) {}
+    var items = recent.map(function (n) { return all.filter(function (t) { return t.name === n; })[0]; })
+                      .filter(Boolean).slice(0, 6);
+    var box = document.getElementById('fxRecent'), list = document.getElementById('fxRecentList'),
+        grid = document.getElementById('fxGrid');
+    if (box && list && items.length) {
+      list.innerHTML = items.map(function (t) {
+        return '<a class="fx-chip" href="' + esc(gu(t.name)) + '">' + esc(t.icon) + ' ' + esc(t.name) + '</a>';
+      }).join('');
+      box.style.display = '';
+      if (grid) grid.classList.remove('single');
+    }
+  }
+
+  // Back to Top button
+  function initBackTop() {
+    var b = document.getElementById('fxBackTop');
+    if (!b) return;
+    window.addEventListener('scroll', function () {
+      b.classList.toggle('show', (window.pageYOffset || document.documentElement.scrollTop) > 500);
+    }, { passive: true });
+    b.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+
+  function start() { initExtras(); initBackTop(); }
+  // script.js "defer" hai, is liye DOMContentLoaded par chalate hain (tab tak tools ka data ready hota hai)
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+</script>
 </body>
 </html>
