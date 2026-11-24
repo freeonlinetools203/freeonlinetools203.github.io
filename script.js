@@ -1203,7 +1203,7 @@ function enhanceIndividualToolPage() {
     const breadcrumbHtml = `
       <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
         <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;color:#475569;font-weight:600;">
-          <a href="https://freeonlinetools203.com/" style="color:#2563EB;text-decoration:none;">🏠 Home</a> › 
+          <a href="https://freeonlinetools203.com/?category=${foundCategoryKey}" onclick="return fotGoBack(event, this.href)" style="display:inline-flex;align-items:center;gap:6px;background:#1E3A8A;color:#FFF;text-decoration:none;padding:6px 16px;border-radius:999px;font-weight:700;font-size:0.82rem;">← Back</a>
           <a href="${adInfo ? 'https://freeonlinetools203.com/about.html' : 'https://freeonlinetools203.com/?category=' + foundCategoryKey}" style="color:#2563EB;text-decoration:none;">${foundCategoryTitle}</a> › 
           <span style="color:#0F172A;">${toolDisplayName}</span>
         </div>
@@ -1299,7 +1299,7 @@ function enhanceIndividualToolPage() {
       const crumb = `
       <div class="fot-breadcrumbs" style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:0.86rem;font-family:'Inter',sans-serif;">
         <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#475569;font-weight:600;">
-          <a href="${B}" style="color:#2563EB;text-decoration:none;">🏠 Home</a> › ${last}
+          <a href="${isBlogIndex ? B : B + 'blog.html'}" onclick="return fotGoBack(event, this.href)" style="display:inline-flex;align-items:center;gap:6px;background:#1E3A8A;color:#FFF;text-decoration:none;padding:6px 16px;border-radius:999px;font-weight:700;font-size:0.82rem;">← Back</a> ${last}
         </div>
       </div>`;
       const hdr = document.querySelector('.fot-topbar') || document.querySelector('header');
@@ -1491,6 +1491,17 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 // Public API (sirf wahi jo doosre pages ko chahiye)
+// Back button: agar visitor isi site ke kisi page se aaya hai to pichhle page par, warna fallback par
+window.fotGoBack = function (e, fallback) {
+  try {
+    if (document.referrer && document.referrer.indexOf(location.hostname) !== -1 && history.length > 1) {
+      e.preventDefault();
+      history.back();
+      return false;
+    }
+  } catch (err) {}
+  return true;
+};
 window.toolUrlMap = toolUrlMap;
 window.categoryPagesDB = categoryPagesDB;
 window.getUrl = getUrl;
