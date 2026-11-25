@@ -1236,19 +1236,23 @@ body {
     <div style="background:white;border-radius:24px;padding:30px;max-width:480px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
         <h3 style="color:#1e3a8a;margin-top:0;">🔗 Share This Tool</h3>
         <p style="color:#6b7280;margin-bottom:18px;">Share the <strong>Zakat Calculator</strong> with your friends and family!</p>
-        
+
         <div style="background:#f3f4f6;padding:10px 15px;border-radius:8px;margin-bottom:18px;word-break:break-all;font-size:0.8rem;color:#4b5563;">
             https://freeonlinetools203.com/zakat-calculator.html
         </div>
-        
+
         <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:20px;">
             <a href="https://wa.me/?text=Check%20out%20this%20free%20Zakat%20Calculator%20-%20https://freeonlinetools203.com/zakat-calculator.html" target="_blank" rel="noopener" style="background:#25D366;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">📱 WhatsApp</a>
+
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://freeonlinetools203.com/zakat-calculator.html" target="_blank" rel="noopener" style="background:#1877F2;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">📘 Facebook</a>
+
             <a href="https://twitter.com/intent/tweet?text=Free%20Zakat%20Calculator&url=https://freeonlinetools203.com/zakat-calculator.html" target="_blank" rel="noopener" style="background:#1DA1F2;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">🐦 Twitter</a>
+
             <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://freeonlinetools203.com/zakat-calculator.html" target="_blank" rel="noopener" style="background:#0A66C2;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">💼 LinkedIn</a>
+
             <a href="javascript:void(0)" onclick="copyArticleShareLink()" style="background:#6b7280;color:white;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.88rem;min-width:120px;">📋 Copy Link</a>
         </div>
-        
+
         <button onclick="closeArticleShareModal()" style="background:#e5e7eb;border:none;color:#374151;padding:10px 30px;border-radius:40px;cursor:pointer;font-weight:600;font-size:0.88rem;">Close</button>
     </div>
 </div>
@@ -1259,12 +1263,15 @@ function openArticleShareModal() {
     document.getElementById('articleShareModal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
+
 function closeArticleShareModal() {
     document.getElementById('articleShareModal').style.display = 'none';
     document.body.style.overflow = '';
 }
+
 function copyArticleShareLink() {
     const url = 'https://freeonlinetools203.com/zakat-calculator.html';
+
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(() => {
             alert('✅ Link copied! Share with friends.');
@@ -1275,6 +1282,7 @@ function copyArticleShareLink() {
         fallbackArticleCopy(url);
     }
 }
+
 function fallbackArticleCopy(url) {
     const ta = document.createElement('textarea');
     ta.value = url;
@@ -1284,9 +1292,11 @@ function fallbackArticleCopy(url) {
     document.body.removeChild(ta);
     alert('✅ Link copied! Share with friends.');
 }
+
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeArticleShareModal();
 });
+
 document.addEventListener('click', function(e) {
     var modal = document.getElementById('articleShareModal');
     if (e.target === modal) closeArticleShareModal();
@@ -1297,13 +1307,23 @@ document.addEventListener('click', function(e) {
 <!-- AUTHOR BIO -->
 <div style="background:#f0f9ff;border-radius:14px;padding:24px;margin:35px 0 20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;border:1px solid #bae6fd;">
     <img src="https://freeonlinetools203.com/zain-uddin.jpg.png" alt="Zain Uddin - Founder of FreeOnlineTools203.com" style="width:90px;height:90px;border-radius:50%;object-fit:cover;object-position:center 30%;border:3px solid #2563eb;">
+
     <div style="flex:1;min-width:220px;">
         <h3 style="margin-top:0;color:#1e3a8a;font-size:1.1rem;">About the Author: Zain Uddin</h3>
-        <p style="font-size:0.88rem;margin-bottom:8px;color:#374151;"><strong>Founder, FreeOnlineTools203.com | Web Developer &amp; SEO Expert</strong></p>
-        <p style="font-size:0.88rem;color:#374151;margin-bottom:10px;">Hi, I'm Zain Uddin. I built FreeOnlineTools203.com to offer 240+ free online tools across 18 categories. With over 3 years of experience in web development, SEO, and freelancing (Fiverr), I personally build and test every tool to ensure it works perfectly for you.</p>
+
+        <p style="font-size:0.88rem;margin-bottom:8px;color:#374151;">
+            <strong>Founder, FreeOnlineTools203.com | Web Developer &amp; SEO Expert</strong>
+        </p>
+
+        <p style="font-size:0.88rem;color:#374151;margin-bottom:10px;">
+            Hi, I'm Zain Uddin. I built FreeOnlineTools203.com to offer 240+ free online tools across 18 categories. With over 3 years of experience in web development, SEO, and freelancing (Fiverr), I personally build and test every tool to ensure it works perfectly for you.
+        </p>
+
         <div style="font-size:0.82rem;">
             <a href="https://freeonlinetools203.com" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">🌐 Website</a>
+
             <a href="https://youtube.com/@freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">📺 YouTube</a>
+
             <a href="https://facebook.com/freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;">📘 Facebook</a>
         </div>
     </div>
@@ -1311,70 +1331,10 @@ document.addEventListener('click', function(e) {
 
 <!-- AFFILIATE DISCLOSURE -->
 <p style="font-size:0.82rem;color:#6b7280;background:#f9fafb;border:1px dashed #d1d5db;border-radius:10px;padding:14px 18px;margin-top:20px;">
-Disclosure: This page contains affiliate links. If you buy through these links, I may earn a commission at no extra cost to you.
+    Disclosure: This page contains affiliate links. If you buy through these links, I may earn a commission at no extra cost to you.
 </p>
 
-  <!-- ========== SEO ARTICLE END ========== -->
-<!-- SHARE MODAL SCRIPT -->
-<script>
-function openArticleShareModal() {
-    document.getElementById('articleShareModal').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-}
-function closeArticleShareModal() {
-    document.getElementById('articleShareModal').style.display = 'none';
-    document.body.style.overflow = '';
-}
-function copyArticleShareLink() {
-    const url = 'https://freeonlinetools203.com/zakat-calculator.html';
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(() => {
-            alert('✅ Link copied! Share with friends.');
-        }).catch(() => {
-            fallbackArticleCopy(url);
-        });
-    } else {
-        fallbackArticleCopy(url);
-    }
-}
-function fallbackArticleCopy(url) {
-    const ta = document.createElement('textarea');
-    ta.value = url;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    alert('✅ Link copied! Share with friends.');
-}
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeArticleShareModal();
-});
-document.addEventListener('click', function(e) {
-    var modal = document.getElementById('articleShareModal');
-    if (e.target === modal) closeArticleShareModal();
-});
-</script>
-<!-- ========== SHARE THIS TOOL SECTION END ========== -->
-
-<!-- AUTHOR BIO -->
-<div style="background:#f0f9ff;border-radius:14px;padding:24px;margin:35px 0 20px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;border:1px solid #bae6fd;">
-    <img src="https://freeonlinetools203.com/zain-uddin.jpg.png" alt="Zain Uddin - Founder of FreeOnlineTools203.com" style="width:90px;height:90px;border-radius:50%;object-fit:cover;object-position:center 30%;border:3px solid #2563eb;">
-    <div style="flex:1;min-width:220px;">
-        <h3 style="margin-top:0;color:#1e3a8a;font-size:1.1rem;">About the Author: Zain Uddin</h3>
-        <p style="font-size:0.88rem;margin-bottom:8px;color:#374151;"><strong>Founder, FreeOnlineTools203.com | Web Developer &amp; SEO Expert</strong></p>
-        <p style="font-size:0.88rem;color:#374151;margin-bottom:10px;">Hi, I'm Zain Uddin. I built FreeOnlineTools203.com to offer 240+ free online tools across 18 categories. With over 3 years of experience in web development, SEO, and freelancing (Fiverr), I personally build and test every tool to ensure it works perfectly for you.</p>
-        <div style="font-size:0.82rem;">
-            <a href="https://freeonlinetools203.com" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">🌐 Website</a>
-            <a href="https://youtube.com/@freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;margin-right:12px;">📺 YouTube</a>
-            <a href="https://facebook.com/freeonlinetools203" target="_blank" rel="noopener" style="color:#2563eb;font-weight:600;">📘 Facebook</a>
-        </div>
-    </div>
-</div>
-
-<!-- AFFILIATE DISCLOSURE -->
-<p style="font-size:0.82rem;color:#6b7280;background:#f9fafb;border:1px dashed #d1d5db;border-radius:10px;padding:14px 18px;margin-top:20px;">
-Disclosure: This page contains affiliate links. If you buy through these links, I may earn a commission at no extra cost to you.
-</p>
+<!-- ========== SEO ARTICLE END ========== -->
   
 <script>
 // Zakat Calculator Logic
