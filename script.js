@@ -1133,12 +1133,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('popstate', function() {
+  // Sirf homepage par navigation code chalayein
+  const homeView = document.getElementById('fotHomepageView');
+  const dynView = document.getElementById('fotDynamicViewArea');
+
+  if (!homeView || !dynView) return;
+
   const params = new URLSearchParams(window.location.search);
   const catParam = params.get('category');
   const viewParam = params.get('view');
-  if (catParam && categoryPagesDB[catParam]) window.openCategoryView(null, catParam);
-  else if (viewParam === 'all-tools') window.openAllToolsView(null);
-  else window.openHomeView(null);
+
+  if (catParam && categoryPagesDB[catParam]) {
+    window.openCategoryView(null, catParam);
+  } else if (viewParam === 'all-tools') {
+    window.openAllToolsView(null);
+  } else {
+    window.openHomeView(null);
+  }
 });
 
 // =========================================================================
